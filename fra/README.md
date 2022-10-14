@@ -20,7 +20,7 @@ Le guide pragmatique des décideurs pour comprendre et agir.
     - [Refuser le retard technologique](#refuser-le-retard-technologique)
   - [Prérequis](#prérequis)
   - [Modèle d’équipe interne](#modèle-déquipe-interne)
-    - [Equipes « innovantes » et « intelligence artificielle »](#equipes-innovantes-et-intelligence-artificielle)
+    - [Équipes « innovantes » et « intelligence artificielle »](#équipes-innovantes-et-intelligence-artificielle)
     - [Être au plus proche du métier](#être-au-plus-proche-du-métier)
     - [Libérer la parole et dé-siloter l’accès aux données](#libérer-la-parole-et-dé-siloter-laccès-aux-données)
   - [Le cycle de vie d’un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne)
@@ -70,7 +70,7 @@ Pour bien débuter et comprendre comment le DevOps peut aider votre organisation
 
 C’est le lien entre le monde du développement et de la production.
 
-On qualifie de « DevOps » (Developement Operations) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, les mettre en production plus rapidement, améliorer leur fiabilité tout en cultivant ce sentiment de responsabilité partagée entre les parties-prenantes (ingénieurs, responsables projet et utilisateurs).
+On qualifie de « DevOps » (Development Operations) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, les mettre en production plus rapidement, améliorer leur fiabilité tout en cultivant ce sentiment de responsabilité partagée entre les parties-prenantes (ingénieurs, responsables projet et utilisateurs).
 
 L’ingénieur « DevOps » est celui en charge de définir et d’implémenter les techniques permettant d’atteindre ces objectifs au sein de votre institution. En équipe, ils garantissent la cohérence des développements avec les exigences du déploiement le plus en amont possible, souvent avec des scripts automatisés d’intégration continue au sein d’une forge logicielle (ex. GitLab).
 
@@ -197,11 +197,11 @@ Pour amorcer votre initiative DevOps, vous avez besoin :
 
 - D’un responsable d’équipe avec d’excellentes compétences en communication
 - De plusieurs ingénieurs logiciels qui développeront vos solutions aux besoins métiers
-- De plusieurs profils SRE/DevOps qui développeront votre socle et gèreront le cycle de développement/déploiement des logiciels
+- De plusieurs profils SRE/DevOps qui développeront votre socle et géreront le cycle de développement/déploiement des logiciels
 
 ## Modèle d’équipe interne
 
-### Equipes « innovantes » et « intelligence artificielle »
+### Équipes « innovantes » et « intelligence artificielle »
 
 Nombreuses sont les organisations qui ont voulu stimuler leurs organisations en créant des « équipes innovation » au sein de leur structure. Et nombreuses sont celles qui n’ont pas vraiment réussi à déployer en production ce qui y était développé.
 
@@ -221,9 +221,9 @@ C’est la fameuse méthode « agile » contre le « cycle en V » : vos m�
 
 TODO(flavienbwk): {ILLUSTRATION}
 
-Dans de nombreuses organisations, on travaille encore en « V » : l’industriel vient voir l’équipe métier qui a émis un besoin - cette équipe propose d’ailleurs souvent une solution technique plutôt que d’exposer les problématiques qu’elle rencontre – puis un PPT est créé 1 mois après pour voir le résultat du développement 4 mois après. Sur des problématiques techniques, le logiciel produit est déjà périmé et les équipes ayant fait la demande ont même déjà changé.
+Dans de nombreuses organisations, on travaille encore en « V » : l’industriel vient voir l’équipe métier qui a émis un besoin - cette équipe propose d’ailleurs souvent une solution technique plutôt que d’exposer les problématiques qu’elle rencontre – puis un PowerPoint est créé 1 mois après pour voir le résultat du développement 4 mois après. Sur des problématiques techniques, le logiciel produit est déjà périmé et les équipes ayant fait la demande ont même déjà changé.
 
-Au-delà de la solution que vous apporterez en elle-même, vos métiers constateront que votre modèle de fonctionnement est efficace et soutiendront par conséquent votre initiative. Votre objectif en tant que chef d’équipe doit être de pouvoir faire témoigner des représentants d’équipes métiers que vous avez aidé grâce à vos outils lors de présentations importantes. Ces représentations permettront d’assoir votre crédibilité et d’éviter que votre équipe ait une image de simple « prestataire de développement technique ».
+Au-delà de la solution que vous apporterez en elle-même, vos métiers constateront que votre modèle de fonctionnement est efficace et soutiendront par conséquent votre initiative. Votre objectif en tant que chef d’équipe doit être de pouvoir faire témoigner des représentants d’équipes métiers que vous avez aidé grâce à vos outils lors de présentations importantes. Ces représentations permettront d’asseoir votre crédibilité et d’éviter que votre équipe ait une image de simple « prestataire de développement technique ».
 
 Cette proximité avec les métiers permettra à vos équipes de se sentir davantage impliquées dans les missions de votre institution. C’est une dynamique gagnante à la fois pour vos ingénieurs et les opérateurs. Chacun se nourrit ainsi de la connaissance de l’autre : l’ingénieur découvre le fond du sujet, comprend mieux le problème, pendant que l’opérateur spécifie son besoin le plus précisément possible.
 
@@ -243,7 +243,7 @@ TODO(flavienbwk): Développer le sujet
 
 ## Les responsabilités dans un modèle DevOps
 
-TODO(flavienbwk): Finaliser {Vaincre la peur de l’attribution des responsabilités (modèle RACI), podcast DevOps #12 Ludovic Piot @ 35m00}
+TODO(flavienbwk): Finaliser {Vaincre la peur de l’attribution des responsabilités (modèle RACI), podcast DevOps #12 Ludovic PIOT @ 35m00}
 
 En découvrant la multitude de technologies expérimentales à mettre en place au sein de votre organisation pour atteindre un fonctionnement en mode DevOps, vous pourriez naturellement prendre peur à l’idée de devenir le responsable de ce grand et nouveau système.
 
@@ -373,7 +373,7 @@ Afin d’accélérer l’adoption de vos solutions, conviez un métier à vos pr
 
 Arriver à faire parler un métier à votre place est le meilleur moyen de gagner en crédibilité et prouver que votre solution répond à un besoin d’actualité. En illustrant un cas d’usage, vos invités se projetteront bien plus vite sur l’utilisation qu’ils peuvent faire de votre outil. Si vous avez des utilisateurs récalcitrants ou qui ont du mal à se projeter, un métier qui témoigne sur l’intérêt de votre projet est votre meilleur allié.
 
-Tentez d’établir un réseau solide de quelques « ambassadeurs » (product advocates) au sein de votre organisation pour assoir votre légitimité et soutenir votre initiative. En plus de ce soutien, l’ambassadeur vous permettra de capter les retours utilisateur ou d’en émettre lui-même pour affiner votre proposition de valeur.
+Tentez d’établir un réseau solide de quelques « ambassadeurs » (product advocates) au sein de votre organisation pour asseoir votre légitimité et soutenir votre initiative. En plus de ce soutien, l’ambassadeur vous permettra de capter les retours utilisateur ou d’en émettre lui-même pour affiner votre proposition de valeur.
 
 ### Réservistes ou projet « 20% »
 
@@ -381,7 +381,7 @@ Dans le privé et en particulier chez les GAFAM, il est courant pour les employ�
 
 Tentez de proposer à votre hiérarchie cette possibilité afin que chaque collaborateur puisse bénéficier de ce programme : cela favorisera les échanges, rapprochera les équipes et fidélisera vos collaborateurs en leur permettant de découvrir et travailler sur de nouveaux sujets.
 
-Afin de tirer parti de toutes les ressources à votre disposition, considérez l’emploi de personnels réservistes au sein de votre équipe si votre organisation le permet. Quand bien même ils ne sont présents que quelques jours dans l’année, ils peuvent vous décharger d’un bon nombre de tâches que vous n’auriez pas le temps de faire en temps normal. Par exemple, un réservice en sécurité des systèmes d’information vous aidera à boucler une homologation. Un data-scientist à évaluer une solution d’intelligence artificielle ou effectuer un appui ponctuel sur un jeu de données complexe à traiter.
+Afin de tirer parti de toutes les ressources à votre disposition, considérez l’emploi de personnels réservistes au sein de votre équipe si votre organisation le permet. Quand bien même ils ne sont présents que quelques jours dans l’année, ils peuvent vous décharger d’un bon nombre de tâches que vous n’auriez pas le temps de faire en temps normal. Par exemple, un réserviste en sécurité des systèmes d’information vous aidera à boucler une homologation. Un data-scientist à évaluer une solution d’intelligence artificielle ou effectuer un appui ponctuel sur un jeu de données complexe à traiter.
 
 ### Synergie public / privé : un win-win-win-win
 
@@ -441,7 +441,7 @@ Les exemples de fiches de poste ci-dessous sont indicatives et doivent être ada
 |---|:---|
 | **Niveau du poste** | Medium ou Senior (selon les responsabilités à confier au candidat) |
 | **Maturité de l’organisation** | Débutante à intermédiaire |
-| **Rémunération approximative** (aout 2022) | >50k€/an |
+| **Rémunération approximative** (août 2022) | >50k€/an |
 
 Dans le cadre de la transformation numérique de notre organisation, appuyé(e) par la hiérarchie, vous définirez les nouveaux processus de développement, mettrez en place les outils et accompagnerez les équipes internes dans leur réorganisation pour employer ces nouvelles techniques.
 
@@ -478,7 +478,7 @@ Ce poste peut mener au poste d’ingénieur Systèmes ou de SRE.
 |---|:---|
 | **Niveau du poste** | Medium ou Senior (selon les responsabilités à confier au candidat). Apprentissage ou débutant possible si un personnel expérimenté est disponible. Pas de stage. |
 | **Maturité de l’organisation** | Débutante à intermédiaire |
-| **Rémunération approximative** (aout 2022) | >50k€/an (medium), >42k€/an (débutant) |
+| **Rémunération approximative** (août 2022) | >50k€/an (medium), >42k€/an (débutant) |
 
 Aux fondements du bon fonctionnement de notre organisation, vous aurez la charge de garantir la fiabilité et la résilience des systèmes que vous administrerez. Vous veillerez à pérenniser les infrastructures.
 
@@ -489,7 +489,7 @@ Au sein de notre équipe SRE de X personnes, vous aurez la charge de :
 - Définir les indicateurs de résilience (SLIs, SLOs), maintenir les tableaux de bords d’indicateurs et les systèmes d’alertes
 - Développer et documenter les configurations des systèmes d’information (Ansible)
 - Maintenir et administrer les sauvegardes de nos systèmes
-- Préparer (s’entrainer) et appliquer des procédures d’urgence selon les 3Cs
+- Préparer (s’entraîner) et appliquer des procédures d’urgence selon les 3Cs
 - Sensibiliser les ingénieurs à la mise en production
 - Rédiger des postmortems clairs et illustrés pour alimenter notre base de connaissance
 
@@ -505,13 +505,13 @@ TODO(flavienbwk): Finaliser les "compétences"
 |---|:---|
 | **Niveau du poste** | Débutant à Senior |
 | **Maturité de l’organisation** | Avancée |
-| **Rémunération approximative** (aout 2022) | >50k€/an (medium), >45k€/an (débutant) |
+| **Rémunération approximative** (août 2022) | >50k€/an (medium), >45k€/an (débutant) |
 
 De formation ingénieur logiciel ou administrateur système avec des compétences avérées en ingénierie logicielle, vous serez responsable du développement et de la maintenance des outils qui améliorent au quotidien le cycle de développement de nos logiciels.
 
 Au sein de l’équipe SRE, vous développerez les outils d’administration ou en intégrerez pour faciliter la vie de nos développeurs et de nos SRE.
 
-Vous participerez à la mise en place d’un data-lake dans le cadre de l’initiative gouvernementale data.gouv.fr.
+Vous participerez à la mise en place d’un data-lake dans le cadre de l’initiative gouvernementale _data.gouv.fr_.
 
 Compétences :
 

@@ -35,6 +35,12 @@ It automatically :
 
 [^1]: To be translated (not planned at the moment)
 
+## Useful VSCode extensions
+
+- [Spellcheck](https://github.com/bartosz-antosik/vscode-spellright) to replace Word's spell checker
+- [Markdownlint](https://github.com/DavidAnson/vscode-markdownlint)
+- [Wordcount](https://github.com/Microsoft/vscode-wordcount)
+
 ## License
 
 Copyright © 2022 Flavien BERWICK
