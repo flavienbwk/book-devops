@@ -40,6 +40,7 @@ It automatically :
 - [Wordcount](https://github.com/Microsoft/vscode-wordcount)
 - [Todo Tree](https://github.com/Gruntfuggly/todo-tree)
 - [TODO Highlight](https://github.com/wayou/vscode-todo-highlight)
+- [Markdown Footnote](https://github.com/houkanshan/vscode-markdown-footnote)
 
 ## License
 
