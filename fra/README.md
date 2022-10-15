@@ -60,9 +60,11 @@ Soyez en tout cas assuré que les efforts que vous déploierez à faire du DevOp
 
 Si le terme DevOps devient de plus en plus populaire et commence à devenir courant dans les offres d’emploi, celui de Site Reliability Engineering (SRE) est moins connu, en particulier en France.
 
-Figure 1 : Evolution de l'intérêt pour le terme "DevOps" (2014 à 2022, trends.google.com)
+![Evolution de l'intérêt pour le terme "DevOps"](./images/figure_1.png "Evolution de l'intérêt pour le terme 'DevOps' (2014 à 2022, trends.google.com)")
+> Evolution de l'intérêt pour le terme 'DevOps' (2014 à 2022, trends.google.com)
 
-Figure 2 : Intérêt pour le terme "Site Reliability Engineering" selon les pays (2014 à 2022). La France est 48e sur 58.
+![Intérêt pour le terme "Site Reliability Engineering" selon les pays.](./images/figure_2.png "Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48e sur 58.")
+> Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48e sur 58.
 
 Pour bien débuter et comprendre comment le DevOps peut aider votre organisation, commençons par définir deux des termes les plus importants à connaître dans ce milieu.
 
@@ -335,7 +337,7 @@ Voici quelques exemples d’algorithmes qu’il est possible de lancer pour vér
 - Vérifier que toutes les variables d’environnement sont bien déclarées dans les fichiers appropriés
 - S’assurer que des mots de passe n’ont pas été poussés par erreur
 - S’assurer de la présence d’un fichier de configuration requis
-- S’assurer que le code respecte les standards de développement et de formatage (ex: PEP8, black, pylint…)
+- S’assurer que le code respecte les standards de développement et de formatage (ex: PEP8, black, pylint...)
 
 Toutes ces tâches contribuent en la réduction de la dette technique de votre base de code et en la plus grande facilité du déploiement de vos projets en garantissant l’implémentation des standards définis par vos équipes DevOps.
 
@@ -408,13 +410,13 @@ Il n’est pas concevable de travailler de cette manière en 2022. L’une des p
 
 En ce sens si vous souhaitez travailler efficacement avec une entreprise externe à votre organisation, vous devez rapprocher toutes les parties-prenantes liées à ce projet. Faites en sorte que la voix de chacun puisse être entendue en mettant en place un moyen de communication simple et pratique à utiliser pour faire des retours et des suggestions. Par exemple, vous pourriez demander à l’industriel de vous partager l’accès à sa forge logicielle (ex : GitLab, BitBucket) pour y ajouter les commentaires de vos équipes et que les ingénieurs puissent y répondre en boucle courte. GitLab permettant aussi de réaliser du déploiement continu, l’idée est que l’industriel puisse mettre à disposition de ses clients un accès à la dernière version du logiciel. De cette manière, vous évitez les réunions de plusieurs heures et gagnez en flexibilité : vous itérez, rapidement.
 
-TODO(flavienbwk): Ajouter photo
-Figure 3 : Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
+![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
+> Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
 
 Dans le cas où vous ne pouvez pas agir sur vos pratiques avec l’industriel, organisez-vous au moins en interne pour avoir un outil de gestion de projet collaboratif comme Atlassian Confluence, qui agit comme une base de connaissance pour votre équipe.
 
-TODO(flavienbwk): Ajouter photo
-Figure 4 : Exemple de vue Kanban où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
+![Exemple de vue Kanban dans Atlassian Confluence](./images/figure_4.png "Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
+> Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
 
 Cette pratique est un win-win-win-win : le client réduit les délais de livraison, le métier obtient un outil qui répond mieux à ses besoins, l’industriel favorise la possibilité d’une nouvelle contractualisation en ayant satisfait son client et le contribuable en a pour son argent. Globalement, tout le monde gagne du temps, est satisfait du résultat et se voit fidélisé en étant davantage impliqué dans chacune des interactions.
 
