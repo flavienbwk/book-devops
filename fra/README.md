@@ -24,6 +24,10 @@ Le guide pragmatique des décideurs pour comprendre et agir.
     - [Être au plus proche du métier](#être-au-plus-proche-du-métier)
     - [Libérer la parole et dé-siloter l'accès aux données](#libérer-la-parole-et-dé-siloter-laccès-aux-données)
   - [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne)
+    - [Un réseau unique](#un-réseau-unique)
+    - [Usine logicielle](#usine-logicielle)
+    - [Git flow](#git-flow)
+  - [La sécurité : un nouveau paradigme dans le modèle DevOps](#la-sécurité--un-nouveau-paradigme-dans-le-modèle-devops)
   - [Les responsabilités dans un modèle DevOps](#les-responsabilités-dans-un-modèle-devops)
   - [Les piliers du DevOps en pratique](#les-piliers-du-devops-en-pratique)
     - [Réduire les silos organisationnels](#réduire-les-silos-organisationnels)
@@ -58,7 +62,7 @@ TODO(flavienbwk): Department of Defense going DevSecOps :
 - https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf
 - https://breakingdefense.com/2021/05/dod-publishes-devsecops-2-0-docs-for-accelerating-apps/
 
-Ce livre est rédigé en deux parties : une première orientée sur l'organisation et l'autre davantage sur la partie technique. En tant que responsable d'une initiative DevOps, vous vous devez de maîtriser ces deux parties pour prendre les meilleures décisions et rester crédible face à votre hiérarchie et vos subordonnés.
+Ce livre est rédigé en deux parties : une première orientée sur l'organisation et l'autre davantage sur les aspects technique. En tant que responsable d'une initiative DevOps, vous vous devez de maîtriser ces deux parties pour prendre les meilleures décisions et rester crédible face à votre hiérarchie et vos subordonnés.
 
 Rassurez-vous, ce livre vulgarise toutes les notions techniques qui seront abordées. L'idée est de donner une ligne directrice pour vous orienter vers une première expérimentation DevOps ou d'affiner celle que vous soutenez.
 
@@ -100,7 +104,7 @@ En résumé, l'ingénieur DevOps est responsable de la mise en place de tous les
 
 ### Note : le DevSecOps
 
-Le terme DevSecOps devient également très populaire. Il qualifie les procédures DevOps intégrant nativement les considérations de sécurité dans le cycle de développement du logiciel.
+Le terme DevSecOps devient également très populaire. Il qualifie les procédures DevOps intégrant nativement les considérations de sécurité dans le cycle de développement du logiciel et son exploitation en production.
 
 Par exemple, développer dès le début du projet les fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d'en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#continuous-integration-ci) dans le code.
 
@@ -246,13 +250,37 @@ Mettre au contact profils techniques et opératifs est un enjeu de fidélisation
 
 ### Libérer la parole et dé-siloter l'accès aux données
 
-Vous vous en souvenez, l'un des piliers du DevOps est de dé-siloter l'accès aux données. Vos équipes techniques ont besoin d'avoir un accès privilégié aux données de votre entreprise si vous voulez qu'elles développent un produit répondant le mieux possible à votre besoin.
+Vous vous en souvenez, l'un des piliers du DevOps est de dé-siloter l'accès aux données. Si vous souhaitez que vos équipes techniques répondent le mieux à votre besoin, elles ont besoin d'un accès privilégié aux données de votre entreprise.
 
-Abandonnez les « échantillons anonymisés ». Les ingénieurs ont besoin de comprendre précisément de quoi est composée la donnée qu'ils sont censés traiter. Tenter de développer un outil sur des données « anonymes » revient à développer un outil qui ne répond que partiellement au cas d'usage. Autrement dit, vous êtes certain qu'un bug se produira dès lors qu'une donnée « inconnue » passera dans le logiciel. Fournissez à vos équipes les données de production qui ont vocation à être utilisées dans les outils : vous perdrez moins de temps en résolution de bugs et améliorerez la qualité du service fournit par vos logiciels. Si vous ne le faites pas, autant faire appel à un prestataire externe ! (cf. Être au plus proche du métier).
+Abandonnez les « échantillons anonymisés ». Les ingénieurs ont besoin de comprendre précisément de quoi est composée la donnée qu'ils sont censés traiter. Tenter de développer un outil sur des données « anonymes » revient à développer un outil qui ne répond que partiellement au cas d'usage. Autrement dit, vous êtes certain qu'un bug se produira dès lors qu'une donnée « inconnue » passera dans le logiciel. Fournissez à vos équipes les données de production qui ont vocation à être utilisées dans les outils : vous perdrez moins de temps en résolution de bugs et améliorerez la qualité du service fournit par vos logiciels. Si vous ne leur permettez pas, autant faire appel à un prestataire externe ! (cf. [Être au plus proche du métier](#être-au-plus-proche-du-métier)).
 
 ## Le cycle de vie d'un logiciel moderne
 
 L'un des enjeux du DevOps est de fluidifier le cycle de vie d'un logiciel.
+
+TODO(flavienbwk): Développer le sujet
+
+### Un réseau unique
+
+TODO(flavienbwk): Développer le sujet
+
+Je passe rapidement dessus car nous évoquerons cette problématique en détails dans le chapitre "[Réduire les silos organisationnels](#réduire-les-silos-organisationnels)".
+
+### Usine logicielle
+
+TODO(flavienbwk): Développer le sujet
+
+### Git flow
+
+TODO(flavienbwk): Développer le sujet
+
+## La sécurité : un nouveau paradigme dans le modèle DevOps
+
+L'idée selon laquelle le DevOps permet de rapprocher les différents métiers pour collaborer ensemble n'est pas simple à appliquer. Les métiers historiques de la sécurité des systèmes d'information (SSI) se sont vu imposer des pratiques auxquelles ils n'étaient pas habitués et qu'ils n'ont parfois pas eu le temps d'appréhender.
+
+Dans les grandes organisations, les règles de l'entreprise ou la loi elle-même imposent que des versions bien arrêtées soient définies pour que le logiciel soit qualifié[^ANSSIQualifiedSoftware] ou homologué. Imaginez alors avoir la charge de faire respecter ces conditions quand les méthodes DevOps impliquent des dizaines de mise à jour logicielles chaque jour : vous prenez peur !
+
+Il est donc nécessaire de redéfinir ce que signifie la "sécurité" pour une infrastructure utilisant des technologies cloud.
 
 TODO(flavienbwk): Développer le sujet
 
@@ -596,3 +624,5 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 [^TimeToOutdatedSoftware]: Procter & Gamble Co. [2021 Form 10-K](https://sec.report/Document/80424/000008042421000100/R23.htm). 2021. <+> Spinellis, Diomidis; Louridas, Panos; Kechagia, Maria. [Software evolution: the lifetime of fine-grained elements](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/). 2021.
 
 [^GoogleWorkbookIncidentResponse]: [Google SRE workbook (sre.google) : Incident response](https://sre.google/sre-book/incident-response)
+
+[^ANSSIQualifiedSoftware]: La [certification "critères communs"](https://www.ssi.gouv.fr/administration/produits-certifies/cc/) de l'ANSSI requiert la définition d'une version du logiciel audité.
