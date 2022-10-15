@@ -2,7 +2,7 @@
 
 This repo hosts a book written by a SRE/DevOps engineer, [me](https://berwick.fr). So I had to make it gitops-compliant.
 
-While you will be able to order the physical version soon, this is the digital/raw copy of it.
+While you will be able to order the physical version soon, this is the digital interactive copy of it.
 
 ## Summary
 
@@ -33,14 +33,16 @@ It automatically :
 - [French](./fra/README.md) :fr:
 - [English](./eng/README.md) :us: [^1]
 
-[^1]: To be translated (not planned at the moment)
+## Useful VSCode extensions when writing
 
-## Useful VSCode extensions
-
-- [Spellcheck](https://github.com/bartosz-antosik/vscode-spellright) to replace Word's spell checker
+- [Spellcheck](https://github.com/bartosz-antosik/vscode-spellright)
 - [Markdownlint](https://github.com/DavidAnson/vscode-markdownlint)
 - [Wordcount](https://github.com/Microsoft/vscode-wordcount)
+- [Todo Tree](https://github.com/Gruntfuggly/todo-tree)
+- [TODO Highlight](https://github.com/wayou/vscode-todo-highlight)
 
 ## License
 
 Copyright © 2022 Flavien BERWICK
+
+[^1]: To be translated (not planned at the moment)

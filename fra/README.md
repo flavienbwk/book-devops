@@ -90,9 +90,9 @@ En résumé, l’ingénieur DevOps est responsable de la mise en place de tous l
 
 Le terme DevSecOps devient également très populaire. Il qualifie les procédures DevOps intégrant nativement les considérations de sécurité dans le cycle de développement du logiciel.
 
-Par exemple, développer dès le début du projet les fonctionnalités rendant le logiciel conforme au RGPD ou aux politiques de besoin d’en connaître de votre organisation. Cela peut également être la mise en place de détecteurs automatiques de vulnérabilités dans le code.
+Par exemple, développer dès le début du projet les fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d’en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#continuous-integration-ci) dans le code.
 
-Nicolas CHAILLAN, ancien Directeur de l’Ingénierie Logicielle au sein de l’Armée de l’Air américaine le définit de cette manière :
+Nicolas CHAILLAN, ancien Directeur de l’Ingénierie Logicielle au sein de l’Armée de l’Air américaine [le définit](https://podcast.ausha.co/postmortem/19)[^DevSecOpsUSAirForce] de cette manière :
 
 > « Le DevSecOps est l’évolution de l’ingénierie logicielle. C’est l’équilibre entre la vélocité de développement et le temps alloué aux considérations de sécurité. On veut que la sécurité soit intégrée pour être sûr qu’elle ne soit pas oubliée mais ajoutée au cycle de développement logiciel. C’est utiliser les procédés de cybersécurité modernes pour être sûr que le logiciel est à la fois performant et construit d’une manière sécurisée pour être sûr qu’il n’ait pas de problème au fil du temps. C’est ce qui va permettre aux sociétés et organisations de rester concurrentielles et d’avancer à l’avenir à la vitesse nécessaire face à leurs concurrents. »
 
@@ -100,9 +100,10 @@ Nous n’en parlerons pas davantage dans ce livre car le DevSecOps est à mon se
 
 ## Les cinq piliers du DevOps
 
-Selon la réputée entreprise américaine Atlassian, le mouvement DevOps a commencé à prendre forme entre 2007 et 2008, lorsque les métiers de l’ingénierie système (ceux qui déploient) et du développement logiciel (ceux qui développent) se sont inquiétés de ce qu'ils considéraient comme un dysfonctionnement fatal avec leurs pratiques opposées dues à leur manque de proximité.
+Selon la réputée entreprise américaine [Atlassian](https://www.atlassian.com/devops/what-is-devops/history-of-devops
+)[^AtlassianHistoryOfDevops], le mouvement DevOps a commencé à prendre forme entre 2007 et 2008, lorsque les métiers de l’ingénierie système (ceux qui déploient) et du développement logiciel (ceux qui développent) se sont inquiétés de ce qu'ils considéraient comme un dysfonctionnement fatal avec leurs pratiques opposées dues à leur manque de proximité.
 
-Le terme DevOps est attribué à l’ingénieur français Patrick DEBOIS qui a écrit en 2015 le livre « Le manuel du DevOps : comment instaurer une agilité, une fiabilité et une sécurité de référence dans les organisations technologiques ». Il y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d’entreprise et dépasser les objectifs grâce aux pratiques DevOps.
+Le terme DevOps est attribué à l’ingénieur français Patrick DEBOIS qui a écrit en 2015 le livre « Le manuel du DevOps : comment instaurer une agilité, une fiabilité et une sécurité de référence dans les organisations technologiques [^TheDevopsHandbook]». Il y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d’entreprise et dépasser les objectifs grâce aux pratiques DevOps.
 
 La SRE est une discipline beaucoup plus ancienne du temps où Ben TREYNOR SLOSS, ingénieur chez Google, fonda en 2003 une équipe de ce type. Il sera le père fondateur de la SRE et des premières pratiques DevOps.
 
@@ -142,7 +143,7 @@ Admettons que vous perdiez 2 ingénieurs. Il s’avère que vous devez toujours 
 
 Comprenez que vous avez besoin d’une masse critique de profils SRE/DevOps dans votre équipe. Cette masse critique doit évoluer en fonction du nombre de collaborateurs et vous ne pouvez pas en retirer facilement.
 
-A titre d’exemple, avec sa taille Google maintient son ratio de SRE/développeurs à environ 10%. Ce ratio doit néanmoins avoir une [tendance logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez.
+A titre d’exemple, avec sa taille Google maintient son ratio de SRE/développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio doit néanmoins avoir une [tendance logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez.
 
 ### Too big, too soon
 
@@ -207,9 +208,9 @@ Nombreuses sont les organisations qui ont voulu stimuler leurs organisations en 
 
 Les cas d’usages tournent souvent autour de la data et de l’intelligence artificielle. Les buzz-words « data-scientists », « deep learning » et « intelligence artificielle » ont procuré de nombreux faux espoirs : beaucoup d’organisations ont recruté des profils data-science qui se sont retrouvés incapables de mettre en production leurs algorithmes dans une interface à l’attention d’opérateurs non-experts.
 
-Le problème n’est pas les data-scientists, mais bien les décideurs qui jusqu’à récemment ne comprenaient pas ce qu’impliquait la réponse au besoin métier : un socle de développement fiable, des données propres, des données massives, du suivi de modèles (MLOps), une équipe de mise en production. En somme, beaucoup pensaient (et continuent de penser) que « l’IA » peut résoudre n’importe quel problème avec quelques lignes de code. Ces personnes n’ont pas conscience de ce que ces pratiques impliquent en termes d’infrastructure et de soutien technique.
+Le problème n’est pas les data-scientists, mais bien les décideurs qui jusqu’à récemment ne comprenaient pas ce qu’impliquait la réponse au besoin métier : un socle de développement fiable, des données propres, des données massives, du suivi de modèles[^ModelsIA] (MLOps), une équipe de mise en production. En somme, beaucoup pensaient (et continuent de penser) que « l’IA » peut résoudre n’importe quel problème avec quelques lignes de code. Ces personnes n’ont pas conscience de ce que ces pratiques impliquent en termes d’infrastructure et de soutien technique.
 
-L’exemple typique de la data-science vis-à-vis du DevOps est le besoin de puissance de calcul, de capacité de stockage et de services pour développer et suivre l’entraînement de ces modèles. La plupart des data-scientists ne seront pas en mesure d’installer seul leur Jupyter Notebook et drivers GPU.
+L’exemple typique de la data-science vis-à-vis du DevOps est le besoin de puissance de calcul, de capacité de stockage et de services pour développer et suivre l’entraînement de ces modèles. La plupart des data-scientists ne seront pas en mesure d’installer seul leur Jupyter Notebook[^JupyterNotebook] et drivers GPU[^DriversGPU].
 
 En résumé, ils ne sont pour la plupart pas en mesure d’installer leur environnement de développement, surtout dans des environnements singuliers, inhérents aux grandes organisations.
 
@@ -279,7 +280,7 @@ TODO(flavienbwk): Développer le sujet
 
 ### Tirer parti de l’automatisation
 
-Au sein de systèmes d’informations de plus en plus complexes, il devient fondamental d’automatiser les tâches récurrentes. Les erreurs produites par des machines représentent une fraction infime vis-à-vis de celles des humains. Tout ingénieur confirmé vous le dira : l’erreur vient 99.9% du temps de l’humain. C’est pour cela que par exemple, Google tente de minimiser au maximum les interactions de ses opérateurs pour administrer ses systèmes.
+Au sein de systèmes d’informations de plus en plus complexes, il devient fondamental d’automatiser les tâches récurrentes. Les erreurs produites par des machines représentent une fraction infime vis-à-vis de celles des humains. Tout ingénieur confirmé vous le dira : l’erreur vient 99.9% du temps de l’humain. C’est pour cela que par exemple, Google tente de minimiser au maximum les interactions de ses opérateurs pour administrer ses systèmes[^GoogleWorkbookEliminatingToil].
 
 > “Si un opérateur humain doit toucher votre système pendant les opérations normales, vous avez un bug. La définition du terme "normal" change au fur et à mesure que vos systèmes se développent.” - Carla GEISSER, SRE chez Google
 
@@ -319,7 +320,7 @@ Chacun a ses avantages et inconvénients, sa communauté. D’autres sont compl�
 
 Vous pouvez tout d’abord commencer à automatiser vos infrastructures à l’aide de scripts classiques (bash, Powershell) puis passer sur une technologie plus avancée comme Ansible qui standardisera vos configurations.
 
-Reportez-vous au [projet GitHub « ToDevOps »](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) pour voir cette technologie en pratique.
+Reportez-vous au [projet GitHub « ToDevOps »](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) [^ToDevOps] pour voir cette technologie en pratique.
 
 #### Continuous Integration (CI)
 
@@ -377,7 +378,7 @@ Tentez d’établir un réseau solide de quelques « ambassadeurs » (product a
 
 ### Réservistes ou projet « 20% »
 
-Dans le privé et en particulier chez les GAFAM, il est courant pour les employés d’avoir une journée dédiée dans leur semaine pour travailler sur un projet différent au sein de l’entreprise. En ce sens, ils choisissent de travailler au profit d’une autre équipe 1 jour sur 5. Cette possibilité est intéressante car elle profite à la fois à l’employé et à l’entreprise : l’employé peut voir autre chose et monter en compétence dans un autre domaine tout en aidant quand même l’entreprise.
+Dans le privé et en particulier chez les GAFAM[^GAFAM], il est courant pour les employés d’avoir une journée dédiée dans leur semaine pour travailler sur un projet différent au sein de l’entreprise. En ce sens, ils choisissent de travailler au profit d’une autre équipe 1 jour sur 5. Cette possibilité est intéressante car elle profite à la fois à l’employé et à l’entreprise : l’employé peut voir autre chose et monter en compétence dans un autre domaine tout en aidant quand même l’entreprise.
 
 Tentez de proposer à votre hiérarchie cette possibilité afin que chaque collaborateur puisse bénéficier de ce programme : cela favorisera les échanges, rapprochera les équipes et fidélisera vos collaborateurs en leur permettant de découvrir et travailler sur de nouveaux sujets.
 
@@ -391,13 +392,13 @@ Il est une erreur stratégique de se dire que le simple fait de payer un prestat
 
 Voilà pourquoi il est important d’avoir en interne, dans vos propres équipes, des experts pratiquants du sujet que vous voulez développer. Ce sont les seuls qui seront capables de critiquer les propositions de vos prestataires pour vous faire gagner des délais et éviter qu’on vous dupe avec des fonctionnalités au coût exorbitants ou aux promesses irréalistes.
 
-Chaque ingénieur DevOps et SRE le sait : il est impossible qu’un système fonctionne 100% du temps. C’est pourquoi vous ne pouvez pas attendre d’un prestataire, qu’importe le prix que vous paierez, que ce qu’il livre fonctionne à 100%. Même Google ne promet pas plus de 99.9% de disponibilité (SLA) avec sa capitalisation de plus de 1.49 trillions de dollars et ses +150 000 employés rigoureusement sélectionnés.
+Chaque ingénieur DevOps et SRE le sait : il est impossible qu’un système fonctionne 100% du temps. C’est pourquoi vous ne pouvez pas attendre d’un prestataire, qu’importe le prix que vous paierez, que ce qu’il livre fonctionne à 100%. Même Google [ne promet pas plus de 99.9% de disponibilité](https://workspace.google.com/terms/sla.html) (SLA)[^GoogleWorkspaceSLA] avec sa capitalisation de plus de 1.49 trillions de dollars et ses +150 000 employés rigoureusement sélectionnés.
 
 #### Mieux s’organiser pour ne pas échouer
 
 La méthode traditionnelle des institutions pour travailler avec des industriels peut s’assimiler aux développements de type « waterfall » : une grande réunion est organisée pour recueillir le besoin, un cahier des charges technique et fonctionnel est rédigé pour structurer le contrat, les développements sont réalisés sans retour des métiers et le produit final est livré, clôturant le contrat.
 
-Cette méthode ne fonctionne plus aujourd’hui avec la dynamique du développement logiciel. La durée de vie moyenne d’un logiciel ne dépasse pas 3 à 5 ans et ce quand bien même en incluant des mises à jour régulières.
+Cette méthode ne fonctionne plus aujourd’hui avec la dynamique du développement logiciel. La durée de vie moyenne d’un logiciel ne dépasse pas 3 à 5 ans[^TimeToOutdatedSoftware] et ce quand bien même en incluant des mises à jour régulières.
 
 Prenons un exemple : vous avez la charge d’équiper votre organisation d’un nouvel outil numérique. Si vous en êtes venu à devoir lancer ce projet, il est probable que le besoin pour cet outil se soit manifesté il y a déjà quelques mois ou années. Vous vous mettez alors en ordre de bataille pour comparer les solutions existantes sur le marché et entrer en contact avec un industriel : cela vous prendra entre 1 à 3 mois. Vous avez trouvé votre industriel : vous organisez une réunion entre les métiers et les industriels pour leur faire comprendre la problématique et vos attendus. La formalisation du cahier des charges prend 1 mois supplémentaire. Quelques aller-retours pour l’ajuster : +1 mois. Vous allez devoir probablement homologuer ce nouvel outil pour respecter la politique SSI de cette organisation : même si cette procédure est réalisée en parallèle, elle vous coûtera probablement au moins 1 mois supplémentaire. La formalisation du contrat prend aussi 1 mois. Le développement prend 3 à 6 mois (et peut prendre du retard ou s’étaler sur des périodes plus grandes selon le cahier des charges). Les présentations et validation du bon fonctionnement : 1 mois. La mise en production 2 semaines à 2 mois supplémentaires selon votre politique SSI et les réseaux à votre disposition. Résultat : le processus vous aura pris environ 1 an tout en n’ayant jamais mis l’outil entre les mains du métier. Vous n’êtes à cette étape même pas sûr qu’il réponde au besoin : rappelez-vous que le besoin exprimé n'est jamais vraiment le besoin effectif.
 
@@ -489,7 +490,7 @@ Au sein de notre équipe SRE de X personnes, vous aurez la charge de :
 - Définir les indicateurs de résilience (SLIs, SLOs), maintenir les tableaux de bords d’indicateurs et les systèmes d’alertes
 - Développer et documenter les configurations des systèmes d’information (Ansible)
 - Maintenir et administrer les sauvegardes de nos systèmes
-- Préparer (s’entraîner) et appliquer des procédures d’urgence selon les 3Cs
+- Préparer (s’entraîner) et appliquer des procédures d’urgence selon les 3Cs[^GoogleWorkbookIncidentResponse]
 - Sensibiliser les ingénieurs à la mise en production
 - Rédiger des postmortems clairs et illustrés pour alimenter notre base de connaissance
 
@@ -531,3 +532,33 @@ Ce livre a pour objectif de vous présenter ce mouvement prenant ses racines che
 Accessible, ce guide pratique et illustré vous permettra de découvrir l’étendu des possibilités qu’offrent les technologies DevOps à l’état de l’art, quels prérequis organisationnels elles nécessitent et comment les implémenter à votre échelle.
 
 :information_source: Bonus : Exemples de fiches de postes dans ce livre.
+
+:information_source: Ce livre a été rédigé avec des pratiques gitops, retrouvez le sur github.com/flavienbwk/book-devops
+
+[^RGPD]: RGPD : Règlement Général sur la Protection des Données
+
+[^DevSecOpsUSAirForce]: [Paupier, François; Chaillan, Nicolas. Post Mortem : Le DevSecOps à l’US Air Force](https://podcast.ausha.co/postmortem/19). 05/06/2022.
+
+[^AtlassianHistoryOfDevops]: [Buchanan, Ian. Atlassian.com: History of DevOps](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
+
+[^TheDevopsHandbook]: Kim, Gene; Debois, Patrick; Willis, John; Humble, Jez; Allspaw, John. The DevOps handbook: how to create world-class agility, reliability, and security in technology organizations. 07/10/2015.
+
+[^GoogleWorkBookEngagementModel]: [Google SRE workbook (sre.google) : Engagement model](https://sre.google/workbook/engagement-model)
+
+[^ModelsIA]: Modèles d’intelligence artificielle : algorithmes entraînés pour résoudre une tâche, la plupart du temps sans supervision
+
+[^JupyterNotebook]: Jupyter Notebook : outil de développement très populaire chez les data-scientists
+
+[^DriversGPU]: Drivers GPU : librairies permettant de faire du calcul accéléré sur carte graphique
+
+[^GoogleWorkbookEliminatingToil]: [Google SRE workbook (sre.google) : Eliminating toil](https://sre.google/sre-book/eliminating-toi)
+
+[^ToDevOps]: [Projet GitHub](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) disponible à links.berwick.fr/todevops-2
+
+[^GAFAM]: GAFAM / FANG : grandes entreprises du numérique américaines (Google, Amazon, Facebook (Meta), Apple, Microsoft, Netflix…)
+
+[^GoogleWorkspaceSLA]: [Google Workspace SLA](https://workspace.google.com/terms/sla.html) is available at workspace.google.com/terms/sla.html
+
+[^TimeToOutdatedSoftware]: Procter & Gamble Co. [2021 Form 10-K](https://sec.report/Document/80424/000008042421000100/R23.htm). 2021. |  Spinellis, Diomidis; Louridas, Panos; Kechagia, Maria. [Software evolution: the lifetime of fine-grained elements](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/). 2021.
+
+[^GoogleWorkbookIncidentResponse]: [Google SRE workbook (sre.google) : Eliminating toil](https://sre.google/sre-book/incident-response)
