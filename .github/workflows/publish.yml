@@ -1,0 +1,19 @@
+name: Publish or update published version of the book
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  publish-update:
+    name: Update the book on Amazon
+    runs-on: ubuntu-20.04
+
+    steps:
+
+      - name: That's funny
+        shell: bash
+        run: |
+          echo "Updating a published book is not currently natively possible through Amazon APIs :)"
