@@ -537,11 +537,11 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l’éte
 
 [^RGPD]: RGPD : Règlement Général sur la Protection des Données
 
-[^DevSecOpsUSAirForce]: [Paupier, François; Chaillan, Nicolas. Post Mortem : Le DevSecOps à l’US Air Force](https://podcast.ausha.co/postmortem/19). 05/06/2022.
+[^DevSecOpsUSAirForce]: [Paupier, François; Chaillan, Nicolas. Post Mortem : Le DevSecOps à l’US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
 
 [^AtlassianHistoryOfDevops]: [Buchanan, Ian. Atlassian.com: History of DevOps](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
 
-[^TheDevopsHandbook]: Kim, Gene; Debois, Patrick; Willis, John; Humble, Jez; Allspaw, John. The DevOps handbook: how to create world-class agility, reliability, and security in technology organizations. 07/10/2015.
+[^TheDevopsHandbook]: Kim, Gene; Debois, Patrick; Willis, John; Humble, Jez; Allspaw, John. The DevOps handbook: how to create world-class agility, reliability, and security in technology organizations. 2015.
 
 [^GoogleWorkBookEngagementModel]: [Google SRE workbook (sre.google) : Engagement model](https://sre.google/workbook/engagement-model)
 
@@ -559,6 +559,6 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l’éte
 
 [^GoogleWorkspaceSLA]: [Google Workspace SLA](https://workspace.google.com/terms/sla.html) is available at workspace.google.com/terms/sla.html
 
-[^TimeToOutdatedSoftware]: Procter & Gamble Co. [2021 Form 10-K](https://sec.report/Document/80424/000008042421000100/R23.htm). 2021. |  Spinellis, Diomidis; Louridas, Panos; Kechagia, Maria. [Software evolution: the lifetime of fine-grained elements](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/). 2021.
+[^TimeToOutdatedSoftware]: Procter & Gamble Co. [2021 Form 10-K](https://sec.report/Document/80424/000008042421000100/R23.htm). 2021. <+> Spinellis, Diomidis; Louridas, Panos; Kechagia, Maria. [Software evolution: the lifetime of fine-grained elements](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/). 2021.
 
-[^GoogleWorkbookIncidentResponse]: [Google SRE workbook (sre.google) : Eliminating toil](https://sre.google/sre-book/incident-response)
+[^GoogleWorkbookIncidentResponse]: [Google SRE workbook (sre.google) : Incident response](https://sre.google/sre-book/incident-response)
