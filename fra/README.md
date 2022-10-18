@@ -482,11 +482,22 @@ Une bonne culture s'entretient par la connaissance des techniques à l'état de 
 
 ## Terminologie "Ops"
 
-Maintenant que vous commencez à comprendre la variété des enjeux du DevOps, il est temps de découvrir et définir les nombreux termes que l'on peut entendre ci et là dans l'industrie.
+Maintenant que vous commencez à comprendre la variété des enjeux du DevOps, il est intéressant de découvrir les nombreux termes que l'on peut entendre ci et là dans l'industrie.
 
-TODO(flavienbwk): Coller le contenu et développer le sujet
+Vous avez probablement déjà entendu une multitude de termes terminant par "Ops" : dans les propositions industrielles, les offres d'emploi ou les services en ligne. Tous ces termes décrivent des spécialités et des pratiques sur la manière dont votre entreprise gère ses projets et son infrastructure informatique. Définissons en quelques-uns :
 
-- EmpOps : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs, OfficeLife...).
+- **DevOps** : méthodologie visant le rapprochement entre les développeurs et les ingénieurs s'occupant de la production.
+- **DevSecOps** : partie du DevOps visant à intégrer les notions de sécurité dès la phase de conception d'un nouveau logiciel ou d'une nouvelle infrastructure. Il s'agit d'organiser l'entreprise de telle sorte à ce que les équipes de Sécurité des Systèmes d'Information (SSI) soient associées à l'ensemble des réflexions au coeur des projets de vos équipes de développement. (cf. [La sécurité : un nouveau paradigme dans le modèle DevOps](#la-sécurité--un-nouveau-paradigme-dans-le-modèle-devops))
+- **FinOps** : ensemble de pratiques pour mieux comprendre et gérer les coûts financiers d'une infrastructure cloud. Cela comprend le suivi et l'optimisation des dépenses, ainsi que la gestion de la facturation et des paiements. Par exemple à l'aide de tableaux de bord ou d'algorithmes automatisés.
+- **MLOps** : ensemble de pratiques pour la collaboration et la communication entre les équipes de datascience et de production pour le développement et le déploiement efficace de modèles de _machine learning_ (ML). L'objectif est d'améliorer la rapidité, la qualité et la résilience des modèles de ML en automatisant et standardisant. (cf. _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
+- **GitOps** : ensemble de règles visant à utiliser _git_[^Git] comme unique source de vérité pour standardiser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#continuous-integration-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
+- **EmpOps** : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs, OfficeLife...).
+- **DataOps** : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
+- **DevDataOps** : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
+
+L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
+
+Chacune de ces spécialités est un moyen d'optimiser vos pratiques DevOps et doit s'adapter à la maturité de l'entreprise. Ne vous mettez pas en tête de toutes les implémenter avant d'avoir commencé à bien appréhender et mettre en pratique le DevOps dans votre organisation.
 
 ## Fiches de poste (avec exemples)
 
@@ -628,3 +639,11 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 [^GoogleWorkbookIncidentResponse]: [Google SRE workbook (sre.google) : Incident response](https://sre.google/sre-book/incident-response)
 
 [^ANSSIQualifiedSoftware]: La [certification "critères communs"](https://www.ssi.gouv.fr/administration/produits-certifies/cc/) de l'ANSSI requiert la définition d'une version du logiciel audité.
+
+[^Git]: [Page Wikipédia de Git](https://fr.wikipedia.org/wiki/Git)
+
+[^DataOpsPaper]: Capizzi, Antonio; Distefano, Salvatore; Mazzara, Manuel. [From DevOps to DevDataOps](https://arxiv.org/pdf/1910.03066.pdf). 2019.
+
+[^DataOpsManifesto]: 18 DataOps principles of [The DataOps Manifesto](https://dataopsmanifesto.org/en/).
+
+[^MLOpsPaper]:  Kreuzberger, Dominik; Kühl, Niklas; Hirschl, Sebastian. [MLOps: Overview, Definition, and Architecture](https://arxiv.org/abs/2205.02302). 2022.
