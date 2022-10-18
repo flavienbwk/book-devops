@@ -497,7 +497,7 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
-Chacune de ces spécialités est un moyen d'optimiser vos pratiques DevOps et doit s'adapter à la maturité de l'entreprise. Ne vous mettez pas en tête de toutes les implémenter avant d'avoir commencé à bien appréhender et mettre en pratique le DevOps dans votre organisation.
+Chacune de ces spécialités est un moyen d'optimiser vos pratiques DevOps et doit s'adapter à la maturité de l'entreprise. Ne vous mettez pas en tête de toutes les implémenter avant d'avoir bien appréhendé et mis en pratique le DevOps dans votre organisation.
 
 ## Fiches de poste (avec exemples)
 
