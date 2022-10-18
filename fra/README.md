@@ -482,9 +482,11 @@ Une bonne culture s'entretient par la connaissance des techniques à l'état de 
 
 ## Terminologie "Ops"
 
-Maintenant que vous commencez à comprendre la variété des enjeux du DevOps, il est temps de découvrir les nombreux termes que l'on peut entendre ci et là dans l'industrie.
+Maintenant que vous commencez à comprendre la variété des enjeux du DevOps, il est temps de découvrir et définir les nombreux termes que l'on peut entendre ci et là dans l'industrie.
 
 TODO(flavienbwk): Coller le contenu et développer le sujet
+
+- EmpOps : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs, OfficeLife...).
 
 ## Fiches de poste (avec exemples)
 
@@ -494,7 +496,7 @@ Si votre besoin n'est pas bien défini, la fiche de poste risque d'être un four
 
 Vous devez faire l'effort de définir le périmètre du poste que vous rédigez ou bien assumer le fait que votre environnement est si singulier qu'il nécessite une réadaptation très régulière (ou "tactique"). Hormis dans les secteurs de la sécurité et de la défense, vous ne devriez pas considérer votre activité comme telle.
 
-Les exemples de fiches de poste ci-dessous sont indicatives et doivent être adaptées à votre situation. Modifiez le contexte et les missions que vous souhaitez confier à votre futur ingénieur DevOps ou SRE. Modifiez également les compétences que vous souhaitez mettre en avant selon votre projet du moment.
+Les exemples de fiches de poste ci-dessous sont indicatives et doivent être adaptées à votre situation (maturité et taille des équipes, de l'organisation). Modifiez le contexte et les missions que vous souhaitez confier à votre futur ingénieur DevOps ou SRE. Modifiez également les compétences que vous souhaitez mettre en avant selon votre projet du moment.
 
 ### Ingénieur DevOps
 
