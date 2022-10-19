@@ -216,9 +216,9 @@ TODO(flavienbwk): parler de l'article de Preston DUNLAP
 Une organisation a la possibilité d'éviter ce retard grâce à plusieurs pratiques :
 
 - Former de manière continue son personnel, en particulier les décideurs (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
-- [Mesurer](#tout-mesurer) et mettre en place des indicateurs pour éviter de s'habituer (cf. chapitre "[Tout mesurer](#tout-mesurer)")
+- Mesurer et mettre en place des indicateurs pour éviter de s'habituer (cf. chapitre "[Tout mesurer](#tout-mesurer)")
 - Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec comme normal](#accepter-léchec-comme-normal)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
-- Garder une [capacité d'initiatives interne](#modèle-déquipe-interne) pour critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)")
+- Conserver une capacité d'innovation interne pour être en mesure de critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)")
 
 ## Prérequis
 
