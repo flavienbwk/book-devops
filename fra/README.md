@@ -54,7 +54,7 @@ Le guide pragmatique des décideurs pour comprendre et agir.
 
 ## Introduction
 
-De nombreuses organisations ont déjà lancé leur transformation dans le but d'atteindre un fonctionnement en mode "DevOps" :
+De nombreuses organisations ont déjà entamé leur transformation dans le but d'atteindre un fonctionnement en mode "DevOps".
 
 TODO(flavienbwk): GHCQ [going DevOps](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)
 
@@ -62,13 +62,13 @@ TODO(flavienbwk): Department of Defense going DevSecOps :
 - https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf
 - https://breakingdefense.com/2021/05/dod-publishes-devsecops-2-0-docs-for-accelerating-apps/
 
-Ce livre est rédigé en deux parties : une première orientée sur l'organisation et l'autre davantage sur les aspects technique. En tant que responsable d'une initiative DevOps, vous vous devez de maîtriser ces deux parties pour prendre les meilleures décisions et rester crédible face à votre hiérarchie et vos subordonnés.
+Ce livre est rédigé en deux parties : une première orientée sur l'aspect organisationnel et l'autre davantage sur les aspects technique. En tant que responsable d'une initiative DevOps, vous vous devez de maîtriser ces deux parties pour prendre les meilleures décisions et rester crédible face à votre hiérarchie et vos subordonnés.
 
 Rassurez-vous, ce livre vulgarise toutes les notions techniques qui seront abordées. L'idée est de donner une ligne directrice pour vous orienter vers une première expérimentation DevOps ou d'affiner celle que vous soutenez.
 
-Comme vous le comprendrez par la suite, chaque organisation a ses propres besoins et il n'y a pas de recette unique. Néanmoins, des standards éprouvés existent et c'est ceux-là qui vous seront présentés.
+Comme vous le comprendrez par la suite, chaque organisation a ses propres besoins et il n'y a pas de recette unique. Néanmoins, des standards éprouvés existent. C'est ceux-là qui vous seront présentés.
 
-Soyez en tout cas assuré que les efforts que vous déploierez à faire du DevOps au sein de votre organisation seront récompensés par une organisation plus efficace, agile et pérenne.
+Soyez assuré que les efforts que vous déploierez à faire du DevOps au sein de votre organisation seront récompensés par une organisation plus efficace, agile et pérenne.
 
 ## DevOps vs Site Reliability Engineering
 
@@ -218,6 +218,7 @@ Une organisation a la possibilité d'éviter ce retard grâce à plusieurs prati
 - Former de manière continue son personnel, en particulier les décideurs (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
 - [Mesurer](#tout-mesurer) et mettre en place des indicateurs pour éviter de s'habituer (cf. chapitre "[Tout mesurer](#tout-mesurer)")
 - Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec comme normal](#accepter-léchec-comme-normal)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
+- Garder une [capacité d'initiatives interne](#modèle-déquipe-interne) pour critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)")
 
 ## Prérequis
 
@@ -649,7 +650,7 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 
 [^GoogleWorkbookEliminatingToil]: [Google SRE workbook (sre.google) : Eliminating toil](https://sre.google/sre-book/eliminating-toil)
 
-[^ToDevOps]: [Projet GitHub](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) disponible à links.berwick.fr/todevops-2
+[^ToDevOps]: [Projet GitHub](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) disponible à [links.berwick.fr/todevops-2](https://links.berwick.fr/todevops-2)
 
 [^GAFAM]: GAFAM / FANG : grandes entreprises américaines du numérique (Google, Amazon, Facebook (Meta), Apple, Microsoft, Netflix…)
 
