@@ -191,14 +191,33 @@ Si vous estimez ne pas avoir les ressources en interne, ne craignez pas de recru
 
 ### Refuser le retard technologique
 
-TODO(flavienbwk): Développer le sujet
+> "C'est normal, nous aurons toujours du retard ici."
+
+Combien de fois ais-je entendu cette affirmation... Après le fait d'être anéanti devant tant de désinvolture, c'est à chaque fois un véritable sentiment d'indignation qui vient à moi.
+
+Certes il peut y avoir un délais, raisonnable selon l'environnement (exigences de sécurité, taille des équipes), mais sûrement pas un retard. Et en aucun cas cette affirmation ne doit devenir la réponse par défaut.
+
+Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire pire peut-être pour certains, de fainéantise. Ces comportements n'ont pas leur place en entreprise.
+<!-- Evoquer ce passage critique est-il nécessaire pour faire avancer le sujet ? -->
+
+Si la majorité des collaborateurs d'une entreprise en viennent à penser qu'elle a du retard, il y a un sérieux problème. Maintenir le _statu quo_ sur cette situation mène inévitablement au déclin de l'organisation et en la perte totale de crédibilité, de la part de ses employés et de ses partenaires.
+
+Dans l'un de ses articles[^ArticlePSSyndromeCanard], le conférencier et expert en transformation Philippe Silberzahn prend l'exemple d'un homme qui attend un train qui devait arriver à 9h30. Le panneau d'affichage affiche "A l'heure" malgré qu'il soit 9h35 à sa montre. L'homme songe à prendre une photo du panneau mais se demande "à quoi bon". La majorité trouveraient qu'il chipote pour 5 minutes, seraient agacés, ou diraient que c'est une erreur d'affichage. "Après tout, personne n'y peut rien". C'est avec ce genre de comportement que Philippe Silberzahn affirme que les organisations déclinent : elles s'habituent à la médiocrité.
+
+Alors qu'au début le dysfonctionnement est considéré inadmissible, il devient avec le temps de plus en plus acceptable par l'organisation sans qu'elle se rende compte que cette situation lui consomme du temps et lui coûte de l'argent. L'effort pour corriger le problème devient de moins en moins justifiable et le silence devient le choix par défaut pour conserver son énergie. Jusqu'à ce qu'une situation irrémédiable se produise (ou qu'un groupe de quelques courageux secouent la structure!).
+
+TODO(flavienbwk): parler de l'article de Preston DUNLAP
 
 <!--
 { https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/, https://philippesilberzahn.com/2022/09/12/innovation-les-modeles-mentaux-errones-de-la-distinction-entre-exploration-et-exploitation/ }
 { https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z }
 -->
 
-Refuser ce retard passe par la formation continue de vos personnels, [dont nous parlerons plus tard dans ce livre](#former-de-manière-continue).
+Une organisation a la possibilité d'éviter ce retard grâce à plusieurs pratiques :
+
+- Former de manière continue son personnel, en particulier les décideurs (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
+- [Mesurer](#tout-mesurer) et mettre en place des indicateurs pour éviter de s'habituer (cf. chapitre "[Tout mesurer](#tout-mesurer)")
+- Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec comme normal](#accepter-léchec-comme-normal)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
 
 ## Prérequis
 
@@ -313,6 +332,8 @@ TODO(flavienbwk): Développer le sujet. Besoin de remettre tout le monde à la t
 
 TODO(flavienbwk): Développer [le sujet](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084#pdfviewer)
 
+TODO(flavienbwk): Répondre au commentaire http://disq.us/p/207i3e7 (la personne est censée avoir passé des entretiens, est censée connaître son métier : l'erreur est une exception. Donc le seul problème vient des process de l'entreprise qui sont mal décrits ou pas assez automatisés.)
+
 ### Réduire le coût du changement
 
 TODO(flavienbwk): Développer le sujet
@@ -340,7 +361,7 @@ Ce terme populaire est simple à appréhender : il s'agit des pratiques et des 
 Voici quelques exemples de configuration :
 
 - Définir le nouveau serveur de temps de toutes vos machines
-- Mettre à jour un logiciel en production (c.f : Continuous Delivery)
+- Mettre à jour un logiciel en production (cf. : Continuous Delivery)
 - Mettre à jour le fond d'écran de toutes vos machines
 - Ajouter un nouveau nom de domaine
 
@@ -608,9 +629,9 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 
 :information_source: Bonus : Exemples de fiches de postes dans ce livre.
 
-:information_source: Ce livre a été rédigé avec des pratiques gitops, retrouvez le sur github.com/flavienbwk/book-devops
+:information_source: Ce livre a été rédigé avec des pratiques gitops, retrouvez-le sur _github.com/flavienbwk/book-devops_.
 
-[^RGPD]: RGPD : Règlement Général sur la Protection des Données
+[^RGPD]: [RGPD : Règlement Général sur la Protection des Données](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
 [^DevSecOpsUSAirForce]: [Paupier, François; Chaillan, Nicolas. Post Mortem : Le DevSecOps à l'US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
 
@@ -647,3 +668,7 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 [^DataOpsManifesto]: 18 DataOps principles of [The DataOps Manifesto](https://dataopsmanifesto.org/en/).
 
 [^MLOpsPaper]:  Kreuzberger, Dominik; Kühl, Niklas; Hirschl, Sebastian. [MLOps: Overview, Definition, and Architecture](https://arxiv.org/abs/2205.02302). 2022.
+
+[^ArticlePSSyndromeCanard]: Silberzahn, Philippe. [_Le syndrome du canard: comment les organisations en déclin s’habituent à la médiocrité_](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/). 2022.
+
+[^SREBlamelessCulture]: devops.com, [_How SRE creates a blameless culture_](https://devops.com/how-sre-creates-a-blameless-culture/). 2019.
