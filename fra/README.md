@@ -20,6 +20,7 @@ Le guide pragmatique des décideurs pour comprendre et agir.
     - [Refuser le retard technologique](#refuser-le-retard-technologique)
   - [Prérequis](#prérequis)
   - [Modèle d'équipe interne](#modèle-déquipe-interne)
+    - [Le développement interne comme véritable alternative](#le-développement-interne-comme-véritable-alternative)
     - [Équipes « innovantes » et « intelligence artificielle »](#équipes-innovantes-et-intelligence-artificielle)
     - [Être au plus proche du métier](#être-au-plus-proche-du-métier)
     - [Libérer la parole et dé-siloter l'accès aux données](#libérer-la-parole-et-dé-siloter-laccès-aux-données)
@@ -198,27 +199,23 @@ Combien de fois ais-je entendu cette affirmation... Après le fait d'être anéa
 Certes il peut y avoir un délais, raisonnable selon l'environnement (exigences de sécurité, taille des équipes), mais sûrement pas un retard. Et en aucun cas cette affirmation ne doit devenir la réponse par défaut.
 
 Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire pire peut-être pour certains, de fainéantise. Ces comportements n'ont pas leur place en entreprise.
-<!-- Evoquer ce passage critique est-il nécessaire pour faire avancer le sujet ? -->
 
 Si la majorité des collaborateurs d'une entreprise en viennent à penser qu'elle a du retard, il y a un sérieux problème. Maintenir le _statu quo_ sur cette situation mène inévitablement au déclin de l'organisation et en la perte totale de crédibilité, de la part de ses employés et de ses partenaires.
 
-Dans l'un de ses articles[^ArticlePSSyndromeCanard], le conférencier et expert en transformation Philippe Silberzahn prend l'exemple d'un homme qui attend un train qui devait arriver à 9h30. Le panneau d'affichage affiche "A l'heure" malgré qu'il soit 9h35 à sa montre. L'homme songe à prendre une photo du panneau mais se demande "à quoi bon". La majorité trouveraient qu'il chipote pour 5 minutes, seraient agacés, ou diraient que c'est une erreur d'affichage. "Après tout, personne n'y peut rien". C'est avec ce genre de comportement que Philippe Silberzahn affirme que les organisations déclinent : elles s'habituent à la médiocrité.
+Dans l'un de ses articles[^ArticlePSSyndromeCanard], le conférencier et expert en transformation Philippe Silberzahn prend l'exemple d'un homme attendant un train qui devait arriver à 9h30. Le panneau d'affichage affiche "A l'heure" malgré qu'il soit 9h35 à sa montre. L'homme songe à prendre une photo du panneau mais se demande "à quoi bon". La majorité des gens trouveraient qu'il chipote pour 5 minutes, seraient agacés, ou diraient que c'est une erreur d'affichage. "Après tout, personne n'y peut rien". C'est avec ce genre de comportement que Philippe Silberzahn affirme que les organisations déclinent : elles s'habituent à la médiocrité.
 
-Alors qu'au début le dysfonctionnement est considéré inadmissible, il devient avec le temps de plus en plus acceptable par l'organisation sans qu'elle se rende compte que cette situation lui consomme du temps et lui coûte de l'argent. L'effort pour corriger le problème devient de moins en moins justifiable et le silence devient le choix par défaut pour conserver son énergie. Jusqu'à ce qu'une situation irrémédiable se produise (ou qu'un groupe de quelques courageux secouent la structure!).
+Alors qu'au début le dysfonctionnement est considéré inadmissible, il devient avec le temps de plus en plus acceptable par l'organisation, sans qu'elle se rende compte que cette situation lui coûte du temps et de l'argent. L'effort pour corriger le problème devient de moins en moins justifiable et le silence devient le choix par défaut pour conserver son énergie. Jusqu'à ce qu'une situation irrémédiable se produise (ou qu'un groupe de quelques courageux secouent la structure!).
 
-TODO(flavienbwk): parler de l'article de Preston DUNLAP
+Mais il faut également savoir communiquer à temps sur ses innovations. Preston Dunlap, premier directeur technique (CTO) de l'Armée de l'Air américaine, décrit dans sa lettre publique _Défier la Gravité_ combien les "forces bureaucratiques" peuvent nuire à l'innovation si on les présente trop tôt.
 
-<!--
-{ https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/, https://philippesilberzahn.com/2022/09/12/innovation-les-modeles-mentaux-errones-de-la-distinction-entre-exploration-et-exploitation/ }
-{ https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z }
--->
+> "Certains m'ont demandé quelle fut ma recette pour réussir durant ces 3 dernières années. Je n'en ai pas beaucoup parlé parce-que je savais que si je révélais les éléments trop à l'avance, les forces naturelles de la bureaucratie reviendraient de plus belle, pour rejeter à chaque occasion tout le potentiel de l'innovation." - Preston Dunlap, Défier la Gravité (_Defying Gravity_) [^DefyingGravity]
 
-Une organisation a la possibilité d'éviter ce retard grâce à plusieurs pratiques :
+Pour éviter le retard technologique, une organisation peut adopter plusieurs pratiques :
 
 - Former de manière continue son personnel, en particulier les décideurs (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
 - Mesurer et mettre en place des indicateurs pour éviter de s'habituer (cf. chapitre "[Tout mesurer](#tout-mesurer)")
 - Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec comme normal](#accepter-léchec-comme-normal)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
-- Conserver une capacité d'innovation interne pour être en mesure de critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)")
+- Conserver une capacité d'innovation interne pour rester en mesure de critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)", _Comment l’entreprise peut sortir de la spirale du déclin_[^ArticlePSSortirSpiraleDeclin])
 
 ## Prérequis
 
@@ -239,6 +236,39 @@ Pour amorcer votre initiative DevOps, vous avez besoin :
 - De plusieurs profils SRE/DevOps qui développeront votre socle et géreront le cycle de développement/déploiement des logiciels
 
 ## Modèle d'équipe interne
+
+### Le développement interne comme véritable alternative
+
+Dans le chapitre "[Refuser le retard technologique](#refuser-le-retard-technologique)", j'évoque l'innovation interne comme moyen pour éviter le déclin d'une organisation. Mais je me dois de préciser en quoi le développement interne au delà d'être utile et pratique, s'avère être une condition si l'entreprise souhaite rester compétitive.
+
+Quelle entreprise responsable d'un gros projet informatique dans le privé (c'est à dire quasiment toutes en 2022), pourrait se permettre de dire "Nous n'avons pas besoin d'expert informatique" ? Le recours aux sociétés de conseil est chronique dans les grandes entreprises. Cela est dû principalement au manque d'audace des décideurs à l'idée de monter leurs propres équipes techniques.
+
+Les différentes forces d'une équipe interne vis-à-vis d'équipes externes :
+
+- Une compréhension au jour le jour des enjeux de l'entreprise
+- Une meilleure compréhension des forces et des faiblesses de l'entreprise
+- Une meilleure compréhension des produits et des clients/métiers de l'entreprise
+- Un meilleur contrôle sur la feuille de route des projets
+- Des outils qui répondent mieux au client / aux besoins métiers
+- Des coûts de développement réduits
+- Une source d'expertise pour orienter les décideurs (capacité de critique)
+- Un support de proximité pour les utilisateurs, sans surcoût
+- Des mises à jour plus rapides, en lien direct avec le besoin exprimé
+- Si votre entreprise manipule des données confidentielles ou classifiées : moins de risques de fuite et des coûts limités
+
+Compter uniquement sur une ressource externe (des industriels) pour effectuer vos projets informatiques mènera inévitablement à des coûts prohibitifs. Sans expertise interne, vous êtes à la merci des talentueuses équipes commerciales de ces entreprises qui ne manqueront pas de vous vendre un tas de services dont vous n'aurez jamais l'usage.
+
+La raison principale de la frilosité des décideurs à l'égard des développements internes est la maintenance. Ils ont raison : payer un industriel leur coûte cher mais ce dernier est tenu d'honorer sa prestation par un contrat. Voire de maintenir le logiciel, pourvu qu'on le paye. Un seul développeur interne - peu outillé car peu soutenu - risque d'échouer. Cela mettrait en cause la responsabilité du décideur.
+
+Ainsi, embaucher deux ou trois ingénieurs ne suffira pas pour pérenniser vos développements. Pour réussir à proposer une alternative utile, qui puisse s'avérer être une solution alternative maintenable et crédible pour votre hiérarchie, vous devrez monter une équipe plus conséquente.
+
+En outillant cette équipe d'un véritable environnement de développement (cf. "[Usine logicielle](#usine-logicielle)") et en incluant de bonnes pratiques DevOps, elle aura le temps de s'attarder sur la qualité de vos logiciels. C'est un investissement en temps, un moment difficile à passer avec votre hiérarchie, mais elle ne sait pas encore que ce sera prochainement une véritable aubaine !
+
+Dans l'une des entreprises pour laquelle j'ai travaillé, le développement interne d'un logiciel par un ingénieur a permis d'économiser plusieurs millions d'euros. Les programmes industriels équivalents n'avançaient pas et les métiers restaient démunis. Il a fallu un seul ingénieur - certes brillant - pour résoudre un problème qui durait depuis plus de 6 ans.
+
+Grâce aux règles DevOps exigeant des standards de qualité logiciels, plus de 10 développeurs au cours des 3 dernières années ont pu contribuer à ce projet pour le maintenir et l'améliorer. Il reçoit encore aujourd'hui de nombreuses mises à jour hebdomadaires.
+
+Au delà d'apporter une solution concrète à un problème, cet ingénieur a surtout permis d'acculturer l'ensemble de la hiérarchie aux notions de développement moderne et de techniques de _machine learning_. Devant les industriels et convié aux grandes réunions stratégiques, il est devenu le référent _machine learning_ de l'organisation. Sans qui personne en interne ne serait en mesure de spécifier un besoin _machine learning_ en toute connaissance de cause.
 
 ### Équipes « innovantes » et « intelligence artificielle »
 
@@ -502,6 +532,16 @@ TODO(flavienbwk): Développer le sujet
 
 Une bonne culture s'entretient par la connaissance des techniques à l'état de l'art. Les compétences techniques de vos équipes constituent le terreau de votre organisation et forgent leur confiance à l'égard de votre résilience.
 
+La formation continue est un moyen simple d'éviter à votre organisation de perdre des millions d'euros chaque année. En effet, si votre personnel reste formé à l'état de l'art des technologies, ils sera moins susceptibles de se faire duper par des tiers-parties. Ces derniers arrivent souvent promettre "la solution idéale" au travers de présentations flatteuses et très ambitieuses, qui cachent la plupart du temps un service non abouti ou complètement non fonctionnel. En restant à jour, vos collaborateurs prendront les meilleures décisions pour votre porte monnaie et le futur de l'organisation.
+
+Mais garder le rythme n'est pas simple, surtout à la vitesse à laquelle les technologies évoluent. Raison de plus pour mettre en place des bonnes pratiques dès l'arrivée de vos collaborateurs.
+
+TODO(flavienbwk): Exemple onboarding Google : 1 semaine dédiée sensibilisation + formation puis sensibilisation au cours de l'année sur plateforme dédiée. On doit passer ces sensis régulièrement.
+
+TODO(flavienbwk): Donner accès à plateformes e-learning ou formations payées tout au long de l'année avec des heures dédiées (voire du télétravail). A l'instar du DoD.
+
+Si vous avez la chance de déjà avoir des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, d'innover. C'est ce que j'ai observé de plus rentable pour l'organisation. Donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
+
 ## Terminologie "Ops"
 
 Maintenant que vous commencez à comprendre la variété des enjeux du DevOps, il est intéressant de découvrir les nombreux termes que l'on peut entendre ci et là dans l'industrie.
@@ -673,3 +713,7 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 [^ArticlePSSyndromeCanard]: Silberzahn, Philippe. [_Le syndrome du canard: comment les organisations en déclin s’habituent à la médiocrité_](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/). 2022.
 
 [^SREBlamelessCulture]: devops.com, [_How SRE creates a blameless culture_](https://devops.com/how-sre-creates-a-blameless-culture/). 2019.
+
+[^ArticlePSSortirSpiraleDeclin]: Silberzahn, Philippe. [_Le canard était toujours vivant: comment l’entreprise peut sortir de la spirale du déclin_](https://philippesilberzahn.com/2022/09/26/le-canard-etait-toujours-vivant-comment-lentreprise-peut-sortir-de-la-spirale-du-declin/). 2022.
+
+[^DefyingGravity]: Dunlap, Preston. [_Defying gravity_](https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z/). 2022.
