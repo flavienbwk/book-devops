@@ -11,7 +11,7 @@ Le guide pragmatique des décideurs pour comprendre et agir.
     - [DevOps](#devops)
     - [Site Reliability Engineering (SRE)](#site-reliability-engineering-sre)
     - [En deux phrases](#en-deux-phrases)
-    - [Note : le DevSecOps](#note-le-devsecops)
+    - [DevSecOps](#devsecops)
   - [Les cinq piliers du DevOps](#les-cinq-piliers-du-devops)
   - [Le DevOps, d'expérience](#le-devops-dexpérience)
     - [Préjugé](#préjugé)
@@ -73,13 +73,13 @@ Soyez assuré que les efforts que vous déploierez à faire du DevOps au sein de
 
 ## DevOps vs Site Reliability Engineering
 
-Si le terme DevOps devient de plus en plus populaire et commence à devenir courant dans les offres d'emploi, celui de Site Reliability Engineering (SRE) est moins connu, en particulier en France.
+Si le terme DevOps devient de plus en plus populaire et commence à devenir courant dans les offres d'emploi, celui de _Site Reliability Engineering_ (SRE) est moins connu, en particulier en France.
 
 ![Evolution de l'intérêt pour le terme "DevOps"](./images/figure_1.png "Evolution de l'intérêt pour le terme 'DevOps' (2014 à 2022, trends.google.com)")
 > Evolution de l'intérêt pour le terme 'DevOps' (2014 à 2022, trends.google.com)
 
 ![Intérêt pour le terme "Site Reliability Engineering" selon les pays.](./images/figure_2.png "Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48e sur 58.")
-> Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48e sur 58.
+> Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48ème sur 58.
 
 Pour bien débuter et comprendre comment le DevOps peut aider votre organisation, commençons par définir deux des termes les plus importants à connaître dans ce milieu.
 
@@ -87,33 +87,39 @@ Pour bien débuter et comprendre comment le DevOps peut aider votre organisation
 
 C'est le lien entre le monde du développement et de la production.
 
-On qualifie de « DevOps » (Development Operations) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, les mettre en production plus rapidement, améliorer leur fiabilité tout en cultivant ce sentiment de responsabilité partagée entre les parties-prenantes (ingénieurs, responsables projet et utilisateurs).
+« Dev » signifie « développement » pendant que « Ops » désigne l'exploitation des systèmes informatiques en production.
 
-L'ingénieur « DevOps » est celui en charge de définir et d'implémenter les techniques permettant d'atteindre ces objectifs au sein de votre institution. En équipe, ils garantissent la cohérence des développements avec les exigences du déploiement le plus en amont possible, souvent avec des scripts automatisés d'intégration continue au sein d'une forge logicielle (ex. GitLab).
+On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs) grâce à des techniques et des outils.
 
-C'est un métier exigeant d'excellentes compétences de communication et de pédagogie.
+L'ingénieur « DevOps » est celui en charge de définir et d'implémenter ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement le plus en amont possible, souvent avec des [scripts automatisés](#continuous-integration-ci) au sein d'une [forge logicielle](#usine-logicielle).
+
+Ce poste impliquant de mettre d'accord toutes les parties prenantes sur une méthode de travail commune, il est exigé de disposer d'excellentes compétences en communication et en pédagogie.
 
 ### Site Reliability Engineering (SRE)
 
-Le Site Reliability Engineer a la charge de concevoir, déployer et maintenir l'infrastructure qui met à disposition les services pour implémenter des techniques DevOps. Il s'assure du bon fonctionnement du socle technique sur lequel sont déployés les logiciels, garantie la sécurité et les mises à jour.
+Le _Site Reliability Engineer_ ou _Ingénieur de la Résilience des Systèmes_ a la charge de concevoir, déployer et maintenir l'infrastructure qui met à disposition les services de l'entreprise. Il s'assure du bon fonctionnement du socle technique sur lequel sont déployés les logiciels, assure la sécurité et garantit la disponibilité.
 
-L'équipe SRE a donc la responsabilité de votre infrastructure informatique, souvent composée de plusieurs environnements : développement, pré-production (également appelé « staging »), production.
+L'équipe SRE a donc la responsabilité de votre infrastructure informatique. Cette dernière est souvent composée de plusieurs environnements : développement, pré-production (également appelé _staging_), production.
 
 ### En deux phrases
 
-En résumé, l'ingénieur DevOps est responsable de la mise en place de tous les prérequis nécessaires à la mise en production rapide d'un logiciel selon les standards de qualité des équipes SRE. Le SRE lui, est responsable de la mise en production en elle-même et garantit la disponibilité de ces logiciels.
+En résumé, l'ingénieur DevOps est responsable de la mise en place de l'ensemble des prérequis nécessaires à la mise en production rapide d'un logiciel, selon les standards de qualité des équipes SRE. Le SRE est lui responsable de la mise en production effective des logiciels et garantit leur disponibilité.
 
-### Note : le DevSecOps
+### DevSecOps
 
-Le terme DevSecOps devient également très populaire. Il qualifie les procédures DevOps intégrant nativement les considérations de sécurité dans le cycle de développement du logiciel et son exploitation en production.
+Le terme DevSecOps est également populaire. Il qualifie les procédures DevOps intégrant nativement les considérations de sécurité dans le cycle de développement du logiciel et son exploitation en production.
 
-Par exemple, développer dès le début du projet les fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d'en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#continuous-integration-ci) dans le code.
+En terme organisationnel, il s'agit principalement d'intégrer les équipes de Sécurité des Systèmes d'Information (SSI) dans tous les échanges entre les développeurs et les équipes de production. Ces équipes auront la charge de définir et contrôler l'existence des fonctionnalités de confidentialité et de sécurité dans les logiciels, dès la phase de conception.
+
+Par exemple, l'existence des fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d'en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#continuous-integration-ci) dans le code.
 
 Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'Armée de l'Air américaine [le définit](https://podcast.ausha.co/postmortem/19)[^DevSecOpsUSAirForce] de cette manière :
 
 > « Le DevSecOps est l'évolution de l'ingénierie logicielle. C'est l'équilibre entre la vélocité de développement et le temps alloué aux considérations de sécurité. On veut que la sécurité soit intégrée pour être sûr qu'elle ne soit pas oubliée mais ajoutée au cycle de développement logiciel. C'est utiliser les procédés de cybersécurité modernes pour être sûr que le logiciel est à la fois performant et construit d'une manière sécurisée pour être sûr qu'il n'ait pas de problème au fil du temps. C'est ce qui va permettre aux sociétés et organisations de rester concurrentielles et d'avancer à l'avenir à la vitesse nécessaire face à leurs concurrents. »
 
-Nous n'en parlerons pas davantage dans ce livre car le DevSecOps est à mon sens analogue à la méthodologie DevOps et plus généralement à l'ingénierie logicielle moderne : la sécurité est un prérequis indiscutable de toute organisation et ses bonnes pratiques s'intègrent nativement avec les techniques DevOps qui vont vous être présentées.
+Nous n'en parlerons pas davantage en ce terme car le DevSecOps est à mon sens analogue à la méthodologie DevOps et plus généralement à l'ingénierie logicielle moderne : la sécurité est un prérequis indiscutable de toute organisation et ses bonnes pratiques s'intègrent nativement avec les techniques DevOps qui vont vous être présentées.
+
+Les paradigmes de sécurité dans un modèle d'organisation DevOps seront abordés dans le chapitre "[La sécurité : un nouveau paradigme dans le modèle DevOps](#la-sécurité--un-nouveau-paradigme-dans-le-modèle-devops)".
 
 ## Les cinq piliers du DevOps
 
@@ -526,19 +532,21 @@ Cette pratique est un win-win-win-win : le client réduit les délais de livrai
 
 ## Former de manière continue
 
-TODO(flavienbwk): Développer le sujet
-
-<!-- {@13min https://podcast.ausha.co/postmortem/19} -->
-
 Une bonne culture s'entretient par la connaissance des techniques à l'état de l'art. Les compétences techniques de vos équipes constituent le terreau de votre organisation et forgent leur confiance à l'égard de votre résilience.
 
-La formation continue est un moyen simple d'éviter à votre organisation de perdre des millions d'euros chaque année. En effet, si votre personnel reste formé à l'état de l'art des technologies, ils sera moins susceptibles de se faire duper par des tiers-parties. Ces derniers arrivent souvent promettre "la solution idéale" au travers de présentations flatteuses et très ambitieuses, qui cachent la plupart du temps un service non abouti ou complètement non fonctionnel. En restant à jour, vos collaborateurs prendront les meilleures décisions pour votre porte monnaie et le futur de l'organisation.
+La formation continue est un moyen simple d'éviter à votre organisation de perdre des millions d'euros chaque année. En effet, si votre personnel reste formé à l'état de l'art des technologies, ils sera moins susceptibles de se faire duper par des tiers-parties. Ces derniers arrivent souvent promettre "la solution idéale" au travers de présentations flatteuses et très ambitieuses, qui cachent la plupart du temps un service non abouti ou complètement non fonctionnel. En restant à jour, vos collaborateurs prendront de meilleures décisions pour votre porte monnaie et le futur de votre organisation.
 
-Mais garder le rythme n'est pas simple, surtout à la vitesse à laquelle les technologies évoluent. Raison de plus pour mettre en place des bonnes pratiques dès l'arrivée de vos collaborateurs.
+Mais garder le rythme n'est pas simple, surtout à la vitesse à laquelle les technologies évoluent. Raison de plus pour mettre en place des bonnes pratiques dès l'arrivée de vos collaborateurs, puis tout au long de leur expérience dans votre organisation.
+
+L'Armée de l'Air américaine s'est mise depuis 2019 en ordre de bataille en investissant massivement dans des solutions d'auto-apprentissage. Dans un podcast[^DevSecOpsUSAirForce], son ancien Directeur de l'Ingénierie Logicielle (_Chief Software Officer_) Nicolas CHAILLAN explique comment il a mis en place ce système pour plus de 100 000 développeurs. Une plateforme web a été déployée avec du contenu pédagogique spécialement sélectionné ou créé par ses équipes. Il ajoute qu'une heure par jour a été accordé aux collaborateurs pour "rattraper le retard et continuer d'être à jour sur les dernières technologies".
+
+> "C'est de l'investissement pour l'entreprise et en eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix." - Nicolas CHAILLAN
 
 TODO(flavienbwk): Exemple onboarding Google : 1 semaine dédiée sensibilisation + formation puis sensibilisation au cours de l'année sur plateforme dédiée. On doit passer ces sensis régulièrement.
 
 TODO(flavienbwk): Donner accès à plateformes e-learning ou formations payées tout au long de l'année avec des heures dédiées (voire du télétravail). A l'instar du DoD.
+
+A l'instar de l'initiative de l'Armée de l'Air américaine, une méthode qui a bien fonctionnée dans mes précédentes expériences était 
 
 Si vous avez la chance de déjà avoir des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, d'innover. C'est ce que j'ai observé de plus rentable pour l'organisation. Donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
 
@@ -674,7 +682,7 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 
 [^RGPD]: [RGPD : Règlement Général sur la Protection des Données](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
-[^DevSecOpsUSAirForce]: [Paupier, François; Chaillan, Nicolas. Post Mortem : Le DevSecOps à l'US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
+[^DevSecOpsUSAirForce]: Paupier, François; Chaillan, Nicolas. [Postmortem #19 : Le DevSecOps à l'US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
 
 [^AtlassianHistoryOfDevops]: [Buchanan, Ian. Atlassian.com: History of DevOps](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
 
