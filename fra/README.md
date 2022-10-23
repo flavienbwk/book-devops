@@ -16,6 +16,7 @@ Le guide pragmatique des décideurs pour comprendre et agir.
   - [Le DevOps, d'expérience](#le-devops-dexpérience)
     - [Préjugé](#préjugé)
     - [Too big, too soon](#too-big-too-soon)
+    - [Les initiatives DevOps dans les organisations](#les-initiatives-devops-dans-les-organisations)
     - [Réorganisations chroniques](#réorganisations-chroniques)
     - [Refuser le retard technologique](#refuser-le-retard-technologique)
   - [Prérequis](#prérequis)
@@ -178,6 +179,20 @@ Ayez l'audace de commencer petit et d'itérer à mesure que vous et votre instit
 
 Changer la culture d'une institution prend du temps, mais prendre des raccourcis risquera de vous mettre du monde à dos, de démotiver vos équipes et de faire échouer votre projet.
 
+### Les initiatives DevOps dans les organisations
+
+Au sein de nombreuses organisations avec lesquelles j'ai pu travailler, j'observe que les nouveaux décideurs - averses au changement - demandent à leurs subordonnés de longue date de trouver des solutions, immédiatement.
+
+La plupart du temps ces solutions - plus ou moins développées -  existent, avec des pratiques plus ou moins proche d'un fonctionnement en mode DevOps.
+
+Les décideurs préfèrent généralement se mettre en ordre de bataille pour adopter ces services existants pour obtenir un effet immédiat, mais faisant fi des contraintes inhérentes à l'organisation (environnement et outillage de développement, environnement et outillage de production, volume des données gérable par la plateforme, matériel disponible, dette technique, courbe d'apprentissage...). Ces contraintes sont souvent déjà levées depuis des années par les experts internes qui ont maintes fois proposé des projets pour répondre à ces problématiques.
+
+Malheureusement, ces décideurs ont la plupart du temps l'irrésistible tentation de n'écouter que leurs propres réflexions, en faignant demander conseil à leurs experts.
+
+Une parfaite illustration est celle du Ministère des Armées américain qui a souhaité lancer une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne] de l'Armée de l'Air américaine, dont la finalité était identique.
+
+Soyez un décideur audacieux, honnête intellectuellement[^BiaisCognitifs] et à l'écoute de vos experts : vous perdrez moins de temps, d'argent et de crédibilité.
+
 ### Réorganisations chroniques
 
 « Une de plus ! » s'exclameront vos plus fidèles collaborateurs. Combien de réorganisations a déjà subi votre organisation ? Lors de ma dernière expérience, j'ai pu être témoin de trois réorganisations en trois ans. Une pratique qui brouille le message et ajoute de la confusion pour les équipes.
@@ -323,6 +338,7 @@ TODO(flavienbwk): Développer le sujet
 Je passe rapidement dessus car nous évoquerons cette problématique en détails dans le chapitre "[Réduire les silos organisationnels](#réduire-les-silos-organisationnels)".
 
 ### Usine logicielle
+
 
 TODO(flavienbwk): Développer le sujet
 
@@ -680,11 +696,11 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 
 [^RGPD]: [RGPD : Règlement Général sur la Protection des Données](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
-[^DevSecOpsUSAirForce]: Paupier, François; Chaillan, Nicolas. [Postmortem #19 : Le DevSecOps à l'US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
+[^DevSecOpsUSAirForce]: PAUPIER, François; CHAILLAN, Nicolas. [Postmortem #19 : Le DevSecOps à l'US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
 
 [^AtlassianHistoryOfDevops]: [Buchanan, Ian. Atlassian.com: History of DevOps](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
 
-[^TheDevopsHandbook]: Kim, Gene; Debois, Patrick; Willis, John; Humble, Jez; Allspaw, John. The DevOps handbook: how to create world-class agility, reliability, and security in technology organizations. 2015.
+[^TheDevopsHandbook]: KIM, Gene; DEBOIS, Patrick; WILLIS, John; HUMBLE, Jez; ALLSPAW, John. The DevOps handbook: how to create world-class agility, reliability, and security in technology organizations. 2015.
 
 [^GoogleWorkBookEngagementModel]: [Google SRE workbook (sre.google) : Engagement model](https://sre.google/workbook/engagement-model)
 
@@ -702,7 +718,7 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 
 [^GoogleWorkspaceSLA]: [Google Workspace SLA](https://workspace.google.com/terms/sla.html) is available at workspace.google.com/terms/sla.html
 
-[^TimeToOutdatedSoftware]: Procter & Gamble Co. [2021 Form 10-K](https://sec.report/Document/80424/000008042421000100/R23.htm). 2021. <+> Spinellis, Diomidis; Louridas, Panos; Kechagia, Maria. [Software evolution: the lifetime of fine-grained elements](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/). 2021.
+[^TimeToOutdatedSoftware]: Procter & Gamble Co. [2021 Form 10-K](https://sec.report/Document/80424/000008042421000100/R23.htm). 2021. <+> SPINELLIS, Diomidis; LOURIDAS, Panos; KECHAGIA, Maria. [Software evolution: the lifetime of fine-grained elements](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/). 2021.
 
 [^GoogleWorkbookIncidentResponse]: [Google SRE workbook (sre.google) : Incident response](https://sre.google/sre-book/incident-response)
 
@@ -710,16 +726,22 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 
 [^Git]: [Page Wikipédia de Git](https://fr.wikipedia.org/wiki/Git)
 
-[^DataOpsPaper]: Capizzi, Antonio; Distefano, Salvatore; Mazzara, Manuel. [From DevOps to DevDataOps](https://arxiv.org/pdf/1910.03066.pdf). 2019.
+[^DataOpsPaper]: CAPIZZI, Antonio; DISTEFANO, Salvatore; MAZZARA, Manuel. [From DevOps to DevDataOps](https://arxiv.org/pdf/1910.03066.pdf). 2019.
 
 [^DataOpsManifesto]: 18 DataOps principles of [The DataOps Manifesto](https://dataopsmanifesto.org/en/).
 
-[^MLOpsPaper]:  Kreuzberger, Dominik; Kühl, Niklas; Hirschl, Sebastian. [MLOps: Overview, Definition, and Architecture](https://arxiv.org/abs/2205.02302). 2022.
+[^MLOpsPaper]:  KREUZBERGER, Dominik; KÜHL, Niklas; HIRSCHL, Sebastian. [MLOps: Overview, Definition, and Architecture](https://arxiv.org/abs/2205.02302). 2022.
 
-[^ArticlePSSyndromeCanard]: Silberzahn, Philippe. [_Le syndrome du canard: comment les organisations en déclin s’habituent à la médiocrité_](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/). 2022.
+[^ArticlePSSyndromeCanard]: SILBERZAHN, Philippe. [_Le syndrome du canard: comment les organisations en déclin s’habituent à la médiocrité_](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/). 2022.
 
 [^SREBlamelessCulture]: devops.com, [_How SRE creates a blameless culture_](https://devops.com/how-sre-creates-a-blameless-culture/). 2019.
 
-[^ArticlePSSortirSpiraleDeclin]: Silberzahn, Philippe. [_Le canard était toujours vivant: comment l’entreprise peut sortir de la spirale du déclin_](https://philippesilberzahn.com/2022/09/26/le-canard-etait-toujours-vivant-comment-lentreprise-peut-sortir-de-la-spirale-du-declin/). 2022.
+[^ArticlePSSortirSpiraleDeclin]: SILBERZAHN, Philippe. [_Le canard était toujours vivant: comment l’entreprise peut sortir de la spirale du déclin_](https://philippesilberzahn.com/2022/09/26/le-canard-etait-toujours-vivant-comment-lentreprise-peut-sortir-de-la-spirale-du-declin/). 2022.
 
-[^DefyingGravity]: Dunlap, Preston. [_Defying gravity_](https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z/). 2022.
+[^DefyingGravity]: DUNLAP, Preston. [_Defying gravity_](https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z/). 2022.
+
+[^PlatformOne]: [Platform One](https://software.af.mil/team/platformone/) is a DoD-wide DevSecOps Managed Service.
+
+[^BiaisCognitifs]: HUSSLER, Caroline; RONDÉ, Patrick. [« Biais cognitifs et choix technologiques : une analyse des priorités des experts français »](https://www.cairn.info/revue-economie-et-prevision-1-2006-4-page-65.htm), Économie & prévision, vol. 175-176, no. 4-5, 2006, pp. 65-77.
+
+[^DISAVulcan]: [DISA 'Vulcan' DevSecOps program](https://defensescoop.com/2022/10/21/disa-to-launch-vulcan-devsecops-program/). 2022.
