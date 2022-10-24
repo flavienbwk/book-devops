@@ -535,7 +535,7 @@ Grâce aux mécanismes de déploiement standardisés que proposent les systèmes
 
 - Fournissant un point de contrôle central des autorisations et de l'authentification
 - Donnant une meilleure visibilité sur le traffic réseau entre les services, indépendamment d'où ils sont déployés
-- []
+- TODO(flavienbwk)
 
 ![Illustration du fonctionnement d'un service mesh](./images/figure-5.png)
 > Service mesh traffic overview _(Weaveworks : Introduction to Kubernetes service mesh ?)_[^WeaveWorksServiceMeshArticle]
@@ -548,7 +548,7 @@ Problem to solve :
   "We have 70 service teams and getting them to add TLS to all of their services would be an impossible organizational task."
 -->
 
-TODO(flavienbwk): Décrire l'intérêt d'un service mesh
+En revanche, un _service mesh_ n'est pas une technologie légère : elle nécessite de l'administration et de la formation en interne (à la fois pour les développeurs et les administrateurs) avant que vous constatiez ses avantages. Ne vous attendez pas d'une technologie qui vous permet de passer de 50 à 10 administrateurs systèmes, d'être administrable par seulement 2 personnes. Les _service mesh_ ont un intérêt certain mais assurez-vous que vous soyez dimensionné pour l'employer.
 
 ## Tirer parti de toutes les ressources à sa disposition
 
