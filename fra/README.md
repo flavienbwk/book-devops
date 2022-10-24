@@ -20,6 +20,7 @@ Le guide pragmatique des décideurs pour comprendre et agir.
     - [Réorganisations chroniques](#réorganisations-chroniques)
     - [Refuser le retard technologique](#refuser-le-retard-technologique)
   - [Prérequis](#prérequis)
+  - [Comment convaincre](#comment-convaincre)
   - [Modèle d'équipe interne](#modèle-déquipe-interne)
     - [Le développement interne comme véritable alternative](#le-développement-interne-comme-véritable-alternative)
     - [Équipes « innovantes » et « intelligence artificielle »](#équipes-innovantes-et-intelligence-artificielle)
@@ -39,8 +40,11 @@ Le guide pragmatique des décideurs pour comprendre et agir.
       - [Infrastructure as Code (IaC)](#infrastructure-as-code-iac)
       - [Continuous Integration (CI)](#continuous-integration-ci)
       - [Continuous Delivery (CD)](#continuous-delivery-cd)
+      - [Pratique extrême pour la gestion de risque](#pratique-extrême-pour-la-gestion-de-risque)
       - [Les outils DevOps pour réduire le nombre de réunions](#les-outils-devops-pour-réduire-le-nombre-de-réunions)
     - [Tout mesurer](#tout-mesurer)
+      - [Les 4 signaux clé](#les-4-signaux-clé)
+      - [Service mesh](#service-mesh)
   - [Tirer parti de toutes les ressources à sa disposition](#tirer-parti-de-toutes-les-ressources-à-sa-disposition)
     - [Trouvez des ambassadeurs pour votre projet](#trouvez-des-ambassadeurs-pour-votre-projet)
     - [Réservistes ou projet « 20% »](#réservistes-ou-projet-20)
@@ -256,6 +260,25 @@ Pour amorcer votre initiative DevOps, vous avez besoin :
 - De plusieurs ingénieurs logiciels qui développeront vos solutions aux besoins métiers
 - De plusieurs profils SRE/DevOps qui développeront votre socle et géreront le cycle de développement/déploiement des logiciels
 
+## Comment convaincre
+
+Convaincre des collègues de travail ou sa hiérarchie n'est pas pour tout le monde la tâche la plus aisée. Si vous souhaitez le faire, je trouve intéressant de suivre les 4 règles données par William MORGAN - directeur général d'une entreprise de technologies - pendant l'une de ses conférences[^WilliamMorganKubecon2018].
+
+Quand vous souhaitez que quelqu'un adhère à votre projet, utilisez ces 4 règles :
+
+1. Identifier qui est affecté (les parties-prenantes)
+2. Déterminer ce que la nouvelle solution va leur apporter (les avantages)
+3. Comprendre quelles sont leurs craintes (les préoccupations)
+4. Atténuer les préoccupations, promouvoir les avantages et communiquer
+
+Selon William, arrivé à un certain niveau d'ingénierie technique, les métiers de commercial et d'ingénieur se confondent : "Un travail d'ingénierie suffisamment avancé est indiscernable d'un travail de commercial".
+
+Par exemple pour une équipe de sécurité, une technologie pourrait [gérer et auditer automatiquement le chiffrement des flux entre les services](#service-mesh). Leurs préoccupations à l'égard de cette technologie sont : "Est-ce qu'elle va rendre la plateforme plus sécurisée ?" ou "Quels sont les nouveaux vecteurs d'attaque qu'elle pourrait introduire ?".
+
+Pour les équipes de _management_, une technologie pourrait accélérer le rythme de développement et réduire les interruptions de service. Leur préoccupation sera de connaître les dépendances qui seront introduites par l'emploi de cette nouvelle technologie.
+
+Gardez toujours en tête que si les choses sont telles qu'elles le sont aujourd'hui, c'est qu'il y a des raisons, qu'il y a eu des contraintes qui vous échappent encore (temps alloué, moyens RH, moyens financiers, appui politique...) et que vous n'êtes pas là pour blamer les acteurs du passé. Une fois que vous semblez avoir les enjeux et les acteurs de l'organisation en tête, passez à l'action !
+
 ## Modèle d'équipe interne
 
 ### Le développement interne comme véritable alternative
@@ -339,8 +362,11 @@ Je passe rapidement dessus car nous évoquerons cette problématique en détails
 
 ### Usine logicielle
 
-
 TODO(flavienbwk): Développer le sujet
+
+TODO(flavienbwk): Le contenu de cette usine logicielle pour employer des pratiques DevOps sera développé
+
+L'étape d'après serait d'ouvrir cette plateforme à des partenaires industriels, afin que chacun puisse ajouter son logiciel selon les règles de l'organisation. Ces dernières seraient définies par des ingénieurs en interne. C'est déjà le cas de _Platform One_[^PlatformOne] qui ouvre son usine logicielle à des industriels contractualisant avec le Ministère des Armées américain. Succès garanti. Néanmoins, je rappelle ici qu'il s'agit de pouvoir développer une expertise en interne avant d'être capable de définir des règles pour les autres. Chaque organisation est différente et se doit [d'avoir ses propres experts en interne pour la conseiller au mieux](#le-développement-interne-comme-véritable-alternative).
 
 ### Git flow
 
@@ -377,6 +403,10 @@ TODO(flavienbwk): Remettre en forme le tableau (markdown)
 
 ## Les piliers du DevOps en pratique
 
+Ca y est, nous atteignons le coeur du sujet. Dans ce chapitre, nous allons découvrir les différents piliers du DevOps en décrivant les différentes technologies qui peuvent répondre à nos enjeux.
+
+En terme d'organisation, voyez le DevOps comme un moyen d'appliquer une "saine contrainte" à vos équipes, de sorte à inciter chacun à avancer dans la même direction. C'est faire communiquer tout le monde de manière optimale, au moyen d'outils techniques standardisés.
+
 ### Réduire les silos organisationnels
 
 TODO(flavienbwk): Développer le sujet. Besoin de remettre tout le monde à la table des discussions. Cartographier. Ordonner une décision forte. Besoin de travailler sur un réseau commun.
@@ -389,7 +419,7 @@ TODO(flavienbwk): Répondre au commentaire http://disq.us/p/207i3e7 (la personne
 
 ### Réduire le coût du changement
 
-TODO(flavienbwk): Développer le sujet
+TODO(flavienbwk): Développer le [sujet](https://software.af.mil/training/devops/) (Agile vs DevSecOps)
 
 ### Tirer parti de l'automatisation
 
@@ -467,13 +497,58 @@ Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est é
 
 TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with blue/green deployment}
 
+#### Pratique extrême pour la gestion de risque
+
+<!-- English title : Extreme risk management practices -->
+
+TODO(flavienbwk): [Développer (Chaos Monkey)](https://software.af.mil/training/devops/) et changer le titre
+
 #### Les outils DevOps pour réduire le nombre de réunions
 
 TODO(flavienbwk) Développer [le sujet](https://www.techtarget.com/searchitoperations/opinion/Are-meetings-part-of-your-DevOps-strategy-They-shouldnt-be)
 
 ### Tout mesurer
 
+Ce chapitre est intimement lié au chapitre précédent, "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)", car l'automatisation se pratique au moyen de standards permettant de plus facilement mesurer, massivement.
+
 TODO(flavienbwk): Développer {Donner exemples de techs…. Services mesh : Istio, Linkerd} / {4 golden signals}
+
+#### Les 4 signaux clé
+
+TODO(flavienbwk) Développer le sujet (4 golden signals).
+
+Au sein d'une infrastructure containerisée, un _service mesh_ facilite l'acquisition de ces métriques. Nous décrivons cette technologie dans le prochain chapitre.
+
+#### Service mesh
+
+Malgré leur application très concrète et pratique, un _service mesh_ ou "service de maillage de services" est une notion qui peut sembler complexe.
+
+Abordons-la au travers de quelques problématiques qui illustrent leur intérêt :
+
+- "Nos logiciels sont écrits dans 6 langages différents et nous n'avons pas de moyen unifié pour récolter la télémétrie (logs applicatifs, logs d'erreur, métriques)." (sujet : observabilité)
+- "Nous avons 70 équipes d'administration système et les amener à ajouter du TLS entre tous leurs services serait un travail d'organisation impossible." (sujet : sécurité, chiffrement des flux)
+- "Nous avons des centaines de conteneurs tournant sur plusieurs machines géographiquement réparties et n'avons aucun moyen d'analyser les latences réseau" (sujet : observabilité)
+- "Nous ressentons des lenteurs sur notre service à l'usage et ne pouvons dire s'il s'agit d'un problème réseau ou logiciel." (sujet : observabilité)
+- "Nous n'avons aucun moyen d'évaluer si la nouvelle version d'un logiciel déployé introduit des ralentissements" (sujet : observabilité, blue/green deployment)
+
+Grâce aux mécanismes de déploiement standardisés que proposent les systèmes d'orchestration des containers (ex: Kubernetes), un _service mesh_ permet d'adresser ces problématiques en se "branchant" à votre système d'orchestration. Il peut améliorer la sécurité et l'observabilité de votre infrastructure en :
+
+- Fournissant un point de contrôle central des autorisations et de l'authentification
+- Donnant une meilleure visibilité sur le traffic réseau entre les services, indépendamment d'où ils sont déployés
+- []
+
+![Illustration du fonctionnement d'un service mesh](./images/figure-5.png)
+> Service mesh traffic overview _(Weaveworks : Introduction to Kubernetes service mesh ?)_[^WeaveWorksServiceMeshArticle]
+
+Techniquement, un _service mesh_ {sidecar?}...
+
+<!-- 
+Problem to solve : 
+- "Our service are written in 6 different languages and we don't have consistent telemetry libraries across them". 
+  "We have 70 service teams and getting them to add TLS to all of their services would be an impossible organizational task."
+-->
+
+TODO(flavienbwk): Décrire l'intérêt d'un service mesh
 
 ## Tirer parti de toutes les ressources à sa disposition
 
@@ -745,3 +820,7 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 [^BiaisCognitifs]: HUSSLER, Caroline; RONDÉ, Patrick. [« Biais cognitifs et choix technologiques : une analyse des priorités des experts français »](https://www.cairn.info/revue-economie-et-prevision-1-2006-4-page-65.htm), Économie & prévision, vol. 175-176, no. 4-5, 2006, pp. 65-77.
 
 [^DISAVulcan]: [DISA 'Vulcan' DevSecOps program](https://defensescoop.com/2022/10/21/disa-to-launch-vulcan-devsecops-program/). 2022.
+
+[^WeaveWorksServiceMeshArticle]: NGINX Blog. [What is a service mesh ?](https://www.nginx.com/blog/what-is-a-service-mesh/). 2018.
+
+[^WilliamMorganKubecon2018]: MORGAN, William. [How to get a service mesh into production without getting fired](https://www.youtube.com/watch?v=XA1aGpYzpYg&list=PLSIv_F9TtLlx8VW2MFONMRwS_-2rSJwdn&index=3&ab_channel=CNCF%5BCloudNativeComputingFoundation%5D). 2018.
