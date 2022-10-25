@@ -475,6 +475,7 @@ Voici quelques exemples d'algorithmes qu'il est possible de lancer pour vérifie
 
 - S'assurer de la présence d'une documentation
 - S'assurer que la documentation suit le formatage définit par l'organisation
+- S'assurer que la documentation est à jour
 - Vérifier que toutes les variables d'environnement sont bien déclarées dans les fichiers appropriés
 - S'assurer que des mots de passe n'ont pas été poussés par erreur
 - S'assurer de la présence d'un fichier de configuration requis
@@ -489,13 +490,15 @@ Il est courant d'entendre parler de pipeline d'intégration continue et d'autres
 - Stages : les trois étapes d'une pipeline d'intégration continue
 - Build : étape contenant les jobs s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
 - Test : TODO(flavienbwk): Développer
+  - Exemples :
+    - Tester sa documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. Istio a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
 - Deploy : TODO(flavienbwk): Développer
 
 Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est également de tester le code poussé sur plusieurs environnements automatiquement : votre environnement de développement et de préproduction avant de le déployer en production. Néanmoins, ces pipelines multi-environnement introduisent une complexité supplémentaire qu'il faut être en mesure d'absorber lors de sa mise en place par une équipe technique plus importante.
 
 #### Continuous Delivery (CD)
 
-TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with blue/green deployment}
+TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d)}
 
 #### Pratique extrême pour la gestion de risque
 
@@ -517,36 +520,46 @@ TODO(flavienbwk): Développer {Donner exemples de techs…. Services mesh : Ist
 
 TODO(flavienbwk) Développer le sujet (4 golden signals).
 
-Au sein d'une infrastructure containerisée, un _service mesh_ facilite l'acquisition de ces métriques. Nous décrivons cette technologie dans le prochain chapitre.
+Au sein d'une infrastructure containerisée, un _service mesh_ facilite l'acquisition de ces métriques. Découvrons cette technologie dans le prochain chapitre.
 
 #### Service mesh
 
-Malgré leur application très concrète et pratique, un _service mesh_ ou "service de maillage de services" est une notion qui peut sembler complexe.
+Malgré leur application très concrète et pratique, un _service mesh_ ou "service de maillage de services" sont une notion qui peut paraître complexe.
 
-Abordons-la au travers de quelques problématiques qui illustrent leur intérêt :
+Abordons-la au travers de quelques problématiques qui illustrent son intérêt :
 
 - "Nos logiciels sont écrits dans 6 langages différents et nous n'avons pas de moyen unifié pour récolter la télémétrie (logs applicatifs, logs d'erreur, métriques)." (sujet : observabilité)
 - "Nous avons 70 équipes d'administration système et les amener à ajouter du TLS entre tous leurs services serait un travail d'organisation impossible." (sujet : sécurité, chiffrement des flux)
-- "Nous avons des centaines de conteneurs tournant sur plusieurs machines géographiquement réparties et n'avons aucun moyen d'analyser les latences réseau" (sujet : observabilité)
+- "Nous avons des centaines de conteneurs tournant sur plusieurs machines réparties géographiquement et n'avons aucun moyen unifié d'analyser les latences réseau" (sujet : observabilité)
 - "Nous ressentons des lenteurs sur notre service à l'usage et ne pouvons dire s'il s'agit d'un problème réseau ou logiciel." (sujet : observabilité)
-- "Nous n'avons aucun moyen d'évaluer si la nouvelle version d'un logiciel déployé introduit des ralentissements" (sujet : observabilité, blue/green deployment)
-
-Grâce aux mécanismes de déploiement standardisés que proposent les systèmes d'orchestration des containers (ex: Kubernetes), un _service mesh_ permet d'adresser ces problématiques en se "branchant" à votre système d'orchestration. Il peut améliorer la sécurité et l'observabilité de votre infrastructure en :
-
-- Fournissant un point de contrôle central des autorisations et de l'authentification
-- Donnant une meilleure visibilité sur le traffic réseau entre les services, indépendamment d'où ils sont déployés
-- TODO(flavienbwk)
-
-![Illustration du fonctionnement d'un service mesh](./images/figure-5.png)
-> Service mesh traffic overview _(Weaveworks : Introduction to Kubernetes service mesh ?)_[^WeaveWorksServiceMeshArticle]
-
-Techniquement, un _service mesh_ {sidecar?}...
+- "Nous n'avons aucun moyen d'évaluer si la nouvelle version d'un logiciel déployé introduit des ralentissements" (sujet : observabilité, déploiements _canary_ ou _blue/green_)
 
 <!-- 
 Problem to solve : 
 - "Our service are written in 6 different languages and we don't have consistent telemetry libraries across them". 
   "We have 70 service teams and getting them to add TLS to all of their services would be an impossible organizational task."
 -->
+
+Grâce aux mécanismes de déploiement standardisés que proposent les systèmes d'orchestration des containers (ex: Kubernetes), un _service mesh_ permet d'adresser ces problématiques en se "branchant" à votre système d'orchestration. Il peut améliorer la sécurité, la stabilité et l'observabilité de votre infrastructure en :
+
+- Gérant les certificats de sécurité à un seul endroit
+- Gérant les autorisations poussées dans l'administration des flux réseau
+- Contrôlant les flux réseau avec des règles (_A/B testing_, déploiements _canary_ ou _blue/green_, [limites de requêtes par minutes](https://istio.io/latest/docs/tasks/policy-enforcement/rate-limit/#rate-limits))
+- Répartissant la charge réseau de manière égale entre les services (_load balancer_)
+- Récoltant automatiquement des métriques réseau selon les "[4 signaux clés](#les-4-signaux-clé)" (latence, traffic, erreurs et saturation), indépendamment d'où les pods sont déployés (cf. _Istio Dashboard_[^IstioDashboard])
+- Récoltant les _logs_ d'accès aux applications (cf. _Istio access logs_[^IstioAccessLogs])
+- Permettant de détailler le cheminement des requêtes entre des pods distribués sur plusieurs nœuds (cf. _Istio distributed traces_[^IstioDistributedTraces])
+
+![Istio distributed trace for a single request. Istio.com.](./images/figure-6.png "Chemin réseau d'une seule requête via Istio")
+> [Chemin réseau d'une seule requête via Istio. Istio.com.](https://istio.io/latest/docs/concepts/observability/#distributed-traces)
+
+En somme, un service mesh gère une ou partie des aspects suivants : gestion du traffic réseau, sécurité des flux et observabilité réseau. Cela permet de mieux sécuriser l'infrastructure, de mieux pouvoir l'auditer et de réduire la rupture de service
+
+![Illustration du fonctionnement d'un service mesh](./images/figure-5.png)
+> Service mesh traffic overview _(Weaveworks : Introduction to Kubernetes service mesh ?)_[^WeaveWorksServiceMeshArticle]
+
+TODO(flavienbwk):
+Techniquement, un _service mesh_ pour par exemple ...
 
 En revanche, un _service mesh_ n'est pas une technologie légère : elle nécessite de l'administration et de la formation en interne (à la fois pour les développeurs et les administrateurs) avant que vous constatiez ses avantages. Ne vous attendez pas d'une technologie qui vous permet de passer de 50 à 10 administrateurs systèmes, d'être administrable par seulement 2 personnes. Les _service mesh_ ont un intérêt certain mais assurez-vous que vous soyez dimensionné pour l'employer.
 
@@ -824,3 +837,11 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 [^WeaveWorksServiceMeshArticle]: NGINX Blog. [What is a service mesh ?](https://www.nginx.com/blog/what-is-a-service-mesh/). 2018.
 
 [^WilliamMorganKubecon2018]: MORGAN, William. [How to get a service mesh into production without getting fired](https://www.youtube.com/watch?v=XA1aGpYzpYg&list=PLSIv_F9TtLlx8VW2MFONMRwS_-2rSJwdn&index=3&ab_channel=CNCF%5BCloudNativeComputingFoundation%5D). 2018.
+
+[^IstioTestDocumentationTool]: Istio's [testing framework documentation](https://github.com/istio/istio.io/blob/3ecc5aeb4a6125374f1a5da18a2c4befeb5ae685/tests/README.md) on _github.com_. 2022.
+
+[^IstioDashboard]: [Istio Dashboard documentation](https://istio.io/latest/docs/tasks/observability/metrics/using-istio-dashboard/). Istio.io.
+
+[^IstioDistributedTraces]: [Istio Distributed traces documentation](https://istio.io/latest/docs/concepts/observability/#distributed-traces). Istio.io.
+
+[^IstioAccessLogs]: [Istio access logs documentation](https://istio.io/latest/docs/concepts/observability/#access-logs). Istio.io.
