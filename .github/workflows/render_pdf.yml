@@ -52,8 +52,8 @@ jobs:
       - name: Render PDF
         run: |
           sudo apt-get install -y pandoc make texlive-fonts-recommended texlive-xetex
-          echo "s/date: Undefined/date: '"${{ steps.date.outputs.date }}" - "${{ env.BOOK_VERSION }}"'/g"
-          sed -i -E "s/date: Undefined/date: '"${{ steps.date.outputs.date }}" - "${{ env.BOOK_VERSION }}"'/g" ./fra/metadata.yml
+          echo "s/date: Undefined/date: '${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}'/g"
+          sed -i -E "s/date: Undefined/date: '${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}'/g" ./fra/metadata.yml
           cd ./fra && make pdf
 
       - uses: actions/upload-artifact@v2
