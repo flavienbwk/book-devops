@@ -49,10 +49,14 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%B %Y')"
 
+      - name: Install pandoc
+        run: |
+          wget https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb
+          sudo dpkg -i pandoc-2.19.2-1-amd64.deb
+          sudo apt-get install -y make texlive-fonts-recommended texlive-xetex
+
       - name: Render PDF
         run: |
-          sudo apt-get install -y pandoc make texlive-fonts-recommended texlive-xetex
-          echo "s/date: Undefined/date: '${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}'/g"
           sed -i -E "s/date: Undefined/date: '${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}'/g" ./fra/metadata.yml
           cd ./fra && make pdf
 
