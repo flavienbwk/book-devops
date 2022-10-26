@@ -550,18 +550,19 @@ Grâce aux mécanismes de déploiement standardisés que proposent les systèmes
 - Récoltant les _logs_ d'accès aux applications (cf. _Istio access logs_[^IstioAccessLogs])
 - Permettant de détailler le cheminement des requêtes entre des pods distribués sur plusieurs nœuds (cf. _Istio distributed traces_[^IstioDistributedTraces])
 
+Les métriques étant standardisées, la plupart des _service mesh_ permettent de les utiliser pour configurer des règles automatiques selon l'activité réseau de l'infrastructure.
+
 ![Istio distributed trace for a single request. Istio.com.](./images/figure-6.png "Chemin réseau d'une seule requête via Istio")
 > [Chemin réseau d'une seule requête via Istio. Istio.com.](https://istio.io/latest/docs/concepts/observability/#distributed-traces)
 
-En somme, un service mesh gère une ou partie des aspects suivants : gestion du traffic réseau, sécurité des flux et observabilité réseau. Cela permet de mieux sécuriser l'infrastructure, de mieux pouvoir l'auditer et de réduire la rupture de service
+En résumé, un _service mesh_ gère tout ou partie des aspects suivants : gestion du traffic réseau, sécurité des flux et observabilité réseau. Cela permet de mieux sécuriser l'infrastructure, de mieux pouvoir l'auditer et de réduire la rupture de service.
 
-![Illustration du fonctionnement d'un service mesh](./images/figure-5.png)
-> Service mesh traffic overview _(Weaveworks : Introduction to Kubernetes service mesh ?)_[^WeaveWorksServiceMeshArticle]
+![Illustration du fonctionnement d'un service mesh](./images/figure-5.png "Illustration du fonctionnement d'un service mesh")
+> Vue d'ensemble du fonctionnement d'un service de maillage de services : des conteneurs "proxy" sont ajoutés dans chaque pod pour gérer les interactions avec le _service mesh_. _(Weaveworks : Introduction to Kubernetes service mesh ?)_[^WeaveWorksServiceMeshArticle]
 
-TODO(flavienbwk):
-Techniquement, un _service mesh_ pour par exemple ...
+Techniquement, un _service mesh_ va s'installer sur votre logiciel d'orchestration (ex: Kubernetes) et attacher dans chaque _pod_ (conteneur / application) un conteneur appelé _sidecar_. Ce dernier agira en tant que proxy réseau et gérera les interactions citées plus haut avec le _service mesh_.
 
-En revanche, un _service mesh_ n'est pas une technologie légère : elle nécessite de l'administration et de la formation en interne (à la fois pour les développeurs et les administrateurs) avant que vous constatiez ses avantages. Ne vous attendez pas d'une technologie qui vous permet de passer de 50 à 10 administrateurs systèmes, d'être administrable par seulement 2 personnes. Les _service mesh_ ont un intérêt certain mais assurez-vous que vous soyez dimensionné pour l'employer.
+En revanche, un _service mesh_ n'est pas une technologie légère : elle nécessite de l'administration et de la formation en interne (à la fois pour les développeurs et les administrateurs) avant que vous ne puissiez bénéficier de ses avantages. Ne vous attendez pas d'une technologie qui vous permet de passer de 50 à 5 administrateurs systèmes, qu'elle soit administrable par seulement 2 personnes. Les _service mesh_ ont un intérêt certain mais assurez-vous que vous soyez dimensionné pour l'administrer.
 
 ## Tirer parti de toutes les ressources à sa disposition
 
