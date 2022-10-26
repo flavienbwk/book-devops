@@ -1,1 +1,3 @@
 .vscode
+./html/*
+!./html/.gitkeep

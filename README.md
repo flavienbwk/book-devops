@@ -42,6 +42,14 @@ It automatically :
 - [TODO Highlight](https://github.com/wayou/vscode-todo-highlight)
 - [Markdown Footnote](https://github.com/houkanshan/vscode-markdown-footnote)
 
+## Book generation
+
+This repository has [automatic](.github/workflows/render_pdf.yml) PDF generation thanks to Pandoc.
+
+```bash
+cd ./fra && make pdf && cd -
+```
+
 ## License
 
 Copyright © 2022 Flavien BERWICK
