@@ -1,64 +1,4 @@
-# Transformer les institutions grâce au DevOps
-
-Le guide pragmatique des décideurs pour comprendre et agir.
-
-## Sommaire
-
-- [Transformer les institutions grâce au DevOps](#transformer-les-institutions-grâce-au-devops)
-  - [Sommaire](#sommaire)
-  - [Introduction](#introduction)
-  - [DevOps vs Site Reliability Engineering](#devops-vs-site-reliability-engineering)
-    - [DevOps](#devops)
-    - [Site Reliability Engineering (SRE)](#site-reliability-engineering-sre)
-    - [En deux phrases](#en-deux-phrases)
-    - [DevSecOps](#devsecops)
-  - [Les cinq piliers du DevOps](#les-cinq-piliers-du-devops)
-  - [Le DevOps, d'expérience](#le-devops-dexpérience)
-    - [Préjugé](#préjugé)
-    - [Too big, too soon](#too-big-too-soon)
-    - [Les initiatives DevOps dans les organisations](#les-initiatives-devops-dans-les-organisations)
-    - [Réorganisations chroniques](#réorganisations-chroniques)
-    - [Refuser le retard technologique](#refuser-le-retard-technologique)
-  - [Prérequis](#prérequis)
-  - [Comment convaincre](#comment-convaincre)
-  - [Modèle d'équipe interne](#modèle-déquipe-interne)
-    - [Le développement interne comme véritable alternative](#le-développement-interne-comme-véritable-alternative)
-    - [Équipes « innovantes » et « intelligence artificielle »](#équipes-innovantes-et-intelligence-artificielle)
-    - [Être au plus proche du métier](#être-au-plus-proche-du-métier)
-    - [Libérer la parole et dé-siloter l'accès aux données](#libérer-la-parole-et-dé-siloter-laccès-aux-données)
-  - [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne)
-    - [Un réseau unique](#un-réseau-unique)
-    - [Usine logicielle](#usine-logicielle)
-    - [Git flow](#git-flow)
-  - [La sécurité : un nouveau paradigme dans le modèle DevOps](#la-sécurité--un-nouveau-paradigme-dans-le-modèle-devops)
-  - [Les responsabilités dans un modèle DevOps](#les-responsabilités-dans-un-modèle-devops)
-  - [Les piliers du DevOps en pratique](#les-piliers-du-devops-en-pratique)
-    - [Réduire les silos organisationnels](#réduire-les-silos-organisationnels)
-    - [Accepter l'échec comme normal](#accepter-léchec-comme-normal)
-    - [Réduire le coût du changement](#réduire-le-coût-du-changement)
-    - [Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)
-      - [Infrastructure as Code (IaC)](#infrastructure-as-code-iac)
-      - [Continuous Integration (CI)](#continuous-integration-ci)
-      - [Continuous Delivery (CD)](#continuous-delivery-cd)
-      - [Pratique extrême pour la gestion de risque](#pratique-extrême-pour-la-gestion-de-risque)
-      - [Les outils DevOps pour réduire le nombre de réunions](#les-outils-devops-pour-réduire-le-nombre-de-réunions)
-    - [Tout mesurer](#tout-mesurer)
-      - [Les 4 signaux clé](#les-4-signaux-clé)
-      - [Service mesh](#service-mesh)
-  - [Tirer parti de toutes les ressources à sa disposition](#tirer-parti-de-toutes-les-ressources-à-sa-disposition)
-    - [Trouvez des ambassadeurs pour votre projet](#trouvez-des-ambassadeurs-pour-votre-projet)
-    - [Réservistes ou projet « 20% »](#réservistes-ou-projet-20)
-    - [Synergie public / privé : un win-win-win-win](#synergie-public--privé-un-win-win-win-win)
-      - [Mieux s'organiser pour ne pas échouer](#mieux-sorganiser-pour-ne-pas-échouer)
-  - [Former de manière continue](#former-de-manière-continue)
-  - [Terminologie "Ops"](#terminologie-ops)
-  - [Fiches de poste (avec exemples)](#fiches-de-poste-avec-exemples)
-    - [Ingénieur DevOps](#ingénieur-devops)
-    - [Ingénieur Résilience des Systèmes (SRE)](#ingénieur-résilience-des-systèmes-sre)
-    - [Ingénieur Systèmes ou Ingénieur Plateforme](#ingénieur-systèmes-ou-ingénieur-plateforme)
-  - [4e de couverture](#4e-de-couverture)
-
-## Introduction
+# Introduction
 
 De nombreuses organisations ont déjà entamé leur transformation dans le but d'atteindre un fonctionnement en mode "DevOps".
 
@@ -76,19 +16,17 @@ Comme vous le comprendrez par la suite, chaque organisation a ses propres besoin
 
 Soyez assuré que les efforts que vous déploierez à faire du DevOps au sein de votre organisation seront récompensés par une organisation plus efficace, agile et pérenne.
 
-## DevOps vs Site Reliability Engineering
+# DevOps vs Site Reliability Engineering
 
 Si le terme DevOps devient de plus en plus populaire et commence à devenir courant dans les offres d'emploi, celui de _Site Reliability Engineering_ (SRE) est moins connu, en particulier en France.
 
-![Evolution de l'intérêt pour le terme "DevOps"](./images/figure_1.png "Evolution de l'intérêt pour le terme 'DevOps' (2014 à 2022, trends.google.com)")
-> Evolution de l'intérêt pour le terme 'DevOps' (2014 à 2022, trends.google.com)
+![Evolution de l'intérêt pour le terme 'DevOps' (2014 à 2022, trends.google.com)](./images/figure_1.png)
 
-![Intérêt pour le terme "Site Reliability Engineering" selon les pays.](./images/figure_2.png "Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48e sur 58.")
-> Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48ème sur 58.
+![Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48e sur 58.](./images/figure_2.png)
 
 Pour bien débuter et comprendre comment le DevOps peut aider votre organisation, commençons par définir deux des termes les plus importants à connaître dans ce milieu.
 
-### DevOps
+## DevOps
 
 C'est le lien entre le monde du développement et de la production.
 
@@ -100,17 +38,17 @@ L'ingénieur « DevOps » est celui en charge de définir et d'implémenter ce
 
 Ce poste impliquant de mettre d'accord toutes les parties prenantes sur une méthode de travail commune, il est exigé de disposer d'excellentes compétences en communication et en pédagogie.
 
-### Site Reliability Engineering (SRE)
+## Site Reliability Engineering (SRE)
 
 Le _Site Reliability Engineer_ ou _Ingénieur de la Résilience des Systèmes_ a la charge de concevoir, déployer et maintenir l'infrastructure qui met à disposition les services de l'entreprise. Il s'assure du bon fonctionnement du socle technique sur lequel sont déployés les logiciels, assure la sécurité et garantit la disponibilité.
 
 L'équipe SRE a donc la responsabilité de votre infrastructure informatique. Cette dernière est souvent composée de plusieurs environnements : développement, pré-production (également appelé _staging_), production.
 
-### En deux phrases
+## En deux phrases
 
 En résumé, l'ingénieur DevOps est responsable de la mise en place de l'ensemble des prérequis nécessaires à la mise en production rapide d'un logiciel, selon les standards de qualité des équipes SRE. Le SRE est lui responsable de la mise en production effective des logiciels et garantit leur disponibilité.
 
-### DevSecOps
+## DevSecOps
 
 Le terme DevSecOps est également populaire. Il qualifie les procédures DevOps intégrant nativement les considérations de sécurité dans le cycle de développement du logiciel et son exploitation en production.
 
@@ -126,7 +64,7 @@ Nous n'en parlerons pas davantage en ce terme car le DevSecOps est à mon sens a
 
 Les paradigmes de sécurité dans un modèle d'organisation DevOps seront abordés dans le chapitre "[La sécurité : un nouveau paradigme dans le modèle DevOps](#la-sécurité--un-nouveau-paradigme-dans-le-modèle-devops)".
 
-## Les cinq piliers du DevOps
+# Les cinq piliers du DevOps
 
 Selon la réputée entreprise américaine [Atlassian](https://www.atlassian.com/devops/what-is-devops/history-of-devops
 )[^AtlassianHistoryOfDevops], le mouvement DevOps a commencé à prendre forme entre 2007 et 2008, lorsque les métiers de l'ingénierie système (ceux qui déploient) et du développement logiciel (ceux qui développent) se sont inquiétés de ce qu'ils considéraient comme un dysfonctionnement fatal avec leurs pratiques opposées dues à leur manque de proximité.
@@ -139,7 +77,7 @@ Selon Google, voici les cinq piliers du DevOps :
 
 1. [**Réduire les silos organisationnels**](#réduire-les-silos-organisationnels)
    - En cultivant l'engagement, le sentiment du partage de responsabilité des succès et des échecs entre les parties-prenantes (ingénieurs, responsables projet, utilisateurs/métiers). Chacun est davantage impliqué et se sent légitime à son niveau.
-2. [**Accepter l'échec comme normal**](#accepter-léchec-comme-normal)
+2. [**Accepter l'échec comme normal**](#accepter-léchec)
    - En partant du principe que l'échec est une conséquence du manque de procédures et de méthodes de la part de l'organisation.
 3. [**Réduire le coût du changement**](#réduire-le-coût-du-changement)
    - Implémenter petit à petit, déployer rapidement, échouer rapidement pour itérer.
@@ -148,9 +86,9 @@ Selon Google, voici les cinq piliers du DevOps :
 5. [**Tout mesurer**](#tout-mesurer)
    - Avec la mise en place d'indicateurs de performance, de fiabilité des systèmes, pour mieux comprendre le comportement des services déployés, réagir plus rapidement voire prédire.
 
-## Le DevOps, d'expérience
+# Le DevOps, d'expérience
 
-### Préjugé
+## Préjugé
 
 > « Je n'ai besoin que d'un ingénieur SRE/DevOps »
 
@@ -173,7 +111,7 @@ Comprenez que vous avez besoin d'une masse critique de profils SRE/DevOps dans v
 
 A titre d'exemple, avec sa taille Google maintient son ratio de SRE/développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio doit néanmoins avoir une [tendance logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez.
 
-### Too big, too soon
+## Too big, too soon
 
 J'ai eu l'occasion de voir un tas de projets échouer au sein de mon institution à cause de périmètres mal définis ou d'objectifs trop exigeants. De mauvaises planifications qui augmentaient les délais et les coûts sans fin, pour devoir en cours de route trouver une « solution intermédiaire » en attendant que la première vienne hypothétiquement au jour.
 
@@ -183,7 +121,7 @@ Ayez l'audace de commencer petit et d'itérer à mesure que vous et votre instit
 
 Changer la culture d'une institution prend du temps, mais prendre des raccourcis risquera de vous mettre du monde à dos, de démotiver vos équipes et de faire échouer votre projet.
 
-### Les initiatives DevOps dans les organisations
+## Les initiatives DevOps dans les organisations
 
 Au sein de nombreuses organisations avec lesquelles j'ai pu travailler, j'observe que les nouveaux décideurs - averses au changement - demandent à leurs subordonnés de longue date de trouver des solutions, immédiatement.
 
@@ -197,7 +135,7 @@ Une parfaite illustration est celle du Ministère des Armées américain qui a s
 
 Soyez un décideur audacieux, honnête intellectuellement[^BiaisCognitifs] et à l'écoute de vos experts : vous perdrez moins de temps, d'argent et de crédibilité.
 
-### Réorganisations chroniques
+## Réorganisations chroniques
 
 « Une de plus ! » s'exclameront vos plus fidèles collaborateurs. Combien de réorganisations a déjà subi votre organisation ? Lors de ma dernière expérience, j'ai pu être témoin de trois réorganisations en trois ans. Une pratique qui brouille le message et ajoute de la confusion pour les équipes.
 
@@ -215,7 +153,7 @@ Piller les ressources RH d'équipes internes pour constituer votre équipe de r�
 
 Si vous estimez ne pas avoir les ressources en interne, ne craignez pas de recruter. Ces équipes ont fait l'effort RH avant vous et ne devraient pas être impactées si elles répondent à un besoin exprimé par votre organisation. Ne cédez pas à la facilité d'imposer une réorganisation : vous frustreriez bon nombre de collaborateurs, perdriez du temps et seriez décrédibilisé.
 
-### Refuser le retard technologique
+## Refuser le retard technologique
 
 > "C'est normal, nous aurons toujours du retard ici."
 
@@ -239,10 +177,10 @@ Pour éviter le retard technologique, une organisation peut adopter plusieurs pr
 
 - Former de manière continue son personnel, en particulier les décideurs (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
 - Mesurer et mettre en place des indicateurs pour éviter de s'habituer (cf. chapitre "[Tout mesurer](#tout-mesurer)")
-- Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec comme normal](#accepter-léchec-comme-normal)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
+- Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec comme normal](#accepter-léchec)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
 - Conserver une capacité d'innovation interne pour rester en mesure de critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)", _Comment l’entreprise peut sortir de la spirale du déclin_[^ArticlePSSortirSpiraleDeclin])
 
-## Prérequis
+# Prérequis
 
 Vous avez beau avoir le meilleur des logiciels, si vous n'arrivez pas à le déployer (sans bug, sans interruption de service, sans assistance), personne n'en sera témoin.
 
@@ -260,9 +198,9 @@ Pour amorcer votre initiative DevOps, vous avez besoin :
 - De plusieurs ingénieurs logiciels qui développeront vos solutions aux besoins métiers
 - De plusieurs profils SRE/DevOps qui développeront votre socle et géreront le cycle de développement/déploiement des logiciels
 
-## Comment convaincre
+# Comment convaincre
 
-Convaincre des collègues de travail ou sa hiérarchie n'est pas pour tout le monde la tâche la plus aisée. Si vous souhaitez le faire, je trouve intéressant de suivre les 4 règles données par William MORGAN - directeur général d'une entreprise de technologies - pendant l'une de ses conférences[^WilliamMorganKubecon2018].
+Convaincre des collègues de travail ou sa hiérarchie n'est pas toujours chose aisée. Si vous souhaitez le faire, je trouve intéressant de suivre les 4 règles données par William MORGAN - directeur général d'une entreprise de technologies - pendant l'une de ses conférences[^WilliamMorganKubecon2018].
 
 Quand vous souhaitez que quelqu'un adhère à votre projet, utilisez ces 4 règles :
 
@@ -279,9 +217,9 @@ Pour les équipes de _management_, une technologie pourrait accélérer le rythm
 
 Gardez toujours en tête que si les choses sont telles qu'elles le sont aujourd'hui, c'est qu'il y a des raisons, qu'il y a eu des contraintes qui vous échappent encore (temps alloué, moyens RH, moyens financiers, appui politique...) et que vous n'êtes pas là pour blamer les acteurs du passé. Une fois que vous semblez avoir les enjeux et les acteurs de l'organisation en tête, passez à l'action !
 
-## Modèle d'équipe interne
+# Modèle d'équipe interne
 
-### Le développement interne comme véritable alternative
+## Le développement interne comme véritable alternative
 
 Dans le chapitre "[Refuser le retard technologique](#refuser-le-retard-technologique)", j'évoque l'innovation interne comme moyen pour éviter le déclin d'une organisation. Mais je me dois de préciser en quoi le développement interne au delà d'être utile et pratique, s'avère être une condition si l'entreprise souhaite rester compétitive.
 
@@ -314,7 +252,7 @@ Grâce aux règles DevOps exigeant des standards de qualité logiciels, plus de 
 
 Au delà d'apporter une solution concrète à un problème, cet ingénieur a surtout permis d'acculturer l'ensemble de la hiérarchie aux notions de développement moderne et de techniques de _machine learning_. Devant les industriels et convié aux grandes réunions stratégiques, il est devenu le référent _machine learning_ de l'organisation. Sans qui personne en interne ne serait en mesure de spécifier un besoin _machine learning_ en toute connaissance de cause.
 
-### Équipes « innovantes » et « intelligence artificielle »
+## Équipes « innovantes » et « intelligence artificielle »
 
 Nombreuses sont les organisations qui ont voulu stimuler leurs organisations en créant des « équipes innovation » au sein de leur structure. Et nombreuses sont celles qui n'ont pas vraiment réussi à déployer en production ce qui y était développé.
 
@@ -326,7 +264,7 @@ L'exemple typique de la data-science vis-à-vis du DevOps est le besoin de puiss
 
 En résumé, ils ne sont pour la plupart pas en mesure d'installer leur environnement de développement, surtout dans des environnements singuliers, inhérents aux grandes organisations.
 
-### Être au plus proche du métier
+## Être au plus proche du métier
 
 Ce qui permettra à votre équipe de se différencier, c'est l'appui que vous fournissez à vos opérateurs. Votre avantage par rapport aux équipes de développement traditionnelles ou aux industriels est que vous pouvez être en forte proximité avec les métiers de votre organisation.
 
@@ -342,25 +280,25 @@ Cette proximité avec les métiers permettra à vos équipes de se sentir davant
 
 Mettre au contact profils techniques et opératifs est un enjeu de fidélisation au-delà de la plus-value de répondre plus rapidement et précisément problématiques internes. Rappelez-vous : vos équipes sont en quête de sens. Elles ne viennent au travail le matin pour répondre à l'ordre de leur supérieur de développer un logiciel mais pour concevoir avec leurs compétences d'expert la solution technique qui répondra le mieux au problème du métier. L'aboutissement du travail d'un ingénieur étant de voir le métier pour lequel son travail a été conçu utiliser ses créations.
 
-### Libérer la parole et dé-siloter l'accès aux données
+## Libérer la parole et dé-siloter l'accès aux données
 
 Vous vous en souvenez, l'un des piliers du DevOps est de dé-siloter l'accès aux données. Si vous souhaitez que vos équipes techniques répondent le mieux à votre besoin, elles ont besoin d'un accès privilégié aux données de votre entreprise.
 
 Abandonnez les « échantillons anonymisés ». Les ingénieurs ont besoin de comprendre précisément de quoi est composée la donnée qu'ils sont censés traiter. Tenter de développer un outil sur des données « anonymes » revient à développer un outil qui ne répond que partiellement au cas d'usage. Autrement dit, vous êtes certain qu'un bug se produira dès lors qu'une donnée « inconnue » passera dans le logiciel. Fournissez à vos équipes les données de production qui ont vocation à être utilisées dans les outils : vous perdrez moins de temps en résolution de bugs et améliorerez la qualité du service fournit par vos logiciels. Si vous ne leur permettez pas, autant faire appel à un prestataire externe ! (cf. [Être au plus proche du métier](#être-au-plus-proche-du-métier)).
 
-## Le cycle de vie d'un logiciel moderne
+# Le cycle de vie d'un logiciel moderne
 
 L'un des enjeux du DevOps est de fluidifier le cycle de vie d'un logiciel.
 
 TODO(flavienbwk): Développer le sujet
 
-### Un réseau unique
+## Un réseau unique
 
 TODO(flavienbwk): Développer le sujet
 
 Je passe rapidement dessus car nous évoquerons cette problématique en détails dans le chapitre "[Réduire les silos organisationnels](#réduire-les-silos-organisationnels)".
 
-### Usine logicielle
+## Usine logicielle
 
 TODO(flavienbwk): Développer le sujet
 
@@ -368,11 +306,11 @@ TODO(flavienbwk): Le contenu de cette usine logicielle pour employer des pratiqu
 
 L'étape d'après serait d'ouvrir cette plateforme à des partenaires industriels, afin que chacun puisse ajouter son logiciel selon les règles de l'organisation. Ces dernières seraient définies par des ingénieurs en interne. C'est déjà le cas de _Platform One_[^PlatformOne] qui ouvre son usine logicielle à des industriels contractualisant avec le Ministère des Armées américain. Succès garanti. Néanmoins, je rappelle ici qu'il s'agit de pouvoir développer une expertise en interne avant d'être capable de définir des règles pour les autres. Chaque organisation est différente et se doit [d'avoir ses propres experts en interne pour la conseiller au mieux](#le-développement-interne-comme-véritable-alternative).
 
-### Git flow
+## Git flow
 
 TODO(flavienbwk): Développer le sujet
 
-## La sécurité : un nouveau paradigme dans le modèle DevOps
+# La sécurité : un nouveau paradigme dans le modèle DevOps
 
 L'idée selon laquelle le DevOps permet de rapprocher les différents métiers pour collaborer ensemble n'est pas simple à appliquer. Les métiers historiques de la sécurité des systèmes d'information (SSI) se sont vu imposer des pratiques auxquelles ils n'étaient pas habitués et qu'ils n'ont parfois pas eu le temps d'appréhender.
 
@@ -382,7 +320,7 @@ Il est donc nécessaire de redéfinir ce que signifie la "sécurité" pour une i
 
 TODO(flavienbwk): Développer le sujet
 
-## Les responsabilités dans un modèle DevOps
+# Les responsabilités dans un modèle DevOps
 
 TODO(flavienbwk): Finaliser {Vaincre la peur de l'attribution des responsabilités (modèle RACI), podcast DevOps #12 Ludovic PIOT @ 35m00}
 
@@ -401,27 +339,27 @@ TODO(flavienbwk): Remettre en forme le tableau (markdown)
 6 - Mise en production	A	R	R	 	I
 -->
 
-## Les piliers du DevOps en pratique
+# Les piliers du DevOps en pratique
 
 Ca y est, nous atteignons le coeur du sujet. Dans ce chapitre, nous allons découvrir les différents piliers du DevOps en décrivant les différentes technologies qui peuvent répondre à nos enjeux.
 
 En terme d'organisation, voyez le DevOps comme un moyen d'appliquer une "saine contrainte" à vos équipes, de sorte à inciter chacun à avancer dans la même direction. C'est faire communiquer tout le monde de manière optimale, au moyen d'outils techniques standardisés.
 
-### Réduire les silos organisationnels
+## Réduire les silos organisationnels
 
 TODO(flavienbwk): Développer le sujet. Besoin de remettre tout le monde à la table des discussions. Cartographier. Ordonner une décision forte. Besoin de travailler sur un réseau commun.
 
-### Accepter l'échec comme normal
+## Accepter l'échec
 
 TODO(flavienbwk): Développer [le sujet](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084#pdfviewer)
 
-TODO(flavienbwk): Répondre au commentaire http://disq.us/p/207i3e7 (la personne est censée avoir passé des entretiens, est censée connaître son métier : l'erreur est une exception. Donc le seul problème vient des process de l'entreprise qui sont mal décrits ou pas assez automatisés.)
+TODO(flavienbwk): Répondre au [commentaire](http://disq.us/p/207i3e7) (la personne est censée avoir passé des entretiens, est censée connaître son métier : l'erreur est une exception. Donc le seul problème vient des process de l'entreprise qui sont mal décrits ou pas assez automatisés.)
 
-### Réduire le coût du changement
+## Réduire le coût du changement
 
 TODO(flavienbwk): Développer le [sujet](https://software.af.mil/training/devops/) (Agile vs DevSecOps)
 
-### Tirer parti de l'automatisation
+## Tirer parti de l'automatisation
 
 Au sein de systèmes d'informations de plus en plus complexes, il devient fondamental d'automatiser les tâches récurrentes. Les erreurs produites par des machines représentent une fraction infime de celles des humains. Tout ingénieur confirmé pourra vous le confirmer : l'erreur vient 99.9% du temps de l'humain. C'est pour cela que les équipes de Google tentent de minimiser au maximum les interactions de leurs opérateurs pour administrer leurs systèmes[^GoogleWorkbookEliminatingToil].
 
@@ -510,17 +448,47 @@ TODO(flavienbwk): [Développer (Chaos Monkey)](https://software.af.mil/training/
 
 TODO(flavienbwk) Développer [le sujet](https://www.techtarget.com/searchitoperations/opinion/Are-meetings-part-of-your-DevOps-strategy-They-shouldnt-be)
 
-### Tout mesurer
+## Tout mesurer
 
-Ce chapitre est intimement lié au chapitre précédent, "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)", car l'automatisation se pratique au moyen de standards permettant de plus facilement mesurer, massivement.
+Dans le chapitre précédent - "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)" - nous avons vu en quoi l'automatisation permettait de gagner un temps considérable dans l'administration de notre infrastructure, ainsi que d'augmenter sa sécurité et sa résilience.
 
-TODO(flavienbwk): Développer {Donner exemples de techs…. Services mesh : Istio, Linkerd} / {4 golden signals}
+Dans ce chapitre, nous allons aborder une dimension importante de l'automatisation : l'observabilité. C'est grâce aux mesures que l'on peut massivement automatiser nos systèmes pour prendre de meilleures décisions à l'échelle de l'organisation.
+
+#### Savoir quand innover et quand s'arrêter
+
+TODO(flavienbwk): [Développer](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084).
+
+<!--
+Mesurer la pénibilité (toil):
+
+Measure toil by : identifying it (often are stakeholders that don't want to do much work), selecting an appropriate unit of measure (the amount of effort : time for example), track continuously the measurements.
+
+Example : count the number of tickets, alerts and collect statistics to identify source of toils.It allows to trigger a toil reduction effort. It empowers teams to think about toil to best invest their time and efforts.
+
+Error budget:
+
+Reliability : error budget (what is deem acceptable level of unreliability that you allocate to other engineering work), SLIs and SLOs.
+
+Ex: SLO could be "Is the website slow ?" with a threshold. SLIs are "CPU utilization", "memory usage"... SLO is SLIs over that to materialize a problematic.
+
+Google recommends monitoring on error budget burns. Ex: spending 10h instead of 1h on a task. In this case, create a ticket for a lower burn rate.
+
+Google recommends monitoring these 4 golden signals : latency, traffic, errors and saturation.
+
+Sharing monitoring tools including its KPIs (OKRs at Google (60/70% is good OKR)) is key to make your employees more responsible and more happy so they can work more effectively. It allows sharing communications and feedback loops.
+
+For example, Google uses an internal tool accessible by everyone : bugganizer.
+-->
+
+#### Indicateurs de résilience
+
+TODO(flavienbwk): [Développer SLI/SLO/SLA](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084).
 
 #### Les 4 signaux clé
 
 TODO(flavienbwk) Développer le sujet (4 golden signals).
 
-Au sein d'une infrastructure containerisée, un _service mesh_ facilite l'acquisition de ces métriques. Découvrons cette technologie dans le prochain chapitre.
+Au sein d'une infrastructure containerisée, un _service mesh_ automatise l'acquisition de ces métriques. Découvrons cette technologie dans le prochain chapitre.
 
 #### Service mesh
 
@@ -552,21 +520,21 @@ Grâce aux mécanismes de déploiement standardisés que proposent les systèmes
 
 Les métriques étant standardisées, la plupart des _service mesh_ permettent de les utiliser pour configurer des règles automatiques selon l'activité réseau de l'infrastructure.
 
-![Istio distributed trace for a single request. Istio.com.](./images/figure-6.png "Chemin réseau d'une seule requête via Istio")
-> [Chemin réseau d'une seule requête via Istio. Istio.com.](https://istio.io/latest/docs/concepts/observability/#distributed-traces)
+![Chemin réseau d'une seule requête via Istio[^IstioDistributedTracesIllustration]](./images/figure-6.png)
 
 En résumé, un _service mesh_ gère tout ou partie des aspects suivants : gestion du traffic réseau, sécurité des flux et observabilité réseau. Cela permet de mieux sécuriser l'infrastructure, de mieux pouvoir l'auditer et de réduire la rupture de service.
 
-![Illustration du fonctionnement d'un service mesh](./images/figure-5.png "Illustration du fonctionnement d'un service mesh")
+![Illustration du fonctionnement d'un service mesh](./images/figure-5.png)
+
 > Vue d'ensemble du fonctionnement d'un service de maillage de services : des conteneurs "proxy" sont ajoutés dans chaque pod pour gérer les interactions avec le _service mesh_. _(Weaveworks : Introduction to Kubernetes service mesh ?)_[^WeaveWorksServiceMeshArticle]
 
 Techniquement, un _service mesh_ va s'installer sur votre logiciel d'orchestration (ex: Kubernetes) et attacher dans chaque _pod_ (conteneur / application) un conteneur appelé _sidecar_. Ce dernier agira en tant que proxy réseau et gérera les interactions citées plus haut avec le _service mesh_.
 
 En revanche, un _service mesh_ n'est pas une technologie légère : elle nécessite de l'administration et de la formation en interne (à la fois pour les développeurs et les administrateurs) avant que vous ne puissiez bénéficier de ses avantages. Ne vous attendez pas d'une technologie qui vous permet de passer de 50 à 5 administrateurs systèmes, qu'elle soit administrable par seulement 2 personnes. Les _service mesh_ ont un intérêt certain mais assurez-vous que vous soyez dimensionné pour l'administrer.
 
-## Tirer parti de toutes les ressources à sa disposition
+# Tirer parti de toutes les ressources à sa disposition
 
-### Trouvez des ambassadeurs pour votre projet
+## Trouvez des ambassadeurs pour votre projet
 
 L'importance du responsable de projet n'est pas à considérer comme une simple plus-value. C'est lui qui est responsable du fait que le projet atteigne ses objectifs. Il joue aussi souvent le rôle de product owner, un terme défini dans la méthode Agile dont le rôle est de faire le lien entre les équipes techniques et métiers. C'est lui qui « vend » votre projet à vos utilisateurs.
 
@@ -582,7 +550,7 @@ Arriver à faire parler un métier à votre place est le meilleur moyen de gagne
 
 Tentez d'établir un réseau solide de quelques « ambassadeurs » (product advocates) au sein de votre organisation pour asseoir votre légitimité et soutenir votre initiative. En plus de ce soutien, l'ambassadeur vous permettra de capter les retours utilisateur ou d'en émettre lui-même pour affiner votre proposition de valeur.
 
-### Réservistes ou projet « 20% »
+## Réservistes ou projet « 20% »
 
 Dans le privé et en particulier chez les GAFAM[^GAFAM], il est courant pour les employés d'avoir une journée dédiée dans leur semaine pour travailler sur un projet différent au sein de l'entreprise. En ce sens, ils choisissent de travailler au profit d'une autre équipe 1 jour sur 5. Cette possibilité est intéressante car elle profite à la fois à l'employé et à l'entreprise : l'employé peut voir autre chose et monter en compétence dans un autre domaine tout en aidant quand même l'entreprise.
 
@@ -590,7 +558,7 @@ Tentez de proposer à votre hiérarchie cette possibilité afin que chaque colla
 
 Afin de tirer parti de toutes les ressources à votre disposition, considérez l'emploi de personnels réservistes au sein de votre équipe si votre organisation le permet. Quand bien même ils ne sont présents que quelques jours dans l'année, ils peuvent vous décharger d'un bon nombre de tâches que vous n'auriez pas le temps de faire en temps normal. Par exemple, un réserviste en sécurité des systèmes d'information vous aidera à boucler une homologation. Un data-scientist à évaluer une solution d'intelligence artificielle ou effectuer un appui ponctuel sur un jeu de données complexe à traiter.
 
-### Synergie public / privé : un win-win-win-win
+## Synergie public / privé : un win-win-win-win
 
 Les grandes organisations se basent majoritairement aujourd'hui sur des prestations fournies par des industriels pour leurs projets techniques. Soit en raison du manque d'experts en interne, du manque de RH ou des deux. L'erreur est de s'abandonner à l'industriel et se dire « c'est l'expert, tout va fonctionner, il suffit que je paye ». Toute personne ayant mené un programme industriel s'est confrontée aux problématiques de compréhension des enjeux métiers par les parties-prenantes (chefs de projets vs métiers vs industriels) et n'a pu que constater qu'un projet ne se déroule jamais 100% selon le plan prévu.
 
@@ -626,16 +594,18 @@ Il n'est pas concevable de travailler de cette manière en 2022. L'une des prati
 En ce sens si vous souhaitez travailler efficacement avec une entreprise externe à votre organisation, vous devez rapprocher toutes les parties-prenantes liées à ce projet. Faites en sorte que la voix de chacun puisse être entendue en mettant en place un moyen de communication simple et pratique à utiliser pour faire des retours et des suggestions. Par exemple, vous pourriez demander à l'industriel de vous partager l'accès à sa forge logicielle (ex : GitLab, BitBucket) pour y ajouter les commentaires de vos équipes et que les ingénieurs puissent y répondre en boucle courte. GitLab permettant aussi de réaliser du déploiement continu, l'idée est que l'industriel puisse mettre à disposition de ses clients un accès à la dernière version du logiciel. De cette manière, vous évitez les réunions de plusieurs heures et gagnez en flexibilité : vous itérez, rapidement.
 
 ![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
+
 > Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
 
 Dans le cas où vous ne pouvez pas agir sur vos pratiques avec l'industriel, organisez-vous au moins en interne pour avoir un outil de gestion de projet collaboratif comme Atlassian Confluence, qui agit comme une base de connaissance pour votre équipe.
 
 ![Exemple de vue Kanban dans Atlassian Confluence](./images/figure_4.png "Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
+
 > Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
 
 Cette pratique est un win-win-win-win : le client réduit les délais de livraison, le métier obtient un outil qui répond mieux à ses besoins, l'industriel favorise la possibilité d'une nouvelle contractualisation en ayant satisfait son client et le contribuable en a pour son argent. Globalement, tout le monde gagne du temps, est satisfait du résultat et se voit fidélisé en étant davantage impliqué dans chacune des interactions.
 
-## Former de manière continue
+# Former de manière continue
 
 Une bonne culture s'entretient par la connaissance des techniques à l'état de l'art. Les compétences techniques de vos équipes constituent le terreau de votre organisation et forgent leur confiance à l'égard de votre résilience.
 
@@ -653,7 +623,7 @@ A l'instar de l'Armée de l'Air américaine, une méthode avait bien fonctionné
 
 Si vous avez la chance de déjà avoir des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, d'innover. C'est ce que j'ai observé de plus rentable pour l'organisation. Donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
 
-## Terminologie "Ops"
+# Terminologie "Ops"
 
 Maintenant que vous commencez à comprendre la variété des enjeux du DevOps, il est intéressant de découvrir les nombreux termes que l'on peut entendre ci et là dans l'industrie.
 
@@ -672,7 +642,7 @@ L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'ad
 
 Chacune de ces spécialités est un moyen d'optimiser vos pratiques DevOps et doit s'adapter à la maturité de l'entreprise. Ne vous mettez pas en tête de toutes les implémenter avant d'avoir bien appréhendé et mis en pratique le DevOps dans votre organisation.
 
-## Fiches de poste (avec exemples)
+# Fiches de poste (avec exemples)
 
 Pour éviter de perdre de temps et limiter les mauvais recrutements, le pré-requis à votre fiche de poste est votre besoin qui doit être clairement défini.
 
@@ -682,7 +652,7 @@ Vous devez faire l'effort de définir le périmètre du poste que vous rédigez 
 
 Les exemples de fiches de poste ci-dessous sont indicatives et doivent être adaptées à votre situation (maturité et taille des équipes, de l'organisation). Modifiez le contexte et les missions que vous souhaitez confier à votre futur ingénieur DevOps ou SRE. Modifiez également les compétences que vous souhaitez mettre en avant selon votre projet du moment.
 
-### Ingénieur DevOps
+## Ingénieur DevOps
 
 |||
 |---|:---|
@@ -719,7 +689,7 @@ Compétences :
 
 Ce poste peut mener au poste d'ingénieur Systèmes ou de SRE.
 
-### Ingénieur Résilience des Systèmes (SRE)
+## Ingénieur Résilience des Systèmes (SRE)
 
 |||
 |---|:---|
@@ -746,7 +716,7 @@ Compétences :
 
 TODO(flavienbwk): Finaliser les "compétences"
 
-### Ingénieur Systèmes ou Ingénieur Plateforme
+## Ingénieur Systèmes ou Ingénieur Plateforme
 
 |||
 |---|:---|
@@ -769,7 +739,7 @@ Compétences :
 
 TODO(flavienbwk): Réviser/compléter la fiche si besoin
 
-## 4e de couverture
+# Quatrième de couverture
 
 Devant l'impérieuse nécessité de se transformer pour être capable de maintenir le rythme opérationnel, de nombreuses organisations ont entamé leur transformation numérique. Néanmoins, elles peinent à établir une stratégie claire ou efficace.
 
@@ -779,9 +749,9 @@ Il a pour objectif de vous présenter simplement ce mouvement prenant ses racine
 
 Accessible, ce guide pratique et illustré vous permettra de découvrir l'étendu des possibilités qu'offrent les technologies DevOps à l'état de l'art, quels prérequis organisationnels elles nécessitent et comment les implémenter, à votre échelle.
 
-:information_source: Bonus : Exemples de fiches de postes dans ce livre.
+ℹ️ Bonus : Exemples de fiches de postes dans ce livre.
 
-:information_source: Ce livre a été rédigé avec des pratiques gitops, retrouvez-le sur _github.com/flavienbwk/book-devops_.
+ℹ️ Ce livre a été rédigé avec des pratiques gitops, retrouvez-le sur _github.com/flavienbwk/book-devops_.
 
 [^RGPD]: [RGPD : Règlement Général sur la Protection des Données](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
@@ -846,3 +816,5 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 [^IstioDistributedTraces]: [Istio Distributed traces documentation](https://istio.io/latest/docs/concepts/observability/#distributed-traces). Istio.io.
 
 [^IstioAccessLogs]: [Istio access logs documentation](https://istio.io/latest/docs/concepts/observability/#access-logs). Istio.io.
+
+[^IstioDistributedTracesIllustration]: [Distributed traces schema](https://istio.io/latest/docs/concepts/observability/#distributed-traces). Istio.com.

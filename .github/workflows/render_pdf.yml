@@ -1,0 +1,66 @@
+name: Render PDF book
+
+on:
+  push:
+  pull_request:
+    branches:
+      - develop
+      - staging
+
+jobs:
+
+  render-pdf-fr:
+    name: Render FR PDF book
+    runs-on: ubuntu-20.04
+
+    steps:
+
+      - name: Extract branch name
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
+        id: extract_branch
+
+      - name: Extract branch name on pull request
+        if: github.event_name == 'pull_request'
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF})" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ env.BRANCH_NAME }}
+
+      - name: Get version
+        run: |
+          version=$(cat ./VERSION)
+          version=${version##+( )} # Trim left whitespaces
+          version=${version%%+( )} # Trim right whitespaces
+          echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+          echo "version : $version"
+      - name: Checking version format
+        run: |
+          if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+          then
+            echo "Invalid version format. Check your ./VERSION file."
+            exit 1
+          fi
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%B %Y')"
+
+      - name: Install pandoc
+        run: |
+          wget https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-1-amd64.deb
+          sudo dpkg -i pandoc-2.9.2.1-1-amd64.deb
+          sudo apt-get install -y make texlive texlive-xetex texlive-latex-extra texlive-fonts-recommended
+
+      - name: Render PDF
+        run: |
+          sed -i -E "s/date: Undefined/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
+          cd ./fra && make pdf
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: book-${{ env.BOOK_VERSION }}
+          path: ./fra/build/pdf/book.pdf
