@@ -316,7 +316,7 @@ L'idée selon laquelle le DevOps permet de rapprocher les différents métiers p
 
 Dans les grandes organisations, les règles de l'entreprise ou la loi elle-même imposent que des versions bien arrêtées soient définies pour que le logiciel soit qualifié[^ANSSIQualifiedSoftware] ou homologué. Imaginez alors avoir la charge de faire respecter ces conditions quand les méthodes DevOps impliquent des dizaines de mise à jour logicielles chaque jour : vous prenez peur !
 
-Il est donc nécessaire de redéfinir ce que signifie la "sécurité" pour une infrastructure utilisant des technologies cloud.
+Il est donc nécessaire de bien comprendre de quoi est composée une infrastructure cloud, pour correctement redéfinir ce qu'implique sa "sécurité".
 
 TODO(flavienbwk): Développer le sujet
 
@@ -351,9 +351,33 @@ TODO(flavienbwk): Développer le sujet. Besoin de remettre tout le monde à la t
 
 ## Accepter l'échec
 
+Vous devez vous organiser pour accueillir l'échec comme une opportunité de corriger votre trajection, vers une meilleure direction. Si vous subissez un échec important, c'est que vous n'aviez pas assez d'éléments pour contrôler la situation.
+
+A l'aide d'un outil incontournable (le [_postmortem_](#postmortems)), ce chapitre vise à vous faire comprendre l'intérêt d'une culture d'entreprise qui accepte l'échec. Elle vous permettra de mieux anticiper les risques pour en prendre davantage en toute sérénité et augmenter votre vélocité.
+
 TODO(flavienbwk): Développer [le sujet](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084#pdfviewer)
 
+### Postmortems
+
 TODO(flavienbwk): Répondre au [commentaire](http://disq.us/p/207i3e7) (la personne est censée avoir passé des entretiens, est censée connaître son métier : l'erreur est une exception. Donc le seul problème vient des process de l'entreprise qui sont mal décrits ou pas assez automatisés.)
+
+### Sécurité psychologique
+
+<!--
+"Psychological safety is the belief that a person will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes."
+
+Work environments with low psych safety :
+
+People keep concerns or ideas for themselves
+
+People are afraid of looking incompetent or ignorant
+
+People are afraid of being ridiculed
+
+Failure is treated as opportunity for improvement. New ideas are welcome.We blame people because we overestimate their ability to have predicted or unpredicted an outcome as well as discomfort discharge and pain at biological level (studies say). Shitfting team focus from blaming individuals to analyzing processes. Establishing trust.
+
+Blamelessness is the notion of switching responsibility from people to systems and processes. Change the question from "Who did this ?" to "What happened ?". Focus on systems and processes, not people. Innovation requires some degree of risk taking.
+-->
 
 ## Réduire le coût du changement
 
@@ -375,7 +399,7 @@ Ce travail peut commencer par de petites choses au sein de votre infrastructure 
 
 Rappelez-vous : automatiser est l'action permettant de réduire la dette technique, veillez à allouer assez de temps à vos équipes pour qu'elles travaillent dessus.
 
-#### Infrastructure as Code (IaC)
+### Infrastructure as Code (IaC)
 
 Ce terme populaire est simple à appréhender : il s'agit des pratiques et des technologies permettant de rendre la configuration de votre infrastructure explicite sous forme de code informatique.
 
@@ -403,7 +427,7 @@ Vous pouvez tout d'abord commencer à automatiser vos infrastructures à l'aide 
 
 Reportez-vous au [projet GitHub « ToDevOps »](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) [^ToDevOps] pour voir cette technologie en pratique.
 
-#### Continuous Integration (CI)
+### Continuous Integration (CI)
 
 L'intégration continue (continuous integration - CI en anglais) est un ensemble de pratiques permettant de faire tourner des algorithmes automatiquement.
 
@@ -434,17 +458,17 @@ Il est courant d'entendre parler de pipeline d'intégration continue et d'autres
 
 Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est également de tester le code poussé sur plusieurs environnements automatiquement : votre environnement de développement et de préproduction avant de le déployer en production. Néanmoins, ces pipelines multi-environnement introduisent une complexité supplémentaire qu'il faut être en mesure d'absorber lors de sa mise en place par une équipe technique plus importante.
 
-#### Continuous Delivery (CD)
+### Continuous Delivery (CD)
 
 TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d)}
 
-#### Pratique extrême pour la gestion de risque
+### Pratique extrême pour la gestion de risque
 
 <!-- English title : Extreme risk management practices -->
 
 TODO(flavienbwk): [Développer (Chaos Monkey)](https://software.af.mil/training/devops/) et changer le titre
 
-#### Les outils DevOps pour réduire le nombre de réunions
+### Les outils DevOps pour réduire le nombre de réunions
 
 TODO(flavienbwk) Développer [le sujet](https://www.techtarget.com/searchitoperations/opinion/Are-meetings-part-of-your-DevOps-strategy-They-shouldnt-be)
 
@@ -454,7 +478,7 @@ Dans le chapitre précédent - "[Tirer parti de l'automatisation](#tirer-parti-d
 
 Dans ce chapitre, nous allons aborder une dimension importante de l'automatisation : l'observabilité. C'est grâce aux mesures que l'on peut massivement automatiser nos systèmes pour prendre de meilleures décisions à l'échelle de l'organisation.
 
-#### Savoir quand innover et quand s'arrêter
+### Savoir quand innover et quand s'arrêter
 
 TODO(flavienbwk): [Développer](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084).
 
@@ -480,17 +504,17 @@ Sharing monitoring tools including its KPIs (OKRs at Google (60/70% is good OKR)
 For example, Google uses an internal tool accessible by everyone : bugganizer.
 -->
 
-#### Indicateurs de résilience
+### Indicateurs de résilience
 
 TODO(flavienbwk): [Développer SLI/SLO/SLA](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084).
 
-#### Les 4 signaux clé
+### Les 4 signaux clé
 
 TODO(flavienbwk) Développer le sujet (4 golden signals).
 
 Au sein d'une infrastructure containerisée, un _service mesh_ automatise l'acquisition de ces métriques. Découvrons cette technologie dans le prochain chapitre.
 
-#### Service mesh
+### Service mesh
 
 Malgré leur application très concrète et pratique, un _service mesh_ ou "service de maillage de services" sont une notion qui peut paraître complexe.
 
@@ -501,12 +525,6 @@ Abordons-la au travers de quelques problématiques qui illustrent son intérêt 
 - "Nous avons des centaines de conteneurs tournant sur plusieurs machines réparties géographiquement et n'avons aucun moyen unifié d'analyser les latences réseau" (sujet : observabilité)
 - "Nous ressentons des lenteurs sur notre service à l'usage et ne pouvons dire s'il s'agit d'un problème réseau ou logiciel." (sujet : observabilité)
 - "Nous n'avons aucun moyen d'évaluer si la nouvelle version d'un logiciel déployé introduit des ralentissements" (sujet : observabilité, déploiements _canary_ ou _blue/green_)
-
-<!-- 
-Problem to solve : 
-- "Our service are written in 6 different languages and we don't have consistent telemetry libraries across them". 
-  "We have 70 service teams and getting them to add TLS to all of their services would be an impossible organizational task."
--->
 
 Grâce aux mécanismes de déploiement standardisés que proposent les systèmes d'orchestration des containers (ex: Kubernetes), un _service mesh_ permet d'adresser ces problématiques en se "branchant" à votre système d'orchestration. Il peut améliorer la sécurité, la stabilité et l'observabilité de votre infrastructure en :
 
@@ -568,7 +586,7 @@ Voilà pourquoi il est important d'avoir en interne, dans vos propres équipes, 
 
 Chaque ingénieur DevOps et SRE le sait : il est impossible qu'un système fonctionne 100% du temps. C'est pourquoi vous ne pouvez pas attendre d'un prestataire, qu'importe le prix que vous paierez, que ce qu'il livre fonctionne à 100%. Même Google [ne promet pas plus de 99.9% de disponibilité](https://workspace.google.com/terms/sla.html) (SLA)[^GoogleWorkspaceSLA] avec sa capitalisation de plus de 1.49 trillions de dollars et ses +150 000 employés rigoureusement sélectionnés.
 
-#### Mieux s'organiser pour ne pas échouer
+### Mieux s'organiser pour ne pas échouer
 
 La méthode traditionnelle des institutions pour travailler avec des industriels peut s'assimiler aux développements de type « waterfall » : une grande réunion est organisée pour recueillir le besoin, un cahier des charges technique et fonctionnel est rédigé pour structurer le contrat, les développements sont réalisés sans retour des métiers et le produit final est livré, clôturant le contrat.
 
@@ -591,7 +609,7 @@ Le métier a enfin l'outil entre les mains : manque de chance, il ne répond pa
 
 Il n'est pas concevable de travailler de cette manière en 2022. L'une des pratiques du DevOps est de permettre « d'échouer rapidement », pour itérer plus régulièrement et atteindre plus rapidement l'outil qui répond au besoin. En ce sens, la méthodologie DevOps vous recommande de ne pas partir tête baissée sur une version « parfaitement aboutie » du cahier des charges : partez sur une première version, échouez, itérez et construisez l'outil parfait pour vos métiers avec vos métiers. Vous vous souvenez de ce pilier ? « Réduire les silos organisationnels en impliquant chacun » : vous devez inclure les utilisateurs finaux tout au long du cycle du projet. Si vous les mettez de côté, le produit final risque de ni faciliter le travail du métier pour lequel il a été conçu, ni d'obtenir la volonté de ces métiers pour l'utiliser.
 
-En ce sens si vous souhaitez travailler efficacement avec une entreprise externe à votre organisation, vous devez rapprocher toutes les parties-prenantes liées à ce projet. Faites en sorte que la voix de chacun puisse être entendue en mettant en place un moyen de communication simple et pratique à utiliser pour faire des retours et des suggestions. Par exemple, vous pourriez demander à l'industriel de vous partager l'accès à sa forge logicielle (ex : GitLab, BitBucket) pour y ajouter les commentaires de vos équipes et que les ingénieurs puissent y répondre en boucle courte. GitLab permettant aussi de réaliser du déploiement continu, l'idée est que l'industriel puisse mettre à disposition de ses clients un accès à la dernière version du logiciel. De cette manière, vous évitez les réunions de plusieurs heures et gagnez en flexibilité : vous itérez, rapidement.
+En ce sens si vous souhaitez travailler efficacement avec une entreprise externe à votre organisation, vous devez rapprocher toutes les parties-prenantes liées à ce projet. Faites en sorte que la voix de chacun puisse être entendue en mettant en place un moyen de communication simple et pratique à utiliser pour faire des retours et des suggestions. Par exemple, vous pourriez demander à l'industriel de vous partager l'accès à sa forge logicielle (ex : GitLab, BitBucket, GitHub) pour y ajouter les commentaires de vos équipes et que les ingénieurs puissent y répondre en boucle courte. GitLab permettant aussi de réaliser du déploiement continu, l'idée est que l'industriel puisse mettre à disposition de ses clients un accès à la dernière version du logiciel. De cette manière, vous évitez les réunions de plusieurs heures et gagnez en flexibilité : vous itérez, rapidement.
 
 ![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
 
@@ -602,6 +620,8 @@ Dans le cas où vous ne pouvez pas agir sur vos pratiques avec l'industriel, org
 ![Exemple de vue Kanban dans Atlassian Confluence](./images/figure_4.png "Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
 
 > Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
+
+A titre d'exemple, le _ITZBund_ (Centre Fédéral Allemand des Technologies de l'Information, l'équivalent pour la France de l'ANSSI[^ANSSI]) emploie depuis 2018 _Nextcloud_[^NextcloudITZBund], un logiciel _open-source_ pour partager des fichiers et collaborer sur une plateforme unifiée. Environ 300 000 utilisateurs institutionnels et industriels l'utilisent. Un an après, c'est le Ministère de l'Intérieur français qui l'adopte[^NextCloudMinint].
 
 Cette pratique est un win-win-win-win : le client réduit les délais de livraison, le métier obtient un outil qui répond mieux à ses besoins, l'industriel favorise la possibilité d'une nouvelle contractualisation en ayant satisfait son client et le contribuable en a pour son argent. Globalement, tout le monde gagne du temps, est satisfait du résultat et se voit fidélisé en étant davantage impliqué dans chacune des interactions.
 
@@ -818,3 +838,9 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 [^IstioAccessLogs]: [Istio access logs documentation](https://istio.io/latest/docs/concepts/observability/#access-logs). Istio.io.
 
 [^IstioDistributedTracesIllustration]: [Distributed traces schema](https://istio.io/latest/docs/concepts/observability/#distributed-traces). Istio.com.
+
+[^ANSSI]: [Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/en/)
+
+[^NextcloudITZBund]: POORTVLIET, Jos. [German Federal Administration relies on Nextcloud as a secure file exchange solution](https://nextcloud.com/blog/german-federal-administration-relies-on-nextcloud-as-a-secure-file-exchange-solution/). 2018.
+
+[^NextCloudMinint]: POORTVLIET, Jos. [EU governments choose independence from US cloud providers with Nextcloud](https://nextcloud.com/blog/eu-governments-choose-independence-from-us-cloud-providers-with-nextcloud/). 2019.
