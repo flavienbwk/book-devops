@@ -30,8 +30,8 @@ It automatically :
 
 ## Languages
 
-- [French](./fra/README.md) :fr: Transformer les institutions grâce au DevOps
-- [English](./eng/README.md) :us: Scaling Institutions with DevOps [^1]
+- French :fr: [Transformer les institutions grâce au DevOps](fra/README.md)
+- English :us: [Scaling Institutions with DevOps](eng/README.md) [^1]
 
 ## Useful VSCode extensions when writing
 
