@@ -8,6 +8,8 @@ TODO(flavienbwk): Department of Defense going DevSecOps :
 - https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf
 - https://breakingdefense.com/2021/05/dod-publishes-devsecops-2-0-docs-for-accelerating-apps/
 
+TODO(flavienbwk): Devops Institute, [report 2022 (p16)](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=184076) : chiffres sur la DevOps comme méthodologie conduisant les transformations numériques
+
 Ce livre concentre à la fois les aspects organisationnels et techniques pour illustrer chaque notion de la méthodologie DevOps. Comprenez par là que vous n'avez pas besoin d'être ingénieur pour comprendre ces notions. Cependant, en tant que responsable d'une initiative DevOps, vous vous devez de maîtriser la technique pour prendre les meilleures décisions et rester crédible face à vos subordonnés et votre hiérarchie.
 
 L'idée est de vous donner une ligne directrice pour vous orienter vers une première expérimentation DevOps, ou affiner celle que vous soutenez.
@@ -372,41 +374,56 @@ Si vous travaillez pour une institution, vous n'avez peut-être pas la contraint
 
 Vous devez vous organiser pour accueillir l'échec comme une opportunité de corriger votre trajectoire, vers une meilleure direction. Si vous subissez un échec important, c'est que vous n'aviez pas assez d'éléments pour contrôler la situation.
 
-A l'aide d'outils et de méthodologies incontournables, ce chapitre vise à vous faire comprendre l'intérêt d'une culture d'entreprise qui accepte l'échec. Elle vous permettra de mieux anticiper les risques pour en prendre davantage en toute sérénité et augmenter votre vélocité.
+A l'aide d'outils et de méthodologies incontournables dans le domaine, ce chapitre vise à vous faire comprendre l'intérêt d'une culture d'entreprise qui accepte l'échec. Elle vous permettra de mieux anticiper les risques, pour en prendre davantage en toute sérénité et augmenter votre vélocité.
 
-TODO(flavienbwk): Développer [le sujet](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084#pdfviewer)
-
-### Accélérer la fidélisation
-
-TODO(flavienbwk): [Spotify engineering culture](https://www.youtube.com/watch?v=4GK1NDTWbkY).
-
-## Design thinking
-
-TODO(flavienbwk): [Design thinking](https://www.coursera.org/learn/developing-a-google-sre-culture/lecture/bmXLx). [HR-Ops](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262).
+Cet état d'esprit est un changement culturel qu'une organisation doit instiller en son sein, dans toutes les strates hiérarchiques.
 
 ### Sécurité psychologique
 
-TODO(flavienbwk): Un accélérateur de fidélisation. Réduction du burnout.
+> "La sécurité psychologique est la culture selon laquelle une personne ne sera pas punie ou humiliée pour avoir exprimé ses idées, questions, préoccupations ou erreurs." - Amy C. Edmondson, professeure en gestion et leadership à la _Harvard Business School_.
 
+La culture d'une organisation est le fondement de son potentiel. Une bonne culture aide à promouvoir la collaboration et la communication entre les équipes, atout fondamental pour une mise en œuvre réussie d'une initiative DevOps. Cette idée n'est pas nouvelle, et fut théorisée en 2004 par le sociologue Ron WESTRUM dans son article "_Une typologie des cultures organisationnelles_"[^RonWestrumTypologyOfOrganisationCulture].
+
+En prenant soin de la sécurité psychologique de vos employés, vous favorisez les sentiments de responsabilité et d'appropriation partagées du succès et des échecs. Des succès et des échecs partagés, plutôt qu'attribués à des équipes ou acteurs individuels.
+
+Dans un environnement de travail ne tenant pas compte de la sécurité psychologique, les collaborateurs :
+
+- Gardent leurs préoccupations ou leurs idées pour eux
+- Ont peur de paraître incompétents ou ignorants
+- Ont peur d'être ridiculisés
+
+Comme l'indique Kiran VARMA dans son cours sur la culture SRE chez Google[^CourseraSRECourse], la recherche[^ATheoryOfBlameResearch] a démontré qu'il existe deux facteurs principaux alimentant la tendance des individus à blâmer les autres : le biais rétrospectif et la "décharge d'inconfort".
+
+Le biais rétrospectif est la tendance d'un individu à surestimer sa capacité d'avoir été capable de prédire un évènement. Ce, quand bien même il n'aurait pas pu être prédit. Les humains ont souvent du mal à réaliser qu'une idée est devenue évidente seulement à partir du moment où elle s'est produite. Par exemple : dire en fin de match que vous saviez pertinemment qu'une équipe de foot allait perdre, seulement parce-que vous l'avez annoncé en début du match. Dans le monde professionnel, cela peut mener à blamer la personne en charge de réaliser une tâche, en disant qu'elle aurait "bien pu prévoir la chose évidente" qui allait se passer.
+
+La notion de "décharge d'inconfort" indique ...
 <!--
-"Psychological safety is the belief that a person will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes."
-
-Work environments with low psych safety :
-
-People keep concerns or ideas for themselves
-
-People are afraid of looking incompetent or ignorant
-
-People are afraid of being ridiculed
-
-Failure is treated as opportunity for improvement. New ideas are welcome.We blame people because we overestimate their ability to have predicted or unpredicted an outcome as well as discomfort discharge and pain at biological level (studies say). Shitfting team focus from blaming individuals to analyzing processes. Establishing trust.
-
-Blamelessness is the notion of switching responsibility from people to systems and processes. Change the question from "Who did this ?" to "What happened ?". Focus on systems and processes, not people. Innovation requires some degree of risk taking.
+The second factor is discomfort discharge, which says that blame exist to discharge comfort and pain at a neurobiological level. Sociologists Brené Brown claims that we are pretty much wired for blame because it's a natural way to release discomfort, but blaming people only hinders the ability to learn from mistakes. People tend to hide information or don't declare incidence because they're scared of punishment. Similarly, people are afraid to ask questions that may lead to identifying the root causes of an incident if they feel their question may lead to punishment or ridicule for themselves or their peers. Mistakes are valuable opportunities to learn and improve only if the correct procedural and systematic causes of the mistake are properly identified. In short, blaming people creates environments that are not psychologically safe.
 -->
+
+Une organisation qui tient compte de la sécurité psychologique considère que :
+
+- L'échec doit être traité comme une opportunité pour s'améliorer
+- Les nouvelles idées sont les bienvenues et doivent être discutées
+- L'échec est le résultat d'un manque de méthodes et de procédures, pas la faute d'un individu
+
+Cet état d'esprit permet d'établir la confiance. L'idée est de remplacer les questions du genre "Qui a fait ça ?" par "Qu'est-ce qu'il s'est passé ?". L'organisation doit se concentrer sur ses méthodes et ses procédures, pas sur les individus. La meilleure pratique consiste à supposer que les collaborateurs agissent de bonne foi et prennent leurs décisions à partir des informations les plus pertinentes dont ils disposent à l'instant T. Enquêter sur la source d'une information erronée est bien plus profitable pour l'entreprise que d'attribuer l'erreur à quelqu'un.
+
+L'innovation requiert un certain degré de prise de risque. Il n'y a pas de nouveau produit ou de nouvelle stratégie ayant 100% de chance de réussir. Donc si tout le monde a peur à l'idée de prendre un risque, personne n'en prendra et votre organisation ne sera plus en mesure d'innover.
 
 ### Postmortems
 
 TODO(flavienbwk): Développer le sujet. Répondre au [commentaire](http://disq.us/p/207i3e7) (la personne est censée avoir passé des entretiens, est censée connaître son métier : l'erreur est une exception. Donc le seul problème vient des process de l'entreprise qui sont mal décrits ou pas assez automatisés.). Postmortem [template](https://cloud.berwick.fr/f/169842).
+
+TODO(flavienbwk): Un accélérateur de fidélisation. Réduction du [burnout](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262). Bonne communication pour réduire les burnouts.
+
+### Accélérer la fidélisation
+
+TODO(flavienbwk): [Spotify engineering culture](https://www.youtube.com/watch?v=4GK1NDTWbkY). [HR-Ops](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262).
+
+## Design thinking
+
+TODO(flavienbwk): [Design thinking](https://www.coursera.org/learn/developing-a-google-sre-culture/lecture/bmXLx). [HR-Ops](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262).
 
 ## Réduire le coût du changement
 
@@ -534,6 +551,8 @@ For example, Google uses an internal tool accessible by everyone : bugganizer.
 -->
 
 ### Indicateurs de résilience
+
+Les indicateurs de résilience sont des métriques vous permettant d'évaluer la santé de votre infrastructure.
 
 TODO(flavienbwk): [Développer SLI/SLO/SLA](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084).
 
@@ -756,7 +775,7 @@ Au sein de notre équipe SRE de X personnes, vous aurez la charge de :
 
 - Administrer nos réseaux de développement, pré-production et production
 - Garantir la disponibilité de nos logiciels et services
-- Définir les indicateurs de résilience (SLIs, SLOs), maintenir les tableaux de bords d'indicateurs et les systèmes d'alertes
+- Définir les [indicateurs de résilience](#indicateurs-de-résilience) (SLIs, SLOs), maintenir les tableaux de bords d'indicateurs et les systèmes d'alertes
 - Développer et documenter les configurations des systèmes d'information (Ansible)
 - Maintenir et administrer les sauvegardes de nos systèmes
 - Préparer (s'entraîner) et appliquer des procédures d'urgence selon les 3Cs[^GoogleWorkbookIncidentResponse]
@@ -798,7 +817,7 @@ Devant l'impérieuse nécessité de se transformer pour être capable de mainten
 
 Elles tentent alors de faire appel à de coûteux experts dans l'espoir de réussir à trouver le bon modèle d'organisation. Ce qu'elles cherchent depuis tant d'années et dont elles n'arrivaient pas à trouver le nom, se voit décrit dans ce livre : le DevOps.
 
-Ce livre vous permettra de découvrir simplement ce mouvement prenant ses racines chez les plus grandes et plus prospères organisations du monde.
+Au travers d'une centaine de ressources référencées, ce livre vous permettra de découvrir simplement ce mouvement prenant ses racines chez les plus grandes et plus prospères organisations du monde.
 
 Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des possibilités qu'offrent les technologies DevOps à l'état de l'art, quels prérequis organisationnels elles nécessitent et comment les implémenter, à votre échelle.
 
@@ -881,3 +900,9 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 [^SoftwareErosion]: WIGGINS, Adam. [The New Heroku (Part 4 of 4): Erosion-resistance & Explicit Contracts](https://blog.heroku.com/the_new_heroku_4_erosion_resistance_explicit_contracts). 2011.
 
 [^NatoSoftwareFactory]: [The NCI Agency's Software Factory: a new way to collaborate with industry](https://www.ncia.nato.int/about-us/newsroom/the-nci-agencye28099s-software-factory-a-new-way-to-collaborate-with-industry.html). 2019.
+
+[^RonWestrumTypologyOfOrganisationCulture]: WESTRUM, Ron. ["A typology of organisation culture", doi:10.1136/qshc.2003.009522](http://dx.doi.org/10.1136/qshc.2003.009522). 2004.
+
+[^CourseraSRECourse]: Google Cloud. [Developing a Google SRE Culture](https://www.coursera.org/learn/developing-a-google-sre-culture-fr), module 4. coursera.org.
+
+[^ATheoryOfBlameResearch]: MALLE, Bertram; GUGLIELMO, Steve; MONROE, Andrew. [A Theory of Blame. Psychological Inquiry. 25. 147-186. 10.1080/1047840X.2014.877340](https://www.researchgate.net/publication/266394032_A_Theory_of_Blame). 2014.
