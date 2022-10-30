@@ -423,6 +423,8 @@ Bien sûr, si la modification ne concerne pas toutes les parties-prenantes, on �
 
 Bien que - du fait de sa simplicité - le RACI-VS soit souvent le modèle employé par les grandes organisations, il n'est pas un outil efficace dans le cadre d'une transformation DevOps.
 
+Si vous menez une initiative DevOps au sein de votre organisation, votre hiérarchie vous demandera de vous engager sur de nombreuses lignes du tableau ci-dessus. En effet, cette dernière ne connaît probablement pas les nouvelles techniques et technologies que vous citerez. Prenez cette responsabilité pour rassurer vos autorités[^RadioDevOps12]. Vous n'avez rien à craindre puisque vous savez que la méthodologie que vous voulez implémenter est collective et itérative.
+
 #### Le modèle DACI
 
 Le modèle DACI permet de structurer la prise de décision. On l'emploie généralement en réunion pour faire en sorte qu'une décision soit prise à la fin de cette dernière.
@@ -455,6 +457,10 @@ Une fois votre décision prise, il est temps de communiquer votre décision pour
 Une fois archivé, ce document permettra aux nouvelles parties-prenantes du projet de comprendre pourquoi telle ou telle décision a été prise. En menant cette réflexion collective, vous évitez également les biais cognitifs individuels.
 
 #### Le modèle DevOps
+
+Certes, il n'est peut-être pas directement souhaitable de se séparer instantanément d'un modèle type RACI. C'est une question d'outillage que vous devez mettre en place et de culture. Cette dernière prend du temps à changer. Mais c'est bien cela que vous devez viser : un changement de culture dans votre organisation pour que les autorités surpassent leur peur.
+
+En plus des notions évoquées dans les deux derniers chapitres sur la responsabilité dans un modèle DevOps, analysons une réflexion que je retrouve régulièrement.
 
 Vous l'aurez compris, le DevOps incite à ne pas blamer les parties-prenantes. Il est naturel de rétorquer alors que si personne n'est personnellement responsable, les équipes risquent d'être moins attentives dans leurs responsabilités quotidiennes. Comment imaginer un responsable de la production qui supprimerait l'ensemble de la base de données client sans conséquence ? Les responsables doivent bien à un moment comprendre que leurs actions ont des conséquences. Le DevOps répond de deux manières à cet enjeu :
 
@@ -976,3 +982,5 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 [^DecisionMakingMindtools]: [Decision making tools](https://www.mindtools.com/pages/main/newMN_TED.htm). _Mindtools.com_.
 
 [^ProjectManagementMindtools]: [Project management tools](https://www.mindtools.com/pages/main/newMN_PPM.htm). _Mindtools.com_.
+
+[^RadioDevOps12]: PIOT, Ludovic; [Les Compagnons du DevOps](https://www.compagnons-devops.fr/). [L'administrateur système DevOps | En Aparté #12, Radio DevOps](https://shows.acast.com/radio-devops), à 33 minutes et 30 secondes. 2022.
