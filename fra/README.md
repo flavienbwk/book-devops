@@ -320,7 +320,7 @@ L'étape d'après serait d'ouvrir cette plateforme à des partenaires industriel
 
 Néanmoins, je rappelle ici qu'il s'agit de pouvoir développer une expertise en interne avant d'être capable de définir des règles pour les autres. Chaque organisation est différente et se doit [d'avoir ses propres experts en interne pour la conseiller au mieux](#le-développement-interne-comme-véritable-alternative).
 
-## Git flow
+## GitOps et git flow
 
 TODO(flavienbwk): Développer le sujet
 
@@ -337,25 +337,6 @@ Dans les grandes organisations, les règles de l'entreprise ou la loi elle-même
 Il est donc nécessaire de bien comprendre de quoi est composée une infrastructure cloud, pour correctement redéfinir ce qu'implique sa "sécurité".
 
 TODO(flavienbwk): Développer le sujet
-
-# Les responsabilités dans un modèle DevOps
-
-TODO(flavienbwk): Finaliser {Vaincre la peur de l'attribution des responsabilités (modèle RACI), podcast DevOps #12 Ludovic PIOT @ 35m00}
-
-En découvrant la multitude de technologies expérimentales à mettre en place au sein de votre organisation pour atteindre un fonctionnement en mode DevOps, vous pourriez naturellement prendre peur à l'idée de devenir le responsable de ce grand et nouveau système.
-
-L'un des modèles de partage des responsabilités est le modèle RACI qui permet de voir d'un coup d'œil la répartition des rôles de chaque équipe pour le projet.
-
-TODO(flavienbwk): Remettre en forme le tableau (markdown)
-<!--
- 	Chef de projet	Chef de projet	Market.	Formation	Ventes
-1 - Expression des besoins	R	 	R,A	I	C
-2 - Définition du cahier des charges	R,A	C	R	 	I
-3 - Développement	A	R	I	 	 
-4 - Réception de l'application 	R	 	R,A	 	 
-5 - Formation des utilisateurs	 	 	 	R,A	 
-6 - Mise en production	A	R	R	 	I
--->
 
 # Les piliers du DevOps en pratique
 
@@ -410,17 +391,93 @@ Cet état d'esprit permet d'établir la confiance. L'idée est de remplacer les 
 
 L'innovation requiert un certain degré de prise de risque. Il n'y a pas de nouveau produit ou de nouvelle stratégie ayant 100% de chance de réussir. Donc si tout le monde a peur à l'idée de prendre un risque, personne n'en prendra et votre organisation ne sera plus en mesure d'innover.
 
-### Postmortems
+Un tas d'autres modèles de décision[^DecisionMakingMindtools] et de gestion de projet[^ProjectManagementMindtools] existent, n'hésitez pas à vous en inspirer.
 
-TODO(flavienbwk): Développer le sujet. Répondre au [commentaire](http://disq.us/p/207i3e7) (la personne est censée avoir passé des entretiens, est censée connaître son métier : l'erreur est une exception. Donc le seul problème vient des process de l'entreprise qui sont mal décrits ou pas assez automatisés.). Postmortem [template](https://cloud.berwick.fr/f/169842).
+### Les responsabilités dans un modèle DevOps
+
+En découvrant la multitude de technologies expérimentales à mettre en place au sein de votre organisation pour atteindre un fonctionnement en mode DevOps, vous pourriez naturellement prendre peur à l'idée de devenir le responsable de ce grand et nouveau système.
+
+Ce chapitre vise à mettre en perspectives deux modèles de responsabilité traditionnels avec le modèle DevOps. Libre à vous de piquer dans chacun les méthodologies qui vous semblent les plus opportunes pour votre organisation. Néanmoins, soyez assez audacieux et tentez d'éviter de retomber dans un modèle traditionnel, qui ne vous donnerait que l'illusion de vous transformer.
+
+#### Le modèle RACI
+
+L'un des modèles de partage des responsabilités est le "RACI", pour _Responsible_ (Exécutant), _Accountable_ (Responsable), _Consulted_ (Consulté) et _Informed_ (Informé). Il permet de s'assurer que toutes les parties-prenantes sont conscientes de leurs rôles et de leurs responsabilités dans un projet.
+
+Dans l'illustration suivante, nous avons cinq parties-prenantes pour le développement d'un nouveau site web. Un responsable, un exécutant (personne en charge de la réalisation), des consultés et des informés sont désignés pour chaque activité.
+
+TODO(flavienbwk): Remettre en forme le [tableau](https://assets-global.website-files.com/5a690960b80baa0001e05b0f/5b7198a6ebc80005a6898d46_blog_post_img_Example-RACI-Matrix%402x.png) en français
+
+![Exemple de diagramme RACI. Traduction de l'anglais depuis l'illustration _Atlassian.com_.](./images/figure-7.png)
+
+|   |   |
+|---|---|
+|   |   |
+
+Une extension du RACI est le RACI-VS[^RACI-VS] qui inclut un validateur (la personne en charge de la validation finale du livrable, une autorité) et un signataire (personne en charge de l'approbation officielle du livrable et qui engage sa signature, une haute autorité).
+
+Le modèle RACI repose sur une séparation claire des rôles et des responsabilités. Cela peut être contre-productif dans une initiative DevOps, qui cherche à promouvoir la collaboration entre les équipes. De plus, le RACI ne tient pas compte de la nature dynamique et en constante évolution du développement logiciel.
+
+Dans un modèle DevOps, tout le monde peut contribuer à un projet. Tout le monde est responsable au même niveau selon son domaine d'expertise. Une modification significative - par exemple pour le lancement d'une nouvelle version d'un logiciel - nécessite l'approbation de chaque équipe (de l'équipe de _design_, en passant par le _marketing_, l'ingénierie et la sécurité).
+
+Bien sûr, si la modification ne concerne pas toutes les parties-prenantes, on évitera de demander à l'équipe sécurité de nous donner son avis sur le changement de couleur de la page d'accueil... Mais l'idée est qu'il n'y a pas qu'un seul responsable ou qu'un seul exécutant : tout le monde est responsable et peut valider ou invalider une modification selon les règles et contraintes du moment.
+
+Bien que - du fait de sa simplicité - le RACI-VS soit souvent le modèle employé par les grandes organisations, il n'est pas un outil efficace dans le cadre d'une transformation DevOps.
+
+#### Le modèle DACI
+
+Le modèle DACI permet de structurer la prise de décision. On l'emploie généralement en réunion pour faire en sorte qu'une décision soit prise à la fin de cette dernière.
+
+Une réunion sous modèle DACI implique la désignation de quatre rôles :
+
+1. Le **_driver_** (meneur) : celui qui oriente le comité vers une décision. Il est en charge de veiller à ce que chacun soit bien informé de l'avancée de la réunion et de répondre aux questions. Il s'assure qu'une décision est prise mais n'influence pas nécessairement le processus. Souvent un responsable de programme.
+2. L'**approbateur** : personne qui a le dernier mot lors de l'approbation de la décision. Souvent un responsable ou un dirigeant de l'entreprise ayant un pouvoir de décision. Soyez innovant en invitant un métier ou un client pour qui le projet a été conçu, à endosser ce rôle.
+3. Les **contributeurs** : les personnes possédant les connaissances pour éclairer le processus décisionnel. Les experts et les métiers.
+4. Les **intervenants informés** : personnes concernées par la décision sans être directement impliquées dans la prise de cette décision. Ceux qui vont hypothétiquement devoir revoir leur travail à la suite de la décision prise. Par exemple les services juridiques, commerciaux ou de support.
+
+Ensuite, l'objectif est de discuter ensemble pour lister en quelques mots les options envisagées. Indiquer pour chacune leur coût, le temps qu'elle nécessitera et autres avantages on inconvénients.
+
+Dans les 5 minutes restantes, définissez la date à laquelle la décision doit être prise (si ce n'est pas tout de suite). Fort de ces ébauches d'options, s'il en reste à étayer, distribuez la tâche à celui en charge de la compléter.
+
+Une fois les options regroupées, les approbateurs prennent la décision et l'autorité distribue les tâches.
+
+Dans un modèle DevOps, les "intervenants informés" sont pleinement impliqués en tant que "contributeurs". Ils ont voix dans la prise de décision car ils possèdent une expertise qui impacte le produit. Sinon, il n'y a aucune raison de leur faire perdre leur temps et un e-mail récapitulatif avec les actions à prendre est suffisant.
+
+TODO(flavienbwk): Remettre en forme le [tableau](https://wac-cdn.atlassian.com/dam/jcr:c9128f95-3430-4ba2-8893-97801feb24f9/Modal-EXAMPLE1new.jpg?cdnVersion=610)
+
+|   |   |
+|---|---|
+|   |   |
+
+![Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans leur cas, l'option 1). Traduction de l'anglais depuis l'illustration _Atlassian.com_[^AtlassianDACIMethod]](./images/figure-8.jpg)
+
+Une fois votre décision prise, il est temps de communiquer votre décision pour que tout le monde soit à la page. Envoyez le document aux personnes qui doivent en prendre connaissance puis archivez-le.
+
+Une fois archivé, ce document permettra aux nouvelles parties-prenantes du projet de comprendre pourquoi telle ou telle décision a été prise. En menant cette réflexion collective, vous évitez également les biais cognitifs individuels.
+
+#### Le modèle DevOps
+
+Vous l'aurez compris, le DevOps incite à ne pas blamer les parties-prenantes. Il est naturel de rétorquer alors que si personne n'est personnellement responsable, les équipes risquent d'être moins attentives dans leurs responsabilités quotidiennes. Comment imaginer un responsable de la production qui supprimerait l'ensemble de la base de données client sans conséquence ? Les responsables doivent bien à un moment comprendre que leurs actions ont des conséquences. Le DevOps répond de deux manières à cet enjeu :
+
+1. Si vos procédures sont valides, il n'y a pas de raison que l'ingénieur ait pu exécuter cette commande. S'il a fait une erreur, c'est que les règles gouvernant la sécurité de votre infrastructure de production n'étaient pas assez fortes (accès aux machines de production par commandes manuelles, absence de contrôle/validation des commandes, absence de sauvegardes, procédure mal décrite, manque de communication...). (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)")
+2. Vous avez embauché un employé car il connaît son métier (vous l'avez bien eu en entretien). Si vous craignez qu'il n'assume pas ses responsabilités, parlez avec lui ou séparez-vous de lui et révisez votre politique d'embauche. Faites confiance à vos experts. Si vous doutez, demandez-leurs de renforcer les règles de contrôle (cf. point 1) et de vous rassurer avec des scénarios type (cf. chapitre "[Postmortems et premortems](#postmortems-et-premortems)").
+
+Voilà pourquoi il faut commencer avec des moyens, mais avoir l'audace de commencer petit dans son initiative de transformation. Votre entreprise doit progressivement mettre en place les procédures (dans notre cas, les technologies de contrôle des systèmes informatiques) selon ses moyens RH et financiers. Une fois que vous avez éprouvé ces techniques, itérez à plus large échelle.
+
+### Postmortems et premortems
 
 TODO(flavienbwk): Un accélérateur de fidélisation. Réduction du [burnout](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262). Bonne communication pour réduire les burnouts.
+
+TODO(flavienbwk): Postmortem [template](https://cloud.berwick.fr/f/169842).
+
+Quand le postmortem définit un document qui fait suite à un incident, le premortem est un document permettant de savoir quoi faire si tel incident venait à se produire. En amont du lancement d'un projet et tout au long de la gestion de votre production, demandez à vos équipes de rédiger des premortems. Vos chefs de projets et ingénieurs doivent travailler conjointement pour écrire ces "fiches scénario". Cela doit devenir une habitude au cours de l'exploitation et une obligation avant le lancement d'un projet, d'un produit ou d'un nouveau service. Atlassian propose une méthode en 8 points[^AtlassianPremortemMethod] pour effectuer ce type d'analyse.
+
+Il est recommandé de stocker ces documents dans un projet _git_ pour être en mesure de les éditer et de visualiser leurs modifications au cours du temps (cf. chapitre ["GitOps et git flow"](#gitops-et-git-flow)).
 
 ### Accélérer la fidélisation
 
 TODO(flavienbwk): [Spotify engineering culture](https://www.youtube.com/watch?v=4GK1NDTWbkY). [HR-Ops](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262).
 
-## Design thinking
+### Design thinking
 
 TODO(flavienbwk): [Design thinking](https://www.coursera.org/learn/developing-a-google-sre-culture/lecture/bmXLx). [HR-Ops](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262).
 
@@ -516,6 +573,8 @@ TODO(flavienbwk): [Développer (Chaos Monkey)](https://software.af.mil/training/
 ### Les outils DevOps pour réduire le nombre de réunions
 
 TODO(flavienbwk) Développer [le sujet](https://www.techtarget.com/searchitoperations/opinion/Are-meetings-part-of-your-DevOps-strategy-They-shouldnt-be)
+
+TODO(flavienbwk) Développer avec le model [DACI](#le-modèle-daci)
 
 ## Tout mesurer
 
@@ -816,13 +875,13 @@ Devant l'impérieuse nécessité de se transformer pour être capable de mainten
 
 Elles tentent alors de faire appel à de coûteux experts dans l'espoir de réussir à trouver le bon modèle d'organisation. Ce qu'elles cherchent depuis tant d'années et dont elles n'arrivaient pas à trouver le nom, se voit décrit dans ce livre : le DevOps.
 
-Au travers d'une centaine de ressources référencées, ce livre vous permettra de découvrir simplement ce mouvement prenant ses racines chez les plus grandes et plus prospères organisations du monde.
+Avec plus d'une centaine de ressources référencées, vous découvrirez dans ce livre un mouvement prenant ses racines chez les plus grandes et plus prospères organisations du monde.
 
 Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des possibilités qu'offrent les technologies DevOps à l'état de l'art, quels prérequis organisationnels elles nécessitent et comment les implémenter, à votre échelle.
 
-ℹ️ Bonus : Exemples de fiches de postes dans ce livre.
+ℹ️ Bonus : Exemple de fiches de postes dans ce livre.
 
-ℹ️ Ce livre a été rédigé avec des pratiques gitops, retrouvez-le sur _github.com/flavienbwk/book-devops_.
+ℹ️ Ce livre a été rédigé avec des pratiques gitops, retrouvez-le sur _[github.com/flavienbwk/book-devops](github.com/flavienbwk/book-devops)_.
 
 [^RGPD]: [RGPD : Règlement Général sur la Protection des Données](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
@@ -907,3 +966,13 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 [^ATheoryOfBlameResearch]: MALLE, Bertram; GUGLIELMO, Steve; MONROE, Andrew. [A Theory of Blame. Psychological Inquiry. 25. 147-186. 10.1080/1047840X.2014.877340](https://www.researchgate.net/publication/266394032_A_Theory_of_Blame). 2014.
 
 [^BrenéBROWNVideoOnBlame]: UK's Royal Society for Arts, Manufactures and Commerce. Vidéo "[Brené Brown on Blame](https://www.youtube.com/watch?v=RZWf2_2L2v8)" sur YouTube. 2015.
+
+[^AtlassianPremortemMethod]: Atlassian. [Réalisation d'un pre-mortem de projet](https://www.atlassian.com/fr/team-playbook/plays/pre-mortem). _Atlassian.com_.
+
+[^RACI-VS]: CLET, Étienne; MADERS, Henri-Pierre; LEBLANC, Jérôme; GOLDFARB, Marc. [Le métier de chef de projet, Éditions Eyrolles](https://books.google.fr/books?id=BtEiAgAAQBAJ&pg=PR21&dq=RACI+VS+validateur+signataire). 2013.
+
+[^AtlassianDACIMethod]: Atlassian. [Modèle de framework décisionnel DACI](https://www.atlassian.com/fr/team-playbook/plays/daci). _Atlassian.com_.
+
+[^DecisionMakingMindtools]: [Decision making tools](https://www.mindtools.com/pages/main/newMN_TED.htm). _Mindtools.com_.
+
+[^ProjectManagementMindtools]: [Project management tools](https://www.mindtools.com/pages/main/newMN_PPM.htm). _Mindtools.com_.
