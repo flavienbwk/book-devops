@@ -396,10 +396,9 @@ Comme l'indique Kiran VARMA dans son cours sur la culture SRE chez Google[^Cours
 
 Le biais rétrospectif est la tendance d'un individu à surestimer sa capacité d'avoir été capable de prédire un évènement. Ce, quand bien même il n'aurait pas pu être prédit. Les humains ont souvent du mal à réaliser qu'une idée est devenue évidente seulement à partir du moment où elle s'est produite. Par exemple : dire en fin de match que vous saviez pertinemment qu'une équipe de foot allait perdre, seulement parce-que vous l'avez annoncé en début du match. Dans le monde professionnel, cela peut mener à blamer la personne en charge de réaliser une tâche, en disant qu'elle aurait "bien pu prévoir la chose évidente" qui allait se passer.
 
-La notion de "décharge d'inconfort" indique ...
-<!--
-The second factor is discomfort discharge, which says that blame exist to discharge comfort and pain at a neurobiological level. Sociologists Brené Brown claims that we are pretty much wired for blame because it's a natural way to release discomfort, but blaming people only hinders the ability to learn from mistakes. People tend to hide information or don't declare incidence because they're scared of punishment. Similarly, people are afraid to ask questions that may lead to identifying the root causes of an incident if they feel their question may lead to punishment or ridicule for themselves or their peers. Mistakes are valuable opportunities to learn and improve only if the correct procedural and systematic causes of the mistake are properly identified. In short, blaming people creates environments that are not psychologically safe.
--->
+La notion de "décharge d'inconfort" fait référence au phénomène neurobiologique, selon lequel nous blâmons les gens pour nous décharger d'une douleur mentale. La sociologue Brené BROWN déclare que les humains le font contre leur gré, naturellement, mais que blâmer entrave notre capacité à apprendre de nos erreurs[^BrenéBROWNVideoOnBlame].
+
+Dans une organisations qui n'est pas à l'aise avec l'échec, vos collaborateurs auront tendance à cacher des informations ou ne pas déclarer d'incident car ils auront peur d're puni. Pour la même raison ou par peur d'être considérés ridicules, ils auront peur de poser des questions pouvant mener à identifier les causes d'un problème. Or, les erreurs ne sont des opportunités de s'améliorer que si leurs causes véritables sont identifiées. Chose qui n'est possible que dans un environnement de travail psychologiquement sûre.
 
 Une organisation qui tient compte de la sécurité psychologique considère que :
 
@@ -906,3 +905,5 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 [^CourseraSRECourse]: Google Cloud. [Developing a Google SRE Culture](https://www.coursera.org/learn/developing-a-google-sre-culture-fr), module 4. coursera.org.
 
 [^ATheoryOfBlameResearch]: MALLE, Bertram; GUGLIELMO, Steve; MONROE, Andrew. [A Theory of Blame. Psychological Inquiry. 25. 147-186. 10.1080/1047840X.2014.877340](https://www.researchgate.net/publication/266394032_A_Theory_of_Blame). 2014.
+
+[^BrenéBROWNVideoOnBlame]: UK's Royal Society for Arts, Manufactures and Commerce. Vidéo "[Brené Brown on Blame](https://www.youtube.com/watch?v=RZWf2_2L2v8)" sur YouTube. 2015.
