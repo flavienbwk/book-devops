@@ -190,7 +190,9 @@ Un responsable ne demande qu'à être convaincu par une initiative de ses subord
 
 Cela nécessitera des présentations constantes de l'avancée de votre projet : à la fois pour qu'il se souvienne et pour qu'il comprenne. Il est toujours risqué d'estimer qu'un projet est compris dès la première présentation, surtout quand il s'agit d'un nouveau paradigme que l'on souhaite introduire.
 
-Vous avez besoin d'équipes internes : il y aura toujours des bugs à résoudre, des configurations à adapter et des fonctionnalités à ajouter. Ne croyez pas que « l'industriel » pourra résoudre tous vos problèmes : vous allez perdre beaucoup d'argent et vous n'atteindrez pas les objectifs. L'industriel ne peut pas être en permanence dans votre organisation et comprendre chacun de vos enjeux.
+Vous avez besoin d'équipes internes : il y aura toujours des bugs à résoudre, des configurations à adapter et des fonctionnalités à ajouter. Développés en interne ou en externe, vous subirez le phénomène d'érosion des logiciels[^SoftwareErosion]. Ce dernier qualifie les problèmes qu'un logiciel peut subir au cours du temps quand il est laissé à l'abandon : mises à jour de sécurité critiques, espace disque plein, processus qui cessent de fonctionner...).
+
+Ne croyez pas que « l'industriel » pourra résoudre tous vos problèmes : vous allez perdre beaucoup d'argent et vous n'atteindrez pas les objectifs. L'industriel ne peut pas être en permanence dans votre organisation et comprendre chacun de vos enjeux.
 
 Pour amorcer votre initiative DevOps, vous avez besoin :
 
@@ -288,9 +290,7 @@ Abandonnez les « échantillons anonymisés ». Les ingénieurs ont besoin de 
 
 # Le cycle de vie d'un logiciel moderne
 
-L'un des enjeux du DevOps est de fluidifier le cycle de vie d'un logiciel.
-
-TODO(flavienbwk): Développer le sujet
+L'un des enjeux du DevOps est de fluidifier le cycle de vie d'un logiciel. Vous découvrirez dans ce chapitre les différentes techniques qui vous permettront de lancer votre initiative DevOps avec succès, avec des pratiques à l'état de l'art.
 
 ## Un réseau unique
 
@@ -319,6 +319,10 @@ L'étape d'après serait d'ouvrir cette plateforme à des partenaires industriel
 ## Git flow
 
 TODO(flavienbwk): Développer le sujet
+
+## Méthodologie à 12 critères
+
+TODO(flavienbwk): [Développer](https://12factor.net/) le [sujet](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/3-Reliable%20GCloud%20Infrastructure%3A%20Design%20and%20Process&openfile=171870)
 
 # La sécurité : un nouveau paradigme dans le modèle DevOps
 
@@ -358,6 +362,9 @@ En terme d'organisation, voyez le DevOps comme un moyen d'appliquer une "saine c
 ## Réduire les silos organisationnels
 
 TODO(flavienbwk): Développer le sujet. Besoin de remettre tout le monde à la table des discussions. Cartographier. Ordonner une décision forte. Besoin de travailler sur un réseau commun.
+<!-- Reduce organizational silos : increase and fasten collaboration breaking barriers around teams, share ownership (engagement) -->
+
+Si vous travaillez pour une institution, vous n'avez peut-être pas la contrainte de la rentabilité mais celle du réseau. Et donc celle de l'adoption. Travaillez à rendre votre outil accessible au plus grand nombre, sur le réseau de travail de vos utilisateurs cibles.
 
 ## Accepter l'échec
 
@@ -472,7 +479,7 @@ Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est é
 
 TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d)}
 
-### Pratique extrême pour la gestion de risque
+### Une pratique extrême pour réduire les risques
 
 <!-- English title : Extreme risk management practices -->
 
@@ -854,3 +861,5 @@ Accessible, ce guide pratique et illustré vous permettra de découvrir l'étend
 [^NextcloudITZBund]: POORTVLIET, Jos. [German Federal Administration relies on Nextcloud as a secure file exchange solution](https://nextcloud.com/blog/german-federal-administration-relies-on-nextcloud-as-a-secure-file-exchange-solution/). 2018.
 
 [^NextCloudMinint]: POORTVLIET, Jos. [EU governments choose independence from US cloud providers with Nextcloud](https://nextcloud.com/blog/eu-governments-choose-independence-from-us-cloud-providers-with-nextcloud/). 2019.
+
+[^SoftwareErosion]: WIGGINS, Adam. [The New Heroku (Part 4 of 4): Erosion-resistance & Explicit Contracts](https://blog.heroku.com/the_new_heroku_4_erosion_resistance_explicit_contracts). 2011.
