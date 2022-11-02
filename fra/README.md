@@ -94,6 +94,12 @@ Selon Google, voici les cinq piliers du DevOps :
 
 # Le DevOps, d'expérience
 
+Une initiative DevOps est une transformation radicale à l'échelle d'une organisation. Si cette dernière n'est pas encore passée au [mode agile](#être-au-plus-proche-du-métier), elle bouscule tous les niveaux de l'entreprise pour arriver à faire travailler chacun ensemble. Le DevOps ne rapproche pas que les "Dev" (ingénieurs-développeurs) et les "Ops" (ingénieurs systèmes) mais également et surtout le _management_. Cette dernière doit accepter un changement souvent vécu comme difficile car inconnu. La plupart du temps, cette transformation nécessite également une modification importante de l'architecture des systèmes informatiques de l'organisation, car elle implique l'usage de nouveaux outils.
+
+L'empathie est aptitude clé pour faire aboutir une transformation. Pour certains, ces nouvelles méthodes de travail et ces outils constituent un modèle à l'opposé de ce qu'ils ont toujours appris et fait.
+
+Voilà pourquoi il est important d'acculturer aussi souvent que possible sa hiérarchie à l'intérêt de passer en mode DevOps, lui faire des démonstrations, répondre à ses moindres questions et l'accompagner jusqu'à ce qu'elle comprenne bien les enjeux. Votre organisation doit être en mesure de répondre aux défis technologiques toujours plus modernes et rapides. Elle ne le fera pas en restant sur ses acquis.
+
 ## Préjugé
 
 > « Je n'ai besoin que d'un ingénieur SRE/DevOps »
@@ -308,13 +314,73 @@ L'idée selon laquelle le DevOps permet de rapprocher les différents métiers p
 
 Dans les grandes organisations, les règles de l'entreprise ou la loi elle-même imposent que des versions bien arrêtées soient définies pour que le logiciel soit qualifié[^ANSSIQualifiedSoftware] ou homologué. Imaginez alors avoir la charge de faire respecter ces conditions quand les méthodes DevOps impliquent des dizaines de mise à jour logicielles chaque jour : il y a de quoi prendre peur ! Il est donc nécessaire de bien comprendre de quoi est composée une infrastructure cloud, pour correctement redéfinir ce qu'implique sa "sécurité".
 
-## Culture
+La sécurité affecte tous les [piliers du DevOps](#les-piliers-du-devops-en-pratique). Ce chapitre se concentre sur une description haut-niveau des notions de la sécurité dans une méthodologie DevOps, mais citera tous les chapitres où les techniques abordées seront détaillées.
 
-Le rapport DORA[^DORAWebsite] "État du DevOps 2022"[^DORAStateOfDevops2022Announcement] se concentre sur les enjeux de sécurité du DevOps. Il conclut qu'une entreprise avec une culture favorisant la confiance et la sécurité psychologique (cf. chapitre "[Accepter l'échec](#accepter-léchec)"), est 1.6 fois plus susceptible d'adopter des pratiques de sécurité innovantes. Il ajoute que cette culture permet de réduire de 1.4 fois le nombre de _burnout_[^Burnout] et augmente les chances qu'un collaborateur recommande son entreprise.
+## Culture de la sécurité
 
-La sécurité a toujours été une affaire de culture. La méthodologie DevOps vient cependant apporter toutes les techniques qui permettront à une organisation de ne plus passer à côté des bonnes pratiques.
+Le rapport DORA[^DORAWebsite] "État du DevOps 2022"[^DORAStateOfDevops2022Announcement] se concentre sur les enjeux de sécurité dans les approches DevOps. Il fait état du fait qu'une entreprise favorisant la confiance et la [sécurité psychologique](#accepter-léchec), est 1.6 fois plus susceptible d'adopter des pratiques de sécurité innovantes. Il ajoute que cette culture permet de réduire de 1.4 fois le nombre de _burnout_[^Burnout] et augmente les chances qu'un collaborateur recommande son entreprise.
 
-TODO(flavienbwk): Développer le sujet
+La sécurité a toujours été une affaire de culture. La méthodologie DevOps vient cependant apporter toutes les techniques qui permettront à une organisation de ne plus passer à côté des bonnes pratiques, autrefois négligées ou oubliées dans une paperasse longue et indigeste.
+
+L'essentiel est de comprendre qu'en mode DevOps, nous travaillons dans un principe de [cycle itératif d'amélioration](#être-au-plus-proche-du-métier). Les projets ne sont jamais figés en terme de technologie utilisée et les déploiements sont continus sans interaction humaine. Cela permet de ne pas nuire à la vélocité des innovations et de toujours répondre le plus justement possible au besoin du client. Mais ce n'est pas la jungle : il existe des standards technologiques et des procédés qui permettent de contrôler ce qui est déployé, selon les standards de sécurité de votre organisation.
+
+Nous détaillerons plus en détails les aspects culturels de la méthodologie DevOps dans le chapitre "[Accepter l'échec](#accepter-léchec)".
+
+## Intégration continue et sécurité
+
+Vous le découvrirez en détails dans le chapitre "[Continuous integration (CI)](#continuous-integration-ci)", l'intégration continue permet de contrôler automatiquement une modification apportée à un logiciel.
+
+Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans sa forge logicielle (ex: GitLab) que sa contribution ne répond pas à la politique de l'organisation et dispose du message d'erreur expliquant le problème. Il peut ainsi immédiatement effectuer les modifications pour se conformer.
+
+C'est ici qu'on attend l'expertise des responsables de la sécurité. Ces profils doivent expliquer aux ingénieurs DevOps et aux SRE ce qui concrètement doit être contrôlé. Ces règles sont ensuite transcrites en code qui formera des tests automatisés, dans une chaîne d'intégration continue utilisée par tous les projets de l'entreprise.
+
+Ces règles étant versionnées [sous forme de code](#infrastructure-as-code-iac) deviennent des tests automatisés. Elles pourront être mises à jour à souhait et impacteront immédiatement l'ensemble des projets.
+
+Ces tests peuvent se composer : d'une analyse antivirus, de l'analyse de failles dans les images Docker du projet ou encore de s'assurer qu'il n'y ait pas de secrets poussés par inadvertance.
+
+![Exemple de chaîne d'intégration continue dans GitLab[^KilalaGitlabPipelineExample]](./images/ci-pipeline-gitlab-security.png)
+
+Dans la capture d'écran ci-dessus, vous pouvez observer une chaîne d'intégration continue à 5 étapes (Build, Test, Release, Preprod, Integration). La colonne qui nous intéresse est "Test". Elle comporte différents tests de sécurité qui sont lancés et qui ont dans ce cas soit réussi (coche verte), soit comporte des avertissements (point d'exclamation jaune). Si un test avait échoué, nous aurions vu une croix rouge. Un point d'exclamation signifie que le test en question n'est pas passé mais qu'il n'était pas critique (ex: une dépendance logicielle dépréciée mais sans faille de sécurité).
+
+Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (ou _template_)[^GitLabCustomTemplate] qu'ils copient et qui intègrent toutes les règles de sécurité, en plus d'autres fichiers utiles pour démarrer. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité. Cela permettra de faire gagner du temps à tout le monde.
+
+## Revues de code
+
+Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées, ou vous n'êtes tout simplement peut-être pas dimensionné en RH pour le faire.
+
+En DevOps, on pratique la méthodologie [GitOps](#gitops-et-git-flow) : chaque développeur travaille sur sa propre branche et implémente sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" dans la branche principale (plus communément : une _merge request_ ou _pull request_). Ce processus est détaillé dans le chapitre "[GitOps et git flow](#gitops-et-git-flow)".
+
+La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale.
+
+L'objectif est de vérifier que le développeur n'ait pas fait de grosse erreur dans le fonctionnement du code, ou de s'assurer qu'il n'ajoute pas de dette technique. Par exemple chez Google, une _merge request_ requiert l'approbation de deux ingénieurs avant de pouvoir être fusionnée.
+
+![Illustration de la méthodologie GitOps (simplifiée)](./images/gitops-simple-flow.png)
+
+La publication d'une nouvelle version d'un logiciel en production est le moment idéal pour que les équipes de sécurité auditent le code. Toute nouvelle version d'un logiciel est soumise aux règles d'intégration continue précédemment citées avec optionnellement des tests supplémentaires et optionnellement la validation de l'équipe de sécurité.
+
+Pour les équipes des sécurité, la revue de code a pour objectif de vérifier que le maximum de critères de sécurité sont respectés. Par exemple :
+
+- Présence de journaux d'activité qui recensent les actions utilisateur
+- Accès à des sources de données autorisées (cf. chap. "[Service mesh](#service-mesh)" pour forcer ces politiques)
+- Pas d'envoi de données vers un service non autorisé (cf. chap. "[Service mesh](#service-mesh)" pour forcer ces politiques)
+- Technique de stockage des mots de passe / des cookies
+- Respect des fonctionnalités RGPD
+
+GitLab permet par exemple d'obliger l'approbation d'une _merge request_ par des équipes spécifiques[^GitLabRequiredApprovals] (ex: l'équipe de sécurité), avant qu'elle puisse être fusionnée dans une branche principale.
+
+TODO(flavienbwk): Faire le lien avec le [SSDF](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) ?
+
+## Production as code
+
+TODO(flavienbwk): Développer le sujet : pas 1 action qui n'est pas codée et automatisée. [1 action manuelle = 1 bug](#infrastructure-as-code-iac).
+
+## Ressources pré-approuvées
+
+TODO(flavienbwk): Développer le sujet (registries, images, packages pré-approuvés; ressources signées)
+
+## Compromission
+
+TODO(flavienbwk): Développer le sujet : DevOps pour tracer les actions, centraliser/gérer/analyser les logs via des technologies standardisées (Fluentd, [Istio](https://medium.com/@senthilrch/api-authentication-using-istio-ingress-gateway-oauth2-proxy-and-keycloak-a980c996c259))...
 
 # Les piliers du DevOps en pratique
 
@@ -361,7 +427,7 @@ Néanmoins, je rappelle ici qu'il s'agit de pouvoir développer une expertise en
 
 #### GitOps et git flow
 
-TODO(flavienbwk): Développer le sujet
+TODO(flavienbwk): Développer le sujet + schéma
 
 #### Méthodologie à 12 critères
 
@@ -580,7 +646,7 @@ Il est courant d'entendre parler de pipeline d'intégration continue et d'autres
     - Tester sa documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. Istio a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
 - Deploy : TODO(flavienbwk): Développer
 
-TODO(flavienbwk): Illustration pipelines GitLab
+![Illustration d'une chaîne d'intégration continue dans GitLab. [GitLab.com](https://docs.gitlab.com/ee/ci/pipelines/).](./images/ci-pipeline-gitlab.png)
 
 Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est également de tester le code poussé sur plusieurs environnements automatiquement : votre environnement de développement et de préproduction avant de le déployer en production. Néanmoins, ces pipelines multi-environnement introduisent une complexité supplémentaire qu'il faut être en mesure d'absorber lors de sa mise en place par une équipe technique plus importante.
 
@@ -1018,3 +1084,9 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 [^NATU]: NATU : [Autres grandes entreprises technologiques américaines, plus récentes dans l'usage](https://fr.wikipedia.org/wiki/GAFAM) (Airbnb, Tesla, Uber, Netflix).
 
 [^GoogleCloudDevopsLeaders]: [Multiple cas d'usage et témoignages d'entreprises de tout type de domaines sur cloud.google.com/transform](https://cloud.google.com/transform/).
+
+[^GitLabRequiredApprovals]: [GitLab required approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/index.html#required-approvals) documentation. _GitLab.com_.
+
+[^GitLabCustomTemplate]: [GitLab's custom instance-level projects templates](https://docs.gitlab.com/ee/user/admin_area/custom_project_templates.html)
+
+[^KilalaGitlabPipelineExample]: SLUIJTER-STEK, Tess. [Security testing OWASP Juice Shop in Gitlab CI/CD](https://www.kilala.nl/index.php?id=2510). 2021.
