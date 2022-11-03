@@ -1,3 +1,19 @@
+# Pré-face
+
+_Pré-face auto-générée par intelligence artificielle[^OpenAIGPT3] puis traduite et adaptée par l'auteur. Ce chapitre illustre l'intérêt de mettre en place de nouvelles structures d'organisation face à la rapidité des innovations numériques. Considérez que cette capacité peut être maîtrisée par l'un de vos concurrents : vous devez être en mesure de déployer vos innovations au moins aussi vite que lui pour rester compétitif._
+
+_Entrée fournie à GPT3 : "Write the preface of a book whose title is "Transforming institutions thanks to DevOps" explaining the benefits of a DevOps transformation and how organizations are succeeding in their digital transformation."_
+
+La transformation numérique est un sujet d'actualité pour les institutions. Elles cherchent des moyens d'améliorer leur efficacité à l'ère numérique. Pour ce faire, elles adoptent notamment les pratiques DevOps.
+
+Le DevOps est un ensemble de principes et de pratiques qui aide les organisations à améliorer leurs pratiques de développement et de déploiement logiciels. Cela les aide à être plus agiles, à déployer des logiciels plus fréquemment et à obtenir plus rapidement des retours de la part des clients.
+
+Les organisations qui ont adopté la méthodologie DevOps ont constaté des avantages significatifs : un délai de mise sur le marché plus rapide, une satisfaction cliente accrue et une efficacité opérationnelle améliorée.
+
+Ce livre vous décrira comment le DevOps peut aider votre organisation à transformer ses pratiques de développement et de livraison de logiciels. Il fournira également des exemples de pratiques employées dans des grandes organisations, qui ont mis en œuvre avec succès la méthodologie et listera les leçons apprises.
+
+Si votre organisation cherche des moyens d'améliorer son processus de développement et de déploiement de logiciels, ce livre est fait pour vous.
+
 # Introduction
 
 De nombreuses organisations ont déjà entamé leur transformation dans le but d'atteindre un fonctionnement en mode "DevOps".
@@ -38,7 +54,7 @@ C'est le lien entre le monde du développement et de la production.
 
 On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques.
 
-L'ingénieur « DevOps » est celui en charge de définir et d'implémenter ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#continuous-integration-ci) au sein d'une [forge logicielle](#usine-logicielle).
+L'ingénieur « DevOps » est celui en charge de définir et d'implémenter ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#continuous-integration-ci) au sein d'une [usine logicielle](#usine-logicielle).
 
 Ce poste impliquant de mettre d'accord toutes les parties prenantes sur une méthode de travail commune, il est exigé de disposer d'excellentes compétences en communication et en pédagogie.
 
@@ -108,7 +124,7 @@ Voilà pourquoi il est important d'acculturer aussi souvent que possible sa hié
 
 Prenons un exemple. Vous commencez avec une équipe de 2 personnes qui développent un logiciel. Vous avez déjà plusieurs problèmes, particulièrement si vous travaillez hors internet :
 
-- Qui met en place l'infrastructure pour correctement développer ce logiciel ? (forge logicielle, miroirs de dépendances, registres de librairies…)
+- Qui met en place l'infrastructure pour correctement développer ce logiciel ? (usine logicielle, miroirs de dépendances, registres de librairies…)
 - Qui sécurise cette infrastructure ?
 - Qui gère les sauvegardes ?
 - Qui définit les règles de développement et leur cohérence pour maintenir les logiciels dans le temps ?
@@ -120,6 +136,10 @@ Maintenant que vous avez recruté, votre équipe grandit à 6 ingénieurs : il 
 Admettons que vous perdiez 2 ingénieurs. Il s'avère que vous devez toujours maintenir l'infrastructure qui est passée à l'échelle pour répondre aux besoins de vos 6 ingénieurs et les X machines que vous avez installées.
 
 Comprenez que vous avez besoin d'une masse critique de profils SRE/DevOps dans votre équipe. Cette masse critique doit évoluer en fonction du nombre de collaborateurs et vous ne pouvez pas en retirer facilement.
+
+Des rapports[^DORAReportSREPractice] appuient cette théorie : pratiquer le SRE n'affecte pas la résilience de l'entreprise avant d'avoir acquis un certain niveau de maturité. C'est à dire qu'il vous faudra atteindre une masse critique avant d'être en mesure de tirer les bénéfices de ces outils et pratiques.
+
+![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE. On constate qu'il faut un certain nombre d'équipes SRE pour obtenir des bénéfices significatifs[^DORAReportSREPRacticesFigures].](./images/adoption-of-sre-practices.png)
 
 A titre d'exemple, avec sa taille Google maintient son ratio de SRE/développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio doit néanmoins avoir une [tendance logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez.
 
@@ -314,7 +334,7 @@ L'idée selon laquelle le DevOps permet de rapprocher les différents métiers p
 
 Dans les grandes organisations, les règles de l'entreprise ou la loi elle-même imposent que des versions bien arrêtées soient définies pour que le logiciel soit qualifié[^ANSSIQualifiedSoftware] ou homologué. Imaginez alors avoir la charge de faire respecter ces conditions quand les méthodes DevOps impliquent des dizaines de mise à jour logicielles chaque jour : il y a de quoi prendre peur ! Il est donc nécessaire de bien comprendre de quoi est composée une infrastructure cloud, pour correctement redéfinir ce qu'implique sa "sécurité".
 
-La sécurité affecte tous les [piliers du DevOps](#les-piliers-du-devops-en-pratique). Ce chapitre se concentre sur une description haut-niveau des notions de la sécurité dans une méthodologie DevOps, mais citera tous les chapitres où les techniques abordées seront détaillées.
+La sécurité affecte tous les [piliers du DevOps](#les-piliers-du-devops-en-pratique). Ce chapitre se concentre sur une description haut-niveau des notions de la sécurité dans une méthodologie DevOps, mais citera tous les chapitres où les techniques abordées seront détaillées. Il s'agit de faire de la sécurité proactive (donc automatisée) et d'éviter au maximum la sécurité "documentaire", souvent synonyme de peu d'efficacité.
 
 ## Culture de la sécurité
 
@@ -330,7 +350,7 @@ Nous détaillerons plus en détails les aspects culturels de la méthodologie De
 
 Vous le découvrirez en détails dans le chapitre "[Continuous integration (CI)](#continuous-integration-ci)", l'intégration continue permet de contrôler automatiquement une modification apportée à un logiciel.
 
-Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans sa forge logicielle (ex: GitLab) que sa contribution ne répond pas à la politique de l'organisation et dispose du message d'erreur expliquant le problème. Il peut ainsi immédiatement effectuer les modifications pour se conformer.
+Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans sa usine logicielle (ex: GitLab) que sa contribution ne répond pas à la politique de l'organisation et dispose du message d'erreur expliquant le problème. Il peut ainsi immédiatement effectuer les modifications pour se conformer.
 
 C'est ici qu'on attend l'expertise des responsables de la sécurité. Ces profils doivent expliquer aux ingénieurs DevOps et aux SRE ce qui concrètement doit être contrôlé. Ces règles sont ensuite transcrites en code qui formera des tests automatisés, dans une chaîne d'intégration continue utilisée par tous les projets de l'entreprise.
 
@@ -344,6 +364,35 @@ Dans la capture d'écran ci-dessus, vous pouvez observer une chaîne d'intégrat
 
 Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (ou _template_)[^GitLabCustomTemplate] qu'ils copient et qui intègrent toutes les règles de sécurité, en plus d'autres fichiers utiles pour démarrer. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité. Cela permettra de faire gagner du temps à tout le monde.
 
+## Dépendances externes
+
+Les pratiques SSI au sein des grandes organisation, requièrent que tout logiciel déployé soit homologué. Le document d'homologation doit lister les dépendances utilisées dans le logiciel : les librairies tiers-partie sur lesquelles ils se basent. Cela se nomme en anglais le _Software Bill of Materials (SBOM)_, en français "Nomenclature du logiciel".
+
+Cette pratique est fastidieuse, mais permet lorsqu'une nouvelle faille est découverte de facilement et rapidement répondre aux questions "Sommes-nous affecté ?" ou encore "Où est utilisée cette librairie dans nos logiciels ?" pour rapidement pouvoir la mitiger.
+
+Néanmoins dans une approche DevOps, l'usage de ces librairies évolue au cours du temps. Une technologie utilisée un jour sera peut-être remplacée demain. Vous ne pouvez donc pas demander aux développeurs de mettre à jour la liste de ces centaines (voire milliers) de dépendances utilisées dans leurs logiciels.
+
+L'avantage de la méthodologie DevOps est d'utiliser une technologie de déploiement standardisée : le conteneur. Cela nous permet d'utiliser des outils pour analyser de quoi ils sont composés et prévenir les failles de sécurité. Le SBOM peut donc être remplacé par deux choses :
+
+- Des chaînes d'intégration continue qui détectent et refusent l'utilisation de librairies spécifiques automatiquement (ex: analyse des `package.json` en Javascript, `requirements.txt` en Python)
+- Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: Trivy[^Trivy], Quay Clair[^QuayClair])
+
+Au lieu de lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser au plus vite les modifications apportant des risques.
+
+## Ressources pré-approuvées
+
+Pour limiter les risques, il est possible de baser les logiciels développés sur des ressources pré-approuvées mises à disposition des développeurs. Chaque brique externe qui constitue le logiciel est pré-approuvée. Il peut s'agir de paquets Python, NPM, Go ou encore d'images Docker qui ont été analysés et pour lesquels les équipes de sécurité se sont assurés qu'il n'y avait pas de faille.
+
+C'est le cas par exemple du service _Iron Bank_ mis en place par le Ministère des Armées américain au sein de _Platform One_[^IronBankPresentation]. Les images Docker  doivent passer par une rigoureuse procédure de sécurité avant d'être approuvées. Ces étapes [combinent des vérifications](https://docs-ironbank.dso.mil/hardening/overview/) [manuelles](https://docs-ironbank.dso.mil/hardening/justifications/) et automatiques mais peuvent déjà faire, dans un premier temps, l'objet de procédures seulement automatisées. Les actions manuelles sont nécessaires pour justifier de l'intérêt d'ajouter une nouvelle image. C'est ce que les équipes de _Platform One_ appellent "l'homologation continue d'images approuvées"[^IronBankHardeningOverview].
+
+![Processus d'homologation continue des images de Iron Bank.[^PlatformOnePresentationWebsite]](./images/continuous-accreditation-approved-images.png)
+
+Dans les organisations traitant des données très sensibles, la politique par défaut est de n'autoriser que l'utilisation de librairies et d'images pré-approuvées (_hardened images_). Veillez néanmoins à considérer l'impact d'un tel choix sur la vélocité des développements. Soyez certain que votre équipe de sécurité et SRE puissent suivre le rythme de la mise à disposition des librairies.
+
+Comme il est assez inenvisageable d'analyser chaque librairie de développement pour s'assurer qu'il n'y a pas de faille, les usines logicielles peuvent se baser sur la signature des fichiers. Les éditeurs de confiance signent chacune de leur librairie[^GitlabSigningProcess], pour que les chaînes d'intégration continue ou les administrateurs systèmes puissent vérifier qu'elle n'a pas été altérée au cours du transfert. Chaque éditeur de confiance émet un certificat que l'équipe SRE peut intégrer dans ses chaînes d'intégration continue pour vérifier que les paquets téléchargés n'ont pas été altérés.
+
+Une méthode plus simple est de n'utiliser que la clé de hashage des fichiers. Chaque fichier est identifié par une chaîne de caractères nommée _hash_, que l'ordinateur peut facilement calculer. Cette chaîne de caractère ressemble à cela : _52dd368c0ed9714f9b84fb885c925da4_. Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ différent de celui de référence (récupéré depuis Internet sur le site de l'éditeur), le lancement du logiciel est refusé. Ce mécanisme est déjà la plupart du temps implémenté par les gestionnaires de paquets des langages de programmation (ex: `package-lock.json` pour NPM, `poetry.lock` pour Python).
+
 ## Revues de code
 
 Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées, ou vous n'êtes tout simplement peut-être pas dimensionné en RH pour le faire.
@@ -356,7 +405,7 @@ L'objectif est de vérifier que le développeur n'ait pas fait de grosse erreur 
 
 ![Illustration de la méthodologie GitOps (simplifiée)](./images/gitops-simple-flow.png)
 
-La publication d'une nouvelle version d'un logiciel en production est le moment idéal pour que les équipes de sécurité auditent le code. Toute nouvelle version d'un logiciel est soumise aux règles d'intégration continue précédemment citées avec optionnellement des tests supplémentaires et optionnellement la validation de l'équipe de sécurité.
+La publication d'une nouvelle version d'un logiciel en production est le moment idéal pour que les équipes de sécurité auditent le code. Cette pratique s'appelle la "revue de sécurité". Toute nouvelle version d'un logiciel est soumise aux règles d'intégration continue précédemment citées avec des tests automatisés de sécurité supplémentaires et optionnellement la validation de l'équipe de sécurité.
 
 Pour les équipes des sécurité, la revue de code a pour objectif de vérifier que le maximum de critères de sécurité sont respectés. Par exemple :
 
@@ -374,9 +423,13 @@ TODO(flavienbwk): Faire le lien avec le [SSDF](https://nvlpubs.nist.gov/nistpubs
 
 TODO(flavienbwk): Développer le sujet : pas 1 action qui n'est pas codée et automatisée. [1 action manuelle = 1 bug](#infrastructure-as-code-iac).
 
-## Ressources pré-approuvées
+## SLSA
 
-TODO(flavienbwk): Développer le sujet (registries, images, packages pré-approuvés; ressources signées)
+https://slsa.dev/get-started
+
+## Développement basé sur le zéro-trust
+
+TODO(flavienbwk): https://software.af.mil/wp-content/uploads/2021/08/CNAP-RefDesign_ver-1.0-Approved-for-Public-Release.pdf
 
 ## Compromission
 
@@ -432,6 +485,8 @@ TODO(flavienbwk): Développer le sujet + schéma
 #### Méthodologie à 12 critères
 
 TODO(flavienbwk): Si on veut une plateforme Cloud avec des techniques DevOps efficaces, il y a quelques règles d'ingénierie logicielle à respecter. [Développer](https://12factor.net/) le [sujet](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/3-Reliable%20GCloud%20Infrastructure%3A%20Design%20and%20Process&openfile=171870)
+
+Ces critères - et en particulier le découpage des logiciels en microservices - couplés à des [chaînes de déploiement continue](#continuous-delivery-cd), augmentent de 43%[^DORACDLooselyCoupledArchitecture] les chances d'anticiper les incidents logiciels (ex: pannes, vulnérabilités ou performances de service dégradées).
 
 ## Accepter l'échec
 
@@ -635,11 +690,11 @@ Voici quelques exemples d'algorithmes qu'il est possible de lancer pour vérifie
 
 Toutes ces tâches contribuent en la réduction de la dette technique de votre base de code et en la plus grande facilité du déploiement de vos projets en garantissant l'implémentation des standards définis par vos équipes DevOps.
 
-Il est courant d'entendre parler de pipeline d'intégration continue et d'autres termes utilisés lorsque nous pratiquons les technologies de CI/CD. Nous allons définir plusieurs de ces termes.
+Il est courant d'entendre parler de _pipeline_ d'intégration continue (en français "chaîne d'intégration continue") et d'autres termes utilisés lorsque nous pratiquons les technologies de CI/CD. Nous allons définir plusieurs de ces termes.
 
 - Job : une tâche lancée automatiquement lors de l'évènement déclencheur
 - Pipeline : enchaînement de jobs
-- Stages : les trois étapes d'une pipeline d'intégration continue
+- Stages : les trois étapes d'une _pipeline_ d'intégration continue
 - Build : étape contenant les jobs s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
 - Test : TODO(flavienbwk): Développer
   - Exemples :
@@ -803,7 +858,7 @@ Le métier a enfin l'outil entre les mains : manque de chance, il ne répond pa
 
 Il n'est pas concevable de travailler de cette manière en 2022. L'une des pratiques du DevOps est de permettre « d'échouer rapidement », pour itérer plus régulièrement et atteindre plus rapidement l'outil qui répond au besoin. En ce sens, la méthodologie DevOps vous recommande de ne pas partir tête baissée sur une version « parfaitement aboutie » du cahier des charges : partez sur une première version, échouez, itérez et construisez l'outil parfait pour vos métiers avec vos métiers. Vous vous souvenez de ce pilier ? « Réduire les silos organisationnels en impliquant chacun » : vous devez inclure les utilisateurs finaux tout au long du cycle du projet. Si vous les mettez de côté, le produit final risque de ni faciliter le travail du métier pour lequel il a été conçu, ni d'obtenir la volonté de ces métiers pour l'utiliser.
 
-En ce sens si vous souhaitez travailler efficacement avec une entreprise externe à votre organisation, vous devez rapprocher toutes les parties-prenantes liées à ce projet. Faites en sorte que la voix de chacun puisse être entendue en mettant en place un moyen de communication simple et pratique à utiliser pour faire des retours et des suggestions. Par exemple, vous pourriez demander à l'industriel de vous partager l'accès à sa forge logicielle (ex : GitLab, BitBucket, GitHub) pour y ajouter les commentaires de vos équipes et que les ingénieurs puissent y répondre en boucle courte. GitLab permettant aussi de réaliser du déploiement continu, l'idée est que l'industriel puisse mettre à disposition de ses clients un accès à la dernière version du logiciel. De cette manière, vous évitez les réunions de plusieurs heures et gagnez en flexibilité : vous itérez, rapidement.
+En ce sens si vous souhaitez travailler efficacement avec une entreprise externe à votre organisation, vous devez rapprocher toutes les parties-prenantes liées à ce projet. Faites en sorte que la voix de chacun puisse être entendue en mettant en place un moyen de communication simple et pratique à utiliser pour faire des retours et des suggestions. Par exemple, vous pourriez demander à l'industriel de vous partager l'accès à sa usine logicielle (ex : GitLab, BitBucket, GitHub) pour y ajouter les commentaires de vos équipes et que les ingénieurs puissent y répondre en boucle courte. GitLab permettant aussi de réaliser du déploiement continu, l'idée est que l'industriel puisse mettre à disposition de ses clients un accès à la dernière version du logiciel. De cette manière, vous évitez les réunions de plusieurs heures et gagnez en flexibilité : vous itérez, rapidement.
 
 ![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
 
@@ -837,11 +892,28 @@ A l'instar de l'Armée de l'Air américaine, une méthode avait bien fonctionné
 
 Si vous avez la chance de déjà avoir des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, d'innover. C'est ce que j'ai observé de plus rentable pour l'organisation. Donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
 
+## Télétravail (aparté)
+
+Les grandes organisations sont souvent frileuses à l'idée de proposer du télétravail à leurs employés. Le risque selon eux, est que l'employé ne travaille pas sur les sujets de l'entreprise.
+
+Si vous devez convaincre votre hiérarchie, listez clairement les objectifs de l'employé en télétravail (avec l'aide du [chapitre précédent](#former-de-manière-continue)). Si cela ne suffit pas, vous pouvez par exemple lui proposer que l'employé écrive un compte rendu sur son travail en fin de journée. Mais cela revient à dire au collaborateur "je ne te fais pas confiance sur ton sérieux". Réfléchissez-y à deux fois.
+
+La recherche[^DORAFlexibleWork] a démontré qu'un environnement de travail flexible était associé à une baisse de _burnout_ et une augmentation des chances que l'employé recommande son entreprise.
+
 # Mesurer le succès de sa transformation
 
 TODO(flavienbwk): [Les métriques](https://www.youtube.com/watch?v=uzdtwSRC0hg&list=PLIivdWyY5sqIcFlX94XzycCzssTEkyQ1Q&index=10) pour mesurer le succès de son initiative DevOps.
 
 TODO(flavienbwk): DORA's [4 key metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance) | [Schéma](https://devops.games/pages/stateOfDevOps.html)
+
+Le succès d'une initiative DevOps se mesure grâce à 4 métriques théorisées (_4 key metrics_[^DORAsFourKeyMetrics]). A ces métriques s'ajoutent une cinquième qui révèle les performances opérationnelles de l'organisation. Elles font état des résultats obtenus à l'échelle globale de vos systèmes informatiques et de votre organisation plutôt 
+que seulement sur des métriques logicielles. Ces dernières peuvent résulter d'amélioration locales, au détriment des performances globales. Découvrons-les :
+
+TODO(flavienbwk): Décrire les 5 métriques
+
+TODO(flavienbwk): Illustration page 14 du DORA 2022, traduit en français et résumé
+
+TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
 
 # Conclusion
 
@@ -1090,3 +1162,27 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 [^GitLabCustomTemplate]: [GitLab's custom instance-level projects templates](https://docs.gitlab.com/ee/user/admin_area/custom_project_templates.html)
 
 [^KilalaGitlabPipelineExample]: SLUIJTER-STEK, Tess. [Security testing OWASP Juice Shop in Gitlab CI/CD](https://www.kilala.nl/index.php?id=2510). 2021.
+
+[^DORAsFourKeyMetrics]: [Google Cloud DORA's 4 key metrics for measuring DevOps performances](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance).
+
+[^OpenAIGPT3]: [OpenAI's GPT3 on text-davinci-002 model](https://beta.openai.com/). _beta.openai.com_.
+
+[^DORACDLooselyCoupledArchitecture]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Technical practices and CD", page 33. 2022.
+
+[^DORAFlexibleWork]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Burnout", page 40. 2022.
+
+[^Trivy]: [Trivy GitHub repository](https://github.com/aquasecurity/trivy). _github.com/aquasecurity/trivy_.
+
+[^QuayClair]: [Quay Clair GitHub repository](https://github.com/quay/clair). _github.com/quay/clair_.
+
+[^GitlabSigningProcess]: GLENN, Eddie. [How to secure your software build pipeline using code signing](https://about.gitlab.com/blog/2021/08/30/secure-pipeline-with-single-sign-in/). 2021.
+
+[^DORAReportSREPRacticesFigures]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Acknowledge the J-Curve", page 28. 2022.
+
+[^DORAReportSREPractice]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Context matters", page 6. 2022.
+
+[^IronBankPresentation]: [Iron Bank](https://docs-ironbank.dso.mil/) [presentation](https://repo1.dso.mil/platform-one/bullhorn-delivery-static-assets/-/raw/master/p1/docs/Iron%20Bank%20Onboarding%20Presentation.pdf?inline=false) from Platform One's Big Bang. U.S. department of defense.
+
+[^PlatformOnePresentationWebsite]: [Platform One's website](https://p1.dso.mil/resources). _p1.dso.mil_.
+
+[^IronBankHardeningOverview]: [Iron Bank Hardening guide overview](https://docs-ironbank.dso.mil/hardening/overview/). _docs-ironbank.dso.mil_.
