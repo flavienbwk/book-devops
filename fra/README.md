@@ -366,7 +366,7 @@ Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils
 
 ## Dépendances externes
 
-Les pratiques SSI au sein des grandes organisation, requièrent que tout logiciel déployé soit homologué. Le document d'homologation doit lister les dépendances utilisées dans le logiciel : les librairies tiers-partie sur lesquelles ils se basent. Cela se nomme en anglais le _Software Bill of Materials (SBOM)_, en français "Nomenclature du logiciel".
+Les pratiques SSI au sein des grandes organisation, requièrent que tout logiciel déployé soit homologué. Le document d'homologation doit lister les dépendances utilisées dans le logiciel : les librairies tiers-partie sur lesquelles ils se basent. Cela se nomme en anglais le _Software Bill of Materials (SBOM[^SBOM])_, en français "Nomenclature du logiciel".
 
 Cette pratique est fastidieuse, mais permet lorsqu'une nouvelle faille est découverte de facilement et rapidement répondre aux questions "Sommes-nous affecté ?" ou encore "Où est utilisée cette librairie dans nos logiciels ?" pour rapidement pouvoir la mitiger.
 
@@ -1186,3 +1186,5 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 [^PlatformOnePresentationWebsite]: [Platform One's website](https://p1.dso.mil/resources). _p1.dso.mil_.
 
 [^IronBankHardeningOverview]: [Iron Bank Hardening guide overview](https://docs-ironbank.dso.mil/hardening/overview/). _docs-ironbank.dso.mil_.
+
+[^SBOM]: [National Telecommunications and Information Administration's SOFTWARE BILL OF MATERIALS](https://www.ntia.gov/SBOM). _ntia.gov_.
