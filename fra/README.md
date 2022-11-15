@@ -145,27 +145,29 @@ A titre d'exemple, avec sa taille Google maintient son ratio de SRE/développeur
 
 ## Too big, too soon
 
-J'ai eu l'occasion de voir un tas de projets échouer au sein de mon institution à cause de périmètres mal définis ou d'objectifs trop exigeants. De mauvaises planifications qui augmentaient les délais et les coûts sans fin, pour devoir en cours de route trouver une « solution intermédiaire » en attendant que la première vienne hypothétiquement au jour.
+Au sein des organisations que j'ai côtoyées, j'ai pu être témoin d'un tas de projets qui ont échoué. Les causes étaient souvent un périmètre mal définit ou des objectifs trop exigeants. De mauvaises planifications qui augmentaient les délais et les coûts sans fin, pour devoir en cours de route trouver une « solution intermédiaire » en attendant que la première vienne hypothétiquement au jour.
 
-Une initiative DevOps se construit avec l'existant au sein de votre institution : il faut réussir à commencer petit pour correctement saisir les besoins métiers et embarquer tout le monde dans l'aventure.
+Une initiative DevOps se bâtit avec l'existant au sein de votre institution : il faut réussir à commencer petit pour correctement saisir les besoins des métiers et embarquer toute l'organisation dans l'aventure.
 
 Ayez l'audace de commencer petit et d'itérer à mesure que vous et votre institution vous acculturez aux enjeux et défis de ces nouvelles technologies. Veillez à ce que chaque équipe que vous convainquiez soit à son tour un évangélisateur de votre initiative.
 
 Changer la culture d'une institution prend du temps, mais prendre des raccourcis risquera de vous mettre du monde à dos, de démotiver vos équipes et de faire échouer votre projet.
 
-## Les initiatives DevOps dans les organisations
+## Les initiatives dans les organisations
 
-Au sein de nombreuses organisations avec lesquelles j'ai pu travailler, j'observe que les nouveaux décideurs - averses au changement - demandent à leurs subordonnés de longue date de trouver des solutions, immédiatement.
+Parmi les organisations avec lesquelles j'ai pu travailler, j'observe que les nouveaux décideurs - averses au changement - demandent à leurs subordonnés de trouver "dans les plus brefs délais" des solutions aux problèmes qu'ils découvrent.
 
-La plupart du temps ces solutions - plus ou moins développées -  existent, avec des pratiques plus ou moins proche d'un fonctionnement en mode DevOps.
+La plupart du temps, il s'agit de trouver des solutions techniques, faciles à concevoir et à déléguer. Des initiatives - plus ou moins matures - existent souvent déjà au sein de l'organisation. Elles peuvent même parfois suggérer des pratiques s'approchant d'un fonctionnement en mode DevOps.
 
-Les décideurs préfèrent généralement se mettre en ordre de bataille pour adopter ces services existants pour obtenir un effet immédiat, mais faisant fi des contraintes inhérentes à l'organisation (environnement et outillage de développement, environnement et outillage de production, volume des données gérable par la plateforme, matériel disponible, dette technique, courbe d'apprentissage...). Ces contraintes sont souvent déjà levées depuis des années par les experts internes qui ont maintes fois proposé des projets pour répondre à ces problématiques.
+Ces nouveaux responsables aiment se mettre en ordre de marche pour acheter des technologies "sur l'étagère", ou lancer un tout nouveau projet. Leur volonté est d'obtenir un effet immédiat - à différencier d'un résultat immédiat. Mais ils se lancent en faisant fi des contraintes inhérentes à l'organisation : maturité de l'environnement organisationnel et technique, volume ou type de données supportés par les outils, matériel et RH disponible, dette technique, courbe d'apprentissage... Ces contraintes sont déjà souvent connues depuis des années par les experts internes. Contraintes ayant justement mené à des initiatives pour y répondre : soit ignorées, soit négligées, soit seulement inconnues.
 
-Malheureusement, ces décideurs ont la plupart du temps l'irrésistible tentation de n'écouter que leurs propres réflexions, en faignant demander conseil à leurs experts.
+Malheureusement, ces décideurs ont rarement l'habitude d'aller faire le tour de l'organisation et oser poser des questions. Ils ont la plupart du temps l'irrésistible tentation de privilégier leurs propres réflexions, en faignant demander conseil à leurs experts. Cela résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs, une mauvaise communication et donc de la frustration pour les employés comme pour les métiers.
 
 Une parfaite illustration est celle du Ministère des Armées américain qui a souhaité lancer une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne] de l'Armée de l'Air américaine, dont la finalité était identique.
 
-Soyez un décideur audacieux, honnête intellectuellement[^BiaisCognitifs] et à l'écoute de vos experts : vous perdrez moins de temps, d'argent et de crédibilité.
+Néanmoins, en tant que meneur d'une initiative, vous devez comprendre la crainte des décideurs vis-à-vis d'une initiative interne : confier un projet ambitieux disruptant les pratiques organisationnels a plusieurs risques. Premièrement si vous décidez de monter votre propre équipe, il se peut que ces personnes partent à n'importe quel moment, laissant derrière elle un travail qu'il n'est souvent pas possible de reprendre au vu de la maturité des réflexions qu'elle entreprenait. Voilà pourquoi beaucoup d'organisations préfèrent payer un tiers-partie, avec un cahier des charges pour que le décideur soit certain d'obtenir un résultat (au vu de l'obligation contractuelle du tiers-partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique est obsolète. Deuxièmement, cela implique un changement culturel qu'il faut être capable d'appréhender. Peut-être qu'il est encore trop tôt pour l'organisation, qu'il faut encore acculturer au travers de présentations et d'exemples de réussites. En effet, il faut que le chef comprenne l'impact de cette transformation sur l'organisation : l'achat de matériel, la transformation de la stratégie RH ou encore la formation des personnels historiques. Aidez vos responsables à se projeter pendant que vous travaillez à changer les choses.
+
+De votre côté, soyez un décideur audacieux, honnête intellectuellement[^BiaisCognitifs] et à l'écoute de vos experts : vous perdrez moins de temps, d'argent et de crédibilité.
 
 ## Réorganisations chroniques
 
@@ -201,9 +203,9 @@ Dans l'un de ses articles[^ArticlePSSyndromeCanard], le conférencier et expert 
 
 Alors qu'au début le dysfonctionnement est considéré inadmissible, il devient avec le temps de plus en plus acceptable par l'organisation, sans qu'elle se rende compte que cette situation lui coûte du temps et de l'argent. L'effort pour corriger le problème devient de moins en moins justifiable et le silence devient le choix par défaut pour conserver son énergie. Jusqu'à ce qu'une situation irrémédiable se produise (ou qu'un groupe de quelques courageux secouent la structure!).
 
-Mais il faut également savoir communiquer à temps sur ses innovations. Preston Dunlap, premier directeur technique (CTO) de l'Armée de l'Air américaine, décrit dans sa lettre publique _Défier la Gravité_ combien les "forces bureaucratiques" peuvent nuire à l'innovation si on les présente trop tôt.
+Mais il faut également savoir communiquer à temps sur ses innovations. Preston DUNLAP, premier directeur technique (CTO) de l'Armée de l'Air américaine, décrit dans sa lettre publique _Défier la Gravité_ combien les "forces bureaucratiques" peuvent nuire à l'innovation si on les présente trop tôt.
 
-> "Certains m'ont demandé quelle fut ma recette pour réussir durant ces 3 dernières années. Je n'en ai pas beaucoup parlé parce-que je savais que si je révélais les éléments trop à l'avance, les forces naturelles de la bureaucratie reviendraient de plus belle, pour rejeter à chaque occasion tout le potentiel de l'innovation." - Preston Dunlap, Défier la Gravité (_Defying Gravity_) [^DefyingGravity]
+> "Certains m'ont demandé quelle fut ma recette pour réussir durant ces 3 dernières années. Je n'en ai pas beaucoup parlé parce-que je savais que si je révélais les éléments trop à l'avance, les forces naturelles de la bureaucratie reviendraient de plus belle, pour rejeter à chaque occasion tout le potentiel de l'innovation." - Preston DUNLAP, Défier la Gravité (_Defying Gravity_) [^DefyingGravity]
 
 Pour éviter le retard technologique, une organisation peut adopter plusieurs pratiques :
 
@@ -338,7 +340,7 @@ La sécurité affecte tous les [piliers du DevOps](#les-piliers-du-devops-en-pra
 
 ## Culture de la sécurité
 
-Le rapport DORA[^DORAWebsite] "État du DevOps 2022"[^DORAStateOfDevops2022Announcement] se concentre sur les enjeux de sécurité dans les approches DevOps. Il fait état du fait qu'une entreprise favorisant la confiance et la [sécurité psychologique](#accepter-léchec), est 1.6 fois plus susceptible d'adopter des pratiques de sécurité innovantes. Il ajoute que cette culture permet de réduire de 1.4 fois le nombre de _burnout_[^Burnout] et augmente les chances qu'un collaborateur recommande son entreprise.
+Le rapport DORA[^DORAWebsite] "État du DevOps 2022"[^DORAStateOfDevops2022Announcement] se concentre sur les enjeux de sécurité dans les transformations des entreprises en mode DevOps. Il fait état du fait qu'une entreprise favorisant la confiance et la [sécurité psychologique](#accepter-léchec), est 1.6 fois plus susceptible d'adopter des pratiques de sécurité innovantes. Il ajoute que cette culture permet de réduire de 1.4 fois le nombre de _burnout_[^Burnout] et augmente les chances qu'un collaborateur recommande son entreprise.
 
 La sécurité a toujours été une affaire de culture. La méthodologie DevOps vient cependant apporter toutes les techniques qui permettront à une organisation de ne plus passer à côté des bonnes pratiques, autrefois négligées ou oubliées dans une paperasse longue et indigeste.
 
@@ -456,7 +458,7 @@ L'un des enjeux du DevOps est de fluidifier le cycle de vie d'un logiciel. Vous 
 
 TODO(flavienbwk): Développer le sujet
 
-Imaginez quelques instants qu'il y ait des data-scientists dans chacun des bureaux de votre organisations. Superbe, tous les métiers ont un appui technique pour traiter leurs données rapidement. Mais rapidement, ces ingénieurs discutent et se rendent compte qu'ils travaillent sur les mêmes sujets, qu'ils développent la même chose. C'est très frustrant pour eux, mais cela veut surtout dire que vous perdez de l'argent.
+Imaginez quelques instants des data-scientists dans chacun des bureaux de votre organisations. Superbe, tous les métiers ont un appui technique pour traiter leurs données rapidement. Mais rapidement, ces ingénieurs discutent et se rendent compte qu'ils travaillent sur les mêmes sujets, qu'ils développent la même chose. C'est très frustrant pour eux, mais cela veut surtout dire que vous perdez de l'argent.
 
 Si personne n'a idée de ce sur quoi l'autre travaille, les efforts seront naturellement dupliqués. En effet dans les grandes organisations, les besoins sont souvent systémiques : les bureaux rencontrent tous les mêmes - ou quasiment les mêmes - problèmes. Problèmes auxquelles des solutions techniques mutualisées peuvent répondre pour 90% des cas d'usage.
 
@@ -902,6 +904,8 @@ La recherche[^DORAFlexibleWork] a démontré qu'un environnement de travail flex
 
 # Mesurer le succès de sa transformation
 
+Selon la recherche, la maturité technique d'une organisation permet de quadrupler[^DORATechnicalCapabilities] les performance de ses équipes.
+
 TODO(flavienbwk): [Les métriques](https://www.youtube.com/watch?v=uzdtwSRC0hg&list=PLIivdWyY5sqIcFlX94XzycCzssTEkyQ1Q&index=10) pour mesurer le succès de son initiative DevOps.
 
 TODO(flavienbwk): DORA's [4 key metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance) | [Schéma](https://devops.games/pages/stateOfDevOps.html)
@@ -1188,3 +1192,5 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 [^IronBankHardeningOverview]: [Iron Bank Hardening guide overview](https://docs-ironbank.dso.mil/hardening/overview/). _docs-ironbank.dso.mil_.
 
 [^SBOM]: [National Telecommunications and Information Administration's SOFTWARE BILL OF MATERIALS](https://www.ntia.gov/SBOM). _ntia.gov_.
+
+[^DORATechnicalCapabilities]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Technical DevOps Capabilities", page 30. 2022.
