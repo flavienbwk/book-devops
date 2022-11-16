@@ -18,15 +18,18 @@ Si votre organisation cherche des moyens d'améliorer son processus de développ
 
 De nombreuses organisations ont déjà entamé leur transformation dans le but d'atteindre un fonctionnement en mode "DevOps".
 
-TODO(flavienbwk): GCHQ [going DevOps](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)
+Selon Gartner, plus de 85% des organisations vont adopter une stratégie cloud d'ici 2025[^GartnerCloud2025]. Pour Atlassian, 99% des entreprises questionnées estiment que le DevOps a un impact positif sur leur organisation[^AtlassianDevopsStudy].
 
 TODO(flavienbwk): Department of Defense going DevSecOps :
 - https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf
 - https://breakingdefense.com/2021/05/dod-publishes-devsecops-2-0-docs-for-accelerating-apps/
 
-TODO(flavienbwk): Devops Institute, [report 2022 (p16)](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=184076) : chiffres sur la DevOps comme méthodologie conduisant les transformations numériques
+TODO(flavienbwk): GCHQ [going DevOps](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)
+Le Ministère de la Défense britannique indique dans sa "stratégie d'intelligence artificielle de défense"[^MODDefenseArtificialIntelligenceStrategyReport], vouloir devenir une institution "prête pour l'IA". {}
 
-Le DevOps étant avant tout un sujet de transformation culturelle des équipes informatiques et du _management_, il existe déjà de nombreuses études sérieuses auxquelles se référer, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
+Néanmoins, la très grande majorité des organisations ont encore du mal à implémenter concrètement ces nouvelles pratiques. L'obstacle principal est la difficulté de trouver les talents qui peuvent implémenter les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
+
+Le DevOps étant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études sérieuses auxquelles se référer. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
 
 Ce livre concentre à la fois les aspects organisationnels et les aspects techniques, pour illustrer chaque notion de la méthodologie DevOps. Comprenez par là que vous n'avez pas besoin d'être ingénieur pour comprendre ces notions. Néanmoins si vous souhaitez les mettre en pratique, une bonne partie nécessitera des experts en ingénierie. Dans tous les cas, en tant que responsable d'une initiative DevOps, vous vous devez de maîtriser les aspects technique pour prendre les meilleures décisions et rester crédible face à vos subordonnés et votre hiérarchie.
 
@@ -910,8 +913,7 @@ TODO(flavienbwk): [Les métriques](https://www.youtube.com/watch?v=uzdtwSRC0hg&l
 
 TODO(flavienbwk): DORA's [4 key metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance) | [Schéma](https://devops.games/pages/stateOfDevOps.html)
 
-Le succès d'une initiative DevOps se mesure grâce à 4 métriques théorisées (_4 key metrics_[^DORAsFourKeyMetrics]). A ces métriques s'ajoutent une cinquième qui révèle les performances opérationnelles de l'organisation. Elles font état des résultats obtenus à l'échelle globale de vos systèmes informatiques et de votre organisation plutôt 
-que seulement sur des métriques logicielles. Ces dernières peuvent résulter d'amélioration locales, au détriment des performances globales. Découvrons-les :
+Le succès d'une initiative DevOps se mesure grâce à 4 métriques théorisées (_4 key metrics_[^DORAsFourKeyMetrics]). A ces métriques s'ajoutent une cinquième qui révèle les performances opérationnelles de l'organisation. Elles font état des résultats obtenus à l'échelle globale de vos systèmes informatiques et de votre organisation plutôt que seulement sur des métriques logicielles. Ces dernières peuvent résulter d'amélioration locales, au détriment des performances globales. Découvrons-les :
 
 TODO(flavienbwk): Décrire les 5 métriques
 
@@ -922,6 +924,27 @@ TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-fo
 # Conclusion
 
 TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
+
+# Répartition des initiatives
+
+Dans les sondages, 47% des organisations reportaient adopter une approche DevOps. C'est 74% en 2021[^RedGate2021Report].
+
+Entre 2019 et 2022, la répartition des initiatives DevOps par domaine d'activité est restée dans le même ordre de grandeur[^DORAIndustry] : largement dominée par le secteur technologique (~40%), suivit par le secteur financier (~12%) et le e-commerce (~8%). Le secteur institutionnel représente entre 2% et 4% de ces initiatives, laissant une grande place à l'innovation dans ce milieu.
+
+Voici une répartition des entreprises pratiquant le DevOps en 2022, au sens des définitions de l'INSEE[^INSEECompanySizeDefinition] :
+
+- Grandes entreprises (>= 5000 employés) : ~30%
+- Entreprises de taille intermédiaire (>= 250 et < 5000 employés) : ~38%
+- Entre 20 et 250 employés : ~26%
+- Moins de 20 employés: ~6%
+
+La crise de 2019 a accéléré les initiatives de transformation numérique, augmentant la taille des équipes DevOps de 23%[^GlobalUpskillingWorldwideDevopsSize] pendant la période.
+
+La répartition géographique des organisations adoptant des pratiques DevOps est encore complexe à estimer, mais semble se concentrer tout particulièrement dans la région nord-américaine. Cette dernière représente près de 33% des initiatives DevOps. Environ 33% également pour l'Europe et 33% pour l'Asie[^DORAGeoRepartition] (avec l'Inde à 21%). En 2019, l'Amérique du Nord représentait 50% de ces initiatives, l'Europe 29% et l'Asie 9%. On observe donc un fort gain d'intérêt du sujet par les pays asiatiques.
+
+La taille moyenne des équipes DevOps est encore limitée et tourne autour de 8 personnes[^DORATeamSize].
+
+Cela fait du DevOps une méthodologie majoritairement adoptée dans les entreprises ayant atteint une masse critique et encore peu dans les entreprises non-technologiques.
 
 # Terminologie "Ops"
 
@@ -1194,3 +1217,22 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 [^SBOM]: [National Telecommunications and Information Administration's SOFTWARE BILL OF MATERIALS](https://www.ntia.gov/SBOM). _ntia.gov_.
 
 [^DORATechnicalCapabilities]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Technical DevOps Capabilities", page 30. 2022.
+
+[^MODDefenseArtificialIntelligenceStrategyReport]: British Ministry of Defence. [Defence Artificial Intelligence Strategy](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy). 2022.
+
+[^DORAGeoRepartition]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Region", page 63. 2022.
+
+[^DORATeamSize]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Team size", page 65. 2022.
+
+[^INSEECompanySizeDefinition]: INSEE. [Tableaux de l'économie française](https://www.insee.fr/fr/statistiques/4277836?sommaire=4318291#documentation). 2020.
+
+[^GlobalUpskillingWorldwideDevopsSize]: DevOps Institute. Global Upskilling IT report, chapter "DevOps Remains a Driving Force in IT Transformation" (page 16). 2022.
+
+[^DORAIndustry]: DevOps Institute. Global Upskilling IT report, chapter "Industry" (page 162). 2022.
+
+[^GartnerCloud2025]: Gartner. [Gartner Says Cloud Will Be the Centerpiece of New Digital Experiences](https://www.gartner.com/en/newsroom/press-releases/2021-11-10-gartner-says-cloud-will-be-the-centerpiece-of-new-digital-experiences). 2021.
+
+[^AtlassianDevopsStudy]: Atlassian; CITE Research. "2020 DevOps Trends Survey". 2020.
+
+[^RedGate2021Report]: Redgate. "[The 2021 State of
+Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)". 2021.
