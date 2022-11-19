@@ -1,4 +1,4 @@
-# Pré-face
+# Préface
 
 _Pré-face auto-générée par intelligence artificielle[^OpenAIGPT3] puis traduite et adaptée par l'auteur. Ce chapitre illustre l'intérêt de mettre en place de nouvelles structures d'organisation face à la rapidité des innovations numériques. Considérez que cette capacité peut être maîtrisée par l'un de vos concurrents : vous devez être en mesure de déployer vos innovations au moins aussi vite que lui pour rester compétitif._
 
@@ -27,7 +27,7 @@ TODO(flavienbwk): Department of Defense going DevSecOps :
 TODO(flavienbwk): GCHQ [going DevOps](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)
 Le Ministère de la Défense britannique indique dans sa "stratégie d'intelligence artificielle de défense"[^MODDefenseArtificialIntelligenceStrategyReport], vouloir devenir une institution "prête pour l'IA". {}
 
-Néanmoins, la très grande majorité des organisations ont encore du mal à implémenter concrètement ces nouvelles pratiques. L'obstacle principal est la difficulté de trouver les talents qui peuvent implémenter les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
+Néanmoins, la très grande majorité des organisations ont encore du mal à mettre en place concrètement ces nouvelles pratiques. L'obstacle principal est la difficulté de trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
 
 Le DevOps étant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études sérieuses auxquelles se référer. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
 
@@ -53,11 +53,11 @@ Pour bien débuter et comprendre comment le DevOps peut aider votre organisation
 
 C'est le lien entre le monde du développement et de la production.
 
-« Dev » signifie « développement » pendant que « Ops » désigne l'exploitation des systèmes informatiques en production.
+« Dev » signifie « développement » quand « Ops » désigne l'exploitation des systèmes informatiques en production.
 
-On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques.
+On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques.
 
-L'ingénieur « DevOps » est celui en charge de définir et d'implémenter ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#continuous-integration-ci) au sein d'une [usine logicielle](#usine-logicielle).
+L'ingénieur « DevOps » est celui en charge de définir et d'mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#continuous-integration-ci) au sein d'une [usine logicielle](#usine-logicielle).
 
 Ce poste impliquant de mettre d'accord toutes les parties prenantes sur une méthode de travail commune, il est exigé de disposer d'excellentes compétences en communication et en pédagogie.
 
@@ -105,7 +105,7 @@ Selon Google, voici les cinq piliers du DevOps :
 2. [**Accepter l'échec comme normal**](#accepter-léchec)
    - En partant du principe que l'échec est une conséquence du manque de procédures et de méthodes de la part de l'organisation.
 3. [**Réduire le coût du changement**](#réduire-le-coût-du-changement)
-   - Implémenter petit à petit, déployer rapidement, échouer rapidement pour itérer.
+   - Mettre en place petit à petit, déployer rapidement, échouer rapidement pour itérer.
 4. [**Tirer parti de l'automatisation**](#tirer-parti-de-lautomatisation)
    - Automatiser pour ne pas perdre de temps et améliorer la maintenabilité de l'infrastructure.
 5. [**Tout mesurer**](#tout-mesurer)
@@ -144,7 +144,7 @@ Des rapports[^DORAReportSREPractice] appuient cette théorie : pratiquer le SRE 
 
 ![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE. On constate qu'il faut un certain nombre d'équipes SRE pour obtenir des bénéfices significatifs[^DORAReportSREPRacticesFigures].](./images/adoption-of-sre-practices.png)
 
-A titre d'exemple, avec sa taille Google maintient son ratio de SRE/développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio doit néanmoins avoir une [tendance logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez.
+À titre d'exemple, avec sa taille Google maintient son ratio de SRE/développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio doit néanmoins avoir une [tendance logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez.
 
 ## Too big, too soon
 
@@ -215,7 +215,7 @@ Pour éviter le retard technologique, une organisation peut adopter plusieurs pr
 - Former de manière continue son personnel, en particulier les décideurs (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
 - Mesurer et mettre en place des indicateurs pour éviter de s'habituer (cf. chapitre "[Tout mesurer](#tout-mesurer)")
 - Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec comme normal](#accepter-léchec)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
-- Conserver une capacité d'innovation interne pour rester en mesure de critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)", _Comment l’entreprise peut sortir de la spirale du déclin_[^ArticlePSSortirSpiraleDeclin])
+- Conserver une capacité d'innovation interne pour rester en mesure de critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)", _Comment l'entreprise peut sortir de la spirale du déclin_[^ArticlePSSortirSpiraleDeclin])
 
 # Prérequis
 
@@ -272,7 +272,7 @@ Les différentes forces d'une équipe interne vis-à-vis d'équipes externes :
 - Un meilleur contrôle sur la feuille de route des projets
 - Des outils qui répondent mieux au client / aux besoins métiers
 - Des coûts de développement réduits
-- Une source d'expertise pour orienter les décideurs (capacité de critique)
+- Une source d'expertise pour conseiller les décideurs (capacité de critique)
 - Un support de proximité pour les utilisateurs, sans surcoût
 - Des mises à jour plus rapides, en lien direct avec le besoin exprimé
 - Si votre entreprise manipule des données confidentielles ou classifiées : moins de risques de fuite et des coûts limités
@@ -497,7 +497,7 @@ Ces critères - et en particulier le découpage des logiciels en microservices -
 
 Vous devez vous organiser pour accueillir l'échec comme une opportunité de corriger votre trajectoire, vers une meilleure direction. Si vous subissez un échec important, c'est que vous n'aviez pas assez d'éléments pour contrôler la situation.
 
-A l'aide d'outils et de méthodologies incontournables dans le domaine, ce chapitre vise à vous faire comprendre l'intérêt d'une culture d'entreprise qui accepte l'échec. Elle vous permettra de mieux anticiper les risques, pour en prendre davantage en toute sérénité et augmenter votre vélocité.
+À l'aide d'outils et de méthodologies incontournables dans le domaine, ce chapitre vise à vous faire comprendre l'intérêt d'une culture d'entreprise qui accepte l'échec. Elle vous permettra de mieux anticiper les risques, pour en prendre davantage en toute sérénité et augmenter votre vélocité.
 
 Cet état d'esprit est un changement culturel qu'une organisation doit instiller en son sein, dans toutes les strates hiérarchiques.
 
@@ -565,7 +565,7 @@ Bien sûr, si la modification ne concerne pas toutes les parties-prenantes, on �
 
 Bien que - du fait de sa simplicité - le RACI-VS soit souvent le modèle employé par les grandes organisations, il n'est pas un outil efficace dans le cadre d'une transformation DevOps.
 
-Si vous menez une initiative DevOps au sein de votre organisation, votre hiérarchie vous demandera de vous engager sur de nombreuses lignes du tableau ci-dessus. En effet, cette dernière ne connaît probablement pas les nouvelles techniques et technologies que vous citerez. Prenez cette responsabilité pour rassurer vos autorités[^RadioDevOps12]. Vous n'avez rien à craindre puisque vous savez que la méthodologie que vous voulez implémenter est collective et itérative.
+Si vous menez une initiative DevOps au sein de votre organisation, votre hiérarchie vous demandera de vous engager sur de nombreuses lignes du tableau ci-dessus. En effet, cette dernière ne connaît probablement pas les nouvelles techniques et technologies que vous citerez. Prenez cette responsabilité pour rassurer vos autorités[^RadioDevOps12]. Vous n'avez rien à craindre puisque vous savez que la méthodologie que vous voulez mettre en place est collective et itérative.
 
 #### Le modèle DACI
 
@@ -699,7 +699,7 @@ Il est courant d'entendre parler de _pipeline_ d'intégration continue (en fran�
 
 - Job : une tâche lancée automatiquement lors de l'évènement déclencheur
 - Pipeline : enchaînement de jobs
-- Stages : les trois étapes d'une _pipeline_ d'intégration continue
+- Stages : les trois étapes d'une chaîne (_pipeline_) d'intégration continue
 - Build : étape contenant les jobs s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
 - Test : TODO(flavienbwk): Développer
   - Exemples :
@@ -875,7 +875,7 @@ Dans le cas où vous ne pouvez pas agir sur vos pratiques avec l'industriel, org
 
 > Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
 
-A titre d'exemple, le _ITZBund_ (Centre Fédéral Allemand des Technologies de l'Information, l'équivalent allemand de l'ANSSI[^ANSSI]) emploie depuis 2018 au sein de son _Bundescloud_ (cloud inter-ministériel) le logiciel open-source _Nextcloud_[^NextcloudITZBund]. Ce dernier permet de partager des fichiers et collaborer sur une plateforme unifiée. Environ 300 000 utilisateurs institutionnels et industriels l'utilisent. Un an après, c'est le Ministère de l'Intérieur français qui l'adopte[^NextCloudMinint].
+À titre d'exemple, le _ITZBund_ (Centre Fédéral Allemand des Technologies de l'Information, l'équivalent allemand de l'ANSSI[^ANSSI]) emploie depuis 2018 au sein de son _Bundescloud_ (cloud inter-ministériel) le logiciel open-source _Nextcloud_[^NextcloudITZBund]. Ce dernier permet de partager des fichiers et collaborer sur une plateforme unifiée. Environ 300 000 utilisateurs institutionnels et industriels l'utilisent. Un an après, c'est le Ministère de l'Intérieur français qui l'adopte[^NextCloudMinint].
 
 Cette pratique est un win-win-win-win : le client réduit les délais de livraison, le métier obtient un outil qui répond mieux à ses besoins, l'industriel favorise la possibilité d'une nouvelle contractualisation en ayant satisfait son client et le contribuable en a pour son argent. Globalement, tout le monde gagne du temps, est satisfait du résultat et se voit fidélisé en étant davantage impliqué dans chacune des interactions.
 
@@ -893,7 +893,7 @@ L'Armée de l'Air américaine s'est mise depuis 2019 en ordre de bataille en inv
 
 > "C'est _(la formation)_ de l'investissement pour l'entreprise et en eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix." - Nicolas CHAILLAN
 
-A l'instar de l'Armée de l'Air américaine, une méthode avait bien fonctionné dans mes précédentes expériences. Nous avions réussi à obtenir un jour de télétravail par semaine, après un temps certain à faire de la pédagogie à des responsables qui n'en comprenaient pas bien l'intérêt. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière fournissait des statistiques sur le temps passé à se former et nos succès à la hiérarchie. Le coût de ces deux services était minime par rapport à toutes les connaissances à l'état de l'art qu'elle nous conférait.
+À l'instar de l'Armée de l'Air américaine, une méthode avait bien fonctionné dans mes précédentes expériences. Nous avions réussi à obtenir un jour de télétravail par semaine, après un temps certain à faire de la pédagogie à des responsables qui n'en comprenaient pas bien l'intérêt. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière fournissait des statistiques sur le temps passé à se former et nos succès à la hiérarchie. Le coût de ces deux services était minime par rapport à toutes les connaissances à l'état de l'art qu'elle nous conférait.
 
 Si vous avez la chance de déjà avoir des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, d'innover. C'est ce que j'ai observé de plus rentable pour l'organisation. Donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
 
@@ -963,7 +963,7 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
-Chacune de ces spécialités est un moyen d'optimiser vos pratiques DevOps et doit s'adapter à la maturité de l'entreprise. Ne vous mettez pas en tête de toutes les implémenter avant d'avoir bien appréhendé et mis en pratique le DevOps dans votre organisation.
+Chacune de ces spécialités est un moyen d'optimiser vos pratiques DevOps et doit s'adapter à la maturité de l'entreprise. Ne vous mettez pas en tête de toutes les mettre en place avant d'avoir bien appréhendé et mis en pratique le DevOps dans votre organisation.
 
 # Fiches de poste (avec exemples)
 
@@ -975,42 +975,101 @@ Vous devez faire l'effort de définir le périmètre du poste que vous rédigez 
 
 Les exemples de fiches de poste ci-dessous sont indicatives et doivent être adaptées à votre situation (maturité et taille des équipes, de l'organisation). Modifiez le contexte et les missions que vous souhaitez confier à votre futur ingénieur DevOps ou SRE. Modifiez également les compétences que vous souhaitez mettre en avant selon votre projet du moment.
 
+Les niveaux d'exigence des postes sont décrits selon la maturité de l'entreprise (débutante, intermédiaire, avancée) et le niveau d'expérience attendu par le candidat (débutant, medium ou senior).
+
+Une section "Formation" est également disponible, pour vous donner une idée des cursus que le candidat peut avoir suivi pour prétendre au poste. Néanmoins, considérez dans l'informatique que le diplôme n'est plus d'aucune importance après 5 ans d'expérience professionnelle. C'est cette dernière et les projets que le candidat réalise qui définissent son niveau d'expertise.
+
 ## Ingénieur DevOps
 
 |||
 |---|:---|
-| **Niveau du poste** | Medium ou Senior (selon les responsabilités à confier au candidat) |
+| **Niveau du poste** | Medium ou Senior[^DORAProfileExperience] (selon les responsabilités à confier au candidat) |
 | **Maturité de l'organisation** | Débutante à intermédiaire |
-| **Rémunération approximative** (août 2022) | >50k€/an |
+| **Rémunération approximative** (septembre 2022) | >50k€/an |
 
 Dans le cadre de la transformation numérique de notre organisation, appuyé(e) par la hiérarchie, vous définirez les nouveaux processus de développement, mettrez en place les outils et accompagnerez les équipes internes dans leur réorganisation pour employer ces nouvelles techniques.
 
-A partir des technologies actuellement utilisées dans nos équipes, vous participerez aux réflexions stratégiques et aux technologies à adopter pour le futur de notre organisation.
+À partir des technologies actuellement utilisées dans nos équipes, vous participerez aux réflexions stratégiques et aux technologies à adopter pour le futur de notre organisation.
 
 Avec les équipes d'ingénieurs au contact régulier des métiers vous exposant leurs activités opérationnelles, vous devrez être en mesure d'adapter la vélocité de la stratégie de transformation de notre organisation en fonction des interlocuteurs que vous rencontrerez.
 
-A l'interface entre nos équipes de développement et au sein notre équipe SRE de X personnes, vous aurez la charge de :
+À l'interface entre nos équipes de développement et au sein notre équipe SRE de X personnes, vous aurez la charge de :
 
 - Participer aux réflexions sur la transformation numérique de notre institution
-- Acculturer et orienter les décideurs sur les nouvelles pratiques
-- Entretenir les bonnes pratiques de développement, assurer leur cohérence pour faciliter le travail des ops (git flow, kanban, pipelines CI, standardisation Docker et Kubernetes)
-- Développer et maintenir des outils d'automatisation du cycle de vie de logiciels (CI, CD)
+- Acculturer et conseiller les décideurs sur les nouvelles pratiques
+- Aider les équipes RH à identifier les candidats pertinents
+- Développer et maintenir des outils d'automatisation du cycle de vie de logiciels (GitLab, chaînes de CI/CD)
+- Définir les bonnes pratiques GitOps et assurer la cohérence des développements (_git flow_, gestion de projet kanban, chaînes de CI/CD, standardisation des déploiements avec Docker et Kubernetes...)
+- Développer des modèles (_template_) de projets applicatifs pour encourager les bonnes pratiques
 - Accompagner les différentes équipes techniques dans la conteneurisation de leurs applicatifs historiques
 
 Compétences :
 
+- Communication et capacité d'adaptation
 - Conteneurisation (Docker, Kubernetes)
 - Connaissance des architectures micro-services
-- GitLab et GitLab Runners
-- Shell, Ansible, Terraform
-- Langage de programmation orienté objet : Python, Go, C++, Java
+- Administration technique de GitLab et des GitLab Runners
+- Connaissance avancée en scripting Bash, Ansible et/ou Terraform
+- Connaissance d'au moins un langage de programmation (Java, C++, Python ou Go)
 - Bases de données orientées colonne, objet ou graphe
 - Connaissance d'un ou plusieurs services Cloud (AWS, GCP, Azure, Alicloud, Scaleway)
 - Culture DevOps
 - Culture de la transformation (numérique et métier)
 - Réseaux TCP/IP
 
-Ce poste peut mener au poste d'ingénieur Systèmes ou de SRE.
+Formation :
+
+_Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions et ne tenons pas compte de votre diplôme._
+
+- Master en ingénierie informatique
+- Expérience professionnelle significative dans le domaine
+
+Ce poste peut mener au poste d'Ingénieur Systèmes, de SRE ou d'Ingénieur SSI DevOps.
+
+## Ingénieur SSI DevOps
+
+|||
+|---|:---|
+| **Niveau du poste** | Medium ou Senior (selon les responsabilités à confier au candidat) |
+| **Maturité de l'organisation** | Intermédiaire à avancée |
+| **Rémunération approximative** (septembre 2022) | >55k€/an |
+
+Dans le cadre de la transformation numérique de notre organisation, appuyé(e) par la hiérarchie, vous êtes le "Sec" de notre organisation en mode "DevSecOps". Votre rôle est d'assurer les bonnes pratiques de sécurité sans impacter la vélocité des développements.
+
+Intégré au sein de notre équipe SRE, vous aurez la responsabilité de sécuriser l'ensemble de la chaîne de développement et de déploiement logicielle. A partir des politiques de sécurité et des contraintes légales imposées à notre organisation, vous traduirez ces règles documentaires en code (dans des CI) ou au travers l'implémentation d'outils, pour garantir leur application. Vous définirez les pratiques de sécurité à adopter pour le présent et le futur de notre organisation.
+
+À l'interface entre nos équipes de développement et notre équipe SRE, vous aurez la charge de :
+
+- Participer aux réflexions sur la transformation numérique de notre institution
+- Créer et maintenir les chaînes d'intégration continue selon nos règles et contraintes légales
+- Participer à la définition des nouvelles règles et pratiques de sécurité de l'organisation
+- Accompagner les différentes équipes techniques dans la sécurisation de leurs applicatifs
+- Mettre en place et maintenir les pratiques du framework SLSA[^SLSA]
+- Assurer une veille sur les dernières menaces et mettre en place des contre-mesures
+
+Compétences :
+
+- Communication et capacité d'adaptation
+- Connaissance des principes de conteneurisation (Docker, Kubernetes)
+- Connaissance des principes d'architecture en micro-services
+- Administration technique de GitLab
+- Connaissance avancée en scripting Bash
+- Connaissance d'au moins un langage de programmation (Java, C++, Python ou Go)
+- Connaissances au moins théorique des bases de données (orientées colonne, objet ou graphe)
+- Culture DevOps
+- Culture de la transformation (numérique et métier)
+- Idéalement, connaissance d'un ou plusieurs services Cloud (AWS, GCP, Azure, Alicloud, Scaleway)
+
+Formation :
+
+_Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions et ne tenons pas compte de votre diplôme._
+
+- Licence/bachelor ou master en ingénierie logicielle avec connaissances en administration systèmes (Linux, réseaux, technologies Cloud)
+- Licence/bachelor ou master en ingénierie réseaux et systèmes
+- Master en cybersécurité (ex: Master en Sécurité Numérique de l'ANSSI[^MasterSecNumANSSI])
+- Expérience professionnelle significative dans le domaine
+
+Ce poste peut mener au poste d'Ingénieur Systèmes ou de SRE.
 
 ## Ingénieur Résilience des Systèmes (SRE)
 
@@ -1018,26 +1077,42 @@ Ce poste peut mener au poste d'ingénieur Systèmes ou de SRE.
 |---|:---|
 | **Niveau du poste** | Medium ou Senior (selon les responsabilités à confier au candidat). Apprentissage ou débutant possible si un personnel expérimenté est disponible. Pas de stage. |
 | **Maturité de l'organisation** | Débutante à intermédiaire |
-| **Rémunération approximative** (août 2022) | >50k€/an (medium), >42k€/an (débutant) |
+| **Rémunération approximative** (septembre 2022) | >50k€/an (medium), >42k€/an (débutant) |
 
-Aux fondements du bon fonctionnement de notre organisation, vous aurez la charge de garantir la fiabilité et la résilience des systèmes que vous administrerez. Vous veillerez à pérenniser les infrastructures.
+Aux fondements du bon fonctionnement de notre organisation, vous aurez la charge de garantir la disponibilité, la fiabilité et la résilience de nos systèmes d'information. Vous veillerez à pérenniser les infrastructures.
 
-Au sein de notre équipe SRE de X personnes, vous aurez la charge de :
+Au sein de notre équipe SRE de _X_ personnes, vous aurez la charge de :
 
 - Administrer nos réseaux de développement, pré-production et production
-- Garantir la disponibilité de nos logiciels et services
-- Définir les [indicateurs de résilience](#indicateurs-de-résilience) (SLIs, SLOs), maintenir les tableaux de bords d'indicateurs et les systèmes d'alertes
-- Développer et documenter les configurations des systèmes d'information (Ansible)
-- Maintenir et administrer les sauvegardes de nos systèmes
-- Préparer (s'entraîner) et appliquer des procédures d'urgence selon les 3Cs[^GoogleWorkbookIncidentResponse]
-- Sensibiliser les ingénieurs à la mise en production
+- Développer des scripts d'automatisation gérant le cycle de vie de l'infrastructure et des logiciels (scripts Ansible, pipelines CI/CD)
+- Contribuer aux systèmes de supervision (ex: définir les [indicateurs de résilience](#indicateurs-de-résilience) (SLIs, SLOs), maintenir les tableaux de bords d'indicateurs et les systèmes d'alerte)
+- Participer à l'automatisation de l'intégration et l'installation de serveurs physiques
+- Préparer et pratiquer les procédures de gestion d'incident selon les 3Cs[^GoogleWorkbookIncidentResponse] (entraînement annuel DiRT[^DiRTTraining], documentations, outils)
 - Rédiger des postmortems clairs et illustrés pour alimenter notre base de connaissance
+- Sensibiliser les ingénieurs aux bonnes pratiques de mise en production
+- Conseiller et collaborer avec les architectes applicatifs et les autres architectes de l'infrastructure
 
 Compétences :
 
-- Connaissance d'un ou plusieurs services Cloud (AWS, GCP, Azure, Alicloud, Scaleway)
+- Communication, autonomie et capacité d'adaptation
+- Connaissance avancée d'une ou plusieurs distributions Linux
+- Connaissances en réseaux TCP/IP
+- Connaissance d'Ansible et/ou Terraform
+- Connaissance avancée en scripting Bash
+- Connaissance des principes d'architecture en micro-services
+- Connaissance d'une technologie d'orchestration Cloud (Kubernetes ou Openstack)
+- Connaissance d'au moins un langage de programmation (Java, C++, Python ou Go)
+- Connaissance d'au moins un services Cloud (AWS, GCP, Azure, Alicloud, Scaleway)
 
-TODO(flavienbwk): Finaliser les "compétences"
+Formation :
+
+_Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions et ne tenons pas compte de votre diplôme._
+
+- Licence/bachelor ou master en ingénierie logicielle avec connaissances en administration systèmes (Linux, réseaux, technologies Cloud)
+- Licence/bachelor ou master en ingénierie réseaux et systèmes
+- Expérience professionnelle significative dans le domaine
+
+Ce poste peut mener au poste de Responsable de l'Infrastructure, d'Ingénieur SSI DevOps ou d'Ingénieur Systèmes.
 
 ## Ingénieur Systèmes ou Ingénieur Plateforme
 
@@ -1045,7 +1120,7 @@ TODO(flavienbwk): Finaliser les "compétences"
 |---|:---|
 | **Niveau du poste** | Débutant à Senior |
 | **Maturité de l'organisation** | Avancée |
-| **Rémunération approximative** (août 2022) | >50k€/an (medium), >45k€/an (débutant) |
+| **Rémunération approximative** (septembre 2022) | >50k€/an (medium), >45k€/an (débutant) |
 
 De formation ingénieur logiciel ou administrateur système avec des compétences avérées en ingénierie logicielle, vous serez responsable du développement et de la maintenance des outils qui améliorent au quotidien le cycle de développement de nos logiciels.
 
@@ -1055,12 +1130,20 @@ Vous participerez à la mise en place d'un data-lake dans le cadre de l'initiati
 
 Compétences :
 
-- Langage de programmation orienté objet : Python, Go, C++, Java
-- Ansible, Terraform
-- Bases de données orientées colonne, objet et/ou graphe
+- Autonomie et capacité d'adaptation
+- Connaissance avancée d'au moins un langage de programmation (Java, C++, Python ou Go)
+- Connaissance avancée des bases de données orientées colonne, objet et/ou graphe
+- Connaissance d'Ansible et/ou Terraform
+- Connaissance d'une technologie d'orchestration Cloud (Kubernetes ou Openstack)
 - Réseaux TCP/IP
 
-TODO(flavienbwk): Réviser/compléter la fiche si besoin
+Formation :
+
+_Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions et ne tenons pas compte de votre diplôme._
+
+- Licence/bachelor ou master en ingénierie logicielle
+- Licence/bachelor ou master en ingénierie réseaux et systèmes avec une forte expérience en ingénierie logicielle
+- Expérience professionnelle significative dans le domaine
 
 # Quatrième de couverture
 
@@ -1070,7 +1153,7 @@ Elles tentent alors de faire appel à de coûteux experts dans l'espoir de réus
 
 Avec plus d'une centaine de ressources référencées, vous découvrirez dans ce livre un mouvement prenant ses racines chez les plus grandes et plus prospères organisations du monde.
 
-Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des possibilités qu'offrent les technologies DevOps à l'état de l'art, quels prérequis organisationnels elles nécessitent et comment les implémenter, à votre échelle.
+Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des possibilités qu'offrent les technologies DevOps à l'état de l'art, quels prérequis organisationnels elles nécessitent et comment les mettre en place, à votre échelle.
 
 ℹ️ Bonus : Exemple de fiches de postes dans ce livre.
 
@@ -1112,11 +1195,11 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 
 [^MLOpsPaper]:  KREUZBERGER, Dominik; KÜHL, Niklas; HIRSCHL, Sebastian. [MLOps: Overview, Definition, and Architecture](https://arxiv.org/abs/2205.02302). 2022.
 
-[^ArticlePSSyndromeCanard]: SILBERZAHN, Philippe. [_Le syndrome du canard: comment les organisations en déclin s’habituent à la médiocrité_](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/). 2022.
+[^ArticlePSSyndromeCanard]: SILBERZAHN, Philippe. [_Le syndrome du canard: comment les organisations en déclin s'habituent à la médiocrité_](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/). 2022.
 
 [^SREBlamelessCulture]: devops.com, [_How SRE creates a blameless culture_](https://devops.com/how-sre-creates-a-blameless-culture/). 2019.
 
-[^ArticlePSSortirSpiraleDeclin]: SILBERZAHN, Philippe. [_Le canard était toujours vivant: comment l’entreprise peut sortir de la spirale du déclin_](https://philippesilberzahn.com/2022/09/26/le-canard-etait-toujours-vivant-comment-lentreprise-peut-sortir-de-la-spirale-du-declin/). 2022.
+[^ArticlePSSortirSpiraleDeclin]: SILBERZAHN, Philippe. [_Le canard était toujours vivant: comment l'entreprise peut sortir de la spirale du déclin_](https://philippesilberzahn.com/2022/09/26/le-canard-etait-toujours-vivant-comment-lentreprise-peut-sortir-de-la-spirale-du-declin/). 2022.
 
 [^DefyingGravity]: DUNLAP, Preston. [_Defying gravity_](https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z/). 2022.
 
@@ -1236,3 +1319,11 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 
 [^RedGate2021Report]: Redgate. "[The 2021 State of
 Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)". 2021.
+
+[^DORAProfileExperience]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Years of experience", page 61. 2022.
+
+[^DiRTTraining]: _Disaster and Recovery Testing_ (DiRT) est un [entraînement des équipes d'infrastructure chez Google](https://cloud.google.com/blog/products/management-tools/shrinking-the-time-to-mitigate-production-incidents), visant pousser les systèmes de production à leur limite et infliger des pannes réelles. L'objectif est de voir comment les équipes réagissent et si elles sont correctement outillées pour répondre à un incident.
+
+[^MasterSecNumANSSI]: ssi.gouv.fr (onglet "Formations"). [Page de présentation du "Master sécurité numérique" de l'ANSSI](ssi.gouv.fr/particulier/formations/secnumedu/formations-labellisees-secnumedu/master-securite-numerique/).
+
+[^SLSA]: _Supply chain Levels for Software Artifacts_ ([SLSA](https://slsa.dev), prononcé "salsa") est un ensemble de règles de sécurité recommandées pour sécuriser sa chaîne de développement et de déploiement logiciel.
