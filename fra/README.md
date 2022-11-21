@@ -337,13 +337,15 @@ Abandonnez les « échantillons anonymisés ». Les ingénieurs ont besoin de 
 
 L'idée selon laquelle le DevOps permet de rapprocher les différents métiers pour collaborer ensemble n'est pas simple à appliquer. Les métiers historiques de la sécurité des systèmes d'information (SSI) se sont vu imposer des pratiques auxquelles ils n'étaient pas habitués et qu'ils n'ont parfois pas eu le temps d'appréhender.
 
-Dans les grandes organisations, les règles de l'entreprise ou la loi elle-même imposent que des versions bien arrêtées soient définies pour que le logiciel soit qualifié[^ANSSIQualifiedSoftware] ou homologué. Imaginez alors avoir la charge de faire respecter ces conditions quand les méthodes DevOps impliquent des dizaines de mise à jour logicielles chaque jour : il y a de quoi prendre peur ! Il est donc nécessaire de bien comprendre de quoi est composée une infrastructure cloud, pour correctement redéfinir ce qu'implique sa "sécurité".
+Dans les grandes organisations, les règles de l'entreprise ou la loi elle-même imposent que des versions bien arrêtées soient définies pour que le logiciel soit qualifié[^ANSSIQualifiedSoftware] ou homologué. Imaginez alors avoir la charge de faire respecter ces conditions quand les méthodes DevOps impliquent des dizaines de mise à jour logicielles chaque jour : il y a de quoi prendre peur ! Il est donc nécessaire de bien comprendre de quoi est composée une infrastructure cloud, pour correctement définir ce qu'implique sa "sécurité".
 
-La sécurité affecte tous les [piliers du DevOps](#les-piliers-du-devops-en-pratique). Ce chapitre se concentre sur une description haut-niveau des notions de la sécurité dans une méthodologie DevOps, mais citera tous les chapitres où les techniques abordées seront détaillées. Il s'agit de faire de la sécurité proactive (donc automatisée) et d'éviter au maximum la sécurité "documentaire", souvent synonyme de peu d'efficacité.
+La sécurité affecte tous les [piliers du DevOps](#les-piliers-du-devops-en-pratique). Ce chapitre se concentre sur une description haut-niveau des notions de la sécurité dans une méthodologie DevOps.
+
+Dans ce mode d'organisation, les pratiques de sécurité sont automatisées pour être appliquées en permanence. L'objectif est d'éviter au maximum la sécurité dite "documentaire", souvent synonyme d'une efficacité moindre, en faveur de règles programmées. En effet, le fait d'user de technologies standardisées (cf. conteneurs, Kubernetes) permet de faciliter l'application des règles de sécurité et d'obtenir la garantie qu'elles soient appliquées.
 
 ## Culture de la sécurité
 
-Le rapport DORA[^DORAWebsite] "État du DevOps 2022"[^DORAStateOfDevops2022Announcement] se concentre sur les enjeux de sécurité dans les transformations des entreprises en mode DevOps. Il fait état du fait qu'une entreprise favorisant la confiance et la [sécurité psychologique](#accepter-léchec), est 1.6 fois plus susceptible d'adopter des pratiques de sécurité innovantes. Il ajoute que cette culture permet de réduire de 1.4 fois le nombre de _burnout_[^Burnout] et augmente les chances qu'un collaborateur recommande son entreprise.
+Le rapport DORA[^DORAWebsite] "État du DevOps 2022"[^DORAStateOfDevops2022Announcement] se concentre sur les enjeux de sécurité dans les transformations des entreprises en mode DevOps. Il fait état du fait qu'une entreprise favorisant la confiance et la [sécurité psychologique](#accepter-léchec), est 60% plus susceptible d'adopter des pratiques de sécurité innovantes. Il ajoute que cette culture permet de réduire de 40% le nombre de _burnout_[^Burnout] et augmente les chances qu'un collaborateur recommande son entreprise.
 
 La sécurité a toujours été une affaire de culture. La méthodologie DevOps vient cependant apporter toutes les techniques qui permettront à une organisation de ne plus passer à côté des bonnes pratiques, autrefois négligées ou oubliées dans une paperasse longue et indigeste.
 
@@ -377,32 +379,36 @@ Cette pratique est fastidieuse, mais permet lorsqu'une nouvelle faille est déco
 
 Néanmoins dans une approche DevOps, l'usage de ces librairies évolue au cours du temps. Une technologie utilisée un jour sera peut-être remplacée demain. Vous ne pouvez donc pas demander aux développeurs de mettre à jour la liste de ces centaines (voire milliers) de dépendances utilisées dans leurs logiciels.
 
-L'avantage de la méthodologie DevOps est d'utiliser une technologie de déploiement standardisée : le conteneur. Cela nous permet d'utiliser des outils pour analyser de quoi ils sont composés et prévenir les failles de sécurité. Le SBOM peut donc être remplacé par deux choses :
+L'avantage de la méthodologie DevOps est d'utiliser une technologie de déploiement standardisée : le conteneur. Cela nous permet d'utiliser des outils pour analyser de quoi chaque conteneur est composé et prévenir les failles de sécurité. Le SBOM peut donc être remplacé par deux choses :
 
-- Des chaînes d'intégration continue qui détectent et refusent l'utilisation de librairies spécifiques automatiquement (ex: analyse des `package.json` en Javascript, `requirements.txt` en Python)
+- Des chaînes d'intégration continue qui détectent, mettent à jour ou refusent automatiquement l'usage de librairies spécifiques (ex: analyse des `package.json` en Javascript, `requirements.txt` en Python, détection de paquets vulnérables avec Renovate[^Renovate])
 - Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: Trivy[^Trivy], Quay Clair[^QuayClair])
 
-Au lieu de lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser au plus vite les modifications apportant des risques.
+Au lieu de lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser les contributions pouvant apporter des risques, avant qu'elles soient déployées en production.
 
 ## Ressources pré-approuvées
 
-Pour limiter les risques, il est possible de baser les logiciels développés sur des ressources pré-approuvées mises à disposition des développeurs. Chaque brique externe qui constitue le logiciel est pré-approuvée. Il peut s'agir de paquets Python, NPM, Go ou encore d'images Docker qui ont été analysés et pour lesquels les équipes de sécurité se sont assurés qu'il n'y avait pas de faille.
+Pour limiter les risques, il est possible de baser les logiciels développés sur des ressources pré-approuvées mises à disposition des développeurs. Chaque brique externe qui constitue le logiciel est vérifiée. Il peut s'agir de paquets Python, NPM, Go ou encore d'images Docker qui ont été analysés et pour lesquels les équipes de sécurité se sont assurées qu'il n'y avait pas de faille.
 
 C'est le cas par exemple du service _Iron Bank_ mis en place par le Ministère des Armées américain au sein de _Platform One_[^IronBankPresentation]. Les images Docker  doivent passer par une rigoureuse procédure de sécurité avant d'être approuvées. Ces étapes [combinent des vérifications](https://docs-ironbank.dso.mil/hardening/overview/) [manuelles](https://docs-ironbank.dso.mil/hardening/justifications/) et automatiques mais peuvent déjà faire, dans un premier temps, l'objet de procédures seulement automatisées. Les actions manuelles sont nécessaires pour justifier de l'intérêt d'ajouter une nouvelle image. C'est ce que les équipes de _Platform One_ appellent "l'homologation continue d'images approuvées"[^IronBankHardeningOverview].
 
 ![Processus d'homologation continue des images de Iron Bank.[^PlatformOnePresentationWebsite]](./images/continuous-accreditation-approved-images.png)
 
-Dans les organisations traitant des données très sensibles, la politique par défaut est de n'autoriser que l'utilisation de librairies et d'images pré-approuvées (_hardened images_). Veillez néanmoins à considérer l'impact d'un tel choix sur la vélocité des développements. Soyez certain que votre équipe de sécurité et SRE puissent suivre le rythme de la mise à disposition des librairies.
+Dans les organisations traitant de données très sensibles (c'est à dire des données pouvant mettre en péril la sécurité ou la crédibilité d'un pays si elles sont dévoilées), la politique par défaut est de n'autoriser que l'utilisation de librairies et d'images pré-approuvées (_hardened images_). Veillez néanmoins à considérer l'impact d'un tel choix sur la vélocité des développements. Soyez certain que vos équipes de sécurité et SRE puissent suivre le rythme de la mise à disposition des librairies.
 
-Comme il est assez inenvisageable d'analyser chaque librairie de développement pour s'assurer qu'il n'y a pas de faille, les usines logicielles peuvent se baser sur la signature des fichiers. Les éditeurs de confiance signent chacune de leur librairie[^GitlabSigningProcess], pour que les chaînes d'intégration continue ou les administrateurs systèmes puissent vérifier qu'elle n'a pas été altérée au cours du transfert. Chaque éditeur de confiance émet un certificat que l'équipe SRE peut intégrer dans ses chaînes d'intégration continue pour vérifier que les paquets téléchargés n'ont pas été altérés.
+Comme il est assez inenvisageable d'analyser "à la main" chaque librairie de développement pour s'assurer qu'elle n'ait pas de faille, les usines logicielles peuvent se baser sur la signature des fichiers. Les éditeurs de confiance signent chacune de leur librairie[^GitlabSigningProcess], pour que les chaînes d'intégration continue ou les administrateurs systèmes puissent vérifier qu'elle n'a pas été altérée au cours du transfert. Chaque éditeur de confiance émet un certificat que l'équipe SRE peut intégrer dans ses chaînes d'intégration continue pour vérifier que les paquets téléchargés n'ont pas été altérés.
 
-Une méthode plus simple est de n'utiliser que la clé de hashage des fichiers. Chaque fichier est identifié par une chaîne de caractères nommée _hash_, que l'ordinateur peut facilement calculer. Cette chaîne de caractère ressemble à cela : _52dd368c0ed9714f9b84fb885c925da4_. Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ différent de celui de référence (récupéré depuis Internet sur le site de l'éditeur), le lancement du logiciel est refusé. Ce mécanisme est déjà la plupart du temps implémenté par les gestionnaires de paquets des langages de programmation (ex: `package-lock.json` pour NPM, `poetry.lock` pour Python).
+Une méthode plus simple est de n'utiliser que la clé de hashage des fichiers. Chaque fichier est identifié par une chaîne de caractères nommée _hash_, que l'ordinateur peut facilement calculer.
+
+> Exemple de _hash_ : _52dd368c0ed9714f9b84fb885c925da4_.
+
+Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ différent de celui de référence (récupéré depuis Internet sur le site de l'éditeur), le lancement du logiciel est refusé. Ce mécanisme est déjà la plupart du temps implémenté par les gestionnaires de paquets des langages de programmation (ex: `package-lock.json` pour NPM, `poetry.lock` pour Python).
 
 ## Revues de code
 
-Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées, ou vous n'êtes tout simplement peut-être pas dimensionné en RH pour le faire.
+Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées, ou vous n'êtes peut-être tout simplement pas dimensionné en RH pour le faire.
 
-En DevOps, on pratique la méthodologie [GitOps](#gitops-et-git-flow) : chaque développeur travaille sur sa propre branche et implémente sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" dans la branche principale (plus communément : une _merge request_ ou _pull request_). Ce processus est détaillé dans le chapitre "[GitOps et git flow](#gitops-et-git-flow)".
+En DevOps, on pratique la méthodologie [GitOps](#gitops-et-git-flow) : chaque développeur travaille sur sa propre branche et implémente sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" dans la branche principale (communément appelée _merge request_ ou _pull request_). Ce processus est détaillé dans le chapitre "[GitOps et git flow](#gitops-et-git-flow)".
 
 La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale.
 
@@ -428,13 +434,79 @@ TODO(flavienbwk): Faire le lien avec le [SSDF](https://nvlpubs.nist.gov/nistpubs
 
 TODO(flavienbwk): Développer le sujet : pas 1 action qui n'est pas codée et automatisée. [1 action manuelle = 1 bug](#infrastructure-as-code-iac).
 
-## SLSA
+## Sécuriser sa chaîne de développement logiciel : SLSA, SSCP et SSDF
 
-https://slsa.dev/get-started
+TODO(flavienbwk)https://slsa.dev/get-started
 
-## Développement basé sur le zéro-trust
+TODO(flavienbwk): CNCF's SSCP https://github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper/CNCF_SSCP_v1.pdf, file:///C:/Users/Majordome/Downloads/CNCF_SSCP_v1.pdf
 
-TODO(flavienbwk): https://software.af.mil/wp-content/uploads/2021/08/CNAP-RefDesign_ver-1.0-Approved-for-Public-Release.pdf
+TODO(flavienbwk): [SSDF](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) ?
+
+## Développement basé sur l'architecture _zero trust_
+
+Traditionnellement...{usage basé sur une machine}
+
+Le _zero trust_ est la notion selon laquelle les droits d'accès ne doivent plus être accordés en autorisant une machine spécifique, mais en fonction de l'identité de l'utilisateur, le contexte d'usage et les règles imposées par l'organisation à l'instant T. Cette méthode de sécurisation s'est particulièrement développée en raison du recours massif au télétravail[^BCPANDRHStudyTeletravail].
+
+En architecture _zero trust_, l'accès à un service ou à de la donnée se résume en une expression : "Ne jamais faire confiance, toujours vérifier".
+
+Prenons un exemple : Sophie est une employée que vous côtoyez depuis 3 ans. Elle présente son badge à l'entrée et s'installe comme tous les jours à son poste de travail. Vous apprenez quelques jours après que Sophie a été licenciée depuis 1 mois. Il se peut qu'elle ait eu accès à des informations stratégiques sur votre entreprise. Des informations qu'elle utilisera dans son nouvel emploi, chez une société concurrente. Ici, sur le simple fait d'avoir "l'habitude" de voir ce collaborateur, l'entreprise s'est faite dérobée des informations précieuses. Les technologies _zero trust_ fournissant des moyens de gestion des accès centralisés, Sophie n'aurait pas pu se connecter à sa session.
+
+Trois piliers constituent une architecture réseau _zero trust_ :
+
+1. **Identification** : identifier l'utilisateur
+     - _Identification_ : Qui êtes-vous ?
+     - _Authentification_ : Êtes-vous celui que vous prétendez être ? (ex: facteur à double authentification _2FA_)
+     - _Autorisation_ : Êtes-vous autorisé à accéder à cette ressource ?
+2. **Contexte** : comment l'utilisateur tente d'accéder à la ressource
+     - _Principe de moindre privilège_ ou _besoin d'en connaître_ : accorder l'accès à une ressource en ne cédant que la plus petite quantité d'accès possible (ex: cacher les applications/sources de données auxquelles l'utilisateur n'a pas accès, définir une date limite d'accès)
+3. **Sécurité** : le matériel avec lequel l'utilisateur se connecte au réseau
+     - Sécurité de la machine : s'assurer que la machine qui se connecte est conforme aux exigences de sécurité (ex: vérifier qu'un antivirus tourne ou que l'OS mis à jour)
+
+L'idée est qu'en _zero trust_, chaque requête implique une re-vérification de ces critères de sécurité. C'est l'intermédiaire de confiance (_trust broker_) qui vérifie ces critères (cf. _OpenID_, _Active Directory_, _PKI_, _SAML_...).
+
+Les technologies permettant de mettre en place une architecture _zero trust_ incluant ces _trust brokers_ sont nommées "technologies _Zero Trust Network Access_" (ZTNA). _Cloudflare_, _Cato_, _Fortinet_ ou encore _Palo Alto_ sont des exemples de technologies ZTNA[^ZTNA]. Voyez-les comme des VPN avancés, qui vérifient en permanence plusieurs critères de sécurité définis par l'organisation. Ces critères peuvent être configurés selon l'application accédée ou la base de données requêtée.
+
+Dans le cadre d'un environnement de développement (R&D), le sujet se corse. Afin de rester innovantes, vos équipes ont besoin de flexibilité en : utilisant des librairies de dernière génération, installant les derniers drivers GPU pour faire des expérimentations de _machine learning_ ou encore en testant les performances de leur outil en consommant les pleines ressources de leur machine. En résumé, vos équipes ont besoin d'un accès complet à la configuration de leur machine.
+
+Or, comme citée plus haut, la 3ème règle d'une architecture _zero trust_ est de s'assurer que la machine de l'utilisateur est sécurisée. Si vous laissez les droits d'administration à un développeur, il pourra toujours désactiver les paramètres de sécurité de sa machine. Donc que faire ?
+
+![Briques d'une infrastructure d'entreprise.](./images/security_parts_software_delivery.jpg)
+
+La suite de ce chapitre traite de la brique bleue sur le schéma ci-dessus : les postes de développement.
+
+Ils sont un élément particulier de notre infrastructure _zero trust_ car ils impliquent la captation de ressources externes à l'entreprise, déployées par la suite au sein de son infrastructure. Inversement, le code source de l'usine logicielle ou les données de l'entreprise sont copiés sur ces machines. Avec des librairies téléchargées ou des éditeurs de code aux extensions non-vérifiées, on ajoute le risque d'une fuite de données vers l'extérieur.
+
+TODO(flavienbwk): Peu d'entreprises utilisent encore le 0 trust. https://www.intelligentciso.com/2022/07/26/zero-trust-security-adoption-rises-27-in-just-two-years/#, https://www.okta.com/blog/2022/08/state-of-zero-trust-report-2022-takeaways/
+
+Nous avons ici un dilemme. Soit nous acceptons de laisser les droits complets à nos développeurs sur leurs machines, pouvant désactiver nos mesures de sécurité mais en nous rassurant car les connexions à l'usine logicielle et la production sont bien protégées (cf. authentification, journaux d'activité). Soit nous restreignons ces droits mais amputons d'une portion significative la vélocité et l'innovation des développement, et acceptons de passer plus longtemps à former les personnels à leur environnement de travail atypique.
+
+Tout dépend de ce dont on veut se prémunir. Il faut prendre en compte les facteurs suivants :
+
+- La sécurité physique de vos installations (les machines ont-elles vocation à sortir de vos bureaux ? des externes ont-ils accès à ces machines ?)
+- Vos personnels ont-ils subit une enquête de sécurité ? (vérification périodique de l'intention des collaborateurs)
+- Votre infrastructure est-elle connectée à Internet ?
+- Votre infrastructure dispose-t-elle d'un débit important ?
+- Votre infrastructure est-elle stable ?
+- Les données manipulées sont-elles massives ?
+- Les données manipulées sont-elles de nature à nuire à l'organisation si elles sont dévoilée ?
+- Êtes-vous en mesure de fournir des machines dédiées à l'entreprise pour vos collaborateurs ?
+- Avez-vous des équipes en mesure d'administrer ces machines ? (privilégier des solutions Cloud aux solutions _on-premise_)
+
+Il existe plusieurs moyens d'adresser la problématique des environnements de développement :
+
+1. TODO(flavienbwk): Cas d'un freelance ou d'une boite sur Internet n'ayant pas les moyens d'administrer ces infras de sécu
+2. TODO(flavienbwk): Exemple des CodeSpace de GitHub ou [Coder](https://github.com/coder/coder)
+3. TODO(flavienbwk): Exemple de Sogeti avec des VM incluant de l'outillage de dev. [Teams can create developer machines
+and test environments based on predefined templates
+on any public cloud](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf).
+4. TODO(flavienbwk): Machines pleinement contrôlées et outillées
+
+TODO(flavienbwk): Tableau des possibilités classés par flexibilité en absisse et risque de sécurité en ordonnée.
+
+TODO(flavienbwk): Ressource: env de dev en mode [zero trust](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf).
+
+TODO(flavienbwk): https://software.af.mil/wp-content/uploads/2021/08/CNAP-RefDesign_ver-1.0-Approved-for-Public-Release.pdf, https://www.youtube.com/watch?v=DLQAbJm4gFM&ab_channel=TheCISOPerspective, https://www.nccoe.nist.gov/projects/implementing-zero-trust-architecture
 
 ## Compromission
 
@@ -442,7 +514,7 @@ TODO(flavienbwk): Développer le sujet : DevOps pour tracer les actions, central
 
 # Les piliers du DevOps en pratique
 
-Ca y est, nous atteignons le cœur du sujet. Dans ce chapitre, nous allons découvrir les différents piliers du DevOps en décrivant les différentes technologies qui peuvent répondre à nos enjeux.
+Ca y est, nous atteignons le cœur du sujet. Dans ce chapitre, nous allons découvrir les différents piliers du DevOps, en décrivant les différentes pratiques et technologies qui peuvent répondre à nos enjeux.
 
 En terme d'organisation, voyez le DevOps comme un moyen d'appliquer une "saine contrainte" à vos équipes, de sorte à inciter chacun à avancer dans la même direction. C'est faire communiquer tout le monde de manière optimale, au moyen d'outils techniques standardisés.
 
@@ -1009,7 +1081,7 @@ Compétences :
 - Conteneurisation (Docker, Kubernetes)
 - Connaissance des architectures micro-services
 - Administration technique de GitLab et des GitLab Runners
-- Connaissance avancée en scripting Bash, Ansible et/ou Terraform
+- Connaissance avancée en scripting Bash, Ansible, Saltstack et/ou Terraform
 - Connaissance d'au moins un langage de programmation (Java, C++, Python ou Go)
 - Bases de données orientées colonne, objet ou graphe
 - Connaissance d'un ou plusieurs services Cloud (AWS, GCP, Azure, Alicloud, Scaleway)
@@ -1097,7 +1169,7 @@ Compétences :
 - Communication, autonomie et capacité d'adaptation
 - Connaissance avancée d'une ou plusieurs distributions Linux
 - Connaissances en réseaux TCP/IP
-- Connaissance d'Ansible et/ou Terraform
+- Connaissance d'Ansible, Saltstack et/ou Terraform
 - Connaissance avancée en scripting Bash
 - Connaissance des principes d'architecture en micro-services
 - Connaissance d'une technologie d'orchestration Cloud (Kubernetes ou Openstack)
@@ -1133,7 +1205,7 @@ Compétences :
 - Autonomie et capacité d'adaptation
 - Connaissance avancée d'au moins un langage de programmation (Java, C++, Python ou Go)
 - Connaissance avancée des bases de données orientées colonne, objet et/ou graphe
-- Connaissance d'Ansible et/ou Terraform
+- Connaissance d'Ansible, Saltstack et/ou Terraform
 - Connaissance d'une technologie d'orchestration Cloud (Kubernetes ou Openstack)
 - Réseaux TCP/IP
 
@@ -1324,6 +1396,12 @@ Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)
 
 [^DiRTTraining]: _Disaster and Recovery Testing_ (DiRT) est un [entraînement des équipes d'infrastructure chez Google](https://cloud.google.com/blog/products/management-tools/shrinking-the-time-to-mitigate-production-incidents), visant pousser les systèmes de production à leur limite et infliger des pannes réelles. L'objectif est de voir comment les équipes réagissent et si elles sont correctement outillées pour répondre à un incident.
 
-[^MasterSecNumANSSI]: ssi.gouv.fr (onglet "Formations"). [Page de présentation du "Master sécurité numérique" de l'ANSSI](ssi.gouv.fr/particulier/formations/secnumedu/formations-labellisees-secnumedu/master-securite-numerique/).
+[^MasterSecNumANSSI]: [Page de présentation du "Master sécurité numérique" de l'ANSSI](ssi.gouv.fr/particulier/formations/secnumedu/formations-labellisees-secnumedu/master-securite-numerique/). _ssi.gouv.fr_ (onglet "Formations").
 
 [^SLSA]: _Supply chain Levels for Software Artifacts_ ([SLSA](https://slsa.dev), prononcé "salsa") est un ensemble de règles de sécurité recommandées pour sécuriser sa chaîne de développement et de déploiement logiciel.
+
+[^BCPANDRHStudyTeletravail]: BCG; ANDRH. Etude ["Le futur du travail vu par les DRH - 2ème édition"](https://www.andrh.fr/uploads/files/attachments/622b046587abf003039119.pdf). 2022.
+
+[^ZTNA]: Le _Zero Trust Network Access_ (ZTNA) est une catégorie de technologies qui fournit un accès à distance sécurisé aux applications et aux services sur la base de politiques de contrôle d'accès définies. [Définition par paloaltonetworks.com](https://www.paloaltonetworks.com/cyberpedia/what-is-zero-trust-network-access-ztna).
+
+[^Renovate]: Renovate par [Mend](https://www.mend.io/) est un analyseur de dépendances. [_github.com/renovatebot/renovate_](https://github.com/renovatebot/renovate).
