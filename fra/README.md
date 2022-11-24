@@ -369,7 +369,7 @@ Ces tests peuvent se composer : d'une analyse antivirus, de l'analyse de failles
 
 Dans la capture d'écran ci-dessus, vous pouvez observer une chaîne d'intégration continue à 5 étapes (Build, Test, Release, Preprod, Integration). La colonne qui nous intéresse est "Test". Elle comporte différents tests de sécurité qui sont lancés et qui ont dans ce cas soit réussi (coche verte), soit comporte des avertissements (point d'exclamation jaune). Si un test avait échoué, nous aurions vu une croix rouge. Un point d'exclamation signifie que le test en question n'est pas passé mais qu'il n'était pas critique (ex: une dépendance logicielle dépréciée mais sans faille de sécurité).
 
-Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (ou _template_)[^GitLabCustomTemplate] qu'ils copient et qui intègrent toutes les règles de sécurité, en plus d'autres fichiers utiles pour démarrer. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité. Cela permettra de faire gagner du temps à tout le monde.
+Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (_template_ en anglais)[^GitLabCustomTemplate] qu'ils copient et qui intègrent toutes les règles de sécurité, en plus d'autres fichiers utiles pour démarrer. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité. Cela permettra de faire gagner du temps à tout le monde.
 
 ## Dépendances externes
 
@@ -436,19 +436,21 @@ TODO(flavienbwk): Développer le sujet : pas 1 action qui n'est pas codée et au
 
 ## Sécuriser sa chaîne de développement logiciel : SLSA, SSCP et SSDF
 
+En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Dans ce décret et parmi les 7 priorités[^FactSheetUSASecurity], la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des Etats-Unis[^NSM2022].
+
 TODO(flavienbwk)https://slsa.dev/get-started
 
 TODO(flavienbwk): CNCF's SSCP https://github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper/CNCF_SSCP_v1.pdf, file:///C:/Users/Majordome/Downloads/CNCF_SSCP_v1.pdf
 
 TODO(flavienbwk): [SSDF](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) ?
 
-## Développement basé sur l'architecture _zero trust_
+## L'architecture _zero trust_
 
-Traditionnellement...{usage basé sur une machine}
+Le concept _zero trust_ se résume en une expression : "Ne jamais faire confiance, toujours vérifier". Cette pratique s'impose aujourd'hui avec 55% des entreprises qui répondaient avoir mise en place une initiative _zero trust_ en 2022 contre 24% en 2021[^OKTAZeroTrustStudy].
 
-Le _zero trust_ est la notion selon laquelle les droits d'accès ne doivent plus être accordés en autorisant une machine spécifique, mais en fonction de l'identité de l'utilisateur, le contexte d'usage et les règles imposées par l'organisation à l'instant T. Cette méthode de sécurisation s'est particulièrement développée en raison du recours massif au télétravail[^BCPANDRHStudyTeletravail].
+Traditionnellement, la sécurité des réseaux était basée sur la définition d'un "périmètre de confiance" tracé autour des logiciels et des données d'une organisation. Elle mettait ensuite en place une variété d'outils et de technologies pour les protéger. Cette architecture réseau - aussi nommée "_castle-and-moat_"[^CloudflareCastleAndMoat] ou "périmétrique" - reposait sur l'hypothèse que toute activité à l'intérieur du périmètre est digne de confiance et par réciprocité, que toute activité à son extérieur ne l'est pas (ex: accès réseau via un VPN ou sur base de l'adresse MAC d'une machine).
 
-En architecture _zero trust_, l'accès à un service ou à de la donnée se résume en une expression : "Ne jamais faire confiance, toujours vérifier".
+Le _zero trust_ part du principe qu'aucun utilisateur n'est "de confiance" par défaut, qu'il se trouve à l'intérieur ou à l'extérieur du périmètre. Pour accéder aux données et aux logiciels, les utilisateurs doivent être authentifiés et autorisés. Leur activité doit être surveillée et enregistrée. Cette approche est plus efficace pour protéger systèmes d'information contre les attaques sophistiquées, car elle ne repose justement pas sur l'hypothèse que toute activité à l'intérieur du périmètre est digne de confiance. Ce modèle de sécurisation des réseaux s'est particulièrement développée en raison du recours massif au télétravail[^BCPANDRHStudyTeletravail].
 
 Prenons un exemple : Sophie est une employée que vous côtoyez depuis 3 ans. Elle présente son badge à l'entrée et s'installe comme tous les jours à son poste de travail. Vous apprenez quelques jours après que Sophie a été licenciée depuis 1 mois. Il se peut qu'elle ait eu accès à des informations stratégiques sur votre entreprise. Des informations qu'elle utilisera dans son nouvel emploi, chez une société concurrente. Ici, sur le simple fait d'avoir "l'habitude" de voir ce collaborateur, l'entreprise s'est faite dérobée des informations précieuses. Les technologies _zero trust_ fournissant des moyens de gestion des accès centralisés, Sophie n'aurait pas pu se connecter à sa session.
 
@@ -463,11 +465,21 @@ Trois piliers constituent une architecture réseau _zero trust_ :
 3. **Sécurité** : le matériel avec lequel l'utilisateur se connecte au réseau
      - Sécurité de la machine : s'assurer que la machine qui se connecte est conforme aux exigences de sécurité (ex: vérifier qu'un antivirus tourne ou que l'OS mis à jour)
 
-L'idée est qu'en _zero trust_, chaque requête implique une re-vérification de ces critères de sécurité. C'est l'intermédiaire de confiance (_trust broker_) qui vérifie ces critères (cf. _OpenID_, _Active Directory_, _PKI_, _SAML_...).
+![Schéma des éléments pris en compte dans une architecture _zero trust_, par Microsoft.](./images/zero_trust_schema_msft.jpg)
 
-Les technologies permettant de mettre en place une architecture _zero trust_ incluant ces _trust brokers_ sont nommées "technologies _Zero Trust Network Access_" (ZTNA). _Cloudflare_, _Cato_, _Fortinet_ ou encore _Palo Alto_ sont des exemples de technologies ZTNA[^ZTNA]. Voyez-les comme des VPN avancés, qui vérifient en permanence plusieurs critères de sécurité définis par l'organisation. Ces critères peuvent être configurés selon l'application accédée ou la base de données requêtée.
+L'idée est qu'en _zero trust_, chaque requête implique une nouvelle vérification de ces critères de sécurité. C'est l'intermédiaire de confiance (_trust broker_ ou CASB[^CASB]) qui vérifie ces critères (cf. _OpenID_, _Active Directory_, _PKI_, _SAML_...).
 
-Dans le cadre d'un environnement de développement (R&D), le sujet se corse. Afin de rester innovantes, vos équipes ont besoin de flexibilité en : utilisant des librairies de dernière génération, installant les derniers drivers GPU pour faire des expérimentations de _machine learning_ ou encore en testant les performances de leur outil en consommant les pleines ressources de leur machine. En résumé, vos équipes ont besoin d'un accès complet à la configuration de leur machine.
+Les CASB sont intégrés aux technologies dites "_Zero Trust Network Access_" (ZTNA) pour mettre en place une architecture _zero trust_. _Cloudflare_, _Cato_, _Fortinet_ ou encore _Palo Alto_ sont des exemples de technologies ZTNA[^ZTNA]. Voyez-les comme des serveurs proxy avancés, qui vérifient en permanence plusieurs critères de sécurité définis par votre organisation. Si vous souhaitez mettre en place une initative _zero trust_, reportez-vous au framework SASE[^SASE].
+
+En raison du nombre d'outils à configurer, le modèle _zero trust_ est moins simple à mettre en place qu'une sécurité périmétrique, mais il permet de surpasser ses limites[^ANSSIZeroTrust].
+
+Au delà d'un besoin impératif de mieux sécuriser l'accès aux ressources, l'architecture _zero trust_ apporte la sérénité d'une infrastructure sécurisée. Elle permet tout autant de simplifier l'administration des postes d'exploitation et des matériels réseau (administration centrale des flux réseau et des accès, plutôt qu'une configuration de chaque poste), de réduire les coûts (temps de maintenance, machines pouvant être mutualisées) et de standardiser les interfaces de gestion de l'identité et des droits utilisateur.
+
+L'innovation technologique impliquant une apdatation rapide, le _zero trust_ permet aux organisations de s'adapter rapidement et en toute sécurité aux changements de leur environnement, sans avoir à revoir leur posture de sécurité.
+
+## Développement basé sur l'architecture _zero trust_
+
+Dans le cadre d'un environnement de développement (R&D), le sujet se corse. Pour rester innovantes, vos équipes ont besoin de flexibilité : en utilisant des librairies de dernière génération, en installant les derniers drivers GPU pour faire des expérimentations de _machine learning_ ou encore en testant les performances de leur outil avec une consommation totale ressources de leur machine. En résumé, vos équipes ont besoin d'un accès complet à la configuration de leur machine.
 
 Or, comme citée plus haut, la 3ème règle d'une architecture _zero trust_ est de s'assurer que la machine de l'utilisateur est sécurisée. Si vous laissez les droits d'administration à un développeur, il pourra toujours désactiver les paramètres de sécurité de sa machine. Donc que faire ?
 
@@ -477,17 +489,15 @@ La suite de ce chapitre traite de la brique bleue sur le schéma ci-dessus : les
 
 Ils sont un élément particulier de notre infrastructure _zero trust_ car ils impliquent la captation de ressources externes à l'entreprise, déployées par la suite au sein de son infrastructure. Inversement, le code source de l'usine logicielle ou les données de l'entreprise sont copiés sur ces machines. Avec des librairies téléchargées ou des éditeurs de code aux extensions non-vérifiées, on ajoute le risque d'une fuite de données vers l'extérieur.
 
-TODO(flavienbwk): Peu d'entreprises utilisent encore le 0 trust. https://www.intelligentciso.com/2022/07/26/zero-trust-security-adoption-rises-27-in-just-two-years/#, https://www.okta.com/blog/2022/08/state-of-zero-trust-report-2022-takeaways/
-
 Nous avons ici un dilemme. Soit nous acceptons de laisser les droits complets à nos développeurs sur leurs machines, pouvant désactiver nos mesures de sécurité mais en nous rassurant car les connexions à l'usine logicielle et la production sont bien protégées (cf. authentification, journaux d'activité). Soit nous restreignons ces droits mais amputons d'une portion significative la vélocité et l'innovation des développement, et acceptons de passer plus longtemps à former les personnels à leur environnement de travail atypique.
 
 Tout dépend de ce dont on veut se prémunir. Il faut prendre en compte les facteurs suivants :
 
-- La sécurité physique de vos installations (les machines ont-elles vocation à sortir de vos bureaux ? des externes ont-ils accès à ces machines ?)
+- La sécurité physique de vos installations est-elle garantie ? (les machines ont-elles vocation à sortir de vos bureaux ? des externes ont-ils accès à ces machines ?)
 - Vos personnels ont-ils subit une enquête de sécurité ? (vérification périodique de l'intention des collaborateurs)
 - Votre infrastructure est-elle connectée à Internet ?
 - Votre infrastructure dispose-t-elle d'un débit important ?
-- Votre infrastructure est-elle stable ?
+- Votre infrastructure est-elle sujette à des déconnexions récurrentes ?
 - Les données manipulées sont-elles massives ?
 - Les données manipulées sont-elles de nature à nuire à l'organisation si elles sont dévoilée ?
 - Êtes-vous en mesure de fournir des machines dédiées à l'entreprise pour vos collaborateurs ?
@@ -500,9 +510,12 @@ Il existe plusieurs moyens d'adresser la problématique des environnements de d�
 3. TODO(flavienbwk): Exemple de Sogeti avec des VM incluant de l'outillage de dev. [Teams can create developer machines
 and test environments based on predefined templates
 on any public cloud](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf).
-4. TODO(flavienbwk): Machines pleinement contrôlées et outillées
+4. TODO(flavienbwk): Machines pleinement contrôlées et outillées (droits partiels, contrôle des extensions de l'IDE)
+5. TODO(flavienbwk): Machines pleinement contrôlées avec VM de développement (un dossier commun host/VM peut être partagé)
 
 TODO(flavienbwk): Tableau des possibilités classés par flexibilité en absisse et risque de sécurité en ordonnée.
+
+TODO(flavienbwk): Utiliser un gestionnaire de mots de passe type Vaultwarden pour se partager des secrets.
 
 TODO(flavienbwk): Ressource: env de dev en mode [zero trust](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf).
 
@@ -1405,3 +1418,19 @@ Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)
 [^ZTNA]: Le _Zero Trust Network Access_ (ZTNA) est une catégorie de technologies qui fournit un accès à distance sécurisé aux applications et aux services sur la base de politiques de contrôle d'accès définies. [Définition par paloaltonetworks.com](https://www.paloaltonetworks.com/cyberpedia/what-is-zero-trust-network-access-ztna).
 
 [^Renovate]: Renovate par [Mend](https://www.mend.io/) est un analyseur de dépendances. [_github.com/renovatebot/renovate_](https://github.com/renovatebot/renovate).
+
+[^NSM2022]: Administration BIDEN. [_National Security Memorandum_](https://www.whitehouse.gov/briefing-room/statements-releases/2022/01/19/fact-sheet-president-biden-signs-national-security-memorandum-to-improve-the-cybersecurity-of-national-security-department-of-defense-and-intelligence-community-systems). 2022.
+
+[^USAExecOrderImproveCybersec]: Administration BIDEN. [_Executive Order on Improving the Nation’s Cybersecurity_](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/). 2021.
+
+[^FactSheetUSASecurity]: Administration BIDEN. [_FACT SHEET: President Signs Executive Order Charting New Course to Improve the Nation’s Cybersecurity and Protect Federal Government Networks_](https://www.whitehouse.gov/briefing-room/statements-releases/2021/05/12/fact-sheet-president-signs-executive-order-charting-new-course-to-improve-the-nations-cybersecurity-and-protect-federal-government-networks/). 2021.
+
+[^CloudflareCastleAndMoat]: [_What is the castle-and-moat network security model ?_](https://www.cloudflare.com/learning/access-management/castle-and-moat-network-security/) _cloudflare.com_.
+
+[^ANSSIZeroTrust]: ANSSI. [Le modèle zero trust](https://www.ssi.gouv.fr/agence/publication/le-modele-zero-trust/). 2021.
+
+[^OKTAZeroTrustStudy]: OKTA. [_State of zero trust report_](https://www.okta.com/blog/2022/08/state-of-zero-trust-report-2022-takeaways/). 2022.
+
+[^CASB]: CASB / [Cloud Access Security Broker](https://www.gartner.com/en/information-technology/glossary/cloud-access-security-brokers-casbs) : service intermédiaire autorisant ou non l'accès à un applicatif par un uilisateur.
+
+[^SASE]: SASE / [Secure Access Service Edge](https://blogs.gartner.com/andrew-lerner/2019/12/23/say-hello-sase-secure-access-service-edge/) : combinaison de plusieurs fonctions de sécurité réseau pour permettre l'accès dynamique aux ressources d'une organisation
