@@ -73,17 +73,19 @@ En résumé, l'ingénieur DevOps est responsable de la mise en place de l'ensemb
 
 ## DevSecOps
 
-Le terme DevSecOps est également populaire. Il qualifie les procédures DevOps intégrant nativement les considérations de sécurité dans le cycle de développement du logiciel et son exploitation en production.
+Le terme DevSecOps est également populaire. Il qualifie un mode d'organisation DevOps intégrant nativement les équipes de Sécurité des Systèmes d'Information (SSI) au sein du cycle de développement et de déploiement du logiciel. Il s'agit d'y imposer des règles automatisées qui garantissent l'application des règles et standards de sécurité.
 
-En terme organisationnel, il s'agit principalement d'intégrer les équipes de Sécurité des Systèmes d'Information (SSI) dans tous les échanges entre les développeurs et les équipes de production. Ces équipes auront la charge de définir et contrôler l'existence des fonctionnalités de confidentialité et de sécurité dans les logiciels, dès la phase de conception.
+En terme organisationnel, cette méthode implique les équipes SSI dans tous les échanges entre les développeurs et les équipes de production. Ces équipes auront la charge de définir et contrôler l'existence des fonctionnalités de confidentialité et de sécurité dans les logiciels, dès la phase de conception.
 
 Par exemple, l'existence des fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d'en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#continuous-integration-ci) dans le code.
 
-Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'Armée de l'Air américaine [le définit](https://podcast.ausha.co/postmortem/19)[^DevSecOpsUSAirForce] de cette manière :
+Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'Armée de l'Air américaine [le définit](https://podcast.ausha.co/postmortem/19)[^DevSecOpsUSAirForce] de manière plus générale avec les termes suivants :
 
 > « Le DevSecOps est l'évolution de l'ingénierie logicielle. C'est l'équilibre entre la vélocité de développement et le temps alloué aux considérations de sécurité. On veut que la sécurité soit intégrée pour être sûr qu'elle ne soit pas oubliée mais ajoutée au cycle de développement logiciel. C'est utiliser les procédés de cybersécurité modernes pour être sûr que le logiciel est à la fois performant et construit d'une manière sécurisée pour être sûr qu'il n'ait pas de problème au fil du temps. C'est ce qui va permettre aux sociétés et organisations de rester concurrentielles et d'avancer à l'avenir à la vitesse nécessaire face à leurs concurrents. »
 
 Nous n'en parlerons pas davantage en ce terme car le DevSecOps est à mon sens analogue à la méthodologie DevOps et plus généralement à l'ingénierie logicielle moderne : la sécurité est un prérequis indiscutable de toute organisation et ses bonnes pratiques s'intègrent nativement avec les techniques DevOps qui vont vous être présentées.
+
+Il peut être néanmoins intéressant de communiquer avec ce terme au sein des institutions. Dans ces dernières, les équipes de la Sécurité des Systèmes d'Information (SSI) occupent une place toute particulière dans les initiatives numériques. Parler de "DevSecOps" plutôt que de "DevOps" permet de bien faire comprendre aux équipes SSI qu'elles ont un [rôle concret](#ingénieur-ssi-devops) à jouer dans cette nouvelle approche.
 
 Les paradigmes de sécurité dans un modèle d'organisation DevOps seront abordés dans le chapitre "[Sécurité : un nouveau paradigme dans l'approche DevOps](#sécurité--un-nouveau-paradigme-dans-lapproche-devops)".
 
@@ -427,13 +429,15 @@ Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ dif
 
 ## Revues de code
 
-Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées, ou vous n'êtes peut-être tout simplement pas dimensionné en RH pour le faire.
+Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées, ou vous n'êtes peut-être pas dimensionné en terme RH pour le faire.
 
-En DevOps, on pratique la méthodologie [GitOps](#gitops-et-git-flow) : chaque développeur travaille sur sa propre branche et implémente sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" dans la branche principale (communément appelée _merge request_ ou _pull request_). Ce processus est détaillé dans le chapitre "[GitOps et git flow](#gitops-et-git-flow)".
+En DevOps, on pratique la méthodologie [GitOps](#gitops-et-git-flow) : chaque développeur travaille sur sa propre branche et développe sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" (communément appelée _merge request_ ou _pull request_) dans la branche principale. Ce processus est détaillé dans le chapitre "[GitOps et git flow](#gitops-et-git-flow)".
 
-La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale.
+La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale. C'est à ce moment que les différentes personnes impliquées dans la vérification de la qualité d'une contribution peuvent écrire leurs commentaires.
 
-L'objectif est de vérifier que le développeur n'ait pas fait de grosse erreur dans le fonctionnement du code, ou de s'assurer qu'il n'ajoute pas de dette technique. Par exemple chez Google, une _merge request_ requiert l'approbation de deux ingénieurs avant de pouvoir être fusionnée.
+![Les usines logicielles comme GitLab permettent d'ajouter des commentaires directement au sein d'une proposition de contribution, à la ligne exacte concernée par ce commentaire. Source : about.gitlab.com](./images/gitlab-review-comment.png)
+
+L'objectif est de vérifier que le développeur n'ait pas fait de grosse erreur dans le fonctionnement du code, ou de s'assurer qu'il n'ajoute pas de dette technique. Par exemple chez Google, une _merge request_ requiert l'approbation d'au moins deux ingénieurs avant de pouvoir être validée.
 
 ![Illustration de la méthodologie GitOps (simplifiée)](./images/gitops-simple-flow.png)
 
@@ -447,17 +451,27 @@ Pour les équipes des sécurité, la revue de code a pour objectif de vérifier 
 - Technique de stockage des mots de passe / des cookies
 - Respect des fonctionnalités RGPD
 
-GitLab permet par exemple d'obliger l'approbation d'une _merge request_ par des équipes spécifiques[^GitLabRequiredApprovals] (ex: l'équipe de sécurité), avant qu'elle puisse être fusionnée dans une branche principale.
+GitLab permet par exemple d'obliger l'approbation d'une _merge request_ par des équipes spécifiques[^GitLabRequiredApprovals] (ex: l'équipe de sécurité), avant qu'une contribution puisse être fusionnée dans la branche principale.
 
-TODO(flavienbwk): Faire le lien avec le [SSDF](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) ?
+![Aperçu de l'interface GitLab d'approbation d'un groupe de contributions (elles ne paraissent pas), par plusieurs équipes de l'organisation (_frontend_, _backend_, qualité (_QA_)). Source : about.gitlab.com](./images/gitlab-review-approval.png)
 
-## Production as code
+## Gérer son infrastructure avec du code
 
-TODO(flavienbwk): Développer le sujet : pas 1 action qui n'est pas codée et automatisée. [1 action manuelle = 1 bug](#infrastructure-as-code-iac).
+L'humain est le premier vecteur d'introduction de failles de sécurité. Pour éviter au maximum l'erreur ou la compromission volontaire d'un système, les infrastructures modernes "codent" leur infrastructure.
+
+C'est à dire que pour opérer l'infrastructure au quotidien (en dehors d'un cas d'urgence), toute action d'administration est codée, publiée et vérifiée dans l'usine logicielle avant d'être lancée. Cela permet de pouvoir standardiser, documenter, rejouer et optimiser au cours du temps les actions d'administration.
+
+Le domaine englobant les techniques de gestion de la production en code, est communément appelé _Infrastructure as Code_ (IaC). Cette notion et sa pertinence sont développés dans le chapitre "[Infrastructure as Code](#infrastructure-as-code-iac)".
+
+Voici un exemple de configuration (code) permettant de mettre à jour le fuseau horaire et l'heure de la machine `prod-fr-zone-c-server-18` :
+
+![Exemple de configuration Ansible illustrant la notion d'_Infrastructure as Code_.](./images/ansible-iac-playbook-example.png)
+
+L'exemple ci-dessus est très simple mais l'IaC peut aller jusqu'à décrire la manière dont des machines peuvent être instanciées et configurées. Une configuration d'Iac peut par exemple totalement configurer une machine de 0 (paramètres réseau, certificats de sécurité, ajout d'utilisateurs, installation des _drivers_ d'une imprimante, configuration des favoris du navigateur...). L'idée est encore une fois d'éviter au maximum l'intervention humaine, avec des mauvaises commandes informatiques lancées par erreur.
 
 ## Sécuriser sa chaîne de développement logiciel : SLSA, SSCP et SSDF
 
-En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Dans ce décret et parmi les 7 priorités[^FactSheetUSASecurity], la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des Etats-Unis[^NSM2022].
+En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Parmi 7 priorités[^FactSheetUSASecurity] décrites dans ce décret, la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des Etats-Unis[^NSM2022].
 
 TODO(flavienbwk)https://slsa.dev/get-started
 
@@ -757,7 +771,7 @@ Gardez cet élément en tête : automatiser est l'action qui permet de réduire 
 
 ### Infrastructure as Code (IaC)
 
-Ce terme populaire est simple à appréhender : il s'agit des pratiques et des technologies permettant de rendre la configuration de votre infrastructure explicite sous forme de code informatique.
+Ce terme populaire est simple à appréhender : il regroupe les pratiques et les technologies permettant de rendre la configuration de votre infrastructure explicite, sous forme de code informatique.
 
 Voici quelques exemples de configuration :
 
@@ -1317,7 +1331,7 @@ Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des
 
 [^WeaveWorksServiceMeshArticle]: NGINX Blog. [What is a service mesh ?](https://www.nginx.com/blog/what-is-a-service-mesh/). 2018.
 
-[^WilliamMorganKubecon2018]: MORGAN, William. [How to get a service mesh into production without getting fired](https://www.youtube.com/watch?v=XA1aGpYzpYg&list=PLSIv_F9TtLlx8VW2MFONMRwS_-2rSJwdn&index=3&ab_channel=CNCF%5BCloudNativeComputingFoundation%5D). 2018.
+[^WilliamMorganKubecon2018]: MORGAN, William. [How to get a service mesh into production without getting fired](https://www.youtube.com/watch?v=XA1aGpYzpYg&list=PLSIv_F9TtLlx8VW2MFONMRwS_-2rSJwdn&index=3&ab_channel=CNCF%5BCloudNativeComputingFoundation%5D) (conférence). 2018.
 
 [^IstioTestDocumentationTool]: Istio's [testing framework documentation](https://github.com/istio/istio.io/blob/3ecc5aeb4a6125374f1a5da18a2c4befeb5ae685/tests/README.md) on _github.com_. 2022.
 
