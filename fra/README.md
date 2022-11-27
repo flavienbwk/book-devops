@@ -481,23 +481,38 @@ Chacun des frameworks présentés dans ce chapitre contient une liste de recomma
 
 ### SLSA
 
-Les framework _Supply-chain Levels for Software Artifacts_ (SLSA) se concentre sur la notion d'artéfacts. En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente, de par la manipulation de ces artéfacts.
+Les framework _Supply-chain Levels for Software Artifacts_ (SLSA[^SLSA], prononcé "salsa") se concentre historiquement sur la provenance des données et la notion d'artéfacts.
+
+Le SLSA est né des pratiques internes de Google. L'entreprise a développé des techniques pour veiller à ce que les employés, en agissant seuls, ne puissent pas accéder directement ou indirectement aux données des utilisateurs - ni les manipuler de toute autre manière - sans autorisation et justification appropriées[^BinaryAuthorizationForBorg].
+
+En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente et que ces artéfacts sont un vecteur privilégié de menace.
 
 ![Etapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).](./images/slsa-supply-chain-threats.jpg)
 
-Ses règles tournent autour de la vérification automatique de l'intégrité des données manipulées, dans chaque étape. Quelques exemples des vulnérabilités auxquelles ces règles répondent :
+Ses règles tournent autour de la vérification automatique de l'intégrité des données manipulées. Quelques exemples des vulnérabilités auxquelles le SLSA répond :
 
-- s'assurer que le code source utilisé dans les scripts compilant le logiciel (CI), n'aient pas été altérés
+- s'assurer que le code source utilisé dans les scripts compilant le logiciel (CI) n'a pas été altéré
 - s'assurer de la provenance des dépendances de développement
-- s'assurer que le produit de la compilation n'embarque pas de fichiers malveillants
+- s'assurer que l'usine logicielle dispose d'une connectivité réseau minimale
 
 En fonction de la maturité technique de son équipe, il est possible d'appliquer les règles SLSA selon 4 niveaux de sécurité et de complexité. L'idée est de pouvoir progressivement améliorer la sécurité de sa chaîne logicielle au cours du temps.
 
-Une documentation interactive et continuellement mise à jour est disponible sur le site officiel du projet SLSA[^OfficialSLSAWebsite].
+Le SLSA se compose de deux parties :
 
-### SSCP
+- les [pré-requis](https://slsa.dev/spec/v0.1/requirements) (_requirements_) : ensemble de règles de sécurité plus ou moins complexes à mettre en place selon le niveau SLSA (1 à 4) que l'organisation souhaite atteindre
+- les [menaces et contremesures](https://slsa.dev/spec/v0.1/threats) (_threats and mitigations_) : qui donnent des scénarios de menaces, des exemples publics connus et la manière dont il est possible d'y remédier
 
-TODO(flavienbwk): CNCF's SSCP https://github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper/CNCF_SSCP_v1.pdf, file:///C:/Users/Majordome/Downloads/CNCF_SSCP_v1.pdf. Autres ressources : https://dodcio.defense.gov/library/.
+Une documentation interactive et continuellement mise à jour par la communauté[^GitHubSLSA] est disponible sur le site officiel du projet [SLSA](https://slsa.dev).
+
+### SSCSP
+
+Les spécifications du _Software Supply Chain Security Paper_ (SSCSP ou SSCP) de la réputée _Cloud Native Computing Foundation_ (CNCF) sont complémentaires aux SLSA. Elles couvrent historiquement un panel plus large de sujets, mais beaucoup de recommandations se recoupent aujourd'hui.
+
+Bien que le SLSA propose une documentation plus interactive, bien illustrée (avec des exemples d'outils à utiliser ou de menaces pour chaque règle) et presque gamifiée grâce à ses "badges de niveau de sécurité", les spécifications SSCSP semblent permettre - au moment de l'écriture de ce livre - de donner une vision plus haut-niveau sur les menaces au sein d'une chaîne logicielle.
+
+Plus concises pour débuter, je recommande de démarrer son projet de sécurisation d'usine logicielle avec le SSCSP, puis de progresser avec le SLSA.
+
+Ce document de référence est également contributif[^CNCFSSCSPGithub] et fait plus largement partie des standards[^CNCFTAGGithub] adoptés par l'équipe des conseillers techniques en sécurité (TAG) de la CNCF. Ces derniers rédigent différents documents de référence ayant vocation à améliorer la sécurité de l'écosystème cloud[^CNCFTAGAnnouncement].
 
 ### SSDF
 
@@ -505,11 +520,11 @@ Le _Secure Software Development Framework_ (SSDF[^SSDF]) est un document rédig�
 
 Le travail du NIST est à saluer par la variété et la qualité des rapports produits, sur des technologies et techniques à l'état de l'art. Leurs travaux sont la plupart du temps le fruit d'une réflexion menée en concertation avec de nombreuses institutions et entreprises du privé. On y retrouve par exemple Google, AWS, IBM, Microsoft, la _Naval Sea Systems Command_ ou encore le _Software Engineering Institute_.
 
-Plus complet que les deux précédents, le SSDF agit comme un annuaire regroupant les recommandations issues de dizaines d'autres frameworks (ex: SSCP, OWASP SAMM, MSSDL, BSIMM, PCI SSLC...). Il les classe en 4 grands thèmes : préparer l'organisation, protéger les logiciels, produire des logiciels bien sécurisés, répondre aux vulnérabilités.
+Plus complet que les deux précédents, le SSDF agit comme un annuaire regroupant les recommandations issues de dizaines d'autres frameworks (ex: SSCSP, OWASP SAMM, MSSDL, BSIMM, PCI SSLC...). Il les classe en 4 grands thèmes : préparer l'organisation, protéger les logiciels, produire des logiciels bien sécurisés, répondre aux vulnérabilités.
 
 Le framework répertorie des notions générales associées progressivement à des règles plus concrètes. Chacun des thèmes regroupe des grandes pratiques à suivre, qui incluent elle-mêmes des tâches contenant des exemples, associées à des références aux frameworks concernés.
 
-Par exemple pour le thème "protéger les logiciels", la pratique "protéger toutes les formes de code contre l'accès non autorisé et la falsification" propose d'utiliser la "signature des _commits_" en référence au framework SSCP avec le chapitre concerné "Sécurisé le code source".
+Par exemple pour le thème "protéger les logiciels", la pratique "protéger toutes les formes de code contre l'accès non autorisé et la falsification" propose d'utiliser la "signature des _commits_" en référence au SSCSP avec le chapitre concerné "Sécuriser le code source".
 
 Ce document [est à retrouver](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) sur le site Internet du NIST. La bibliothèque en ligne du directeur de l'information[^CIOLibrary] (CIO) de l'_US Department of Defense_ est également une excellente source d'inspiration.
 
@@ -1080,13 +1095,17 @@ TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-fo
 
 TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
 
+Je m'attends à ce que les standards en matière de sécurité continuent d'évoluer à un rythme effréné. Et je l'espère, aussi vite que la vitesse à laquelle progressent les menaces informatiques. Cela plaide d'autant plus en faveur d'une transformation des organisations dans un mode de fonctionnement leur permettant de continuer à innover, sans être contraintes de ralentir leur rythme face à la crainte d'être attaquées.
+
+Quand on maîtrise, on ne craint plus. Et les techniques de l'industrie permettent aujourd'hui de maîtriser.
+
 # Répartition des initiatives
 
 Dans les sondages, 47% des organisations reportaient adopter une approche DevOps. C'est 74% en 2021[^RedGate2021Report].
 
 Entre 2019 et 2022, la répartition des initiatives DevOps par domaine d'activité est restée dans le même ordre de grandeur[^DORAIndustry] : largement dominée par le secteur technologique (~40%), suivit par le secteur financier (~12%) et le e-commerce (~8%). Le secteur institutionnel représente entre 2% et 4% de ces initiatives, laissant une grande place à l'innovation dans ce milieu.
 
-Voici une répartition des entreprises pratiquant le DevOps en 2022, au sens des définitions de l'INSEE[^INSEECompanySizeDefinition] :
+Voici une répartition des entreprises pratiquant le DevOps en 2022[^INSEECompanySizeDefinition] :
 
 - Grandes entreprises (>= 5000 employés) : ~30%
 - Entreprises de taille intermédiaire (>= 250 et < 5000 employés) : ~38%
@@ -1462,7 +1481,7 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DORATeamSize]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Team size", page 65. 2022.
 
-[^INSEECompanySizeDefinition]: INSEE. [Tableaux de l'économie française](https://www.insee.fr/fr/statistiques/4277836?sommaire=4318291#documentation). 2020.
+[^INSEECompanySizeDefinition]: Au sens des [catégories d'entreprises françaises](https://www.insee.fr/fr/statistiques/4277836?sommaire=4318291#documentation) de l'INSEE. 2020.
 
 [^GlobalUpskillingWorldwideDevopsSize]: DevOps Institute. Global Upskilling IT report, chapter "DevOps Remains a Driving Force in IT Transformation" (page 16). 2022.
 
@@ -1517,8 +1536,16 @@ Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)
 
 [^SecurityFramework]: A ne pas confondre avec les frameworks logiciels comme _ReactJS_ ou _Symfony_, un framework peut désigner une simple documentation, regroupant un ensemble de règles et de spécifications cadrant l'usage de technologies pour répondre à une problématique (ex: sécuriser la chaîne logicielle).
 
-[^OfficialSLSAWebsite]: Site officiel du projet SLSA : slsa.dev
-
 [^SSDF]: NIST. _Secure Software Development Framework_ version 1.1, [doi:10.6028/NIST.SP.800-218](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf). 2022.
 
-[^CIOLibrary]: Bibliothèque en ligne du Directeur de l'Information de l'_US Department of Defense_ : [dodcio.defense.gov/library](https://dodcio.defense.gov/library/)
+[^CIOLibrary]: Bibliothèque en ligne du Directeur de l'Information de l'_US Department of Defense_ : [_dodcio.defense.gov/library_](https://dodcio.defense.gov/library/)
+
+[^GitHubSLSA]: Projet GitHub du projet SLSA. [_github.com/slsa-framework/slsa_](https://github.com/slsa-framework/slsa).
+
+[^BinaryAuthorizationForBorg]: Google Cloud. [Binary Authorization for Borg (BAB)](https://cloud.google.com/docs/security/binary-authorization-for-borg). 2022.
+
+[^CNCFTAGAnnouncement]: CNCF. [_Announcing the Refreshed Cloud Native Security Whitepaper_](https://www.cncf.io/blog/2022/05/18/announcing-the-refreshed-cloud-native-security-whitepaper/). 2022.
+
+[^CNCFSSCSPGithub]: Projet GitHub du SSCSP : [_github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper_](https://github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper)
+
+[^CNCFTAGGithub]: Projet GitHub du _security technical advisory group_ de la CNCF : [_github.com/cncf/tag-security_](https://github.com/cncf/tag-security)
