@@ -481,7 +481,7 @@ Chacun des frameworks présentés dans ce chapitre contient une liste de recomma
 
 ### SLSA
 
-Les framework de sécurité _Supply-chain Levels for Software Artifacts_ (SLSA) se concentre sur la notion d'artéfacts. En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente, de par la manipulation de ces artéfacts.
+Les framework _Supply-chain Levels for Software Artifacts_ (SLSA) se concentre sur la notion d'artéfacts. En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente, de par la manipulation de ces artéfacts.
 
 ![Etapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).](./images/slsa-supply-chain-threats.jpg)
 
@@ -511,7 +511,7 @@ Le framework répertorie des notions générales associées progressivement à d
 
 Par exemple pour le thème "protéger les logiciels", la pratique "protéger toutes les formes de code contre l'accès non autorisé et la falsification" propose d'utiliser la "signature des _commits_" en référence au framework SSCP avec le chapitre concerné "Sécurisé le code source".
 
-Ce document [est à retrouver](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) sur le site Internet du NIST.
+Ce document [est à retrouver](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) sur le site Internet du NIST. La bibliothèque en ligne du directeur de l'information[^CIOLibrary] (CIO) de l'_US Department of Defense_ est également une excellente source d'inspiration.
 
 ## L'architecture réseau _zero trust_
 
@@ -1420,13 +1420,13 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^NATU]: NATU : [Autres grandes entreprises technologiques américaines, plus récentes dans l'usage](https://fr.wikipedia.org/wiki/GAFAM) (Airbnb, Tesla, Uber, Netflix).
 
-[^GoogleCloudDevopsLeaders]: [Multiple cas d'usage et témoignages d'entreprises de tout type de domaines sur cloud.google.com/transform](https://cloud.google.com/transform/).
+[^GoogleCloudDevopsLeaders]: Multiple cas d'usage et témoignages d'entreprises de tout type de domaines sur [cloud.google.com/transform](https://cloud.google.com/transform/).
 
-[^GitLabRequiredApprovals]: [GitLab required approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/index.html#required-approvals) documentation. _GitLab.com_.
+[^GitLabRequiredApprovals]: [_GitLab required approvals_](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/index.html#required-approvals) documentation. _GitLab.com_.
 
-[^GitLabCustomTemplate]: [GitLab's custom instance-level projects templates](https://docs.gitlab.com/ee/user/admin_area/custom_project_templates.html)
+[^GitLabCustomTemplate]: [_GitLab's custom instance-level projects templates_](https://docs.gitlab.com/ee/user/admin_area/custom_project_templates.html)
 
-[^KilalaGitlabPipelineExample]: SLUIJTER-STEK, Tess. [Security testing OWASP Juice Shop in Gitlab CI/CD](https://www.kilala.nl/index.php?id=2510). 2021.
+[^KilalaGitlabPipelineExample]: SLUIJTER-STEK, Tess. [_Security testing OWASP Juice Shop in Gitlab CI/CD_](https://www.kilala.nl/index.php?id=2510). 2021.
 
 [^DORAsFourKeyMetrics]: [Google Cloud DORA's 4 key metrics for measuring DevOps performances](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance).
 
@@ -1517,6 +1517,8 @@ Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)
 
 [^SecurityFramework]: A ne pas confondre avec les frameworks logiciels comme _ReactJS_ ou _Symfony_, un framework peut désigner une simple documentation, regroupant un ensemble de règles et de spécifications cadrant l'usage de technologies pour répondre à une problématique (ex: sécuriser la chaîne logicielle).
 
-[^OfficialSLSAWebsite]: slsa.dev
+[^OfficialSLSAWebsite]: Site officiel du projet SLSA : slsa.dev
 
 [^SSDF]: NIST. _Secure Software Development Framework_ version 1.1, [doi:10.6028/NIST.SP.800-218](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf). 2022.
+
+[^CIOLibrary]: Bibliothèque en ligne du Directeur de l'Information de l'_US Department of Defense_ : [dodcio.defense.gov/library](https://dodcio.defense.gov/library/)
