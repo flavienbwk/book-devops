@@ -113,11 +113,11 @@ Selon Google, voici les cinq piliers du DevOps :
 5. [**Tout mesurer**](#tout-mesurer)
    - Avec la mise en place d'indicateurs de performance, de fiabilité des systèmes, pour mieux comprendre le comportement des services déployés, réagir plus rapidement voire prédire.
 
-# Le DevOps, d'expérience
+# Le DevOps par la pratique
 
-Une initiative DevOps est une transformation radicale à l'échelle d'une organisation. Si cette dernière n'est pas encore passée au [mode agile](#être-au-plus-proche-du-métier), elle bouscule tous les niveaux de l'entreprise pour arriver à faire travailler chacun ensemble. Le DevOps ne rapproche pas que les "Dev" (ingénieurs-développeurs) et les "Ops" (ingénieurs systèmes) mais également et surtout le _management_. Cette dernière doit accepter un changement souvent vécu comme difficile car inconnu. La plupart du temps, cette transformation nécessite également une modification importante de l'architecture des systèmes informatiques de l'organisation, car elle implique l'usage de nouveaux outils.
+Une initiative DevOps est une transformation radicale à l'échelle d'une organisation. Si cette dernière n'est pas encore passée au [mode agile](#être-au-plus-proche-du-métier), elle bouscule tous les niveaux de l'entreprise pour arriver à faire travailler chacun ensemble. Le DevOps ne rapproche pas que les "Dev" (ingénieurs-développeurs) et les "Ops" (ingénieurs systèmes) mais principalement le _management_. Cette dernière doit accepter un changement souvent vécu comme difficile car inconnu. La plupart du temps, cette transformation nécessite également une modification importante de l'architecture des systèmes informatiques de l'organisation, car elle implique l'usage de nouveaux outils.
 
-L'empathie est aptitude clé pour faire aboutir une transformation. Pour certains, ces nouvelles méthodes de travail et ces outils constituent un modèle à l'opposé de ce qu'ils ont toujours appris et fait.
+L'empathie est une aptitude clé pour faire aboutir une transformation. Pour certains, ces nouvelles méthodes de travail et ces outils constituent un modèle à l'opposé de ce qu'ils ont toujours appris et fait.
 
 Voilà pourquoi il est important d'acculturer aussi souvent que possible sa hiérarchie à l'intérêt de passer en mode DevOps, lui faire des démonstrations, répondre à ses moindres questions et l'accompagner jusqu'à ce qu'elle comprenne bien les enjeux. Votre organisation doit être en mesure de répondre aux défis technologiques toujours plus modernes et rapides. Elle ne le fera pas en restant sur ses acquis.
 
@@ -154,7 +154,7 @@ Au sein des organisations que j'ai côtoyées, j'ai pu être témoin d'un tas de
 
 Une initiative DevOps se bâtit avec l'existant au sein de votre institution : il faut réussir à commencer petit pour correctement saisir les besoins des métiers et embarquer toute l'organisation dans l'aventure.
 
-Ayez l'audace de commencer petit et d'itérer à mesure que vous et votre institution vous acculturez aux enjeux et défis de ces nouvelles technologies. Veillez à ce que chaque équipe que vous convainquiez soit à son tour un évangélisateur de votre initiative. Nous aborderons les théories derrière cette préconisation dans le chapitre "[Comment convaincre](#comment-convaincre)".
+Ayez l'audace de commencer petit et d'itérer à mesure que vous et votre institution vous acculturez aux enjeux et défis de ces nouvelles technologies. Veillez à ce que chaque équipe que vous convainquiez soit à son tour un évangélisateur de votre initiative. Nous aborderons les théories derrière cette préconisation dans le chapitre "[Comment convaincre](#comment-convaincre-et-garder-la-foi)".
 
 Changer la culture d'une institution prend du temps, mais prendre des raccourcis risquera de vous mettre du monde à dos, de démotiver vos équipes et de faire échouer votre projet.
 
