@@ -87,7 +87,7 @@ Nous n'en parlerons pas davantage en ce terme car le DevSecOps est à mon sens a
 
 Il peut être néanmoins intéressant de communiquer avec ce terme au sein des institutions. Dans ces dernières, les équipes de la Sécurité des Systèmes d'Information (SSI) occupent une place toute particulière dans les initiatives numériques. Parler de "DevSecOps" plutôt que de "DevOps" permet de bien faire comprendre aux équipes SSI qu'elles ont un [rôle concret](#ingénieur-ssi-devops) à jouer dans cette nouvelle approche.
 
-Les paradigmes de sécurité dans un modèle d'organisation DevOps seront abordés dans le chapitre "[Sécurité : un nouveau paradigme dans l'approche DevOps](#sécurité--un-nouveau-paradigme-dans-lapproche-devops)".
+Le paradigme et les techniques de sécurité dans un modèle d'organisation DevOps, seront abordés dans le chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)".
 
 # Les cinq piliers du DevOps
 
@@ -356,7 +356,7 @@ Vous vous en souvenez, l'un des piliers du DevOps est de dé-siloter l'accès au
 
 Abandonnez les « échantillons anonymisés ». Les ingénieurs ont besoin de comprendre précisément de quoi est composée la donnée qu'ils sont censés traiter. Tenter de développer un outil sur des données « anonymes » revient à développer un outil qui ne répond que partiellement au cas d'usage. Autrement dit, vous êtes certain qu'un bug se produira dès lors qu'une donnée « inconnue » passera dans le logiciel. Fournissez à vos équipes les données de production qui ont vocation à être utilisées dans les outils : vous perdrez moins de temps en résolution de bugs et améliorerez la qualité du service fournit par vos logiciels. Si vous ne leur permettez pas, autant faire appel à un prestataire externe ! (cf. [Être au plus proche du métier](#être-au-plus-proche-du-métier)).
 
-# Sécurité : un nouveau paradigme dans l'approche DevOps
+# Sécurité : un nouveau paradigme avec l'approche DevOps
 
 L'idée selon laquelle le DevOps permet de rapprocher les différents métiers pour collaborer ensemble n'est pas simple à appliquer. Les métiers historiques de la sécurité des systèmes d'information (SSI) se sont vu imposer des pratiques auxquelles ils n'étaient pas habitués et qu'ils n'ont parfois pas eu le temps d'appréhender.
 
@@ -368,7 +368,7 @@ Dans ce mode d'organisation, les pratiques de sécurité sont automatisées pour
 
 ## Culture de la sécurité
 
-Le rapport DORA[^DORAWebsite] "État du DevOps 2022"[^DORAStateOfDevops2022Announcement] se concentre sur les enjeux de sécurité dans les transformations des entreprises en mode DevOps. Il fait état du fait qu'une entreprise favorisant la confiance et la [sécurité psychologique](#accepter-léchec), est 60% plus susceptible d'adopter des pratiques de sécurité innovantes. Il ajoute que cette culture permet de réduire de 40% le nombre de _burnout_[^Burnout] et augmente les chances qu'un collaborateur recommande son entreprise.
+Le rapport DORA[^DORAWebsite] "_State of DevOps 2022_"[^DORAStateOfDevops2022Announcement] se concentre sur les enjeux de sécurité dans les initiatives de transformation des entreprises en mode DevOps. Il fait état du fait qu'une entreprise favorisant la confiance et la [sécurité psychologique](#accepter-léchec), est 60% plus susceptible d'adopter des pratiques de sécurité innovantes. Il ajoute que cette culture permet de réduire de 40% le nombre de _burnouts_[^Burnout] et augmente les chances qu'un collaborateur recommande son entreprise.
 
 La sécurité a toujours été une affaire de culture. La méthodologie DevOps vient cependant apporter toutes les techniques qui permettront à une organisation de ne plus passer à côté des bonnes pratiques, autrefois négligées ou oubliées dans une paperasse longue et indigeste.
 
@@ -467,17 +467,21 @@ Voici un exemple de configuration (code) permettant de mettre à jour le fuseau 
 
 ![Exemple de configuration Ansible illustrant la notion d'_Infrastructure as Code_.](./images/ansible-iac-playbook-example.png)
 
-L'exemple ci-dessus est très simple mais l'IaC peut aller jusqu'à décrire la manière dont des machines peuvent être instanciées et configurées. Une configuration d'Iac peut par exemple totalement configurer une machine de 0 (paramètres réseau, certificats de sécurité, ajout d'utilisateurs, installation des _drivers_ d'une imprimante, configuration des favoris du navigateur...). L'idée est encore une fois d'éviter au maximum l'intervention humaine, avec des mauvaises commandes informatiques lancées par erreur.
+L'exemple ci-dessus est très simple mais l'IaC peut aller jusqu'à décrire la manière dont des machines peuvent être instanciées et configurées. Une configuration d'Iac peut par exemple totalement configurer une machine de 0 (paramètres réseau, certificats de sécurité, ajout d'utilisateurs, installation des _drivers_ d'une imprimante, configuration des favoris du navigateur...). L'idée est encore une fois d'éviter au maximum l'intervention humaine, pour éviter des commandes erronnées, lancées par erreur.
 
-## Sécuriser sa chaîne de développement logiciel : SLSA, SSCP et SSDF
+## Sécuriser sa chaîne logicielle : SLSA, SSCP et SSDF
 
-En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Parmi 7 priorités[^FactSheetUSASecurity] décrites dans ce décret, la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des Etats-Unis[^NSM2022].
+En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Parmi 7 priorités[^FactSheetUSASecurity] décrites, la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des Etats-Unis[^NSM2022].
+
+Aujourd'hui, des standards décrivant la manière dont il est possible de sécuriser correctement sa chaîne logicielle émergent. Ils continueront à évoluer mais définissent déjà des fondations solides.
 
 TODO(flavienbwk)https://slsa.dev/get-started
 
-TODO(flavienbwk): CNCF's SSCP https://github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper/CNCF_SSCP_v1.pdf, file:///C:/Users/Majordome/Downloads/CNCF_SSCP_v1.pdf
+Le travail du _National Institute of Standards and Technology_ (NIST) de l'_US Department of Commerce_ est à saluer par la variété et la qualité des rapports produits, sur des technologies et techniques à l'état de l'art. Je n'ai pas trouvé d'équivalent à l'international proposant des standards aussi bien structurés. Leurs travaux sont la plupart du temps le fruit d'une réflexion menée en concertation avec de nombreuses institutions et entreprises du secteur privé. On y retrouve par exemple Google, AWS, IBM, Microsoft, la _Naval Sea Systems Command_ ou encore le  _Software Engineering Institute_.
 
-TODO(flavienbwk): [SSDF](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) ?
+TODO(flavienbwk): [SSDF](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) : inclut des règles SSCP, OWASP SAMM, MSSDL, BSIMM, PCI SSLC, 
+
+TODO(flavienbwk): CNCF's SSCP https://github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper/CNCF_SSCP_v1.pdf, file:///C:/Users/Majordome/Downloads/CNCF_SSCP_v1.pdf. Autres ressources : https://dodcio.defense.gov/library/.
 
 ## L'architecture _zero trust_
 
@@ -570,6 +574,7 @@ En terme d'organisation, voyez le DevOps comme un moyen d'appliquer une "saine c
 
 TODO(flavienbwk): Développer le sujet. Besoin de remettre tout le monde à la table des discussions. Cartographier. Ordonner une décision forte. Besoin de travailler sur un réseau commun.
 <!-- Reduce organizational silos : increase and fasten collaboration breaking barriers around teams, share ownership (engagement) -->
+<!-- Silos = expertise /!\-->
 
 Si vous travaillez pour une institution, vous n'avez peut-être pas la contrainte de la rentabilité mais celle du réseau. Et donc celle de l'adoption. Travaillez à rendre votre outil accessible au plus grand nombre, sur le réseau de travail de vos utilisateurs cibles.
 
@@ -587,7 +592,7 @@ Si personne n'a idée de ce sur quoi l'autre travaille, les efforts seront natur
 
 De plus, en travaillant sur un réseau unique, les ingénieurs peuvent mutualiser les environnements techniques au lieu de les re-déployer des services dans chaque silo. Par exemple, il est inutile de dupliquer un miroir de librairies sur une machine à deux bureaux d'une autre. Pour le _machine learning_, il est possible en réseau de bénéficier d'une puissance de calcul mutualisée avec des super-ordinateurs partagés.
 
-Dans l'une de mes précédentes expériences, le principal frein à l'adoption de nos logiciels était le réseau de déploiement. Nous étions contraints de le déployer sur un réseau différent de celui des métiers pour répondre au besoin opérationnel. Pour rendre nos logiciels accessibles sur le réseau des métiers, l'impératif était l'homologation. Pour tout logiciel développé, ce processus mettait en moyenne un an. Déployant des dizaines de logiciels chaque trimestre, homologuer nos logiciels était inenvisageable pour nous (cf. "[Sécurité : un nouveau paradigme dans l'approche DevOps](#sécurité--un-nouveau-paradigme-dans-lapproche-devops)"). Pour les utilisateurs que nous avions le moins le temps d'accompagner, ils délaissaient les outils car l'irritant était trop fort.
+Dans l'une de mes précédentes expériences, le principal frein à l'adoption de nos logiciels était le réseau de déploiement. Nous étions contraints de le déployer sur un réseau différent de celui des métiers pour répondre au besoin opérationnel. Pour rendre nos logiciels accessibles sur le réseau des métiers, l'impératif était l'homologation. Pour tout logiciel développé, ce processus mettait en moyenne un an. Déployant des dizaines de logiciels chaque trimestre, homologuer nos logiciels était inenvisageable pour nous (cf. "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)"). Pour les utilisateurs que nous avions le moins le temps d'accompagner, ils délaissaient les outils car l'irritant était trop fort.
 
 Utiliser un réseau unique est un élément clé dans l'adoption de vos nouveaux outils. Il permet à votre organisation de faire des économies et à vos collaborateurs d'être moins frustrés.
 
@@ -751,7 +756,7 @@ TODO(flavienbwk): [Design thinking](https://www.coursera.org/learn/developing-a-
 
 ## Réduire le coût du changement
 
-TODO(flavienbwk): Développer le [sujet](https://software.af.mil/training/devops/) (Agile vs DevSecOps)
+TODO(flavienbwk): Développer le [sujet](https://software.af.mil/training/devops/) (Waterfall vs Agile vs DevSecOps) + photos du PPT
 
 ## Tirer parti de l'automatisation
 
@@ -1073,7 +1078,7 @@ Maintenant que vous commencez à comprendre la variété des enjeux du DevOps, i
 Vous avez probablement déjà entendu une multitude de termes terminant par "Ops" : dans les propositions industrielles, les offres d'emploi ou les services en ligne. Tous ces termes décrivent des spécialités de l'exploitation des systèmes informatiques au travers de techniques et de méthodologies. Définissons en quelques-uns :
 
 - **DevOps** (Development and Operations) : méthodologie visant le rapprochement entre les développeurs et les ingénieurs s'occupant de la production pour accélérer la mise en production et la résilience des systèmes.
-- **DevSecOps** (Development, Security and Operations) : partie du DevOps visant à intégrer les notions de sécurité dès la phase de conception d'un nouveau logiciel ou d'une nouvelle infrastructure. Il s'agit d'organiser l'entreprise de telle sorte à ce que les équipes de Sécurité des Systèmes d'Information (SSI) soient associées à l'ensemble des réflexions au cœur des projets de vos équipes de développement. (cf. [Sécurité : un nouveau paradigme dans l'approche DevOps](#sécurité--un-nouveau-paradigme-dans-lapproche-devops))
+- **DevSecOps** (Development, Security and Operations) : partie du DevOps visant à intégrer les notions de sécurité dès la phase de conception d'un nouveau logiciel ou d'une nouvelle infrastructure. Il s'agit d'organiser l'entreprise de telle sorte à ce que les équipes de Sécurité des Systèmes d'Information (SSI) soient associées à l'ensemble des réflexions au cœur des projets de vos équipes de développement. (cf. [Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops))
 - **FinOps** (Financial Operations) : ensemble de pratiques pour mieux comprendre et gérer les coûts financiers d'une infrastructure cloud. Cela comprend le suivi et l'optimisation des dépenses, ainsi que la gestion de la facturation et des paiements. Par exemple à l'aide de tableaux de bord ou d'algorithmes automatisés.
 - **MLOps** (Machine Learning Operations) : ensemble de pratiques pour la collaboration et la communication entre les équipes de _datascience_ et de production pour le développement et le déploiement efficace de modèles de _machine learning_ (ML). L'objectif est d'améliorer la rapidité, la qualité et la résilience des modèles de ML en automatisant et standardisant. (cf. _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
 - **GitOps** (Git Operations) : ensemble de règles visant à utiliser _git_[^Git] comme unique source de vérité pour standardiser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#continuous-integration-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
@@ -1267,13 +1272,13 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 # Quatrième de couverture
 
-Devant l'impérieuse nécessité de se transformer pour être capable de maintenir le rythme opérationnel, de nombreuses organisations ont entamé leur transformation numérique. Néanmoins, elles peinent à établir une stratégie claire ou efficace.
+Si de nombreuses organisations ont entamé leur transformation numérique, elles peinent encore à établir une stratégie claire ou efficace.
 
-Elles tentent alors de faire appel à de coûteux experts dans l'espoir de réussir à trouver le bon modèle d'organisation. Ce qu'elles cherchent depuis tant d'années et dont elles n'arrivaient pas à trouver le nom, se voit décrit dans ce livre : le DevOps.
+Devant l'impérieuse nécessité de se transformer pour maintenir le rythme opérationnel, un mystérieux sentiment de fatalisme s'installe. Elles se tournent alors vers des experts et des cabinets d'audit, dans l'espoir de réussir à trouver le bon modèle d'organisation.
 
-Avec plus d'une centaine de ressources référencées, vous découvrirez dans ce livre un mouvement prenant ses racines chez les plus grandes et plus prospères organisations du monde.
+Le DevOps, un mouvement organisationnel prenant ses racines chez les plus grandes et plus prospères organisations du monde, tente d'apporter des réponses à ces questionnements.
 
-Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des possibilités qu'offrent les technologies DevOps à l'état de l'art, quels prérequis organisationnels elles nécessitent et comment les mettre en place, à votre échelle.
+Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le décideur dans sa stratégie de transformation. Il lui permettra de découvrir l'étendu des possibilités qu'offrent les méthodologies et technologies DevOps à l'état de l'art, de connaître les prérequis organisationnels qu'elles nécessitent et la manière de les mettre en place. Le tout, à sa propre échelle.
 
 ℹ️ Bonus : Exemple de fiches de postes dans ce livre.
 

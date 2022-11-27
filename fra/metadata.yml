@@ -22,13 +22,13 @@ mainlang: french
 otherlang: french
 tags: [devops, transformation, sre, security, management]
 abstract: |
-  Devant l'impérieuse nécessité de se transformer pour être capable de maintenir le rythme opérationnel, de nombreuses organisations ont entamé leur transformation numérique. Néanmoins, elles peinent à établir une stratégie claire ou efficace.
+  Si de nombreuses organisations ont entamé leur transformation numérique, elles peinent encore à établir une stratégie claire ou efficace.
 
-  Elles tentent alors de faire appel à de coûteux experts dans l'espoir de réussir à trouver le bon modèle d'organisation. Ce qu'elles cherchent depuis tant d'années et dont elles n'arrivaient pas à trouver le nom, se voit décrit dans ce livre : le DevOps.
+  Devant l'impérieuse nécessité de se transformer pour maintenir le rythme opérationnel, un mystérieux sentiment de fatalisme s'installe. Elles se tournent alors vers des experts et des cabinets d'audit, dans l'espoir de réussir à trouver le bon modèle d'organisation.
 
-  Avec plus d'une centaine de ressources référencées, vous découvrirez dans ce livre un mouvement prenant ses racines chez les plus grandes et plus prospères organisations du monde.
+  Le DevOps, un mouvement organisationnel prenant ses racines chez les plus grandes et plus prospères organisations du monde, tente d'apporter des réponses à ces questionnements.
 
-  Accessible, pratique et illustré, il vous permettra de découvrir l'étendu des possibilités qu'offrent les technologies DevOps à l'état de l'art, quels prérequis organisationnels elles nécessitent et comment les implémenter, à votre échelle.
+  Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le décideur dans sa stratégie de transformation. Il lui permettra de découvrir l'étendu des possibilités qu'offrent les méthodologies et technologies DevOps à l'état de l'art, de connaître les prérequis organisationnels qu'elles nécessitent et la manière de les mettre en place. Le tout, à sa propre échelle.
 mainfont: DejaVu Sans
 linkReferences: true
 ---
