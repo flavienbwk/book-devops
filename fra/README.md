@@ -27,7 +27,9 @@ TODO(flavienbwk): Department of Defense going DevSecOps :
 TODO(flavienbwk): GCHQ [going DevOps](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)
 Le Ministère de la Défense britannique indique dans sa "stratégie d'intelligence artificielle de défense"[^MODDefenseArtificialIntelligenceStrategyReport], vouloir devenir une institution "prête pour l'IA". {}
 
-Néanmoins, la très grande majorité des organisations ont encore du mal à mettre en place concrètement ces nouvelles pratiques. L'obstacle principal est la difficulté de trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
+Microsoft lançait historiquement ses nouveaux produits tous les 3 à 4 ans (ex: Windows, la suite Office). Dès 2014, son président-directeur général Satya NADELLA a annoncé à ses équipes que si l'entreprise continuait à travailler de cette manière, Microsoft allait terminer par devenir obsolète. Les équipes de chaque produit travaillaient indépendamment des autres, avec leur propre manière de s'organiser et leurs propres outils. Il a réorganisé l'entreprise en se basant sur la méthodologie DevOps, unifiant les outils et les pratiques des équipes pour qu'elles rediscutent entre elles[^MicrosoftDevOpsAbelWang].
+
+Néanmoins, la très grande majorité des organisations ont encore du mal à mettre en place concrètement ces nouvelles pratiques. L'obstacle principal est la difficulté à trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
 
 Le DevOps étant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études sérieuses auxquelles se référer. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
 
@@ -35,7 +37,7 @@ Ce livre concentre à la fois les aspects organisationnels et les aspects techni
 
 L'idée est de vous donner une ligne directrice pour vous orienter vers une première expérimentation DevOps, ou d'affiner celle que vous soutenez.
 
-Comme vous le comprendrez par la suite, chaque organisation a ses propres besoins et il n'y a pas de recette unique. Néanmoins, des standards éprouvés existent. C'est ceux-là qui vous seront présentés.
+Comme vous le comprendrez par la suite, chaque organisation a ses propres besoins, son propre niveau de maturité sur le sujet et il n'y a pas de recette unique. Néanmoins, des standards éprouvés existent. C'est ceux-là qui vous seront présentés.
 
 Soyez assuré que les efforts que vous déploierez à faire du DevOps dans votre organisation, seront récompensés par une organisation plus efficace, agile et pérenne.
 
@@ -585,21 +587,50 @@ Tout dépend de ce dont on veut se prémunir. Il faut prendre en compte les fact
 - Votre infrastructure dispose-t-elle d'un débit important ?
 - Votre infrastructure est-elle sujette à des déconnexions récurrentes ?
 - Les données manipulées sont-elles massives ?
-- Les données manipulées sont-elles de nature à nuire à l'organisation si elles sont dévoilée ?
-- Êtes-vous en mesure de fournir des machines dédiées à l'entreprise pour vos collaborateurs ?
+- Les données manipulées sont-elles de nature à nuire à l'organisation si elles sont dévoilées ?
+- Êtes-vous en mesure de fournir des machines pour vos collaborateurs ?
 - Avez-vous des équipes en mesure d'administrer ces machines ? (privilégier des solutions Cloud aux solutions _on-premise_)
 
-Il existe plusieurs moyens d'adresser la problématique des environnements de développement :
+Il existe plusieurs moyens d'adresser la problématique des environnements de développement. Je vous en propose quelques-uns classés selon leur flexibilité pour l'utilisateur, leur complexité de mise en place et le risque qu'ils impliquent :
 
-1. TODO(flavienbwk): Cas d'un freelance ou d'une boite sur Internet n'ayant pas les moyens d'administrer ces infras de sécu
-2. TODO(flavienbwk): Exemple des CodeSpace de GitHub ou [Coder](https://github.com/coder/coder)
-3. TODO(flavienbwk): Exemple de Sogeti avec des VM incluant de l'outillage de dev. [Teams can create developer machines
-and test environments based on predefined templates
-on any public cloud](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf).
-4. TODO(flavienbwk): Machines pleinement contrôlées et outillées (droits partiels, contrôle des extensions de l'IDE)
-5. TODO(flavienbwk): Machines pleinement contrôlées avec VM de développement (un dossier commun host/VM peut être partagé)
+1. _Bring Your Own Device_ (BYOD). L'utilisateur utilise son propre ordinateur et ses propres moyens pour développer. Vous n'avez aucun contrôle sur la machine.
+   1. Cas 1 : vous embauchez un freelance qui travaille à distance
+   2. Cas 2 : vous n'avez pas les moyens ou le temps d'administrer un parc de machines
+   3. Flexibilité : Maximale
+   4. Complexité : Aucune
+   5. Risque : Haut
+   6. Remarque : Ne donnez accès à l'utilisateur qu'au strict minimum qu'il doit avoir pour travailler correctement (ex: accès limité à la base de code, aux données).
+2. Machines partiellement contrôlées. Un utilisateur précis a les droits d'administration sur sa machine. Tout autre utilisateur ne les a pas.
+   1. Cas : vous fournissez des postes de travail à vos collaborateurs, avez faits des premiers efforts de sécurisation, mais n'avez pas les moyens de proposer une alternative.
+   2. Flexibilité : Maximale
+   3. Complexité : Plutôt faible
+   4. Risque : Moyen
+   5. Remarque : Préférez conserver la machine dans les locaux de l'entreprise en tout temps.
+3. Machines pleinement contrôlées avec environnement de code en cloud type CodeSpace[^CodeSpace] ou Coder[^CoderCloud].
+   1. Cas : vous fournissez des postes de travail connectés en réseau
+   2. Flexibilité : Moyenne
+   3. Complexité : Moyenne (Codespace), Haute (Coder)
+   4. Risque : Faible
+4. Machines pleinement contrôlées avec VM distante
+   1. Cas : Exemple de Sogeti avec des VM Azure incluant de l'outillage de dev. [Teams can create developer machines and test environments based on predefined templates on any public cloud](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf).
+   2. Flexibilité : Moyenne
+   3. Complexité : Moyenne
+   4. Risque : Faible
+   5. Remarque : Ces VMs doivent dans l'idéal inclure de l'outillage de développement. Ce moyen peut suffire si vos VMs ont accès à internet pour faire des transferts de données et si vos postes sont reliés à la fibre. Sinon, cet environnement est absolument déconseillé.
+5. TODO(flavienbwk): Machines pleinement contrôlées avec VM de développement locale
+   1. Flexibilité : Plutôt haute
+   2. Complexité : Haute
+   3. Risque : Très faible
+   4. Remarque : Ayez pour objectif de créer des images de VM pré-configurées avec des outils de développement, au risque de faire perdre du temps à vos collaborateurs. Faites en sorte de monter un dossier commun entre l'hôte et la VM pour faire gagner du temps à votre collaborateur.
+6. TODO(flavienbwk): Machines pleinement contrôlées et outillées (droits partiels, contrôle des extensions de l'IDE)
+   1. Flexibilité : Haute
+   2. Complexité : Très haute
+   3. Risque : Très faible
+   4. Remarque : Cette pratique est déconseillée si vous n'avez pas des équipes dédiées et assez nombreuses pour maintenir régulièrement cette infrastructure.
 
 TODO(flavienbwk): Tableau des possibilités classés par flexibilité en abscisse et risque de sécurité en ordonnée.
+
+Plus l'on souhaite faire baisser le risque (augmenter la sécurité) tout en augmentant la flexibilité (facilité pour innover), plus cela demandera du temps à vos équipes d'infrastructure ou vous coûtera de l'argent (si vous externalisez).
 
 TODO(flavienbwk): Utiliser un gestionnaire de mots de passe type Vaultwarden pour se partager des secrets.
 
@@ -607,7 +638,29 @@ TODO(flavienbwk): Ressource: env de dev en mode [zero trust](https://azure.micro
 
 TODO(flavienbwk): https://software.af.mil/wp-content/uploads/2021/08/CNAP-RefDesign_ver-1.0-Approved-for-Public-Release.pdf, https://www.youtube.com/watch?v=DLQAbJm4gFM&ab_channel=TheCISOPerspective, https://www.nccoe.nist.gov/projects/implementing-zero-trust-architecture
 
-## Compromission
+## Le socle au service de votre sécurité
+
+Vous devez traiter votre plateforme/socle comme un produit, au service de vos équipes internes. Et ultimately au service d'un meilleur service pour vos clients. #BtoBtoC
+
+"If it hurts, do it more often (don't avoid it)" (about deployments breaking)
+
+<!--
+Standardise la manière d’interagir avec les logiciels.
+Le socle prend + de responsabilités pour simplifier l’administration et forcer les règles de sécurité.
+
+Centralise et standardise la gestion des mécanismes de sécurité et d’observabilité :
+Logs : métriques app + bugs
+Metriques : analyse systématique flux réseaux et performances (observabilité)
+Analyse antivirus : permanente
+Secrets : gérés par la plateforme
+Chiffrement réseau TLS (+PKI) : systématique
+Passage à l’échelle / Ajustement des ressources : automatique vs manuelle (horizontal vs vertical)
+Ressources distribuées vs locales (logiciels tournent sur plusieurs machines, automatiquement)
+
+ANSSI recommande même d’utiliser les containers pour isoler les logiciels
+-->
+
+TODO(flavienbwk): Socle type VMWare vs socle Cloud; les services sont plus importants (cf. prez ppt)
 
 TODO(flavienbwk): Développer le sujet : DevOps pour tracer les actions, centraliser/gérer/analyser les logs via des technologies standardisées (Fluentd, [Istio](https://medium.com/@senthilrch/api-authentication-using-istio-ingress-gateway-oauth2-proxy-and-keycloak-a980c996c259))...
 
@@ -1097,13 +1150,13 @@ TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-fo
 
 TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
 
-Je m'attends à ce que les standards en matière de sécurité continuent d'évoluer à un rythme effréné. Et je l'espère, aussi vite que la vitesse à laquelle progressent les menaces informatiques. Cela plaide d'autant plus en faveur d'une transformation des organisations dans un mode de fonctionnement leur permettant de continuer à innover, sans être contraintes de ralentir leur rythme face à la crainte d'être attaquées.
+Je m'attends à ce que les standards en matière de sécurité continuent d'évoluer à un rythme effréné. Et je l'espère, aussi vite que la vitesse à laquelle progressent les menaces informatiques. Cela plaide d'autant plus en faveur d'une transformation des organisations, leur permettant de continuer à innover, sans être contraintes de ralentir leur rythme face à la crainte d'être attaquées.
 
 Quand on maîtrise, on ne craint plus. Et les techniques de l'industrie permettent aujourd'hui de maîtriser.
 
 # Répartition des initiatives
 
-Dans les sondages, 47% des organisations reportaient adopter une approche DevOps. C'est 74% en 2021[^RedGate2021Report].
+Dans les sondages, 47% des organisations déclaraient adopter une approche DevOps. C'est 74% en 2021[^RedGate2021Report].
 
 Entre 2019 et 2022, la répartition des initiatives DevOps par domaine d'activité est restée dans le même ordre de grandeur[^DORAIndustry] : largement dominée par le secteur technologique (~40%), suivit par le secteur financier (~12%) et le e-commerce (~8%). Le secteur institutionnel représente entre 2% et 4% de ces initiatives, laissant une grande place à l'innovation dans ce milieu.
 
@@ -1553,3 +1606,9 @@ Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)
 [^CNCFTAGGithub]: Projet GitHub du _security technical advisory group_ de la CNCF : [_github.com/cncf/tag-security_](https://github.com/cncf/tag-security)
 
 [^FRSCAGithub]: Projet GitHub du projet FRSCA : [_github.com/buildsec/frsca_](https://github.com/buildsec/frsca).
+
+[^MicrosoftDevOpsAbelWang]: WANG, Abel (_DevOps Lead_ à Microsoft). "[Enterprise DevOps Transformation](https://www.youtube.com/watch?v=WhRRGUmwoq4)". 2020.
+
+[^CodeSpace]: Codespaces est un produit de GitHub permettant de lancer un environnement de développement éphémère directement dans GitHub : [_github.com/features/codespaces_](https://github.com/features/codespaces).
+
+[^CoderCloud]: Coder est un outil similaire à Codespace pour du _on-premise_, permettant d'instancier un environnement de développement tournant sur une machine à distance : [_github.com/coder/coder_](https://github.com/coder/coder).
