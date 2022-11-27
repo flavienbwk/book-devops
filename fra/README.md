@@ -502,7 +502,9 @@ Le SLSA se compose de deux parties :
 - les [pré-requis](https://slsa.dev/spec/v0.1/requirements) (_requirements_) : ensemble de règles de sécurité plus ou moins complexes à mettre en place selon le niveau SLSA (1 à 4) que l'organisation souhaite atteindre
 - les [menaces et contremesures](https://slsa.dev/spec/v0.1/threats) (_threats and mitigations_) : qui donnent des scénarios de menaces, des exemples publics connus et la manière dont il est possible d'y remédier
 
-Une documentation interactive et continuellement mise à jour par la communauté[^GitHubSLSA] est disponible sur le site officiel du projet [SLSA](https://slsa.dev).
+Le projet FRSCA[^FRSCAGithub] est un exemple pragmatique d'une usine logicielle mettant en œuvre les pré-requis SLSA.
+
+La documentation du SLSA, continuellement mise à jour par la communauté[^GitHubSLSA], est disponible sur son [site officiel](https://slsa.dev).
 
 ### SSCSP
 
@@ -1549,3 +1551,5 @@ Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)
 [^CNCFSSCSPGithub]: Projet GitHub du SSCSP : [_github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper_](https://github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper)
 
 [^CNCFTAGGithub]: Projet GitHub du _security technical advisory group_ de la CNCF : [_github.com/cncf/tag-security_](https://github.com/cncf/tag-security)
+
+[^FRSCAGithub]: Projet GitHub du projet FRSCA : [_github.com/buildsec/frsca_](https://github.com/buildsec/frsca).
