@@ -57,7 +57,7 @@ C'est le lien entre le monde du développement et de la production.
 
 « Dev » signifie « développement » quand « Ops » désigne l'exploitation des systèmes informatiques en production.
 
-On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques.
+On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques, aujourd'hui majoritairement orientés vers l'emploi des technologies _Cloud_.
 
 L'ingénieur « DevOps » est celui en charge de définir et d'mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#continuous-integration-ci) au sein d'une [usine logicielle](#usine-logicielle).
 
@@ -591,9 +591,9 @@ Tout dépend de ce dont on veut se prémunir. Il faut prendre en compte les fact
 - Êtes-vous en mesure de fournir des machines pour vos collaborateurs ?
 - Avez-vous des équipes en mesure d'administrer ces machines ? (privilégier des solutions Cloud aux solutions _on-premise_)
 
-Il existe plusieurs moyens d'adresser la problématique des environnements de développement. Je vous en propose quelques-uns classés selon leur flexibilité pour l'utilisateur, leur complexité de mise en place et le risque qu'ils impliquent :
+Il existe plusieurs moyens d'adresser la problématique des environnements de développement. Je vous en propose 6 classés selon leur flexibilité pour l'utilisateur, leur complexité de mise en place et le risque qu'ils impliquent :
 
-1. _Bring Your Own Device_ (BYOD). L'utilisateur utilise son propre ordinateur et ses propres moyens pour développer. Vous n'avez aucun contrôle sur la machine.
+1. _BYOD_ : _Bring Your Own Device_. L'utilisateur utilise son propre ordinateur et ses propres moyens pour développer. Vous n'avez aucun contrôle sur la machine.
    1. Cas 1 : vous embauchez un freelance qui travaille à distance
    2. Cas 2 : vous n'avez pas les moyens ou le temps d'administrer un parc de machines
    3. Flexibilité : Maximale
@@ -602,35 +602,30 @@ Il existe plusieurs moyens d'adresser la problématique des environnements de d�
    6. Remarque : Ne donnez accès à l'utilisateur qu'au strict minimum qu'il doit avoir pour travailler correctement (ex: accès limité à la base de code, aux données).
 2. Machines partiellement contrôlées. Un utilisateur précis a les droits d'administration sur sa machine. Tout autre utilisateur ne les a pas.
    1. Cas : vous fournissez des postes de travail à vos collaborateurs, avez faits des premiers efforts de sécurisation, mais n'avez pas les moyens de proposer une alternative.
-   2. Flexibilité : Maximale
-   3. Complexité : Plutôt faible
-   4. Risque : Moyen
-   5. Remarque : Préférez conserver la machine dans les locaux de l'entreprise en tout temps.
-3. Machines pleinement contrôlées avec environnement de code en cloud type CodeSpace[^CodeSpace] ou Coder[^CoderCloud].
+   2. Remarque : Préférez conserver la machine dans les locaux de l'entreprise en tout temps.
+3. Machines entièrement contrôlées avec environnement de développement cloud (éphémère type CodeSpace[^CodeSpace] ou Coder[^CoderCloud]).
    1. Cas : vous fournissez des postes de travail connectés en réseau
-   2. Flexibilité : Moyenne
-   3. Complexité : Moyenne (Codespace), Haute (Coder)
-   4. Risque : Faible
-4. Machines pleinement contrôlées avec VM distante
-   1. Cas : Exemple de Sogeti avec des VM Azure incluant de l'outillage de dev. [Teams can create developer machines and test environments based on predefined templates on any public cloud](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf).
-   2. Flexibilité : Moyenne
-   3. Complexité : Moyenne
-   4. Risque : Faible
-   5. Remarque : Ces VMs doivent dans l'idéal inclure de l'outillage de développement. Ce moyen peut suffire si vos VMs ont accès à internet pour faire des transferts de données et si vos postes sont reliés à la fibre. Sinon, cet environnement est absolument déconseillé.
-5. TODO(flavienbwk): Machines pleinement contrôlées avec VM de développement locale
-   1. Flexibilité : Plutôt haute
-   2. Complexité : Haute
-   3. Risque : Très faible
-   4. Remarque : Ayez pour objectif de créer des images de VM pré-configurées avec des outils de développement, au risque de faire perdre du temps à vos collaborateurs. Faites en sorte de monter un dossier commun entre l'hôte et la VM pour faire gagner du temps à votre collaborateur.
-6. TODO(flavienbwk): Machines pleinement contrôlées et outillées (droits partiels, contrôle des extensions de l'IDE)
-   1. Flexibilité : Haute
-   2. Complexité : Très haute
-   3. Risque : Très faible
-   4. Remarque : Cette pratique est déconseillée si vous n'avez pas des équipes dédiées et assez nombreuses pour maintenir régulièrement cette infrastructure.
+4. Machines entièrement contrôlées avec VM de développement distante
+   1. Cas : vous avez accès à une infrastructure cloud gérable à distance par un tiers-partie de confiance.
+   2. Exemple : En 2014, Sogeti annonce la création de OneShare : une plateforme DevOps permettant à ses ingénieurs de créer des environnements de développement et de test, sur des VMs basées sur des _templates_ (incluant l'outillage de développement)[^SogetiDevOpsMicrosoft].
+   3. Remarque : Ces VMs doivent dans l'idéal inclure de l'outillage de développement. Ce moyen peut suffire si vos VMs ont accès à internet pour faire des transferts de données et si vos postes sont reliés à la fibre. Sinon, cet environnement est absolument déconseillé.
+5. Machines entièrement contrôlées avec VM de développement locale
+   1. Cas : votre activité nécessite que vos ingénieurs aient une autonomie élevée pour innover sur du matériel spécifique (ex: librairies GPU de dernière génération, R&D) mais vous manipulez des données critiques et avez des besoins élevés de sécurité.
+   2. Remarque : Ayez pour objectif de créer des images de VM pré-configurées avec des outils de développement. Dans le cas contraire, vous risqueriez de faire perdre du temps à vos collaborateurs en les obligeant à installer cet outillage. Faites en sorte de monter un dossier commun entre l'hôte et la VM pour gagner du temps sur les transferts de données.
+6. Machines entièrement contrôlées et outillées
+   1. Cas : votre entreprise est mature, votre activité nécessite que vos ingénieurs aient une autonomie particulièrement élevée pour innover sur du matériel spécifique (ex: librairies GPU de dernière génération, recherche), qu'ils ne soient pas contraints par des outils intermédiaires (VM), mais vous manipulez des données critiques et avez des besoins élevés de sécurité.
+   2. Remarque : Cette pratique est déconseillée si vous n'avez pas des équipes dédiées et assez nombreuses pour maintenir régulièrement cette infrastructure (ex: Google). En terme de sécurité, pensez entre-autres à contrôler les extensions utilisées par votre IDE[^IDE].
 
-TODO(flavienbwk): Tableau des possibilités classés par flexibilité en abscisse et risque de sécurité en ordonnée.
+| Méthode | Flexibilité | Complexité | Risque |
+|---|---|---|---|
+| _Bring Your Own Device_ | Maximale | Aucune | Haut |
+| Machines partiellement contrôlées | Maximale | Plutôt faible | Moyen |
+| Machines entièrement contrôlées avec env. de dev. cloud | Moyenne | Moyenne (Codespaces) à Haute (Coder) | Faible |
+| Machines entièrement contrôlées avec VM de dev. distante | Moyenne | Moyenne | Faible |
+| Machines entièrement contrôlées avec VM de dev. locale | Plutôt haute | Haute | Très faible |
+| Machines entièrement contrôlées et outillées | Haute | Très haute | Très faible |
 
-Plus l'on souhaite faire baisser le risque (augmenter la sécurité) tout en augmentant la flexibilité (facilité pour innover), plus cela demandera du temps à vos équipes d'infrastructure ou vous coûtera de l'argent (si vous externalisez).
+Plus l'on souhaite faire baisser le risque (augmenter la sécurité) tout en augmentant la flexibilité (facilité pour innover), plus cela demandera du temps à vos équipes d'infrastructure, ou vous coûtera de l'argent (si vous externalisez).
 
 TODO(flavienbwk): Utiliser un gestionnaire de mots de passe type Vaultwarden pour se partager des secrets.
 
@@ -1392,11 +1387,11 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DevSecOpsUSAirForce]: PAUPIER, François; CHAILLAN, Nicolas. [Postmortem #19 : Le DevSecOps à l'US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
 
-[^AtlassianHistoryOfDevops]: [Buchanan, Ian. Atlassian.com: History of DevOps](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
+[^AtlassianHistoryOfDevops]: [Buchanan, Ian. Atlassian.com: _History of DevOps_](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
 
-[^TheDevopsHandbook]: KIM, Gene; DEBOIS, Patrick; WILLIS, John; HUMBLE, Jez; ALLSPAW, John. The DevOps handbook: how to create world-class agility, reliability, and security in technology organizations. 2015.
+[^TheDevopsHandbook]: KIM, Gene; DEBOIS, Patrick; WILLIS, John; HUMBLE, Jez; ALLSPAW, John. _The DevOps handbook: how to create world-class agility, reliability, and security in technology organizations_. 2015.
 
-[^GoogleWorkBookEngagementModel]: [Google SRE workbook (sre.google) : Engagement model](https://sre.google/workbook/engagement-model)
+[^GoogleWorkBookEngagementModel]: [_Google SRE workbook (sre.google) : Engagement model_](https://sre.google/workbook/engagement-model)
 
 [^ModelsIA]: Modèles d'intelligence artificielle : algorithmes entraînés pour résoudre une tâche, la plupart du temps sans supervision
 
@@ -1404,15 +1399,15 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DriversGPU]: Drivers GPU : librairies permettant de faire du calcul accéléré sur carte graphique
 
-[^GoogleWorkbookEliminatingToil]: [Google SRE workbook (sre.google) : Eliminating toil](https://sre.google/sre-book/eliminating-toil)
+[^GoogleWorkbookEliminatingToil]: [_Google SRE workbook (sre.google) : Eliminating toil_](https://sre.google/sre-book/eliminating-toil)
 
 [^ToDevOps]: [Projet GitHub](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) disponible à [links.berwick.fr/todevops-2](https://links.berwick.fr/todevops-2)
 
 [^GoogleWorkspaceSLA]: [Google Workspace SLA](https://workspace.google.com/terms/sla.html) is available at workspace.google.com/terms/sla.html
 
-[^TimeToOutdatedSoftware]: Procter & Gamble Co. [2021 Form 10-K](https://sec.report/Document/80424/000008042421000100/R23.htm). 2021. <+> SPINELLIS, Diomidis; LOURIDAS, Panos; KECHAGIA, Maria. [Software evolution: the lifetime of fine-grained elements](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/). 2021.
+[^TimeToOutdatedSoftware]: Procter & Gamble Co. [2021 Form 10-K](https://sec.report/Document/80424/000008042421000100/R23.htm). 2021. <+> SPINELLIS, Diomidis; LOURIDAS, Panos; KECHAGIA, Maria. [_Software evolution: the lifetime of fine-grained elements_](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/). 2021.
 
-[^GoogleWorkbookIncidentResponse]: [Google SRE workbook (sre.google) : Incident response](https://sre.google/sre-book/incident-response)
+[^GoogleWorkbookIncidentResponse]: [_Google SRE workbook (sre.google) : Incident response_](https://sre.google/sre-book/incident-response)
 
 [^ANSSIQualifiedSoftware]: La [certification "critères communs"](https://www.ssi.gouv.fr/administration/produits-certifies/cc/) de l'ANSSI requiert la définition d'une version du logiciel audité.
 
@@ -1420,9 +1415,9 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DataOpsPaper]: CAPIZZI, Antonio; DISTEFANO, Salvatore; MAZZARA, Manuel. [From DevOps to DevDataOps](https://arxiv.org/pdf/1910.03066.pdf). 2019.
 
-[^DataOpsManifesto]: 18 DataOps principles of [The DataOps Manifesto](https://dataopsmanifesto.org/en/).
+[^DataOpsManifesto]: _18 DataOps principles of [The DataOps Manifesto](https://dataopsmanifesto.org/en/)_.
 
-[^MLOpsPaper]: KREUZBERGER, Dominik; KÜHL, Niklas; HIRSCHL, Sebastian. [MLOps: Overview, Definition, and Architecture](https://arxiv.org/abs/2205.02302). 2022.
+[^MLOpsPaper]: KREUZBERGER, Dominik; KÜHL, Niklas; HIRSCHL, Sebastian. [_MLOps: Overview, Definition, and Architecture_](https://arxiv.org/abs/2205.02302). 2022.
 
 [^ArticlePSSyndromeCanard]: SILBERZAHN, Philippe. [_Le syndrome du canard: comment les organisations en déclin s'habituent à la médiocrité_](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/). 2022.
 
@@ -1432,15 +1427,15 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DefyingGravity]: DUNLAP, Preston. [_Defying gravity_](https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z/). 2022.
 
-[^PlatformOne]: [Platform One](https://software.af.mil/team/platformone/) is a DoD-wide DevSecOps Managed Service.
+[^PlatformOne]: [_Platform One_](https://software.af.mil/team/platformone/) is a DoD-wide DevSecOps Managed Service.
 
 [^BiaisCognitifs]: HUSSLER, Caroline; RONDÉ, Patrick. [« Biais cognitifs et choix technologiques : une analyse des priorités des experts français »](https://www.cairn.info/revue-economie-et-prevision-1-2006-4-page-65.htm), Économie & prévision, vol. 175-176, no. 4-5, 2006, pp. 65-77.
 
 [^DISAVulcan]: [DISA 'Vulcan' DevSecOps program](https://defensescoop.com/2022/10/21/disa-to-launch-vulcan-devsecops-program/). 2022.
 
-[^WeaveWorksServiceMeshArticle]: NGINX Blog. [What is a service mesh ?](https://www.nginx.com/blog/what-is-a-service-mesh/). 2018.
+[^WeaveWorksServiceMeshArticle]: NGINX Blog. [_What is a service mesh ?_](https://www.nginx.com/blog/what-is-a-service-mesh/). 2018.
 
-[^WilliamMorganKubecon2018]: MORGAN, William. [How to get a service mesh into production without getting fired](https://www.youtube.com/watch?v=XA1aGpYzpYg&list=PLSIv_F9TtLlx8VW2MFONMRwS_-2rSJwdn&index=3&ab_channel=CNCF%5BCloudNativeComputingFoundation%5D) (conférence). 2018.
+[^WilliamMorganKubecon2018]: MORGAN, William. [_How to get a service mesh into production without getting fired_](https://www.youtube.com/watch?v=XA1aGpYzpYg&list=PLSIv_F9TtLlx8VW2MFONMRwS_-2rSJwdn&index=3&ab_channel=CNCF%5BCloudNativeComputingFoundation%5D) (conférence). 2018.
 
 [^IstioTestDocumentationTool]: Istio's [testing framework documentation](https://github.com/istio/istio.io/blob/3ecc5aeb4a6125374f1a5da18a2c4befeb5ae685/tests/README.md) on _github.com_. 2022.
 
@@ -1454,19 +1449,19 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^ANSSI]: [Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/en/)
 
-[^NextcloudITZBund]: POORTVLIET, Jos. [German Federal Administration relies on Nextcloud as a secure file exchange solution](https://nextcloud.com/blog/german-federal-administration-relies-on-nextcloud-as-a-secure-file-exchange-solution/). 2018.
+[^NextcloudITZBund]: POORTVLIET, Jos. [_German Federal Administration relies on Nextcloud as a secure file exchange solution_](https://nextcloud.com/blog/german-federal-administration-relies-on-nextcloud-as-a-secure-file-exchange-solution/). 2018.
 
-[^NextCloudMinint]: POORTVLIET, Jos. [EU governments choose independence from US cloud providers with Nextcloud](https://nextcloud.com/blog/eu-governments-choose-independence-from-us-cloud-providers-with-nextcloud/). 2019.
+[^NextCloudMinint]: POORTVLIET, Jos. [_EU governments choose independence from US cloud providers with Nextcloud_](https://nextcloud.com/blog/eu-governments-choose-independence-from-us-cloud-providers-with-nextcloud/). 2019.
 
-[^SoftwareErosion]: WIGGINS, Adam. [The New Heroku (Part 4 of 4): Erosion-resistance & Explicit Contracts](https://blog.heroku.com/the_new_heroku_4_erosion_resistance_explicit_contracts). 2011.
+[^SoftwareErosion]: WIGGINS, Adam. [_The New Heroku (Part 4 of 4): Erosion-resistance & Explicit Contracts_](https://blog.heroku.com/the_new_heroku_4_erosion_resistance_explicit_contracts). 2011.
 
-[^NatoSoftwareFactory]: [The NCI Agency's Software Factory: a new way to collaborate with industry](https://www.ncia.nato.int/about-us/newsroom/the-nci-agencye28099s-software-factory-a-new-way-to-collaborate-with-industry.html). 2019.
+[^NatoSoftwareFactory]: OTAN. [_The NCI Agency's Software Factory: a new way to collaborate with industry_](https://www.ncia.nato.int/about-us/newsroom/the-nci-agencye28099s-software-factory-a-new-way-to-collaborate-with-industry.html). 2019.
 
 [^RonWestrumTypologyOfOrganisationCulture]: WESTRUM, Ron. ["A typology of organisation culture", doi:10.1136/qshc.2003.009522](http://dx.doi.org/10.1136/qshc.2003.009522). 2004.
 
 [^CourseraSRECourse]: Google Cloud. [Developing a Google SRE Culture](https://www.coursera.org/learn/developing-a-google-sre-culture-fr), module 4. coursera.org.
 
-[^ATheoryOfBlameResearch]: MALLE, Bertram; GUGLIELMO, Steve; MONROE, Andrew. [A Theory of Blame. Psychological Inquiry. 25. 147-186. 10.1080/1047840X.2014.877340](https://www.researchgate.net/publication/266394032_A_Theory_of_Blame). 2014.
+[^ATheoryOfBlameResearch]: MALLE, Bertram; GUGLIELMO, Steve; MONROE, Andrew. [_A Theory of Blame. Psychological Inquiry._ 25. 147-186. doi:10.1080/1047840X.2014.877340](https://www.researchgate.net/publication/266394032_A_Theory_of_Blame). 2014.
 
 [^BrenéBROWNVideoOnBlame]: UK's Royal Society for Arts, Manufactures and Commerce. Vidéo "[Brené Brown on Blame](https://www.youtube.com/watch?v=RZWf2_2L2v8)" sur YouTube. 2015.
 
@@ -1474,7 +1469,7 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^RACI-VS]: CLET, Étienne; MADERS, Henri-Pierre; LEBLANC, Jérôme; GOLDFARB, Marc. [Le métier de chef de projet, Éditions Eyrolles](https://books.google.fr/books?id=BtEiAgAAQBAJ&pg=PR21&dq=RACI+VS+validateur+signataire). 2013.
 
-[^AtlassianDACIMethod]: Atlassian. [Modèle de framework décisionnel DACI](https://www.atlassian.com/fr/team-playbook/plays/daci). _Atlassian.com_.
+[^AtlassianDACIMethod]: Atlassian. [Modèle de framework décisionnel DACI](https://www.atlassian.com/fr/team-playbook/plays/daci). _atlassian.com_.
 
 [^DecisionMakingMindtools]: [Decision making tools](https://www.mindtools.com/pages/main/newMN_TED.htm). _Mindtools.com_.
 
@@ -1504,7 +1499,7 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DORAsFourKeyMetrics]: [Google Cloud DORA's 4 key metrics for measuring DevOps performances](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance).
 
-[^OpenAIGPT3]: [OpenAI's GPT3 on text-davinci-002 model](https://beta.openai.com/). _beta.openai.com_.
+[^OpenAIGPT3]: [OpenAI's GPT3](https://beta.openai.com/) on `text-davinci-002` model. _beta.openai.com_.
 
 [^DORACDLooselyCoupledArchitecture]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Technical practices and CD", page 33. 2022.
 
@@ -1612,3 +1607,7 @@ Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)
 [^CodeSpace]: Codespaces est un produit de GitHub permettant de lancer un environnement de développement éphémère directement dans GitHub : [_github.com/features/codespaces_](https://github.com/features/codespaces).
 
 [^CoderCloud]: Coder est un outil similaire à Codespace pour du _on-premise_, permettant d'instancier un environnement de développement tournant sur une machine à distance : [_github.com/coder/coder_](https://github.com/coder/coder).
+
+[^SogetiDevOpsMicrosoft]: Microsoft; Sogeti. [_Securing Enterprise DevOps Environments_](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf), chapitre "_Control the developer environment with a cloud environment_" page 9. 2022.
+
+[^IDE]: IDE : _Integrated Development Environment_. Interface de saisie et de gestion du code. Ex: Visual Studio Code (VSCode), Atom, IDEs JetBrains.
