@@ -619,7 +619,7 @@ Il existe plusieurs moyens d'adresser la problématique des environnements de d�
 | -------------------------------------------------------- | ------------ | ------------------------------------ | ----------- |
 | _Bring Your Own Device_                                  | Maximale     | Aucune                               | Haut        |
 | Machines partiellement contrôlées                        | Maximale     | Plutôt faible                        | Moyen       |
-| Machines entièrement contrôlées avec env. de dev. cloud  | Moyenne      | Moyenne (Codespaces) à Haute (Coder) | Faible      |
+| Machines entièrement contrôlées avec env. de dev. cloud  | Moyenne      | Moyenne (_Codespaces_) à Haute (_Coder_) | Faible      |
 | Machines entièrement contrôlées avec VM de dev. distante | Moyenne      | Moyenne                              | Faible      |
 | Machines entièrement contrôlées avec VM de dev. locale   | Plutôt haute | Haute                                | Très faible |
 | Machines entièrement contrôlées et outillées             | Haute        | Très haute                           | Très faible |
@@ -1550,9 +1550,9 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DORAReportSREPractice]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Context matters", page 6. 2022.
 
-[^IronBankPresentation]: [Iron Bank](https://docs-ironbank.dso.mil/) [presentation](https://repo1.dso.mil/platform-one/bullhorn-delivery-static-assets/-/raw/master/p1/docs/Iron%20Bank%20Onboarding%20Presentation.pdf?inline=false) from Platform One's Big Bang. U.S. department of defense.
+[^IronBankPresentation]: _[Iron Bank](https://docs-ironbank.dso.mil/) [presentation](https://repo1.dso.mil/platform-one/bullhorn-delivery-static-assets/-/raw/master/p1/docs/Iron%20Bank%20Onboarding%20Presentation.pdf?inline=false) from Platform One's Big Bang. U.S. department of defense._
 
-[^PlatformOnePresentationWebsite]: [Platform One's website](https://p1.dso.mil/resources). _p1.dso.mil_.
+[^PlatformOnePresentationWebsite]: Site web du projet [_Platform One_](https://p1.dso.mil/resources). _p1.dso.mil_.
 
 [^IronBankHardeningOverview]: [Iron Bank Hardening guide overview](https://docs-ironbank.dso.mil/hardening/overview/). _docs-ironbank.dso.mil_.
 
