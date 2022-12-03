@@ -1,4 +1,4 @@
-# Préface
+# PréfIAce
 
 _Pré-face auto-générée par intelligence artificielle[^OpenAIGPT3] puis traduite et adaptée par l'auteur. Ce chapitre illustre l'intérêt de mettre en place de nouvelles structures d'organisation face à la rapidité des innovations numériques. Considérez que cette capacité peut être maîtrisée par l'un de vos concurrents : vous devez être en mesure de déployer vos innovations au moins aussi vite que lui pour rester compétitif._
 
@@ -532,7 +532,7 @@ Par exemple pour le thème "protéger les logiciels", la pratique "protéger tou
 
 Ce document [est à retrouver](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) sur le site Internet du NIST. La bibliothèque en ligne du directeur de l'information[^CIOLibrary] (CIO) de l'_US Department of Defense_ est également une excellente source d'inspiration.
 
-## L'architecture réseau _zero trust_
+## Les bases de l'architecture réseau _zero trust_
 
 Le concept _zero trust_ se résume en une expression : "Ne jamais faire confiance, toujours vérifier". Cette pratique s'impose aujourd'hui avec 55% des entreprises qui répondaient avoir mis en place une initiative _zero trust_ en 2022 contre 24% en 2021[^OKTAZeroTrustStudy].
 
@@ -565,7 +565,9 @@ Au delà d'un besoin impératif de mieux sécuriser l'accès aux ressources, l'a
 
 L'innovation technologique implique de s'adapter rapidement. Le _zero trust_ permet aux organisations de s'adapter rapidement et en toute sécurité aux changements de leur environnement, sans avoir à revoir leur posture de sécurité.
 
-## Développement basé sur l'architecture _zero trust_
+Des documents de référence tels que ceux du NIST[^NISTZeroTrust] ou de l'_US Department of Defense_[^CNAPDod] donnent les spécifications pour déployer un réseau zero trust à l'état de l'art.
+
+## Développement basé sur le _zero trust_
 
 Dans le cadre d'un environnement de développement (R&D), le sujet se corse. Pour rester innovantes, vos équipes ont besoin de flexibilité : en utilisant des librairies de dernière génération, en installant les derniers drivers GPU pour faire des expérimentations de _machine learning_ ou encore en testant les performances de leur outil avec une consommation totale ressources de leur machine. En résumé, vos équipes ont besoin d'un accès complet à la configuration de leur machine.
 
@@ -594,70 +596,79 @@ Tout dépend de ce dont on veut se prémunir. Il faut prendre en compte les fact
 Il existe plusieurs moyens d'adresser la problématique des environnements de développement. Je vous en propose 6 classés selon leur flexibilité pour l'utilisateur, leur complexité de mise en place et le risque qu'ils impliquent :
 
 1. _BYOD_ : _Bring Your Own Device_. L'utilisateur utilise son propre ordinateur et ses propres moyens pour développer. Vous n'avez aucun contrôle sur la machine.
-   1. Cas 1 : vous embauchez un freelance qui travaille à distance
-   2. Cas 2 : vous n'avez pas les moyens ou le temps d'administrer un parc de machines
-   3. Flexibilité : Maximale
-   4. Complexité : Aucune
-   5. Risque : Haut
-   6. Remarque : Ne donnez accès à l'utilisateur qu'au strict minimum qu'il doit avoir pour travailler correctement (ex: accès limité à la base de code, aux données).
+   - Cas 1 : vous embauchez un freelance qui travaille à distance
+   - Cas 2 : vous n'avez pas les moyens ou le temps d'administrer un parc de machines
+   - Remarque : Ne donnez accès à l'utilisateur qu'au strict minimum qu'il doit avoir pour travailler correctement (ex: accès limité à la base de code, aux données).
 2. Machines partiellement contrôlées. Un utilisateur précis a les droits d'administration sur sa machine. Tout autre utilisateur ne les a pas.
-   1. Cas : vous fournissez des postes de travail à vos collaborateurs, avez faits des premiers efforts de sécurisation, mais n'avez pas les moyens de proposer une alternative.
-   2. Remarque : Préférez conserver la machine dans les locaux de l'entreprise en tout temps.
+   - Cas : vous fournissez des postes de travail à vos collaborateurs, avez faits des premiers efforts de sécurisation, mais n'avez pas les moyens de proposer une alternative.
+   - Remarque : Préférez conserver la machine dans les locaux de l'entreprise en tout temps.
 3. Machines entièrement contrôlées avec environnement de développement cloud (éphémère type CodeSpace[^CodeSpace] ou Coder[^CoderCloud]).
-   1. Cas : vous fournissez des postes de travail connectés en réseau
-4. Machines entièrement contrôlées avec VM de développement distante
-   1. Cas : vous avez accès à une infrastructure cloud gérable à distance par un tiers-partie de confiance.
-   2. Exemple : En 2014, Sogeti annonce la création de OneShare : une plateforme DevOps permettant à ses ingénieurs de créer des environnements de développement et de test, sur des VMs basées sur des _templates_ (incluant l'outillage de développement)[^SogetiDevOpsMicrosoft].
-   3. Remarque : Ces VMs doivent dans l'idéal inclure de l'outillage de développement. Ce moyen peut suffire si vos VMs ont accès à internet pour faire des transferts de données et si vos postes sont reliés à la fibre. Sinon, cet environnement est absolument déconseillé.
+   - Cas : vous fournissez des postes de travail connectés en réseau
+4. Machines entièrement contrôlées avec VM de développement distante (ex: Shadow[^Shadow], Azure VM)
+   - Cas : vous avez accès à une infrastructure cloud gérable à distance par un tiers-partie de confiance.
+   - Exemple : En 2014, Sogeti annonce la création de OneShare : une plateforme DevOps permettant à ses ingénieurs de créer des environnements de développement et de test, sur des VMs basées sur des _templates_ (incluant l'outillage de développement)[^SogetiDevOpsMicrosoft].
+   - Remarque : Ces VMs doivent dans l'idéal inclure de l'outillage de développement. Ce moyen peut suffire si vos VMs ont accès à internet pour faire des transferts de données et si vos postes sont reliés à la fibre. Sinon, cet environnement est absolument déconseillé.
 5. Machines entièrement contrôlées avec VM de développement locale
-   1. Cas : votre activité nécessite que vos ingénieurs aient une autonomie élevée pour innover sur du matériel spécifique (ex: librairies GPU de dernière génération, R&D) mais vous manipulez des données critiques et avez des besoins élevés de sécurité.
-   2. Remarque : Ayez pour objectif de créer des images de VM pré-configurées avec des outils de développement. Dans le cas contraire, vous risqueriez de faire perdre du temps à vos collaborateurs en les obligeant à installer cet outillage. Faites en sorte de monter un dossier commun entre l'hôte et la VM pour gagner du temps sur les transferts de données.
+   - Cas : votre activité nécessite que vos ingénieurs aient une autonomie élevée pour innover sur du matériel spécifique (ex: librairies GPU de dernière génération, R&D) mais vous manipulez des données critiques et avez des besoins élevés de sécurité.
+   - Remarque : Ayez pour objectif de créer des images de VM pré-configurées avec des outils de développement. Dans le cas contraire, vous risqueriez de faire perdre du temps à vos collaborateurs en les obligeant à installer cet outillage. Faites en sorte de monter un dossier commun entre l'hôte et la VM pour gagner du temps sur les transferts de données.
 6. Machines entièrement contrôlées et outillées
-   1. Cas : votre entreprise est mature, votre activité nécessite que vos ingénieurs aient une autonomie particulièrement élevée pour innover sur du matériel spécifique (ex: librairies GPU de dernière génération, recherche), qu'ils ne soient pas contraints par des outils intermédiaires (VM), mais vous manipulez des données critiques et avez des besoins élevés de sécurité.
-   2. Remarque : Cette pratique est déconseillée si vous n'avez pas des équipes dédiées et assez nombreuses pour maintenir régulièrement cette infrastructure (ex: Google). En terme de sécurité, pensez entre-autres à contrôler les extensions utilisées par votre IDE[^IDE].
+   - Cas : votre entreprise est mature, votre activité nécessite que vos ingénieurs aient une autonomie particulièrement élevée pour innover sur du matériel spécifique (ex: librairies GPU de dernière génération, recherche), qu'ils ne soient pas contraints par des outils intermédiaires (VM), mais vous manipulez des données critiques et avez des besoins élevés de sécurité.
+   - Remarque : Cette pratique est déconseillée si vous n'avez pas des équipes dédiées et assez nombreuses pour maintenir régulièrement cette infrastructure (ex: Google). En terme de sécurité, pensez entre-autres à contrôler les extensions utilisées par votre IDE[^IDE].
 
-| Méthode | Flexibilité | Complexité | Risque |
-|---|---|---|---|
-| _Bring Your Own Device_ | Maximale | Aucune | Haut |
-| Machines partiellement contrôlées | Maximale | Plutôt faible | Moyen |
-| Machines entièrement contrôlées avec env. de dev. cloud | Moyenne | Moyenne (Codespaces) à Haute (Coder) | Faible |
-| Machines entièrement contrôlées avec VM de dev. distante | Moyenne | Moyenne | Faible |
-| Machines entièrement contrôlées avec VM de dev. locale | Plutôt haute | Haute | Très faible |
-| Machines entièrement contrôlées et outillées | Haute | Très haute | Très faible |
+| Méthode                                                  | Flexibilité  | Complexité                           | Risque      |
+| -------------------------------------------------------- | ------------ | ------------------------------------ | ----------- |
+| _Bring Your Own Device_                                  | Maximale     | Aucune                               | Haut        |
+| Machines partiellement contrôlées                        | Maximale     | Plutôt faible                        | Moyen       |
+| Machines entièrement contrôlées avec env. de dev. cloud  | Moyenne      | Moyenne (Codespaces) à Haute (Coder) | Faible      |
+| Machines entièrement contrôlées avec VM de dev. distante | Moyenne      | Moyenne                              | Faible      |
+| Machines entièrement contrôlées avec VM de dev. locale   | Plutôt haute | Haute                                | Très faible |
+| Machines entièrement contrôlées et outillées             | Haute        | Très haute                           | Très faible |
 
-Plus l'on souhaite faire baisser le risque (augmenter la sécurité) tout en augmentant la flexibilité (facilité pour innover), plus cela demandera du temps à vos équipes d'infrastructure, ou vous coûtera de l'argent (si vous externalisez).
+Plus l'on souhaite faire baisser le risque (augmenter la sécurité) tout en augmentant la flexibilité (facilité pour innover), plus cela demandera du temps à vos équipes d'infrastructure, ou vous coûtera de l'argent (si vous externalisez). Prenez en compte les facteurs inhérents à votre organisation et son mode de fonctionnement pour choisir la solution qui vous convient le mieux.
 
-TODO(flavienbwk): Utiliser un gestionnaire de mots de passe type Vaultwarden pour se partager des secrets.
+## Savoir protéger ses secrets
 
-TODO(flavienbwk): Ressource: env de dev en mode [zero trust](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf).
+Les administrateurs d'une infrastructure manipulent régulièrement des "secrets" : des mots de passe ou des _tokens_. Parfois, il est nécessaire de les partager à d'autres administrateurs. D'autres fois, nous pouvons avoir besoin de partager le mot de passe d'un compte à la personne concernée. Les gestionnaires de mot de passe sont un excellent moyen pour centraliser et partager ces ressources.
 
-TODO(flavienbwk): https://software.af.mil/wp-content/uploads/2021/08/CNAP-RefDesign_ver-1.0-Approved-for-Public-Release.pdf, https://www.youtube.com/watch?v=DLQAbJm4gFM&ab_channel=TheCISOPerspective, https://www.nccoe.nist.gov/projects/implementing-zero-trust-architecture
+Vous pouvez y gérer vos mots de passe et les partager granulairement à d'autres utilisateurs. Chacun dispose de son compte pour accéder aux secrets qu'il a le droit de voir. Je vous recommande d'en faire l'usage autant que possible. Travailler en réseau vous permet de faire l'usage de ces outils.
 
-## Le socle au service de votre sécurité
+Quelques services de gestion collaborative des mots de passe existent : Vaultwarden, Bitwarden, Lastpass.
 
-Vous devez traiter votre plateforme/socle comme un produit, au service de vos équipes internes. Et ultimately au service d'un meilleur service pour vos clients. #BtoBtoC
+## Un socle au service de votre résilience
 
-"If it hurts, do it more often (don't avoid it)" (about deployments breaking)
+Le socle d'une infrastructure informatique constitue l'ensemble des technologies qui permettent d'y déployer des logiciels. Y sont souvent associés des services "cœur" communs et vitaux pour le bon fonctionnement de l'infrastructure : une PKI[^PKI], un serveur d'authentification centralisé (ex: LDAP), un serveur de temps NTP ou encore un _Active Directory_[^ActiveDirectory].
 
-<!--
-Standardise la manière d’interagir avec les logiciels.
-Le socle prend + de responsabilités pour simplifier l’administration et forcer les règles de sécurité.
+Pour les ingénieurs ayant la charge de déployer des logiciels, le socle fournit des services communs pour éviter d'en déployer avec chacun des logiciels. Ces services étant centralisés, les tâches d'administration sont simplifiées. Dans un socle Cloud, cette idée est poussée plus loin que dans un socle traditionnel. Cela est rendu possible par l'usage de technologies standardisées (ex: conteneurs Docker, Kubernetes) qui simplifient l'interaction avec les logiciels déployés.
 
-Centralise et standardise la gestion des mécanismes de sécurité et d’observabilité :
-Logs : métriques app + bugs
-Metriques : analyse systématique flux réseaux et performances (observabilité)
-Analyse antivirus : permanente
-Secrets : gérés par la plateforme
-Chiffrement réseau TLS (+PKI) : systématique
-Passage à l’échelle / Ajustement des ressources : automatique vs manuelle (horizontal vs vertical)
-Ressources distribuées vs locales (logiciels tournent sur plusieurs machines, automatiquement)
+Comparons un socle traditionnel à un socle Cloud pour mieux comprendre la plus-value de ce dernier.
 
-ANSSI recommande même d’utiliser les containers pour isoler les logiciels
--->
+![Illustration des services dans un socle traditionnel (type ESXI).](./images/illustration_socle_esxi.jpg)
 
-TODO(flavienbwk): Socle type VMWare vs socle Cloud; les services sont plus importants (cf. prez ppt)
+Dans un socle traditionnel, une machine virtuelle (VM) est attribuée à chaque logiciel pour l'isoler logiquement. Chaque logiciel a la charge de gérer ses propres logs, certificats, secrets et générer ses propres métriques. Il est possible que le socle héberge des services centralisant ces données, mais le développeur du logiciel devra alors apporter des modifications à son code pour se conformer aux services du socle.
 
-TODO(flavienbwk): Développer le sujet : DevOps pour tracer les actions, centraliser/gérer/analyser les logs via des technologies standardisées (Fluentd, [Istio](https://medium.com/@senthilrch/api-authentication-using-istio-ingress-gateway-oauth2-proxy-and-keycloak-a980c996c259))...
+La robustesse de ce type de socle n'est plus à prouver et se voit encore largement utilisé aujourd'hui dans les grandes institutions. L'isolation est très efficace. Néanmoins, les besoins en maintenance de ce type de socle augmentent proportionnellement au nombre de logiciels déployés. Chaque logiciel dispose de consignes d'installation, auxquelles s'ajoutent de la documentation de conformité au socle. L'installation et la configuration sont souvent manuelles. Or, les organisations ont généralement tendance à installer de plus en plus de services au cours du temps, afin de continuer de pouvoir répondre au besoin métiers.
+
+En résumé, on force ici le logiciel déployé à s'adapter au socle. Ce qui génère de la dette technique. Qui plus est, des services socle centralisés comme ceux pour gérer logs ou les métriques, n'existent pas toujours.
+
+Ce type de socle est efficace avec un nombre raisonnable de services déployés, mais il passe difficilement à l'échelle sans une RH proportionnellement dimensionnée.
+
+![Illustration des services dans un socle cloud (type Kubernetes baremetal).](./images/illustration_socle_kubernetes.jpg)
+
+Dans un socle Cloud, l'interaction entre les logiciels déployés et le socle est nativement plus forte. Tout en bénéficiant d'une isolation au sein de chaque conteneur, les interfaces standardisées de ces-derniers permettent aux services socles de s'y "connecter".
+
+Par exemple, les logs ou les métriques de performance peuvent automatiquement être récupérés et capitalisés dans un outil central, pour ensuite configurer des alertes. Un antivirus vérifiant de manière continue la présence de menaces dans un conteneur peut être installé. C'est le mécanisme de _sidecars_[^sidecars] dans Kubernetes qui permet la plupart du temps de rendre ces capacités possibles.
+
+Les flux de données entre conteneurs peuvent par défaut être chiffrés (cas d'usage: deux services qui tournent sur des serveurs différents). Les secrets (mots de passe, token) peuvent être fournis par le socle sans qu'un administrateur ne doive les voir. Les données persistantes (volumes) sont gérées de manières unifiées et leurs sauvegardes peuvent être automatisées.
+
+L'intérêt de ce type de socle est de permettre de bénéficier de tous ces services automatiquement, sans jamais toucher au code de l'application ni que l'intégrateur ait connaissance de votre infrastructure. Ainsi vous avez la garantie que tous les logiciels déployés se conforment à vos exigences en matière de supervision et de sécurité.
+
+Les mécanismes d'installation étant standardisées par Kubernetes (cf. manifests, Helm), vous n'avez qu'à lancer quelques commandes pour que votre logiciel soit déployé. Kubernetes se chargera automatiquement d'instancier de nouveaux conteneurs si la charge utilisateur est trop importante sur l'un de vos logiciels.
+
+Nous pourrons retrouver ces mécanismes plus en détails dans le chapitre "[Tout mesurer](#tout-mesurer)".
+
+Si vous disposez de personnels déjà formés aux technologies ESXi, ou si les règles SSI de votre organisation ne sont pas prêtes pour accueillir un socle Cloud, il est possible de poser un socle Kubernetes sur votre socle traditionnel ESXi. Cela peut s'envisager, au prix d'une dette technique temporairement plus importante, pendant que vos équipes historiques se forment aux nouvelles technologies Cloud. L'objectif a terme étant de ne faire tourner que le socle Cloud.
+
+En conclusion, vous devez traiter votre socle comme un produit au service de vos équipes d'administration système. Plus vous mutualiserez et automatiserez le recours aux services de ce socle, moins vous devrez entretenir de dette technique (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)"). A la fin, ce travail se traduit par une meilleure disponibilité des services pour vos clients.
 
 # Les piliers du DevOps en pratique
 
@@ -771,9 +782,9 @@ TODO(flavienbwk): Remettre en forme le [tableau](https://assets-global.website-f
 
 ![Exemple de diagramme RACI. Traduction de l'anglais depuis l'illustration _Atlassian.com_.](./images/figure-7.png)
 
-|   |   |
-|---|---|
-|   |   |
+|     |     |
+| --- | --- |
+|     |     |
 
 Une extension du RACI est le RACI-VS[^RACI-VS] qui inclut un validateur (la personne en charge de la validation finale du livrable, une autorité) et un signataire (personne en charge de l'approbation officielle du livrable et qui engage sa signature, une haute autorité).
 
@@ -808,9 +819,9 @@ Dans un modèle DevOps, les "intervenants informés" sont pleinement impliqués 
 
 TODO(flavienbwk): Remettre en forme le [tableau](https://wac-cdn.atlassian.com/dam/jcr:c9128f95-3430-4ba2-8893-97801feb24f9/Modal-EXAMPLE1new.jpg?cdnVersion=610)
 
-|   |   |
-|---|---|
-|   |   |
+|     |     |
+| --- | --- |
+|     |     |
 
 ![Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans leur cas, l'option 1). Traduction de l'anglais depuis l'illustration _Atlassian.com_[^AtlassianDACIMethod]](./images/figure-8.jpg)
 
@@ -990,7 +1001,7 @@ Au sein d'une infrastructure containérisée, un _service mesh_ automatise l'acq
 
 ### Service mesh
 
-Malgré leur application très concrète et pratique, un _service mesh_ ou "service de maillage de services" sont une notion qui peut paraître complexe.
+Malgré son application très concrète et pratique, le _service mesh_ ou "service de maillage de services" est une notion qui peut paraître complexe au premier abord.
 
 Abordons-la au travers de quelques problématiques qui illustrent son intérêt :
 
@@ -1023,6 +1034,30 @@ En résumé, un _service mesh_ gère tout ou partie des aspects suivants : gesti
 Techniquement, un _service mesh_ va s'installer sur votre logiciel d'orchestration (ex: Kubernetes) et attacher dans chaque _pod_ (conteneur / application) un conteneur appelé _sidecar_. Ce dernier agira en tant que proxy réseau et gérera les interactions citées plus haut avec le _service mesh_.
 
 En revanche, un _service mesh_ n'est pas une technologie légère : elle nécessite de l'administration et de la formation en interne (à la fois pour les développeurs et les administrateurs) avant que vous ne puissiez bénéficier de ses avantages. Ne vous attendez pas d'une technologie qui vous permet de passer de 50 à 5 administrateurs systèmes, qu'elle soit administrable par seulement 2 personnes. Les _service mesh_ ont un intérêt certain mais assurez-vous que vous soyez dimensionné pour l'administrer.
+
+### Des services socle pour simplifier votre quotidien
+
+TODO(flavienbwk): cf. [chapitre](#un-socle-au-service-de-votre-résilience)
+
+<!--
+Standardise la manière d’interagir avec les logiciels.
+Le socle prend + de responsabilités pour simplifier l’administration et forcer les règles de sécurité.
+
+Centralise et standardise la gestion des mécanismes de sécurité et d’observabilité :
+Logs : métriques app + bugs
+Metriques : analyse systématique flux réseaux et performances (observabilité)
+Analyse antivirus : permanente
+Secrets : gérés par la plateforme
+Chiffrement réseau TLS (+PKI) : systématique
+Passage à l’échelle / Ajustement des ressources : automatique vs manuelle (horizontal vs vertical)
+Ressources distribuées vs locales (logiciels tournent sur plusieurs machines, automatiquement)
+ANSSI recommande même d’utiliser les containers pour isoler les logiciels.
+
+Sécurité des mdp : Hashicorp Vault ou https://github.com/bitnami-labs/sealed-secrets (secrets qui peuvent être push dans git)
+-->
+
+TODO(flavienbwk): Développer le sujet : DevOps pour tracer les actions, centraliser/gérer/analyser les logs via des technologies standardisées (Fluentd, [Istio](https://medium.com/@senthilrch/api-authentication-using-istio-ingress-gateway-oauth2-proxy-and-keycloak-a980c996c259))...
+
 
 # Tirer parti de toutes les ressources à sa disposition
 
@@ -1205,11 +1240,11 @@ Une section "Formation" est également disponible, pour vous donner une idée de
 
 ## Ingénieur DevOps
 
-|||
-|---|:---|
-| **Niveau du poste** | Medium ou Senior[^DORAProfileExperience] (selon les responsabilités à confier au candidat) |
-| **Maturité de l'organisation** | Débutante à intermédiaire |
-| **Rémunération approximative** (septembre 2022) | >50k€/an |
+|                                                 |                                                                                            |
+| ----------------------------------------------- | :----------------------------------------------------------------------------------------- |
+| **Niveau du poste**                             | Medium ou Senior[^DORAProfileExperience] (selon les responsabilités à confier au candidat) |
+| **Maturité de l'organisation**                  | Débutante à intermédiaire                                                                  |
+| **Rémunération approximative** (septembre 2022) | >50k€/an                                                                                   |
 
 Dans le cadre de la transformation numérique de notre organisation, appuyé(e) par la hiérarchie, vous définirez les nouveaux processus de développement, mettrez en place les outils et accompagnerez les équipes internes dans leur réorganisation pour employer ces nouvelles techniques.
 
@@ -1252,11 +1287,11 @@ Ce poste peut mener au poste d'Ingénieur Systèmes, de SRE ou d'Ingénieur SSI 
 
 ## Ingénieur SSI DevOps
 
-|||
-|---|:---|
-| **Niveau du poste** | Medium ou Senior (selon les responsabilités à confier au candidat) |
-| **Maturité de l'organisation** | Intermédiaire à avancée |
-| **Rémunération approximative** (septembre 2022) | >55k€/an |
+|                                                 |                                                                    |
+| ----------------------------------------------- | :----------------------------------------------------------------- |
+| **Niveau du poste**                             | Medium ou Senior (selon les responsabilités à confier au candidat) |
+| **Maturité de l'organisation**                  | Intermédiaire à avancée                                            |
+| **Rémunération approximative** (septembre 2022) | >55k€/an                                                           |
 
 Dans le cadre de la transformation numérique de notre organisation, appuyé(e) par la hiérarchie, vous êtes le "Sec" de notre organisation en mode "DevSecOps". Votre rôle est d'assurer les bonnes pratiques de sécurité sans impacter la vélocité des développements.
 
@@ -1297,11 +1332,11 @@ Ce poste peut mener au poste d'Ingénieur Systèmes ou de SRE.
 
 ## Ingénieur Résilience des Systèmes (SRE)
 
-|||
-|---|:---|
-| **Niveau du poste** | Medium ou Senior (selon les responsabilités à confier au candidat). Apprentissage ou débutant possible si un personnel expérimenté est disponible. Pas de stage. |
-| **Maturité de l'organisation** | Débutante à intermédiaire |
-| **Rémunération approximative** (septembre 2022) | >50k€/an (medium), >42k€/an (débutant) |
+|                                                 |                                                                                                                                                                  |
+| ----------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Niveau du poste**                             | Medium ou Senior (selon les responsabilités à confier au candidat). Apprentissage ou débutant possible si un personnel expérimenté est disponible. Pas de stage. |
+| **Maturité de l'organisation**                  | Débutante à intermédiaire                                                                                                                                        |
+| **Rémunération approximative** (septembre 2022) | >50k€/an (medium), >42k€/an (débutant)                                                                                                                           |
 
 Aux fondements du bon fonctionnement de notre organisation, vous aurez la charge de garantir la disponibilité, la fiabilité et la résilience de nos systèmes d'information. Vous veillerez à pérenniser les infrastructures.
 
@@ -1340,10 +1375,10 @@ Ce poste peut mener au poste de Responsable de l'Infrastructure, d'Ingénieur SS
 
 ## Ingénieur Systèmes ou Ingénieur Plateforme
 
-|||
-|---|:---|
-| **Niveau du poste** | Débutant à Senior |
-| **Maturité de l'organisation** | Avancée |
+|                                                 |                                        |
+| ----------------------------------------------- | :------------------------------------- |
+| **Niveau du poste**                             | Débutant à Senior                      |
+| **Maturité de l'organisation**                  | Avancée                                |
 | **Rémunération approximative** (septembre 2022) | >50k€/an (medium), >45k€/an (débutant) |
 
 De formation ingénieur logiciel ou administrateur système avec des compétences avérées en ingénierie logicielle, vous serez responsable du développement et de la maintenance des outils qui améliorent au quotidien le cycle de développement de nos logiciels.
@@ -1531,20 +1566,20 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DORATeamSize]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Team size", page 65. 2022.
 
-[^INSEECompanySizeDefinition]: Au sens des [catégories d'entreprises françaises](https://www.insee.fr/fr/statistiques/4277836?sommaire=4318291#documentation) de l'INSEE. 2020.
+[^INSEECompanySizeDefinition]: Au sens des [catégories d'entreprises françaises](https://www.insee.fr/fr/statistiques/4277836?sommaire=4318291#documentation) définies par l'INSEE. 2020.
 
-[^GlobalUpskillingWorldwideDevopsSize]: DevOps Institute. Global Upskilling IT report, chapter "DevOps Remains a Driving Force in IT Transformation" (page 16). 2022.
+[^GlobalUpskillingWorldwideDevopsSize]: DevOps Institute. _Global Upskilling IT report_, chapitre "_DevOps Remains a Driving Force in IT Transformation_" (page 16). 2022.
 
-[^DORAIndustry]: DevOps Institute. Global Upskilling IT report, chapter "Industry" (page 162). 2022.
+[^DORAIndustry]: DevOps Institute. _Global Upskilling IT report_, chapitre "_Industry_" (page 162). 2022.
 
-[^GartnerCloud2025]: Gartner. [Gartner Says Cloud Will Be the Centerpiece of New Digital Experiences](https://www.gartner.com/en/newsroom/press-releases/2021-11-10-gartner-says-cloud-will-be-the-centerpiece-of-new-digital-experiences). 2021.
+[^GartnerCloud2025]: Gartner. [_Gartner Says Cloud Will Be the Centerpiece of New Digital Experiences_](https://www.gartner.com/en/newsroom/press-releases/2021-11-10-gartner-says-cloud-will-be-the-centerpiece-of-new-digital-experiences). 2021.
 
-[^AtlassianDevopsStudy]: Atlassian; CITE Research. "2020 DevOps Trends Survey". 2020.
+[^AtlassianDevopsStudy]: Atlassian; CITE Research. "_2020 DevOps Trends Survey_". 2020.
 
-[^RedGate2021Report]: Redgate. "[The 2021 State of
-Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)". 2021.
+[^RedGate2021Report]: Redgate. "[_The 2021 State of
+Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021)". 2021.
 
-[^DORAProfileExperience]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Years of experience", page 61. 2022.
+[^DORAProfileExperience]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "_Years of experience_", page 61. 2022.
 
 [^DiRTTraining]: _Disaster and Recovery Testing_ (DiRT) est un [entraînement des équipes d'infrastructure chez Google](https://cloud.google.com/blog/products/management-tools/shrinking-the-time-to-mitigate-production-incidents), visant pousser les systèmes de production à leur limite et infliger des pannes réelles. L'objectif est de voir comment les équipes réagissent et si elles sont correctement outillées pour répondre à un incident.
 
@@ -1611,3 +1646,15 @@ Database DevOps](https://www.red-gate.com/solutions/database-devops/report-2021)
 [^SogetiDevOpsMicrosoft]: Microsoft; Sogeti. [_Securing Enterprise DevOps Environments_](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf), chapitre "_Control the developer environment with a cloud environment_" page 9. 2022.
 
 [^IDE]: IDE : _Integrated Development Environment_. Interface de saisie et de gestion du code. Ex: Visual Studio Code (VSCode), Atom, IDEs JetBrains.
+
+[^NISTZeroTrust]: NIST's [_Implementing a zero trust architecture website_](https://www.nccoe.nist.gov/projects/implementing-zero-trust-architecture) : nccoe.nist.gov/projects/implementing-zero-trust-architecture
+
+[^CNAPDod]: US Department of Defense. [_Cloud Native Access Point specifications_](https://software.af.mil/wp-content/uploads/2021/08/CNAP-RefDesign_ver-1.0-Approved-for-Public-Release.pdf). 2021.
+
+[^Shadow]: OVH Shadow est un service Cloud permettant d'accéder à des machines à distance par Internet. _shadow.tech_.
+
+[^PKI]: Les [_Public Key Infrastructure_](https://www.digicert.com/fr/what-is-pki) (PKI) ou [Infrastructure de Gestion de Clés](https://www.ssi.gouv.fr/uploads/2014/11/RGS_v-2-0_B2.pdf) (IGC) sont des technologies (logicielles et/ou matérielle) permettant de gérer le cycle de vie (création/révoquation) des certificats de sécurité d'une infrastructure. Usages : signature électronique, chiffrement des données, certificats "HTTPS"...
+
+[^ActiveDirectory]: _Active Directory_ (AD) est un service d'annuaire dans lequel les administrateurs système peuvent gérer les contrôles d'accès à différentes ressources de l'infrastructure. Il tourne sur _Microsoft Windows Server_.
+
+[^sidecars]: Un _sidecar_ est un conteneur distinct qui s'exécute aux côtés d'un conteneur applicatif dans un pod Kubernetes.
