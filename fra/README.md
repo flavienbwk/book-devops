@@ -279,7 +279,7 @@ Enfin, ne vous découragez devant la première personne réticente. Toute innova
 - Henri FORD qui disait que chaque américain devait avoir une voiture personnelle et qu'il ne fallait pas que ça coûte cher. A l'époque, la voiture était considérée comme un gadget pour les riches : "on ne sait pas à quoi ça sert mais c'est joli". Il a créé la première chaîne de montage en mouvement de l'industrie (1913) et _Ford_ fait encore aujourd'hui partie des leaders de l'industrie automobile.
 - Elon MUSK qui disait pouvoir créer des lanceurs de fusée réutilisables : moqué[^ElonMuskBiography] ou fortement mis en doute[^MuskImpossibleQuote] à ses débuts par l'industrie spatiale russe et américaine, désormais respecté par cette dernière et [craint](https://www.ft.com/content/24cca993-b249-45a5-8c42-b39c0ec30c5b) par [l'industrie spatiale européenne](https://www.latribune.fr/entreprises-finance/industrie/aeronautique-defense/satellites-europeens-lances-par-spacex-la-terrible-defaite-de-l-europe-spatiale-937632.html).
 
-Nous pouvons désormais avancer plus sereinement en toute connaissance de cause. Voyons alors plus en détails, comment il est possible de s'organiser pour lancer son initiative de transformation.
+Nous pouvons désormais avancer plus sereinement en toute connaissance de cause. Voyons alors plus en détail, comment il est possible de s'organiser pour lancer son initiative de transformation.
 
 # Modèle d'équipe interne
 
@@ -376,7 +376,7 @@ La sécurité a toujours été une affaire de culture. La méthodologie DevOps v
 
 L'essentiel est de comprendre qu'en mode DevOps, nous travaillons dans un principe de [cycle itératif d'amélioration](#être-au-plus-proche-du-métier). Les projets ne sont jamais figés en terme de technologie utilisée et les déploiements sont continus sans interaction humaine. Cela permet de ne pas nuire à la vélocité des innovations et de toujours répondre le plus justement possible au besoin du client. Mais ce n'est pas la jungle : il existe des standards technologiques et des procédés qui permettent de contrôler ce qui est déployé, selon les standards de sécurité de votre organisation.
 
-Nous détaillerons plus en détails les aspects culturels de la méthodologie DevOps dans le chapitre "[Accepter l'échec](#accepter-léchec)".
+Nous détaillerons plus en détail les aspects culturels de la méthodologie DevOps dans le chapitre "[Accepter l'échec](#accepter-léchec)".
 
 ## Intégration continue et sécurité
 
@@ -664,7 +664,7 @@ L'intérêt de ce type de socle est de permettre de bénéficier de tous ces ser
 
 Les mécanismes d'installation étant standardisées par Kubernetes (cf. manifests, Helm), vous n'avez qu'à lancer quelques commandes pour que votre logiciel soit déployé. Kubernetes se chargera automatiquement d'instancier de nouveaux conteneurs si la charge utilisateur est trop importante sur l'un de vos logiciels.
 
-Nous pourrons retrouver ces mécanismes plus en détails dans le chapitre "[Tout mesurer](#tout-mesurer)".
+Nous pourrons retrouver les technologies évoquées ici plus en détail dans le chapitre "[Tout mesurer](#tout-mesurer)".
 
 Si vous disposez de personnels déjà formés aux technologies ESXi, ou si les règles SSI de votre organisation ne sont pas prêtes pour accueillir un socle Cloud, il est possible de poser un socle Kubernetes sur votre socle traditionnel ESXi. Cela peut s'envisager, au prix d'une dette technique temporairement plus importante, pendant que vos équipes historiques se forment aux nouvelles technologies Cloud. L'objectif a terme étant de ne faire tourner que le socle Cloud.
 
@@ -1639,9 +1639,9 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 
 [^MicrosoftDevOpsAbelWang]: WANG, Abel (_DevOps Lead_ à Microsoft). "[Enterprise DevOps Transformation](https://www.youtube.com/watch?v=WhRRGUmwoq4)". 2020.
 
-[^CodeSpace]: Codespaces est un produit de GitHub permettant de lancer un environnement de développement éphémère directement dans GitHub : [_github.com/features/codespaces_](https://github.com/features/codespaces).
+[^CodeSpace]: _Codespaces_ est un produit de GitHub permettant de lancer un environnement de développement éphémère directement dans GitHub : [_github.com/features/codespaces_](https://github.com/features/codespaces).
 
-[^CoderCloud]: Coder est un outil similaire à Codespace pour du _on-premise_, permettant d'instancier un environnement de développement tournant sur une machine à distance : [_github.com/coder/coder_](https://github.com/coder/coder).
+[^CoderCloud]: _Coder_ est un outil similaire à _Codespaces_ pour du _on-premise_, permettant d'instancier un environnement de développement tournant sur une machine à distance : [_github.com/coder/coder_](https://github.com/coder/coder).
 
 [^SogetiDevOpsMicrosoft]: Microsoft; Sogeti. [_Securing Enterprise DevOps Environments_](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf), chapitre "_Control the developer environment with a cloud environment_" page 9. 2022.
 
