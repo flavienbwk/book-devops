@@ -662,11 +662,9 @@ Les flux de données entre conteneurs peuvent par défaut être chiffrés (cas d
 
 L'intérêt de ce type de socle est de permettre de bénéficier de tous ces services automatiquement, sans jamais toucher au code de l'application ni que l'intégrateur ait connaissance de votre infrastructure. Ainsi vous avez la garantie que tous les logiciels déployés se conforment à vos exigences en matière de supervision et de sécurité. C'est donc le socle qui s'adapte aux logiciels déployés.
 
-Les mécanismes d'installation étant standardisés par Kubernetes (cf. manifests, Helm[^Helm]), vous n'avez qu'à lancer quelques commandes pour que votre logiciel soit déployé. Kubernetes se chargera automatiquement d'instancier de nouveaux conteneurs si la charge utilisateur est trop importante sur l'un de vos logiciels.
+Les mécanismes d'installation étant standardisés par Kubernetes (cf. manifests, Helm[^Helm]), vous n'avez qu'à lancer quelques commandes pour que votre logiciel soit déployé. Kubernetes se chargera automatiquement d'instancier de nouveaux conteneurs si la charge utilisateur est trop importante sur l'un de vos logiciels. Nous retrouverons des références aux technologies évoquées ici dans le chapitre "[Des extensions pour simplifier l'infrastructure](#des-extensions-pour-simplifier-linfrastructure)".
 
-Nous pourrons retrouver les technologies évoquées ici plus en détail dans le chapitre "[Tout mesurer](#tout-mesurer)".
-
-Si vous disposez de personnels déjà formés aux technologies ESXi, ou si les règles SSI de votre organisation ne sont pas prêtes pour accueillir un socle Cloud, il est possible de poser un socle Kubernetes sur votre socle traditionnel ESXi. Cela peut s'envisager, au prix d'une dette technique temporairement plus importante, pendant que vos équipes historiques se forment aux nouvelles technologies Cloud. L'objectif a terme étant de ne faire tourner que le socle Cloud.
+Si votre organisation se compose de personnels déjà formés aux technologies ESXi, ou si les règles SSI de votre organisation ne sont pas prêtes pour accueillir un socle Cloud, il est possible de poser un cluster Kubernetes sur votre infrastructure ESXi traditionnelle. Cela peut s'envisager dans un plan de transformation, au prix d'une dette technique temporairement plus importante, pendant que vos équipes historiques se forment aux technologies Cloud. L'objectif a terme étant de ne faire tourner plus que le socle Cloud.
 
 En conclusion, vous devez traiter votre socle comme un produit au service de vos équipes d'administration système. Plus vous mutualiserez et automatiserez le recours aux services de ce socle, moins vous devrez entretenir de dette technique (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)"). A la fin, ce travail se traduit par une meilleure disponibilité des services pour vos clients.
 
@@ -710,7 +708,7 @@ TODO(flavienbwk): Développer le sujet
 
 TODO(flavienbwk): Le contenu de cette usine logicielle pour employer des pratiques DevOps sera développé
 
-L'étape d'après serait d'ouvrir cette plateforme à des partenaires industriels, afin que chacun puisse ajouter son logiciel selon les règles de l'organisation. Ces dernières seraient définies par des ingénieurs en interne. C'est déjà le cas de _Platform One_[^PlatformOne] qui ouvre son usine logicielle à des industriels contractualisant avec le Ministère des Armées américain. Ou encore de la [_NATO Software Factory_](https://nsf.dev.nato.int/) l'usine logicielle de l'OTAN[^NatoSoftwareFactory].
+Grâce aux mécanismes de sécurité intégrés, il est tout à fait envisageable d'ouvrir cette plateforme à des partenaires industriels et qu'ils puissent ajouter leurs logiciels selon les règles établies par l'organisation. Ces dernières sont définies par des [ingénieurs SSI](#ingénieur-ssi-devops) internes. C'est déjà le cas de _Platform One_[^PlatformOne] qui ouvre son usine logicielle à des industriels contractualisant avec le Ministère des Armées américain. Ou encore de la [_NATO Software Factory_](https://nsf.dev.nato.int/) l'usine logicielle de l'OTAN[^NatoSoftwareFactory].
 
 Néanmoins, je rappelle ici qu'il s'agit de pouvoir développer une expertise en interne avant d'être capable de définir des règles pour les autres. Chaque organisation est différente et se doit [d'avoir ses propres experts en interne pour la conseiller au mieux](#le-développement-interne-comme-véritable-alternative).
 
@@ -1031,24 +1029,31 @@ En résumé, un _service mesh_ gère tout ou partie des aspects suivants : gesti
 
 > Vue d'ensemble du fonctionnement d'un service de maillage de services : des conteneurs "proxy" sont ajoutés dans chaque pod pour gérer les interactions avec le _service mesh_. _(Weaveworks : Introduction to Kubernetes service mesh ?)_[^WeaveWorksServiceMeshArticle]
 
-Techniquement, un _service mesh_ va s'installer sur votre logiciel d'orchestration (ex: Kubernetes) et attacher dans chaque _pod_ (conteneur / application) un conteneur appelé _sidecar_. Ce dernier agira en tant que proxy réseau et gérera les interactions citées plus haut avec le _service mesh_.
+Techniquement, un _service mesh_ va s'installer sur votre logiciel d'orchestration (ex: Kubernetes) et attacher dans chaque _pod_ (ensemble de conteneurs / application) un conteneur appelé _sidecar_. Ce dernier agira en tant que proxy réseau et gérera les interactions citées plus haut avec le _service mesh_.
 
 En revanche, un _service mesh_ n'est pas une technologie légère : elle nécessite de l'administration et de la formation en interne (à la fois pour les développeurs et les administrateurs) avant que vous ne puissiez bénéficier de ses avantages. Ne vous attendez pas d'une technologie qui vous permet de passer de 50 à 5 administrateurs systèmes, qu'elle soit administrable par seulement 2 personnes. Les _service mesh_ ont un intérêt certain mais assurez-vous que vous soyez dimensionné pour l'administrer.
 
-### Des extensions pour simplifier votre quotidien
+Plusieurs _service mesh_ existent avec chacun ses forces et ses faiblesses. Prenez le temps de les comparer avant d'en choisir un. Par exemple, Linkerd[^Linkerd] sera plus simple à déployer que Istio, mais contiendra moins de fonctionnalités. Consul[^Consul] est une autre alternative.
+
+### Des extensions pour simplifier l'infrastructure
 
 Comme décrit dans le chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)", les plateformes Cloud ont l'intérêt d'inclure tout un tas de services assurant des besoins communs de sécurité et de supervision. Ces services gèrent automatiquement des fonctionnalités historiquement fastidieuses à développer individuellement pour chaque logiciel, ou pour l'infrastructure.
 
 Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _Cloud native_[^CloudNative], il est possible de facilement "installer" des services socle au sein d'un cluster Kubernetes. Voici une liste non-exhaustive des services qui peuvent être assurés nativement dans votre cluster et administrables de manière centralisée :
 
 1. Centralisation des logs applicatifs et réseaux (cf. [Fluentd](https://www.fluentd.org/)[^FluentdWebsite], [Loki](https://grafana.com/oss/loki/)[^LokiGithub], [OpenTelemetry](https://opentelemetry.io/)[^OpenTelemetry])
-2. Centralisation les métriques des noeuds du cluster (références identifiques au point 1)
+   ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com](./images/kibana_logs.png)
+2. Centralisation des métriques de performance des noeuds et des conteneurs du cluster (références identifiques au point 1)
+   ![Tableau de bord Grafana des ressources consommées par les conteneurs d'une application dans Kubernetes, remontées par Loki. Source : grafana.com](./images/grafana_loki_metrics.jpg)
 3. Analyse antivirus du contenu des noeuds et des conteneurs (cf. [Docker Antivirus Exclusions](https://docs.docker.com/engine/security/antivirus/), [Kubernetes ClamAV](https://cloud.google.com/community/tutorials/gcp-cos-clamav))
 4. Détection de comportements suspects d'appels système Linux (cf. [Sysdig Falco](https://github.com/falcosecurity/falco)[^SysdigFalco])
-5. Contrôle et audit des configurations du cluster (cf. [Gatekeeper]( _github.com/open-policy-agent/gatekeeper_)[^GatekeeperK8s], [OpenSCAP](https://www.open-scap.org)[^OpenSCAP])
+5. Contrôle et audit des configurations du cluster (cf. [Gatekeeper](https://github.com/open-policy-agent/gatekeeper)[^GatekeeperK8s], [OpenSCAP](https://www.open-scap.org)[^OpenSCAP])
+   ![Exemple de refus du déploiement d'un applicatif par Gatekeeper en raison de ressources demandées trop importantes. Source : DevOps Toolkit (YouTube)](./images/gatekeeper_k8s_resource_refusal.png)
 6. Gestion des secrets (mots de passe, tokens) des applicatifs (cf. [Vault](https://www.vaultproject.io/)[^VaultHC], [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)[^SealedSecrets])
+   ![Interface web de Hashicorp Vault permettant de manipuler les secrets utilisés au sein d'une infrastructure.](./images/hashicorp_vault_ui.png) TODO(flavienbwk): ajouter image
 7. Sauvegarde automatique des volumes persistants (cf. [Valero](https://velero.io/docs/v1.10/)[^Valero])
 8. Chiffrement des flux réseau entre les conteneurs (cf. chapitre "[Service mesh](#service-mesh)")
+    ![Interface de Kiali affichant l'usage du protocole mTLS par le service `details` vers le pod `details-v1`. Source : istio.io](./images/istio_kiali_tls_communication.png)
 9. Gestion des certificats de sécurité (cf. chapitre "[Service mesh](#service-mesh)")
 10. Gestion de l'authentification aux services web (cf. [Istio Ingress Gateway](https://medium.com/@senthilrch/api-authentication-using-istio-ingress-gateway-oauth2-proxy-and-keycloak-a980c996c259)[^IstioIngressGateway], [Keycloak](https://www.keycloak.org)[^Keycloak])
 
@@ -1687,3 +1692,7 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^IstioIngressGateway]: Documentation de la [fonctionnalité _Ingress Gateway_](https://istio.io/latest/docs/tasks/security/authorization/authz-ingress/) de Istio. _istio.io_.
 
 [^Keycloak]: Site officiel du logiciel d'authentification unique (SSO) Keycloak : _keycloak.org_.
+
+[^Consul]: Site officiel du projet Hashicorp Consul : _consul.io_.
+
+[^Linkerd]: Site officiel du projet Buoyant Linkerd : _linkerd.io_.
