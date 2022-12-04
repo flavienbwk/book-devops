@@ -662,7 +662,7 @@ Les flux de données entre conteneurs peuvent par défaut être chiffrés (cas d
 
 L'intérêt de ce type de socle est de permettre de bénéficier de tous ces services automatiquement, sans jamais toucher au code de l'application ni que l'intégrateur ait connaissance de votre infrastructure. Ainsi vous avez la garantie que tous les logiciels déployés se conforment à vos exigences en matière de supervision et de sécurité. C'est donc le socle qui s'adapte aux logiciels déployés.
 
-Les mécanismes d'installation étant standardisés par Kubernetes (cf. manifests, Helm[^Helm]), vous n'avez qu'à lancer quelques commandes pour que votre logiciel soit déployé. Kubernetes se chargera automatiquement d'instancier de nouveaux conteneurs si la charge utilisateur est trop importante sur l'un de vos logiciels. Nous retrouverons des références aux technologies évoquées ici dans le chapitre "[Des extensions pour simplifier l'infrastructure](#des-extensions-pour-simplifier-linfrastructure)".
+Les mécanismes d'installation étant standardisés par Kubernetes (cf. manifests Kubernetes, Helm[^Helm]), vous n'avez qu'à lancer quelques commandes pour que votre logiciel soit déployé. Kubernetes se chargera automatiquement d'instancier de nouveaux conteneurs si la charge utilisateur est trop importante. Nous retrouverons des références aux technologies évoquées ici, dans le chapitre "[Des extensions pour simplifier l'infrastructure](#des-extensions-pour-simplifier-linfrastructure)".
 
 Si votre organisation se compose de personnels déjà formés aux technologies ESXi, ou si les règles SSI de votre organisation ne sont pas prêtes pour accueillir un socle Cloud, il est possible de poser un cluster Kubernetes sur votre infrastructure ESXi traditionnelle. Cela peut s'envisager dans un plan de transformation, au prix d'une dette technique temporairement plus importante, pendant que vos équipes historiques se forment aux technologies Cloud. L'objectif a terme étant de ne faire tourner plus que le socle Cloud.
 
@@ -1740,7 +1740,7 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 
 [^Linkerd]: Site officiel du projet Buoyant Linkerd : _linkerd.io_.
 
-[^DVC]: Data Version Control (DVC) est un système de versionnage de données massives (ex: modèles d'intelligence artificielle), reposant sur des technologies de stockage Cloud (ex: S3). _dvc.org_.
+[^DVC]: Data Version Control (DVC) est un système de versionnage de données massives (ex: modèles d'intelligence artificielle), reposant sur des technologies de stockage Cloud (ex: S3) et permettant d'y faire référence dans un projet git. _dvc.org_.
 
 [^git]: _git_ est un système de "contrôle de version" créé en 2005, traquant les modifications apportées aux fichiers dans un projet (gestion de l'historique des fichiers, de la fusion des contributions, imputabilité des actions). Il est le plus utilisé au monde. Des alternatives historiques et moins populaires existent : Apache Subversion (SVN), Mercurial.
 
