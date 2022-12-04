@@ -1087,19 +1087,33 @@ Comme décrit dans le chapitre "[Un socle au service de votre résilience](#un-s
 Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _Cloud native_[^CloudNative], il est possible de facilement "installer" des services socle au sein d'un cluster Kubernetes. Voici une liste non-exhaustive des services qui peuvent être assurés nativement dans votre cluster et administrables de manière centralisée :
 
 1. Centralisation des logs applicatifs et réseaux (cf. [Fluentd](https://www.fluentd.org/)[^FluentdWebsite], [Loki](https://grafana.com/oss/loki/)[^LokiGithub], [OpenTelemetry](https://opentelemetry.io/)[^OpenTelemetry])
+
    ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com](./images/kibana_logs.png)
+
 2. Centralisation des métriques de performance des noeuds et des conteneurs du cluster (références identifiques au point 1)
+
    ![Tableau de bord Grafana des ressources consommées par les conteneurs d'une application dans Kubernetes, remontées par Loki. Source : grafana.com](./images/grafana_loki_metrics.png)
+
 3. Analyse antivirus du contenu des noeuds et des conteneurs (cf. [Docker Antivirus Exclusions](https://docs.docker.com/engine/security/antivirus/), [Kubernetes ClamAV](https://cloud.google.com/community/tutorials/gcp-cos-clamav))
+
 4. Détection de comportements suspects d'appels système Linux (cf. [Sysdig Falco](https://github.com/falcosecurity/falco)[^SysdigFalco])
+
 5. Contrôle et audit des configurations du cluster (cf. [Gatekeeper](https://github.com/open-policy-agent/gatekeeper)[^GatekeeperK8s], [OpenSCAP](https://www.open-scap.org)[^OpenSCAP])
+
    ![Exemple de refus du déploiement d'un applicatif par Gatekeeper en raison de ressources demandées trop importantes. Source : DevOps Toolkit (YouTube)](./images/gatekeeper_k8s_resource_refusal.png)
+
 6. Gestion des secrets (mots de passe, tokens) des applicatifs (cf. [Vault](https://www.vaultproject.io/)[^VaultHC], [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)[^SealedSecrets])
-   ![Interface web de Hashicorp Vault permettant de manipuler les secrets utilisés au sein d'une infrastructure.](./images/hashicorp_vault_ui.png) TODO(flavienbwk): ajouter image
+
+   ![Interface web de Hashicorp Vault permettant de manipuler les secrets utilisés au sein d'une infrastructure.](./images/hashicorp_vault_ui.png)
+
 7. Sauvegarde automatique des volumes persistants (cf. [Valero](https://velero.io/docs/v1.10/)[^Valero])
+
 8. Chiffrement des flux réseau entre les conteneurs (cf. chapitre "[Service mesh](#service-mesh)")
+
     ![Interface de Kiali affichant l'usage du protocole mTLS par le service `details` vers le pod `details-v1`. Source : istio.io](./images/istio_kiali_tls_communication.png)
+
 9. Gestion des certificats de sécurité (cf. chapitre "[Service mesh](#service-mesh)")
+
 10. Gestion de l'authentification aux services web (cf. [Istio Ingress Gateway](https://medium.com/@senthilrch/api-authentication-using-istio-ingress-gateway-oauth2-proxy-and-keycloak-a980c996c259)[^IstioIngressGateway], [Keycloak](https://www.keycloak.org)[^Keycloak])
 
 La simplicité et l'automatisation sont les caractéristiques fondamentales d'un socle Cloud. Encore une fois, en DevOps, on estime que quelque chose qui n'est pas automatisé ne sera pas utilisé. Les technologies évoquées ci-dessus s'adaptent au logiciel déployé automatiquement. En Cloud, ce n'est plus au logiciel de s'adapter aux technologies du socle.
