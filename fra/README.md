@@ -194,7 +194,7 @@ Changer les missions d'une équipe sans considérer sa culture et son passif rev
 
 Du fait de leur passif au sein de votre organisation, la connaissances de vos équipes vous permettra de saisir des notions que vous n'avez pas encore totalement bien appréhendées, qu'importe votre niveau hiérarchique. Soyez ouvert à leurs recommandations et leurs remarques pour comprendre comment réorganiser au mieux cette équipe (et seulement si nécessaire), en fonction de ses aspirations.
 
-Si vous estimez ne pas avoir les ressources en interne, ne craignez pas de recruter. {Exemple Microsoft} Il est risqué d'impacter les équipes historiques si elles répondent à un besoin exprimé par votre organisation. Le propre d'une transformation est d'assurer la continuité du service tout en changeant ses pratiques.
+Si vous estimez ne pas avoir les ressources en interne, ne craignez pas de recruter. Il est risqué d'impacter les équipes historiques si elles répondent à un besoin exprimé par votre organisation. Le propre d'une transformation est d'assurer la continuité du service tout en changeant ses pratiques.
 
 Soyez plus subtile que d'annoncer un "grand plan de transformation". Ces pratiques frustrent à coup sûr bon nombre de collaborateurs, n'obtient pas l'adhésion de toutes vos équipes et risque de vous décrédibiliser.
 
@@ -204,13 +204,13 @@ Comme évoqué dans le chapitre "[Too big, too soon](#too-big-too-soon)", adopte
 
 > "C'est normal, nous aurons toujours du retard ici."
 
-Combien de fois ais-je entendu cette affirmation... Après le fait d'être anéanti devant tant de désinvolture, c'est à chaque fois un véritable sentiment d'indignation qui vient à moi.
+Si vous avez l'impression d'avoir déjà entendu cela et que vous lisez ce livre, ces paroles ont probablement succédé pour vous à un sentiment de consternement.
 
-Certes il peut y avoir un délais, raisonnable selon l'environnement (exigences de sécurité, taille des équipes), mais sûrement pas un retard. Et en aucun cas cette affirmation ne doit devenir la réponse par défaut.
+Il peut etre compréhensible d'avoir selon l'environnement (exigences de sécurité, taille des équipes) des délais, mais il ne doit pas être toléré d'être en retard. En aucun cas cette affirmation ne doit devenir la réponse par défaut.
 
-Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire pire peut-être pour certains, de fainéantise. Ces comportements n'ont pas leur place en entreprise.
+Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire pire peut-être, de fainéantise.
 
-Si la majorité des collaborateurs d'une entreprise en viennent à penser qu'elle a du retard, il y a un sérieux problème. Maintenir le _statu quo_ sur cette situation mène inévitablement au déclin de l'organisation et en la perte totale de crédibilité, de la part de ses employés et de ses partenaires.
+Si la majorité des collaborateurs d'une entreprise en viennent à penser qu'elle a du retard, il y a un sérieux problème. Maintenir le _statu quo_ sur cette situation mène inévitablement au déclin de l'organisation et en la perte irrémédiable de crédibilité, de la part de ses employés et de ses partenaires.
 
 Dans l'un de ses articles[^ArticlePSSyndromeCanard], le conférencier et expert en transformation Philippe SILBERZAHN prend l'exemple d'un homme attendant un train qui devait arriver à 9h30. Le panneau d'affichage affiche "A l'heure" malgré qu'il soit 9h35 à sa montre. L'homme songe à prendre une photo du panneau mais se demande "à quoi bon". La majorité des gens trouveraient qu'il chipote pour 5 minutes, seraient agacés, ou diraient que c'est une erreur d'affichage. "Après tout, personne n'y peut rien". C'est avec ce genre de comportement que Philippe SILBERZAHN affirme que les organisations déclinent : elles s'habituent à la médiocrité.
 
