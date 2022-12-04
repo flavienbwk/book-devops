@@ -380,9 +380,9 @@ Nous détaillerons plus en détail les aspects culturels de la méthodologie Dev
 
 ## Intégration continue et sécurité
 
-Vous le découvrirez en détails dans le chapitre "[Continuous integration (CI)](#continuous-integration-ci)", l'intégration continue permet de contrôler automatiquement une modification apportée à un logiciel.
+Décrite en détail dans le chapitre "[Continuous integration (CI)](#continuous-integration-ci)", l'intégration continue permet de contrôler automatiquement une modification apportée à un logiciel.
 
-Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans sa usine logicielle (ex: GitLab) que sa contribution ne répond pas à la politique de l'organisation et dispose du message d'erreur expliquant le problème. Il peut ainsi immédiatement effectuer les modifications pour se conformer.
+Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans son [usine logicielle](#usine-logicielle) (ex: GitLab) que sa contribution ne répond pas à la politique de l'organisation et peut voir un message d'erreur lui expliquant le problème. Il peut ainsi immédiatement effectuer les modifications pour se conformer.
 
 C'est ici qu'on attend l'expertise des responsables de la sécurité. Ces profils doivent expliquer aux ingénieurs DevOps et aux SRE ce qui concrètement doit être contrôlé. Ces règles sont ensuite transcrites en code qui formera des tests automatisés, dans une chaîne d'intégration continue utilisée par tous les projets de l'entreprise.
 
@@ -448,8 +448,8 @@ La publication d'une nouvelle version d'un logiciel en production est le moment 
 Pour les équipes des sécurité, la revue de code a pour objectif de vérifier que le maximum de critères de sécurité sont respectés. Par exemple :
 
 - Présence de journaux d'activité qui recensent les actions utilisateur
-- Accès à des sources de données autorisées (cf. chap. "[Service mesh](#service-mesh)" pour forcer ces politiques)
-- Pas d'envoi de données vers un service non autorisé (cf. chap. "[Service mesh](#service-mesh)" pour forcer ces politiques)
+- Accès à des sources de données autorisées (cf. chapitre "[Service mesh](#service-mesh)" pour forcer ces politiques de sécurité)
+- Pas d'envoi de données vers un service non autorisé (cf. chapitre "[Service mesh](#service-mesh)" pour forcer ces politiques de sécurité)
 - Technique de stockage des mots de passe / des cookies
 - Respect des fonctionnalités RGPD
 
@@ -569,7 +569,7 @@ Des documents de référence tels que ceux du NIST[^NISTZeroTrust] ou de l'_US D
 
 ## Développement basé sur le _zero trust_
 
-Dans le cadre d'un environnement de développement (R&D), le sujet se corse. Pour rester innovantes, vos équipes ont besoin de flexibilité : en utilisant des librairies de dernière génération, en installant les derniers drivers GPU pour faire des expérimentations de _machine learning_ ou encore en testant les performances de leur outil avec une consommation totale ressources de leur machine. En résumé, vos équipes ont besoin d'un accès complet à la configuration de leur machine.
+Dans le cadre d'un environnement de développement (R&D), le sujet se corse. Pour rester innovantes, vos équipes ont besoin de flexibilité. Elles utilisent des librairies de dernière génération, installent les derniers drivers GPU pour faire des expérimentations de _machine learning_ ou encore en testent les performances de leur logiciel, avec une consommation totale ressources de leur machine. En résumé, vos équipes ont besoin d'un accès complet à la configuration de leur machine pour efficacement développer.
 
 Or, comme citée plus haut, la 3ème règle d'une architecture _zero trust_ est de s'assurer que la machine de l'utilisateur est sécurisée. Si vous laissez les droits d'administration à un développeur, il pourra toujours désactiver les paramètres de sécurité de sa machine. Donc que faire ?
 
@@ -684,43 +684,86 @@ Si vous travaillez pour une institution, vous n'avez peut-être pas la contraint
 
 ### Le cycle de vie d'un logiciel moderne
 
-L'un des enjeux du DevOps est de fluidifier le cycle de vie d'un logiciel. Vous découvrirez dans ce chapitre les différentes techniques pour atteindre cet objectif.
+L'un des enjeux du DevOps est de fluidifier le cycle de vie d'un logiciel. Vous allez découvrir dans ce chapitre les différentes techniques pour atteindre cet objectif.
 
 #### Un réseau unique
 
-TODO(flavienbwk): Développer le sujet
+Imaginez quelques instants des équipes de data-scientists, au sein de chacun des bureaux de votre organisation. Superbe ! Tous les métiers ont un appui technique pour traiter leurs données rapidement. Mais rapidement, ces ingénieurs discutent et se rendent compte qu'ils travaillent sur les mêmes sujets, qu'ils développent la même chose. C'est frustrant pour eux, mais cela veut surtout dire que vous perdez de l'argent.
 
-Imaginez quelques instants des data-scientists dans chacun des bureaux de votre organisations. Superbe, tous les métiers ont un appui technique pour traiter leurs données rapidement. Mais rapidement, ces ingénieurs discutent et se rendent compte qu'ils travaillent sur les mêmes sujets, qu'ils développent la même chose. C'est très frustrant pour eux, mais cela veut surtout dire que vous perdez de l'argent.
+Si personne n'a idée de ce sur quoi l'autre travaille, les efforts seront naturellement dupliqués. Dans les grandes organisations, les besoins sont souvent systémiques : les bureaux rencontrent les mêmes problèmes, à quelques détails près. Problèmes auxquels des solutions techniques mutualisées peuvent souvent répondre pour 90% des cas d'usage.
 
-Si personne n'a idée de ce sur quoi l'autre travaille, les efforts seront naturellement dupliqués. En effet dans les grandes organisations, les besoins sont souvent systémiques : les bureaux rencontrent tous les mêmes - ou quasiment les mêmes - problèmes. Problèmes auxquelles des solutions techniques mutualisées peuvent répondre pour 90% des cas d'usage.
+En travaillant sur un réseau unique, les ingénieurs peuvent mutualiser les environnements techniques au lieu de re-déployer une infrastructure dans chaque silo. Par exemple, il est inutile de dupliquer un miroir de librairies de développement, sur deux machines séparées de quelques bureaux l'une de l'autre. Pour le _machine learning_, il est possible en réseau de bénéficier d'une puissance de calcul mutualisée en partageant les ressources d'un super-ordinateur central.
 
-De plus, en travaillant sur un réseau unique, les ingénieurs peuvent mutualiser les environnements techniques au lieu de les re-déployer des services dans chaque silo. Par exemple, il est inutile de dupliquer un miroir de librairies sur une machine à deux bureaux d'une autre. Pour le _machine learning_, il est possible en réseau de bénéficier d'une puissance de calcul mutualisée avec des super-ordinateurs partagés.
+Dans de nombreuses très grandes organisations, le principal frein à l'adoption des logiciels développés en interne est le réseau de déploiement. Les équipes sont contraintes de les déployer sur un réseau différent de celui des métiers pour répondre au besoin opérationnel. Pour rendre leurs logiciels accessibles sur le réseau des métiers, l'impératif est souvent une homologation. Pour tout logiciel développé, ce processus peut prendre plusieurs mois à une année. Si ces équipes déploient des dizaines de logiciels par jour, il est inenvisageable de subir ces délais (cf. chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)"). A la fin, les utilisateurs que vous aurez le moins de temps d'accompagner, délaisseront vos outils car l'irritant temporel deviendra trop important.
 
-Dans l'une de mes précédentes expériences, le principal frein à l'adoption de nos logiciels était le réseau de déploiement. Nous étions contraints de le déployer sur un réseau différent de celui des métiers pour répondre au besoin opérationnel. Pour rendre nos logiciels accessibles sur le réseau des métiers, l'impératif était l'homologation. Pour tout logiciel développé, ce processus mettait en moyenne un an. Déployant des dizaines de logiciels chaque trimestre, homologuer nos logiciels était inenvisageable pour nous (cf. "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)"). Pour les utilisateurs que nous avions le moins le temps d'accompagner, ils délaissaient les outils car l'irritant était trop fort.
+Utiliser un réseau unique est un élément clé dans l'adoption de vos nouveaux outils. Il permet à votre organisation de faire des économies et à vos collaborateurs d'être moins frustrés par les délais.
 
-Utiliser un réseau unique est un élément clé dans l'adoption de vos nouveaux outils. Il permet à votre organisation de faire des économies et à vos collaborateurs d'être moins frustrés.
-
-Ce chapitre est une introduction à l'un des piliers du DevOps décrit dans ce livre : "[Réduire les silos organisationnels](#réduire-les-silos-organisationnels)". Nous détaillerons le sujet à ce moment-là.
+Dans le chapitre suivant, nous verrons comment s'organise une usine logicielle et comment elle permet sur un réseau unique de décupler la productivité de l'organisation.
 
 #### Usine logicielle
 
-TODO(flavienbwk): Développer le sujet
+L'usine logicielle est au cœur de votre infrastructure DevOps. C'est ici que vos ingénieurs vont passer la majorité de leur temps : s'ils ne sont pas en train de coder dans leur IDE[^IDE], ils seront en train de gérer leurs projets dans l'usine logicielle.
 
-TODO(flavienbwk): Le contenu de cette usine logicielle pour employer des pratiques DevOps sera développé
+Une usine logicielle est composée d'une forge logicielle et de services permettant à vos ingénieurs de développer et déployer des logiciels sur votre infrastructure : registre d'images de conteneurs, mirroirs de dépendances, dépôts d'artéfacts/binaires (cf. Nexus[^Nexus], Artifactory[^Artifactory], Distribution[^Distribution] (anciennement _Docker Registry_)). Désormais, la plupart de ces fonctionnalités sont disponibles directement au sein des forges logicielles.
 
-Grâce aux mécanismes de sécurité intégrés, il est tout à fait envisageable d'ouvrir cette plateforme à des partenaires industriels et qu'ils puissent ajouter leurs logiciels selon les règles établies par l'organisation. Ces dernières sont définies par des [ingénieurs SSI](#ingénieur-ssi-devops) internes. C'est déjà le cas de _Platform One_[^PlatformOne] qui ouvre son usine logicielle à des industriels contractualisant avec le Ministère des Armées américain. Ou encore de la [_NATO Software Factory_](https://nsf.dev.nato.int/) l'usine logicielle de l'OTAN[^NatoSoftwareFactory].
+Les forges logicielles les plus populaires sont GitLab et GitHub. Vous aurez tendance à retrouver GitLab de manière plus courante au sein des grandes organisations, car il est déployable sur des réseaux isolés. GitHub quant à lui est uniquement disponible par Internet.
 
-Néanmoins, je rappelle ici qu'il s'agit de pouvoir développer une expertise en interne avant d'être capable de définir des règles pour les autres. Chaque organisation est différente et se doit [d'avoir ses propres experts en interne pour la conseiller au mieux](#le-développement-interne-comme-véritable-alternative).
+Comme nous le verrons dans le chapitre "[GitOps et git flow](#gitops-et-git-flow)", en DevOps, tout le code source des logiciels et toutes les configurations de production sont stockées sous forme de code au sein d'une forge logicielle. On dit ainsi qu'elle est la "source unique de vérité" de votre infrastructure, centralisant toutes les ressources nécessaires au déploiement de services sur votre réseau.
+
+Sans forge logicielle, les équipes de développement travaillaient chacunes dans leur propre dossier local et s'échangaient leur code sur un dossier réseau partagé ou par clé USB. Cela faisait perdre beaucoup de temps lors de la fusion de fonctionnalités développées par plusieurs contributeurs différents et occasionnait de réels problèmes de sécurité. Inutile de dire qu'il n'y avait aucun moyen de tracer les actions ni de retrouver ses fichiers en cas de suppression accidentelle. Qui plus est, les équipes de gestion de projet étaient totalement mises à l'écart du cycle de développement logiciel.
+
+Ces forges logicielles se reposent sur la technologie _git_[^git], permettant de tracer toute contribution. Grâce à _git_, il est possible de savoir qui a fait quelle modification à quel moment. On peut remonter l'historique des contributions et gérer simplement la fusion des contributions. Nous détaillerons plus en détails ces mécanismes dans le [chapitre suivant](#gitops-et-git-flow).
+
+Aujourd'hui, les équipes de développement, d'administration système, de SSI et de _management_ travaillent conjointement sur ce type de plateforme en y capitalisant :
+
+- La liste des fonctionnalités à développer pour un logiciel (tâches, priorités, échéances... cf. méthodologie agile)
+- Les échanges sur la conception d'une fonctionnalité (commentaires dans les tâches)
+- La documentation utilisateur et technique des logiciels
+- Le code source des logiciels
+- La documentation de l'infrastructure
+- Les scripts d'administration de l'infrastructure
+- Les règles de sécurité (cf. chapitre "[Intégration continue et sécurité](#intégration-continue-et-sécurité)")
+- Les règles de qualité logicielle
+
+![Interfaces GitLab et GitHub pour (de gauche à droite) : la gestion de projet, la visualisation de documentation, la capitalisation du code.](./images/gitlab_github_illustrations_screenshots.png)
+
+L'objectif est de stocker dans un seul endroit le maximum de connaissances, de sorte à être certain de consulter la documentation la plus à jour.
+
+Pour moi, _git_ est par exemple un moyen privilégié de capitaliser des guides, des tutoriels et même des procédures administratives pour mes équipes. Si quelqu'un observe une erreur ou une information obsolète dans une documentation, il peut directement proposer la modification dans _git_ pour garder le document à jour. On peut résumer ce mode de travail en disant que les équipes adoptant le DevOps remplacent les traditionnels _Word_ ou _Excel_ en _Markdown_ (format des documentations dans les projets _git_). Ce format conçu pour être intuitif à la fois pour les humains et les machines[^Markdown], est indépendant de toute technologie propriétaire (ex: _Microsoft Word_ est une technologie propriétaire).
+
+Il est même possible de réaliser des présentations sous forme de code, visualisables dans un simple navigateur (cf. [Markdown-Slides](https://github.com/dadoomer/markdown-slides)[^MarkdownSlides], [Slides](https://github.com/maaslalani/slides)[^SlidesProject], [Remark](https://github.com/gnab/remark)[^Remark], [reveal.js](https://github.com/hakimel/reveal.js)[^RevealJS]).
+
+![Exemple de présentation créée avec du Markdown et visualisable dans un navigateur avec Markdown-Slides. Source: github.com/dadoomer/markdown-slides](./images/markdown-slides-browser.png)
+
+En revanche, _git_ n'est pas fait pour stocker des fichiers lourds. On évitera d'y stocker de grandes images, des vidéos, des binaires ou des archives. D'autres technologies permettent de stocker ces types de fichiers (cf. [Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)[^AmazonS3], [Minio S3](https://min.io/)[^MinioS3], [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)[^HDFS], [CephFS](https://docs.ceph.com/)[^CephFS]) sans ou avec une référence vers un projet _git_ (ex. [DVC](https://dvc.org/)[^DVC]).
+
+Mais l'usine logicielle ne se limite pas à la capitalisation de connaissance. Elle est aussi un point de contrôle pour toutes les contributions. Un premier niveau de contrôle se fait en ajoutant les utilisateurs aux projets auxquels ils ont le droit de contribuer. Mais un deuxième niveau de contrôle peut être configuré : grâce aux mécanismes d'intégration continue (cf. chapitre "[Intégration continue](#continuous-integration-ci)"), des scripts automatisés peuvent vérifier la validité d'une contribution en fonction de règles définies par votre organisation (qualité du logiciel, conformité SSI). Si la contribution ne répond pas à vos règles, elle est refusée. Le contributeur le voit immédiatement, sait pourquoi et peut dans les minutes qui suivent proposer une correction.
+
+Les usines logicielles pouvant gérer l'accès aux ressources selon le profil de l'utilisateur, il est tout à fait envisageable d'ouvrir la votre à des partenaires industriels. Ils pourront ainsi ajouter leurs logiciels selon les règles établies par votre organisation et sauront immédiatement comment s'y conformer. Ces dernières sont définies par des [ingénieurs SSI](#ingénieur-ssi-devops) internes. C'est déjà le cas de _Platform One_[^PlatformOne] qui ouvre son usine logicielle à des industriels contractualisant avec le Ministère des Armées américain. Ou encore de la [_NATO Software Factory_](https://nsf.dev.nato.int/), l'usine logicielle de l'OTAN[^NatoSoftwareFactory].
+
+Néanmoins, je rappelle ici qu'il s'agit de pouvoir développer une expertise en interne avant d'être capable de définir des règles pour les autres. Vous devez maîtriser les technologies évoquées dans ce chapitre pour maîtriser la sécurité de votre plateforme. Travaillez donc d'abord pour vos projets internes avant de contrôler des projets externes. Chaque organisation est différente mais se doit [de disposer de ses propres experts en interne, pour la conseiller au mieux](#le-développement-interne-comme-véritable-alternative).
+
+Comme décrit dans le chapitre "[Revues de code](#revues-de-code)", ces dernières sont l'occasion de donner son avis sur une contribution avant qu'elle soit déployée. Il est possible d'appliquer des règles de sortes à ce que des équipes spécifiques (ex: équipe SSI) doivent approuver la contribution avant qu'elle puisse être acceptée. On peut voir ce mécanisme comme un "sceau d'approbation". Les usines logicielles contiennent toutes ces fonctionnalités de validation des contributions, pour garantir au mieux la sécurité de la chaîne logicielle.
+
+Enfin, c'est dans l'usine logicielle que les logiciels développés par vos équipes seront construits (compilés, mis sous un format déployable) puis déployés sur votre infrastructure. Analogues au principe d'[intégration continue](#continuous-integration-ci), les chaînes de déploiement continue ont la charge de déployer en production des logiciels, selon des règles définies sous forme de code (cf. chapitre "[Continuous delivery (CD)](#continuous-delivery-cd)").
+
+Attention : en aucun cas une usine logicielle ne permet à vos équipes de développer à proprement parler un logiciel. L'usine logicielle fournit des ressources permettant aux ingénieurs de développer leurs logiciels (dépendances, paquets, binaires) mais ne permet pas de rédiger ni d'exécuter du code à l'intérieur. L'usine logicielle est au développeur ce qu'est la trousse de pinceaux à l'artiste : la trousse contient tous les outils pour peindre, mais c'est sur son chevalet que l'artiste passe son temps à accomplir son œuvre. Le chevalet du développeur c'est son IDE[^IDE] sur son ordinateur : il code et lance son code pour le tester, à mesure qu'il l'écrit. Les options pour mettre en place des environnements de développement, sont décrits dans le chapitre "[Développement basé sur le zero trust](#développement-basé-sur-le-zero-trust)".
+
+Toutes ces technologies contribuent à rapprocher les équipes et unifier les pratiques au sein de l'organisation. Nous allons découvrir dans le prochain chapitre comment les équipes techniques peuvent s'organiser pour collaborer efficacement dans une usine logicielle.
 
 #### GitOps et git flow
 
-TODO(flavienbwk): Développer le sujet + schéma
+TODO(flavienbwk): Développer le sujet + schéma. Organiser ses contributions pour améliorer sa sécurité. Vocabulaire spécifique (issues, merge requests...). Mécanisme complet de merge request.
 
 #### Méthodologie à 12 critères
 
 TODO(flavienbwk): Si on veut une plateforme Cloud avec des techniques DevOps efficaces, il y a quelques règles d'ingénierie logicielle à respecter. [Développer](https://12factor.net/) le [sujet](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/3-Reliable%20GCloud%20Infrastructure%3A%20Design%20and%20Process&openfile=171870)
 
 Ces critères - et en particulier le découpage des logiciels en microservices - couplés à des [chaînes de déploiement continue](#continuous-delivery-cd), augmentent de 43%[^DORACDLooselyCoupledArchitecture] les chances d'anticiper les incidents logiciels (ex: pannes, vulnérabilités ou performances de service dégradées).
+
+### Open-source : risques et avantage stratégique
+
+TODO(flavienbwk): Réticences de certains à l'idée d'employer des logiciels open-source (risques de librairies vérolées, de protestwares). Risques mitigés par les techniques DevOps. La maîtrise de l'open-source est un avantage stratégique (savoir la transformer pour des besoins internes).
 
 ## Accepter l'échec
 
@@ -860,7 +903,7 @@ TODO(flavienbwk): [Design thinking](https://www.coursera.org/learn/developing-a-
 
 ## Réduire le coût du changement
 
-TODO(flavienbwk): Développer le [sujet](https://software.af.mil/training/devops/) (Waterfall vs Agile vs DevSecOps) + photos du PPT
+TODO(flavienbwk): Développer le [sujet](https://software.af.mil/training/devops/) (Waterfall vs Agile vs DevSecOps) + photos du PPT. Voir comment il est possible de mutualiser avec le chapitre [Être au plus proche du métier](#être-au-plus-proche-du-métier).
 
 ## Tirer parti de l'automatisation
 
@@ -937,11 +980,13 @@ Il est courant d'entendre parler de _pipeline_ d'intégration continue (en fran�
 
 ![Illustration d'une chaîne d'intégration continue dans GitLab. [GitLab.com](https://docs.gitlab.com/ee/ci/pipelines/).](./images/ci-pipeline-gitlab.png)
 
-Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est également de tester le code poussé sur plusieurs environnements automatiquement : votre environnement de développement et de préproduction avant de le déployer en production. Néanmoins, ces pipelines multi-environnement introduisent une complexité supplémentaire qu'il faut être en mesure d'absorber lors de sa mise en place par une équipe technique plus importante.
+Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est également de tester le code poussé sur plusieurs environnements automatiquement : votre environnement de développement et de préproduction avant de le déployer en production. Néanmoins, ces pipelines multi-environnement introduisent une complexité supplémentaire qu'il faut être en mesure d'absorber lors de sa mise en place, par une équipe technique plus importante.
+
+TODO(flavienbwk): Au sein d'une usine logicielle, ce sont des technologies telles qui les GitLab Runners ou les GitHub Actions qui permettent de lancer des tâches d'intégration continue. Mettre des illustrations de code de CI.
 
 ### Continuous Delivery (CD)
 
-TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d)}
+TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d)}. Mettre des illustrations.
 
 ### Développement piloté par tests
 
@@ -1044,7 +1089,7 @@ Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _
 1. Centralisation des logs applicatifs et réseaux (cf. [Fluentd](https://www.fluentd.org/)[^FluentdWebsite], [Loki](https://grafana.com/oss/loki/)[^LokiGithub], [OpenTelemetry](https://opentelemetry.io/)[^OpenTelemetry])
    ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com](./images/kibana_logs.png)
 2. Centralisation des métriques de performance des noeuds et des conteneurs du cluster (références identifiques au point 1)
-   ![Tableau de bord Grafana des ressources consommées par les conteneurs d'une application dans Kubernetes, remontées par Loki. Source : grafana.com](./images/grafana_loki_metrics.jpg)
+   ![Tableau de bord Grafana des ressources consommées par les conteneurs d'une application dans Kubernetes, remontées par Loki. Source : grafana.com](./images/grafana_loki_metrics.png)
 3. Analyse antivirus du contenu des noeuds et des conteneurs (cf. [Docker Antivirus Exclusions](https://docs.docker.com/engine/security/antivirus/), [Kubernetes ClamAV](https://cloud.google.com/community/tutorials/gcp-cos-clamav))
 4. Détection de comportements suspects d'appels système Linux (cf. [Sysdig Falco](https://github.com/falcosecurity/falco)[^SysdigFalco])
 5. Contrôle et audit des configurations du cluster (cf. [Gatekeeper](https://github.com/open-policy-agent/gatekeeper)[^GatekeeperK8s], [OpenSCAP](https://www.open-scap.org)[^OpenSCAP])
@@ -1215,7 +1260,7 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **DevSecOps** (Development, Security and Operations) : partie du DevOps visant à intégrer les notions de sécurité dès la phase de conception d'un nouveau logiciel ou d'une nouvelle infrastructure. Il s'agit d'organiser l'entreprise de telle sorte à ce que les équipes de Sécurité des Systèmes d'Information (SSI) soient associées à l'ensemble des réflexions au cœur des projets de vos équipes de développement. (cf. [Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops))
 - **FinOps** (Financial Operations) : ensemble de pratiques pour mieux comprendre et gérer les coûts financiers d'une infrastructure cloud. Cela comprend le suivi et l'optimisation des dépenses, ainsi que la gestion de la facturation et des paiements. Par exemple à l'aide de tableaux de bord ou d'algorithmes automatisés.
 - **MLOps** (Machine Learning Operations) : ensemble de pratiques pour la collaboration et la communication entre les équipes de _datascience_ et de production pour le développement et le déploiement efficace de modèles de _machine learning_ (ML). L'objectif est d'améliorer la rapidité, la qualité et la résilience des modèles de ML en automatisant et standardisant. (cf. _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
-- **GitOps** (Git Operations) : ensemble de règles visant à utiliser _git_[^Git] comme unique source de vérité pour standardiser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#continuous-integration-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
+- **GitOps** (Git Operations) : ensemble de règles visant à utiliser _git_[^git] comme unique source de vérité pour standardiser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#continuous-integration-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
 - **EmpOps** (Employees Operations) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs, OfficeLife...).
 - **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
@@ -1446,8 +1491,6 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^ANSSIQualifiedSoftware]: La [certification "critères communs"](https://www.ssi.gouv.fr/administration/produits-certifies/cc/) de l'ANSSI requiert la définition d'une version du logiciel audité.
 
-[^Git]: [Page Wikipédia de Git](https://fr.wikipedia.org/wiki/Git)
-
 [^DataOpsPaper]: CAPIZZI, Antonio; DISTEFANO, Salvatore; MAZZARA, Manuel. [From DevOps to DevDataOps](https://arxiv.org/pdf/1910.03066.pdf). 2019.
 
 [^DataOpsManifesto]: _18 DataOps principles of [The DataOps Manifesto](https://dataopsmanifesto.org/en/)_.
@@ -1673,7 +1716,7 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 
 [^FluentdWebsite]: Site officiel du projet Fluentd : _fluentd.org_.
 
-[^SysdigFalco]: Projet GitHub du projet Sysdig Falco : _github.com/falcosecurity/falco_.
+[^SysdigFalco]: Projet GitHub de Sysdig Falco : _github.com/falcosecurity/falco_.
 
 [^AnchoreSBOM]: Site officiel du projet Anchore : _anchore.com_.
 
@@ -1696,3 +1739,31 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^Consul]: Site officiel du projet Hashicorp Consul : _consul.io_.
 
 [^Linkerd]: Site officiel du projet Buoyant Linkerd : _linkerd.io_.
+
+[^DVC]: Data Version Control (DVC) est un système de versionnage de données massives (ex: modèles d'intelligence artificielle), reposant sur des technologies de stockage Cloud (ex: S3). _dvc.org_.
+
+[^git]: _git_ est un système de "contrôle de version" créé en 2005, traquant les modifications apportées aux fichiers dans un projet (gestion de l'historique des fichiers, de la fusion des contributions, imputabilité des actions). Il est le plus utilisé au monde. Des alternatives historiques et moins populaires existent : Apache Subversion (SVN), Mercurial.
+
+[^Artifactory]: _JFrog Artifactory_ est une plateforme logicielle pour héberger et gérer tous les artéfacts, binaires, paquets, fichiers, conteneurs et composants utilisés dans sa chaîne logicielle. _jfrog.com/artifactory_.
+
+[^Distribution]: _Distribution_ est un logiciel permettant de stocker et distribuer des images de conteneurs. _github.com/distribution/distribution_.
+
+[^Nexus]: _Sonatype Nexus_ est une plateforme logicielle pour héberger et gérer ses artéfacts, binaires, paquets et fichiers utilisés dans sa chaîne logicielle. _sonatype.com/products/nexus-repository_.
+
+[^CephFS]: _CephFS_ est une technologie de stockage de fichiers distribuée. _ceph.com_.
+
+[^HDFS]: _Hadoop Distributed File System_ (HDFS) est une technologie de stockage de fichiers distribuée de l'écosystème Hadoop. _hadoop.apache.org_.
+
+[^MinioS3]: _MinIO_ est une technologie de stockage de fichiers sous format objets S3 distribuée. _min.io_.
+
+[^AmazonS3]: _S3_ (_Amazon S3_) est une technologie de stockage de fichiers sous format objets S3 distribuée, créée par Amazon. _aws.amazon.com/s3_.
+
+[^MarkdownSlides]: _markdown-slides_ est un outil permettant de créer des présentations à partir de fichiers Markdown. _github.com/dadoomer/markdown-slides_.
+
+[^SlidesProject]: _Slides_ est un outil permettant de créer des présentations dans un terminal à partir de fichiers Markdown. _github.com/maaslalani/slides_.
+
+[^Remark]:  _Remark_ est un outil permettant de créer des présentations à partir de fichiers Markdown. _github.com/gnab/remark_.
+
+[^Markdown]: "Markdown est un langage de balisage léger créé en 2004 par John GRUBER, avec l'aide d'Aaron SWARTZ, dans le but d'offrir une syntaxe facile à lire et à écrire". Source : _fr.wikipedia.org/wiki/Markdown_.
+
+[^RevealJS]: _Remark_ est un outil permettant de créer des présentations à partir de fichiers HTML. _github.com/hakimel/reveal.js_.
