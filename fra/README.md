@@ -206,7 +206,7 @@ Comme évoqué dans le chapitre "[Too big, too soon](#too-big-too-soon)", adopte
 
 Si vous avez l'impression d'avoir déjà entendu cela et que vous lisez ce livre, ces paroles ont probablement succédé pour vous à un sentiment de consternement.
 
-Il peut etre compréhensible d'avoir selon l'environnement (exigences de sécurité, taille des équipes) des délais, mais il ne doit pas être toléré d'être en retard. En aucun cas cette affirmation ne doit devenir la réponse par défaut.
+Il peut etre compréhensible d'avoir selon l'environnement des délais (exigences de sécurité, taille des équipes), mais l'organisation ne doit pas tolérer être en retard. En aucun cas cette affirmation ne doit devenir la réponse par défaut.
 
 Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire pire peut-être, de fainéantise.
 
