@@ -162,19 +162,23 @@ Changer la culture d'une institution prend du temps, mais prendre des raccourcis
 
 ## Les initiatives dans les organisations
 
-Parmi les organisations avec lesquelles j'ai pu travailler, j'observe que les nouveaux décideurs - averses au changement - demandent à leurs subordonnés de trouver "dans les plus brefs délais" des solutions aux problèmes qu'ils découvrent.
+Il peut arriver que certains décideurs nouvellement arrivés, demandent à leurs subordonnés de trouver "rapidement" des solutions aux problèmes qu'ils découvrent.
 
-La plupart du temps, il s'agit de trouver des solutions techniques, faciles à concevoir et à déléguer. Des initiatives - plus ou moins matures - existent souvent déjà au sein de l'organisation. Elles peuvent même parfois suggérer des pratiques s'approchant d'un fonctionnement en mode DevOps.
+Souvent, il s'agit pour eux de trouver des solutions techniques : faciles à concevoir et à déléguer. Néanmoins, des initiatives - plus ou moins matures - existent souvent déjà au sein de l'organisation.
 
-Ces nouveaux responsables aiment se mettre en ordre de marche pour acheter des technologies "sur l'étagère", ou lancer un tout nouveau projet. Leur volonté est d'obtenir un effet immédiat - à différencier d'un résultat immédiat. Mais ils se lancent en faisant fi des contraintes inhérentes à l'organisation : maturité de l'environnement organisationnel et technique, volume ou type de données supportés par les outils, matériel et RH disponible, dette technique, courbe d'apprentissage... Ces contraintes sont déjà souvent connues depuis des années par les experts internes. Contraintes ayant justement mené à des initiatives pour y répondre : soit ignorées, soit négligées, soit seulement inconnues.
+Acheter des technologies "sur l'étagère" ou lancer un nouveau projet peut sembler plus simple et permettre d'obtenir un résultat immédiat. Mais se lancer en faisant fi des contraintes inhérentes à l'organisation peut être risqué (maturité de l'environnement organisationnel et technique, volume ou type de données supportés par les outils, ressources humaines et matériel, dette technique, courbe d'apprentissage...). Ces contraintes sont souvent déjà connues et exprimées depuis des années par l'expertise interne. Ces frustrations mènent quelques fois à des initiatives qui tentent d'y répondre : soit inconnues, soit négligées, soit ignorées.
 
-Malheureusement, ces décideurs ont rarement l'habitude d'aller faire le tour de l'organisation et oser poser des questions. Ils ont la plupart du temps l'irrésistible tentation de privilégier leurs propres réflexions, en faignant demander conseil à leurs experts. Cela résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs, une mauvaise communication et donc de la frustration pour les employés comme pour les métiers.
+Or, les décideurs ont rarement le temps d'aller faire le tour de l'organisation et poser des questions. Ils ont par conséquent tendance à privilégier leurs propres réflexions, en oubliant de demander conseil à leurs experts. Cela résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs, une mauvaise communication et donc de la frustration au sein de l'entreprise.
 
-Une parfaite illustration est celle du Ministère des Armées américain qui a souhaité lancer une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne] de l'Armée de l'Air américaine, dont la finalité était identique.
+Une parfaite illustration est celle du Ministère des Armées américain qui a lancé une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne], dont la finalité était identique. Au delà d'avoir provoqué des frustrations au sein des équipes de _Platform One_[^ChaillanDisaTweet], le programme _Vulcan_ accuse des retards et des surcoûts[^DISAVulcanDelays].
 
-Néanmoins, en tant que meneur d'une initiative, vous devez comprendre la crainte des décideurs vis-à-vis d'une initiative interne : confier un projet ambitieux disruptant les pratiques organisationnels a plusieurs risques. Premièrement si vous décidez de monter votre propre équipe, il se peut que ces personnes partent à n'importe quel moment, laissant derrière elle un travail qu'il n'est souvent pas possible de reprendre au vu de la maturité des réflexions qu'elle entreprenait. Voilà pourquoi beaucoup d'organisations préfèrent payer un tiers-partie, avec un cahier des charges pour que le décideur soit certain d'obtenir un résultat (au vu de l'obligation contractuelle du tiers-partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique est obsolète. Deuxièmement, cela implique un changement culturel qu'il faut être capable d'appréhender. Peut-être qu'il est encore trop tôt pour l'organisation, qu'il faut encore acculturer au travers de présentations et d'exemples de réussites. En effet, il faut que le chef comprenne l'impact de cette transformation sur l'organisation : l'achat de matériel, la transformation de la stratégie RH ou encore la formation des personnels historiques. Aidez vos responsables à se projeter pendant que vous travaillez à changer les choses.
+Cependant en tant que meneur d'une initiative interne, vous devez comprendre la crainte des décideurs : confier un projet ambitieux disruptant les pratiques organisationnelles a plusieurs risques. 
 
-De votre côté, soyez un décideur audacieux, honnête intellectuellement[^BiaisCognitifs] et à l'écoute de vos experts : vous perdrez moins de temps, d'argent et de crédibilité.
+Premièrement si vous décidez de monter votre propre équipe, il se peut que ces personnes partent à n'importe quel moment, laissant derrière elles un travail qu'il n'est souvent pas possible de reprendre au vu de la maturité avancée des réflexions qu'elle entreprenait. Voilà pourquoi beaucoup d'organisations préfèrent payer un tiers-partie, avec un cahier des charges bien définit pour que le décideur soit certain d'obtenir un résultat (obligation contractuelle du tiers-partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique est obsolète.
+
+Deuxièmement, cela implique un changement culturel qu'il faut être capable d'appréhender. Peut-être qu'il est encore trop tôt pour l'organisation, qu'il faut encore acculturer au travers de présentations et d'exemples de réussites. En effet, il faut que le chef comprenne l'impact de cette transformation sur l'organisation : l'achat de matériel, la transformation de la stratégie RH ou encore la formation des personnels historiques. Aidez vos responsables à se projeter pendant que vous travaillez à changer les choses.
+
+De votre côté, soyez un décideur audacieux, honnête intellectuellement[^BiaisCognitifs] et à l'écoute de vos experts pour ne perdre ni temps, ni argent, ni crédibilité.
 
 ## Réorganisations chroniques
 
@@ -1519,11 +1523,11 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DefyingGravity]: DUNLAP, Preston. [_Defying gravity_](https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z/). 2022.
 
-[^PlatformOne]: [_Platform One_](https://software.af.mil/team/platformone/) is a DoD-wide DevSecOps Managed Service.
+[^PlatformOne]: [_Platform One_](https://software.af.mil/team/platformone/) est une plateforme lancée en 2018 par l'_US Air Force_ permettant la collaboration logicielle dans une démarche DevSecOps, à l'échelle du Ministère des Armées des Etats-Unis.
 
 [^BiaisCognitifs]: HUSSLER, Caroline; RONDÉ, Patrick. [« Biais cognitifs et choix technologiques : une analyse des priorités des experts français »](https://www.cairn.info/revue-economie-et-prevision-1-2006-4-page-65.htm), Économie & prévision, vol. 175-176, no. 4-5, 2006, pp. 65-77.
 
-[^DISAVulcan]: [DISA 'Vulcan' DevSecOps program](https://defensescoop.com/2022/10/21/disa-to-launch-vulcan-devsecops-program/). 2022.
+[^DISAVulcan]: [Programme DevSecOps _Vulcan_](https://defensescoop.com/2022/10/21/disa-to-launch-vulcan-devsecops-program/) de la _Defense Information Systems Agency_ (DISA) américaine. 2022.
 
 [^WeaveWorksServiceMeshArticle]: NGINX Blog. [_What is a service mesh ?_](https://www.nginx.com/blog/what-is-a-service-mesh/). 2018.
 
@@ -1781,3 +1785,7 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^Markdown]: "Markdown est un langage de balisage léger créé en 2004 par John GRUBER, avec l'aide d'Aaron SWARTZ, dans le but d'offrir une syntaxe facile à lire et à écrire". Source : _fr.wikipedia.org/wiki/Markdown_.
 
 [^RevealJS]: _Remark_ est un outil permettant de créer des présentations à partir de fichiers HTML. _github.com/hakimel/reveal.js_.
+
+[^ChaillanDisaTweet]: [Post LinkedIn de Nicolas CHAILLAN](https://www.linkedin.com/posts/nicolaschaillan_disa-to-launch-vulcan-devsecops-program-activity-6989560308302249984-tsvR) (créateur de _Platform One_) déclarant avoir proposé à la DISA de collaborer sur _Platform One_, en réaction à l'[annonce de la DISA](https://defensescoop.com/2022/10/21/disa-to-launch-vulcan-devsecops-program/) disant vouloir créer une plateforme DevSecOps. 2022.
+
+[^DISAVulcanDelays]: Breaking DEFENSE. Article "[_Learning from Ukraine, DISA extends Thunderdome to include classified SIPRNet_](https://breakingdefense.com/2022/07/learning-from-ukraine-disa-extends-thunderdome-to-include-classified-siprnet)". 2022.
