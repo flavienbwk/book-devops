@@ -811,11 +811,11 @@ Mais respecter une méthodologie commune de contribution (branches, _commits_) n
 
 Vous n'avez peut-être pas à votre main une grande équipe mais souhaitez bénéficier des bonnes pratiques d'organisation sur votre projet _git_. Ce chapitre est pour moi l'occasion de vous présenter une méthode adaptée à la majorité des équipes de développement. C'est celle que j'utilise pour la vaste majorité de mes projets : pro ou perso.
 
-S'inspirant du meilleur de plusieurs méthodologies Agile (Scrum[^Scrum], Extreme Programming, Kanban[^KanbanMethod]), elle emprunte leur pragmatisme sans inclure leur lourdeur organisationnelle. Cette méthodologie conviendra davantage à une hiérarchie en transformation, par rapport au _trunk-based development_. Les responsables SSI y sont également plus favorables car elle fixe des versions logicielles et facilite la maintenance de projet de toute taille sur le long terme. Enfin, elle permet aux responsables de projet autant qu'aux développeurs de suivre simplement les développements.
+S'inspirant du meilleur de plusieurs méthodologies Agile (_Scrum_[^Scrum], _Extreme Programming_, _Kanban_[^KanbanMethod]), elle emprunte leur pragmatisme sans inclure leur lourdeur organisationnelle. Cette méthodologie conviendra davantage à une hiérarchie en transformation, par rapport au _trunk-based development_. Les responsables SSI y sont également plus favorables car elle fixe des versions logicielles et facilite la maintenance de projet de toute taille sur le long terme. Enfin, elle permet aux responsables de projet autant qu'aux développeurs de suivre simplement les développements.
 
 Nommée "_Flexible flow_", elle se base sur le _GitHub flow_ mais ajoute un lien entre les équipes de gestion de projet et les équipes techniques.
 
-![](./images/flexible_flow_git.jpg)
+![Exemple de gestion des branches avec la méthode _Flexible flow_](./images/flexible_flow_git.jpg)
 
 Pour faire le lien entre gestion de projet et contributions techniques, les projets GitLab ou GitHub utilisent des _issues_. Ces dernières sont des tâches assignables à un collaborateur, décrivant quoi et comment développer une nouvelle fonctionnalité ou corriger un bug.
 
