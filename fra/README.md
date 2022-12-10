@@ -439,7 +439,7 @@ Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ dif
 
 Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées, ou vous n'êtes peut-être pas dimensionné en terme RH pour le faire.
 
-En DevOps, on pratique la méthodologie [GitOps](#gitops) : chaque développeur travaille sur sa propre branche et développe sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" (communément appelée _merge request_ ou _pull request_) dans la branche principale. Ce processus est détaillé dans le chapitre "[workflow git](#workflow-git)".
+En DevOps, on pratique la méthodologie [GitOps](#gitops) : chaque développeur travaille sur sa propre branche et développe sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" (communément appelée _merge request_ ou _pull request_) dans la branche principale. Ce processus est détaillé dans le chapitre "[workflow git](#workflows-git)".
 
 La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale. C'est à ce moment que les différentes personnes impliquées dans la vérification de la qualité d'une contribution peuvent écrire leurs commentaires.
 
@@ -714,7 +714,7 @@ Une usine logicielle est composée d'une forge logicielle et de services permett
 
 Les forges logicielles les plus populaires sont GitLab et GitHub. Vous aurez tendance à retrouver GitLab de manière plus courante au sein des grandes organisations, car il est déployable sur des réseaux isolés. GitHub quant à lui est uniquement disponible par Internet.
 
-Comme nous le verrons dans le chapitre "[GitOps et workflow git](#gitops-et-workflow-git)", en DevOps, tout le code source des logiciels et toutes les configurations de production sont stockées sous forme de code au sein d'une forge logicielle. On dit ainsi qu'elle est la "source unique de vérité" de votre infrastructure, centralisant toutes les ressources nécessaires au déploiement de services sur votre réseau.
+Comme nous le verrons dans le chapitre "[GitOps et workflow git](#gitops-et-workflows-git)", en DevOps, tout le code source des logiciels et toutes les configurations de production sont stockées sous forme de code au sein d'une forge logicielle. On dit ainsi qu'elle est la "source unique de vérité" de votre infrastructure, centralisant toutes les ressources nécessaires au déploiement de services sur votre réseau.
 
 Sans forge logicielle, les équipes de développement travaillaient chacunes dans leur propre dossier local et s'échangaient leur code sur un dossier réseau partagé ou par clé USB. Cela faisait perdre beaucoup de temps lors de la fusion de fonctionnalités développées par plusieurs contributeurs différents et occasionnait de réels problèmes de sécurité. Inutile de dire qu'il n'y avait aucun moyen de tracer les actions ni de retrouver ses fichiers en cas de suppression accidentelle. Qui plus est, les équipes de gestion de projet étaient totalement mises à l'écart du cycle de développement logiciel.
 
@@ -767,7 +767,7 @@ Exemple : si vous devez créer un mécanisme de sauvegarde, vous allez coder un 
 
 Vous pouvez commencer par écrire des scripts d'IaC lançables manuellement, puis opter pour une solution automatisée après être monté en maturité sur ce sujet (ex: Ansible automatisé par chaîne de CI + ArgoCD).
 
-#### workflow git
+#### Workflows git
 
 Un _workflow git_ est une méthode pour organiser les contributions au code d'un logiciel.
 
@@ -796,19 +796,91 @@ Plusieurs méthodes ont émergé au cours du temps[^TrunkBaseDevHistory] mais il
 - _Release Branching_ : Orientée vers la publication (_release_) périodique d'un logiciel, cette méthode consiste à créer une nouvelle branche à partir de la branche principale, puis à la stabiliser avec des corrections de bugs et d'autres changements avant publication. Ici, une _release_ correspond à une branche qui évolue longtemps en parallèle de la branche principale, puis devient éventuellement dépréciée au bout d'un moment. Elle permet à des "groupes de développeurs" de travailler ensemble sur une _release_ en particulier ou une version personnalisée du logiciel pour un client. Cela limite les conflits mais complexifie l'unification des contributions entre versions.
 - _Gitflow_ : Extension de la méthode _Release Branching_, celle-ci utilise 6 branches[^gitflowgithub] vivant en parallèle et adressant des besoins précis (_release_, _hotfix_, _feature_, _support_, _bugfix_ en plus de la branche principale _master_ ou _main_). Elle est historiquement utilisée pour gérer de très grands projets.
    ![Exemple de Gitflow. Source : fpy.cz (Filip PYTLOUN)](./images/gitflow.png)
-- _GitHub flow_ / _GitLab flow_ : Cette méthode est orientée pour la publication en continue d'un logiciel (cf. chapitre "[Déploiement continu](#continuous-delivery-cd)"). Elle élimine la complexité apportée par le _Gitflow_ en supprimant ses 5 branches parallèles à la branche principale. Un développeur doit créer une branche par nouvelle fonctionnalité, à partir de la branche principale. Une _release_ peut être créée à n'importe quel moment à partir de la branche principale. Au delà de sa simplicité, l'intérêt est d'avoir une branche qui contient un code fonctionnel en permanence et de savoir qu'il est à jour à tout moment.
+- _GitHub flow_ / _GitLab flow_ : Cette méthode élimine la complexité apportée par le _Gitflow_ en supprimant ses 5 branches parallèles à la branche principale. Un développeur doit créer une branche par nouvelle fonctionnalité, à partir de la branche principale. Une _release_ peut être créée à n'importe quel moment à partir de la branche principale. Au delà de sa simplicité, l'intérêt est d'avoir une branche qui contient un code fonctionnel en permanence et de savoir qu'il est à jour à tout moment.
    ![Exemple de flow GitLab. Source : gitlab.com](./images/gitlab-flow.png)
-- _Trunk-based_ : Similaire au _GitHub flow_, cette méthode implique l'utilisation d'une branche principale (appelée _trunk_) à partir de laquelle on peut créer une nouvelle branche pour coder sa fonctionnalité. Elle incite à développer de petits  En revanche, la _release_ n'est créée ici que sur la branche principale, après la fusion de la fonctionnalité développée. Cela permet de simplifier les retours en arrière en cas de bug sur une contribution. (TODO: comment implémenter dans Gitlab une CI à chaque commit qui fait du rollback si ça ne fonctionne pas ?)
+- _Trunk-based_ : Cette méthode est orientée vers la publication en continu d'un logiciel (cf. chapitre "[Déploiement continu](#continuous-delivery-cd)"). Contrairement au _GitHub flow_, il n'y qu'une seule branche avec cette méthode. Chacun pousse son code directement dans la branche principale (le _trunk_). Elle incite à réaliser de petites contributions qui sont facilement annulables en cas de bug. Elle réduit le temps passé sur les conflits car le développeur synchronise plus régulièrement son code avec le reste des contributions. Cette méthode s'appuie fortement sur les mécanismes de CI/CD : chaque contribution est évaluée (CI). Si elle passe, le logiciel peut être automatiquement mis à jour (CD) en créant une _release_. Cela permet également de s'assurer que les mécanismes de mise en production (CD) fonctionnent à tout moment. Plusieurs sources - au moment de l'écriture de ce chapitre - défendent une approche alternative du _trunk-based development_ en rendant possible la création de branches d'une très courte durée de vie (maximum 1 jour).
+   ![Exemple de workflow git _trunk-based_](./images/trunk_git.jpg)
 
-Selon Atlassian, le _workflow git_ à l'état de l'art est aujourd'hui le _trunk-based development_[^AtlassianGitflow]. La base de code de Google en est l'exemple parfait : malgré des dizaines de milliers de contributions quotidiennes, c'est cette méthode qu'elle a choisie[^GoogleSingleRepository].
+Selon Atlassian, le _workflow git_ à l'état de l'art est aujourd'hui le _trunk-based development_[^AtlassianGitflow]. La base de code de Google est un bon exemple : malgré des dizaines de milliers de contributions quotidiennes, c'est cette méthode qu'elle a choisie[^GoogleSingleRepository].
 
-Néanmoins, vous n'avez peut-être pas les équipes de Google. Le _trunk-based development_ nécessite une rigueur particulière que seule une équipe technique éxpérimentée peut assumer. Dans ce cas là, il est recommandé de rester sur du _GitHub flow_[^WhyTrunkIsNotForEveryone].
+Néanmoins, vous n'avez peut-être pas les équipes d'ingénieurs de Google. Le _trunk-based development_ implique une rigueur particulière que seule une équipe technique éxpérimentée peut assumer. Cette méthode nécessite des chaînes d'intégration continue qui vous assurent que le code poussé est valide (au risque de publier une version du logiciel qui ne fonctionne pas). Elle implique aussi la création de chaînes de déploiement continu optimisées (car régulières). Ecrire ces chaînes prend du temps et requiert de l'expérience. Si vous n'avez pas une équipe dimensionnée en conséquence, il est recommandé de rester sur du _GitHub flow_[^WhyTrunkIsNotForEveryone].
 
-#### Un workflow git équilibré
+Mais respecter une méthodologie commune de contribution (branches, _commits_) n'est pas suffisant. Vous pouvez désormais plus facilement collaborer mais n'êtes pas en mesure de bien comprendre où en est chacun. Dans le chapitre suivant, je vous propose une méthode d'organisation prenant en compte la gestion de projet.
 
-Mais respecter seulement un mécanisme de branches ou un autre
+#### _Flexible flow_ : un workflow git équilibré
 
-TODO(flavienbwk): Développer le sujet + schéma. Organiser ses contributions pour améliorer sa sécurité. Vocabulaire spécifique (issues, merge requests...). Mécanisme complet de merge request.
+Vous n'avez peut-être pas à votre main une grande équipe mais souhaitez bénéficier des bonnes pratiques d'organisation sur votre projet _git_. Ce chapitre est pour moi l'occasion de vous présenter une méthode adaptée à la majorité des équipes de développement. C'est celle que j'utilise pour la vaste majorité de mes projets : pro ou perso.
+
+S'inspirant du meilleur de plusieurs méthodologies Agile (Scrum[^Scrum], Extreme Programming, Kanban[^KanbanMethod]), elle emprunte leur pragmatisme sans inclure leur lourdeur organisationnelle. Cette méthodologie conviendra davantage à une hiérarchie en transformation, par rapport au _trunk-based development_. Les responsables SSI y sont également plus favorables car elle fixe des versions logicielles et facilite la maintenance de projet de toute taille sur le long terme. Enfin, elle permet aux responsables de projet autant qu'aux développeurs de suivre simplement les développements.
+
+Nommée "_Flexible flow_", elle se base sur le _GitHub flow_ mais ajoute un lien entre les équipes de gestion de projet et les équipes techniques.
+
+![](./images/flexible_flow_git.jpg)
+
+Pour faire le lien entre gestion de projet et contributions techniques, les projets GitLab ou GitHub utilisent des _issues_. Ces dernières sont des tâches assignables à un collaborateur, décrivant quoi et comment développer une nouvelle fonctionnalité ou corriger un bug.
+
+![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
+
+En _flexible flow_, toute contribution doit faire référence à une _issue_ qui décrit la genèse de la tâche, comment elle peut être résolue et centralise les réflexions des parties-prenantes. N'importe qui peut créer ces tâches (responsable projet, développeur, utilisateur). C'est le responsable du projet qui les priorise ensuite. Tout développeur nouvellement attribué doit savoir : quoi faire, où commencer et pourquoi, en consultant l'_issue_. Chacune est numérotée automatiquement par la forge logicielle.
+
+Gestion de projet :
+
+1. Utiliser la vue Kanban de sa forge logicielle
+2. Créer quatre colonnes : _Open_, _To do_, _Doing_, _Done_
+3. Créer et documenter les _issues_ (tâches) dans la colonne _Open_
+4. Créer les _labels_ de type de contribution : `type/bug`, `type/feature`, `type/iteration`, `type/refacto`, `type/documentation`, `type/discussion`
+
+    > Permet aux équipes de comprendre la nature de la contribution à faire.
+
+5. Créer les _labels_ pour les domaines de contribution : `area/backend`, `area/frontend`, `area/documentation`, `area/cloud` (Docker, Kubernetes, CI/CD), `area/infrastructure` (Ansible, Terraform, configuration AWS/GCP/Azure)
+
+    > Permet aux équipes spécialisées de savoir quelle tâche traiter. Par exemple sur GitLab, chaque équipe concernée par un label peut s'y "abonner" pour savoir quand une nouvelle tâche est ajoutée.
+
+6. Créer les _labels_ de valeur commerciale : `business-value/p1`, `business-value/p2`, `business-value/p3`, `business-value/p4`
+
+    > Permet de prioriser les tâches selon la valeur commerciale qu'apporte la réalisation de la tâche : `p1` correspond à une priorité commericale élevée. `p4` correspond à une priorité commerciale faible.
+
+7. Créer les _labels_ de complexité : `complexity/1`, `complexity/2`, `complexity/3`, `complexity/4`
+
+    > Permet de prioriser les tâches selon la complexité et le temps que nécessite la tâche : `1` correspond à une tâche peu complexe. `4` correspond à une tâche très complexe ou longue.
+
+8. Créer les _labels_ de priorité : `priority/low`, `priority/medium`, `priority/high`, `priority/critical`
+
+    > Permet de prioriser les tâches selon le contexte actuel du développement du projet (priorités politiques et/ou client).
+
+9. Pour chaque _issue_, attribuer un _label_ de chaque catégorie (domaine, type, valeur commerciale, complexité, priorité)
+10. Ordonner les _issues_ selon la priorité : plus une _issue_ est en haut dans la colonne _Open_, plus elle est importante
+11. Attribuer une _issue_ à un collaborateur et la déplacer dans _To do_
+
+    > Limiter l'attribution à 1 _issue_ par collaborateur disponible : permet de concentrer les efforts.
+
+12. Eventuellement, créer une _milestone_ pour grouper les _issues_ qui doivent être réalisées pour une version précise du logiciel. Une _milestone_ est la plupart du temps associée à une date de sortie d'une version du logiciel (_dead line_).
+
+Gestion des contributions :
+
+1. _Trunk branch_ : une branche `main`/`master` unique de laquelle les développeurs peuvent partir pour ajouter une contribution
+2. _Features branching_ : modification du code = 1 branche = 1 _issue_
+    - Nomenclature de la branche : `f/#65-add-users-profile-page` pour l'_issue_ n°65 de type _feature_ et ayant pour nom "_Add users profile page_" (cf. chapitre "[Cheatsheet : _Flexible flow_](#cheatsheet--flexible-flow)")
+    - Permet de faciliter le suivi des modifications (onglet _Changes_ dans GitHub/GitLab)
+    - Ne PAS traiter autre chose que le sujet de l'_issue_ dans sa branche
+3. Mentionner le numéro d'_issue_ à chaque _commit_
+    - Nomenclature : _"#65 : Added page icon in sidebar"_
+4. Une fois la contribution prête, créer une _merge request_ vers la _trunk branch_
+    - Nomenclature : _"#65 : Add users profile page"_
+    - Permet d'automatiquement faire référence à la merge request dans l'issue
+5. _Release_ : mettre à jour la version du logiciel (dans les fichiers type `package.json`) et créer une _release_ à partir de la _trunk branch_.
+
+Autres recommandations :
+
+1. Ne pas faire de _merge request_ de la _trunk branch_ vers une _feature branch_
+2. Limiter la taille des contributions en préférant créer plusieurs petites tâches
+3. Limiter le temps passé sur une _review_ pour éviter les conflits chronophages (cf. bonnes pratiques de revue de code[^engpractices])
+4. Chaque contribution doit être validée par une chaîne d'intégration continue (CI)
+5. Si votre équipe gagne en maturité, vous pouvez ajouter une chaîne de déploiement continu à chaque contribution qui passe la CI sur la _trunk branch_.
+
+Cette méthode a démontré son efficacité au cours du temps pour les projets auxquels j'ai contribués. Simple de prise en main même pour les débutants, je l'ai affinée au cours du temps pour qu'elle soit moins lourde à utiliser, tout en permettant de répondre aux problématiques de dette technique des logiciels et de _turn-over_ des équipes.
+
+Pour présenter cette méthodologie à vos équipes et retrouver facilement les références, vous pouvez retrouver sa fiche pratique à la fin du livre, chapitre "[Cheatsheet : _Flexible flow_](#cheatsheet--flexible-flow)".
 
 #### Méthodologie à 12 critères
 
@@ -1520,6 +1592,10 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 - Licence/bachelor ou master en ingénierie réseaux et systèmes avec une forte expérience en ingénierie logicielle
 - Expérience professionnelle significative dans le domaine
 
+# Cheatsheet : _Flexible flow_
+
+![Flexible flow cheatsheet](./images/flexible_flow_git_cheatsheet.jpg)
+
 # Quatrième de couverture
 
 Si de nombreuses organisations ont entamé leur transformation numérique, elles peinent encore à établir une stratégie claire ou efficace.
@@ -1854,3 +1930,9 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^gitflowgithub]: Projet GitHub de git-flow : _github.com/nvie/gitflow_.
 
 [^WhyTrunkIsNotForEveryone]: MORRIS, Ben. "[_Why trunk-based development isn’t for everybody_](https://www.ben-morris.com/why-trunk-based-development-isnt-for-everybody/)". 2019.
+
+[^KanbanMethod]: Atlassian. "[_What is Kanban ?_](https://atlassian.com/agile/kanban)". _atlassian.com/agile/kanban_.
+
+[^Scrum]: Scrum.org. "[_What is Scrum ? A better way to work together and get work done._](https://www.scrum.org/resources/what-is-scrum)". _scrum.org_.
+
+[^engpractices]: Google. "_[Code Review Developer Guide](https://google.github.io/eng-practices/review)_". _google.github.io/eng-practices/review_.
