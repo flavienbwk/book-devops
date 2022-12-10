@@ -24,12 +24,12 @@ TODO(flavienbwk): Department of Defense going DevSecOps :
 - https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf
 - https://breakingdefense.com/2021/05/dod-publishes-devsecops-2-0-docs-for-accelerating-apps/
 
-TODO(flavienbwk): GCHQ [going DevOps](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)
+TODO(flavienbwk): GCHQ [going DevOps](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy). + NELSON https://www.digitalmarketplace.service.gov.uk/digital-outcomes-and-specialists/opportunities/6275
 Le Ministère de la Défense britannique indique dans sa "stratégie d'intelligence artificielle de défense"[^MODDefenseArtificialIntelligenceStrategyReport], vouloir devenir une institution "prête pour l'IA". {}
 
 Microsoft lançait historiquement ses nouveaux produits tous les 3 à 4 ans (ex: Windows, la suite Office). Dès 2014, son président-directeur général Satya NADELLA a annoncé à ses équipes que si l'entreprise continuait à travailler de cette manière, Microsoft allait terminer par devenir obsolète. Les équipes de chaque produit travaillaient indépendamment des autres, avec leur propre manière de s'organiser et leurs propres outils. Il a réorganisé l'entreprise en se basant sur la méthodologie DevOps, unifiant les outils et les pratiques des équipes pour qu'elles rediscutent entre elles[^MicrosoftDevOpsAbelWang].
 
-Néanmoins, la très grande majorité des organisations ont encore du mal à mettre en place concrètement ces nouvelles pratiques. L'obstacle principal est la difficulté à trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
+Néanmoins, la grande majorité des organisations ont encore du mal à mettre en place concrètement ces nouvelles pratiques. L'obstacle principal est la difficulté à trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
 
 Le DevOps étant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études sérieuses auxquelles se référer. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
 
@@ -249,7 +249,7 @@ Pour amorcer votre initiative DevOps, vous avez besoin :
 
 # Comment convaincre et garder la foi
 
-Premièrement, il ne s'agit pas de convaincre. Vous ne pouvez pas arriver devant quelqu'un et dire "vous avez tord, j'ai raison". Votre objectif doit être de donner envie à vos interlocuteurs d'adhérer à votre vision, votre projet. Ainsi, ils seront par eux-mêmes convaincus.
+Premièrement, il ne s'agit pas de convaincre. Vous ne pouvez pas arriver devant quelqu'un et lui dire "vous avez tord, j'ai raison". Votre objectif doit être de donner envie à vos interlocuteurs d'adhérer à votre vision, votre projet. Ainsi, ils seront par eux-mêmes convaincus.
 
 Faire adhérer sa hiérarchie ou des collègues de travail à une initiative n'est pas toujours simple. William MORGAN - directeur général d'une PME réputée dans les technologies - préconise 4 règles à suivre[^WilliamMorganKubecon2018] :
 
@@ -439,7 +439,7 @@ Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ dif
 
 Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées, ou vous n'êtes peut-être pas dimensionné en terme RH pour le faire.
 
-En DevOps, on pratique la méthodologie [GitOps](#gitops-et-git-flow) : chaque développeur travaille sur sa propre branche et développe sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" (communément appelée _merge request_ ou _pull request_) dans la branche principale. Ce processus est détaillé dans le chapitre "[GitOps et git flow](#gitops-et-git-flow)".
+En DevOps, on pratique la méthodologie [GitOps](#gitops) : chaque développeur travaille sur sa propre branche et développe sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" (communément appelée _merge request_ ou _pull request_) dans la branche principale. Ce processus est détaillé dans le chapitre "[workflow git](#workflow-git)".
 
 La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale. C'est à ce moment que les différentes personnes impliquées dans la vérification de la qualité d'une contribution peuvent écrire leurs commentaires.
 
@@ -475,7 +475,7 @@ Voici un exemple de configuration (code) permettant de mettre à jour le fuseau 
 
 ![Exemple de configuration Ansible illustrant la notion d'_Infrastructure as Code_.](./images/ansible-iac-playbook-example.png)
 
-L'exemple ci-dessus est très simple mais l'IaC peut aller jusqu'à décrire la manière dont des machines peuvent être instanciées et configurées. Une configuration d'Iac peut par exemple totalement configurer une machine de 0 (paramètres réseau, certificats de sécurité, ajout d'utilisateurs, installation des _drivers_ d'une imprimante, configuration des favoris du navigateur...). L'idée est encore une fois d'éviter au maximum l'intervention humaine, pour éviter des commandes erronées, lancées par erreur.
+L'exemple ci-dessus est simple mais l'IaC peut aller jusqu'à décrire la manière dont des machines peuvent être instanciées et configurées. Une configuration d'Iac peut par exemple totalement configurer une machine de 0 (paramètres réseau, certificats de sécurité, ajout d'utilisateurs, installation des _drivers_ d'une imprimante, configuration des favoris du navigateur...). L'idée est encore une fois d'éviter au maximum l'intervention humaine, pour éviter des commandes erronées, lancées par erreur.
 
 ## Sécuriser sa chaîne logicielle
 
@@ -700,7 +700,7 @@ Si personne n'a idée de ce sur quoi l'autre travaille, les efforts seront natur
 
 En travaillant sur un réseau unique, les ingénieurs peuvent mutualiser les environnements techniques au lieu de re-déployer une infrastructure dans chaque silo. Par exemple, il est inutile de dupliquer un miroir de librairies de développement, sur deux machines séparées de quelques bureaux l'une de l'autre. Pour le _machine learning_, il est possible en réseau de bénéficier d'une puissance de calcul mutualisée en partageant les ressources d'un super-ordinateur central.
 
-Dans de nombreuses très grandes organisations, le principal frein à l'adoption des logiciels développés en interne est le réseau de déploiement. Les équipes sont contraintes de les déployer sur un réseau différent de celui des métiers pour répondre au besoin opérationnel. Pour rendre leurs logiciels accessibles sur le réseau des métiers, l'impératif est souvent une homologation. Pour tout logiciel développé, ce processus peut prendre plusieurs mois à une année. Si ces équipes déploient des dizaines de logiciels par jour, il est inenvisageable de subir ces délais (cf. chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)"). A la fin, les utilisateurs que vous aurez le moins de temps d'accompagner, délaisseront vos outils car l'irritant temporel deviendra trop important.
+Dans de nombreuses organisations de grande taille, le principal frein à l'adoption des logiciels développés en interne est le réseau de déploiement. Les équipes sont contraintes de les déployer sur un réseau différent de celui des métiers pour répondre au besoin opérationnel. Pour rendre leurs logiciels accessibles sur le réseau des métiers, l'impératif est souvent une homologation. Pour tout logiciel développé, ce processus peut prendre plusieurs mois à une année. Si ces équipes déploient des dizaines de logiciels par jour, il est inenvisageable de subir ces délais (cf. chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)"). A la fin, les utilisateurs que vous aurez le moins de temps d'accompagner, délaisseront vos outils car l'irritant temporel deviendra trop important.
 
 Utiliser un réseau unique est un élément clé dans l'adoption de vos nouveaux outils. Il permet à votre organisation de faire des économies et à vos collaborateurs d'être moins frustrés par les délais.
 
@@ -714,11 +714,11 @@ Une usine logicielle est composée d'une forge logicielle et de services permett
 
 Les forges logicielles les plus populaires sont GitLab et GitHub. Vous aurez tendance à retrouver GitLab de manière plus courante au sein des grandes organisations, car il est déployable sur des réseaux isolés. GitHub quant à lui est uniquement disponible par Internet.
 
-Comme nous le verrons dans le chapitre "[GitOps et git flow](#gitops-et-git-flow)", en DevOps, tout le code source des logiciels et toutes les configurations de production sont stockées sous forme de code au sein d'une forge logicielle. On dit ainsi qu'elle est la "source unique de vérité" de votre infrastructure, centralisant toutes les ressources nécessaires au déploiement de services sur votre réseau.
+Comme nous le verrons dans le chapitre "[GitOps et workflow git](#gitops-et-workflow-git)", en DevOps, tout le code source des logiciels et toutes les configurations de production sont stockées sous forme de code au sein d'une forge logicielle. On dit ainsi qu'elle est la "source unique de vérité" de votre infrastructure, centralisant toutes les ressources nécessaires au déploiement de services sur votre réseau.
 
 Sans forge logicielle, les équipes de développement travaillaient chacunes dans leur propre dossier local et s'échangaient leur code sur un dossier réseau partagé ou par clé USB. Cela faisait perdre beaucoup de temps lors de la fusion de fonctionnalités développées par plusieurs contributeurs différents et occasionnait de réels problèmes de sécurité. Inutile de dire qu'il n'y avait aucun moyen de tracer les actions ni de retrouver ses fichiers en cas de suppression accidentelle. Qui plus est, les équipes de gestion de projet étaient totalement mises à l'écart du cycle de développement logiciel.
 
-Ces forges logicielles se reposent sur la technologie _git_[^git], permettant de tracer toute contribution. Grâce à _git_, il est possible de savoir qui a fait quelle modification à quel moment. On peut remonter l'historique des contributions et gérer simplement la fusion des contributions. Nous détaillerons plus en détails ces mécanismes dans le [chapitre suivant](#gitops-et-git-flow).
+Ces forges logicielles se reposent sur la technologie _git_[^git], permettant de tracer toute contribution. Grâce à _git_, il est possible de savoir qui a fait quelle modification à quel moment. On peut remonter l'historique des contributions et gérer simplement la fusion des contributions. Nous détaillerons plus en détails ces mécanismes dans le [chapitre suivant](#gitops).
 
 Aujourd'hui, les équipes de développement, d'administration système, de SSI et de _management_ travaillent conjointement sur ce type de plateforme en y capitalisant :
 
@@ -757,7 +757,56 @@ Attention : en aucun cas une usine logicielle ne permet à vos équipes de déve
 
 Toutes ces technologies contribuent à rapprocher les équipes et unifier les pratiques au sein de l'organisation. Nous allons découvrir dans le prochain chapitre comment les équipes techniques peuvent s'organiser pour collaborer efficacement dans une usine logicielle.
 
-#### GitOps et git flow
+#### GitOps
+
+Le GitOps est une méthodologie basée sur le déploiement continu (cf. [continuous delivery](#continuous-delivery-cd)) pour les applications Cloud. Elle utilise des projets _git_ comme une "source unique de vérité", pour la configuration de l'infrastructure et des applications. Ainsi capitalisée, la configuration est dite "déclarative". En d'autres termes, vous "codez" des fichiers de configuration, pour définir la manière de déployer votre infrastructure.
+
+L'idée derrière le GitOps est d'utiliser un projet _git_ comme source de configuration, pour déterminer l'état souhaité du système et d'utiliser des mécanismes automatisés pour maintenir l'état réel du système. Cette synchronisation de l'état souhaité est assurée par des technologies spécifiques (ex: ArgoCD, FluxCD). Cette approche fournit une source unique de vérité pour l'ensemble du système, ce qui facilite le suivi des changements, l'audit de la configuration et permet de s'assurer que l'infrastructure est conforme aux exigences de l'entreprise.
+
+Exemple : si vous devez créer un mécanisme de sauvegarde, vous allez coder un playbook Ansible (cf. chapitre "[Infrastructure as Code (IaC)](#infrastructure-as-code-iac)"), le pousser dans un projet _git_ et une chaîne de déploiement continue va se charger de déployer la modification. Ici, l'état final recherché est décrit par du code. Il peut bien entendu inclure des varibales d'environnement en fonction d'où il doit se déployer.
+
+Vous pouvez commencer par écrire des scripts d'IaC lançables manuellement, puis opter pour une solution automatisée après être monté en maturité sur ce sujet (ex: Ansible automatisé par chaîne de CI + ArgoCD).
+
+#### workflow git
+
+Un _workflow git_ est une méthode pour organiser les contributions au code d'un logiciel.
+
+_git_ permet de collaborer facilement sur du code, en apportant des mécanismes d'historisation des fichiers. Mais pour collaborer efficacement, encore faut-il s'organiser.
+
+Imaginez plusieurs ingénieurs travaillant sur une voiture dans une chaîne d'assemblage. Robert travaille sur le démarreur pendant que Caroline s'assure que les phares répondent correctement aux commandes. Mais quand Robert éteint la la voiture, Caroline ne peut plus mesurer le courant. Robert et Caroline n'arrivent pas à travailler ensemble, en même temps.
+
+A cause d'une urgence personnelle, Robert doit partir rapidement et il se fait remplacer par Marie. Malheureusement, Robert n'a pas eu le temps de communiquer à Marie où il en était. Elle doit donc deviner la situation, à partir de ce qu'elle a devant les yeux.
+
+C'est pareil en logiciel. En travaillant au même endroit au même moment, on entre en collision. Dans _git_, quand deux personnes travaillent sur le même fichier et tentent de le fusionner, cela provoque un "conflit". Il faut un minimum de structure lorsque l'on développe un projet. Sinon, le risque est d'engranger de la dette technique et que le logiciel devienne impossible à faire évoluer.
+
+_git_ fonctionne avec un principe de branches. Par défaut, seule la branche principale `main` ou `master` existe. Elle est la branche considérée comme "stable". Si un intégrateur doit déployer un logiciel en production, il choisira le code présent sur cette branche.
+
+Un développeur qui souhaite concevoir une nouvelle fonctionnalité va créer une nouvelle branche, qui part de la branche principale. Il se retrouve avec une copie du code dont les modifications (_commits_) sont à sa discrétion, sans déranger les autres. Une fois la fonctionnalité finaliséee, le développeur peut faire une "demande de fusion" (_merge request_) vers la branche principale. Voici _workflow git_  le plus simple possible.
+
+![Méthode élémentaire d'organisation dans un projet _git_ : une branche par fonctionnalité développée.](./images/classic_git_merge.jpg)
+
+Il y a trois questions à se poser pour déterminer un "bon" _workflow git_ :
+
+1. Cette méthode va-t-elle s'adapter à la taille de mon équipe ?
+2. Cette méthode permet-elle de facilement retourner à une version antérieure du code en cas d'erreur?
+3. Cette méthode n'est-elle pas trop complexe à utiliser au quotidien ?
+
+Plusieurs méthodes ont émergé au cours du temps[^TrunkBaseDevHistory] mais il en existe 4 principales :
+
+- _Release Branching_ : Orientée vers la publication (_release_) périodique d'un logiciel, cette méthode consiste à créer une nouvelle branche à partir de la branche principale, puis à la stabiliser avec des corrections de bugs et d'autres changements avant publication. Ici, une _release_ correspond à une branche qui évolue longtemps en parallèle de la branche principale, puis devient éventuellement dépréciée au bout d'un moment. Elle permet à des "groupes de développeurs" de travailler ensemble sur une _release_ en particulier ou une version personnalisée du logiciel pour un client. Cela limite les conflits mais complexifie l'unification des contributions entre versions.
+- _Gitflow_ : Extension de la méthode _Release Branching_, celle-ci utilise 6 branches[^gitflowgithub] vivant en parallèle et adressant des besoins précis (_release_, _hotfix_, _feature_, _support_, _bugfix_ en plus de la branche principale _master_ ou _main_). Elle est historiquement utilisée pour gérer de très grands projets.
+   ![Exemple de Gitflow. Source : fpy.cz (Filip PYTLOUN)](./images/gitflow.png)
+- _GitHub flow_ / _GitLab flow_ : Cette méthode est orientée pour la publication en continue d'un logiciel (cf. chapitre "[Déploiement continu](#continuous-delivery-cd)"). Elle élimine la complexité apportée par le _Gitflow_ en supprimant ses 5 branches parallèles à la branche principale. Un développeur doit créer une branche par nouvelle fonctionnalité, à partir de la branche principale. Une _release_ peut être créée à n'importe quel moment à partir de la branche principale. Au delà de sa simplicité, l'intérêt est d'avoir une branche qui contient un code fonctionnel en permanence et de savoir qu'il est à jour à tout moment.
+   ![Exemple de flow GitLab. Source : gitlab.com](./images/gitlab-flow.png)
+- _Trunk-based_ : Similaire au _GitHub flow_, cette méthode implique l'utilisation d'une branche principale (appelée _trunk_) à partir de laquelle on peut créer une nouvelle branche pour coder sa fonctionnalité. Elle incite à développer de petits  En revanche, la _release_ n'est créée ici que sur la branche principale, après la fusion de la fonctionnalité développée. Cela permet de simplifier les retours en arrière en cas de bug sur une contribution. (TODO: comment implémenter dans Gitlab une CI à chaque commit qui fait du rollback si ça ne fonctionne pas ?)
+
+Selon Atlassian, le _workflow git_ à l'état de l'art est aujourd'hui le _trunk-based development_[^AtlassianGitflow]. La base de code de Google en est l'exemple parfait : malgré des dizaines de milliers de contributions quotidiennes, c'est cette méthode qu'elle a choisie[^GoogleSingleRepository].
+
+Néanmoins, vous n'avez peut-être pas les équipes de Google. Le _trunk-based development_ nécessite une rigueur particulière que seule une équipe technique éxpérimentée peut assumer. Dans ce cas là, il est recommandé de rester sur du _GitHub flow_[^WhyTrunkIsNotForEveryone].
+
+#### Un workflow git équilibré
+
+Mais respecter seulement un mécanisme de branches ou un autre
 
 TODO(flavienbwk): Développer le sujet + schéma. Organiser ses contributions pour améliorer sa sécurité. Vocabulaire spécifique (issues, merge requests...). Mécanisme complet de merge request.
 
@@ -897,7 +946,7 @@ TODO(flavienbwk): Postmortem [template](https://cloud.berwick.fr/f/169842).
 
 Quand le postmortem définit un document qui fait suite à un incident, le premortem est un document permettant de savoir quoi faire si tel incident venait à se produire. En amont du lancement d'un projet et tout au long de la gestion de votre production, demandez à vos équipes de rédiger des premortems. Vos chefs de projets et ingénieurs doivent travailler conjointement pour écrire ces "fiches scénario". Cela doit devenir une habitude au cours de l'exploitation et une obligation avant le lancement d'un projet, d'un produit ou d'un nouveau service. Atlassian propose une méthode en 8 points[^AtlassianPremortemMethod] pour effectuer ce type d'analyse.
 
-Il est recommandé de stocker ces documents dans un projet _git_ pour être en mesure de les éditer et de visualiser leurs modifications au cours du temps (cf. chapitre ["GitOps et git flow"](#gitops-et-git-flow)).
+Il est recommandé de stocker ces documents dans un projet _git_ pour être en mesure de les éditer et de visualiser leurs modifications au cours du temps (cf. chapitre ["GitOps"](#gitops)).
 
 ### Accélérer la fidélisation
 
@@ -940,7 +989,7 @@ Voici quelques exemples de configuration :
 
 Bien entendu, quand j'évoque « toutes vous machines », les scripts d'IaC permettent de définir quelles sont exactement ces machines de telle sorte à n'appliquer les modifications que sur tel ou tel groupe de machines.
 
-Cela a plusieurs avantages très importants :
+Cette pratique comporte plusieurs avantages :
 
 - **Documentation** : les scripts d'IaC sont écrits dans des langages de programmation ou à l'aide de fichiers de configuration standardisés. L'ingénieur consultant le projet peut directement voire comment se comporte la configuration et comment il peut l'utiliser ou la modifier.
 - **Fiabilité** : les scripts d'IaC peuvent être lancés par des machines ou des humains, selon l'environnement souhaité (développement, staging, production) en suivant des règles algorithmiques. Il n'y a rien de plus fiable qu'un code exécuté par une machine plutôt qu'un humain. Il est également possible d'appliquer un contrôle de sécurité selon l'utilisateur qui lance ces scripts.
@@ -984,7 +1033,7 @@ Il est courant d'entendre parler de _pipeline_ d'intégration continue (en fran�
     - Tester sa documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. Istio a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
 - Deploy : TODO(flavienbwk): Développer
 
-![Illustration d'une chaîne d'intégration continue dans GitLab. [GitLab.com](https://docs.gitlab.com/ee/ci/pipelines/).](./images/ci-pipeline-gitlab.png)
+![Illustration d'une chaîne d'intégration continue dans GitLab. Source : [gitlab.com](https://docs.gitlab.com/ee/ci/pipelines)](./images/ci-pipeline-gitlab.png)
 
 Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est également de tester le code poussé sur plusieurs environnements automatiquement : votre environnement de développement et de préproduction avant de le déployer en production. Néanmoins, ces pipelines multi-environnement introduisent une complexité supplémentaire qu'il faut être en mesure d'absorber lors de sa mise en place, par une équipe technique plus importante.
 
@@ -1124,9 +1173,9 @@ Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _
 
 La simplicité et l'automatisation sont les caractéristiques fondamentales d'un socle Cloud. Encore une fois, en DevOps, on estime que quelque chose qui n'est pas automatisé ne sera pas utilisé. Les technologies évoquées ci-dessus s'adaptent au logiciel déployé automatiquement. En Cloud, ce n'est plus au logiciel de s'adapter aux technologies du socle.
 
-# Tirer parti de toutes les ressources à sa disposition
+# Tirer parti des ressources à sa disposition
 
-## Trouvez des ambassadeurs pour votre projet
+## Trouver des ambassadeurs pour son projet
 
 L'importance du responsable de projet n'est pas à considérer comme une simple plus-value. C'est lui qui est responsable du fait que le projet atteigne ses objectifs. Il joue aussi souvent le rôle de product owner, un terme défini dans la méthode Agile dont le rôle est de faire le lien entre les équipes techniques et métiers. C'est lui qui « vend » votre projet à vos utilisateurs.
 
@@ -1158,7 +1207,9 @@ Il est une erreur stratégique de se dire que le simple fait de payer un prestat
 
 Voilà pourquoi il est important d'avoir en interne, dans vos propres équipes, des experts pratiquants du sujet que vous voulez développer. Ce sont les seuls qui seront capables de critiquer les propositions de vos prestataires pour vous faire gagner des délais et éviter qu'on vous dupe avec des fonctionnalités au coût exorbitants ou aux promesses irréalistes.
 
-Chaque ingénieur DevOps et SRE le sait : il est impossible qu'un système fonctionne 100% du temps. C'est pourquoi vous ne pouvez pas attendre d'un prestataire, qu'importe le prix que vous paierez, que ce qu'il livre fonctionne à 100%. Même Google [ne promet pas plus de 99.9% de disponibilité](https://workspace.google.com/terms/sla.html) (SLA)[^GoogleWorkspaceSLA] avec sa capitalisation de plus de 1.49 trillions de dollars et ses +150 000 employés rigoureusement sélectionnés.
+Chaque ingénieur DevOps et SRE le sait : il est impossible qu'un système fonctionne 100% du temps. C'est pourquoi vous ne pouvez pas attendre d'un prestataire, qu'importe le prix que vous paierez, qu'il livre quelque chose de 100% fonctionnel.
+
+Pour référence, même Google [ne promet pas plus de 99.9% de disponibilité](https://workspace.google.com/terms/sla.html) (SLA)[^GoogleWorkspaceSLA] avec sa capitalisation de plus de 1.3 billions de dollars et ses +150 000 employés rigoureusement sélectionnés. Amazon (AWS) et son presque billion de dollars de capitalisation ne garantit [pas plus de 99.5%](https://aws.amazon.com/compute/sla)[^AWSSLA].
 
 ### Mieux s'organiser pour ne pas échouer
 
@@ -1203,7 +1254,7 @@ Cette pratique est un win-win-win-win : le client réduit les délais de livrai
 
 Une bonne culture s'entretient par la connaissance des techniques à l'état de l'art. Les compétences techniques de vos équipes constituent le terreau de votre organisation et forgent leur confiance à l'égard de votre résilience.
 
-La formation continue est un moyen simple d'éviter à votre organisation de perdre des millions d'euros chaque année. En effet, si votre personnel reste formé à l'état de l'art des technologies, ils sera moins susceptibles de se faire duper par des tiers-parties. Ces derniers arrivent souvent promettre "la solution idéale" au travers de présentations flatteuses et très ambitieuses, qui cachent la plupart du temps un service non abouti ou complètement non fonctionnel. En restant à jour, vos collaborateurs prendront de meilleures décisions pour votre porte monnaie et le futur de votre organisation.
+La formation continue est un moyen simple d'éviter à votre organisation de perdre des millions d'euros chaque année. En effet, si votre personnel reste formé à l'état de l'art des technologies, ils sera moins susceptibles de se faire duper par des tiers-parties. Ces derniers arrivent souvent promettre "la solution idéale" au travers de présentations flatteuses et particulièrement ambitieuses. Des présentations qui ne manquent pas de cacher, la plupart du temps, un service non abouti ou complètement déficient. En restant à jour, vos collaborateurs prendront de meilleures décisions pour votre porte monnaie et le futur de votre organisation.
 
 Mais garder le rythme n'est pas simple, surtout à la vitesse à laquelle les technologies évoluent. Raison de plus pour mettre en place de bonnes pratiques de formation dès l'arrivée de vos collaborateurs.
 
@@ -1323,7 +1374,7 @@ Avec les équipes d'ingénieurs au contact régulier des métiers vous exposant 
 - Acculturer et conseiller les décideurs sur les nouvelles pratiques
 - Aider les équipes RH à identifier les candidats pertinents
 - Développer et maintenir des outils d'automatisation du cycle de vie de logiciels (GitLab, chaînes de CI/CD)
-- Définir les bonnes pratiques GitOps et assurer la cohérence des développements (_git flow_, gestion de projet kanban, chaînes de CI/CD, standardisation des déploiements avec Docker et Kubernetes...)
+- Définir les bonnes pratiques GitOps et assurer la cohérence des développements (_workflow git_, gestion de projet kanban, chaînes de CI/CD, standardisation des déploiements avec Docker et Kubernetes...)
 - Développer des modèles (_template_) de projets applicatifs pour encourager les bonnes pratiques
 - Accompagner les différentes équipes techniques dans la conteneurisation de leurs applicatifs historiques
 
@@ -1495,7 +1546,7 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^ModelsIA]: Modèles d'intelligence artificielle : algorithmes entraînés pour résoudre une tâche, la plupart du temps sans supervision
 
-[^JupyterNotebook]: Jupyter Notebook : outil de développement très populaire chez les data-scientists
+[^JupyterNotebook]: Jupyter Notebook : outil de développement populaire chez les data-scientists
 
 [^DriversGPU]: Drivers GPU : librairies permettant de faire du calcul accéléré sur carte graphique
 
@@ -1503,7 +1554,7 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^ToDevOps]: [Projet GitHub](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) disponible à [links.berwick.fr/todevops-2](https://links.berwick.fr/todevops-2)
 
-[^GoogleWorkspaceSLA]: [Google Workspace SLA](https://workspace.google.com/terms/sla.html) is available at workspace.google.com/terms/sla.html
+[^GoogleWorkspaceSLA]: Google commence à rembourser ses clients [_Google Workspace_](https://workspace.google.com/terms/sla.html) en dessous de 99.9% de disponibilité. _workspace.google.com/terms/sla.html_.
 
 [^TimeToOutdatedSoftware]: Procter & Gamble Co. [2021 Form 10-K](https://sec.report/Document/80424/000008042421000100/R23.htm). 2021. <+> SPINELLIS, Diomidis; LOURIDAS, Panos; KECHAGIA, Maria. [_Software evolution: the lifetime of fine-grained elements_](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/). 2021.
 
@@ -1791,3 +1842,15 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^ChaillanDisaTweet]: [Post LinkedIn de Nicolas CHAILLAN](https://www.linkedin.com/posts/nicolaschaillan_disa-to-launch-vulcan-devsecops-program-activity-6989560308302249984-tsvR) (créateur de _Platform One_) déclarant avoir proposé à la DISA de collaborer sur _Platform One_, en réaction à l'[annonce de la DISA](https://defensescoop.com/2022/10/21/disa-to-launch-vulcan-devsecops-program/) disant vouloir créer une plateforme DevSecOps. 2022.
 
 [^DISAVulcanDelays]: Breaking DEFENSE. Article "[_Learning from Ukraine, DISA extends Thunderdome to include classified SIPRNet_](https://breakingdefense.com/2022/07/learning-from-ukraine-disa-extends-thunderdome-to-include-classified-siprnet)". 2022.
+
+[^AWSSLA]: AWS instance-level SLA. Les premiers remboursement commencent à 99.5% de disponibiligé. _aws.amazon.com/compute/sla_.
+
+[^GoogleSingleRepository]: POTVIN, Rachel. "[_Why Google stores billions of lines of code in a single repository_](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext)". 2016.
+
+[^AtlassianGitflow]: _"Gitflow has fallen in popularity in favor of trunk-based workflows, which are now considered best practices for modern continuous software development and DevOps practices."_ - [Atlassian Tutorials (atlassian.com)](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+[^TrunkBaseDevHistory]: HAMMANT, Paul. ["Trunk based development: Game changers"](https://trunkbaseddevelopment.com/game-changers/index.html). _trunkbaseddevelopment.com_.
+
+[^gitflowgithub]: Projet GitHub de git-flow : _github.com/nvie/gitflow_.
+
+[^WhyTrunkIsNotForEveryone]: MORRIS, Ben. "[_Why trunk-based development isn’t for everybody_](https://www.ben-morris.com/why-trunk-based-development-isnt-for-everybody/)". 2019.
