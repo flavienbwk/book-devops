@@ -146,9 +146,11 @@ Comprenez que vous avez besoin d'une masse critique de profils SRE/DevOps dans v
 
 Des rapports[^DORAReportSREPractice] appuient cette théorie : pratiquer le SRE n'affecte pas la résilience de l'entreprise avant d'avoir acquis un certain niveau de maturité. C'est à dire qu'il vous faudra atteindre une masse critique avant d'être en mesure de tirer les bénéfices de ces outils et pratiques.
 
-![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE. On constate qu'il faut un certain nombre d'équipes SRE pour obtenir des bénéfices significatifs[^DORAReportSREPRacticesFigures].](./images/adoption-of-sre-practices.png)
+![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE.](./images/adoption-of-sre-practices.png)
 
-À titre d'exemple, avec sa taille Google maintient son ratio de SRE vis-à-vis des développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio doit néanmoins avoir une [tendance logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez.
+> On constate qu'il faut un certain nombre d'équipes SRE pour obtenir des bénéfices significatifs[^DORAReportSREPRacticesFigures]
+
+À titre d'exemple, Google - une société avec plusieurs dizaines de milliers d'ingénieurs - maintient son ratio de SRE vis-à-vis des développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio doit néanmoins avoir une [tendance logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez.
 
 ## Too big, too soon
 
@@ -396,7 +398,7 @@ Ces règles étant versionnées [sous forme de code](#infrastructure-as-code-iac
 
 Ces tests peuvent se composer : d'une analyse antivirus, de l'analyse de failles dans les images Docker du projet ou encore de s'assurer qu'il n'y ait pas de secrets poussés par inadvertance.
 
-![Exemple de chaîne d'intégration continue dans GitLab[^KilalaGitlabPipelineExample]](./images/ci-pipeline-gitlab-security.png)
+![Exemple de chaîne d'intégration continue dans GitLab. Source : _kilala.nl_](./images/ci-pipeline-gitlab-security.png)
 
 Dans la capture d'écran ci-dessus, vous pouvez observer une chaîne d'intégration continue à 5 étapes (Build, Test, Release, Preprod, Integration). La colonne qui nous intéresse est "Test". Elle comporte différents tests de sécurité qui sont lancés et qui ont dans ce cas soit réussi (coche verte), soit comporte des avertissements (point d'exclamation jaune). Si un test avait échoué, nous aurions vu une croix rouge. Un point d'exclamation signifie que le test en question n'est pas passé mais qu'il n'était pas critique (ex: une dépendance logicielle dépréciée mais sans faille de sécurité).
 
@@ -954,7 +956,7 @@ Dans l'illustration suivante, nous avons cinq parties-prenantes pour le dévelop
 
 TODO(flavienbwk): Remettre en forme le [tableau](https://assets-global.website-files.com/5a690960b80baa0001e05b0f/5b7198a6ebc80005a6898d46_blog_post_img_Example-RACI-Matrix%402x.png) en français
 
-![Exemple de diagramme RACI. Traduction de l'anglais depuis l'illustration _Atlassian.com_.](./images/figure-7.png)
+![Exemple de diagramme RACI. Traduction de l'anglais depuis l'illustration _atlassian.com_.](./images/figure-7.png)
 
 |     |     |
 | --- | --- |
@@ -997,7 +999,7 @@ TODO(flavienbwk): Remettre en forme le [tableau](https://wac-cdn.atlassian.com/d
 | --- | --- |
 |     |     |
 
-![Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans leur cas, l'option 1). Traduction de l'anglais depuis l'illustration _Atlassian.com_[^AtlassianDACIMethod]](./images/figure-8.jpg)
+![Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans leur cas, l'option 1). Traduit depuis l'anglais. Source : _atlassian.com_](./images/figure-8.jpg)
 
 Une fois votre décision prise, il est temps de communiquer votre décision pour que tout le monde soit à la page. Envoyez le document aux personnes qui doivent en prendre connaissance puis archivez-le.
 
@@ -1199,13 +1201,13 @@ Grâce aux mécanismes de déploiement standardisés que proposent les systèmes
 
 Les métriques étant standardisées, la plupart des _service mesh_ permettent de les utiliser pour configurer des règles automatiques selon l'activité réseau de l'infrastructure.
 
-![Cheminement réseau d'une seule requête via Istio[^IstioDistributedTracesIllustration]](./images/figure-6.png)
+![Cheminement réseau d'une seule requête via Istio. Source : Istio (istio.io)](./images/figure-6.png)
 
 En résumé, un _service mesh_ gère tout ou partie des aspects suivants : gestion du traffic réseau, sécurité des flux et observabilité réseau. Cela permet de mieux sécuriser l'infrastructure, de mieux pouvoir l'auditer et de réduire la rupture de service.
 
-![Illustration du fonctionnement d'un service mesh](./images/figure-5.png)
+![Illustration du fonctionnement d'un service mesh. Source : Weaveworks (weave.works)](./images/figure-5.png)
 
-> Vue d'ensemble du fonctionnement d'un service de maillage de services : des conteneurs "proxy" sont ajoutés dans chaque pod pour gérer les interactions avec le _service mesh_. Source : Weaveworks[^WeaveWorksServiceMeshArticle]
+> Vue d'ensemble du fonctionnement d'un service de maillage de services : des conteneurs "proxy" sont ajoutés dans chaque pod pour gérer les interactions avec le _service mesh_.[^WeaveWorksServiceMeshArticle]
 
 Techniquement, un _service mesh_ va s'installer sur votre logiciel d'orchestration (ex: Kubernetes) et attacher dans chaque _pod_ (ensemble de conteneurs / application) un conteneur appelé _sidecar_. Ce dernier agira en tant que proxy réseau et gérera les interactions citées plus haut avec le _service mesh_.
 
@@ -1620,7 +1622,7 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DevSecOpsUSAirForce]: PAUPIER, François; CHAILLAN, Nicolas. [Postmortem #19 : Le DevSecOps à l'US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
 
-[^AtlassianHistoryOfDevops]: [Buchanan, Ian. Atlassian.com: _History of DevOps_](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
+[^AtlassianHistoryOfDevops]: [Buchanan, Ian. atlassian.com: _History of DevOps_](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
 
 [^TheDevopsHandbook]: KIM, Gene; DEBOIS, Patrick; WILLIS, John; HUMBLE, Jez; ALLSPAW, John. _The DevOps handbook: how to create world-class agility, reliability, and security in technology organizations_. 2015.
 
@@ -1676,8 +1678,6 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^IstioAccessLogs]: [Istio access logs documentation](https://istio.io/latest/docs/concepts/observability/#access-logs). _istio.io_.
 
-[^IstioDistributedTracesIllustration]: [Distributed traces schema](https://istio.io/latest/docs/concepts/observability/#distributed-traces). _istio.io_.
-
 [^ANSSI]: [Agence Nationale de la Sécurité des Systèmes d'Information](https://www.ssi.gouv.fr/en/)
 
 [^NextcloudITZBund]: POORTVLIET, Jos. [_German Federal Administration relies on Nextcloud as a secure file exchange solution_](https://nextcloud.com/blog/german-federal-administration-relies-on-nextcloud-as-a-secure-file-exchange-solution/). 2018.
@@ -1696,11 +1696,9 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^BrenéBROWNVideoOnBlame]: UK's Royal Society for Arts, Manufactures and Commerce. Vidéo "[Brené Brown on Blame](https://www.youtube.com/watch?v=RZWf2_2L2v8)" sur YouTube. 2015.
 
-[^AtlassianPremortemMethod]: Atlassian. [Réalisation d'un pre-mortem de projet](https://www.atlassian.com/fr/team-playbook/plays/pre-mortem). _Atlassian.com_.
+[^AtlassianPremortemMethod]: Atlassian. [Réalisation d'un pre-mortem de projet](https://www.atlassian.com/fr/team-playbook/plays/pre-mortem). _atlassian.com_.
 
 [^RACI-VS]: CLET, Étienne; MADERS, Henri-Pierre; LEBLANC, Jérôme; GOLDFARB, Marc. [Le métier de chef de projet, Éditions Eyrolles](https://books.google.fr/books?id=BtEiAgAAQBAJ&pg=PR21&dq=RACI+VS+validateur+signataire). 2013.
-
-[^AtlassianDACIMethod]: Atlassian. [Modèle de framework décisionnel DACI](https://www.atlassian.com/fr/team-playbook/plays/daci). _atlassian.com_.
 
 [^DecisionMakingMindtools]: [Decision making tools](https://www.mindtools.com/pages/main/newMN_TED.htm). _Mindtools.com_.
 
@@ -1725,8 +1723,6 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 [^GitLabRequiredApprovals]: [_GitLab required approvals_](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/index.html#required-approvals) documentation. _GitLab.com_.
 
 [^GitLabCustomTemplate]: [_GitLab's custom instance-level projects templates_](https://docs.gitlab.com/ee/user/admin_area/custom_project_templates.html)
-
-[^KilalaGitlabPipelineExample]: SLUIJTER-STEK, Tess. [_Security testing OWASP Juice Shop in Gitlab CI/CD_](https://www.kilala.nl/index.php?id=2510). 2021.
 
 [^DORAsFourKeyMetrics]: [Google Cloud DORA's 4 key metrics for measuring DevOps performances](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance).
 
