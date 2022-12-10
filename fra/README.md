@@ -714,7 +714,7 @@ Une usine logicielle est composée d'une forge logicielle et de services permett
 
 Les forges logicielles les plus populaires sont GitLab et GitHub. Vous aurez tendance à retrouver GitLab de manière plus courante au sein des grandes organisations, car il est déployable sur des réseaux isolés. GitHub quant à lui est uniquement disponible par Internet.
 
-Comme nous le verrons dans le chapitre "[GitOps et workflow git](#gitops-et-workflows-git)", en DevOps, tout le code source des logiciels et toutes les configurations de production sont stockées sous forme de code au sein d'une forge logicielle. On dit ainsi qu'elle est la "source unique de vérité" de votre infrastructure, centralisant toutes les ressources nécessaires au déploiement de services sur votre réseau.
+Comme nous le verrons dans le chapitre "[GitOps](#gitops)", en DevOps, tout le code source des logiciels et toutes les configurations de production sont stockées sous forme de code au sein d'une forge logicielle. On dit ainsi qu'elle est la "source unique de vérité" de votre infrastructure, centralisant toutes les ressources nécessaires au déploiement de services sur votre réseau.
 
 Sans forge logicielle, les équipes de développement travaillaient chacunes dans leur propre dossier local et s'échangaient leur code sur un dossier réseau partagé ou par clé USB. Cela faisait perdre beaucoup de temps lors de la fusion de fonctionnalités développées par plusieurs contributeurs différents et occasionnait de réels problèmes de sécurité. Inutile de dire qu'il n'y avait aucun moyen de tracer les actions ni de retrouver ses fichiers en cas de suppression accidentelle. Qui plus est, les équipes de gestion de projet étaient totalement mises à l'écart du cycle de développement logiciel.
 
@@ -866,6 +866,7 @@ Gestion des contributions :
 3. Mentionner le numéro d'_issue_ à chaque _commit_
     - Nomenclature : _"#65 : Added page icon in sidebar"_
 4. Une fois la contribution prête, créer une _merge request_ vers la _trunk branch_
+    - Utiliser la fonctionnalité _squash_ pour éviter de polluer l'historique des contributions
     - Nomenclature : _"#65 : Add users profile page"_
     - Permet d'automatiquement faire référence à la merge request dans l'issue
 5. _Release_ : mettre à jour la version du logiciel (dans les fichiers type `package.json`) et créer une _release_ à partir de la _trunk branch_.
