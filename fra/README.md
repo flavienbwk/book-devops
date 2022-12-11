@@ -18,7 +18,19 @@ Si votre organisation cherche des moyens d'améliorer son processus de développ
 
 De nombreuses organisations ont déjà entamé leur transformation dans le but d'atteindre un fonctionnement en mode "DevOps".
 
-Selon Gartner, plus de 85% des organisations vont adopter une stratégie cloud d'ici 2025[^GartnerCloud2025]. Pour Atlassian, 99% des entreprises questionnées estiment que le DevOps a un impact positif sur leur organisation[^AtlassianDevopsStudy].
+Selon Gartner, plus de 85% des organisations vont adopter une stratégie Cloud d'ici 2025[^GartnerCloud2025]. Pour Atlassian, 99% des entreprises questionnées estiment que le DevOps a un impact positif sur leur organisation[^AtlassianDevopsStudy].
+
+Des initiatives pour créer des plateformes Cloud souveraines prennent forme autour du monde. Avec le [_MeghRaj_](https://www.nic.in/servicecontents/national-cloud) en Inde (2014) le _Bundescloud_ en Allemagne (2015), _JEDI_ aux Etats-Unis (2017),  _Nimbus_ en Israel (2020), _GAIA-X_ en Europe (2020), le _Riigipilv_ en Estonie (2020), _Outscale_, _Athea_, et _S3NS_ en France (2010, 2017 et 2021), le [_Government Cloud_](https://www.nippon.com/en/in-depth/a07707) au Japon (2021), le _National Strategic Hub_ en Italie (2022). Au coeur de ces infrastructures, un mode d'organisation commun pour unifier les pratiques et orchestrer ces technologies : le DevOps.
+
+Plus largement employé dans le privé, les grands fournisseurs de services Cloud (_Amazon Web Services_, _Google Cloud Platform_, _Microsoft Azure_, _Alibaba Cloud_) pratiquent en interne ce mode d'organisation, le promeuvent et fournissent les technologies associées.
+
+La Corée du Sud [favorise historiquement l'usage de technologies Cloud privées](https://news.bloomberglaw.com/privacy-and-data-security/south-koreas-new-cloud-computing-act-and-new-rules-on-outsourcing-of-data-processing-by-financial-institutions), depuis sa loi en 2015 facilitant la sous-traitance[^SouthKorea2015CloudLaw]. Néanmoins, elle a su s'équiper dès 2007 de centre de données nationaux hébergeant désormais les systèmes d'information de 45 agences gouvernementales[^GIDCKorea]. Elle annoncera en 2021 un plan de transformation numérique massive de son administration : le _Digital Government Master Plan 2021-2025_[^SouthKoreaMasterPlan2021], suite à la crise du COVID-19. Ce plan fournit un cadre de travail (nommé "[_eGovFrame_](https://www.worldbank.org/en/events/2022/02/09/digital-the-door-to-a-better-world-digital-government-strategy-and-cases-in-korea)") pour le développement et la gestion des systèmes d'information pour améliorer l'interopérabilité des systèmes gouvernementaux, qui incluent des principes DevOps.
+
+D'autres gouvernements affichent une volonté claire d'adopter ces technologies et pratiques en interne, sans nécessairement afficher d'initiative publique. Ces volontés prennent forme au sein de documents mentionnant la stratégie Cloud, IA ou data des pays. A titre d'exemple, le Canada a publié son rapport "Objectif 2020"[^CanadaObjectif2020] en 2013, pour moderniser la manière dont travaillent les services publics, puis le "_Cloud Adoption Strategy_"[^CanadaCAS] en 2018.
+
+Au Royaume-Uni, le Ministère de la Défense annonce en 2022 vouloir être une organisation "prête pour l'IA", dans sa "Stratégie d'Intelligence Artificielle de Défense"[^UKDefenceAIStrategy]. En exprimant sa manière de vouloir se transformer, elle résume parfaitement les finalités du DevOps dans un passage.
+
+> "We must change into a software-intensive enterprise, organised and motivated to value and harness data, prepared to tolerate increased risk, learn by doing and rapidly reorient to pursue successes and efficiencies. We must be able to develop, test and deploy new algorithms faster than our adversaries. We must be agile and integrated, [...]" - Ministry of Defence (UK), chapter "Culture, Skills and Policies", page 17.
 
 TODO(flavienbwk): Department of Defense going DevSecOps :
 - https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf
@@ -29,7 +41,7 @@ Le Ministère de la Défense britannique indique dans sa "stratégie d'intellige
 
 Microsoft lançait historiquement ses nouveaux produits tous les 3 à 4 ans (ex: Windows, la suite Office). Dès 2014, son président-directeur général Satya NADELLA a annoncé à ses équipes que si l'entreprise continuait à travailler de cette manière, Microsoft allait terminer par devenir obsolète. Les équipes de chaque produit travaillaient indépendamment des autres, avec leur propre manière de s'organiser et leurs propres outils. Il a réorganisé l'entreprise en se basant sur la méthodologie DevOps, unifiant les outils et les pratiques des équipes pour qu'elles rediscutent entre elles[^MicrosoftDevOpsAbelWang].
 
-Néanmoins, la grande majorité des organisations ont encore du mal à mettre en place concrètement ces nouvelles pratiques. L'obstacle principal est la difficulté à trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
+Néanmoins, la grande majorité des organisations ont encore du mal à instaurer tangiblement ces nouvelles pratiques. L'obstacle principal est la difficulté à trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
 
 Le DevOps étant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études sérieuses auxquelles se référer. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
 
@@ -1425,6 +1437,7 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **EmpOps** (Employees Operations) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs, OfficeLife).
 - **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
+- **EdgeOps** : TODO(flavienbwk)
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
@@ -1948,3 +1961,15 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^Scrum]: Scrum.org. "[_What is Scrum ? A better way to work together and get work done._](https://www.scrum.org/resources/what-is-scrum)". _scrum.org_.
 
 [^engpractices]: Google. "_[Code Review Developer Guide](https://google.github.io/eng-practices/review)_". _google.github.io/eng-practices/review_.
+
+[^CanadaObjectif2020]: Gouvernement du Canada. "[Objectif 2020](https://publications.gc.ca/site/eng/9.843397/publication.html)". 2013.
+
+[^UKDefenceAIStrategy]: Ministry of Defence (UK). "[_Defense AI strategy_](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)". 2022.
+
+[^CanadaCAS]: Gouvernement du Canada. "[_Government of Canada Cloud Adoption Strategy_](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy.html)". 2018.
+
+[^SouthKorea2015CloudLaw]: National Assembly Law Information (South Korea government). "[_Cloud Computing Act_](https://likms.assembly.go.kr/law/lawsLawtInqyDetl1010.do)". 2015.
+
+[^SouthKoreaMasterPlan2021]: Document téléchargeable : links.berwick.fr/SPnDtI
+
+[^GIDCKorea]: National Information Resource Service (South Korea). "[_History (of NIRS)_](https://www.nirs.go.kr/eng/about/about_02.jsp)". _nirs.go.kr_.
