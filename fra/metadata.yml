@@ -3,8 +3,8 @@ title: Transformer les institutions grâce au DevOps
 subtitle: Le guide pragmatique des décideurs pour comprendre et agir.
 author: Flavien BERWICK
 date: Undefined
-geometry: margin=0.65in
-papersize: a5
+geometry: margin=0.8in
+papersize: a4
 urlcolor: #051226
 header-includes: |
   \usepackage{sectsty}

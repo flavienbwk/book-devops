@@ -1,6 +1,6 @@
 # PréfIAce
 
-_Pré-face auto-générée par intelligence artificielle[^OpenAIGPT3] puis traduite et adaptée par l'auteur. Ce chapitre illustre l'intérêt de mettre en place de nouvelles structures d'organisation face à la rapidité des innovations numériques. Considérez que cette capacité peut être maîtrisée par l'un de vos concurrents : vous devez être en mesure de déployer vos innovations au moins aussi vite que lui pour rester compétitif._
+_Pré-face automatiquement générée par intelligence artificielle[^OpenAIGPT3] puis traduite et adaptée par l'auteur. Ce chapitre illustre l'intérêt de mettre en place de nouvelles structures d'organisation face à la rapidité des innovations numériques. Considérez que cette capacité peut être maîtrisée par l'un de vos concurrents : vous devez être en mesure de déployer vos innovations au moins aussi vite que lui pour rester compétitif._
 
 _Entrée fournie à GPT3 : "Write the preface of a book whose title is "Transforming institutions thanks to DevOps" explaining the benefits of a DevOps transformation and how organizations are succeeding in their digital transformation."_
 
@@ -20,26 +20,29 @@ De nombreuses organisations ont déjà entamé leur transformation dans le but d
 
 Selon Gartner, plus de 85% des organisations vont adopter une stratégie Cloud d'ici 2025[^GartnerCloud2025]. Pour Atlassian, 99% des entreprises questionnées estiment que le DevOps a un impact positif sur leur organisation[^AtlassianDevopsStudy].
 
-Des initiatives pour créer des plateformes Cloud souveraines prennent forme autour du monde. Avec le [_MeghRaj_](https://www.nic.in/servicecontents/national-cloud) en Inde (2014) le _Bundescloud_ en Allemagne (2015), _JEDI_ aux Etats-Unis (2017),  _Nimbus_ en Israel (2020), _GAIA-X_ en Europe (2020), le _Riigipilv_ en Estonie (2020), _Outscale_, _Athea_, et _S3NS_ en France (2010, 2017 et 2021), le [_Government Cloud_](https://www.nippon.com/en/in-depth/a07707) au Japon (2021), le _National Strategic Hub_ en Italie (2022). Au coeur de ces infrastructures, un mode d'organisation commun pour unifier les pratiques et orchestrer ces technologies : le DevOps.
+Des initiatives pour créer des plateformes Cloud souveraines prennent forme autour du monde. Avec le [_MeghRaj_](https://www.nic.in/servicecontents/national-cloud) en Inde (2014), le _Bundescloud_ en Allemagne (2015), _JEDI_ aux États-Unis (2017),  _Nimbus_ en Israel (2020), _GAIA-X_ en Europe (2020), le _Riigipilv_ en Estonie (2020), _Outscale_, _Athea_, et _S3NS_ en France (2010, 2017 et 2021), le [_Government Cloud_](https://www.nippon.com/en/in-depth/a07707) au Japon (2021), le _National Strategic Hub_ en Italie (2022). Au coeur de ces infrastructures, un mode d'organisation commun pour unifier les pratiques et orchestrer ces technologies : le DevOps.
 
 Plus largement employé dans le privé, les grands fournisseurs de services Cloud (_Amazon Web Services_, _Google Cloud Platform_, _Microsoft Azure_, _Alibaba Cloud_) pratiquent en interne ce mode d'organisation, le promeuvent et fournissent les technologies associées.
 
-La Corée du Sud [favorise historiquement l'usage de technologies Cloud privées](https://news.bloomberglaw.com/privacy-and-data-security/south-koreas-new-cloud-computing-act-and-new-rules-on-outsourcing-of-data-processing-by-financial-institutions), depuis sa loi en 2015 facilitant la sous-traitance[^SouthKorea2015CloudLaw]. Néanmoins, elle a su s'équiper dès 2007 de centre de données nationaux hébergeant désormais les systèmes d'information de 45 agences gouvernementales[^GIDCKorea]. Elle annoncera en 2021 un plan de transformation numérique massive de son administration : le _Digital Government Master Plan 2021-2025_[^SouthKoreaMasterPlan2021], suite à la crise du COVID-19. Ce plan fournit un cadre de travail (nommé "[_eGovFrame_](https://www.worldbank.org/en/events/2022/02/09/digital-the-door-to-a-better-world-digital-government-strategy-and-cases-in-korea)") pour le développement et la gestion des systèmes d'information pour améliorer l'interopérabilité des systèmes gouvernementaux, qui incluent des principes DevOps.
+La Corée du Sud [favorise historiquement l'usage de technologies Cloud privées](https://news.bloomberglaw.com/privacy-and-data-security/south-koreas-new-cloud-computing-act-and-new-rules-on-outsourcing-of-data-processing-by-financial-institutions), en particulier depuis sa loi en 2015 facilitant la sous-traitance[^SouthKorea2015CloudLaw]. Néanmoins, elle a su s'équiper dès 2007 de centre de données nationaux hébergeant aujourd'hui les systèmes d'information de 45 agences gouvernementales[^GIDCKorea]. Elle annoncera en 2021 un plan de transformation numérique massive de son administration : le _Digital Government Master Plan 2021-2025_[^SouthKoreaMasterPlan2021], suite à la crise du COVID-19. Ce plan fournit un cadre technique nommé "[_eGovFrame_](https://www.worldbank.org/en/events/2022/02/09/digital-the-door-to-a-better-world-digital-government-strategy-and-cases-in-korea)". Ce-dernier est utilisé pour le développement et la gestion des systèmes d'information governementaux, dans l'objectif d'améliorer leur interopérabilité. Il inclut par nature des principes DevOps.
 
-D'autres gouvernements affichent une volonté claire d'adopter ces technologies et pratiques en interne, sans nécessairement afficher d'initiative publique. Ces volontés prennent forme au sein de documents mentionnant la stratégie Cloud, IA ou data des pays. A titre d'exemple, le Canada a publié son rapport "Objectif 2020"[^CanadaObjectif2020] en 2013, pour moderniser la manière dont travaillent les services publics, puis le "_Cloud Adoption Strategy_"[^CanadaCAS] en 2018.
+D'autres gouvernements affichent une volonté claire d'adopter ces technologies et pratiques dans une démarche souveraine, sans nécessairement afficher publiquement leurs initiatives. Ces volontés prennent forme au sein de documents mentionnant la stratégie Cloud, IA ou data des pays. A titre d'exemple, le Canada a publié son rapport "Objectif 2020"[^CanadaObjectif2020] en 2013, pour moderniser la manière dont travaillent les services publics, puis le "_Cloud Adoption Strategy_"[^CanadaCAS] en 2018.
 
-Au Royaume-Uni, le Ministère de la Défense annonce en 2022 vouloir être une organisation "prête pour l'IA", dans sa "Stratégie d'Intelligence Artificielle de Défense"[^UKDefenceAIStrategy]. En exprimant sa manière de vouloir se transformer, elle résume parfaitement les finalités du DevOps dans un passage.
+Au Royaume-Uni, le Ministère de la Défense annonce en 2022 vouloir être une organisation "prête pour l'IA", dans sa "Stratégie d'Intelligence Artificielle de Défense"[^UKDefenceAIStrategy]. En exprimant sa manière de vouloir se transformer, elle résume parfaitement les finalités du DevOps.
 
-> "We must change into a software-intensive enterprise, organised and motivated to value and harness data, prepared to tolerate increased risk, learn by doing and rapidly reorient to pursue successes and efficiencies. We must be able to develop, test and deploy new algorithms faster than our adversaries. We must be agile and integrated, [...]" - Ministry of Defence (UK), chapter "Culture, Skills and Policies", page 17.
+> "Nous devons nous transformer en une organisation fortement orientée vers le logiciel, organisée et motivée à valoriser et exploiter les données, prête à tolérer des risques accrus, à apprendre par la pratique et à se réorienter rapidement pour trouver des succès et des gains d'efficacité. Nous devons être capables de développer, tester et déployer de nouveaux algorithmes plus rapidement que nos adversaires. Nous devons être agiles et intégrés (unifiés), [...]" - Ministère de la Défense du Royaume-Uni, chapitre "Culture, Compétences et Politiques", page 17.
 
-TODO(flavienbwk): Department of Defense going DevSecOps :
-- https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf
-- https://breakingdefense.com/2021/05/dod-publishes-devsecops-2-0-docs-for-accelerating-apps/
+Dès 2018, elle lançait le programme NELSON[^NELSON] pour s'équiper d'une [plateforme big-data](https://joinup.ec.europa.eu/collection/open-source-observatory-osor/news/open-source-royal-navy) au profit de sa _Royal Navy_. Cet environnement à base de technologies Cloud inclut des pratiques DevOps.
 
-TODO(flavienbwk): GCHQ [going DevOps](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy). + NELSON https://www.digitalmarketplace.service.gov.uk/digital-outcomes-and-specialists/opportunities/6275
-Le Ministère de la Défense britannique indique dans sa "stratégie d'intelligence artificielle de défense"[^MODDefenseArtificialIntelligenceStrategyReport], vouloir devenir une institution "prête pour l'IA". {}
+Outre-mer, les États-Unis considéraient déjà en 2011 la nécessité de maîtriser l'information de manière unifiée et agile, d'y accéder via un point d'accès unique (cf. chapitre "[Zero trust](#développement-basé-sur-le-zero-trust)"). Le _Department of Defense_ (DoD) décrit cette vision dans le document "Stratégie et feuille de route des systèmes informatiques industrialisés au DoD"[^DoDITEnterpriseStrategyRoadmap].
 
-Microsoft lançait historiquement ses nouveaux produits tous les 3 à 4 ans (ex: Windows, la suite Office). Dès 2014, son président-directeur général Satya NADELLA a annoncé à ses équipes que si l'entreprise continuait à travailler de cette manière, Microsoft allait terminer par devenir obsolète. Les équipes de chaque produit travaillaient indépendamment des autres, avec leur propre manière de s'organiser et leurs propres outils. Il a réorganisé l'entreprise en se basant sur la méthodologie DevOps, unifiant les outils et les pratiques des équipes pour qu'elles rediscutent entre elles[^MicrosoftDevOpsAbelWang].
+> "Les opérations militaires du XXIe siècle nécessitent un environnement informationnel agile afin d'obtenir un avantage stratégique pour les effectifs et les partenaires des missions. Pour acquérir cet avantage informationnel, chacun DoD doit pouvoir accéder aux données dont il a besoin pour faire son travail, sur n'importe quel ordinateur connecté aux réseaux du DoD partout dans le monde, conformément à la classification de sécurité et aux restrictions d'accès adaptées. Pour relever ce défi, le DoD entreprend un effort coordonné pour unifier ses réseaux dans un environnement informatique unique qui améliorera à la fois l'efficacité opérationnelle et la posture de sécurité vis-à-vis des systèmes d'information, tout en réalisant des gains d'efficacité qui permettent de réorienter les moyens (en ressources humaines) pour répondre aux besoins de la mission." - Ministère des Armées des États-Unis, chapitre "Vision pour des systèmes d'information industriels plus efficaces et sécurisés au DoD", page 13.
+
+En 2019, elle publiera son premier guide de référence pour l'industrialisation des pratiques DevSecOps[^DoDEnterpriseDevSecOpsReferenceDesign]. Destiné aux fournisseurs, acquéreurs et responsables de systèmes d'information modernes, ce guide institutionnel fournit des conseils pour mettre en oeuvre ces pratiques et maintenir ce type de systèmes. L'objectif affiché est de déployer des logiciels à la "vitesse des opérations". Le parallèle dans le milieu économique est celui de la "vitesse du marché".
+
+Dans le privé, Microsoft lançait historiquement ses nouveaux produits tous les 3 à 4 ans (ex: Windows, la suite Office). Dès 2014, son président-directeur général Satya NADELLA a avertit ses équipes du risque que l'entreprise subirait si elle continuait à travailler de cette manière. En poursuivant avec le même mode d'organisation, Microsoft allait terminer par devenir obsolète. Les équipes chargées du développement de chaque produit travaillaient indépendamment des autres, avec leurs propres méthodes d'organisation et leurs propres outils. Il a réorganisé l'entreprise en se basant sur la méthodologie DevOps, unifiant les outils et les pratiques des équipes, pour qu'elles rediscutent entre elles[^MicrosoftDevOpsAbelWang].
+
+Pour les institutions, il ne s'agit donc plus de savoir "si" mais "quand" elles devront se lancer dans une démarche de transformation. Face à des concurrents économiques[^AUKUS] ou militaires[^InfluenceRussie] toujours plus offensifs, se transformer relève d'une impérieuse nécessité pour rester dans la course.
 
 Néanmoins, la grande majorité des organisations ont encore du mal à instaurer tangiblement ces nouvelles pratiques. L'obstacle principal est la difficulté à trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
 
@@ -495,7 +498,7 @@ L'exemple ci-dessus est simple mais l'IaC peut aller jusqu'à décrire la maniè
 
 Le terme "chaîne logicielle" doit être compris comme "chaîne de développement et de déploiement des logiciels" (_software supply-chain_ en anglais). Il est raccourcis pour simplifier la compréhension des notions abordées.
 
-En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Parmi 7 priorités[^FactSheetUSASecurity] décrites, la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des Etats-Unis[^NSM2022].
+En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Parmi 7 priorités[^FactSheetUSASecurity] décrites, la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des États-Unis[^NSM2022].
 
 Aujourd'hui, des standards décrivent la manière dont il est possible de correctement sécuriser sa chaîne logicielle. Ces standards sont regroupés au sein de ce que l'on appelle des frameworks[^SecurityFramework]. Ces derniers continueront à évoluer mais fournissent déjà des règles de sécurité, sur lesquelles nous pouvons sereinement nous baser.
 
@@ -509,7 +512,7 @@ Le SLSA est né des pratiques internes de Google. L'entreprise a développé des
 
 En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente et que ces artéfacts sont un vecteur privilégié de menace.
 
-![Etapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).](./images/slsa-supply-chain-threats.jpg)
+![Étapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).](./images/slsa-supply-chain-threats.jpg)
 
 Ses règles tournent autour de la vérification automatique de l'intégrité des données manipulées. Quelques exemples des vulnérabilités auxquelles le SLSA répond :
 
@@ -691,6 +694,8 @@ En conclusion, vous devez traiter votre socle comme un produit au service de vos
 ## Open-source : risques et avantage stratégique
 
 TODO(flavienbwk): Réticences de certains à l'idée d'employer des logiciels open-source (risques de librairies vérolées, de protestwares). Risques mitigés par les techniques DevOps. La maîtrise de l'open-source est un avantage stratégique (savoir la transformer pour des besoins internes).
+
+TODO(flavienbwk): Programme NELSON open source https://joinup.ec.europa.eu/collection/open-source-observatory-osor/news/open-source-royal-navy
 
 # Les piliers du DevOps en pratique
 
@@ -958,7 +963,7 @@ Cet état d'esprit est un changement culturel qu'une organisation doit instiller
 
 ### Sécurité psychologique
 
-> "La sécurité psychologique est la culture selon laquelle une personne ne sera pas punie ou humiliée pour avoir exprimé ses idées, questions, préoccupations ou erreurs." - Amy C. Edmondson, professeure en gestion et leadership à la _Harvard Business School_.
+> "La sécurité psychologique est la culture selon laquelle une personne ne sera pas punie ou humiliée pour avoir exprimé ses idées, questions, préoccupations ou erreurs." - Amy C. EDMONDSON, professeure en gestion et leadership à la _Harvard Business School_.
 
 La culture d'une organisation est le fondement de son potentiel. Une bonne culture aide à promouvoir la collaboration et la communication entre les équipes, atout fondamental pour une mise en œuvre réussie d'une initiative DevOps. Cette idée n'est pas nouvelle, et fut théorisée en 2004 par le sociologue Ron WESTRUM dans son article "_Une typologie des cultures organisationnelles_"[^RonWestrumTypologyOfOrganisationCulture].
 
@@ -1683,7 +1688,7 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DefyingGravity]: DUNLAP, Preston. [_Defying gravity_](https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z/). 2022.
 
-[^PlatformOne]: [_Platform One_](https://software.af.mil/team/platformone/) est une plateforme lancée en 2018 par l'_US Air Force_ permettant la collaboration logicielle dans une démarche DevSecOps, à l'échelle du Ministère des Armées des Etats-Unis.
+[^PlatformOne]: [_Platform One_](https://software.af.mil/team/platformone/) est une plateforme lancée en 2018 par l'_US Air Force_ permettant la collaboration logicielle dans une démarche DevSecOps, à l'échelle du Ministère des Armées des États-Unis.
 
 [^BiaisCognitifs]: HUSSLER, Caroline; RONDÉ, Patrick. [« Biais cognitifs et choix technologiques : une analyse des priorités des experts français »](https://www.cairn.info/revue-economie-et-prevision-1-2006-4-page-65.htm), Économie & prévision, vol. 175-176, no. 4-5, 2006, pp. 65-77.
 
@@ -1775,8 +1780,6 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^DORATechnicalCapabilities]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Technical DevOps Capabilities", page 30. 2022.
 
-[^MODDefenseArtificialIntelligenceStrategyReport]: British Ministry of Defence. [Defence Artificial Intelligence Strategy](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy). 2022.
-
 [^DORAGeoRepartition]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Region", page 63. 2022.
 
 [^DORATeamSize]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Team size", page 65. 2022.
@@ -1802,7 +1805,7 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 
 [^SLSA]: _Supply chain Levels for Software Artifacts_ ([SLSA](https://slsa.dev), prononcé "salsa") est un ensemble de règles de sécurité recommandées pour sécuriser sa chaîne de développement et de déploiement logiciel.
 
-[^BCPANDRHStudyTeletravail]: BCG; ANDRH. Etude ["Le futur du travail vu par les DRH - 2ème édition"](https://www.andrh.fr/uploads/files/attachments/622b046587abf003039119.pdf). 2022.
+[^BCPANDRHStudyTeletravail]: BCG; ANDRH. Étude ["Le futur du travail vu par les DRH - 2ème édition"](https://www.andrh.fr/uploads/files/attachments/622b046587abf003039119.pdf). 2022.
 
 [^ZTNA]: Le _Zero Trust Network Access_ (ZTNA) est une catégorie de technologies qui fournit un accès à distance sécurisé aux applications et aux services sur la base de politiques de contrôle d'accès définies. [Définition par paloaltonetworks.com](https://www.paloaltonetworks.com/cyberpedia/what-is-zero-trust-network-access-ztna).
 
@@ -1964,12 +1967,22 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 
 [^CanadaObjectif2020]: Gouvernement du Canada. "[Objectif 2020](https://publications.gc.ca/site/eng/9.843397/publication.html)". 2013.
 
-[^UKDefenceAIStrategy]: Ministry of Defence (UK). "[_Defense AI strategy_](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)". 2022.
+[^UKDefenceAIStrategy]: _Ministry of Defence_ (Royaume-Uni). "[_Defense AI strategy_](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)". 2022.
 
 [^CanadaCAS]: Gouvernement du Canada. "[_Government of Canada Cloud Adoption Strategy_](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy.html)". 2018.
 
-[^SouthKorea2015CloudLaw]: National Assembly Law Information (South Korea government). "[_Cloud Computing Act_](https://likms.assembly.go.kr/law/lawsLawtInqyDetl1010.do)". 2015.
+[^SouthKorea2015CloudLaw]: _National Assembly Law Information_ (Corée du Sud). "[_Cloud Computing Act_](https://likms.assembly.go.kr/law/lawsLawtInqyDetl1010.do)". 2015.
 
 [^SouthKoreaMasterPlan2021]: Document téléchargeable : links.berwick.fr/SPnDtI
 
-[^GIDCKorea]: National Information Resource Service (South Korea). "[_History (of NIRS)_](https://www.nirs.go.kr/eng/about/about_02.jsp)". _nirs.go.kr_.
+[^GIDCKorea]: _National Information Resource Service_ (Corée du Sud). "[_History (of NIRS)_](https://www.nirs.go.kr/eng/about/about_02.jsp)". _nirs.go.kr_.
+
+[^NELSON]: [Détails de l'appel d'offre et du déroulé du programme NELSON](https://www.digitalmarketplace.service.gov.uk/digital-outcomes-and-specialists/opportunities/6275) disponible sur _digitalmarketplace.service.gov.uk_.
+
+[^AUKUS]: Par exemple, l'affaire du [pacte de défense AUKUS](https://en.wikipedia.org/wiki/AUKUS)
+
+[^InfluenceRussie]: AUDINET, Maxime; LIMONIER Kevin. [Le dispositif d’influence informationnelle de la Russie en Afrique subsaharienne francophone : un écosystème flexible et composite](https://doi.org/10.4000/questionsdecommunication.29005), Questions de communication, 41 | 2022, 129-148.
+
+[^DoDITEnterpriseStrategyRoadmap]: _Department of Defense_ (États-Unis). "[_DoD IT Enterprise Strategy and Roadmap_](https://dodcio.defense.gov/Portals/0/Documents/Announcement/Signed_ITESR_6SEP11.pdf)". 2011.
+
+[^DoDEnterpriseDevSecOpsReferenceDesign]: _Department of Defense_ (États-Unis). "[_DoD Enterprise DevSecOps Reference Design_](https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf)". 2019.
