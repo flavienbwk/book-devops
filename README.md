@@ -1,5 +1,9 @@
 # Scaling Institutions with DevOps - The book
 
+<center>
+    <img src="./fra/images/cover.png" width="128px"/>
+</center>
+
 This repo hosts a book written by an SRE/DevOps engineer, [me](https://berwick.fr). So I had to make it GitOps-compliant. I hope it will be community-driven over time to fill it with good resources or enhance some parts.
 
 While you will be able to order the physical version soon, this is the digital and interactive copy.
@@ -35,14 +39,16 @@ It automatically :
 
 ## Publishing
 
+This book has a double life. Let's make sure it reflects the state of the art DevOps practices at all times with your contributions.
+
 - "Source edition" : the original book, unique, written exclusively by the author
 - "Community edition(s)" : annual versions of the book including community contributions to improve it
 
 ## Supporting the author
 
 - ⭐ Star and share this repo
-- 📓 But the hardcover book (soon)
-- ☕ Sponsor / Tip this repo (soon)
+- 📓 Buy the hardcover book (soon)
+- ☕ Sponsor / Tip the author (soon)
 
 ## Book generation
 
