@@ -1,8 +1,13 @@
 # Scaling Institutions with DevOps - The book
 
-This repo hosts a book written by a SRE/DevOps engineer, [me](https://berwick.fr). So I had to make it gitops-compliant.
+This repo hosts a book written by a SRE/DevOps engineer, [me](https://berwick.fr). So I had to make it GitOps-compliant.
 
-While you will be able to order the physical version soon, this is the digital interactive copy of it.
+While you will be able to order the physical version soon, this is the digital interactive copy.
+
+## Languages
+
+- French :fr: [Transformer les institutions grâce au DevOps](fra/README.md)
+- English :us: [Scaling Institutions with DevOps](eng/README.md) [^1]
 
 ## Summary
 
@@ -14,7 +19,7 @@ Accessible, this practical and illustrated guide will allow you to discover the 
 
 ## Purpose
 
-My book is full of recommendations on DevOps practices, including versioning almost everything you do : from documentation, presentations, to infrastructure recipes (IaC). So this repo is a perfect illustration of how it can be done !
+This book is filled with recommendations about DevOps practices, including versioning everything you do : from documentation, presentations, to infrastructure recipes (IaC). So this repo is a perfect illustration of how it can be done !
 
 I believe the practice of writing a book the gitops-style is not a bad move : it's portable, iterative, open and automatable. Of course, it's far fetched for the use case, but this is a funny way to illustrate the methodology.
 
@@ -28,10 +33,16 @@ It automatically :
 - Creates a release on _main_ (for physical book)
 - [Updates](./.github/workflows/publish.yml) the Amazon physical version book through their API
 
-## Languages
+## Publishing
 
-- French :fr: [Transformer les institutions grâce au DevOps](fra/README.md)
-- English :us: [Scaling Institutions with DevOps](eng/README.md) [^1]
+- "Source edition" : the original book, unique, written exclusively by the author
+- "Community edition(s)" : annual versions of the book including community contributions to improve it
+
+## Supporting the author
+
+- ⭐ Star and share this repo
+- 📓 But the hardcover book (soon)
+- ☕ Sponsor / Tip this repo (soon)
 
 ## Useful VSCode extensions when writing
 
