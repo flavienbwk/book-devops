@@ -1,8 +1,8 @@
 # Scaling Institutions with DevOps - The book
 
-This repo hosts a book written by a SRE/DevOps engineer, [me](https://berwick.fr). So I had to make it GitOps-compliant.
+This repo hosts a book written by an SRE/DevOps engineer, [me](https://berwick.fr). So I had to make it GitOps-compliant. I hope it will be community-driven over time to fill it with good resources or enhance some parts.
 
-While you will be able to order the physical version soon, this is the digital interactive copy.
+While you will be able to order the physical version soon, this is the digital and interactive copy.
 
 ## Languages
 
@@ -44,15 +44,6 @@ It automatically :
 - 📓 But the hardcover book (soon)
 - ☕ Sponsor / Tip this repo (soon)
 
-## Useful VSCode extensions when writing
-
-- [Spellcheck](https://github.com/bartosz-antosik/vscode-spellright)
-- [Markdownlint](https://github.com/DavidAnson/vscode-markdownlint)
-- [Wordcount](https://github.com/Microsoft/vscode-wordcount)
-- [Todo Tree](https://github.com/Gruntfuggly/todo-tree)
-- [TODO Highlight](https://github.com/wayou/vscode-todo-highlight)
-- [Markdown Footnote](https://github.com/houkanshan/vscode-markdown-footnote)
-
 ## Book generation
 
 This repository has [automatic](.github/workflows/render_pdf.yml) PDF generation thanks to Pandoc.
@@ -64,5 +55,14 @@ cd ./fra && make pdf && cd -
 ## License
 
 Copyright © 2022 Flavien BERWICK
+
+## Useful VSCode extensions when writing
+
+- [Spellcheck](https://github.com/bartosz-antosik/vscode-spellright)
+- [Markdownlint](https://github.com/DavidAnson/vscode-markdownlint)
+- [Wordcount](https://github.com/Microsoft/vscode-wordcount)
+- [Todo Tree](https://github.com/Gruntfuggly/todo-tree)
+- [TODO Highlight](https://github.com/wayou/vscode-todo-highlight)
+- [Markdown Footnote](https://github.com/houkanshan/vscode-markdown-footnote)
 
 [^1]: To be translated (not planned at the moment)
