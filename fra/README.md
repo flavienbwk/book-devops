@@ -16,7 +16,9 @@ Si votre organisation cherche des moyens d'améliorer son processus de développ
 
 # Introduction
 
-De nombreuses organisations ont déjà entamé leur transformation dans le but d'atteindre un fonctionnement en mode "DevOps".
+De nombreuses organisations ont déjà entamé leur transformation dans le but d'atteindre un fonctionnement en mode "DevOps". Ce mouvement culturel et organisationnel s'inscrit dans la dynamique d'explosion des usages du numérique pour tous les types de structures. Elle implique pour les entreprises de répondre au besoin opérationnel toujours plus vite et de manière sécurisée, pour garder une longueur d'avance face à une concurrence toujours plus féroce.
+
+Le DevOps approche cet enjeu en proposant des méthodologies, pour transformer les organisations qui souhaitent améliorer la qualité de leurs services. Il tire bénéfice des technologies Cloud pour permettre aux organisations d'être plus agiles, résilientes et attractives.
 
 Selon Gartner, plus de 85% des organisations vont adopter une stratégie Cloud d'ici 2025[^GartnerCloud2025]. Pour Atlassian, 99% des entreprises questionnées estiment que le DevOps a un impact positif sur leur organisation[^AtlassianDevopsStudy].
 
@@ -40,21 +42,21 @@ Outre-mer, les États-Unis considéraient déjà en 2011 la nécessité de maît
 
 En 2019, elle publiera son premier guide de référence pour l'industrialisation des pratiques DevSecOps[^DoDEnterpriseDevSecOpsReferenceDesign]. Destiné aux fournisseurs, acquéreurs et responsables de systèmes d'information modernes, ce guide institutionnel fournit des conseils pour mettre en oeuvre ces pratiques et maintenir ce type de systèmes. L'objectif affiché est de déployer des logiciels à la "vitesse des opérations". Le parallèle dans le milieu économique est celui de la "vitesse du marché".
 
-Dans le privé, Microsoft lançait historiquement ses nouveaux produits tous les 3 à 4 ans (ex: Windows, la suite Office). Dès 2014, son président-directeur général Satya NADELLA a avertit ses équipes du risque que l'entreprise subirait si elle continuait à travailler de cette manière. En poursuivant avec le même mode d'organisation, Microsoft allait terminer par devenir obsolète. Les équipes chargées du développement de chaque produit travaillaient indépendamment des autres, avec leurs propres méthodes d'organisation et leurs propres outils. Il a réorganisé l'entreprise en se basant sur la méthodologie DevOps, unifiant les outils et les pratiques des équipes, pour qu'elles rediscutent entre elles[^MicrosoftDevOpsAbelWang].
+Dans le privé, Microsoft lançait historiquement ses nouveaux produits tous les 3 à 4 ans (ex: Windows, la suite Office). Dès 2014, son président-directeur général Satya NADELLA a avertit ses équipes du risque que l'entreprise subirait si elle continuait à travailler de cette manière. En poursuivant avec le même mode d'organisation, Microsoft allait terminer par devenir obsolète. Les équipes chargées du développement de chaque produit travaillaient indépendamment des autres, avec leurs propres méthodes d'organisation et leurs propres outils. Satya a réorganisé l'entreprise en se basant sur la méthodologie DevOps, unifiant les outils et les pratiques des équipes, pour qu'elles rediscutent entre elles[^MicrosoftDevOpsAbelWang].
 
-Pour les institutions, il ne s'agit donc plus de savoir "si" mais "quand" elles devront se lancer dans une démarche de transformation. Face à des concurrents économiques[^AUKUS] ou militaires[^InfluenceRussie] toujours plus offensifs, se transformer relève d'une impérieuse nécessité pour rester dans la course.
+Pour les institutions, il ne s'agit donc plus de savoir _si_ mais _quand_ elles devront se lancer dans une démarche de transformation. Face à des concurrents économiques[^AUKUS] ou militaires[^InfluenceRussie] toujours plus offensifs, se transformer relève d'une impérieuse nécessité pour rester dans la course.
 
-Néanmoins, la grande majorité des organisations ont encore du mal à instaurer tangiblement ces nouvelles pratiques. L'obstacle principal est la difficulté à trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout type d'autres innovations, qu'importe leur domaine. La RH est toujours un enjeu.
+Néanmoins, la grande majorité des organisations a encore du mal à instaurer tangiblement ces nouvelles pratiques. L'obstacle principal est de trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout autre type d'innovation, qu'importe son domaine. Les ressources humaines restent un enjeu primordial.
 
-Le DevOps étant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études sérieuses auxquelles se référer. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
+Le DevOps étant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études auxquelles se référer. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
 
-Ce livre concentre à la fois les aspects organisationnels et les aspects techniques, pour illustrer chaque notion de la méthodologie DevOps. Comprenez par là que vous n'avez pas besoin d'être ingénieur pour comprendre ces notions. Néanmoins si vous souhaitez les mettre en pratique, une bonne partie nécessitera des experts en ingénierie. Dans tous les cas, en tant que responsable d'une initiative DevOps, vous vous devez de maîtriser les aspects technique pour prendre les meilleures décisions et rester crédible face à vos subordonnés et votre hiérarchie.
+Ce livre concentre à la fois les aspects organisationnels et les aspects techniques, pour illustrer chaque notion de la méthodologie DevOps. Comprenez par là que vous n'avez pas besoin d'être ingénieur pour suivre ces notions. Néanmoins si vous désirez les mettre en pratique, une grande partie nécessitera l'intervention d'experts en ingénierie. Dans tous les cas, en tant que responsable d'une initiative de transformation numérique, il est préférable de maîtriser ses aspects techniques pour prendre les meilleures décisions et rester crédible face à vos subordonnés ou votre hiérarchie.
 
 L'idée est de vous donner une ligne directrice pour vous orienter vers une première expérimentation DevOps, ou d'affiner celle que vous soutenez.
 
 Comme vous le comprendrez par la suite, chaque organisation a ses propres besoins, son propre niveau de maturité sur le sujet et il n'y a pas de recette unique. Néanmoins, des standards éprouvés existent. C'est ceux-là qui vous seront présentés.
 
-Soyez assuré que les efforts que vous déploierez à faire du DevOps dans votre organisation, seront récompensés par une organisation plus efficace, agile et pérenne.
+Soyez assuré que les efforts que vous déploierez à faire du DevOps dans votre organisation, seront récompensés par une structure plus efficace, agile et pérenne.
 
 # DevOps vs Site Reliability Engineering
 
@@ -117,7 +119,7 @@ Le terme DevOps est attribué à l'ingénieur français Patrick DEBOIS qui a éc
 
 La SRE est une discipline beaucoup plus ancienne du temps où Ben TREYNOR SLOSS, ingénieur chez Google, fonda en 2003 une équipe de ce nom. Il sera le père fondateur de la SRE et des premières pratiques DevOps.
 
-Selon Google, voici les cinq piliers du DevOps :
+Google définit les cinq pilliers du DevOps suivants :
 
 1. [**Réduire les silos organisationnels**](#réduire-les-silos-organisationnels)
    - En cultivant l'engagement, le sentiment du partage de responsabilité des succès et des échecs entre les parties-prenantes (ingénieurs, responsables projet, utilisateurs/métiers). Chacun est davantage impliqué et se sent légitime à son niveau.
@@ -185,17 +187,19 @@ Souvent, il s'agit pour eux de trouver des solutions techniques : faciles à con
 
 Acheter des technologies "sur l'étagère" ou lancer un nouveau projet peut sembler plus simple et permettre d'obtenir un résultat immédiat. Mais se lancer en faisant fi des contraintes inhérentes à l'organisation peut être risqué (maturité de l'environnement organisationnel et technique, volume ou type de données supportés par les outils, ressources humaines et matériel, dette technique, courbe d'apprentissage...). Ces contraintes sont souvent déjà connues et exprimées depuis des années par l'expertise interne. Ces frustrations mènent quelques fois à des initiatives qui tentent d'y répondre : soit inconnues, soit négligées, soit ignorées.
 
-Or, les décideurs ont rarement le temps d'aller faire le tour de l'organisation et poser des questions. Ils ont par conséquent tendance à privilégier leurs propres réflexions, en oubliant de demander conseil à leurs experts. Cela résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs, une mauvaise communication et donc de la frustration au sein de l'entreprise.
+Or, les décideurs ont rarement le temps de faire le tour complet de l'organisation et de poser des questions. Ils ont par conséquent tendance à privilégier leurs propres réflexions, en oubliant de demander conseil à leurs experts. Cela résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs, une mauvaise communication et donc de la frustration au sein de l'entreprise.
 
 Une parfaite illustration est celle du Ministère des Armées américain qui a lancé une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne], dont la finalité était identique. Au delà d'avoir provoqué des frustrations au sein des équipes de _Platform One_[^ChaillanDisaTweet], le programme _Vulcan_ accuse des retards et des surcoûts[^DISAVulcanDelays].
 
-Cependant en tant que meneur d'une initiative interne, vous devez comprendre la crainte des décideurs : confier un projet ambitieux disruptant les pratiques organisationnelles a plusieurs risques. 
+Dans d'autres cas, la méfiance de certains responsables les mènent à remettre en doutte les propositions faites par leurs experts en interne. A outrance, cela mène à considérer ses propres experts comme des acteurs externes à l'organisation, balayant l'intérêt du recrutement de personnels au contact quotidien des sujets de l'entreprise.
 
-Premièrement si vous décidez de monter votre propre équipe, il se peut que ces personnes partent à n'importe quel moment, laissant derrière elles un travail qu'il n'est souvent pas possible de reprendre au vu de la maturité avancée des réflexions qu'elle entreprenait. Voilà pourquoi beaucoup d'organisations préfèrent payer un tiers-partie, avec un cahier des charges bien définit pour que le décideur soit certain d'obtenir un résultat (obligation contractuelle du tiers-partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique est obsolète.
+Cependant en tant que meneur d'une initiative interne, vous devez comprendre la crainte des décideurs : confier un projet ambitieux disruptant les pratiques organisationnelles a plusieurs risques.
+
+Premièrement si vous décidez de monter votre propre équipe, il se peut que ces personnes partent à n'importe quel moment, laissant derrière elles un travail qu'il n'est souvent pas possible de reprendre, au vu de la maturité avancée des réflexions qu'elles entreprenaient. Voilà pourquoi beaucoup d'organisations préfèrent payer un tiers-partie, avec un cahier des charges bien définit pour que le décideur soit certain d'obtenir un résultat (obligation contractuelle du tiers-partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique est obsolète.
 
 Deuxièmement, cela implique un changement culturel qu'il faut être capable d'appréhender. Peut-être qu'il est encore trop tôt pour l'organisation, qu'il faut encore acculturer au travers de présentations et d'exemples de réussites. En effet, il faut que le chef comprenne l'impact de cette transformation sur l'organisation : l'achat de matériel, la transformation de la stratégie RH ou encore la formation des personnels historiques. Aidez vos responsables à se projeter pendant que vous travaillez à changer les choses.
 
-De votre côté, soyez un décideur audacieux, honnête intellectuellement[^BiaisCognitifs] et à l'écoute de vos experts pour ne perdre ni temps, ni argent, ni crédibilité.
+De votre côté, soyez un décideur audacieux, stratège, honnête intellectuellement[^BiaisCognitifs] et à l'écoute de vos experts. Vous éviterez ainsi de perdre du temps, de l'argent ou votre crédibilité.
 
 ## Réorganisations chroniques
 
@@ -430,7 +434,7 @@ Néanmoins dans une approche DevOps, l'usage de ces librairies évolue au cours 
 L'avantage de la méthodologie DevOps est d'utiliser une technologie de déploiement standardisée : le conteneur. Cela nous permet d'utiliser des outils pour analyser de quoi chaque conteneur est composé et prévenir les failles de sécurité. Le SBOM traditionnel peut donc être automatisé par deux choses :
 
 - Des chaînes d'intégration continue qui détectent, mettent à jour ou refusent automatiquement l'usage de librairies spécifiques (ex: analyse des `package.json` en Javascript, `requirements.txt` en Python, détection de paquets vulnérables avec Renovate[^Renovate]; cf. Anchore[^AnchoreSBOM]).
-- Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: Trivy[^Trivy], Quay Clair[^QuayClair], [Dagda](https://github.com/eliasgranderubio/dagda)[^DagdaGithub])
+- Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: Trivy[^Trivy], Quay Clair[^QuayClair], [Dagda](https://github.com/eliasgranderubio/dagda)[^DagdaGithub], Jfrog X-Ray[^JFrogXRay])
 
 Au lieu de lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser les contributions pouvant apporter des risques, avant qu'elles soient déployées en production.
 
@@ -555,6 +559,27 @@ Par exemple pour le thème "protéger les logiciels", la pratique "protéger tou
 
 Ce document [est à retrouver](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) sur le site Internet du NIST. La bibliothèque en ligne du directeur de l'information[^CIOLibrary] (CIO) de l'_US Department of Defense_ est également une excellente source d'inspiration.
 
+### L'exemple de GitHub
+
+GitHub est la plateforme de partage de code la plus populaire sur Internet. Elle héberge plus de 100 millions de projets avec plus de 40 millions de développeurs y contribuant. Pillier dans le domaine de l'open-source, elle propose des outils de sécurité nativement intégrés à sa plateforme. L'objectif de GitHub est de faire en sorte que protéger son code, ne nécessite que quelques clics pour activer les outils opportuns.
+
+L'entreprise a opéré un virage stratégique en faisant l'acquisition en 2019 de _Semmle_, un outil d'analyse des vulnérabilités dans le code. Depuis, elle propose plusieurs moyens de sécuriser sa base de code :
+
+- SAST (_Static application security testing_) : outils d'analyse automatisée de vulnérabilités dans le code (ex: injections SQL, faille XSS et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez également ajouter vos propres règles grâce à des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _CodeQL_, _Checkmarx_ ou encore _Klocwork_.
+
+    ![Exemple de vulnérabilité détectée par CodeQL sur un projet GitHub. Source : GitHub (vidéo YouTube)](./images/2020_code-scanning-github.png)
+
+- Analyseur de secrets : analyse, détecte et alerte sur de potentiels mots de passe ou _tokens_ laissés par erreur dans le code source
+- _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative.
+
+    ![Liste de vulnérabilités découvertes dans un projet GitHub par Dependabot. Source : github.com](./images/2020_github-dependabot.png)
+
+Toutes les failles de sécurité liées à un projet sont centralisées au sein d'une vue d'ensemble, permettant de facilement détecter et remédier aux menaces.
+
+![Tableau de bord des risques de sécurité dans un projet GitHub. Source : github.com](./images/2021_github-screenshot-of-security-overview.png)
+
+GitHub se base sur le référentiel international des CVEs[^CVE] (_Common Vulnerabilities and Exposures_) pour reconnaître les failles, une liste de vulnérabilités identifiées dans les systèmes informatiques et décrites sous un format précis. Vous pouvez ajouter des mécanismes de vérification supplémentaires grâce aux _GitHub Actions_, le mécanisme d'intégration continue de GitHub.
+
 ## Les bases de l'architecture réseau _zero trust_
 
 Le concept _zero trust_ se résume en une expression : "Ne jamais faire confiance, toujours vérifier". Cette pratique s'impose aujourd'hui avec 55% des entreprises qui répondaient avoir mis en place une initiative _zero trust_ en 2022 contre 24% en 2021[^OKTAZeroTrustStudy].
@@ -588,7 +613,7 @@ Au delà d'un besoin impératif de mieux sécuriser l'accès aux ressources, l'a
 
 L'innovation technologique implique de s'adapter rapidement. Le _zero trust_ permet aux organisations de s'adapter rapidement et en toute sécurité aux changements de leur environnement, sans avoir à revoir leur posture de sécurité.
 
-Des documents de référence tels que ceux du NIST[^NISTZeroTrust] ou de l'_US Department of Defense_[^CNAPDod] donnent les spécifications pour déployer un réseau zero trust à l'état de l'art.
+Des documents de référence tels que le papier de recherche _Beyondcorp_ de Google[^Beyondcorp], ceux du NIST[^NISTZeroTrust] ou de l'_US Department of Defense_[^CNAPDod] donnent les spécifications pour déployer un réseau zero trust à l'état de l'art.
 
 ## Développement basé sur le _zero trust_
 
@@ -693,9 +718,32 @@ En conclusion, vous devez traiter votre socle comme un produit au service de vos
 
 ## Open-source : risques et avantage stratégique
 
-TODO(flavienbwk): Réticences de certains à l'idée d'employer des logiciels open-source (risques de librairies vérolées, de protestwares). Risques mitigés par les techniques DevOps. La maîtrise de l'open-source est un avantage stratégique (savoir la transformer pour des besoins internes).
+Les technologies open-source (en français : "technologies libres") représentent 77% des librairies utilisées dans les logiciels propriétaires (ou "_closed-source_")[^SoOSS2022]. Parmi les 100 000 sites web les plus populaires, Linux - un système d'exploitation open-source - est utilisé dans près de 50% des cas.
 
-TODO(flavienbwk): Programme NELSON open source https://joinup.ec.europa.eu/collection/open-source-observatory-osor/news/open-source-royal-navy
+Par exemple le navigateur _Firefox_, le langage de programmation _Python_ ou le système d'exploitation _Android_ n'existeraient pas sans l'open-source. Même Microsoft, historiquement un symbole du logiciel propriétaire, débute dès 2009 dans l'open-source en contribuant au kernel de Linux. En 2014, Satya NADELLA - son nouveau CEO - annonce "Microsoft aime Linux"[^MicrosoftLovesLinux]. Malgré les critiques[^GithubMsftAcquisitionCritics], l'entreprise finira même par acquérir _GitHub_ en 2018 et semble continuer de donner satisfaction[^GithubFollowingMsftAcquisition]. Elle continue de contribuer à de nombreux projets libres sur son site _opensource.microsoft.com_.
+
+Un rapport de l'Union Européenne[^EUOSSReport] indique qu'en 2018, les contributions des européens à GitHub - la plus grande plateforme de contributions open-source au monde - représentaient l'équivalent de 16 000 équivalents temps-plein. Soit près d'un milliard d'euros pour les entreprises du vieux continent. Ces contributions portent un ratio coût/bénéfice de 1 pour 4, en permettant aux entreprises de rester à l'état de l'art, développer du code de qualité ou encore réduire les efforts de maintenance.
+
+Néanmoins, là où dans le privé leur usage est une évidence, les équipes techniques au sein de grandes organisations se confrontent parfois à la réticence de responsables projet méfiants. Ces équipes sont mises au défi vis-à-vis de leur usage des technologies open-source principalement pour des raisons de sécurité.
+
+Cette mise en doutte n'est pas dénuée de sens. L'idée d'importer une librairie écrite par un tiers-partie au sein de son environnement de développement, sans regarder ce qu'il contient, peut sembler risqué. Les risques peuvent être les suivants :
+
+- Une librairie supprimant arbitrairement des données
+- Une librairie qui transmet des données à un serveur distant (données logicielles, télémétrie)
+- Une librairie récemment mise à jour ne fonctionnant plus (bug ou sabotage volontaire : cf. _protestwares_[^Protestware])
+- Légalement, l'utilisation d'une technologie open-source peut être conditionnée à des règles décrites dans une licence (ex: interdiction de vendre un logiciel qui utilise ladite librairie)
+
+Il s'agit donc de trouver l'équilibre entre la productivité apportée par les librairies/logiciels open-source et la confiance qu'on leur accorde (sécurité).
+
+Evitons néanmoins le piège de s'abandonner à croire qu'acheter (très cher) le logiciel à une entreprise, permettra de le rendre sécurisé[^DependencyConfusion]. Bien que la responsabilité soit déléguée, le mal - s'il se produit - sera fait. Les responsables de l'ingénierie chez Google pensent que d'ici 2025, 80% des entreprises utiliseront des technologies open-source maintenues par des personnes payées pour le faire[^CuratedOpenSource] (cf. _[GitHub Sponsors](https://github.com/sponsors)_).
+
+Jusqu'à présent, la politique officielle pour approuver l'usage de certaines librairies, passait par un cycle d'homologation. Ce dernier a pour objectif de cartographier les risques apportés par l'usage d'une technologie, pour savoir si on l'accepte ou non. Le choix peut être appuyé par un audit de code, mais n'est souvent pas fait par manque de ressources humaines.
+
+Pour se protéger correctement, il faut assurer une veille active et permanente des menaces de sécurité introduites dans le code. En mode DevOps, votre usine logicielle est équipée d'outils permettant de détecter les dépendances ou le code malicieux. En sécurisant sa chaîne logicielle (cf. chapitre "[Sécuriser sa chaîne logicielle](#sécuriser-sa-chaîne-logicielle)", fiche de poste "[Ingénieur SSI](#ingénieur-ssi-devops)"), vous minimisez les risques. Par exemple, si vous n'êtes pas en mesure d'installer par vous-même une forge logicielle sécurisée, vous pouvez bénéficier des fonctionnalités de _GitHub_ (cf. chapitre "[L'exemple de GitHub](#lexemple-de-github)"). Plus généralement, les pratiques de sécurité chez GitLab[^SecurityPracticesGitLab] sont un excellent point de départ pour vous organiser.
+
+Une pratique commune chez les grandes entreprises est d'adhérer à une plateforme de _bug bounty_, que cela soit pour leurs sites en ligne ou des logiciels libres qu'ils utilisent[^BugBountyLinuxKnl]. Un _bug bounty_ est un programme qui récompense des individus ayant identifié et à signalé des vulnérabilités logicielles. L'objectif est d'identifier et de corriger les vulnérabilités avant qu'elles ne puissent être exploitées par des hackers malveillants. Les plateformes les plus populaires dans ce domaine sont _Hackerone_, _Bugcrowd_, _Synack_ ou encore _Open Bug Bounty_.
+
+Enfin, les très grandes entreprises technologiques publient souvent de nouveaux logiciels en open-source. Ces logiciels deviennent des standards et sont utilisés par des dizaines de milliers de développeurs dans le monde. Cela leur permet de facilement acculturer des ingénieurs à leurs propres technologies, sans avoir à financer cette démarche. Les entreprises se retrouvent ainsi avec des candidats maîtrisant déjà leurs propres technologies. Loin de ne bénéficier qu'à ces seules entreprises, cette pratique facilite l'intégration et l'accueil des nouveaux arrivants pour toute organisation faisant l'usage de ces standards.
 
 # Les piliers du DevOps en pratique
 
@@ -1399,6 +1447,10 @@ TODO(flavienbwk): Illustration page 14 du DORA 2022, traduit en français et ré
 
 TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
 
+# Plateforme DevOps intégrée
+
+TODO(flavienbwk): Palantir Apollo (dev+deploy+monitor on multiple places) - https://www.youtube.com/watch?v=T2gF8KJDy3w - "Today, 100s of engineering teams are independently shipping 400+ services, across 100s of environments (AWS, GCP, Azure, classified on-prem clouds, airgapped, edge) with 1000s of deployments per day.". [Partent du principe](https://medium.com/palantir/why-traditional-approaches-to-continuous-deployment-dont-work-today-b5a6c33cc754) que les devs "know best how their software should be upgraded and how it should behave" quand les ops "know best what is important to their environments and customers, so they define environment specifications and constraints".
+
 # Conclusion
 
 TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
@@ -1986,3 +2038,29 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^DoDITEnterpriseStrategyRoadmap]: _Department of Defense_ (États-Unis). "[_DoD IT Enterprise Strategy and Roadmap_](https://dodcio.defense.gov/Portals/0/Documents/Announcement/Signed_ITESR_6SEP11.pdf)". 2011.
 
 [^DoDEnterpriseDevSecOpsReferenceDesign]: _Department of Defense_ (États-Unis). "[_DoD Enterprise DevSecOps Reference Design_](https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf)". 2019.
+
+[^Protestware]: Techcrunch. [_Protestware on the rise: Why developers are sabotaging their own code_](https://techcrunch.com/2022/07/27/protestware-code-sabotage). 2022.
+
+[^CuratedOpenSource]: BERWICK, Flavien. [_Top 10 Cloud Technologies Predictions (according to Google VPs)_](https://www.linkedin.com/pulse/top-10-cloud-technologies-predictions-according-google-berwick), point 2. 2022.
+
+[^JFrogXRay]: JFrog XRay website : _jfrog.com/xray_.
+
+[^EUOSSReport]: OpenForum Europe; Fraunhofer ISI. [_Study on the impact of Open Source for the European Commission_](https://openforumeurope.org/open-source-impact-study/). 2021.
+
+[^SoOSS2022]: Open Source Initiative; Perforce. [_State of Open Source survey_](https://opensource.org/ten-takeaways-from-the-2022-state-of-open-source-survey). 2022.
+
+[^DependencyConfusion]: BIRSAN, Alex. [_Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies_](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610). 2021.
+
+[^SecurityPracticesGitLab]: GitLab. [_Security at GitLab_](https://about.gitlab.com/handbook/security/). _about.gitlab.com/handbook/security_.
+
+[^Beyondcorp]: RORY, Ward; BEYER, Betsy. [_BeyondCorp: A New Approach to Enterprise Security_](https://research.google/pubs/pub43231). 2014.
+
+[^MicrosoftLovesLinux]: McALLISTER, Neil (The Register). [_Redmond top man Satya Nadella: 'Microsoft LOVES Linux'_](https://www.theregister.com/2014/10/20/microsoft_cloud_event/). 2014.
+
+[^GithubFollowingMsftAcquisition]: LARDINOIS, Frederic (Techcrunch). [_Four years after being acquired by Microsoft, GitHub keeps doing its thing_](https://techcrunch.com/2022/10/26/four-years-after-being-acquired-by-microsoft-github-keeps-doing-its-thing/). 2022.
+
+[^GithubMsftAcquisitionCritics]: WARREN, Tom (The Verge). "_Microsoft has some old bad habits the community needs to trust won’t happen again_" : [_Here’s what GitHub developers really think about Microsoft’s acquisition_](https://www.theverge.com/2018/6/18/17474284/microsoft-github-acquisition-developer-reaction). 2018.
+
+[^CVE]: La liste CVE est supervisée par le MITRE, un organisme subventionné par la CISA (_Cybersecurity and Infrastructure Security Agency_) qui fait partie du Département de la Sécurité Intérieure des États-Unis.
+
+[^BugBountyLinuxKnl]: ARHIRE, Ionut. [_Google Boosts Bug Bounty Rewards for Linux Kernel Vulnerabilities_](https://www.securityweek.com/google-boosts-bug-bounty-rewards-linux-kernel-vulnerabilities). 2022.
