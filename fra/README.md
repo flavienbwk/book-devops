@@ -110,14 +110,13 @@ Le paradigme et les techniques de sécurité dans un modèle d'organisation DevO
 
 # Les cinq piliers du DevOps
 
-Selon la réputée entreprise américaine [Atlassian](https://www.atlassian.com/devops/what-is-devops/history-of-devops
-)[^AtlassianHistoryOfDevops], le mouvement DevOps a commencé à prendre forme entre 2007 et 2008, lorsque les métiers de l'ingénierie système (ceux qui déploient) et du développement logiciel (ceux qui développent) se sont inquiétés de ce qu'ils considéraient comme un dysfonctionnement fatal avec leurs pratiques opposées dues à leur manque de proximité.
+Selon la réputée entreprise américaine [Atlassian](https://www.atlassian.com/devops/what-is-devops/history-of-devops)[^AtlassianHistoryOfDevops], le mouvement DevOps a commencé à prendre forme entre 2007 et 2008, lorsque les métiers de l'ingénierie système (ceux qui déploient) et du développement logiciel (ceux qui développent) se sont inquiétés de ce qu'ils considéraient comme un dysfonctionnement fatal avec leurs pratiques opposées dues à leur manque de proximité.
 
 Initialement, le DevOps se concentrait sur la manière d'améliorer l'efficacité du développement et du déploiement des logiciels. En 2022, c'est une méthodologie qui a évolué et regroupe un nombre de domaines bien plus vaste comme l'administration système, la sécurité ou encore la garantie de qualité (systèmes et logiciels). Autour de 2015, la méthodologie DevOps était principalement employée dans les grandes entreprises américaines de la technologie (GAFAM[^GAFAM] et NATU[^NATU]) ou des entreprises employant déjà la [méthodologie agile](#être-au-plus-proche-du-métier). Bien répandue aujourd'hui, des organisations de toute taille l'utilisent partout dans le monde, au sein de tout type de secteur[^GoogleCloudDevopsLeaders] (santé, finances, transports, gouvernements, industrie lourde...) et même si elles ne travaillaient pas encore en mode agile.
 
-Le terme DevOps est attribué à l'ingénieur français Patrick DEBOIS qui a écrit en 2015 le livre « Le manuel du DevOps : comment instaurer une agilité, une fiabilité et une sécurité de référence dans les organisations technologiques [^TheDevopsHandbook]». Il y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser les objectifs grâce aux pratiques DevOps.
+Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant en 2007, le gouvernement belge lui avait confié un projet de migration d'un centre de données. Ayant passé un temps considérable à discuter avec les développeurs et les administrateurs systèmes, il aura fait le constat de ce que les ingénieurs Andrew CLAY SHAFER et Lee THOMPSON décriront comme le "mur de la confusion"[^WallofConfusion]. Une métaphore pouvant se résumer par des parties-prenantes qui ne se comprennent pas. La communauté mettait un mot sur un vrai phénomène entravant la communication et la collaboration entre les équipes, ce qui entraîne un manque d'efficacité et des retards. En suivra la rédaction de son livre en 2015 « Le manuel du DevOps : comment créer des organisations technologiques agiles, fiables et sécurisées »[^TheDevopsHandbook]. Patrick y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser les objectifs grâce aux pratiques DevOps.
 
-La SRE est une discipline beaucoup plus ancienne du temps où Ben TREYNOR SLOSS, ingénieur chez Google, fonda en 2003 une équipe de ce nom. Il sera le père fondateur de la SRE et des premières pratiques DevOps.
+La SRE est une discipline plus ancienne du temps où Ben TREYNOR SLOSS, ingénieur chez Google, fonda en 2003 une équipe de ce nom. Il sera le père fondateur de la SRE et des premières pratiques DevOps.
 
 Google définit les cinq pilliers du DevOps suivants :
 
@@ -569,8 +568,8 @@ L'entreprise a opéré un virage stratégique en faisant l'acquisition en 2019 d
 
     ![Exemple de vulnérabilité détectée par CodeQL sur un projet GitHub. Source : GitHub (vidéo YouTube)](./images/2020_code-scanning-github.png)
 
-- Analyseur de secrets : analyse, détecte et alerte sur de potentiels mots de passe ou _tokens_ laissés par erreur dans le code source
-- _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative.
+- Analyseur de secrets : analyse, détecte et alerte sur de potentiels mots de passe ou _tokens_ laissés par erreur dans le code source. Alternative open-source : [_Gitleaks_](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools).
+- _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative. Alternative open-source : [_Faraday_](https://github.com/infobyte/faraday).
 
     ![Liste de vulnérabilités découvertes dans un projet GitHub par Dependabot. Source : github.com](./images/2020_github-dependabot.png)
 
@@ -745,6 +744,29 @@ Une pratique commune chez les grandes entreprises est d'adhérer à une platefor
 
 Enfin, les très grandes entreprises technologiques publient souvent de nouveaux logiciels en open-source. Ces logiciels deviennent des standards et sont utilisés par des dizaines de milliers de développeurs dans le monde. Cela leur permet de facilement acculturer des ingénieurs à leurs propres technologies, sans avoir à financer cette démarche. Les entreprises se retrouvent ainsi avec des candidats maîtrisant déjà leurs propres technologies. Loin de ne bénéficier qu'à ces seules entreprises, cette pratique facilite l'intégration et l'accueil des nouveaux arrivants pour toute organisation faisant l'usage de ces standards.
 
+## Évaluer sa sécurité et s'entraîner
+
+Comme dans toute activité, pour exceller dans la résilience des systèmes, il faut s'entraîner. C'est pourquoi l'une des bonnes pratiques SRE est de s'entraîner à faire face aux incidents. Les objectifs sont les suivants :
+
+1. Evaluer la qualité de sa réponse à incident (vitesse et outils de détection, guides de résolution claires et faciles à trouver, outils de production fonctionnels)
+2. Evaluer la résilience de l'infrastructure (mécanismes automatiques de l'infrastructure pour résoudre les pannes en production)
+3. Entraîner les ingénieurs à mieux connaître leur infrastructure et les outils à leur disposition pour répondre aux incidents
+
+Il existe chez Google deux types d'entraînement[^SRETrainingsGoogle] pour s'assurer que les équipes soient bien organisées, dans le cas où un incident suiviendrait. L'objectif est de réduire le _Mean Time To Mitigation_ (le temps moyen de résolution d'un incident, cf. chapitre "[Mesurer le succès de sa transformation](#mesurer-le-succès-de-sa-transformation)").
+
+1. DiRT (_Disaster Recovery Testing_) : un groupe d'ingénieurs planifie et provoque une panne réelle et fictive pendant une période définie afin de tester l'efficacité de la réponse à incident. Il est recommandé d'effectuer ces entraînements au moins une fois par an sur vos services critiques.
+2. La roue de la malchance (_Wheel of misfortune_) : scénario fictif tiré au hasard, sous forme d'un jeu de rôle type _Donjons et Dragons_ où un une équipe d'ingénieurs se retrouve face à une urgence opérationnelle. Elle intéragit avec un "maître du jeu" qui invente des conséquences aux actions que les ingénieurs annoncent prendre. Les ingénieurs révisent à cette occasion leur procédure d'investigation des incidents. Cette pratique est particulièrement utile pour les nouveaux arrivants mais requiert que le maître du jeu soit particulièrement expérimenté (cf. projet GitHub "[wheel of misfortune](https://dastergon.gr/wheel-of-misfortune)"[^pratiswomgithub] de Pavlos RATIS).
+
+Amazon Web Services (AWS) propose une approche nommée _Game days_[^AWSGameday] similaire à la _Wheel of misfortune_ de Google. L'entreprise liste ses services critiques et les menaces qui peuvent y être associées (ex: perte de données, surcharge, indisponibilité), pour en déterminer un scénario "catastrophe". L'idée est par la suite de provisionner une infrastructure identique à celle de votre production, et de provoquer la panne souhaitée. Puis observez comment vos équipes et vos outils de production réagissent à l'incident.
+
+Ces entraînements sont plus communément appelés _fire drills_. Encore une fois, leur objectif est de pratiquer sa réponse à incident face à une situation urgente. Au cours de ces entraînements, quelqu'un doit noter les éléments incomplets ou manquants dans les procédures ou outils existants, en vue de les améliorer.
+
+Netflix y va encore plus fort avec son outil _Chaos Monkey_ qui arrête automatiquement, de manière aléatoire et à tout moment des services en production. L'objectif est de s'assurer que les clients continuent d'avoir accès à Netflix, même avec un ou plusieurs services internes en panne. Leur outil _Chaos Gorilla_ va même jusqu'à simuler l'arrêt d'une région AWS complète (ex: un datacentre qui serait mis hors service) pour observer ses conséquences sur la disponibilité de la plateforme. Ces pratiques font partie de ce que l'on appelle le _chaos engineering_.
+
+Enfin, en dehors de [logiciels d'audit](https://www.tecmint.com/scan-linux-for-malware-and-rootkits) comme _Lynis_[^SecurityAuditTools] permettant de détecter certaines failles de sécurité, il existe des exercices à faire pratiquer par vos équipes de sécurité et de SRE. La manière la plus populaire d'évaluer la sécurité de son infrastructure est l'exercice "blue team / red team". Inspiré des entraînement militaires, elle consiste en un face à face entre une équipe d'experts en cybersécurité qui tente de compromettre un système d'information (la _red team_), et les équipes de réponse à incident (les SRE, la _blue team_) qui vont identifier, évaluer et neutraliser les menaces. L'idée est d'éviter de se reposer sur les capacités théoriques de ses systèmes de sécurité, mais de les confronter à des menaces concrètes pour évaluer leur intérêt et leurs points faibles. Des variantes existent avec une _purple team_, une _white team_ ou encore une _gold team_. Mais commencez par mettre en place un scénario simple. Par exemple, un de vos développeurs introduisant une image Docker ou du code vérolé.
+
+Ce sujet est vaste et les pratiques diffèrent selon la taille de l'organisation dans laquelle vous êtes employé. Ce chapitre vous donne quelques références pour entamer vos pratiques d'entraînement. Structurez-les par la suite en fonction de vos objectifs et de vos ressourcess.
+
 # Les piliers du DevOps en pratique
 
 Ca y est, nous atteignons le cœur du sujet. Dans ce chapitre, nous allons découvrir les différents piliers du DevOps, en décrivant les différentes pratiques et technologies qui peuvent répondre à nos enjeux.
@@ -759,7 +781,7 @@ Une entreprise éprouvant des problèmes de "silos" diffère d'une entreprise qu
 
 Il s'agit donc de faire parler les silos entre eux : leur faire parler le même langage, les faire utiliser les mêmes outils et leur offrir la même vision, pour qu'ils puissent collaborer aisément.
 
-Le mouvement DevOps croit en l'union de méthodologies communes et de la technologie pour faciliter ces échanges. Ce chapitre décrit les méthodologies communes à adopter pour atteindre cet objectif.
+Le mouvement DevOps croit en l'union de méthodologies communes et de la technologie pour faciliter ces échanges. Ce chapitre décrit ces méthodologies à adopter pour atteindre cet objectif.
 
 ### Cartographier l'historique
 
@@ -967,9 +989,17 @@ Pour présenter cette méthodologie à vos équipes et retrouver facilement les 
 
 ### Méthodologie à 12 critères
 
+Les technologies Cloud apportent une flexibilité indéniable et donnent la possibilité de servir toujours plus de clients par rapport aux technologies traditionnelles. Mais passer de logiciels monolithiques à des applicatifs capables de passer à l'échelle, nécessite de respecter quelques règles d'ingénierie.
+
+La méthodologie à 12 critères (_Twelve-Factor Methodology_) regroupe une liste de  bonnes pratiques pour créer des applicatifs adaptés aux plateformes Cloud.
+
+Cette méthodologie est une synthèse de l'expérience vécue par Adam WIGGINS et ses ingénieurs à _Heroku_. L'objectif est d'éviter "l'érosion logicielle"[^SoftwareErosion], un phénomène définit par la lente détérioration des logiciels au fil du temps, qui finissent par être défectueux ou inutilisables.
+
 TODO(flavienbwk): Si on veut une plateforme Cloud avec des techniques DevOps efficaces, il y a quelques règles d'ingénierie logicielle à respecter. [Développer](https://12factor.net/) le [sujet](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/3-Reliable%20GCloud%20Infrastructure%3A%20Design%20and%20Process&openfile=171870)
 
-Ces critères - et en particulier le découpage des logiciels en microservices - couplés à des [chaînes de déploiement continue](#continuous-delivery-cd), augmentent de 43%[^DORACDLooselyCoupledArchitecture] les chances d'anticiper les incidents logiciels (ex: pannes, vulnérabilités ou performances de service dégradées).
+Ces critères - et en particulier le découpage des logiciels en microservices - couplés à des [chaînes de déploiement continue](#continuous-delivery-cd), augmentent de 43%[^DORACDLooselyCoupledArchitecture] les chances d'anticiper les incidents logiciels selon la recherche (ex: pannes, vulnérabilités ou performances de service dégradées).
+
+En utilisant la méthodologie à 12 critères, les développeurs créent des logiciels plus faciles à maintenir, à déployer, à mettre à l'échelle et plus résistants aux pannes.
 
 ### Messagerie instantanée
 
@@ -987,7 +1017,7 @@ Par exemple chez Google, les stagiaires commencent par une semaine complète dé
 
 L'Armée de l'Air américaine s'est mise depuis 2019 en ordre de bataille en investissant massivement dans des solutions d'auto-apprentissage. Dans un podcast[^DevSecOpsUSAirForce], son ancien Directeur de l'Ingénierie Logicielle (_Chief Software Officer_) Nicolas CHAILLAN explique comment il a mis en place ce système pour plus de 100 000 développeurs. Une plateforme web a été déployée avec du contenu pédagogique spécialement sélectionné ou créé par ses équipes. Il ajoute qu'une heure par jour a été accordé aux collaborateurs pour "rattraper le retard et continuer d'être à jour sur les dernières technologies".
 
-> "C'est _(la formation)_ de l'investissement pour l'entreprise et en eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix." - Nicolas CHAILLAN
+> "C'est _(la formation est)_ un investissement pour l'entreprise et pour eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix." - Nicolas CHAILLAN
 
 À l'instar de l'Armée de l'Air américaine, une méthode avait bien fonctionné dans mes précédentes expériences. Nous avions réussi à obtenir un jour de télétravail par semaine, après un temps certain à faire de la pédagogie à des responsables qui n'en comprenaient pas bien l'intérêt. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière fournissait des statistiques sur le temps passé à se former et nos succès à la hiérarchie. Le coût de ces deux services était minime par rapport à toutes les connaissances à l'état de l'art qu'elle nous conférait.
 
@@ -1222,17 +1252,11 @@ TODO(flavienbwk): Au sein d'une usine logicielle, ce sont des technologies telle
 
 ### Continuous Delivery (CD)
 
-TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d)}. Mettre des illustrations.
+TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d) ou Spinnaker}. Mettre des illustrations.
 
 ### Développement piloté par tests
 
 TODO(flavienbwk): Développer le sujet
-
-### Une pratique extrême pour réduire les risques
-
-<!-- English title : Extreme risk management practices -->
-
-TODO(flavienbwk): [Développer (Chaos Monkey)](https://software.af.mil/training/devops/) et changer le titre
 
 ## Tout mesurer
 
@@ -1447,6 +1471,8 @@ TODO(flavienbwk): Illustration page 14 du DORA 2022, traduit en français et ré
 
 TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
 
+TODO(flavienbwk): Proposition de mesure du nombre de contributeurs ayant contribué sur le temps depuis lequel le logiciel existe multiplié par la disponibilité du logiciel en production multiplié par le nombre de déploiements
+
 # Plateforme DevOps intégrée
 
 TODO(flavienbwk): Palantir Apollo (dev+deploy+monitor on multiple places) - https://www.youtube.com/watch?v=T2gF8KJDy3w - "Today, 100s of engineering teams are independently shipping 400+ services, across 100s of environments (AWS, GCP, Azure, classified on-prem clouds, airgapped, edge) with 1000s of deployments per day.". [Partent du principe](https://medium.com/palantir/why-traditional-approaches-to-continuous-deployment-dont-work-today-b5a6c33cc754) que les devs "know best how their software should be upgraded and how it should behave" quand les ops "know best what is important to their environments and customers, so they define environment specifications and constraints".
@@ -1454,6 +1480,8 @@ TODO(flavienbwk): Palantir Apollo (dev+deploy+monitor on multiple places) - http
 # Conclusion
 
 TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
+
+TODO(flavienbwk): Outils ITOps AI-based qui peuvent changer notre futur (Copilot, GPT3) : https://www.itprotoday.com/it-operations/4-ways-ai-assisted-coding-can-benefit-itops-engineers
 
 Je m'attends à ce que les standards en matière de sécurité continuent d'évoluer à un rythme effréné. Et je l'espère, aussi vite que la vitesse à laquelle progressent les menaces informatiques. Cela plaide d'autant plus en faveur d'une transformation des organisations, leur permettant de continuer à innover, sans être contraintes de ralentir leur rythme face à la crainte d'être attaquées.
 
@@ -1495,6 +1523,7 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
 - **EdgeOps** : TODO(flavienbwk)
+- **ITOps** (IT Operations) : Ensemble des pratiques se concentrant sur la maintenance et la gestion des systèmes informatiques. A distinguer subtilement du DevOps qui se concentre davantage sur l'amélioration du processus de développement et de déploiement des logiciels. Synonyme d'administrateur système (sysadmin) ou [SRE](#site-reliability-engineering-sre).
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
@@ -1581,6 +1610,7 @@ Intégré au sein de notre équipe SRE, vous aurez la responsabilité de sécuri
 - Accompagner les différentes équipes techniques dans la sécurisation de leurs applicatifs
 - Mettre en place et maintenir les pratiques du framework SLSA[^SLSA]
 - Assurer une veille sur les dernières menaces et mettre en place des contre-mesures
+- Organiser des exercices de type _blue team_ / _red team_
 
 Compétences :
 
@@ -2064,3 +2094,11 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^CVE]: La liste CVE est supervisée par le MITRE, un organisme subventionné par la CISA (_Cybersecurity and Infrastructure Security Agency_) qui fait partie du Département de la Sécurité Intérieure des États-Unis.
 
 [^BugBountyLinuxKnl]: ARHIRE, Ionut. [_Google Boosts Bug Bounty Rewards for Linux Kernel Vulnerabilities_](https://www.securityweek.com/google-boosts-bug-bounty-rewards-linux-kernel-vulnerabilities). 2022.
+
+[^WallofConfusion]: InfoQ. Podcast : [_Andrew Clay Shafer on Three Economies, the Wall of Confusion, and the Origin of DevOps_](https://www.infoq.com/podcasts/devops-origin-three-economics). 2020.
+
+[^SRETrainingsGoogle]: CLIMENT, Jesus (systems engineer at Google Cloud). [_Shrinking the time to mitigate production incidents_](https://cloud.google.com/blog/products/management-tools/shrinking-the-time-to-mitigate-production-incidents). 2019.
+
+[^pratiswomgithub]: "A role-playing game for incident management training" : github.com/dastergon/wheel-of-misfortune
+
+[^AWSGameday]: [_Fun, gamified, hands-on learning : AWS Gameday_](https://aws.amazon.com/gameday/). aws.amazon.com/gameday.
