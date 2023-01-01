@@ -1307,6 +1307,8 @@ Sharing monitoring tools including its KPIs (OKRs at Google (60/70% is good OKR)
 For example, Google uses an internal tool accessible by everyone : bugganizer.
 -->
 
+TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
+
 ### Indicateurs de résilience
 
 Les indicateurs de résilience sont des métriques vous permettant d'évaluer la santé de votre infrastructure.
@@ -1474,21 +1476,48 @@ Cette pratique est un win-win-win-win : le client réduit les délais de livrai
 
 # Mesurer le succès de sa transformation
 
-Selon la recherche, la maturité technique d'une organisation permet de quadrupler[^DORATechnicalCapabilities] les performance de ses équipes.
+Il est impératif de mesurer les efforts que vous investissez dans votre initiative. Cela permet de constater factuellement l'efficacité de vos prises de décisions. Bien sûr, au début, il n'est pas rare d'observer une dégradation des performances puisque vous changez les habitudes, c'est à dire l'équilibre de l'organisation. Si vous observez une dégradation des indicateurs au cours du temps, vous savez que vous devrez adopter une autre stratégie pour corriger la tendance (cf. chapitre "[Savoir quand innover et quand s'arrêter](#savoir-quand-innover-et-quand-sarrêter)").
 
-TODO(flavienbwk): [Les métriques](https://www.youtube.com/watch?v=uzdtwSRC0hg&list=PLIivdWyY5sqIcFlX94XzycCzssTEkyQ1Q&index=10) pour mesurer le succès de son initiative DevOps.
+Selon la recherche, la maturité technique d'une organisation permet de quadrupler[^DORATechnicalCapabilities] la performance de ses équipes. Découvrons quelques indicateurs utilisés dans l'industrie. Ces derniers font régulièrement l'objet de nombreux débats, mais semblent tout de même être la référence faisant consensus.
 
-TODO(flavienbwk): DORA's [4 key metrics](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance) | [Schéma](https://devops.games/pages/stateOfDevOps.html)
+Le succès d'une initiative DevOps se mesure grâce à 4 mesures théorisées (_4 key metrics_[^DORAsFourKeyMetrics]). A ces mesures s'ajoutent une cinquième qui révèle les performances opérationnelles de l'organisation. Elles font état des résultats obtenus à l'échelle globale de vos systèmes informatiques et de votre organisation plutôt que seulement sur des mesures logicielles. Ces dernières peuvent résulter d'amélioration locales, au détriment des performances globales. Découvrons-les :
 
-Le succès d'une initiative DevOps se mesure grâce à 4 métriques théorisées (_4 key metrics_[^DORAsFourKeyMetrics]). A ces métriques s'ajoutent une cinquième qui révèle les performances opérationnelles de l'organisation. Elles font état des résultats obtenus à l'échelle globale de vos systèmes informatiques et de votre organisation plutôt que seulement sur des métriques logicielles. Ces dernières peuvent résulter d'amélioration locales, au détriment des performances globales. Découvrons-les :
+- **Fréquence des déploiements** (_deployment frequency_) : pour le logiciel ou le service principal sur lequel vous travaillez, à quelle fréquence votre organisation déploie-t-elle le code en production ou le rend disponible pour ses utilisateurs ?
+- **Délai de mise en production**  (_lead time for changes_) : pour le logiciel ou le service principal sur lequel vous travaillez, en combien de temps le mettez-vous en production (c'est-à-dire, combien de temps faut-il pour passer du code validé au code fonctionnant correctement en production) ?
+- **Durée pour restaurer un service** (_time to restore service_) : pour le logiciel ou le service principal sur lequel vous travaillez, combien de temps faut-il généralement pour rétablir le service lorsqu'un incident ou un défaut ayant un impact sur les utilisateurs se produit (ex: une panne non planifiée ou un service dégradé) ?
+- **Taux d'échec des déploiements** (_change failure rate_) : pour le logiciel ou le service principal sur lequel vous travaillez, quel est le pourcentage de mise à jour de la production ou de sortie d'une nouvelle version qui entraînent une dégradation du service (ex: détérioration ou interruption du service) et qui nécessitent par la suite des correctifs (ex: un _hotfix_, un _rollback_, un report de correctif, un _patch_) ?
 
-TODO(flavienbwk): Décrire les 5 métriques
+Toutes ces mesures sont basées sur la disponibilité de l'infrastructure plutôt que sa résilience. Les checheurs du rapport DORA ont par conséquent une nouvelle question aux organisations en 2021[^DORA2021Summary]. Cela a donné naissance à une cinquième mesure :
 
-TODO(flavienbwk): Illustration page 14 du DORA 2022, traduit en français et résumé
+- **Performance opérationnelle** ou Résilience (_operational performance_ ou _reliability_) : évaluation de la capacité à atteindre ou dépasser ses objectifs de résilience. Voici les réponses attendues concernant les objectifs de résilience pour cette mesure : "les atteint souvent", "les atteint la plupart du temps", "les surpasse toujours". Cela peut se mesurer entre-autres grâce aux SLO (cf. chapitre "[Indicateurs de résilience](#indicateurs-de-résilience)") ou à un taux de satisfaction utilisateur.
 
-TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
+Si construisez de zéro votre initiative, se comparer aux performance de l'industrie a peu d'intérêt. Gardez-les en tête pour savoir quel objectif viser mais n'estimez pas votre succès en fonction d'eux. Estimez-le selon la progression de vos propres mesures dans le temps. Tout le monde part d'une situation initiale dont l'objectif est de l'améliorer.
 
-TODO(flavienbwk): Proposition de mesure du nombre de contributeurs ayant contribué sur le temps depuis lequel le logiciel existe multiplié par la disponibilité du logiciel en production multiplié par le nombre de déploiements
+Le rapport DORA 2022 a classé les organisations sondées en trois catégories de performance (bas, moyen et haut) pour ses quatre mesures clé :
+
+| Mesure | Bas | Moyen | Haut |
+|---|---|---|---|
+| Fréquence des déploiements | Entre 1 et 6 tous les 6 mois | Entre 1 et 4 par mois | A la demande (plusieurs par jour) |
+| Délai de mise en production | < 6 mois | < 1 mois | < 1 semaine |
+| Durée pour restaurer un service | < 1 mois | < 1 semaine | < 1 jour |
+| Taux d'échec des déploiements | 46% - 60% | 16% - 30% | 0% - 15% |
+
+GitLab permet même de [visualiser en temps-réel ces mesures](https://gitlab.com/gitlab-org/gitlab/-/value_stream_analytics) depuis la version _12.3_.
+
+![Onglet _Value Stream Analytics_ du menu _Analytics_ du projet GitLab sur gitlab.com](./images/2023_gitlab-value-stream-analytics.png)
+
+Si vous disposez d'une version assez récente de GitLab ou avez mis en place des chaînes d'intégration continue, vous pouvez mesurer la plupart des phénomènes. Sinon, demandez à vos équipes de noter les évènements sur une interface collaborative (ex: _Google Sheets_, _Airtable_, _Atlassian Confluence_, _Baserow_, _NocoDB_).
+
+A ces mesures s'en ajoute une que je nomme "**indice de collaboration résiliente**" (_resilient collaboration index_ ou RCI). Elle capture l'essence d'une initiative DevOps selon moi : réussir à innover en continu, tout en maintenant une dette technique faible et en fournissant un service le plus disponible possible. Les facteurs suivants sont multipliés pour totaliser la valeur de l'indice :
+
+1. Nombre de jours depuis la création du logiciel (nombre)
+2. Nombre de contributeurs au logiciel depuis la création du logiciel (nombre) : ces deux premiers facteurs déterminent la capacité de l'entreprise à entretenir un logiciel maintenable dans le temps, simple à appréhender et à modifier. C'est à dire sa capacité à maintenir une dette technique faible.
+3. Nombre de déploiements effectués avec succès dans le trimestre (nombre) : facteur déterminant la capacité de l'entreprise à innover avec régularité, de l'écriture du code à la mise en production.
+4. Disponibilité trimestrielle du logiciel en production (%) : facteur déterminant la capacité de l'entreprise à rendre un service stable à ses utilisateurs.
+
+Par exemple, le projet GitLab[^GitLabGitLab] - l'un des plus gros projets _git_ open-source - affiche sur le 4ème trimestre 2022 un indice de résilience collaborative de `192 209 711`. Avec `4102` jours depuis la création du projet git (9 octobre 2011 - 1 janvier 2023), `2474` [contributeurs](https://gitlab.biterg.io/app/kibana#/dashboard/3e297c20-622c-11e9-8638-c11f0f1aa3fa), `20` publications du logiciel (_release_) et une disponibilité moyenne de `99.947%`[^GitLabAvailability]
+
+Cet indice doit être actualisé tous les trimestres. Cet interval de temps peut être contracté ou étendu selon la maturité de votre organisation : plus vous êtes confiant sur votre capacité à déployer régulièrement, plus réduite peut être votre interval de mesure. Ex: sur un semestre, un trimestre, un mois ou une semaine.
 
 # Plateforme DevOps intégrée
 
@@ -1851,7 +1880,7 @@ Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le dé
 
 [^GitLabCustomTemplate]: [_GitLab's custom instance-level projects templates_](https://docs.gitlab.com/ee/user/admin_area/custom_project_templates.html)
 
-[^DORAsFourKeyMetrics]: [Google Cloud DORA's 4 key metrics for measuring DevOps performances](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance).
+[^DORAsFourKeyMetrics]: [_Google Cloud DORA's 4 key metrics for measuring DevOps performances_](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance).
 
 [^OpenAIGPT3]: [OpenAI's GPT3](https://beta.openai.com/) on `text-davinci-002` model. _beta.openai.com_.
 
@@ -2125,3 +2154,9 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^UnixProcessModel]: WIGGINS, Adam. [_Applying the Unix Process Model to Web Apps_](https://adam.herokuapp.com/past/2011/5/9/applying_the_unix_process_model_to_web_apps/). 2009.
 
 [^PrefectCommunityEngineers]: GELLER, Anna (Prefect). [_What is a Community Engineer in an Open-Source-Product Company_](https://www.prefect.io/guide/blog/what-is-a-community-engineer-in-an-open-source-product-company). 2022.
+
+[^DORA2021Summary]: SMITH, Dustin (DORA Research Lead). [_2021 Accelerate State of DevOps report addresses burnout, team performance_](https://cloud.google.com/blog/products/devops-sre/announcing-dora-2021-accelerate-state-of-devops-report). 2021.
+
+[^GitLabGitLab]: [github.com/kubernetes/kubernetes](https://gitlab.com/gitlab-org/gitlab)
+
+[^GitLabAvailability]: _Historical Service Level Availability_ : [about.gitlab.com/handbook/engineering/monitoring](https://about.gitlab.com/handbook/engineering/monitoring/#historical-service-level-availability)
