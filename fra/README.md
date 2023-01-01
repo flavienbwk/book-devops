@@ -1541,7 +1541,19 @@ Cet indice doit être actualisé tous les trimestres. Cet interval de temps peut
 
 # Plateforme DevOps intégrée
 
+## Déployer en tout temps, dans des environnements différentes
+
 TODO(flavienbwk): Palantir Apollo (dev+deploy+monitor on multiple places) - https://www.youtube.com/watch?v=T2gF8KJDy3w - "Today, 100s of engineering teams are independently shipping 400+ services, across 100s of environments (AWS, GCP, Azure, classified on-prem clouds, airgapped, edge) with 1000s of deployments per day.". [Partent du principe](https://medium.com/palantir/why-traditional-approaches-to-continuous-deployment-dont-work-today-b5a6c33cc754) que les devs "know best how their software should be upgraded and how it should behave" quand les ops "know best what is important to their environments and customers, so they define environment specifications and constraints".
+
+## Déploiement basé sur les contraintes
+
+Avec Apollo, Palantir introduit le concept de déploiement continu basé sur des contraintes (_constraint-based continuous deployment_)[^PalantirConstraintBasedCD]. Apollo déploie dans chaque environnement un agent qui lui rapporte l'état réel de cet environnement pour savoir comment déployer les mises à jour. Apollo connaît ainsi l'état attendu des déploiements sur une infrastructure et l'état réel - à jour - de ces déploiements.
+
+Les applications modernes faisant appel à des services externes, ce mécanisme permet d'éviter les incompatibilités entre les différentes versions d'une application déployée sur des environnements différents.
+
+Par exemple, si l'application `foo` en version `1.1.0` requiert un l'existence d'un service `bar` déployé avec la version `1.1.0`, Apollo ne mettra pas à jour `foo:1.1.0` tant que `bar:1.1.0` n'est pas disponible et déployé. Le déploiement d'une nouvelle version d'un applicatif dépendant d'une version spécifique d'un autre est souvent géré manuellement, même si un mécanisme de déploiement continu est mis en place. En effet, les équipes doivent au préalable s'assurer que le service duquel dépend l'application (`bar:1.1.0`) est bien disponible et déployé, avant de déployer sa nouvelle version (`foo:1.1.0`). Ces dépendances sont inscrites au sein d'un fichier spécifique, à côté des fichiers incluant le code de l'application.
+
+La migration du schéma d'une base de données est un autre exemple. En déclarant la version d'un schéma de base de données compatible avec une version précise d'une application, Apollo évite de déployer une application incompatible avec une base de données qui n'a pas encore été mise à jour. Par exemple, si `foo:1.1.0` ne supporte que la `V2` du schéma de `bdd:V1`, `foo:1.1.0` ne sera déployé que quand `bdd:V1` aura migré à la `V2`. Apollo sait ainsi quelle version d'une application est élligible à être déployée dans quel environnement.
 
 # Conclusion
 
@@ -2180,3 +2192,5 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^GitLabGitLab]: [github.com/kubernetes/kubernetes](https://gitlab.com/gitlab-org/gitlab)
 
 [^GitLabAvailability]: _Historical Service Level Availability_ : [about.gitlab.com/handbook/engineering/monitoring](https://about.gitlab.com/handbook/engineering/monitoring/#historical-service-level-availability)
+
+[^PalantirConstraintBasedCD]: Palantir (sur blog.palantir.com). [_Palantir Apollo Orchestration: Constraint-Based Continuous Deployment For Modern Architectures_](https://blog.palantir.com/palantir-apollo-orchestration-constraint-based-continuous-deployment-for-modern-architectures-cdf42da19ba4). 2022.
