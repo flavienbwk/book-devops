@@ -783,9 +783,19 @@ Il s'agit donc de faire parler les silos entre eux : leur faire parler le même 
 
 Le mouvement DevOps croit en l'union de méthodologies communes et de la technologie pour faciliter ces échanges. Ce chapitre décrit ces méthodologies à adopter pour atteindre cet objectif.
 
-### Cartographier l'historique
+### Cartographier l'existant
 
-TODO(flavienbwk): Pour débuter sa transformation, il faut savoir où en on est. L'objectif est de savoir quelle équipe fait quoi. Quelle donnée elle manipule pour déterminer quels outils collaboratifs mettre en place.
+Pour réaliser une tranformation réussie, il faut avoir une vision exhaustive d'où l'on part. La cartographie initiale de votre environnement est une étape primordiale pour bien comprendre dans quelle réalité vous évoluez et les investissements qui vont être nécessaires pour atteindre votre objectif.
+
+La cartographie de votre environnement doit mentionner les éléments suivants :
+
+- **Quelles sont la ou les missions de l'entreprise** : cela peut sembler rudimentaire, mais cet objectif n'est toujours clair dans toutes les organisations. Veillez à définir clairement la ou les objectifs de l'entreprise. Pourquoi est-ce qu'elle existe, à quelle problématique elle répond, quelles consignes ont été données lors de la dernière transformation et quels enseignement en tirer. Ayez une vision claire de son _business model_ pour mieux établir votre plan de transformation.
+- **Quelles équipes travaillent à quelle mission** : listez les équipes qui existent au sein de l'organisation et avec qui chacune échange. Peut-être que certaines équipes ne travaillent pas avec lesquelles elles devraient pour être efficaces, ou n'arrivent pas à communiquer.
+- **Quel type de profil dans les équipes** : listez le nombre de collaborateurs et leurs expertises. Peut-être qu'il existe un _data scientist_ dans l'une des équipes, qui pourrait être bien plus utile ailleurs (attention néanmoins à ce genre de réflexe, cf. chapitre "[Réorganisations chroniques](#réorganisations-chroniques)"). Peut-être qu'il y a trop de chefs de projets et pas assez d'ingénieurs logiciels. Peut-être que l'entreprise ne dispose pas encore du profil dont vous avez besoin.
+- **Par quels moyens les équipes s'échangent-elles des données** : lister les moyens d'échange des. Peut-être qu'une proportion des collaborateurs utilise le nouveau service cloud interne mis en place récemment, mais peut-être que d'autres continuent d'utiliser l'email.
+- **A quelles données ont accès quelles équipes** : listez les accès des équipes à la donnée. Y a-t-il des silos avec des équipes qui font de la rétention ? Existe-t'il une base de données peu surveillée avec un risque de fuite de données ? Une source de données est-elle particulièrement utilisée ou particulièrement stratégique ?
+
+En ayant une vue d'ensemble claire et étayée de la manière dont est organisée l'entreprise, vous comprendrez mieux ses points névralgiques où ensuite agir. Faites de ce document votre point de départ et itérez sur les actions à entreprendre.
 
 ### Un réseau unique
 
