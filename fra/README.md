@@ -1541,7 +1541,7 @@ Cet indice doit être actualisé tous les trimestres. Cet interval de temps peut
 
 # Plateforme DevOps intégrée
 
-## Déployer en tout temps, dans des environnements différentes
+## Déployer en parallèle dans des environnements différents
 
 TODO(flavienbwk): Palantir Apollo (dev+deploy+monitor on multiple places) - https://www.youtube.com/watch?v=T2gF8KJDy3w - "Today, 100s of engineering teams are independently shipping 400+ services, across 100s of environments (AWS, GCP, Azure, classified on-prem clouds, airgapped, edge) with 1000s of deployments per day.". [Partent du principe](https://medium.com/palantir/why-traditional-approaches-to-continuous-deployment-dont-work-today-b5a6c33cc754) que les devs "know best how their software should be upgraded and how it should behave" quand les ops "know best what is important to their environments and customers, so they define environment specifications and constraints".
 
