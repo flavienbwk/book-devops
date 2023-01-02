@@ -10,7 +10,7 @@ While you will be able to order the physical version soon, this is the digital a
 
 ## Languages
 
-- French :fr: [Transformer les institutions grâce au DevOps](fra/README.md)
+- French :fr: [Le DevOps pour transformer les institutions](fra/README.md)
 - English :us: [Scaling Institutions with DevOps](eng/README.md) [^1]
 
 ## Summary
