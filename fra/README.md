@@ -787,7 +787,7 @@ Le mouvement DevOps croit en l'union de méthodologies communes et de la technol
 
 ### Cartographier l'existant
 
-Pour réaliser une transformation réussie, il faut avoir une vision exhaustive de son environnement de départ. Le cartographier est une étape primordiale permettant de bien comprendre dans quelle réalité vous évoluez et de se rendre compte des investissements que vous devrez faire.
+Pour réaliser une transformation réussie, il faut avoir une vision exhaustive de son environnement de départ. Le cartographier est une étape primordiale permettant de bien comprendre dans quelle réalité vous évoluez et de se rendre compte des investissements qui vous seront demandés.
 
 La cartographie de votre environnement doit répondre aux questions suivantes :
 
