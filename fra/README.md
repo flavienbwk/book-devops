@@ -1794,20 +1794,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 ![Flexible flow cheatsheet](./images/flexible_flow_git_cheatsheet.jpg)
 
-# Quatrième de couverture
-
-Si de nombreuses organisations ont entamé leur transformation numérique, elles peinent encore à établir une stratégie claire ou efficace.
-
-Devant l'impérieuse nécessité de se transformer pour maintenir le rythme opérationnel, un mystérieux sentiment de fatalisme s'installe. Elles se tournent alors vers des experts et des cabinets d'audit, dans l'espoir de réussir à trouver le bon modèle d'organisation.
-
-Le DevOps, un mouvement organisationnel prenant ses racines chez les plus grandes et plus prospères organisations du monde, tente d'apporter des réponses à ces questionnements.
-
-Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le décideur dans sa stratégie de transformation. Il lui permettra de découvrir l'étendu des possibilités qu'offrent les méthodologies et technologies DevOps à l'état de l'art, de connaître les prérequis organisationnels qu'elles nécessitent et la manière de les mettre en place. Le tout, à sa propre échelle.
-
-ℹ️ Bonus : Exemple de fiches de postes dans ce livre.
-
-ℹ️ Ce livre s'améliore en continu, retrouvez-le sur _[github.com/flavienbwk/book-devops](github.com/flavienbwk/book-devops)_.
-
 [^RGPD]: [RGPD : Règlement Général sur la Protection des Données](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
 [^DevSecOpsUSAirForce]: PAUPIER, François; CHAILLAN, Nicolas. [Postmortem #19 : Le DevSecOps à l'US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
