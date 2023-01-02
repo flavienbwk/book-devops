@@ -1,6 +1,6 @@
 # PréfIAce
 
-![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par deux tours de bureau modernes.](./images/cover.png)
+![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureau modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover.png)
 
 _Pré-face automatiquement générée par intelligence artificielle[^OpenAIGPT3] puis traduite et adaptée par l'auteur. Ce chapitre illustre l'intérêt de mettre en place de nouvelles structures d'organisation face à la rapidité des innovations numériques. Considérez que cette capacité peut être maîtrisée par l'un de vos concurrents : vous devez être en mesure de déployer vos innovations au moins aussi vite que lui pour rester compétitif._
 
