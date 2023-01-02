@@ -13,7 +13,7 @@ TOC = --toc --toc-depth 2
 METADATA_ARGS = --metadata-file $(METADATA)
 IMAGES = $(shell find images -type f)
 TEMPLATES = $(shell find templates/ -type f)
-COVER_IMAGE = images/cover.png
+COVER_IMAGE = images/cover_a5_source.png
 MATH_FORMULAS = --webtex
 
 # Chapters content
@@ -109,6 +109,9 @@ $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
 	$(ECHO_BUILDING)
 	$(MKDIR_CMD) $(BUILD)/pdf
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(PDF_ARGS) -o $@
+	convert ./images/cover_a5_source.png ./images/cover_a5_source.pdf
+	convert ./images/fourthcover_a5_source.png ./images/fourthcover_a5_source.pdf
+	pdftk ./images/cover_a5_source.pdf $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf ./images/fourthcover_a5_source.pdf cat output $(BUILD)/pdf/book_covered.pdf
 	$(ECHO_BUILT)
 
 $(BUILD)/docx/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)

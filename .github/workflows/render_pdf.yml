@@ -55,6 +55,9 @@ jobs:
           sudo dpkg -i pandoc-2.9.2.1-1-amd64.deb
           sudo apt-get install -y make texlive texlive-xetex texlive-latex-extra texlive-fonts-recommended
 
+      - name: Install pdftk
+        run: apt-get install -y pdftk
+
       - name: Render PDF
         run: |
           sed -i -E "s/date: Undefined/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
