@@ -420,7 +420,7 @@ Nous détaillerons plus en détail les aspects culturels de la méthodologie Dev
 
 Décrite en détail dans le chapitre "[Continuous integration (CI)](#continuous-integration-ci)", l'intégration continue permet de contrôler automatiquement une modification apportée à un logiciel.
 
-Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans son [usine logicielle](#usine-logicielle) (ex: GitLab) que sa contribution ne répond pas à la politique de l'organisation et peut voir un message d'erreur lui expliquant le problème. Il peut ainsi immédiatement effectuer les modifications pour se conformer.
+Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans son [usine logicielle](#usine-logicielle) (ex: GitLab) que sa contribution[^contribution] ne répond pas à la politique de l'organisation et peut voir un message d'erreur lui expliquant le problème. Il peut ainsi immédiatement effectuer les modifications pour se conformer.
 
 C'est ici qu'on attend l'expertise des responsables de la sécurité. Ces profils doivent expliquer aux ingénieurs DevOps et aux SRE ce qui concrètement doit être contrôlé. Ces règles sont ensuite transcrites en code qui formera des tests automatisés, dans une chaîne d'intégration continue utilisée par tous les projets de l'entreprise.
 
@@ -1051,7 +1051,7 @@ Une manière simple mais particulièrement efficace pour rapprocher les silos, e
 
 Dans le cadre de l'amélioration de la résilience des systèmes, la messagerie est l'endroit parfait pour centraliser les alertes de la production à l'attention des équipes SRE. Les outils de surveillance des systèmes peuvent être configurés pour lever des alertes à un endroit unique. Les SRE sont immédiatements notifiés lorsqu'une alerte est émise. Bien configurées, ces alertes contient toutes les informations pour que le SRE puisse corriger au plus vite le problème. Les équipes de production peuvent également communiquer facilement avec leurs utilisateurs les actions qu'ils effectuent sur la production.
 
-Les messageries telles que _Mattermost_, _Element_, _Zulip_ ou _Slack_ intègrent par défaut la _VoIP_ (appels) et la visioconférence. La plupart intègrent aussi nativement la connexion à des logiciels utilisés par la production (ex: notification automatique à chaque _release_ GitLab).
+Les messageries telles que _Mattermost_, _Element_, _Zulip_ ou _Slack_ intègrent par défaut la _VoIP_ (appels) et la visioconférence. La plupart intègrent aussi nativement la connexion à des logiciels utilisés par la production (ex: notification automatique à chaque _release_ GitLab, incident report in chats, mises à jour sur la _status page_, chronologie du postmortem; cf. [Rootly](https://rootly.com)).
 
 De nombreuses entreprises comme _Scaleway_ ouvrent leurs messagerie d'entreprise à leurs clients. Elles constituent alors une communauté d'entre-aide et une base de connaissance pour les nouveaux utilisateurs. Cela favorise l'engagement et rassure ceux qui n'ont pas encore franchit le pas, en sachant qu'il y aura quelqu'un pour leur répondre en cas de problème. Les utilisateurs se confrontant à un soucis posent leur question, auquel un utilisateur ou un expert de l'entreprise pourra répondre. Chez _Canonical_ et _Prefect_, il existe même des "ingénieurs de la communauté" (_Community Engineers_) dont le rôle est précisément d'aider la communauté face aux problèmes qu'elle peut rencontrer[^PrefectCommunityEngineers]. Certaines entreprises préfèrent faire entièrement payer ce soutien utilisateur.
 
@@ -1069,9 +1069,9 @@ L'Armée de l'Air américaine s'est mise depuis 2019 en ordre de bataille en inv
 
 > "C'est _(la formation est)_ un investissement pour l'entreprise et pour eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix." - Nicolas CHAILLAN
 
-À l'instar de l'Armée de l'Air américaine, une méthode avait bien fonctionné dans mes précédentes expériences. Nous avions réussi à obtenir un jour de télétravail par semaine, après un temps certain à faire de la pédagogie à des responsables qui n'en comprenaient pas bien l'intérêt. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière fournissait des statistiques sur le temps passé à se former et nos succès à la hiérarchie. Le coût de ces deux services était minime par rapport à toutes les connaissances à l'état de l'art qu'elle nous conférait.
+À l'instar de l'Armée de l'Air américaine, une méthode avait bien fonctionné dans mes précédentes expériences. Nous avions réussi à obtenir un jour de télétravail par semaine, après un temps certain à en faire comprendre le bien-fondé auprès de nos responsables. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière fournissait des statistiques sur le temps passé à se former et nos succès à la hiérarchie. Le coût de ces deux services était minime par rapport à toutes les connaissances à l'état de l'art qu'elle nous conférait.
 
-Si vous avez la chance de déjà avoir des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, d'innover. C'est ce que j'ai observé de plus rentable pour l'organisation. Donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
+Si vous avez déjà des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, de pratiquer. C'est ce que j'ai observé de plus rentable pour l'organisation. Donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services, pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
 
 #### Télétravail (aparté)
 
@@ -1199,6 +1199,10 @@ Vous l'aurez compris, le DevOps incite à ne pas blamer les parties-prenantes. I
 
 Voilà pourquoi il faut commencer avec des moyens, mais avoir l'audace de commencer petit dans son initiative de transformation. Votre entreprise doit progressivement mettre en place les procédures (dans notre cas, les technologies de contrôle des systèmes informatiques) selon ses moyens RH et financiers. Une fois que vous avez éprouvé ces techniques, itérez à plus large échelle.
 
+### Investiguer les incidents
+
+TODO(flavienbwk): Expliquer le [Root Cause Analysis](https://www.seniorauto.co.in/fmea-different-from-root-cause-analysis/#:~:text=Failure%20Modes%20and%20Effects%20Analysis,at%20vulnerable%20areas%20or%20processes.)
+
 ### Postmortems et premortems
 
 TODO(flavienbwk): Un accélérateur de fidélisation. Réduction du [burnout](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262). Bonne communication pour réduire les burnouts.
@@ -1267,11 +1271,21 @@ Reportez-vous au [projet GitHub « ToDevOps »](https://github.com/flavienbwk/
 
 ### Continuous Integration (CI)
 
-L'intégration continue (continuous integration - CI en anglais) est un ensemble de pratiques permettant de faire tourner des algorithmes automatiquement.
+L'intégration continue (_continuous integration_ ou _CI_ en anglais) est une pratique de développement au sein de l'usine logicielle. L'idée est la suivante : à chaque modification du code, des scripts automatisés se lancent pour vérifier la conformité de la contribution. Cette conformité peut être d'ordre SSI, vérifier la qualité logicielle ou contrôler les pré-requis pour la mise en production.
 
-L'évènement déclenchant ces algorithmes est le plus souvent l'apport d'une modification à la base de code mais il peut être également être périodique avec d'autres technologies que nous détaillerons dans cette section.
+Par exemple, vos équipes SSI n'ont probablement pas le temps de vérifier la conformité de chaque contribution. Elles peuvent alors déléguer une partie de ces vérifications àd de scripts, qui vérifieront automatiquement et systématiquement que la base de code respecte vos standards de sécurité. L'avantage est triple :
 
-Voici quelques exemples d'algorithmes qu'il est possible de lancer pour vérifier automatiquement des éléments ou prendre des actions lors d'un évènement déclencheur :
+- Vos ingénieurs SSI peuvent travailler sur des tâches à plus haute valeur ajoutée
+- La conformité de vos règles SSI n'est plus "édictée" mais garantie par des vérifications "codées"
+- Vos développeurs voient directement si leur code est conforme et peuvent immédiatement le modifier s'il ne l'est pas
+
+![Illustration d'une chaîne d'intégration continue dans GitLab. Source : [gitlab.com](https://docs.gitlab.com/ee/ci/pipelines)](./images/ci-pipeline-gitlab.png)
+
+Ainsi, en mode DevOps, les responsables SSI ne sont plus des personne édictant des règles au format papier, mais [des ingénieurs "codant" des règles SSI](#ingénieur-ssi-devops) sous forme de scripts automatisés, dans la forge logicielle. Cela garantie le respect de ces règles par les développeurs et la production.
+
+![Exemple de job GitLab vérifiant la conformité de la documentation d'un projet, grâce à l'outil Markdownlint](./images/2023_gitlab_job_example.png)
+
+Voici quelques exemples d'algorithmes qu'il est possible de lancer pour vérifier automatiquement des règles ou prendre des actions lors d'un évènement déclencheur :
 
 - S'assurer de la présence d'une documentation
 - S'assurer que la documentation suit le formatage définit par l'organisation
@@ -1281,24 +1295,29 @@ Voici quelques exemples d'algorithmes qu'il est possible de lancer pour vérifie
 - S'assurer de la présence d'un fichier de configuration requis
 - S'assurer que le code respecte les standards de développement et de formatage (ex: PEP8, black, pylint)
 
-Toutes ces tâches contribuent en la réduction de la dette technique de votre base de code et en la plus grande facilité du déploiement de vos projets en garantissant l'implémentation des standards définis par vos équipes DevOps.
+Toutes ces tâches contribuent en la réduction de la dette technique de votre base de code et facilite le déploiement de vos projets, en garantissant l'effectivité des standards définis par vos équipes DevOps.
 
-Il est courant d'entendre parler de _pipeline_ d'intégration continue (en français "chaîne d'intégration continue") et d'autres termes utilisés lorsque nous pratiquons les technologies de CI/CD. Nous allons définir plusieurs de ces termes.
+Il est courant d'entendre parler de _pipeline_ d'intégration continue (en français "chaîne d'intégration continue"), qui accompagne d'autres termes dans l'univers des technologies de CI/CD. Définissons les plus courants :
 
-- Job : une tâche lancée automatiquement lors de l'évènement déclencheur
-- Pipeline : enchaînement de jobs
-- Stages : les trois étapes d'une chaîne (_pipeline_) d'intégration continue
-- Build : étape contenant les jobs s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
-- Test : TODO(flavienbwk): Développer
+- Job : une tâche/script lancée automatiquement lors de l'évènement déclencheur
+- Pipeline : enchaînement de _jobs_
+- Stages : les trois étapes d'une chaîne (_pipeline_) d'intégration continue (_build_, _test_, _deploy_)
+- Build : étape contenant les _jobs_ s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
+- Test : jobs de vérification de la conformité du code / de la contribution
   - Exemples :
-    - Tester sa documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. Istio a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
-- Deploy : TODO(flavienbwk): Développer
-
-![Illustration d'une chaîne d'intégration continue dans GitLab. Source : [gitlab.com](https://docs.gitlab.com/ee/ci/pipelines)](./images/ci-pipeline-gitlab.png)
+    - Vérifier que le code est maintenable : grâce à des outils comme [_SonarQube_](https://www.sonarsource.com/products/sonarqube) ou des _linters_[^linter] comme [_black_](https://github.com/psf/black).
+    - Vérifier que la contribution n'introduit pas de faille de sécurité : avec des outils comme _Quay Clair_ ou _Jfrog X-Ray_.
+    - Vérifier que le code respecte les tests unitaires (cf. chapitre ["Développement piloté par tests"](#développement-piloté-par-tests)).
+    - Vérifier la conformité de la documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. _Istio_ a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
+- Deploy : jobs prenant des actions affectant l'infrastructure, la production.
+  - Exemples :
+    - Déployer la mise à jour d'un logiciel.
+    - Ajouter une dépendance de développement conforme.
+    - Effectuer des actions d'administration.
 
 Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est également de tester le code poussé sur plusieurs environnements automatiquement : votre environnement de développement et de préproduction avant de le déployer en production. Néanmoins, ces pipelines multi-environnement introduisent une complexité supplémentaire qu'il faut être en mesure d'absorber lors de sa mise en place, par une équipe technique plus importante.
 
-TODO(flavienbwk): Au sein d'une usine logicielle, ce sont des technologies telles qui les GitLab Runners ou les GitHub Actions qui permettent de lancer des tâches d'intégration continue. Mettre des illustrations de code de CI.
+Au sein d'une usine logicielle, ce sont des technologies telles qui les _GitLab Runners_ ou les _GitHub Actions_ qui permettent de lancer des tâches d'intégration continue.
 
 ### Continuous Delivery (CD)
 
@@ -1306,7 +1325,7 @@ TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with
 
 ### Développement piloté par tests
 
-TODO(flavienbwk): Développer le sujet
+TODO(flavienbwk): Développer le sujet / TDD
 
 ## Tout mesurer
 
@@ -1338,6 +1357,8 @@ Google recommends monitoring these 4 golden signals : latency, traffic, errors a
 Sharing monitoring tools including its KPIs (OKRs at Google (60/70% is good OKR)) is key to make your employees more responsible and more happy so they can work more effectively. It allows sharing communications and feedback loops.
 
 For example, Google uses an internal tool accessible by everyone : bugganizer.
+
+Status page avec https://github.com/louislam/uptime-kuma
 -->
 
 TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
@@ -1619,6 +1640,7 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
 - **EdgeOps** : TODO(flavienbwk)
+- **ChatOps** : TODO(flavienbwk): Chat Operations (ChatOps) is the use of chat clients and real-time chat tools to facilitate software development and operations. Also known as “conversation-driven collaboration” or “conversation-driven DevOps,” ChatOps is designed for fast and simple instant messaging between development team members.
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
@@ -2197,3 +2219,7 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^GitLabAvailability]: _Historical Service Level Availability_ : [about.gitlab.com/handbook/engineering/monitoring](https://about.gitlab.com/handbook/engineering/monitoring/#historical-service-level-availability)
 
 [^PalantirConstraintBasedCD]: Palantir (sur blog.palantir.com). [_Palantir Apollo Orchestration: Constraint-Based Continuous Deployment For Modern Architectures_](https://blog.palantir.com/palantir-apollo-orchestration-constraint-based-continuous-deployment-for-modern-architectures-cdf42da19ba4). 2022.
+
+[^contribution]: Une contribution qualifie toute modification apportée à une base de code. Cela peut être l'ajout d'une ligne de code, de documentation, la suppression d'un fichier ou encore l'ajout d'une _issue_.
+
+[^linter]: Scripts qui analysent le code source pour signaler les erreurs de programmation, les bugs, les erreurs stylistiques et les constructions suspectes de code. L'objectif du _linting_ est d'imposer un style de code cohérent et de trouver des erreurs potentielles avant l'exécution du code.
