@@ -78,7 +78,7 @@ C'est le lien entre le monde du développement et de la production.
 
 On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques, aujourd'hui majoritairement orientés vers l'emploi des technologies _Cloud_.
 
-L'ingénieur « DevOps » est celui en charge de définir et d'mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#continuous-integration-ci) au sein d'une [usine logicielle](#usine-logicielle). Ses clients sont les équipes techniques internes : il fait en sorte que tout le monde puisse travailler ensemble de la manière la plus efficace possible.
+L'ingénieur « DevOps » est celui en charge de définir et d'mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#intégration-continue-ci) au sein d'une [usine logicielle](#usine-logicielle). Ses clients sont les équipes techniques internes : il fait en sorte que tout le monde puisse travailler ensemble de la manière la plus efficace possible.
 
 Ce poste impliquant de mettre d'accord toutes les parties prenantes sur une méthode de travail commune, il est exigé de disposer d'excellentes compétences en communication et en pédagogie.
 
@@ -108,7 +108,7 @@ Le terme DevSecOps est également populaire. Il qualifie un mode d'organisation 
 
 En terme organisationnel, cette méthode implique les équipes SSI dans tous les échanges entre les développeurs et les équipes de production. Ces équipes auront la charge de définir et contrôler l'existence des fonctionnalités de confidentialité et de sécurité dans les logiciels, dès la phase de conception.
 
-Par exemple, l'existence des fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d'en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#continuous-integration-ci) dans le code.
+Par exemple, l'existence des fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d'en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#intégration-continue-ci) dans le code.
 
 Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'Armée de l'Air américaine [le définit](https://podcast.ausha.co/postmortem/19)[^DevSecOpsUSAirForce] de manière plus générale avec les termes suivants :
 
@@ -431,7 +431,7 @@ La sécurité d'un système d'information innovant est de partir du principe qu'
 
 ## Intégration continue et sécurité
 
-Décrite en détail dans le chapitre "[Continuous integration (CI)](#continuous-integration-ci)", l'intégration continue permet de contrôler automatiquement une modification apportée à un logiciel.
+Décrite en détail dans le chapitre "[Intégration Continue (CI)](#intégration-continue-ci)", l'intégration continue permet de contrôler automatiquement une modification apportée à un logiciel.
 
 Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans son [usine logicielle](#usine-logicielle) (ex: GitLab) que sa contribution[^contribution] ne répond pas à la politique de l'organisation et peut voir un message d'erreur lui expliquant le problème. Il peut ainsi immédiatement effectuer les modifications pour se conformer.
 
@@ -676,7 +676,7 @@ Il existe plusieurs moyens d'adresser la problématique des environnements de d�
 2. Machines partiellement contrôlées. Un utilisateur précis a les droits d'administration sur sa machine. Tout autre utilisateur ne les a pas.
    - Cas : vous fournissez des postes de travail à vos collaborateurs, avez faits des premiers efforts de sécurisation, mais n'avez pas les moyens de proposer une alternative.
    - Remarque : Préférez conserver la machine dans les locaux de l'entreprise en tout temps.
-3. Machines entièrement contrôlées avec environnement de développement cloud (éphémère type CodeSpace[^CodeSpace] ou Coder[^CoderCloud]).
+3. Machines entièrement contrôlées avec environnement de développement cloud (éphémère type CodeSpace[^CodeSpace], Coder[^CoderCloud] ou Eclipse Che[^EclipseChe]).
    - Cas : vous fournissez des postes de travail connectés en réseau
 4. Machines entièrement contrôlées avec VM de développement distante (ex: Shadow[^Shadow], Azure VM)
    - Cas : vous avez accès à une infrastructure cloud gérable à distance par un tiers-partie de confiance.
@@ -738,9 +738,11 @@ L'intérêt de ce type de socle est de permettre de bénéficier de tous ces ser
 
 Les mécanismes d'installation étant standardisés par Kubernetes (cf. manifests Kubernetes, Helm[^Helm]), vous n'avez qu'à lancer quelques commandes pour que votre logiciel soit déployé. Kubernetes se chargera automatiquement d'instancier de nouveaux conteneurs si la charge utilisateur est trop importante. Nous retrouverons des références aux technologies évoquées ici, dans le chapitre "[Des extensions pour simplifier l'infrastructure](#des-extensions-pour-simplifier-linfrastructure)".
 
-Si votre organisation se compose de personnels déjà formés aux technologies ESXi, ou si les règles SSI de votre organisation ne sont pas prêtes pour accueillir un socle Cloud, il est possible de poser un cluster Kubernetes sur votre infrastructure ESXi traditionnelle. Cela peut s'envisager dans un plan de transformation, au prix d'une dette technique temporairement plus importante, pendant que vos équipes historiques se forment aux technologies Cloud. L'objectif a terme étant de ne faire tourner plus que le socle Cloud.
+Si votre organisation se compose de personnels déjà formés aux technologies ESXi, ou si les règles SSI de votre organisation ne sont pas prêtes pour accueillir un socle Cloud, il reste possible de poser un cluster Kubernetes sur votre infrastructure ESXi traditionnelle. Cela peut s'envisager dans un plan de transformation, au prix d'une dette technique temporairement plus importante, pendant que vos équipes historiques se forment aux technologies Cloud. L'objectif a terme étant de ne faire tourner plus que le socle Cloud.
 
-En conclusion, vous devez traiter votre socle comme un produit au service de vos équipes d'administration système. Plus vous mutualiserez et automatiserez le recours aux services de ce socle, moins vous devrez entretenir de dette technique (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)"). A la fin, ce travail se traduit par une meilleure disponibilité des services pour vos clients.
+En terme de sécurité, les interfaces des technologies conteneurisées sont standardisées. Il ne s'agit donc plus de devoir vérifier le contenu du conteneur : l'infrastructure s'en charge elle-même. Mais de s'assurer de la sécurité de la technologie de conteneurisation (ex: Docker, CRI-O), ainsi que des technologies d'orchestration (ex: Kubernetes, Rancher, OpenShift). Par exemple, peut-être vous êtes vous assuré que _Microsoft Word_ était sécurisé au travers d'une [homologation](#qualification-certification-et-homologation) ? Pour autant, chaque fichier _Word_ n'a pas besoin d'être homologué à son tour. C'est la même chose pour une application conteneurisée : qu'elle soit codée en Python, en Go, en PHP ou qu'elle embarque des librairies de dernière génération, c'est l'enveloppe qui le fait tourner qui doit être homologué : le contenuer.
+
+En conclusion, vous devez traiter votre socle comme un produit au service de vos équipes techniques. Plus vous mutualiserez et automatiserez le recours aux services de ce socle, moins vous devrez entretenir de dette technique (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)"). A la fin, ce travail se traduit par une meilleure disponibilité des services pour vos clients.
 
 ## Open-source : risques et avantage stratégique
 
@@ -880,7 +882,7 @@ Il est même possible de réaliser des présentations sous forme de code, visual
 
 En revanche, _git_ n'est pas fait pour stocker des fichiers lourds. On évitera d'y stocker de grandes images, des vidéos, des binaires ou des archives. D'autres technologies permettent de stocker ces types de fichiers (cf. [Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)[^AmazonS3], [Minio S3](https://min.io/)[^MinioS3], [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)[^HDFS], [CephFS](https://docs.ceph.com/)[^CephFS], [Longhorn](https://longhorn.io/)[^Longhorn]) sans ou avec une référence vers un projet _git_ (ex. [DVC](https://dvc.org/)[^DVC]).
 
-Mais l'usine logicielle ne se limite pas à la capitalisation de connaissance. Elle est aussi un point de contrôle pour toutes les contributions. Un premier niveau de contrôle se fait en ajoutant les utilisateurs aux projets auxquels ils ont le droit de contribuer. Mais un deuxième niveau de contrôle peut être configuré : grâce aux mécanismes d'intégration continue (cf. chapitre "[Intégration continue](#continuous-integration-ci)"), des scripts automatisés peuvent vérifier la validité d'une contribution en fonction de règles définies par votre organisation (qualité du logiciel, conformité SSI). Si la contribution ne répond pas à vos règles, elle est refusée. Le contributeur le voit immédiatement, sait pourquoi et peut dans les minutes qui suivent proposer une correction.
+Mais l'usine logicielle ne se limite pas à la capitalisation de connaissance. Elle est aussi un point de contrôle pour toutes les contributions. Un premier niveau de contrôle se fait en ajoutant les utilisateurs aux projets auxquels ils ont le droit de contribuer. Mais un deuxième niveau de contrôle peut être configuré : grâce aux mécanismes d'intégration continue (cf. chapitre "[Intégration continue](#intégration-continue-ci)"), des scripts automatisés peuvent vérifier la validité d'une contribution en fonction de règles définies par votre organisation (qualité du logiciel, conformité SSI). Si la contribution ne répond pas à vos règles, elle est refusée. Le contributeur le voit immédiatement, sait pourquoi et peut dans les minutes qui suivent proposer une correction.
 
 Les usines logicielles pouvant gérer l'accès aux ressources selon le profil de l'utilisateur, il est tout à fait envisageable d'ouvrir la votre à des partenaires industriels. Ils pourront ainsi ajouter leurs logiciels selon les règles établies par votre organisation et sauront immédiatement comment s'y conformer. Ces dernières sont définies par des [ingénieurs SSI](#ingénieur-ssi-devops) internes. C'est déjà le cas de _Platform One_[^PlatformOne] qui ouvre son usine logicielle à des industriels contractualisant avec le Ministère des Armées américain. Ou encore de la [_NATO Software Factory_](https://nsf.dev.nato.int/), l'usine logicielle de l'OTAN[^NatoSoftwareFactory].
 
@@ -888,7 +890,7 @@ Néanmoins, je rappelle ici qu'il s'agit de pouvoir développer une expertise en
 
 Comme décrit dans le chapitre "[Revues de code](#revues-de-code)", ces dernières sont l'occasion de donner son avis sur une contribution avant qu'elle soit déployée. Il est possible d'appliquer des règles de sortes à ce que des équipes spécifiques (ex: équipe SSI) doivent approuver la contribution avant qu'elle puisse être acceptée. On peut voir ce mécanisme comme un "sceau d'approbation". Les usines logicielles contiennent toutes ces fonctionnalités de validation des contributions, pour garantir au mieux la sécurité de la chaîne logicielle.
 
-Enfin, c'est dans l'usine logicielle que les logiciels développés par vos équipes seront construits (compilés, mis sous un format déployable) puis déployés sur votre infrastructure. Analogues au principe d'[intégration continue](#continuous-integration-ci), les chaînes de déploiement continue ont la charge de déployer en production des logiciels, selon des règles définies sous forme de code (cf. chapitre "[Continuous delivery (CD)](#continuous-delivery-cd)").
+Enfin, c'est dans l'usine logicielle que les logiciels développés par vos équipes seront construits (compilés, mis sous un format déployable) puis déployés sur votre infrastructure. Analogues au principe d'[intégration continue](#intégration-continue-ci), les chaînes de déploiement continue ont la charge de déployer en production des logiciels, selon des règles définies sous forme de code (cf. chapitre "[Déploiement Continu (CD)](#déploiement-continu-cd)").
 
 Attention : en aucun cas une usine logicielle ne permet à vos équipes de développer à proprement parler un logiciel. L'usine logicielle fournit des ressources permettant aux ingénieurs de développer leurs logiciels (dépendances, paquets, binaires) mais ne permet pas de rédiger ni d'exécuter du code à l'intérieur. L'usine logicielle est au développeur ce qu'est la trousse de pinceaux à l'artiste : la trousse contient tous les outils pour peindre, mais c'est sur son chevalet que l'artiste passe son temps à accomplir son œuvre. Le chevalet du développeur c'est son IDE[^IDE] sur son ordinateur : il code et lance son code pour le tester, à mesure qu'il l'écrit. Les options pour mettre en place des environnements de développement, sont décrits dans le chapitre "[Développement basé sur le zero trust](#développement-basé-sur-le-zero-trust)".
 
@@ -896,13 +898,13 @@ Toutes ces technologies contribuent à rapprocher les équipes et unifier les pr
 
 #### GitOps
 
-Le GitOps est une méthodologie basée sur le déploiement continu (cf. [continuous delivery](#continuous-delivery-cd)) pour les applications Cloud. Elle utilise des projets _git_ comme une "source unique de vérité", pour la configuration de l'infrastructure et des applications. Ainsi capitalisée, la configuration est dite "déclarative". En d'autres termes, vous "codez" des fichiers de configuration, pour définir la manière de déployer votre infrastructure.
+Le GitOps est une méthodologie basée sur le déploiement continu (cf. [Déploiement Continu](#déploiement-continu-cd)) pour les applications Cloud. Elle utilise des projets _git_ comme une "source unique de vérité", pour la configuration de l'infrastructure et des applications. Ainsi capitalisée, la configuration est dite "déclarative". En d'autres termes, vous "codez" des fichiers de configuration, pour définir la manière de déployer votre infrastructure.
 
 L'idée derrière le GitOps est d'utiliser un projet _git_ comme source de configuration, pour déterminer l'état souhaité du système et d'utiliser des mécanismes automatisés pour maintenir l'état réel du système. Cette synchronisation de l'état souhaité est assurée par des technologies spécifiques (ex: ArgoCD, FluxCD). Cette approche fournit une source unique de vérité pour l'ensemble du système, ce qui facilite le suivi des changements, l'audit de la configuration et permet de s'assurer que l'infrastructure est conforme aux exigences de l'entreprise.
 
 Exemple : si vous devez créer un mécanisme de sauvegarde, vous allez coder un playbook Ansible (cf. chapitre "[Infrastructure as Code (IaC)](#infrastructure-as-code-iac)"), le pousser dans un projet _git_ et une chaîne de déploiement continue va se charger de déployer la modification. Ici, l'état final recherché est décrit par du code. Il peut bien entendu inclure des varibales d'environnement en fonction d'où il doit se déployer.
 
-Vous pouvez commencer par écrire des scripts d'IaC lançables manuellement, puis opter pour une solution automatisée après être monté en maturité sur ce sujet (ex: script Ansible automatisé par une chaîne d'intégration continue (CI) et dont le déploiement est confié à ArgoCD).
+Vous pouvez commencer par écrire des scripts d'IaC lançables manuellement, puis opter pour une solution automatisée après être monté en maturité sur ce sujet (ex: script Ansible automatisé par une chaîne d'intégration continue (CI) et dont le déploiement est confié à ArgoCD, cf. chapitre "[Déploiement continu](#déploiement-continu-cd)").
 
 #### Workflows git
 
@@ -939,7 +941,7 @@ Plusieurs méthodes ont émergé au cours du temps[^TrunkBaseDevHistory] mais il
 
     ![Exemple de flow GitLab. Source : gitlab.com](./images/gitlab-flow.png)
 
-- _Trunk-based_ : Cette méthode est orientée vers la publication en continu d'un logiciel (cf. chapitre "[Déploiement continu](#continuous-delivery-cd)"). Contrairement au _GitHub flow_, il n'y qu'une seule branche avec cette méthode. Chacun pousse son code directement dans la branche principale (le _trunk_). Elle incite à réaliser de petites contributions qui sont facilement annulables en cas de bug. Elle réduit le temps passé sur les conflits car le développeur synchronise plus régulièrement son code avec le reste des contributions. Cette méthode s'appuie fortement sur les mécanismes de CI/CD : chaque contribution est évaluée (CI). Si elle passe, le logiciel peut être automatiquement mis à jour (CD) en créant une _release_. Cela permet également de s'assurer que les mécanismes de mise en production (CD) fonctionnent à tout moment. Plusieurs sources - au moment de l'écriture de ce chapitre - défendent une approche alternative du _trunk-based development_ en rendant possible la création de branches d'une très courte durée de vie (maximum 1 jour).
+- _Trunk-based_ : Cette méthode est orientée vers la publication en continu d'un logiciel (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)"). Contrairement au _GitHub flow_, il n'y qu'une seule branche avec cette méthode. Chacun pousse son code directement dans la branche principale (le _trunk_). Elle incite à réaliser de petites contributions qui sont facilement annulables en cas de bug. Elle réduit le temps passé sur les conflits car le développeur synchronise plus régulièrement son code avec le reste des contributions. Cette méthode s'appuie fortement sur les mécanismes de CI/CD : chaque contribution est évaluée (CI). Si elle passe, le logiciel peut être automatiquement mis à jour (CD) en créant une _release_. Cela permet également de s'assurer que les mécanismes de mise en production (CD) fonctionnent à tout moment. Plusieurs sources - au moment de l'écriture de ce chapitre - défendent une approche alternative du _trunk-based development_ en rendant possible la création de branches d'une très courte durée de vie (maximum 1 jour).
 
     ![Exemple de workflow git _trunk-based_](./images/trunk_git.jpg)
 
@@ -1048,7 +1050,7 @@ Le site web _12factor.net_, créé par Adam WIGGINS, liste et détaille ces règ
 11. Traiter les journaux applicatifs comme un flux : une application ne doit jamais se charger de la redirection ou du stockage des journaux d'activité (_logs_). Elle ne doit pas essayer d'écrire ou de gérer des fichiers de _logs_. A la place, elle doit écrire les _logs_ sur la sortie standard (`stdout`) et ce dès que possible (sans mémoire tampon). Cela permet à la plateforme Cloud de facilement traiter les _logs_ des applicatifs déployés (cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)").
 12. Exécuter les tâches d'administration/gestion avec des commandes ponctuelles : les applications doivent inclure des scripts ou des outils pour lancer des actions d'administration. Par exemple, lancer la migration d'une base de données avec un script Python, accéder à une console pour investiguer la base de données de production avec `psql` ou encore déclencher une sauvegarde avec une commande). L'idée est de permettre l'exécution de scripts, dans le même environnement que celui où est déployé le logiciel.
 
-Ces critères - et en particulier le découpage des logiciels en microservices - couplés à des [chaînes de déploiement continue](#continuous-delivery-cd), augmentent de 43% les chances d'anticiper les incidents logiciels selon la recherche[^DORACDLooselyCoupledArchitecture] (ex: pannes, vulnérabilités ou performances de service dégradées). La conteneurisation est particulièrement adaptée à ces pratiques. En effet, les notions d'isolation y sont récurrentes et une technologie comme Docker peut facilement y répondre.
+Ces critères - et en particulier le découpage des logiciels en microservices - couplés à des [chaînes de déploiement continue](#déploiement-continu-cd), augmentent de 43% les chances d'anticiper les incidents logiciels selon la recherche[^DORACDLooselyCoupledArchitecture] (ex: pannes, vulnérabilités ou performances de service dégradées). La conteneurisation est particulièrement adaptée à ces pratiques. En effet, les notions d'isolation y sont récurrentes et une technologie comme Docker peut facilement y répondre.
 
 Bien qu'elles soient aujourd'hui des pratiques standard dans l'industrie, il peut être utile de les inclure dans un guide pour vos nouveaux arrivants.
 
@@ -1166,9 +1168,7 @@ Dans un modèle DevOps, tout le monde peut contribuer à un projet. Tout le mond
 
 Bien sûr, si la modification ne concerne pas toutes les parties-prenantes, on évitera de demander à l'équipe sécurité de nous donner son avis sur le changement de couleur de la page d'accueil... Mais l'idée est qu'il n'y a pas qu'un seul responsable ou qu'un seul exécutant : tout le monde est responsable et peut valider ou invalider une modification selon les règles et contraintes du moment.
 
-Bien que - du fait de sa simplicité - le RACI-VS soit souvent le modèle employé par les grandes organisations, il n'est pas un outil efficace dans le cadre d'une transformation DevOps.
-
-Si vous menez une initiative DevOps au sein de votre organisation, votre hiérarchie vous demandera de vous engager sur de nombreuses lignes du tableau ci-dessus. En effet, cette dernière ne connaît probablement pas les nouvelles techniques et technologies que vous citerez. Prenez cette responsabilité pour rassurer vos autorités[^RadioDevOps12]. Vous n'avez rien à craindre puisque vous savez que la méthodologie que vous voulez mettre en place est collective et itérative.
+Bien que - du fait de sa simplicité - le RACI-VS soit souvent le modèle employé par les grandes organisations, il n'est pas un outil efficace dans le cadre d'une transformation DevOps. Si vous menez une initiative DevOps au sein de votre organisation, votre hiérarchie vous demandera de vous engager sur de nombreuses lignes du tableau ci-dessus. En effet, cette dernière ne connaît probablement pas les nouvelles techniques et technologies que vous mentionnerez. Prenez cette responsabilité pour rassurer vos autorités[^RadioDevOps12]. Vous n'avez rien à craindre puisque vous savez que la méthodologie que vous voulez mettre en place est collective et itérative.
 
 #### Le modèle DACI
 
@@ -1263,7 +1263,7 @@ Ce terme populaire est simple à appréhender : il regroupe les pratiques et le
 Voici quelques exemples de configuration :
 
 - Définir le nouveau serveur de temps de toutes vos machines
-- Mettre à jour un logiciel en production (cf. : Continuous Delivery)
+- Mettre à jour un logiciel en production (cf. : Déploiement Continu)
 - Mettre à jour le fond d'écran de toutes vos machines
 - Ajouter un nouveau nom de domaine
 
@@ -1284,7 +1284,7 @@ Vous pouvez tout d'abord commencer à automatiser vos infrastructures à l'aide 
 
 Reportez-vous au [projet GitHub « ToDevOps »](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) [^ToDevOps] pour voir cette technologie en pratique.
 
-### Continuous Integration (CI)
+### Intégration Continue (CI)
 
 L'intégration continue (_continuous integration_ ou _CI_ en anglais) est une pratique de développement au sein de l'usine logicielle. L'idée est la suivante : à chaque modification du code, des scripts automatisés se lancent pour vérifier la conformité de la contribution. Cette conformité peut être d'ordre SSI, vérifier la qualité logicielle ou contrôler les pré-requis pour la mise en production.
 
@@ -1325,7 +1325,7 @@ Il est courant d'entendre parler de _pipeline_ d'intégration continue (en fran�
     - Vérifier que le code respecte les tests unitaires (cf. chapitre ["Développement piloté par tests"](#développement-piloté-par-tests)).
     - Vérifier la conformité de la documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. _Istio_ a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
     - Vérifier la composition d'un conteneur Docker.
-- Deploy : jobs prenant des actions affectant l'infrastructure, la production.
+- Deploy : jobs prenant des actions affectant l'infrastructure, la production (cf. chapitre "[Déploiement Continu](#déploiement-continu-cd)").
   - Exemples :
     - Déployer la mise à jour d'un logiciel.
     - Ajouter une dépendance de développement conforme.
@@ -1333,11 +1333,27 @@ Il est courant d'entendre parler de _pipeline_ d'intégration continue (en fran�
 
 Comme cité plus haut, l'intérêt d'une pipeline d'intégration continue est également de tester le code poussé sur plusieurs environnements automatiquement : votre environnement de développement et de préproduction avant de le déployer en production. Néanmoins, ces pipelines multi-environnement introduisent une complexité supplémentaire qu'il faut être en mesure d'absorber lors de sa mise en place, par une équipe technique plus importante.
 
-Au sein d'une usine logicielle, ce sont des technologies telles qui les _GitLab Runners_ ou les _GitHub Actions_ qui permettent de lancer des tâches d'intégration continue.
+Au sein d'une usine logicielle, ce sont des technologies telles que les _GitLab Runners_, les _GitHub Actions_ ou les services de [_Circle CI_](https://circleci.com) qui permettent de lancer des tâches d'intégration continue.
 
-### Continuous Delivery (CD)
+### Déploiement Continu (CD)
 
-TODO(flavienbwk): Développer {From simple CD to complex ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d) ou Spinnaker}. Mettre des illustrations.
+Le déploiement continu (_continuous deployment_ ou _CD_ en anglais) est une pratique DevOps permettant de déployer des modifications, ou de mettre à jour un logiciel en production. Son déclenchement n'est pas nécessairement automatisé mais ses actions sont codées, donc prévisibles, traçables et réplicables. Elle réduit le temps nécessaire à la mise à disposition d'une nouvelle fonctionnalité à ses utilisateurs, en minimisant l'intervention manuelle et le risque d'erreur par les administrateurs.
+
+Cette pratique se conjugue au principe de "livraison continue" (_continuous delivery_ en anglais), qui réunit des étapes préliminaires au déploiement du logiciel. Par exemple, publier les binaires ou les images de la dernière version du logiciel, ou créer la dernière _release_ du projet dans l'usine logicielle.
+
+Les chaînes de déploiement continu reprennent régulièrement les tâches qu'effectuent les chaînes d'intégration continue. La plupart du temps, les chaînes de déploiement continu sont techniquement similaires aux chaînes d'integration continue. En revanche, elles peuvent nécessiter des paramètres plus spécifiques, tels que des variables d'environnement ou des secrets (cf. _Hashicorp Vault_, _Akeyless_, _Keywhiz_, _Conjur_). En effet, un logiciel déployé repose sur des variables d'environnement pour s'exécuter correctement sur une infrastructure donnée.
+
+Il est commun de retrouver des environnements de qualification/pré-production (_staging_) et de production différents. Ces derniers permettent de valider le bon fonctionnement d'un logiciel avant sa mise en production. Les chaînes de déploiement continu automatisent tout ou partie de ce processus, en ajoutant si souhaité des _smoke tests_ ou des tests fonctionnels (cf. chapitre "[Développement piloté par tests](#développement-piloté-par-tests)").
+
+Dans un premier temps, il s'agit d'au moins automatiser la mise à jour de votre logiciel en production. Vous pouvez le faire de la même manière qu'avec les chaînes d'intégration continue, grâce aux _GitLab Runners_ ou aux _GitHub Actions_.
+
+D'autres pratiques existent pour des utilisateurs plus avancés. Comme nous avons pu l'évoquer dans le chapitre "[GitOps](#gitops)", notre répertoire _git_ est la "source de vérité unique" de nos logiciels. En ce sens, l'infrastructure doit idéalement se baser dessus pour définir l'état attendu d'un logiciel en production. Par exemple, l'outil ArgoCD va vérifier en permanence le répertoire _git_ d'un projet sur une branche spécifique (la plupart du temps, _main_ ou _master_). Dès qu'ArgoCD détecte une modification, il tente de déployer la toute dernière version du logiciel surveillé.
+
+Basé sur le même mécanisme, vous pouvez aussi déployer des versions de développement ou de pré-production indépendament {}
+
+TODO(flavienbwk): Développer {From simple CD to ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d) ou Spinnaker}. Mettre des illustrations.
+
+Les chaînes de déploiement continu ne se limitent pas au déploiement du logiciel. Elles peuvent constituer un point de départ pour la supervision de votre logiciel. Par exemple, une chaîne de déploiement continu peut configurer une instance _Prometheus / Grafana_ et commencer à envoyer ses journaux d'activité. Le déploiement de votre logiciel ne signe pas la fin du processus de résilience de votre infrastructure, vous devez maintenant le superviser. Découvrons ces techniques dans le chapitre "[Tout mesurer](#tout-mesurer)".
 
 ### Développement piloté par tests
 
@@ -1651,7 +1667,7 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **ITOps** (IT Operations) : Ensemble des pratiques se concentrant sur la maintenance et la gestion des systèmes informatiques. A distinguer subtilement du DevOps qui se concentre davantage sur l'amélioration du processus de développement et de déploiement des logiciels. Synonyme d'administrateur système (sysadmin) ou [SRE](#site-reliability-engineering-sre).
 - **FinOps** (Financial Operations) : ensemble de pratiques pour mieux comprendre et gérer les coûts financiers d'une infrastructure cloud. Cela comprend le suivi et l'optimisation des dépenses, ainsi que la gestion de la facturation et des paiements. Par exemple à l'aide de tableaux de bord ou d'algorithmes automatisés.
 - **MLOps** (Machine Learning Operations) : ensemble de pratiques pour la collaboration et la communication entre les équipes de _datascience_ et de production pour le développement et le déploiement efficace de modèles de _machine learning_ (ML). L'objectif est d'améliorer la rapidité, la qualité et la résilience des modèles de ML en automatisant et standardisant. (cf. _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
-- **GitOps** (Git Operations) : ensemble de règles visant à utiliser _git_[^git] comme unique source de vérité pour standardiser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#continuous-integration-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
+- **GitOps** (Git Operations) : ensemble de règles visant à utiliser _git_[^git] comme unique source de vérité pour standardiser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#intégration-continue-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
 - **EmpOps** (Employees Operations) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs, OfficeLife).
 - **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
@@ -2251,3 +2267,5 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^PASSI]: L'évaluateur tiers doit être un PASSI (Prestataires d’Audit de la Sécurité des Systèmes d’Information).
 
 [^OIV]: OIV : Organisme d'Importance Vitale
+
+[^EclipseChe]: Environnement de développement fournissant un IDE sur un pod Kubernetes. _github.com/eclipse/che_.
