@@ -458,6 +458,7 @@ Néanmoins dans une approche DevOps, l'usage de ces librairies évolue au cours 
 L'avantage de la méthodologie DevOps est que l'ensemble du code est centralisé au sein de l'usine logicielle. Cela nous permet d'utiliser des outils pour analyser de quoi chaque projet est composé et prévenir les failles de sécurité. Le SBOM traditionnel peut donc être automatisé par deux choses :
 
 - Des chaînes d'intégration continue qui détectent, mettent à jour ou refusent automatiquement l'usage de librairies spécifiques (ex: analyse des `package.json` en Javascript ou `requirements.txt` pour Python avec [_SPDX_](https://spdx.dev/) ou [_CycloneDX_](https://cyclonedx.org/), détection de paquets vulnérables avec _Renovate_[^Renovate]; cf. _Anchore_[^AnchoreSBOM], _OSV-Scanner_[^osvscanner]).
+  - TODO(flavienbwk): more tools medium.com/@geralexgr/opensource-devsecops-tools-for-devops-engineers-f6cbd5e3017a
 - Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: _Trivy_[^Trivy], _Quay Clair_[^QuayClair], [_Dagda_](https://github.com/eliasgranderubio/dagda)[^DagdaGithub], _Jfrog X-Ray_[^JFrogXRay])
 
 Au lieu de lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser les contributions pouvant apporter des risques, avant qu'elles soient déployées en production.
