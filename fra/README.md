@@ -1279,11 +1279,17 @@ Cette pratique comporte plusieurs avantages :
 
 Des exemples courants de technologies permettant de réaliser ces actions sont : Ansible, Terraform, Puppet ou encore SaltStack.
 
-Chacun a ses avantages et inconvénients, sa communauté. D'autres sont complémentaires. Le tout est d'adopter un format standardisé (pas forcément en n'utilisant qu'une seule technologie) pour que vos équipes SRE s'y retrouvent. Un nouvel arrivant sera grandement aidé par ces pratiques et vos ingénieurs les plus confirmés pourront améliorer incrémentalement ces algorithmes.
+Chacun a ses avantages, ses inconvénients, sa communauté. D'autres sont complémentaires. Le tout est d'adopter un format standardisé (pas forcément en n'utilisant qu'une seule technologie) pour que vos équipes SRE s'y retrouvent. Un nouvel arrivant sera grandement aidé par ces pratiques et vos ingénieurs les plus confirmés pourront améliorer incrémentalement ces algorithmes.
 
 Vous pouvez tout d'abord commencer à automatiser vos infrastructures à l'aide de scripts classiques (bash, Powershell) puis passer sur une technologie plus avancée comme Ansible qui standardisera vos configurations.
 
 Reportez-vous au [projet GitHub « ToDevOps »](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) [^ToDevOps] pour voir cette technologie en pratique.
+
+Pour superviser et automatiser ces tâches d'administration, des outils avancés comme _Ansible AWX_, _Ansible Tower_, _RedHat Satellite_, _Alcali_, _Uyuni_ ou _Palantir Apollo_ peuvent être intéressants à considérer, si la maturité de votre organisation vous le permet.
+
+![Interface affichant les tâches Ansible lancées dans Ansible Tower. Extrait de l'article de Stuart CUNLIFFE[^Ansible101] sur le blog d'IBM.](./images/2020_ansible_tower_interface.png)
+
+Gardez en tête que maintenir une infrastructure est une tâche complexe, donc _keep it simple_ ! N'allez pas adopter la dernière technologie du moment seulement parce-qu'elle est "sexy" : plus vous ajoutez des technologies et des niveaux d'abstraction, plus votre équipe doit être fournie et expérimentée pour la maintenir et la réparer (cf. chapitre "[Too big, too soon](#too-big-too-soon)").
 
 ### Développement piloté par tests
 
@@ -1385,7 +1391,9 @@ Basé sur la même mécanique, il est possible de déployer simultanément plusi
 
 Avec ces mêmes outils, vous pouvez [adopter une stratégie de déploiement blue/green et l'automatiser](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d). Cette technique fait basculer progressivement les clients vers la nouvelle version d'un logiciel, en s'assurant que cette dernière fonctionne correctement. L'idée est d'instancier la nouvelle version du logiciel (green), en parallèle avec l'actuelle (blue). Le système dirige alors une proportion limitée de clients vers le nouveau logiciel (ex: 10%). On augmente progressivement cette proportion au cours d'une période définie, tout en mesurant le taux d'erreurs obtenu pour chaque requête. Si le taux est identique ou inférieur au précédent déploiement, on laisse le logiciel se déployer pour l'ensemble des clients. Sinon, le déploiement est annulé et on laisse l'ancienne version en production.
 
-Les chaînes de déploiement continu ne se limitent pas au déploiement du logiciel ou au lancement de tâches d'administration. Elles peuvent constituer un point de départ pour la supervision de votre logiciel. Par exemple, une chaîne de déploiement continu peut configurer une instance _Prometheus / Grafana_ et commencer à envoyer ses journaux d'activité. Le déploiement de votre logiciel ne signe pas la fin du cycle de résilience de votre infrastructure : vous devez maintenant le superviser. Nous découvrirons ces techniques dans le chapitre "[Tout mesurer](#tout-mesurer)".
+Des outils encore plus avancés existent pour adresser les enjeux du déploiement à très grande échelle. Nous découvrirons l'exemple de Palantir et son produit Apollo dans le chapitre "[Déployer en parallèle dans des environnements différents](#déployer-en-parallèle-dans-des-environnements-différents)".
+
+Par ailleurs, les chaînes de déploiement continu ne se limitent pas au déploiement du logiciel ou au lancement de tâches d'administration. Elles peuvent constituer un point de départ pour la supervision de votre logiciel. Par exemple, une chaîne de déploiement continu peut configurer une instance _Prometheus / Grafana_ et commencer à envoyer ses journaux d'activité. Le déploiement de votre logiciel ne signe pas la fin du cycle de résilience de votre infrastructure : vous devez maintenant le superviser. Nous découvrirons ces techniques dans le chapitre "[Tout mesurer](#tout-mesurer)".
 
 ## Tout mesurer
 
@@ -2307,3 +2315,5 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^WhatIsCodeCoverage]: Atlassian. [_What is code coverage ?_](https://www.atlassian.com/continuous-delivery/software-testing/code-coverage). _atlassian.com_.
 
 [^TDDBDDATTDComparativeStudy]: MOE, Myint Myint. _Comparative Study of Test-Driven Development TDD, Behavior-Driven Development BDD and Acceptance Test–Driven Development ATDD_. _International Journal of Trend in Scientific Research and Development_. 2019.
+
+[^Ansible101]: CUNLIFFE, Stuart. Illustration de l'article [_Red Hat Ansible: A 101 guide_](https://www.ibm.com/blogs/systems/red-hat-ansible-a-101-guide/), _ibm.com/blogs_. 2020.
