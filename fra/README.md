@@ -1264,7 +1264,7 @@ Ce terme populaire est simple à appréhender : il regroupe les pratiques et le
 Voici quelques exemples de configuration :
 
 - Définir le nouveau serveur de temps de toutes vos machines
-- Mettre à jour un logiciel en production (cf. : Déploiement Continu)
+- Mettre à jour un logiciel en production (cf. : chapitre [déploiement continu](#déploiement-continu-cd))
 - Mettre à jour le fond d'écran de toutes vos machines
 - Ajouter un nouveau nom de domaine
 
@@ -1284,6 +1284,33 @@ Chacun a ses avantages et inconvénients, sa communauté. D'autres sont complém
 Vous pouvez tout d'abord commencer à automatiser vos infrastructures à l'aide de scripts classiques (bash, Powershell) puis passer sur une technologie plus avancée comme Ansible qui standardisera vos configurations.
 
 Reportez-vous au [projet GitHub « ToDevOps »](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) [^ToDevOps] pour voir cette technologie en pratique.
+
+### Développement piloté par tests
+
+Le développement piloté par tests (ou _test-driven development_ (TDD) en anglais) est une pratique de développement logiciel qui remonte [au début des années 2000](https://en.wikipedia.org/wiki/Test-driven_development). L'objectif est de maîtriser l'érosion d'un logiciel[^SoftwareErosion]. C'est à dire éviter la régression du logiciel et maîtriser sa dette technique au cours du temps. Ou dit plus simplement : éviter les bugs à mesure que les contributions s'accumulent.
+
+L'idée est de coder les tests avant de développer sa fonctionnalité. Le cycle de développement en TDD est le suivant[^BeckKentTDDBook] :
+
+1. Ajouter un test : l'ajout d'une nouvelle fonctionnalité commence par l'écriture d'un test qui passe si et seulement si les spécifications de la fonctionnalité sont respectées.
+    - Ma recommandation personnelle : écrivez au moins un test qui passe et un test qui n'est pas censé passer. Cela permet de comprendre les limites du cas d'usage qu'un test doit couvrir.
+2. Lancer tous les tests du logiciel : votre nouveau test doit échouer à cette étape, puisque la fonction qui y répond n'a pas encore été écrite.
+3. Développer une première version de la fonction : inélégante ou _hard-codée_, l'idée est d'avoir une fonction qui répond au test le plus simplement possible. Il sera amélioré en étape 5.
+4. Lancer tous les tests du logiciel : tous les tests, incluant le votre, doivent passer à cette étape.
+5. Réadapter le code si besoin, en utilisant des tests après chaque développement, pour s'assurer que la fonctionnalité est préservée : maintenant que vous êtes sûr que le code initial (étape 3) répond au besoin, vous pouvez l'améliorer (ex: découper la fonction, supprimer le code duppliqué, améliorer le nommage).
+
+C'est une pratique courante dans les entreprises de la technologies, en particulier chez les GAFAM. Ces derniers se basent dessus pour maîtriser la dette technique, malgré les milliers de développeurs qui contribuent en parallèle et chaque jour à leurs logiciels. La plupart du temps, les logiciels sont développés sans ou avec peu de tests. Il peut être compliqué de justifier à une hiérarchie non-technique le temps passé à développer des tests, plutôt que de se concentrer sur une nouvelle fonctionnalité. Travailler en TDD impacte en effet la productivité, mais améliore significativement la qualité du code[^TDDStudy].
+
+Pour un logiciel historique, il est recommandé d'au moins adopter l'approche TLD (_test-last developement_). C'est à dire développer les tests après que la fonctionnalité soit créée. Puis de progressivement passer au TDD pour améliorer la qualité et réduire la complexité du code[^TDDoverTLD]. Pour les nouveaux projets, privilégiez le TDD.
+
+Dans tous les cas, l'idée est de tester son code pour éviter les mauvaises surprises en production. Selon _Atlassian_[^WhatIsCodeCoverage], il est recommandé de couvrir 80% de son code par des tests (_code coverage_ en anglais).
+
+Le TDD est recommandé dans certains cas, mais pas tous. Par exemple, si votre secteur d'activité est réglementé - comme celui des banques ou de la santé - il est impératif de tester votre code. La conséquence du disfonctionnement de votre logiciel peut impacter la responsabilité juridique de votre organisation. Si votre logiciel est destiné à être utilisé et maintenu de nombreuses années - comme dans la défense - il est recommandé d'adopter le TDD. En revanche, si vous êtes une start-up en étape de preuve de concept, le disfonctionnement d'un logiciel peut avoir moins de conséquence et vous pouvez vous permettre de privilégier votre productivité. Plus votre structure grandit, plus le nombre de développeurs qui contribuent à votre logiciel augmente, plus il devient nécessaire de tester votre code. Par exemple, pour un nouveau contributeur, un test permet d'avoir un exemple de la manière dont une fonction est utilisée, ce qui facilite la compréhension du code.
+
+En somme, il s'agit de trouver l'équilibre entre productivité, garantie de bon fonctionnement et contrôle de la dette technique.
+
+Ce chapitre n'est qu'une introduction pour vous présenter l'intérêt de tester votre code. Il existe de nombreuses approches complémentaires et des bonnes pratiques de développement qui concernent davantage l'ingénierie logicielle (cf. [YAGNI, KISS, DRY](https://henriquesd.medium.com/dry-kiss-yagni-principles-1ce09d9c601f)) et moins spécifiquement le DevOps. Par exemple, le TDD peut être suppléé par le BDD (_behavior-driven development_) ou l'ATTD (_acceptance test-driven development_)[^TDDBDDATTDComparativeStudy] si la maturité de votre structure et la taille de vos équipes peuvent le permettre.
+
+L'ensemble de ces tests est vérifiable automatiquement avant toute mise en production. Découvrons ce que cela signifie et comment le mettre en pratique dans le chapitre suivant.
 
 ### Intégration Continue (CI)
 
@@ -1338,27 +1365,27 @@ Au sein d'une usine logicielle, ce sont des technologies telles que les _GitLab 
 
 ### Déploiement Continu (CD)
 
-Le déploiement continu (_continuous deployment_ ou _CD_ en anglais) est une pratique DevOps permettant de déployer des modifications, ou de mettre à jour un logiciel en production. Son déclenchement n'est pas nécessairement automatisé mais ses actions sont codées, donc prévisibles, traçables et réplicables. Elle réduit le temps nécessaire à la mise à disposition d'une nouvelle fonctionnalité à ses utilisateurs, en minimisant l'intervention manuelle et le risque d'erreur par les administrateurs.
+Le déploiement continu (_continuous deployment_ ou _CD_ en anglais) est une pratique DevOps permettant de déclencher des actions d'administration ou de déployer et mettre à jour des logiciels en production. Le déclenchement n'est pas nécessairement automatisé mais les actions appliquées sont codées. C'est à dire prévisibles, traçables et réplicables. Cela réduit le temps de mise à disposition d'une nouvelle fonctionnalité à ses utilisateurs, en minimisant l'intervention manuelle et le risque d'erreur par les administrateurs.
 
-Cette pratique se conjugue au principe de "livraison continue" (_continuous delivery_ en anglais), qui réunit des étapes préliminaires au déploiement du logiciel. Par exemple, publier les binaires ou les images de la dernière version du logiciel, ou créer la dernière _release_ du projet dans l'usine logicielle.
+Cette pratique se conjugue au principe de "livraison continue" (_continuous delivery_ en anglais), qui réunit des étapes préliminaires au déploiement. Par exemple, publier les binaires ou les images de la dernière version du logiciel, ou créer la dernière _release_ du projet dans l'usine logicielle.
 
-Les chaînes de déploiement continu reprennent régulièrement les tâches qu'effectuent les chaînes d'intégration continue. La plupart du temps, les chaînes de déploiement continu sont techniquement similaires aux chaînes d'integration continue. En revanche, elles peuvent nécessiter des paramètres plus spécifiques, tels que des variables d'environnement ou des secrets (cf. _Hashicorp Vault_, _Akeyless_, _Keywhiz_, _Conjur_). En effet, un logiciel déployé repose sur des variables d'environnement pour s'exécuter correctement sur une infrastructure donnée.
+La plupart du temps, les chaînes de déploiement continu sont techniquement similaires aux chaînes d'integration continue. Par exemple, elles vont rejouer les tâches des chaînes d'intégration continue avant de déployer le logiciel. En revanche, elles peuvent nécessiter des paramètres plus spécifiques, tels que des variables d'environnement ou des secrets (cf. _Hashicorp Vault_, _Akeyless_, _Keywhiz_, _Conjur_). En effet, un logiciel déployé repose communément sur des variables d'environnement pour s'exécuter correctement sur une infrastructure cible.
 
-Il est commun de retrouver des environnements de qualification/pré-production (_staging_) et de production différents. Ces derniers permettent de valider le bon fonctionnement d'un logiciel avant sa mise en production. Les chaînes de déploiement continu automatisent tout ou partie de ce processus, en ajoutant si souhaité des _smoke tests_ ou des tests fonctionnels (cf. chapitre "[Développement piloté par tests](#développement-piloté-par-tests)").
+Il est habituel de retrouver des environnements de qualification/pré-production (_staging_) et de production différents. Ces derniers permettent de valider le bon fonctionnement d'un logiciel avant sa mise en production. Les chaînes de déploiement continu automatisent tout ou partie de ce processus, en ajoutant si souhaité des _smoke tests_ ou des tests fonctionnels (cf. chapitre "[Développement piloté par tests](#développement-piloté-par-tests)").
 
 Dans un premier temps, il s'agit d'au moins automatiser la mise à jour de votre logiciel en production. Vous pouvez le faire de la même manière qu'avec les chaînes d'intégration continue, grâce aux _GitLab Runners_ ou aux _GitHub Actions_.
 
-D'autres pratiques existent pour des utilisateurs plus avancés. Comme nous avons pu l'évoquer dans le chapitre "[GitOps](#gitops)", notre répertoire _git_ est la "source de vérité unique" de nos logiciels. En ce sens, l'infrastructure doit idéalement se baser dessus pour définir l'état attendu d'un logiciel en production. Par exemple, l'outil ArgoCD va vérifier en permanence le répertoire _git_ d'un projet sur une branche spécifique (la plupart du temps, _main_ ou _master_). Dès qu'ArgoCD détecte une modification, il tente de déployer la toute dernière version du logiciel surveillé.
+D'autres pratiques existent pour des utilisateurs plus avancés. Comme nous avons pu l'évoquer dans le chapitre "[GitOps](#gitops)", notre répertoire _git_ est la "source unique de vérité" d'un logiciel. Par conséquent, l'infrastructure doit idéalement se baser dessus pour définir l'état attendu d'un logiciel en production. Par exemple, l'outil _ArgoCD_ va vérifier en permanence la présence de modifications dans un répertoire _git_, sur une branche spécifique (souvent _main_ ou _master_). Dès qu'ArgoCD détecte un changement, il tente de déployer la toute dernière version du logiciel surveillé.
 
-Basé sur le même mécanisme, vous pouvez aussi déployer des versions de développement ou de pré-production indépendament {}
+Les outils comme _ArgoCD_, _Flux_, _Spinnaker_ ou _Jenkins X_ permettent de suivre visuellement l'état du déploiement d'un logiciel. Ils révèlent tout leur potentiel dans un environnement Cloud, en pouvant observer l'état de chaque micro-service.
 
-TODO(flavienbwk): Développer {From simple CD to ArgoCD deployments with [blue/green deployment](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d) ou Spinnaker}. Mettre des illustrations.
+![Interface d'ArgoCD pour le suivi du déploiement d'un logiciel](images/2022_argocd_interface.png)
 
-Les chaînes de déploiement continu ne se limitent pas au déploiement du logiciel. Elles peuvent constituer un point de départ pour la supervision de votre logiciel. Par exemple, une chaîne de déploiement continu peut configurer une instance _Prometheus / Grafana_ et commencer à envoyer ses journaux d'activité. Le déploiement de votre logiciel ne signe pas la fin du processus de résilience de votre infrastructure, vous devez maintenant le superviser. Découvrons ces techniques dans le chapitre "[Tout mesurer](#tout-mesurer)".
+Basé sur la même mécanique, il est possible de déployer simultanément plusieurs instances d'un logiciel. Par exemple lors d'une revue de code dans une _merge request_, vous pouvez [configurer _ArgoCD_](https://www.youtube.com/watch?v=cpAaI8p4R60) pour qu'il déploie temporairement et de manière isolée cette version "en évaluation" du logiciel. Cette technique permet aux ingénieurs de rapidement tester un logiciel, au lieu de le déployer par leurs propres moyens. Les URLs ont souvent cette forme : `wwww-xxxx-yyyy-zzzz.staging.monapp.com`.
 
-### Développement piloté par tests
+Avec ces mêmes outils, vous pouvez [adopter une stratégie de déploiement blue/green et l'automatiser](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d). Cette technique fait basculer progressivement les clients vers la nouvelle version d'un logiciel, en s'assurant que cette dernière fonctionne correctement. L'idée est d'instancier la nouvelle version du logiciel (green), en parallèle avec l'actuelle (blue). Le système dirige alors une proportion limitée de clients vers le nouveau logiciel (ex: 10%). On augmente progressivement cette proportion au cours d'une période définie, tout en mesurant le taux d'erreurs obtenu pour chaque requête. Si le taux est identique ou inférieur au précédent déploiement, on laisse le logiciel se déployer pour l'ensemble des clients. Sinon, le déploiement est annulé et on laisse l'ancienne version en production.
 
-TODO(flavienbwk): Développer le sujet / TDD
+Les chaînes de déploiement continu ne se limitent pas au déploiement du logiciel ou au lancement de tâches d'administration. Elles peuvent constituer un point de départ pour la supervision de votre logiciel. Par exemple, une chaîne de déploiement continu peut configurer une instance _Prometheus / Grafana_ et commencer à envoyer ses journaux d'activité. Le déploiement de votre logiciel ne signe pas la fin du cycle de résilience de votre infrastructure : vous devez maintenant le superviser. Nous découvrirons ces techniques dans le chapitre "[Tout mesurer](#tout-mesurer)".
 
 ## Tout mesurer
 
@@ -2227,7 +2254,7 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 
 [^GithubMsftAcquisitionCritics]: WARREN, Tom (The Verge). "_Microsoft has some old bad habits the community needs to trust won't happen again_" : [_Here's what GitHub developers really think about Microsoft's acquisition_](https://www.theverge.com/2018/6/18/17474284/microsoft-github-acquisition-developer-reaction). 2018.
 
-[^CVE]: La liste CVE est supervisée par le MITRE, un organisme subventionné par la CISA (_Cybersecurity and Infrastructure Security Agency_) qui fait partie du Département de la Sécurité Intérieure des États-Unis.
+[^CVE]: La liste des CVE est supervisée par le MITRE, un organisme subventionné par la CISA (_Cybersecurity and Infrastructure Security Agency_) qui fait partie du Département de la Sécurité Intérieure des États-Unis.
 
 [^BugBountyLinuxKnl]: ARHIRE, Ionut. [_Google Boosts Bug Bounty Rewards for Linux Kernel Vulnerabilities_](https://www.securityweek.com/google-boosts-bug-bounty-rewards-linux-kernel-vulnerabilities). 2022.
 
@@ -2251,7 +2278,7 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 
 [^GitLabAvailability]: _Historical Service Level Availability_ : [about.gitlab.com/handbook/engineering/monitoring](https://about.gitlab.com/handbook/engineering/monitoring/#historical-service-level-availability)
 
-[^PalantirConstraintBasedCD]: Palantir (sur blog.palantir.com). [_Palantir Apollo Orchestration: Constraint-Based Continuous Deployment For Modern Architectures_](https://blog.palantir.com/palantir-apollo-orchestration-constraint-based-continuous-deployment-for-modern-architectures-cdf42da19ba4). 2022.
+[^PalantirConstraintBasedCD]: Palantir (blog.palantir.com). [_Palantir Apollo Orchestration: Constraint-Based Continuous Deployment For Modern Architectures_](https://blog.palantir.com/palantir-apollo-orchestration-constraint-based-continuous-deployment-for-modern-architectures-cdf42da19ba4). 2022.
 
 [^contribution]: Une contribution qualifie toute modification apportée à une base de code. Cela peut être l'ajout d'une ligne de code, de documentation, la suppression d'un fichier ou encore l'ajout d'une _issue_.
 
@@ -2270,3 +2297,13 @@ Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021
 [^OIV]: OIV : Organisme d'Importance Vitale
 
 [^EclipseChe]: Environnement de développement fournissant un IDE sur un pod Kubernetes. _github.com/eclipse/che_.
+
+[^BeckKentTDDBook]: Basé sur le livre de Kent BECK. _Test-Driven Development by Example_. 2002.
+
+[^TDDStudy]: _Dogša, T., Batič, D. The effectiveness of test-driven development: an industrial case study. Software Qual J 19, 643–661_, [doi:10.1007/s11219-011-9130-2](https://doi.org/10.1007/s11219-011-9130-2). 2011.
+
+[^TDDoverTLD]: Le TDD réduit de 31% la complexité et augmente de 21% la qualité du code, par rapport au TLD : KHANAM, Z; AHSAN, MN. _Evaluating the effectiveness of test driven development: Advantages and pitfalls_. _International Journal of Applied Engineering Research_. 2017.
+
+[^WhatIsCodeCoverage]: Atlassian. [_What is code coverage ?_](https://www.atlassian.com/continuous-delivery/software-testing/code-coverage). _atlassian.com_.
+
+[^TDDBDDATTDComparativeStudy]: MOE, Myint Myint. _Comparative Study of Test-Driven Development TDD, Behavior-Driven Development BDD and Acceptance Test–Driven Development ATDD_. _International Journal of Trend in Scientific Research and Development_. 2019.
