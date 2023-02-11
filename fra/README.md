@@ -1,6 +1,6 @@
 # PréfIAce
 
-![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureau modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover.png)
+![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureaux modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover.png)
 
 _Pré-face automatiquement générée par intelligence artificielle[^OpenAIGPT3] puis traduite et adaptée par l'auteur. Ce chapitre illustre l'intérêt de mettre en place de nouvelles structures d'organisation face à la rapidité des innovations numériques. Considérez que cette capacité peut être maîtrisée par l'un de vos concurrents : vous devez être en mesure de déployer vos innovations au moins aussi vite que lui pour rester compétitif._
 
@@ -149,40 +149,64 @@ Une initiative DevOps est une transformation radicale à l'échelle d'une organi
 
 L'empathie est une aptitude clé pour faire aboutir une transformation. Pour certains, ces nouvelles méthodes de travail et ces outils constituent un modèle à l'opposé de ce qu'ils ont toujours appris et fait.
 
-Voilà pourquoi il est important d'acculturer aussi souvent que possible sa hiérarchie à l'intérêt de passer en mode DevOps, lui faire des démonstrations, répondre à ses moindres questions et l'accompagner jusqu'à ce qu'elle comprenne bien les enjeux. Votre organisation doit être en mesure de répondre aux défis technologiques toujours plus modernes et rapides. Elle ne le fera pas en restant sur ses acquis.
+Voilà pourquoi il est important d'acculturer aussi souvent que possible sa hiérarchie à l'intérêt de passer en mode DevOps, lui faire des démonstrations, répondre à ses moindres questions et l'accompagner jusqu'à ce qu'elle comprenne bien les enjeux. Votre organisation doit être en mesure de répondre aux défis technologiques, toujours plus modernes et rapides face à la concurrence. Elle ne le fera pas en restant sur ses acquis.
 
-## Préjugé
+## Pourquoi le DevOps ?
 
-> « Je n'ai besoin que d'un ingénieur SRE/DevOps »
+Des rapports de recherche[^DORAReportSREPractice] appuient la théorie selon laquelle récolter les bénéfices des efforts investis en SRE prend un certain temps.
 
-**Non.**
+Selon eux, pratiquer le SRE n'affecte pas la résilience de l'entreprise avant d'avoir acquis un certain niveau de maturité. C'est à dire qu'il est nécessaire d'atteindre une masse critique, avant d'être en mesure de tirer les bénéfices de ces outils et ces pratiques.
 
-Prenons un exemple. Vous commencez avec une équipe de 2 personnes qui développent un logiciel. Vous avez déjà plusieurs problèmes, particulièrement si vous travaillez hors Internet :
+![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE.](./images/adoption-of-sre-practices.png)
+
+Le rapport DORA 2022 fait le constat qu'il est nécessaire d'adopter une quantité substantielle de pratiques SRE, avant d'en récolter des bénéfices significatifs en terme de résilience[^DORAReportSREPRacticesFigures]. Ce phénomène peut être un frein pour les décideurs, à l'idée de se transformer en mode DevOps.
+
+Mais les bénéfices dépassent bien les coûts engendrés, au delà de cette période initiale d'investissement.
+
+C'est bien dans cette tendance que le DevOps trouve tout son intérêt : alors que les infrastructures traditionnelles ne nécessitent que peu d'investissement initial pour rendre un service, le coût de leur maintenance augmente proportionnellement au nombre de services déployés. Le DevOps lui, propose un investissement initial supérieur mais offre la possibilité de maîtriser une activité exponentielle, avec un coût à tendance logarithmique.
+
+![Ratio coût RH et matériel / services déployés entre une infrastructure traditionnelle et une infrastructure Cloud DevOps.](./images/courbes_interet_devops.jpg)
+
+Ce mode d'organisation vise à rendre les infrastructures plus fiables, réduire les tâches manuelles pour tirer meilleur partie du temps de ses ingénieurs et _in fine_, accélérer le cycle de déploiement logiciel.
+
+Le DevOps est aux infrastructures traditionnelles ce que la construction à la chaîne est à l'artisanat : en construisant à la chaîne, on réduit les coûts et on répond à la demande. L'avantage supplémentaire dans le logiciel, c'est qu'on peut ajuster en quelques heures le produit que l'on souhaite livrer et ce, plusieurs fois par jours.
+
+En résumé, les plus en retard se demandent s'ils doivent passer du moyen âge (infrastructures traditionnelles) à la révolution industrielle (technologies Cloud), sachant que le reste de l'industrie est à l'époque contemporaine (technologies Cloud et pratiques DevOps)[^RedGate2021Report].
+
+Tout l'enjeu d'une transformation est de réussir à faire adhérer votre hiérarchie à cet investissement initial (mesuré mais substantiel), alors que les bénéfices peuvent être difficiles au départ à voir émerger. C'est un défi courant et nous verrons comment l'adresser dans le chapitre ["comment convaincre et garder la foi"](#comment-convaincre-et-garder-la-foi).
+
+## Sceptiques et trop-optimistes
+
+Les entreprises sont généralement conscientes du changement qu'elles doivent opérer. Mais elles n'osent ou ne peuvent pas immédiatement conscentir aux efforts qui leurs permettraient de le faire.
+
+Les plus sceptiques ou les plus optimistes pensent même s'en sortir en démarrant une initiative à moindre frais :
+
+> « Je n'ai besoin que d'un ingénieur SRE/Cloud/DevOps »
+
+Navré, **non.**
+
+Il est avéré que transformer une structure traditionnelle en mode DevOps demande un investissement substantiel. Et mettre en place les bases permettant de révéler les avantages de ce mode de travail prend un certain temps. Mais grâce à ce livre, vous aurez toutes les clés pour débuter avec des ressources adaptées à votre situation.
+
+Prenons un exemple pour bien nous représenter ce scénario. Vous commencez avec une équipe de 2 personnes qui développent un logiciel. Vous avez déjà plusieurs problèmes, en particulier si vous travaillez sur des réseaux dépourvus d'Internet, dans un secteur réglementé :
 
 - Qui met en place l'infrastructure pour correctement développer ce logiciel ? (usine logicielle, miroirs de dépendances, registres de librairies…)
 - Qui sécurise cette infrastructure ?
 - Qui gère les sauvegardes ?
 - Qui définit les règles de développement et leur cohérence pour maintenir les logiciels dans le temps ?
 
-Si vous ne comptez que sur vos ingénieurs logiciels, ils finiront par générer de la dette technique qui empirera au fur et à mesure que votre équipe grandira. Ils ne se concentrerons pas sur le développement et s'éparpilleront sur des tâches de SRE. Cette situation nécessite déjà au moins 1 ingénieur SRE/DevOps.
+Si vous ne comptez que sur vos ingénieurs logiciels pour gérer l'infrastructure, ils finiront par générer de la dette technique qui empirera à mesure que votre équipe croît. Ils ne se concentrerons pas sur le développement et s'éparpilleront sur des tâches de SRE. Cette situation nécessite déjà au moins 1 ingénieur SRE/DevOps.
 
 Maintenant que vous avez recruté, votre équipe grandit à 6 ingénieurs : il faut leur fournir des machines, les configurer, certains rencontrent des bugs, d'autres vous demandent de mettre à jour des librairies… Si en plus vous avez des impératifs en termes de sécurité (ex : homologation, journaux d'évènements), il faut prendre le temps de correctement configurer les outils et l'infrastructure. Cela vous fait donc au moins 1 ingénieur SRE/DevOps supplémentaire.
 
-Admettons que vous perdiez 2 ingénieurs. Il s'avère que vous devez toujours maintenir l'infrastructure qui est passée à l'échelle pour répondre aux besoins de vos 6 ingénieurs et les X machines que vous avez installées.
+Admettons que vous perdiez 2 ingénieurs : vous devez toujours maintenir l'infrastructure qui a évolué, pour répondre aux besoins de vos 6 ingénieurs et les X machines que vous avez installées.
 
 Comprenez que vous avez besoin d'une masse critique de profils SRE/DevOps dans votre équipe. Cette masse critique doit évoluer en fonction du nombre de collaborateurs et vous ne pouvez pas en retirer facilement.
 
-Des rapports[^DORAReportSREPractice] appuient cette théorie : pratiquer le SRE n'affecte pas la résilience de l'entreprise avant d'avoir acquis un certain niveau de maturité. C'est à dire qu'il vous faudra atteindre une masse critique avant d'être en mesure de tirer les bénéfices de ces outils et pratiques.
-
-![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE.](./images/adoption-of-sre-practices.png)
-
-> On constate qu'il faut un certain nombre d'équipes SRE pour obtenir des bénéfices significatifs[^DORAReportSREPRacticesFigures]
-
-À titre d'exemple, Google - une société avec plusieurs dizaines de milliers d'ingénieurs - maintient son ratio de SRE vis-à-vis des développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio doit néanmoins avoir une [tendance logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez.
+> Par exemple, Google - employant plusieurs dizaines de milliers d'ingénieurs - maintient son ratio de SRE vis-à-vis des développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio SRE/développeurs tend néanmoins à être [logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez. Cela est dû aux forts besoins en infrastructure au moment de la constitution de votre initiative.
 
 ## Too big, too soon
 
-L'échec s'explique souvent par une mauvaise définition du périmètre d'un projet, avec des objectifs trop exigeants et/ou une mauvaise planification. Ces derniers impliquent l'augmentation des délais et des coûts de manière incontrôlée. Il est alors courant de devoir trouver une « solution intermédiaire » en attendant que la première vienne hypothétiquement au jour.
+L'échec s'explique souvent par une mauvaise définition du périmètre d'un projet, avec des objectifs trop exigeants ou une mauvaise planification. Ces derniers impliquent l'augmentation des délais et des coûts de manière incontrôlée. Il est alors courant de devoir trouver une « solution intermédiaire » en attendant que la première vienne hypothétiquement au jour.
 
 Une initiative DevOps se bâtit avec l'existant au sein de votre institution : il faut réussir à commencer petit pour correctement saisir les besoins des métiers et embarquer toute l'organisation dans l'aventure. C'est la méthode _Kaizen_, née au Japon dans les années 50 au sein des usines Toyota. Elle est connue en France sous le nom de "stratégie des petits pas".
 
@@ -238,17 +262,17 @@ Comme évoqué dans le chapitre "[Too big, too soon](#too-big-too-soon)", adopte
 
 Si vous avez l'impression d'avoir déjà entendu cela et que vous lisez ce livre, ces paroles ont probablement succédé pour vous à un sentiment de consternement.
 
-Il peut etre compréhensible d'avoir selon l'environnement des délais (exigences de sécurité, taille des équipes), mais l'organisation ne doit pas tolérer être en retard. En aucun cas cette affirmation ne doit devenir la réponse par défaut.
+Il peut se comprendre d'avoir, selon la structure, des délais (exigences de sécurité, taille des équipes) mais l'organisation ne doit pas tolérer un retard. En aucun cas l'affirmation "c'est normal ici" ne doit devenir la réponse par défaut.
 
-Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire pire peut-être, de fainéantise.
+Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire pire peut-être, de fainéantise intellectuelle.
 
 Si la majorité des collaborateurs d'une entreprise en viennent à penser qu'elle a du retard, il y a un sérieux problème. Maintenir le _statu quo_ sur cette situation mène inévitablement au déclin de l'organisation et en la perte irrémédiable de crédibilité, de la part de ses employés et de ses partenaires.
 
-Dans l'un de ses articles[^ArticlePSSyndromeCanard], le conférencier et expert en transformation Philippe SILBERZAHN prend l'exemple d'un homme attendant un train qui devait arriver à 9h30. Le panneau d'affichage affiche "A l'heure" malgré qu'il soit 9h35 à sa montre. L'homme songe à prendre une photo du panneau mais se demande "à quoi bon". La majorité des gens trouveraient qu'il chipote pour 5 minutes, seraient agacés, ou diraient que c'est une erreur d'affichage. "Après tout, personne n'y peut rien". C'est avec ce genre de comportement que Philippe SILBERZAHN affirme que les organisations déclinent : elles s'habituent à la médiocrité.
+Dans l'un de ses articles[^ArticlePSSyndromeCanard], le conférencier et expert en transformation Philippe SILBERZAHN prend l'exemple d'un homme attendant un train qui devait arriver à 9h30. Le panneau d'affichage affiche "A l'heure" malgré qu'il soit 9h35 à sa montre. L'homme songe à prendre en photo le panneau mais se demande "à quoi bon". La majorité des gens trouveraient qu'il chipote pour 5 minutes, seraient agacés, ou diraient que c'est une erreur d'affichage. "Après tout, personne n'y peut rien". C'est avec ce genre de comportement que Philippe SILBERZAHN affirme que les organisations déclinent : elles s'habituent à la médiocrité.
 
 Alors qu'au début le dysfonctionnement est considéré inadmissible, il devient avec le temps de plus en plus acceptable par l'organisation, sans qu'elle se rende compte que cette situation lui coûte du temps et de l'argent. L'effort pour corriger le problème devient de moins en moins justifiable et le silence devient le choix par défaut pour conserver son énergie. Jusqu'à ce qu'une situation irrémédiable se produise (ou qu'un groupe de quelques courageux secouent la structure!).
 
-Mais il faut également savoir communiquer à temps sur ses innovations. Preston DUNLAP, premier directeur technique (CTO) de l'Armée de l'Air américaine, décrit dans sa lettre publique _Défier la Gravité_ combien les "forces bureaucratiques" peuvent nuire à l'innovation si on les présente trop tôt.
+Mais il faut également savoir _quand_ dévoiler ses innovations. Preston DUNLAP, premier directeur technique (CTO) de l'Armée de l'Air américaine, décrit dans sa lettre publique _Défier la Gravité_ combien les "forces bureaucratiques" peuvent nuire à l'innovation si on les présente trop tôt.
 
 > "Certains m'ont demandé quelle fut ma recette pour réussir durant ces 3 dernières années. Je n'en ai pas beaucoup parlé parce-que je savais que si je révélais les éléments trop à l'avance, les forces naturelles de la bureaucratie reviendraient de plus belle, pour rejeter à chaque occasion tout le potentiel de l'innovation." - Preston DUNLAP, Défier la Gravité (_Defying Gravity_) [^DefyingGravity]
 
@@ -455,10 +479,9 @@ Cette pratique est fastidieuse quand elle est manuelle, mais permet, lorsqu'une 
 
 Néanmoins dans une approche DevOps, l'usage de ces librairies évolue au cours du temps. Une technologie utilisée un jour sera peut-être remplacée demain. Vous ne pouvez donc pas demander aux développeurs de mettre à jour la liste de ces centaines (voire milliers) de dépendances utilisées dans leurs logiciels.
 
-L'avantage de la méthodologie DevOps est que l'ensemble du code est centralisé au sein de l'usine logicielle. Cela nous permet d'utiliser des outils pour analyser de quoi chaque projet est composé et prévenir les failles de sécurité. Le SBOM traditionnel peut donc être automatisé par deux choses :
+L'avantage de la méthodologie DevOps est que l'ensemble du code est centralisé au sein de l'usine logicielle. Cela nous permet d'utiliser [des outils](medium.com/@geralexgr/opensource-devsecops-tools-for-devops-engineers-f6cbd5e3017a) pour analyser de quoi chaque projet est composé et prévenir les failles de sécurité. Le SBOM traditionnel peut donc être automatisé par deux choses :
 
 - Des chaînes d'intégration continue qui détectent, mettent à jour ou refusent automatiquement l'usage de librairies spécifiques (ex: analyse des `package.json` en Javascript ou `requirements.txt` pour Python avec [_SPDX_](https://spdx.dev/) ou [_CycloneDX_](https://cyclonedx.org/), détection de paquets vulnérables avec _Renovate_[^Renovate]; cf. _Anchore_[^AnchoreSBOM], _OSV-Scanner_[^osvscanner]).
-  - TODO(flavienbwk): more tools medium.com/@geralexgr/opensource-devsecops-tools-for-devops-engineers-f6cbd5e3017a
 - Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: _Trivy_[^Trivy], _Quay Clair_[^QuayClair], [_Dagda_](https://github.com/eliasgranderubio/dagda)[^DagdaGithub], _Jfrog X-Ray_[^JFrogXRay])
 
 Au lieu de lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser les contributions pouvant apporter des risques, avant qu'elles soient déployées en production.
@@ -2047,8 +2070,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^AtlassianDevopsStudy]: Atlassian; CITE Research. "_2020 DevOps Trends Survey_". 2020.
 
-[^RedGate2021Report]: Redgate. "[_The 2021 State of
-Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021)". 2021.
+[^RedGate2021Report]: En 2021, 74% des organisations déclaraient adopter une approche DevOps. Statistiques par Redgate. "[_The 2021 State of Database DevOps_](https://www.red-gate.com/solutions/database-devops/report-2021)". 2021.
 
 [^DORAProfileExperience]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "_Years of experience_", page 61. 2022.
 
