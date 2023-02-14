@@ -713,14 +713,14 @@ Il existe plusieurs moyens d'adresser la problématique des environnements de d�
    - Cas : votre entreprise est mature, votre activité nécessite que vos ingénieurs aient une autonomie particulièrement élevée pour innover sur du matériel spécifique (ex: librairies GPU de dernière génération, recherche), qu'ils ne soient pas contraints par des outils intermédiaires (VM), mais vous manipulez des données critiques et avez des besoins élevés de sécurité.
    - Remarque : Cette pratique est déconseillée si vous n'avez pas des équipes dédiées et assez nombreuses pour maintenir régulièrement cette infrastructure (ex: Google). En terme de sécurité, pensez entre-autres à contrôler les extensions utilisées par votre IDE[^IDE].
 
-| Méthode                                                  | Flexibilité  | Complexité                           | Risque      |
-| -------------------------------------------------------- | ------------ | ------------------------------------ | ----------- |
-| _Bring Your Own Device_                                  | Maximale     | Aucune                               | Haut        |
-| Machines partiellement contrôlées                        | Maximale     | Plutôt faible                        | Moyen       |
+| Méthode                                                  | Flexibilité  | Complexité                               | Risque      |
+| -------------------------------------------------------- | ------------ | ---------------------------------------- | ----------- |
+| _Bring Your Own Device_                                  | Maximale     | Aucune                                   | Haut        |
+| Machines partiellement contrôlées                        | Maximale     | Plutôt faible                            | Moyen       |
 | Machines entièrement contrôlées avec env. de dev. cloud  | Moyenne      | Moyenne (_Codespaces_) à Haute (_Coder_) | Faible      |
-| Machines entièrement contrôlées avec VM de dev. distante | Moyenne      | Moyenne                              | Faible      |
-| Machines entièrement contrôlées avec VM de dev. locale   | Plutôt haute | Haute                                | Très faible |
-| Machines entièrement contrôlées et outillées             | Haute        | Très haute                           | Très faible |
+| Machines entièrement contrôlées avec VM de dev. distante | Moyenne      | Moyenne                                  | Faible      |
+| Machines entièrement contrôlées avec VM de dev. locale   | Plutôt haute | Haute                                    | Très faible |
+| Machines entièrement contrôlées et outillées             | Haute        | Très haute                               | Très faible |
 
 Plus l'on souhaite faire baisser le risque (augmenter la sécurité) tout en augmentant la flexibilité (facilité pour innover), plus cela demandera du temps à vos équipes d'infrastructure, ou vous coûtera de l'argent (si vous externalisez). Prenez en compte les facteurs inhérents à votre organisation et son mode de fonctionnement pour choisir la solution qui vous convient le mieux.
 
@@ -1174,15 +1174,19 @@ Ce chapitre vise à mettre en perspectives deux modèles de responsabilité trad
 
 L'un des modèles de partage des responsabilités est le "RACI", pour _Responsible_ (Exécutant), _Accountable_ (Responsable), _Consulted_ (Consulté) et _Informed_ (Informé). Il permet de s'assurer que toutes les parties-prenantes sont conscientes de leurs rôles et de leurs responsabilités dans un projet.
 
-Dans l'illustration suivante, nous avons cinq parties-prenantes pour le développement d'un nouveau site web. Un responsable, un exécutant (personne en charge de la réalisation), des consultés et des informés sont désignés pour chaque activité.
+Dans le tableau suivant, nous avons cinq parties-prenantes pour le développement d'un nouveau site web. Un responsable, un exécutant (personne en charge de la réalisation), des consultés et des informés sont désignés pour chaque activité.
 
-TODO(flavienbwk): Remettre en forme le [tableau](https://assets-global.website-files.com/5a690960b80baa0001e05b0f/5b7198a6ebc80005a6898d46_blog_post_img_Example-RACI-Matrix%402x.png) en français
+| Livrable du projet (ou activité) | Responsable du projet | Architecte | Designer | Développeur front-end | Développeur back-end |
+| -------------------------------- | --------------------- | ---------- | -------- | --------------------- | -------------------- |
+| Conception du plan du site       | C                     | R          | A        | I                     | I                    |
+| Direction artistique             | A                     | C          | R        | C                     | I                    |
+| Conception des maquettes         | C                     | A          | R        | I                     | I                    |
+| Structure du code (template)     | A                     | I          | C        | R                     | C                    |
 
-![Exemple de diagramme RACI. Traduction de l'anglais depuis l'illustration _atlassian.com_.](./images/figure-7.png)
-
-|     |     |
-| --- | --- |
-|     |     |
+- **R** (Exécutant): personne qui fait le travail pour achever un livrable
+- **A** (Responsable): personne qui délègue le travail et réalise l'inspection des travaux finis
+- **C** (Consulté): personne qui apporte sa contribution à un livrable en fonction de son domaine d'expertise ou des tâches dont il a la responsabilité
+- **I** (Informé): personne qui doit être gardée dans la boucle concernant l'avancée du projet
 
 Une extension du RACI est le RACI-VS[^RACI-VS] qui inclut un validateur (la personne en charge de la validation finale du livrable, une autorité) et un signataire (personne en charge de l'approbation officielle du livrable et qui engage sa signature, une haute autorité).
 
@@ -1215,15 +1219,20 @@ Dans un modèle DevOps, les "intervenants informés" sont pleinement impliqués 
 
 TODO(flavienbwk): Remettre en forme le [tableau](https://wac-cdn.atlassian.com/dam/jcr:c9128f95-3430-4ba2-8893-97801feb24f9/Modal-EXAMPLE1new.jpg?cdnVersion=610)
 
-|     |     |
-| --- | --- |
-|     |     |
+Exemple de DACI, listant les options considérées pour une prise de décision sur la problématique "Comment devrions-nous finaliser les spécifications de notre produit ?" :
 
-![Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans leur cas, l'option 1). Traduit depuis l'anglais. Source : _atlassian.com_](./images/figure-8.jpg)
+| _Critères_                                               | Option 1: Groupes de discussion<br><br>Groupes de discussion de personas cibles rémunérées | Option 2: Revues internet<br><br>Équipe interne d'experts en contenu                                           | Option 3: Ne pas finaliser<br><br>Ne rien faire pour adresser le problème pour le moment   |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Stratégiquement fiable<br><br>_priorité haute_           | ✅ Cibles ancrées dans la stratégie = retours ancré dans la stratégie                       | ✅ 2 nouveaux membres d'équipe correspondent au persona = quelques retours ancrés dans la stratégie             | ❌ Risque d'erreur importante / coûteuse<br><br>❌ Risque de prise de délais ou de confusion |
+| Centré sur l'utilisateur                                 | ✅ Retour précis de clients                                                                 | ❌ Biais d'expert                                                                                               | ❌ Naviguer à l'aveugle<br><br>_priorité haute_                                             |
+| Coût<br><br>_priorité moyenne_                           | ❌ Plus coûteux sur le court-terme<br><br>❌ Chronophage                                     | ✅ Pas de coût supplémentaire<br><br>✅ Relativement rapide à mettre en place<br><br>❌ Prend du temps à l'équipe | ✅ Pas de coût supplémentaire<br><br>✅ Option la plus rapide                                |
+| Opportunité d'en apprendre plus<br><br>_priorité faible_ | ✅ Opportunité d'en apprendre plus sur nos cibles                                           | ✅ Opportunité d'apprendre des retours de nos experts inter-équipes                                             |                                                                                            |
+
+> Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans leur cas, l'option 1). Traduit depuis l'anglais. Source : _atlassian.com_
 
 Une fois votre décision prise, il est temps de communiquer votre décision pour que tout le monde soit à la page. Envoyez le document aux personnes qui doivent en prendre connaissance puis archivez-le.
 
-Une fois archivé, ce document permettra aux nouvelles parties-prenantes du projet de comprendre pourquoi telle ou telle décision a été prise. En menant cette réflexion collective, vous évitez également les biais cognitifs individuels.
+Une fois archivé, il permettra aux nouvelles parties-prenantes du projet de comprendre pourquoi telle ou telle décision a été prise. En menant cette réflexion collective, vous évitez également les biais cognitifs individuels.
 
 #### Le modèle DevOps
 
@@ -1640,12 +1649,12 @@ Si construisez de zéro votre initiative, se comparer aux performance de l'indus
 
 Le rapport DORA 2022 a classé les organisations sondées en trois catégories de performance (bas, moyen et haut) pour ses quatre mesures clé :
 
-| Mesure | Bas | Moyen | Haut |
-|---|---|---|---|
-| Fréquence des déploiements | Entre 1 et 6 tous les 6 mois | Entre 1 et 4 par mois | A la demande (plusieurs par jour) |
-| Délai de mise en production | < 6 mois | < 1 mois | < 1 semaine |
-| Durée pour restaurer un service | < 1 mois | < 1 semaine | < 1 jour |
-| Taux d'échec des déploiements | 46% - 60% | 16% - 30% | 0% - 15% |
+| Mesure                          | Bas                          | Moyen                 | Haut                              |
+| ------------------------------- | ---------------------------- | --------------------- | --------------------------------- |
+| Fréquence des déploiements      | Entre 1 et 6 tous les 6 mois | Entre 1 et 4 par mois | A la demande (plusieurs par jour) |
+| Délai de mise en production     | < 6 mois                     | < 1 mois              | < 1 semaine                       |
+| Durée pour restaurer un service | < 1 mois                     | < 1 semaine           | < 1 jour                          |
+| Taux d'échec des déploiements   | 46% - 60%                    | 16% - 30%             | 0% - 15%                          |
 
 GitLab permet même de [visualiser en temps-réel ces mesures](https://gitlab.com/gitlab-org/gitlab/-/value_stream_analytics) depuis la version _12.3_.
 
@@ -2110,7 +2119,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^ElonMuskBiography]: VANCE, Ashlee. Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future. page 83. 2016.
 
-[^MuskImpossibleQuote]: Allocation d'Elon MUSK à l'occasion de l'atterrissage contrôlé de _Falcon 9_, une fusée réutilisée, sur la rediffusion vidéo de SpaceX "_It's been 15 years to get to this point... This is a great day... in proving that something could be done that many people said was impossible_" le 30 mars 2017.
+[^MuskImpossibleQuote]: Allocution d'Elon MUSK à l'occasion de l'atterrissage contrôlé de _Falcon 9_, une fusée réutilisée, sur la rediffusion vidéo de SpaceX "_It's been 15 years to get to this point... This is a great day... in proving that something could be done that many people said was impossible_" le 30 mars 2017.
 
 [^SecurityFramework]: A ne pas confondre avec les frameworks logiciels comme _ReactJS_ ou _Symfony_, un framework peut désigner une simple documentation, regroupant un ensemble de règles et de spécifications cadrant l'usage de technologies pour répondre à une problématique (ex: sécuriser la chaîne logicielle).
 
