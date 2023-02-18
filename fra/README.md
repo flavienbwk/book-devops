@@ -764,9 +764,28 @@ Les mécanismes d'installation étant standardisés par Kubernetes (cf. manifest
 
 Si votre organisation se compose de personnels déjà formés aux technologies ESXi, ou si les règles SSI de votre organisation ne sont pas prêtes pour accueillir un socle Cloud, il reste possible de poser un cluster Kubernetes sur votre infrastructure ESXi traditionnelle. Cela peut s'envisager dans un plan de transformation, au prix d'une dette technique temporairement plus importante, pendant que vos équipes historiques se forment aux technologies Cloud. L'objectif a terme étant de ne faire tourner plus que le socle Cloud.
 
-En terme de sécurité, les interfaces des technologies conteneurisées sont standardisées. Il ne s'agit donc plus de devoir vérifier le contenu du conteneur : l'infrastructure s'en charge elle-même. Mais de s'assurer de la sécurité de la technologie de conteneurisation (ex: Docker, CRI-O), ainsi que des technologies d'orchestration (ex: Kubernetes, Rancher, OpenShift). Par exemple, peut-être vous êtes vous assuré que _Microsoft Word_ était sécurisé au travers d'une [homologation](#qualification-certification-et-homologation) ? Pour autant, chaque fichier _Word_ n'a pas besoin d'être homologué à son tour. C'est la même chose pour une application conteneurisée : qu'elle soit codée en Python, en Go, en PHP ou qu'elle embarque des librairies de dernière génération, c'est l'enveloppe qui le fait tourner qui doit être homologué : le contenuer.
+En terme de sécurité, les interfaces des technologies conteneurisées sont standardisées. Il ne s'agit donc plus de devoir vérifier le contenu du conteneur : l'infrastructure s'en charge elle-même. Mais de s'assurer de la sécurité de la technologie de conteneurisation (ex: Docker, CRI-O), ainsi que des technologies d'orchestration (ex: Kubernetes, Rancher, OpenShift). Par exemple, peut-être vous êtes vous assuré que _Microsoft Word_ était sécurisé au travers d'une [homologation](#qualification-certification-et-homologation) ? Pour autant, chaque fichier _Word_ n'a pas besoin d'être homologué à son tour. C'est la même chose pour une application conteneurisée : qu'elle soit codée en Python, en Go, en PHP ou qu'elle embarque des librairies de dernière génération, c'est l'enveloppe qui le fait tourner qui doit être homologué : le conteneur.
 
 En conclusion, vous devez traiter votre socle comme un produit au service de vos équipes techniques. Plus vous mutualiserez et automatiserez le recours aux services de ce socle, moins vous devrez entretenir de dette technique (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)"). A la fin, ce travail se traduit par une meilleure disponibilité des services pour vos clients.
+
+## Abandonner les VMs ?
+
+Avec des références réccurentes aux micro-services, le conteneur paraît la solution privilégiée et se suffisant à elle-même. Dans ce cas là, il n'y a plus besoin de machines virtuelles, puisque l'orchestrateur (ex: Kubernetes) peut s'installer directement sur la machine. C'est ce que l'on nomme une installation "_baremetal_". Néanmoins dans le cadre d'une transformation, il est souvent inoportun de mettre les VMs au placard.
+
+Rares sont les cas où vous pourrez transformer du jour au lendemain votre infrastructure de production vers une infrastructure Cloud. Si vos équipes sont habituées à administrer des VMs, il leur faut le temps de se former à ces nouvelles technologies. Et aux applicatifs d'être migrés vers un format compatible. Pour avancer, fixez-vous un objectif pour réduire l'usage des VMs. Par exemple : "dans 1 an, au moins 80% de nos logiciels devront tourner sous forme de conteneurs". Ou encore : "tout nouveau logiciel doit être conteneurisé pour être déployé".
+
+Voici quelques situations où les VMs restent utiles :
+
+- Des logiciels historiques (_legacy_) ou critiques de votre entreprise ne sont pas déployables sous forme de conteneurs.
+- Les industriels avec lesquels vous travaillez ne travaillent pas encore avec les conteneurs.
+- Vos règles SSI vous forcent peut-être à utiliser un système d'exploitation[^OS] spécifique. Pour éviter de passer du temps à rendre compatible votre installation pour cet OS, vous pourriez installer un logiciel de virtualisation (ex: KVM). Cela vous permettra d'utiliser l'OS de votre choix pour lancer l'installation de votre infrastructure DevOps, dans l'environnement auquel vous êtes habitué.
+- Si les scripts d'installation de l'infrastructure sont voués à être partagée à plusieurs entités, il est plus prudent de prévoir l'usage de VMs. Ces entités peuvent également avoir des règles SSI strictes.
+- Si vous n'avez pas de machine dédiée où déployer votre infrastructure, l'usage de VMs est plus prudent afin d'isoler les nouveaux logiciels des installations existantes. De la même manière, si vous n'avez pas beaucoup de ressources, la VM peut être utile pour isoler les charges de travail que vont apporter votre chaîne logicielle DevOps.
+- Tant que vos équipes ne sont pas prêtes à passer au 100% cloud, le processus de sauvegarde/restauration d'une VM peut être plus simple à gérer.
+
+Néanmoins, gardez en tête que maintenir cette couche d'abstraction (les VMs), pour au final n'administrer que Kubernetes dessus, ajoute de la complexité à votre infrastructure. Si les pratiques évoluent dans votre organisations, envisagez de les supprimer. Mais conservez la flexibilité de pouvoir en instancier au besoin.
+
+Au sein d'une infrastructure Cloud DevOps, il est possible d'utiliser des outils comme _KubeVirt_ ou _Virtlet_ pour instancier des VMs dans son cluster Kubernetes. Cela peut permettre de migrer en douceur vos applicatifs historiques, tout en faisant manipuler à vos équipes les technologies Cloud. Des outils plus visuels comme _OpenStack_ peuvent aussi aider à faire la transition vers cet écosystème, plus simplement que par les traditionnelles lignes de commande dans un terminal.
 
 ## Open-source : risques et avantage stratégique
 
@@ -1247,6 +1266,25 @@ TODO(flavienbwk): [Spotify engineering culture](https://www.youtube.com/watch?v=
 
 ## Réduire le coût du changement
 
+### Ne pas disrupter
+
+Le DevOps est souvent présenté comme un changement de paradigme, c'est à dire une disruption dans les technologies et les pratiques. Pour éviter d'intimider les parties-prenantes à votre transformation, présentez plutôt le DevOps comme une évolution des technologies traditionnelles.
+
+Par exemple, Windows 10 (sorti en 2015) n'est qu'une [évolution de Windows NT](https://superuser.com/a/1744615/680804) 3.1 (sorti en 1993) et [comporte encore du code](https://qr.ae/prvnxD) datant des débuts de l'architecture Windows NT (conçu en 1988)[^WindowsNT].
+
+Voici quelques parallèles concernant le Cloud :
+
+- Un conteneur n'est qu'une petite VM plus flexible. Elle se gère avec des commandes différentes, la nomenclature n'est pas la même, mais les concepts restent identique : un OS (image) à partir duquel le conteneur est créé, un réseau configurable ou encore la possibilité d'ajouter du stockage.
+- Un orchestrateur n'est qu'un hyperviseur géré avec des commandes différentes. Mais ses composantes restent identiques : politiques réseau configurable entre les conteneurs/VMs, gestion du stockage avec des _datastores_ sur VMWare en place des _PersistentVolumes_ sur Kubernetes ou encore le _NSX Controller_ sur VMWare en place du _Ingress Controller_ sur Kubernetes.
+- Il existe cependant des évolutions particulières, qu'il convient seulement d'admettre (comme pour les théorèmes mathématiques) : cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)".
+- Les micro-services ne sont qu'une division des logiciels traditionnels en plusieurs briques indépendantes. Chaque brique peut être passée à l'échelle en fonction de la charge utilisateur.
+
+Les VMs traditionnelles ont aussi leur place dans une infrastructure Cloud DevOps, elles peuvent en faire partie (cf. chapitre "[Abandonner les VMs ?](#abandonner-les-vms-)").
+
+A ces évolutions technologiques s'ajoutent des méthodologies pour maîtriser la dette technique, accélérer les déploiements et maintenir un niveau de résilience élevé : une forge logicielle, le gitops, l'intégration continue, le déploiement continu, les postmortems... C'est le DevOps.
+
+En définissant les méthodologies vues dans ce livre et en utilisant des technologies dont l'administration est standardisées (ex: Kubernetes), vous diviserez à terme les coûts d'administration.
+
 ### Eviter les erreurs
 
 TODO(flavienbwk): Introduire en rappelant qu'il est nécessaire d'[Être au plus proche du métier](#être-au-plus-proche-du-métier) et d'itérer avec lui.
@@ -1704,6 +1742,8 @@ Par exemple, si l'application `foo` en version `1.1.0` requiert un l'existence d
 La migration du schéma d'une base de données est un autre exemple. En déclarant la version d'un schéma de base de données compatible avec une version précise d'une application, Apollo évite de déployer une application incompatible avec une base de données qui n'a pas encore été mise à jour. Par exemple, si `foo:1.1.0` ne supporte que la `V2` du schéma de `bdd:V1`, `foo:1.1.0` ne sera déployé que quand `bdd:V1` aura migré à la `V2`. Apollo sait ainsi quelle version d'une application est élligible à être déployée dans quel environnement.
 
 # Conclusion
+
+TODO(flavienbwk): Présenter le DevOps [comme une évolution](#ne-pas-disrupter). Séparer les étapes de montée en compétence : Cloud (apprendre la base des technologies) puis SRE (procédures, postmortems) puis DevOps (au service des développeurs).
 
 TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
 
@@ -2359,6 +2399,10 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^Ansible101]: CUNLIFFE, Stuart. Illustration de l'article [_Red Hat Ansible: A 101 guide_](https://www.ibm.com/blogs/systems/red-hat-ansible-a-101-guide/), _ibm.com/blogs_. 2020.
 
-[^Programme10p]: Pour en savoir plus : 10pourcent.etalab.gouv.fr
+[^Programme10p]: Pour en savoir plus : _10pourcent.etalab.gouv.fr_
 
 [^TrainingTurnover]: SIEBEN, Inge. [_Does training trigger turnover - or not?: The impact of formal training on graduates' job search behaviour. Work, Employment and Society_](https://doi.org/10.1177/0950017007080004). 2007.
+
+[^OS]: Exemple de système d'exploitation : Debian, Ubuntu, Alma Linux, Microsoft Windows 10, Apple MacOS. Anglais : _operating system_ (OS).
+
+[^WindowsNT]: Histoire du développement de Windows NT : _en.wikipedia.org/wiki/Windows_NT_3.1_
