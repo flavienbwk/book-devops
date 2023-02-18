@@ -216,45 +216,56 @@ Changer la culture d'une institution prend du temps, mais prendre des raccourcis
 
 ## Les initiatives dans les organisations
 
-Il peut arriver que certains décideurs nouvellement arrivés, demandent à leurs subordonnés de trouver "rapidement" des solutions aux problèmes qu'ils découvrent.
+Votre hiérarchie est convaincue par votre initiative de transformation et vous accorde tous les moyens requis ? Dans ce cas, passez au prochain chapitre. Si ce n'est pas le cas, tentons de mieux comprendre pourquoi.
 
-Souvent, il s'agit pour eux de trouver des solutions techniques : faciles à concevoir et à déléguer. Néanmoins, des initiatives - plus ou moins matures - existent souvent déjà au sein de l'organisation.
+Il peut arriver que des décideurs nouvellement effectés, demandent à leurs subordonnés de trouver "rapidement" des solutions aux problèmes qu'ils découvrent. Au lieu d'adopter une démarche investigatrice, l'urgence d'obtenir un résultat immédiat les incite à prendre une orientation précipitée. Après tout, on attend du chef qu'il trouve rapidement et en toute situation, une solution peu coûteuse et efficace. Néanmoins, des initiatives - plus ou moins matures - existent souvent déjà au sein de l'organisation.
 
-Acheter des technologies "sur l'étagère" ou lancer un nouveau projet peut sembler plus simple et permettre d'obtenir un résultat immédiat. Mais se lancer en faisant fi des contraintes inhérentes à l'organisation peut être risqué (maturité de l'environnement organisationnel et technique, volume ou type de données supportés par les outils, ressources humaines et matériel, dette technique, courbe d'apprentissage...). Ces contraintes sont souvent déjà connues et exprimées depuis des années par l'expertise interne. Ces frustrations mènent quelques fois à des initiatives qui tentent d'y répondre : soit inconnues, soit négligées, soit ignorées.
+Les solutions techniques sont faciles à concevoir et à déléguer. Par exemple, acheter des technologies "sur l'étagère" ou lancer un tout nouveau projet, peut aussi sembler plus efficace. Mais opter pour une solution, en faisant fi des contraintes inhérentes à l'organisation (maturité organisationnelle et technique, ressources humaines et matérielles, dette technique, courbe d'apprentissage...) peut être risqué. D'ailleurs, ces contraintes sont souvent déjà connues et exprimées depuis des années par l'expertise interne. Elles provoquent parfois la naissance de projets pris à l'initiative des employés, face au besoin qu'ils observent ou à l'exaspération qu'ils éprouvent. Au lieu de les encourager à trouver une solution, ils sont parfois réprimandés, au titre d'insubordination. En réalité, ces projets se perdent souvent dans les strates intermédiaires et ne remontant que rarement jusqu'au décideur pour les pérenniser.
 
-Or, les décideurs ont rarement le temps de faire le tour complet de l'organisation et de poser des questions. Ils ont par conséquent tendance à privilégier leurs propres réflexions, en oubliant de demander conseil à leurs experts. Cela résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs, une mauvaise communication et donc de la frustration au sein de l'entreprise.
+En effet, les décideurs ont rarement le temps de rencontrer chacune de leurs équipes. Ils ont par conséquent tendance à privilégier leur propre avis ou à solliciter celui de leur adjoint, en lieu et place de celui de leurs experts. La décision prise est donc celle relevant de la sensibilité d'une seule personne, isolée des réalités métiers. Plus il existe de strates hiérarchiques, plus l'isolation est prononcée. Ce phénomène résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs. Accompagnés d'une communication par nature peu impactante, il produit inévitablement de la frustration dans l'entreprise.
 
-Une parfaite illustration est celle du Ministère des Armées américain qui a lancé une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne], dont la finalité était identique. Au delà d'avoir provoqué des frustrations au sein des équipes de _Platform One_[^ChaillanDisaTweet], le programme _Vulcan_ accuse des retards et des surcoûts[^DISAVulcanDelays].
+L'exemple du Ministère des Armées américain en est une bonne illustration. Ce ministère a lancé une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne], dont la finalité était identique. Au delà d'avoir provoqué des frustrations au sein des équipes de _Platform One_[^ChaillanDisaTweet], le programme _Vulcan_ accuse des retards et des surcoûts[^DISAVulcanDelays].
 
-Dans d'autres cas, la méfiance de certains responsables les mènent à remettre en doutte les propositions faites par leurs experts en interne. A outrance, cela mène à considérer ses propres experts comme des acteurs externes à l'organisation, balayant l'intérêt du recrutement de personnels au contact quotidien des sujets de l'entreprise.
+Dans d'autres cas, la méfiance de certains responsables les mènent à remettre en doutte les propositions faites par leurs experts internes. A outrance, cela mène à considérer ses propres experts comme des acteurs externes à l'organisation, balayant l'avantage d'avoir des personnels qualifiés, au contact quotidien des sujets de l'entreprise.
 
-Cependant en tant que meneur d'une initiative interne, vous devez comprendre la crainte des décideurs : confier un projet ambitieux disruptant les pratiques organisationnelles a plusieurs risques.
+Face à des responsables n'agissant pas comme on pense qu'ils le devraient, on peut s'indigner et partir. Ou essayer de comprendre les réactions et d'améliorer les pratiques. En tant que meneur d'une initiative interne, vous devez comprendre la crainte des décideurs : confier un projet ambitieux disruptant les pratiques organisationnelles a plusieurs risques.
 
-Premièrement si vous décidez de monter votre propre équipe, il se peut que ces personnes partent à n'importe quel moment, laissant derrière elles un travail qu'il n'est souvent pas possible de reprendre, au vu de la maturité avancée des réflexions qu'elles entreprenaient. Voilà pourquoi beaucoup d'organisations préfèrent payer un tiers-partie, avec un cahier des charges bien définit pour que le décideur soit certain d'obtenir un résultat (obligation contractuelle du tiers-partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique est obsolète.
+Si votre organisation est grande et qu'elle perdure depuis longtemps, c'est qu'elle a répondu à un besoin jusqu'à présent. Si les responsables en viennent à penser qu'elle doit se transformer (ou que vous l'anticipez) et que rien n'a été entamé, ses dirigeants se trouvent peut-être face au dilemme de l'innovateur. Théorisé par Clayton M. CHRISTENSEN[^DilemmeInnovateurLivre] en 1997, ce dilemme décrit la situation dans laquelle une entreprise leader dans son domaine, en essayant de maintenir son avantage concurrentiel, est inévitablement amenée à passer à côté d'une innovation majeure. Un concurrent insoupçonné la propose alors et renverse les parts de marché. Par exemple en 2023, Microsoft a surpris tout le monde en sortant avant Google un ChatGPT intégré à son moteur de recherche. Google est pourtant à ce temps le leader de la recherche sur internet et investit chaque année des milliards d'euros dans la recherche en intelligence artificielle. Comment est-ce que Google a pu laisser un concurrent lui damer le pion ?
 
-Deuxièmement, cela implique un changement culturel qu'il faut être capable d'appréhender. Peut-être qu'il est encore trop tôt pour l'organisation, qu'il faut encore acculturer au travers de présentations et d'exemples de réussites. En effet, il faut que le chef comprenne l'impact de cette transformation sur l'organisation : l'achat de matériel, la transformation de la stratégie RH ou encore la formation des personnels historiques. Aidez vos responsables à se projeter pendant que vous travaillez à changer les choses.
+La réponse est simple : le risque qu'a Google - 84% des parts de marché sur les moteurs de recherche[^MarketShareSearchEngines] - à sortir un produit non abouti - qui retourne de fausses informations par exemple[^BardFails] - est bien plus important que celui d'une startup comme OpenAI ou de Bing pour Microsoft - 9% des parts de marché sur les moteurs de recherche. Preuve en est qu'au moment de la rédaction de ce chapitre, peu d'articles en ligne remettent en cause le lancement de Bing Chat par rapport à Bard, malgré des problèmes identiques[^CNNBingAI]. En résumé : Microsoft a tout à gagner quand Google a tout à perdre.
 
-De votre côté, soyez un décideur audacieux, stratège, honnête intellectuellement[^BiaisCognitifs] et à l'écoute de vos experts. Vous éviterez ainsi de perdre du temps, de l'argent ou votre crédibilité.
+Ceci dit, Google l'a vu et travaille depuis un moment sur un concurrent, Bard[^Bard]. Pour éviter de se retrouver devant ce dilemme, l'organisation doit :
+
+- **Faire de la veille** : garder un œil sur les tendances émergentes et les nouveaux besoins de ses clients en en organisant des visites entre partenaires, en participant à des salons, ou en consultant des experts pour s'informer des évolutions du marché. Vous pouvez par exemple demander à vos experts de rédiger une newsletter trimestrielle à l'attentation de la direction, reprenant les grandes tendances technologiques du moment.
+- **(Ré-)évaluer régulièrement sa stratégie** (son _business model_) : fort de cette veille, rechercher de nouvelles opportunités de croissance en adressant de nouveaux cas d'usage. Proposer de nouveaux produits et employer de nouvelles technologies. Dans une institution, la veille est aussi interne : il faut aller voir ses métiers pour comprendre les freins à leur travail quotidien, et mettre en perspective les innovations pouvant y répondre.
+- **Encourager la prise de risque et l'expérimentation** : encourager ses équipes à proposer de nouvelles idées et à tester des projets pour explorer de nouvelles technologies. Récompenser la prise de risque.
+- **Investissez dans l'innovation** : allouer des ressources suffisantes pour la recherche et développement (R&D). Par exemple, accorder 1 jour de télétravail par semaine à ses experts, pour qu'ils expérimentent la mise en place d'une technologie innovante. Accorder les financements à ses équipes pour acheter le matériel leur permettant d'expérimenter. Ou encore, leur donner accès à un hébergeur Cloud (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
+
+Plus pragmatiquement, si vous décidez de monter votre propre équipe, il se peut que certains membres partent à n'importe quel moment. Elles risquent alors de laisser derrière elles un travail impossible à reprendre, au vu de la maturité des réflexions qu'elles entreprenaient. Voilà pourquoi beaucoup d'organisations préfèrent payer un tiers-partie, avec un cahier des charges bien définit pour que le décideur soit certain d'obtenir un résultat (au travers de l'obligation contractuelle du tiers-partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique n'est plus adaptée à notre monde en constante évolution.
+
+Les évolutions organisationnelles impliquent toujours un changement culturel qu'il faut savoir appréhender. Parfois trop difficile à surmonter pour l'organisation toute entière, ce faussé culturel indique qu'il est probablement encore trop pour exposer votre plan. Cela peut être frustrant, mais vous devez encore pour l'instant continuer d'acculturer l'organisation. Faites-le au travers de présentations et d'exemples de réussites. Le décideur doit comprendre clairement l'impact que peut avoir cette transformation et les risques associés : rupture de service, changement de stratégie RH, formation du personnel ou encore achat de matériel. Aidez vos responsables à se projeter pendant que vous travaillez à construire vos preuves.
+
+Nous verrons dans la suite de ce livre comment appréhender la psychologie du changement pour faire aboutir votre projet.
 
 ## Réorganisations chroniques
 
-« Une de plus ! » s'exclameront vos plus fidèles collaborateurs. Combien de réorganisations a déjà subi votre organisation ? Pratiquées à outrance, elles brouillent le message et ajoutent de la confusion pour vos équipes.
+« Une de plus ! » s'exclameront vos plus fidèles collaborateurs. Combien de réorganisations a déjà subi votre structure ? Pratiquées à outrance, elles brouillent le message et ajoutent de la confusion pour vos équipes.
 
 Dans la plupart des cas, des équipes techniques existent déjà au sein de votre organisation. Elles répondent déjà probablement à des besoins métier qui nécessitent leur présence.
 
-Les responsables avec une mauvaise connaissance des enjeux métiers et techniques sont souvent tentés de vouloir changer les activités de certaines équipes. Ils le font au profit d'un nouveau projet, en raison des compétences y étant actuellement présentes. Or, une équipe se constitue toujours autour d'un projet qui a su former sa culture et qui aujourd'hui la rend si performante pour l'entreprise. Les décideurs doivent considérer cet aspect avant d'envisager de rompre cette culture durement acquise, en imposant une transformation.
+Les responsables avec une mauvaise connaissance des enjeux métiers et techniques sont souvent tentés de vouloir changer les activités de certaines équipes. Ils le font au profit d'un nouveau projet, en raison des compétences y étant actuellement présentes. Or, une équipe se constitue toujours autour d'un projet qui a su former sa culture, et qui aujourd'hui la rend si performante pour l'entreprise. Les décideurs doivent considérer cet aspect avant d'envisager de rompre cette culture durement acquise, en imposant une transformation.
 
-Le risque de changer considérablement les missions d'une équipe implique que vous soyez particulièrement disposé à la soutenir : c'est rarement le cas, vous n'en avez probablement pas le temps. Leur méthode de fonctionnement actuelle est déjà le fruit de plusieurs restructurations qui ont probablement déjà impacté leurs idéaux et la raison pour laquelle ils ont rejoint votre organisation.
+Le risque de changer considérablement les missions d'une équipe implique que vous soyez particulièrement disposé à la soutenir : c'est rarement le cas, vous n'en avez probablement pas le temps. Leur méthode de fonctionnement actuelle est déjà le fruit de plusieurs restructurations, qui ont probablement déjà impacté leurs idéaux, ainsi que la raison qu'ils ont eu de rejoindre votre organisation.
 
-Changer les missions d'une équipe sans considérer sa culture et son passif revient à risquer de perdre des collaborateurs : soit ils seront démotivés par votre projet, soit ils démissionneront. Vous devez leur proposer une vision claire, les convaincre avec des arguments étayés mais surtout écouter leurs remarques.
+Changer les missions d'une équipe sans considérer sa culture et son passif revient à risquer de perdre des collaborateurs : soit ils seront démotivés par votre projet, soit ils démissionneront. Vous devez leur proposer une vision claire et les convaincre avec des arguments étayés, mais surtout être à leur écoute.
 
-Du fait de leur passif au sein de votre organisation, la connaissances de vos équipes vous permettra de saisir des notions que vous n'avez pas encore totalement bien appréhendées, qu'importe votre niveau hiérarchique. Soyez ouvert à leurs recommandations et leurs remarques pour comprendre comment réorganiser au mieux cette équipe (et seulement si nécessaire), en fonction de ses aspirations.
+Du fait de leur passif au sein de votre structure, la connaissances de vos équipes vous permettra de saisir des notions que vous n'avez pas encore totalement bien appréhendées. Soyez ouvert à leurs recommandations et leurs remarques pour comprendre comment réorganiser au mieux cette équipe (et seulement si nécessaire), en fonction de ses aspirations.
 
 Si vous estimez ne pas avoir les ressources en interne, ne craignez pas de recruter. Il est risqué d'impacter les équipes historiques si elles répondent à un besoin exprimé par votre organisation. Le propre d'une transformation est d'assurer la continuité du service tout en changeant ses pratiques.
 
 Soyez plus subtile que d'annoncer un "grand plan de transformation". Ces pratiques frustrent à coup sûr bon nombre de collaborateurs, n'obtient pas l'adhésion de toutes vos équipes et risque de vous décrédibiliser.
 
-Comme évoqué dans le chapitre "[Too big, too soon](#too-big-too-soon)", adoptez la stratégie des petits pas et développez progressivement votre intuition sur qui vous devez réorganiser. Obtenez l'adhésion des équipes en illustrant le champs des  possibles, pour leur donner envie. Puis laissez-les convaincre leurs pairs à votre place. Nous détaillerons ces stratégies dans le chapitre "[Comment convaincre et garder la foi](#comment-convaincre-et-garder-la-foi)".
+Comme évoqué dans le chapitre "[Too big, too soon](#too-big-too-soon)", adoptez la stratégie des petits pas et développez progressivement votre intuition sur qui vous devez réorganiser. Obtenez l'adhésion des équipes, en illustrant le champs des possibles pour leur donner envie. Puis laissez-les convaincre leurs pairs à votre place. Nous détaillerons ces stratégies dans le chapitre "[Comment convaincre et garder la foi](#comment-convaincre-et-garder-la-foi)".
 
 ## Refuser le retard technologique
 
@@ -262,7 +273,7 @@ Comme évoqué dans le chapitre "[Too big, too soon](#too-big-too-soon)", adopte
 
 Si vous avez l'impression d'avoir déjà entendu cela et que vous lisez ce livre, ces paroles ont probablement succédé pour vous à un sentiment de consternement.
 
-Il peut se comprendre d'avoir, selon la structure, des délais (exigences de sécurité, taille des équipes) mais l'organisation ne doit pas tolérer un retard. En aucun cas l'affirmation "c'est normal ici" ne doit devenir la réponse par défaut.
+Il peut se comprendre d'avoir, selon la structure, des délais (exigences de sécurité, taille des équipes) mais l'organisation ne doit pas tolérer un retard. En aucun cas l'affirmation "c'est normal ici" ne doit devenir une réponse acceptable.
 
 Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire pire peut-être, de fainéantise intellectuelle.
 
@@ -338,10 +349,22 @@ Gardez en tête que si les choses sont telles qu'elles le sont aujourd'hui, c'es
 Enfin, ne vous découragez devant la première personne réticente. Toute innovation à ses débuts fait objet d'une moquerie morale et passe par trois phase : ridicule, dangereuse puis évidente[^InnovationPhases]. L'ayant vécu, je peux attester de la véracité de ce phénomène, mais des exemples historiques existent :
 
 - Le droit de vote des femmes : d'abord jugé ridicule, ensuite dangereux car certaines [suffragettes](https://en.wikipedia.org/wiki/Suffragette) y ont perdu la vie (années 1910), puis cette idée est devenue évidente dans nos sociétés contemporaines.
-- Henri FORD qui disait que chaque américain devait avoir une voiture personnelle et qu'il ne fallait pas que ça coûte cher. A l'époque, la voiture était considérée comme un gadget pour les riches : "on ne sait pas à quoi ça sert mais c'est joli". Il a créé la première chaîne de montage en mouvement de l'industrie (1913) et _Ford_ fait encore aujourd'hui partie des leaders de l'industrie automobile.
+- Henri FORD qui portez la vision selon laquelle chaque américain devait avoir une voiture personnelle et qu'elle ne coûte pas cher. A l'époque, la voiture était considérée comme un gadget pour les riches : "on ne sait pas à quoi ça sert mais c'est joli". Il a créé la première chaîne de montage en mouvement de l'industrie (1913)[^FordIndustryChain] et _Ford_ fait encore aujourd'hui partie des leaders de l'industrie automobile.
 - Elon MUSK qui disait pouvoir créer des lanceurs de fusée réutilisables : moqué[^ElonMuskBiography] ou fortement mis en doute[^MuskImpossibleQuote] à ses débuts par l'industrie spatiale russe et américaine, désormais respecté par cette dernière et [craint](https://www.ft.com/content/24cca993-b249-45a5-8c42-b39c0ec30c5b) par [l'industrie spatiale européenne](https://www.latribune.fr/entreprises-finance/industrie/aeronautique-defense/satellites-europeens-lances-par-spacex-la-terrible-defaite-de-l-europe-spatiale-937632.html).
 
-Nous pouvons désormais avancer plus sereinement en toute connaissance de cause. Voyons alors plus en détail, comment il est possible de s'organiser pour lancer son initiative de transformation.
+Si vous rencontrez une opposition frontale de personnes ayant l'oreille du décideur, commencez toujours par tenter de comprendre leur point de vue. Si vous estimez qu'ils veulent délibéremment couper court aux discussions (par exemple, pour des raisons politiques ou d'égo), tentez les approches suivantes :
+
+- **Mettez l'accent sur vos valeurs communes** : même si vous et votre adversaire avez des convictions politiques différentes, vous pouvez partager certaines valeurs communes. Essayez de les mettre en avant et démontrez comment votre initiative y répond. Exemples :
+  - Si vous et votre adversaire valorisez tous deux l'innovation, vous pouvez souligner comment votre approche la favorise et comment elle offre de nouvelles opportunités.
+  - Si votre projet propose des fonctionnalités similaires à un outil existant mais qu'il se distingue par l'échelon où il permet d'agir (tactique, opératif, stratégique[^MilitaryStrategy]), expliquez comment, avec des exemples de cas d'usage.
+- **Fédérez une coalition** : c'est l'idée des _early adopters_ évoquée plus tôt. Attirez des personnes qui partagent votre vision de la transformation. Ce sont souvent celles qui partagent avec vous les points sur l'inefficacité d'une partie de votre organisation.
+  - En créant une communauté qui vous soutient, vous démontrez à votre adversaire que votre approche est légitime et qu'elle est soutenue par un grand nombre de parties prenantes.
+  - Demandez des remerciements officiels : une lettre ou un e-mail signé par le responsable reconnu d'une entité que vous avez servi, attestant de l'utilité de vos méthodes ou de vos outils.
+- **Soyez persévérant** : faire changer quelqu'un d'avis peut prendre du temps, surtout lorsque des raisons politiques sont en jeu. Soyez persévérant et continuez à faire valoir vos arguments, même si vous rencontrez de la résistance.
+  - Restez ouvert à l'idée de continuer le dialogue avec votre adversaire, toujours de manière respectueuse et constructive. Si votre approche est la bonne (vous pourriez avoir tord après tout!) et la sienne la mauvaise, vous parviendrez peut-être à le rallier à votre cause avec le temps. C'est la sélection naturelle.
+  - Acceptez aussi que vous n'êtes pas éternel au sein de l'entreprise. Si votre initiative ne trouve pas sa place ici, tempis pour votre entreprise! Vous pourriez avoir un tout autre impact dans une autre structure, avec la même initiative. Et vous-seul déterminez les limites que vous vous fixez.
+
+Nous pouvons désormais avancer plus sereinement, en sachant comment réagir face à des situations communes, en tant que responsable d'une transformation. Voyons alors plus en détail comment il est possible de s'organiser et d'accumuler des arguments, pour lancer son initiative.
 
 # Modèle d'équipe interne
 
@@ -447,7 +470,7 @@ Il existe trois manières de gérer le risque lorsque l'on doit faire un choix t
 - La qualification : elle est la recommandation par l'État français de produits ou services de cybersécurité éprouvés et approuvés[^QualificationANSSI]. Elle atteste de leur conformité aux exigences règlementaires, techniques et de sécurité promues par l'ANSSI en apportant une garantie de robustesse du produit. Elle permet au produit d'accéder à des marchés réglementés.
 - La certification : elle est l'attestation de la robustesse d'un produit, basée sur une analyse de conformité et des tests de pénétration réalisés par un évaluateur tiers[^PASSI] sous l'autorité de l'ANSSI[^CertificationANSSI]. Elle permet d'accéder à des marchés réglementés et d'assurer un niveau de confiance auprès des utilisateurs souhaitant s'en équiper. Le processus dure entre 2 mois (certification de sécurité de premier niveau) et 18 mois (certification critères communs).
 
-La certification/qualification concerne un produit. L'homologation concerne le déploiement de ce produit dans un environnement (un système d'information). Alors que la certification n'est pas une obligation légale, l'homologation peut l'être selon si vos règles SSI ou parfois la loi l'imposent (ex: si vous êtes un [^OIV]OIV). Elle représente l'acceptation du risque face aux bénéfices que l'installation apporte. En ce sens, elle peut être validée par une autorité SSI indépendament de l'existence d'une certification/qualification du produit.
+La certification/qualification concerne un produit. L'homologation concerne le déploiement de ce produit dans un environnement (un système d'information). Alors que la certification n'est pas une obligation légale, l'homologation peut l'être selon si vos règles SSI ou parfois la loi l'imposent (ex: si vous êtes un [^OIV]OIV). Elle représente l'acceptation du risque face aux bénéfices que l'installation apporte. En ce sens, elle peut être validée par une autorité SSI indépendamment de l'existence d'une certification/qualification du produit.
 
 Les qualification, certification et homologations sont donc en l'état assez peu adaptées aux pratiques de déploiement continu, car elles figent le risque à l'instant T. Or les menaces s'imposent au jour le jour : une faille dans une librairie peut par exemple être détectée 1 jour après l'approbation d'une homologation. Bien que l'homologation soit temporaire, la faille va quand même persister pendant ce temps, au risque d'être exploitée. Faut-il encore qu'elle soit détectée et que la personne ayant subit l'aventure administrative que représente l'homologation, ne daigne réitérer l'expérience.
 
@@ -1085,9 +1108,9 @@ Le site web _12factor.net_, créé par Adam WIGGINS, liste et détaille ces règ
 3. Configuration basée sur l'environnement : le logiciel doit s'adapter à l'environnement de déploiement, pas l'inverse. Utilisez les variables d'environnement et évitez les constantes dans vos applicatifs pour adapter le comportement de votre logiciel à son environnement de déploiement.
 4. Accéder aux services tiers par des informations de connexion inscrites dans une variable : les bases de données, systèmes de queue, services d'emailing type SMTP, de cache ou autre API utilisés par l'application doivent être interchangeables en fonction de l'environnement de déploiement. Le logiciel se base sur des URLs ou identifiants déclarés en variable d'environnement pour savoir à qui s'adresser. Par exemple, le logiciel doit pouvoir autant s'adresser à `mysql://auth@host/db` qu'à `mysql://auth@rds.amazonaws.com/db` sans changement dans le code, du moment où les technologies sont les mêmes.
 5. Etapes de _build_ et de _run_ étanches : figer le code au moment de l'exécution du logiciel en rendant impossible des modifications. Attribuer à chaque _release_ du logiciel un identifiant unique (ex: un _timestamp_ au format `2022-05-07-21:33:18`) et rendre immutable le code pour cette version. Toute modification du code requiert une nouvelle _release_.
-6. Créer des applications sans état (_stateless_) : tout logiciel doit se suffire à lui-même et se connecter à un service externe s'il a besoin d'intéragir avec de la donnée (ex: les bases de données citées au point 4). Par exemple, chaque requête envoyée à une route API de l'application ne doit pas inclure de mécanisme de cache pour la session d'un utilisateur (cf. _sticky sessions_[^StickySessions]). L'API doit pouvoir utiliser uniquement les paramètres présents dans la requête pour faire sa réponse. On parle également de "microservices". L'objectif est de dissocier les fonctionnalités d'un logiciel en plusieurs petites briques indépendantes. Ces dernières peuvent être passées à l'échelle indépendament. C'est ce que l'on nomme le passage à l'échelle horizontal (_horizontal scaling_). On oppose ce type d'architecture aux architectures dites "monolithiques".
+6. Créer des applications sans état (_stateless_) : tout logiciel doit se suffire à lui-même et se connecter à un service externe s'il a besoin d'intéragir avec de la donnée (ex: les bases de données citées au point 4). Par exemple, chaque requête envoyée à une route API de l'application ne doit pas inclure de mécanisme de cache pour la session d'un utilisateur (cf. _sticky sessions_[^StickySessions]). L'API doit pouvoir utiliser uniquement les paramètres présents dans la requête pour faire sa réponse. On parle également de "microservices". L'objectif est de dissocier les fonctionnalités d'un logiciel en plusieurs petites briques indépendantes. Ces dernières peuvent être passées à l'échelle indépendamment. C'est ce que l'on nomme le passage à l'échelle horizontal (_horizontal scaling_). On oppose ce type d'architecture aux architectures dites "monolithiques".
 7. Accéder aux services par _port binding_ : Une application ne doit pas nécessiter l'ajout d'un serveur web pour fonctionner. Chaque application doit embarquer un moyen de servir son contenu et exposer son propre port. Il doit être possible d'assigner un port pour un environnement sépcifique et un autre dans un environnement différent.
-8. Simultanéité (_concurrency_) : Permettre la simultanéité de l'application signifie pouvoir en instancier plusieurs clones, sans qu'elles aient besoin de se coordonner entre elles ou de partager un état. Cette notion se rapproche du point 6, supposant que les différentes instances de l'application se basent sur des services tiers (comme les bases de données) pour gérer des données. Cela permet de passer à l'échelle les différents composants de l'applicatif (les microservices) indépendament en fonction de la charge utilisateur (ex: le _Unix Process Model_[^UnixProcessModel], le _Horizontal Pod Autoscaling_ dans Kubernetes).
+8. Simultanéité (_concurrency_) : Permettre la simultanéité de l'application signifie pouvoir en instancier plusieurs clones, sans qu'elles aient besoin de se coordonner entre elles ou de partager un état. Cette notion se rapproche du point 6, supposant que les différentes instances de l'application se basent sur des services tiers (comme les bases de données) pour gérer des données. Cela permet de passer à l'échelle les différents composants de l'applicatif (les microservices) indépendamment en fonction de la charge utilisateur (ex: le _Unix Process Model_[^UnixProcessModel], le _Horizontal Pod Autoscaling_ dans Kubernetes).
 9. Résistance et contrôle du redémarrage (_disposability_) : L'extinction inopinée de l'applicatif ne doit pas impacter son redémarrage : il doit continuer de fonctionner comme avant et s'adapter à l'état actuel de l'infrastructure. Le démarrage de l'applicatif doit être rapide (pas plus de quelques secondes). L'extinction du logiciel doit être contrôlée lors de la réception d'un `SIGTERM` (_graceful exit_).
 10. Parité des environnements : Les différents environnements de déploiement (développement, pré-production, production) doivent être aussi similaires que possibles. Utiliser des services plateforme (ex: bases de données, services de cache) avec des versions différentes favorise les incompatibilités et les erreurs une fois le logiciel en production.
 11. Traiter les journaux applicatifs comme un flux : une application ne doit jamais se charger de la redirection ou du stockage des journaux d'activité (_logs_). Elle ne doit pas essayer d'écrire ou de gérer des fichiers de _logs_. A la place, elle doit écrire les _logs_ sur la sortie standard (`stdout`) et ce dès que possible (sans mémoire tampon). Cela permet à la plateforme Cloud de facilement traiter les _logs_ des applicatifs déployés (cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)").
@@ -2287,7 +2310,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^AtlassianGitflow]: _"Gitflow has fallen in popularity in favor of trunk-based workflows, which are now considered best practices for modern continuous software development and DevOps practices."_ - [Atlassian Tutorials (atlassian.com)](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
-[^TrunkBaseDevHistory]: HAMMANT, Paul. ["Trunk based development: Game changers"](https://trunkbaseddevelopment.com/game-changers/index.html). _trunkbaseddevelopment.com_.
+[^TrunkBaseDevHistory]: HAMMANT, Paul. "[_Trunk based development: Game changers_](https://trunkbaseddevelopment.com/game-changers/index.html)". _trunkbaseddevelopment.com_.
 
 [^gitflowgithub]: Projet GitHub de git-flow : _github.com/nvie/gitflow_.
 
@@ -2315,59 +2338,59 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^AUKUS]: Par exemple, l'affaire du [pacte de défense AUKUS](https://en.wikipedia.org/wiki/AUKUS)
 
-[^InfluenceRussie]: AUDINET, Maxime; LIMONIER Kevin. [Le dispositif d'influence informationnelle de la Russie en Afrique subsaharienne francophone : un écosystème flexible et composite](https://doi.org/10.4000/questionsdecommunication.29005), Questions de communication, 41 | 2022, 129-148.
+[^InfluenceRussie]: AUDINET, Maxime; LIMONIER Kevin. "[Le dispositif d'influence informationnelle de la Russie en Afrique subsaharienne francophone : un écosystème flexible et composite](https://doi.org/10.4000/questionsdecommunication.29005), Questions de communication, 41 | 2022, 129-148".
 
 [^DoDITEnterpriseStrategyRoadmap]: _Department of Defense_ (États-Unis). "[_DoD IT Enterprise Strategy and Roadmap_](https://dodcio.defense.gov/Portals/0/Documents/Announcement/Signed_ITESR_6SEP11.pdf)". 2011.
 
 [^DoDEnterpriseDevSecOpsReferenceDesign]: _Department of Defense_ (États-Unis). "[_DoD Enterprise DevSecOps Reference Design_](https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf)". 2019.
 
-[^Protestware]: Techcrunch. [_Protestware on the rise: Why developers are sabotaging their own code_](https://techcrunch.com/2022/07/27/protestware-code-sabotage). 2022.
+[^Protestware]: Techcrunch. "[_Protestware on the rise: Why developers are sabotaging their own code_](https://techcrunch.com/2022/07/27/protestware-code-sabotage)". 2022.
 
-[^CuratedOpenSource]: BERWICK, Flavien. [_Top 10 Cloud Technologies Predictions (according to Google VPs)_](https://www.linkedin.com/pulse/top-10-cloud-technologies-predictions-according-google-berwick), point 2. 2022.
+[^CuratedOpenSource]: BERWICK, Flavien. "[_Top 10 Cloud Technologies Predictions (according to Google VPs)_](https://www.linkedin.com/pulse/top-10-cloud-technologies-predictions-according-google-berwick), point 2". 2022.
 
 [^JFrogXRay]: JFrog XRay website : _jfrog.com/xray_.
 
-[^EUOSSReport]: OpenForum Europe; Fraunhofer ISI. [_Study on the impact of Open Source for the European Commission_](https://openforumeurope.org/open-source-impact-study/). 2021.
+[^EUOSSReport]: OpenForum Europe; Fraunhofer ISI. "[_Study on the impact of Open Source for the European Commission_](https://openforumeurope.org/open-source-impact-study/)". 2021.
 
-[^SoOSS2022]: Open Source Initiative; Perforce. [_State of Open Source survey_](https://opensource.org/ten-takeaways-from-the-2022-state-of-open-source-survey). 2022.
+[^SoOSS2022]: Open Source Initiative; Perforce. "[_State of Open Source survey_](https://opensource.org/ten-takeaways-from-the-2022-state-of-open-source-survey)". 2022.
 
-[^DependencyConfusion]: BIRSAN, Alex. [_Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies_](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610). 2021.
+[^DependencyConfusion]: BIRSAN, Alex. "[_Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies_](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610)". 2021.
 
-[^SecurityPracticesGitLab]: GitLab. [_Security at GitLab_](https://about.gitlab.com/handbook/security/). _about.gitlab.com/handbook/security_.
+[^SecurityPracticesGitLab]: GitLab. "[_Security at GitLab_](https://about.gitlab.com/handbook/security/)". _about.gitlab.com/handbook/security_.
 
-[^Beyondcorp]: RORY, Ward; BEYER, Betsy. [_BeyondCorp: A New Approach to Enterprise Security_](https://research.google/pubs/pub43231). 2014.
+[^Beyondcorp]: RORY, Ward; BEYER, Betsy. "[_BeyondCorp: A New Approach to Enterprise Security_](https://research.google/pubs/pub43231)". 2014.
 
-[^MicrosoftLovesLinux]: McALLISTER, Neil (The Register). [_Redmond top man Satya Nadella: 'Microsoft LOVES Linux'_](https://www.theregister.com/2014/10/20/microsoft_cloud_event/). 2014.
+[^MicrosoftLovesLinux]: McALLISTER, Neil (The Register). "[_Redmond top man Satya Nadella: 'Microsoft LOVES Linux'_](https://www.theregister.com/2014/10/20/microsoft_cloud_event/)". 2014.
 
-[^GithubFollowingMsftAcquisition]: LARDINOIS, Frederic (Techcrunch). [_Four years after being acquired by Microsoft, GitHub keeps doing its thing_](https://techcrunch.com/2022/10/26/four-years-after-being-acquired-by-microsoft-github-keeps-doing-its-thing/). 2022.
+[^GithubFollowingMsftAcquisition]: LARDINOIS, Frederic (Techcrunch). "[_Four years after being acquired by Microsoft, GitHub keeps doing its thing_](https://techcrunch.com/2022/10/26/four-years-after-being-acquired-by-microsoft-github-keeps-doing-its-thing/)". 2022.
 
 [^GithubMsftAcquisitionCritics]: WARREN, Tom (The Verge). "_Microsoft has some old bad habits the community needs to trust won't happen again_" : [_Here's what GitHub developers really think about Microsoft's acquisition_](https://www.theverge.com/2018/6/18/17474284/microsoft-github-acquisition-developer-reaction). 2018.
 
 [^CVE]: La liste des CVE est supervisée par le MITRE, un organisme subventionné par la CISA (_Cybersecurity and Infrastructure Security Agency_) qui fait partie du Département de la Sécurité Intérieure des États-Unis.
 
-[^BugBountyLinuxKnl]: ARHIRE, Ionut. [_Google Boosts Bug Bounty Rewards for Linux Kernel Vulnerabilities_](https://www.securityweek.com/google-boosts-bug-bounty-rewards-linux-kernel-vulnerabilities). 2022.
+[^BugBountyLinuxKnl]: ARHIRE, Ionut. "[_Google Boosts Bug Bounty Rewards for Linux Kernel Vulnerabilities_](https://www.securityweek.com/google-boosts-bug-bounty-rewards-linux-kernel-vulnerabilities)". 2022.
 
-[^WallofConfusion]: InfoQ. Podcast : [_Andrew Clay Shafer on Three Economies, the Wall of Confusion, and the Origin of DevOps_](https://www.infoq.com/podcasts/devops-origin-three-economics). 2020.
+[^WallofConfusion]: InfoQ. Podcast "[_Andrew Clay Shafer on Three Economies, the Wall of Confusion, and the Origin of DevOps_](https://www.infoq.com/podcasts/devops-origin-three-economics)". 2020.
 
 [^SRETrainingsGoogle]: CLIMENT, Jesus (systems engineer at Google Cloud). [_Shrinking the time to mitigate production incidents_](https://cloud.google.com/blog/products/management-tools/shrinking-the-time-to-mitigate-production-incidents). 2019.
 
 [^pratiswomgithub]: "A role-playing game for incident management training" : github.com/dastergon/wheel-of-misfortune
 
-[^AWSGameday]: [_Fun, gamified, hands-on learning : AWS Gameday_](https://aws.amazon.com/gameday/). aws.amazon.com/gameday.
+[^AWSGameday]: "[_Fun, gamified, hands-on learning : AWS Gameday_](https://aws.amazon.com/gameday/)". _aws.amazon.com/gameday_.
 
 [^StickySessions]: Les _sticky sessions_ ou "affinités de session", sont une technique utilisée pour de la répartition de charge afin de garantir que les requêtes d'un client soient envoyées en permanence au même serveur au cours d'une session.
 
-[^UnixProcessModel]: WIGGINS, Adam. [_Applying the Unix Process Model to Web Apps_](https://adam.herokuapp.com/past/2011/5/9/applying_the_unix_process_model_to_web_apps/). 2009.
+[^UnixProcessModel]: WIGGINS, Adam. "[_Applying the Unix Process Model to Web Apps_](https://adam.herokuapp.com/past/2011/5/9/applying_the_unix_process_model_to_web_apps/)". 2009.
 
-[^PrefectCommunityEngineers]: GELLER, Anna (Prefect). [_What is a Community Engineer in an Open-Source-Product Company_](https://www.prefect.io/guide/blog/what-is-a-community-engineer-in-an-open-source-product-company). 2022.
+[^PrefectCommunityEngineers]: GELLER, Anna (Prefect). "[_What is a Community Engineer in an Open-Source-Product Company_](https://www.prefect.io/guide/blog/what-is-a-community-engineer-in-an-open-source-product-company)". 2022.
 
-[^DORA2021Summary]: SMITH, Dustin (DORA Research Lead). [_2021 Accelerate State of DevOps report addresses burnout, team performance_](https://cloud.google.com/blog/products/devops-sre/announcing-dora-2021-accelerate-state-of-devops-report). 2021.
+[^DORA2021Summary]: SMITH, Dustin (DORA Research Lead). "[_2021 Accelerate State of DevOps report addresses burnout, team performance_](https://cloud.google.com/blog/products/devops-sre/announcing-dora-2021-accelerate-state-of-devops-report)". 2021.
 
 [^GitLabGitLab]: [github.com/kubernetes/kubernetes](https://gitlab.com/gitlab-org/gitlab)
 
 [^GitLabAvailability]: _Historical Service Level Availability_ : [about.gitlab.com/handbook/engineering/monitoring](https://about.gitlab.com/handbook/engineering/monitoring/#historical-service-level-availability)
 
-[^PalantirConstraintBasedCD]: Palantir (blog.palantir.com). [_Palantir Apollo Orchestration: Constraint-Based Continuous Deployment For Modern Architectures_](https://blog.palantir.com/palantir-apollo-orchestration-constraint-based-continuous-deployment-for-modern-architectures-cdf42da19ba4). 2022.
+[^PalantirConstraintBasedCD]: Palantir (blog.palantir.com). "[_Palantir Apollo Orchestration: Constraint-Based Continuous Deployment For Modern Architectures_](https://blog.palantir.com/palantir-apollo-orchestration-constraint-based-continuous-deployment-for-modern-architectures-cdf42da19ba4)". 2022.
 
 [^contribution]: Une contribution qualifie toute modification apportée à une base de code. Cela peut être l'ajout d'une ligne de code, de documentation, la suppression d'un fichier ou encore l'ajout d'une _issue_.
 
@@ -2375,11 +2398,11 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^osvscanner]: Analyseur de dépendances détectant leurs vulnérabilités, conçu par Google. _github.com/google/osv-scanner_.
 
-[^Longhorn]: Stockage type "block" distribué Cloud-native pour Kubernetes. _longhorn.io_.
+[^Longhorn]: Stockage _Cloud-native_ distribué de type "block" pour Kubernetes. _longhorn.io_.
 
-[^QualificationANSSI]: Définition originale : _ssi.gouv.fr/administration/qualifications_
+[^QualificationANSSI]: Source : _ssi.gouv.fr/administration/qualifications_
 
-[^CertificationANSSI]: Définition originale : _ssi.gouv.fr/administration/produits-certifies_
+[^CertificationANSSI]: Source : _ssi.gouv.fr/administration/produits-certifies_
 
 [^PASSI]: L'évaluateur tiers doit être un PASSI (Prestataires d’Audit de la Sécurité des Systèmes d’Information).
 
@@ -2389,20 +2412,34 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^BeckKentTDDBook]: Basé sur le livre de Kent BECK. _Test-Driven Development by Example_. 2002.
 
-[^TDDStudy]: _Dogša, T., Batič, D. The effectiveness of test-driven development: an industrial case study. Software Qual J 19, 643–661_, [doi:10.1007/s11219-011-9130-2](https://doi.org/10.1007/s11219-011-9130-2). 2011.
+[^TDDStudy]: _Dogša, T., Batič, D. "The effectiveness of test-driven development: an industrial case study". Software Qual J 19, 643–661_, [doi:10.1007/s11219-011-9130-2](https://doi.org/10.1007/s11219-011-9130-2). 2011.
 
 [^TDDoverTLD]: Le TDD réduit de 31% la complexité et augmente de 21% la qualité du code, par rapport au TLD : KHANAM, Z; AHSAN, MN. _Evaluating the effectiveness of test driven development: Advantages and pitfalls_. _International Journal of Applied Engineering Research_. 2017.
 
-[^WhatIsCodeCoverage]: Atlassian. [_What is code coverage ?_](https://www.atlassian.com/continuous-delivery/software-testing/code-coverage). _atlassian.com_.
+[^WhatIsCodeCoverage]: Atlassian. "[_What is code coverage ?_](https://www.atlassian.com/continuous-delivery/software-testing/code-coverage)". _atlassian.com_.
 
-[^TDDBDDATTDComparativeStudy]: MOE, Myint Myint. _Comparative Study of Test-Driven Development TDD, Behavior-Driven Development BDD and Acceptance Test–Driven Development ATDD_. _International Journal of Trend in Scientific Research and Development_. 2019.
+[^TDDBDDATTDComparativeStudy]: MOE, Myint Myint. "_Comparative Study of Test-Driven Development TDD, Behavior-Driven Development BDD and Acceptance Test–Driven Development ATDD_". _International Journal of Trend in Scientific Research and Development_. 2019.
 
-[^Ansible101]: CUNLIFFE, Stuart. Illustration de l'article [_Red Hat Ansible: A 101 guide_](https://www.ibm.com/blogs/systems/red-hat-ansible-a-101-guide/), _ibm.com/blogs_. 2020.
+[^Ansible101]: CUNLIFFE, Stuart. Illustration de l'article "[_Red Hat Ansible: A 101 guide_](https://www.ibm.com/blogs/systems/red-hat-ansible-a-101-guide/)", _ibm.com/blogs_. 2020.
 
-[^Programme10p]: Pour en savoir plus : _10pourcent.etalab.gouv.fr_
+[^Programme10p]: Page web officielle du projet : _10pourcent.etalab.gouv.fr_
 
-[^TrainingTurnover]: SIEBEN, Inge. [_Does training trigger turnover - or not?: The impact of formal training on graduates' job search behaviour. Work, Employment and Society_](https://doi.org/10.1177/0950017007080004). 2007.
+[^TrainingTurnover]: SIEBEN, Inge. "[_Does training trigger turnover - or not?: The impact of formal training on graduates' job search behaviour. Work, Employment and Society_](https://doi.org/10.1177/0950017007080004)". 2007.
 
 [^OS]: Exemple de système d'exploitation : Debian, Ubuntu, Alma Linux, Microsoft Windows 10, Apple MacOS. Anglais : _operating system_ (OS).
 
 [^WindowsNT]: Histoire du développement de Windows NT : _en.wikipedia.org/wiki/Windows_NT_3.1_
+
+[^DilemmeInnovateurLivre]: CHRISTENSEN MAGLEBY, Clayton. Livre "Le dilemme de l'innovateur : lorsque les nouvelles technologies sont à l'origine de l'échec de grandes entreprises". 1997.
+
+[^Bard]: PICHAI, Sundar. "[_An important next step on our AI journey_](https://blog.google/technology/ai/bard-google-ai-search-updates/)". 2023.
+
+[^BardFails]: Reuters. "[_Alphabet shares dive after Google AI chatbot Bard flubs answer in ad_](https://www.reuters.com/technology/google-ai-chatbot-bard-offers-inaccurate-information-company-ad-2023-02-08/)". 2023.
+
+[^MarketShareSearchEngines]: Sources _statista.com_ : _fr.statista.com/statistiques/559394_
+
+[^CNNBingAI]: CNN. "[_Microsoft's Bing AI demo called out for several errors_](https://edition.cnn.com/2023/02/14/tech/microsoft-bing-ai-errors/index.html)". 2023.
+
+[^FordIndustryChain]: "Cette technique est imaginée par Louis Renault en 1898 et mise en œuvre par Henry Ford en 1913". Source : _fr.wikipedia.org/wiki/Ligne_de_montage_
+
+[^MilitaryStrategy]: Echelons de stratégie militaire, définissant des temps et des espaces d'action différents. Source : _fr.wikipedia.org/wiki/Stratégie_militaire_
