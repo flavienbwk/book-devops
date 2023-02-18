@@ -770,7 +770,7 @@ En conclusion, vous devez traiter votre socle comme un produit au service de vos
 
 ## Abandonner les VMs ?
 
-Avec des références réccurentes aux micro-services, le conteneur paraît la solution privilégiée et se suffisant à elle-même. Dans ce cas là, il n'y a plus besoin de machines virtuelles, puisque l'orchestrateur (ex: Kubernetes) peut s'installer directement sur la machine. C'est ce que l'on nomme une installation "_baremetal_". Néanmoins dans le cadre d'une transformation, il est souvent inoportun de mettre les VMs au placard.
+Les micro-services étant au coeurs des infrastructures Cloud DevOps, le conteneur paraît comme la solution ultime pour déployer. Il n'y a plus besoin de machines virtuelles, puisque l'orchestrateur (ex: Kubernetes) peut s'installer directement sur la machine. C'est ce que l'on nomme une installation "_baremetal_". Néanmoins dans le cadre d'une transformation, il est souvent inoportun de mettre les VMs au placard.
 
 Rares sont les cas où vous pourrez transformer du jour au lendemain votre infrastructure de production vers une infrastructure Cloud. Si vos équipes sont habituées à administrer des VMs, il leur faut le temps de se former à ces nouvelles technologies. Et aux applicatifs d'être migrés vers un format compatible. Pour avancer, fixez-vous un objectif pour réduire l'usage des VMs. Par exemple : "dans 1 an, au moins 80% de nos logiciels devront tourner sous forme de conteneurs". Ou encore : "tout nouveau logiciel doit être conteneurisé pour être déployé".
 
