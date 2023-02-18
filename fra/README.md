@@ -316,7 +316,7 @@ Pour amorcer votre initiative DevOps, vous avez besoin :
 
 # Comment convaincre et garder la foi
 
-Premièrement, il ne s'agit pas de convaincre. Vous ne pouvez pas arriver devant quelqu'un et lui dire "vous avez tord, j'ai raison". Votre objectif doit être de donner envie à vos interlocuteurs d'adhérer à votre vision, votre projet. Ainsi, ils seront par eux-mêmes convaincus.
+Premièrement, il ne s'agit pas de convaincre. Vous ne pouvez pas arriver devant quelqu'un et lui dire "vous avez tord, j'ai raison". Votre objectif doit être de donner envie à vos interlocuteurs d'adhérer à votre vision, votre projet. Ainsi, ils seront convaincus par eux-mêmes.
 
 Faire adhérer sa hiérarchie ou des collègues de travail à une initiative n'est pas toujours simple. William MORGAN - directeur général d'une PME réputée dans les technologies - préconise 4 règles à suivre[^WilliamMorganKubecon2018] :
 
@@ -1200,12 +1200,12 @@ L'un des modèles de partage des responsabilités est le "RACI", pour _Responsib
 
 Dans le tableau suivant, nous avons cinq parties-prenantes pour le développement d'un nouveau site web. Un responsable, un exécutant (personne en charge de la réalisation), des consultés et des informés sont désignés pour chaque activité.
 
-| Livrable du projet (ou activité) | Responsable du projet | Architecte | Designer | Développeur front-end | Développeur back-end |
-| -------------------------------- | --------------------- | ---------- | -------- | --------------------- | -------------------- |
-| Conception du plan du site       | C                     | R          | A        | I                     | I                    |
-| Direction artistique             | A                     | C          | R        | C                     | I                    |
-| Conception des maquettes         | C                     | A          | R        | I                     | I                    |
-| Structure du code (template)     | A                     | I          | C        | R                     | C                    |
+| Livrable du projet (ou activité) | Responsable du projet | Architec -te | Design -er | Développeur front-end | Développeur back-end |
+| -------------------------------- | --------------------- | ------------ | ---------- | --------------------- | -------------------- |
+| Conception du plan du site       | C                     | R            | A          | I                     | I                    |
+| Direction artistique             | A                     | C            | R          | C                     | I                    |
+| Conception des maquettes         | C                     | A            | R          | I                     | I                    |
+| Structure du code (template)     | A                     | I            | C          | R                     | C                    |
 
 - **R** (Exécutant): personne qui fait le travail pour achever un livrable
 - **A** (Responsable): personne qui délègue le travail et réalise l'inspection des travaux finis
@@ -1243,12 +1243,12 @@ Dans un modèle DevOps, les "intervenants informés" sont pleinement impliqués 
 
 Exemple de DACI, listant les options considérées pour une prise de décision sur la problématique "Comment devrions-nous finaliser les spécifications de notre produit ?" :
 
-| _Critères_                                               | Option 1: Groupes de discussion<br><br>Groupes de discussion de personas cibles rémunérées | Option 2: Revues internet<br><br>Équipe interne d'experts en contenu                                           | Option 3: Ne pas finaliser<br><br>Ne rien faire pour adresser le problème pour le moment   |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Stratégiquement fiable<br><br>_priorité haute_           | ✅ Cibles ancrées dans la stratégie = retours ancré dans la stratégie                       | ✅ 2 nouveaux membres d'équipe correspondent au persona = quelques retours ancrés dans la stratégie             | ❌ Risque d'erreur importante / coûteuse<br><br>❌ Risque de prise de délais ou de confusion |
-| Centré sur l'utilisateur                                 | ✅ Retour précis de clients                                                                 | ❌ Biais d'expert                                                                                               | ❌ Naviguer à l'aveugle<br><br>_priorité haute_                                             |
-| Coût<br><br>_priorité moyenne_                           | ❌ Plus coûteux sur le court-terme<br><br>❌ Chronophage                                     | ✅ Pas de coût supplémentaire<br><br>✅ Relativement rapide à mettre en place<br><br>❌ Prend du temps à l'équipe | ✅ Pas de coût supplémentaire<br><br>✅ Option la plus rapide                                |
-| Opportunité d'en apprendre plus<br><br>_priorité faible_ | ✅ Opportunité d'en apprendre plus sur nos cibles                                           | ✅ Opportunité d'apprendre des retours de nos experts inter-équipes                                             |                                                                                            |
+| _Critères_                                          | Option 1: Groupes de discussion / Groupes de discussion de personas cibles rémunérées | Option 2: Revues internet / Équipe interne d'experts en contenu                                          | Option 3: Ne pas finaliser / Ne rien faire pour adresser le problème pour le moment       |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Stratégiquement fiable / _priorité haute_           | (+) Cibles ancrées dans la stratégie = retours ancré dans la stratégie                | (+) 2 nouveaux membres d'équipe correspondent au persona = quelques retours ancrés dans la stratégie     | (-) Risque d'erreur importante ou coûteuse, (-) Risque de prise de délais ou de confusion |
+| Centré sur l'utilisateur / _priorité haute_         | (+) Retour précis de clients                                                          | (-) Biais d'expert                                                                                       | (-) Naviguer à l'aveugle                                                                  |
+| Coût / _priorité moyenne_                           | (-) Plus coûteux sur le court-terme, (-) Chronophage                                  | (+) Pas de coût supplémentaire, (+) Relativement rapide à mettre en place, (-) Prend du temps à l'équipe | (+) Pas de coût supplémentaire, (+) Option la plus rapide                                 |
+| Opportunité d'en apprendre plus / _priorité faible_ | (+) Opportunité d'en apprendre plus sur nos cibles                                    | (+) Opportunité d'apprendre des retours de nos experts inter-équipes                                     |                                                                                           |
 
 > Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans leur cas, l'option 1). Traduit depuis l'anglais. Source : _atlassian.com_
 
