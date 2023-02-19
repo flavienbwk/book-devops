@@ -78,7 +78,7 @@ C'est le lien entre le monde du développement et de la production.
 
 On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques, aujourd'hui majoritairement orientés vers l'emploi des technologies _Cloud_.
 
-L'ingénieur « DevOps » est celui en charge de définir et d'mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#intégration-continue-ci) au sein d'une [usine logicielle](#usine-logicielle). Ses clients sont les équipes techniques internes : il fait en sorte que tout le monde puisse travailler ensemble de la manière la plus efficace possible.
+L'ingénieur « DevOps » est celui en charge de définir et de mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#intégration-continue-ci) au sein d'une [usine logicielle](#usine-logicielle). Ses clients sont les équipes techniques internes : il fait en sorte que tout le monde puisse travailler ensemble de la manière la plus efficace possible.
 
 Ce poste impliquant de mettre d'accord toutes les parties prenantes sur une méthode de travail commune, il est exigé de disposer d'excellentes compétences en communication et en pédagogie.
 
@@ -1245,12 +1245,12 @@ Exemple de DACI, listant les options considérées pour une prise de décision s
 
 | _Critères_                                          | Option 1: Groupes de discussion / Groupes de discussion de personas cibles rémunérées | Option 2: Revues internet / Équipe interne d'experts en contenu                                          | Option 3: Ne pas finaliser / Ne rien faire pour adresser le problème pour le moment       |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| Stratégiquement fiable / _priorité haute_           | (+) Cibles ancrées dans la stratégie = retours ancré dans la stratégie                | (+) 2 nouveaux membres d'équipe correspondent au persona = quelques retours ancrés dans la stratégie     | (-) Risque d'erreur importante ou coûteuse, (-) Risque de prise de délais ou de confusion |
+| Stratégiqu -ement fiable / _priorité haute_         | (+) Cibles ancrées dans la stratégie = retours ancré dans la stratégie                | (+) 2 nouveaux membres d'équipe correspondent au persona = quelques retours ancrés dans la stratégie     | (-) Risque d'erreur importante ou coûteuse, (-) Risque de prise de délais ou de confusion |
 | Centré sur l'utilisateur / _priorité haute_         | (+) Retour précis de clients                                                          | (-) Biais d'expert                                                                                       | (-) Naviguer à l'aveugle                                                                  |
 | Coût / _priorité moyenne_                           | (-) Plus coûteux sur le court-terme, (-) Chronophage                                  | (+) Pas de coût supplémentaire, (+) Relativement rapide à mettre en place, (-) Prend du temps à l'équipe | (+) Pas de coût supplémentaire, (+) Option la plus rapide                                 |
 | Opportunité d'en apprendre plus / _priorité faible_ | (+) Opportunité d'en apprendre plus sur nos cibles                                    | (+) Opportunité d'apprendre des retours de nos experts inter-équipes                                     |                                                                                           |
 
-> Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans leur cas, l'option 1). Traduit depuis l'anglais. Source : _atlassian.com_
+> Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans ce cas l'option 1). Traduit depuis l'anglais. Source : _atlassian.com_
 
 Une fois votre décision prise, il est temps de communiquer votre décision pour que tout le monde soit à la page. Envoyez le document aux personnes qui doivent en prendre connaissance puis archivez-le.
 
@@ -1588,7 +1588,7 @@ Comme décrit dans le chapitre "[Un socle au service de votre résilience](#un-s
 
 Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _Cloud native_[^CloudNative], il est possible de facilement "installer" des services socle au sein d'un cluster Kubernetes. Voici une liste non-exhaustive des services qui peuvent être assurés nativement dans votre cluster et administrables de manière centralisée :
 
-1. Centralisation des logs applicatifs et réseaux (cf. [Fluentd](https://www.fluentd.org/)[^FluentdWebsite], [Loki](https://grafana.com/oss/loki/)[^LokiGithub], [OpenTelemetry](https://opentelemetry.io/)[^OpenTelemetry])
+1. Centralisation des logs applicatifs et réseaux (cf. [Fluentd](https://www.fluentd.org/), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/))
 
     ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com](./images/kibana_logs.png)
 
@@ -1598,17 +1598,17 @@ Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _
 
 3. Analyse antivirus du contenu des noeuds et des conteneurs (cf. [Docker Antivirus Exclusions](https://docs.docker.com/engine/security/antivirus/), [Kubernetes ClamAV](https://cloud.google.com/community/tutorials/gcp-cos-clamav))
 
-4. Détection de comportements suspects d'appels système Linux (cf. [Sysdig Falco](https://github.com/falcosecurity/falco)[^SysdigFalco])
+4. Détection de comportements suspects d'appels système Linux (cf. [Sysdig Falco](https://github.com/falcosecurity/falco))
 
-5. Contrôle et audit des configurations du cluster (cf. [Gatekeeper](https://github.com/open-policy-agent/gatekeeper)[^GatekeeperK8s], [OpenSCAP](https://www.open-scap.org)[^OpenSCAP])
+5. Contrôle et audit des configurations du cluster (cf. [Gatekeeper](https://github.com/open-policy-agent/gatekeeper), [OpenSCAP](https://www.open-scap.org))
 
     ![Exemple de refus du déploiement d'un applicatif par Gatekeeper en raison de ressources demandées trop importantes. Source : DevOps Toolkit (YouTube)](./images/gatekeeper_k8s_resource_refusal.png)
 
-6. Gestion des secrets (mots de passe, tokens) des applicatifs (cf. [Vault](https://www.vaultproject.io/)[^VaultHC], [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)[^SealedSecrets])
+6. Gestion des secrets (mots de passe, tokens) des applicatifs (cf. [Vault](https://www.vaultproject.io/), [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)[^SealedSecrets])
 
     ![Interface web de Hashicorp Vault permettant de manipuler les secrets utilisés au sein d'une infrastructure.](./images/hashicorp_vault_ui.png)
 
-7. Sauvegarde automatique des volumes persistants (cf. [Valero](https://velero.io/docs/v1.10/)[^Valero])
+7. Sauvegarde automatique des volumes persistants (cf. [Valero](https://velero.io/docs/v1.10/))
 
 8. Chiffrement des flux réseau entre les conteneurs (cf. chapitre "[Service mesh](#service-mesh)")
 
@@ -1616,9 +1616,11 @@ Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _
 
 9. Gestion des certificats de sécurité (cf. chapitre "[Service mesh](#service-mesh)")
 
-10. Gestion de l'authentification aux services web (cf. [Istio Ingress Gateway](https://medium.com/@senthilrch/api-authentication-using-istio-ingress-gateway-oauth2-proxy-and-keycloak-a980c996c259)[^IstioIngressGateway], [Keycloak](https://www.keycloak.org)[^Keycloak])
+10. Gestion de l'authentification aux services web (cf. [Istio Ingress Gateway](https://medium.com/@senthilrch/api-authentication-using-istio-ingress-gateway-oauth2-proxy-and-keycloak-a980c996c259), [Keycloak](https://www.keycloak.org))
 
-La simplicité et l'automatisation sont les caractéristiques fondamentales d'un socle Cloud. Encore une fois, en DevOps, on estime que quelque chose qui n'est pas automatisé ne sera pas utilisé. Les technologies évoquées ci-dessus s'adaptent au logiciel déployé automatiquement. En Cloud, ce n'est plus au logiciel de s'adapter aux technologies du socle.
+L'intégration et l'automatisation sont les caractéristiques fondamentales d'un socle Cloud. Encore une fois, en DevOps, on estime que quelque chose qui n'est pas automatisé ne sera pas utilisé.
+
+Les technologies évoquées ci-dessus s'interfacent automatiquement au logiciel déployé. En Cloud, ce n'est plus au logiciel de s'interfacer aux technologies du socle, c'est le socle qui s'interface aux logiciels.
 
 # Tirer parti des ressources à sa disposition
 
@@ -2048,8 +2050,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^PlatformOne]: [_Platform One_](https://software.af.mil/team/platformone/) est une plateforme lancée en 2018 par l'_US Air Force_ permettant la collaboration logicielle dans une démarche DevSecOps, à l'échelle du Ministère des Armées des États-Unis.
 
-[^BiaisCognitifs]: HUSSLER, Caroline; RONDÉ, Patrick. [« Biais cognitifs et choix technologiques : une analyse des priorités des experts français »](https://www.cairn.info/revue-economie-et-prevision-1-2006-4-page-65.htm), Économie & prévision, vol. 175-176, no. 4-5, 2006, pp. 65-77.
-
 [^DISAVulcan]: [Programme DevSecOps _Vulcan_](https://defensescoop.com/2022/10/21/disa-to-launch-vulcan-devsecops-program/) de la _Defense Information Systems Agency_ (DISA) américaine. 2022.
 
 [^WeaveWorksServiceMeshArticle]: Weaveworks. [_Introduction to Kubernetes Service Mesh_](https://www.nginx.com/blog/what-is-a-service-mesh/). 2019.
@@ -2238,35 +2238,15 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^CRD]: _Custom Resource Definition_ (CRD) : mécanisme permettant d'ajouter des extensions de fonctionnalités au sein d'un cluster Kubernetes.
 
-[^GatekeeperK8s]: Projet GitHub de Gatekeeper : _github.com/open-policy-agent/gatekeeper_.
-
 [^Helm]: Helm est une technologie standardisant et simplifiant le déploiement d'applicatifs dans Kubernetes. _helm.sh_.
-
-[^OpenTelemetry]: Site officiel du projet OpenTelemetry : _opentelemetry.io_.
-
-[^LokiGithub]: Projet GitHub de Grafana Loki : _github.com/grafana/loki_.
-
-[^FluentdWebsite]: Site officiel du projet Fluentd : _fluentd.org_.
-
-[^SysdigFalco]: Projet GitHub de Sysdig Falco : _github.com/falcosecurity/falco_.
 
 [^AnchoreSBOM]: Site officiel du projet Anchore : _anchore.com_.
 
 [^DagdaGithub]: Projet GitHub de Dagda : _github.com/eliasgranderubio/dagda_.
 
-[^OpenSCAP]: Site officiel du projet OpenSCAP : _open-scap.org_.
-
-[^VaultHC]: Site officiel du projet Hashicorp Vault : _vaultproject.io_.
-
 [^SealedSecrets]: Sealed Secrets permet de manipuler des secrets sans pouvoir accéder à leur contenu en clair, permettant d'aller jusqu'à "pousser" un secret. Un certificat de sécurité gère le déchiffrement de ces secrets au sein du cluster Kubernetes. Projet GitHub : _github.com/bitnami-labs/sealed-secrets_.
 
-[^Valero]: Projet GitHub de VMWare Tanzu Velero : _github.com/vmware-tanzu/velero_.
-
 [^CloudNative]: Le terme "_Cloud Native_" fait référence à une application qui a été conçue dès le départ pour être exploitée dans le Cloud. Les projets _Cloud Native_ impliquent des technologies Cloud telles que les microservices, les orchestrateurs de conteneurs et le passage à l'échelle automatique.
-
-[^IstioIngressGateway]: Documentation de la [fonctionnalité _Ingress Gateway_](https://istio.io/latest/docs/tasks/security/authorization/authz-ingress/) de Istio. _istio.io_.
-
-[^Keycloak]: Site officiel du logiciel d'authentification unique (SSO) Keycloak : _keycloak.org_.
 
 [^Consul]: Site officiel du projet Hashicorp Consul : _consul.io_.
 
