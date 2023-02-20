@@ -318,7 +318,7 @@ Pour amorcer votre initiative DevOps, vous avez besoin :
 
 Premièrement, il ne s'agit pas de convaincre. Vous ne pouvez pas arriver devant quelqu'un et lui dire "vous avez tord, j'ai raison". Votre objectif doit être de donner envie à vos interlocuteurs d'adhérer à votre vision, votre projet. Ainsi, ils seront convaincus par eux-mêmes.
 
-Faire adhérer sa hiérarchie ou des collègues de travail à une initiative n'est pas toujours simple. William MORGAN - directeur général d'une PME réputée dans les technologies - préconise 4 règles à suivre[^WilliamMorganKubecon2018] :
+Faire adhérer sa hiérarchie ou des collègues de travail à une initiative n'est pas toujours simple. William MORGAN - directeur général d'une startup réputée dans les technologies - préconise 4 règles à suivre[^WilliamMorganKubecon2018] :
 
 1. Identifier qui est affecté (les parties-prenantes)
 2. Déterminer ce que la nouvelle solution va leur apporter (les avantages)
@@ -1192,7 +1192,7 @@ Un tas d'autres modèles de décision[^DecisionMakingMindtools] et de gestion de
 
 En découvrant la multitude de technologies expérimentales à mettre en place au sein de votre organisation pour atteindre un fonctionnement en mode DevOps, vous pourriez naturellement prendre peur à l'idée de devenir le responsable de ce grand et nouveau système.
 
-Ce chapitre vise à mettre en perspectives deux modèles de responsabilité traditionnels avec le modèle DevOps. Libre à vous de piquer dans chacun les méthodologies qui vous semblent les plus opportunes pour votre organisation. Néanmoins, soyez assez audacieux et tentez d'éviter de retomber dans un modèle traditionnel, qui ne vous donnerait que l'illusion de vous transformer.
+Ce chapitre vise à mettre en perspectives un modèle de responsabilité traditionnel avec le modèle DevOps. Il propose aussi un outil permettant d'éclairer le décideur, le DACI. Libre à vous de piquer dans chacun les méthodologies qui vous semblent les plus opportunes pour votre organisation. Néanmoins, soyez assez audacieux et tentez d'éviter de retomber dans un modèle traditionnel, qui ne vous donnerait que l'illusion de vous transformer.
 
 #### Le modèle RACI
 
@@ -1214,32 +1214,47 @@ Dans le tableau suivant, nous avons cinq parties-prenantes pour le développemen
 
 Une extension du RACI est le RACI-VS[^RACI-VS] qui inclut un validateur (la personne en charge de la validation finale du livrable, une autorité) et un signataire (personne en charge de l'approbation officielle du livrable et qui engage sa signature, une haute autorité).
 
-Le modèle RACI repose sur une séparation claire des rôles et des responsabilités. Cela peut être contre-productif dans une initiative DevOps, qui cherche à promouvoir la collaboration entre les équipes. De plus, le RACI ne tient pas compte de la nature dynamique et en constante évolution du développement logiciel.
+Le modèle RACI repose sur une séparation claire des rôles et des responsabilités. Cela peut être contre-productif dans une initiative DevOps, qui cherche à promouvoir une collaboration entre les équipes. De plus, le RACI ne tient pas compte de la nature dynamique et en constante évolution du développement d'un projet.
 
 Dans un modèle DevOps, tout le monde peut contribuer à un projet. Tout le monde est responsable au même niveau selon son domaine d'expertise. Une modification significative - par exemple pour le lancement d'une nouvelle version d'un logiciel - nécessite l'approbation de chaque équipe (de l'équipe de _design_, en passant par le _marketing_, l'ingénierie et la sécurité).
 
-Bien sûr, si la modification ne concerne pas toutes les parties-prenantes, on évitera de demander à l'équipe sécurité de nous donner son avis sur le changement de couleur de la page d'accueil... Mais l'idée est qu'il n'y a pas qu'un seul responsable ou qu'un seul exécutant : tout le monde est responsable et peut valider ou invalider une modification selon les règles et contraintes du moment.
+Bien sûr, on évitera de demander à l'équipe SSI de nous donner son avis sur le changement de couleur d'un bouton... Mais l'idée est qu'il n'y a pas un seul responsable ou un seul exécutant : tout le monde est responsable et peut valider ou invalider une modification selon les règles et contraintes du moment.
 
-Bien que - du fait de sa simplicité - le RACI-VS soit souvent le modèle employé par les grandes organisations, il n'est pas un outil efficace dans le cadre d'une transformation DevOps. Si vous menez une initiative DevOps au sein de votre organisation, votre hiérarchie vous demandera de vous engager sur de nombreuses lignes du tableau ci-dessus. En effet, cette dernière ne connaît probablement pas les nouvelles techniques et technologies que vous mentionnerez. Prenez cette responsabilité pour rassurer vos autorités[^RadioDevOps12]. Vous n'avez rien à craindre puisque vous savez que la méthodologie que vous voulez mettre en place est collective et itérative.
+Le RACI tel qu'utilisé dans les grandes organisations joue le rôle d'arbitre. Une équipe spécifique est désignée pour réaliser des tâches spécifiques. Or le DevOps est un ensemble commun de pratiques qui ne vont pas l'une sans l'autre. Et si vous visez à faire évoluer plusieurs équipes de l'organisation, le RACI peut avoir un effet pervers et décourageant. Il peut être le prétexte pour une équipe A, de ne pas s'intéresser au sujet de l'équipe B, sous prétexte que ça n'est pas dans ses responsabilités.
+
+Pour pallier ce phénomène tout en continuant de rassurer vos responsables, les livrables du RACI peuvent dans un premier temps être élargis. Par exemple, on ne fera pas référence à "un mécanisme qui récupère les logs applicatifs" mais à un "ensemble d'outils pour faire de l'observabilité". Cela n'empêche pas de définir des sous-objectifs plus précis, mais la responsabilité doit rester vaste. Si certains ne jouent pas le jeu, le RACI peut les contraindre à faire le travail, mais ils ne sont probablement pas les bons membres à associer à votre projet.
+
+En tant que meneur d'une initiative impliquant technologies et pratiques inédites, votre hiérarchie vous demandera de vous engager sur de nombreuses lignes du tableau ci-dessus. Prenez cette responsabilité pour rassurer vos autorités[^RadioDevOps12]. Vous n'avez rien à craindre puisque vous savez que la méthodologie que vous voulez mettre en place est collective et itérative.
+
+#### Le modèle DevOps
+
+La plupart du temps, il n'est pas souhaitable de se séparer immédiatement d'un modèle type RACI. C'est une question de culture à faire évoluer et d'outillage à mettre en place. Mais c'est bien cela que vous devez viser : un changement de culture dans votre organisation pour que les autorités surpassent leurs peurs.
+
+Cependant, en assumant des responsabilités partagées sans les imputer, vous vous concentrez sur l'amélioration du service afin d'atteindre l'effet final recherché (ex: une infrastructure plus stable). Et ce, plutôt que de trouver un coupable. Fort de ce principe, analysons alors une réflexion qui peut nous venir à l'esprit.
+
+Vous l'aurez compris, le DevOps incite à ne pas blamer les parties-prenantes. Il est naturel de rétorquer alors que si personne n'est personnellement responsable, les équipes risquent d'être moins attentives dans leurs responsabilités quotidiennes. Comment imaginer un responsable de la production qui supprimerait l'ensemble de la base de données client sans conséquence ? Les responsables doivent bien à un moment comprendre que leurs actions ont des conséquences. Le DevOps répond de deux manières à cet enjeu :
+
+1. Si vos procédures sont valides, il n'y a pas de raison que l'ingénieur ait pu exécuter cette commande. S'il a fait une erreur, c'est que les règles gouvernant la sécurité de votre infrastructure de production n'étaient pas assez fortes (accès aux machines de production par commandes manuelles, absence de contrôle/validation des commandes, absence de sauvegardes, procédure mal décrite, manque de communication...). (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)")
+2. Vous avez embauché un employé car il connaît son métier (vous l'avez bien eu en entretien). Si vous craignez qu'il n'assume pas ses responsabilités, parlez avec lui ou séparez-vous de lui et révisez votre politique d'embauche. Faites confiance à vos experts. Si vous doutez, demandez-leurs de renforcer les règles de contrôle (cf. point 1) et de vous rassurer avec des scénarios type (cf. chapitre "[Postmortems et premortems](#postmortems-et-premortems)").
+
+Voilà pourquoi il faut commencer avec des moyens, mais avoir l'audace de commencer petit dans son initiative de transformation. Votre entreprise doit progressivement mettre en place les procédures (dans notre cas, les technologies de contrôle des systèmes informatiques) selon ses moyens RH et financiers. Une fois que vous avez éprouvé ces techniques, itérez à plus large échelle.
 
 #### Le modèle DACI
 
-Le modèle DACI permet de structurer la prise de décision. On l'emploie généralement en réunion pour faire en sorte qu'une décision soit prise à la fin de cette dernière.
+Le DACI n'est pas un moyen de définir les responsabilités pour un projet. C'est un document et une méthode pour s'organiser ponctuellement, dans l'objectif de prendre une décision de groupe face à plusieurs options. On l'emploie généralement pour faire en sorte qu'une décision soit prise en fin de réunion. Considérez-le comme un outil, appuyant la démarche de partage des responsabilités en mode DevOps.
 
-Une réunion sous modèle DACI implique la désignation de quatre rôles :
+Une réunion sous le modèle DACI implique la désignation de quatre rôles :
 
 1. Le **_driver_** (meneur) : celui qui oriente le comité vers une décision. Il est en charge de veiller à ce que chacun soit bien informé de l'avancée de la réunion et de répondre aux questions. Il s'assure qu'une décision est prise mais n'influence pas nécessairement le processus. Souvent un responsable de programme.
 2. L'**approbateur** : personne qui a le dernier mot lors de l'approbation de la décision. Souvent un responsable ou un dirigeant de l'entreprise ayant un pouvoir de décision. Soyez innovant en invitant un métier ou un client pour qui le projet a été conçu, à endosser ce rôle.
 3. Les **contributeurs** : les personnes possédant les connaissances pour éclairer le processus décisionnel. Les experts et les métiers.
-4. Les **intervenants informés** : personnes concernées par la décision sans être directement impliquées dans la prise de cette décision. Ceux qui vont hypothétiquement devoir revoir leur travail à la suite de la décision prise. Par exemple les services juridiques, commerciaux ou de support.
+4. Les **intervenants informés** : personnes concernées par la décision sans être directement impliquées dans la prise de cette décision. Ceux qui vont hypothétiquement devoir revoir leur travail à la suite de la décision prise. Par exemple les services juridiques, commerciaux ou de logistique. Limitez leur nombre : il est peut-être suffisant de leur envoyer un simple e-mail en fin de séance avec les actions à prendre.
 
-Ensuite, l'objectif est de discuter ensemble pour lister en quelques mots les options envisagées. Indiquer pour chacune leur coût, le temps qu'elle nécessitera et autres avantages on inconvénients.
+Ensuite, l'objectif est de discuter ensemble pour lister en quelques mots les options envisagées. Indiquez pour chacune leur coût, le temps qu'elle nécessitera et autres avantages on inconvénients.
 
 Dans les 5 minutes restantes, définissez la date à laquelle la décision doit être prise (si ce n'est pas tout de suite). Fort de ces ébauches d'options, s'il en reste à étayer, distribuez la tâche à celui en charge de la compléter.
 
-Une fois les options regroupées, les approbateurs prennent la décision et l'autorité distribue les tâches.
-
-Dans un modèle DevOps, les "intervenants informés" sont pleinement impliqués en tant que "contributeurs". Ils ont voix dans la prise de décision car ils possèdent une expertise qui impacte le produit. Sinon, leur temps sera mieux utilisé en leur envoyant un simple e-mail récapitulatif avec les actions à prendre.
+Une fois les options regroupées, les approbateurs prennent la décision et l'autorité distribue les tâches à l'issue.
 
 Exemple de DACI, listant les options considérées pour une prise de décision sur la problématique "Comment devrions-nous finaliser les spécifications de notre produit ?" :
 
@@ -1256,22 +1271,21 @@ Une fois votre décision prise, il est temps de communiquer votre décision pour
 
 Une fois archivé, il permettra aux nouvelles parties-prenantes du projet de comprendre pourquoi telle ou telle décision a été prise. En menant cette réflexion collective, vous évitez également les biais cognitifs individuels.
 
-#### Le modèle DevOps
-
-Certes, il n'est peut-être pas directement souhaitable de se séparer instantanément d'un modèle type RACI. C'est une question d'outillage que vous devez mettre en place et de culture. Cette dernière prend du temps à changer. Mais c'est bien cela que vous devez viser : un changement de culture dans votre organisation pour que les autorités surpassent leur peur.
-
-En plus des notions évoquées dans les deux derniers chapitres sur la responsabilité dans un modèle DevOps, analysons une réflexion qu'il est possible de rencontrer souvent.
-
-Vous l'aurez compris, le DevOps incite à ne pas blamer les parties-prenantes. Il est naturel de rétorquer alors que si personne n'est personnellement responsable, les équipes risquent d'être moins attentives dans leurs responsabilités quotidiennes. Comment imaginer un responsable de la production qui supprimerait l'ensemble de la base de données client sans conséquence ? Les responsables doivent bien à un moment comprendre que leurs actions ont des conséquences. Le DevOps répond de deux manières à cet enjeu :
-
-1. Si vos procédures sont valides, il n'y a pas de raison que l'ingénieur ait pu exécuter cette commande. S'il a fait une erreur, c'est que les règles gouvernant la sécurité de votre infrastructure de production n'étaient pas assez fortes (accès aux machines de production par commandes manuelles, absence de contrôle/validation des commandes, absence de sauvegardes, procédure mal décrite, manque de communication...). (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)")
-2. Vous avez embauché un employé car il connaît son métier (vous l'avez bien eu en entretien). Si vous craignez qu'il n'assume pas ses responsabilités, parlez avec lui ou séparez-vous de lui et révisez votre politique d'embauche. Faites confiance à vos experts. Si vous doutez, demandez-leurs de renforcer les règles de contrôle (cf. point 1) et de vous rassurer avec des scénarios type (cf. chapitre "[Postmortems et premortems](#postmortems-et-premortems)").
-
-Voilà pourquoi il faut commencer avec des moyens, mais avoir l'audace de commencer petit dans son initiative de transformation. Votre entreprise doit progressivement mettre en place les procédures (dans notre cas, les technologies de contrôle des systèmes informatiques) selon ses moyens RH et financiers. Une fois que vous avez éprouvé ces techniques, itérez à plus large échelle.
-
 ### Investiguer les incidents
 
 TODO(flavienbwk): Expliquer le [Root Cause Analysis](https://www.seniorauto.co.in/fmea-different-from-root-cause-analysis/#:~:text=Failure%20Modes%20and%20Effects%20Analysis,at%20vulnerable%20areas%20or%20processes.)
+
+<!--
+Chacune des méthodes d'investigation d'incident que j'ai mentionnées - Root Cause Analysis, Failure Mode and Effects Analysis et Five Whys - peut être utile dans des circonstances différentes, et il est important de choisir la méthode la mieux adaptée en fonction du contexte de l'incident.
+
+Root Cause Analysis : cette méthode est particulièrement utile pour les incidents graves ou récurrents qui nécessitent une investigation en profondeur pour comprendre les causes sous-jacentes et mettre en place des mesures correctives pour prévenir la répétition de l'incident. La Root Cause Analysis est souvent utilisée lorsque l'incident a des conséquences importantes sur l'entreprise ou les utilisateurs.
+
+Failure Mode and Effects Analysis : cette méthode est souvent utilisée lors de la phase de planification pour identifier les risques et les points de défaillance potentiels dans un système. Elle est utile pour évaluer les risques avant qu'un incident ne se produise, et pour déterminer les mesures préventives à mettre en place pour réduire les risques d'incidents.
+
+Five Whys : cette méthode est particulièrement utile pour les incidents plus simples ou les problèmes qui sont facilement compréhensibles, mais qui nécessitent encore une investigation approfondie pour identifier les causes profondes. Elle peut être utilisée pour explorer les causes d'un incident ou pour comprendre pourquoi un processus a échoué.
+
+Dans tous les cas, il est important de choisir la méthode d'investigation qui convient le mieux au contexte de l'incident, et d'impliquer toutes les parties prenantes dans l'investigation pour s'assurer que toutes les informations pertinentes sont prises en compte.
+-->
 
 ### Postmortems et premortems
 
@@ -1341,6 +1355,8 @@ L'Armée de l'Air américaine s'est mise depuis 2019 en ordre de bataille en inv
 Si vous avez déjà des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, de pratiquer. C'est ce que j'ai observé de plus efficace (donc rentable) pour l'organisation : investissez du temps dans la formation de votre personnel. Par exemple, donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services, pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
 
 Il peut être tentant de penser que former un personnel sur une technologie innovante - c'est à dire le rendre attirant auprès de la concurrence - peut l'inciter à changer d'entreprise. Premièrement, partir simplement parce-que l'on acquiert une nouvelle compétence dénote un manque de perspectives au sein de son entreprise. Cela révèle un personnel déjà peu motivé, donc peu productif. Secondement, la recherche indique qu'un personnel se formant sur son temps libre a plus fréquemment tendance à rechercher un autre travail[^TrainingTurnover]. C'est l'inverse quand l'entreprise se charge de le former.
+
+Dans tous les cas, présentez votre transformation comme une opportunité d'évolution de carrière. Et soyez honnête avec les personnes qui devront monter en compétence : oui cela demandera des efforts personnels et du temps. Mais développer ces nouvelles expertises en vaut la chandelle.
 
 ## Tirer parti de l'automatisation
 
