@@ -504,8 +504,8 @@ Néanmoins dans une approche DevOps, l'usage de ces librairies évolue au cours 
 
 L'avantage de la méthodologie DevOps est que l'ensemble du code est centralisé au sein de l'usine logicielle. Cela nous permet d'utiliser [des outils](medium.com/@geralexgr/opensource-devsecops-tools-for-devops-engineers-f6cbd5e3017a) pour analyser de quoi chaque projet est composé et prévenir les failles de sécurité. Le SBOM traditionnel peut donc être automatisé par deux choses :
 
-- Des chaînes d'intégration continue qui détectent, mettent à jour ou refusent automatiquement l'usage de librairies spécifiques (ex: analyse des `package.json` en Javascript ou `requirements.txt` pour Python avec [_SPDX_](https://spdx.dev/) ou [_CycloneDX_](https://cyclonedx.org/), détection de paquets vulnérables avec _Renovate_[^Renovate]; cf. _Anchore_[^AnchoreSBOM], _OSV-Scanner_[^osvscanner]).
-- Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: _Trivy_[^Trivy], _Quay Clair_[^QuayClair], [_Dagda_](https://github.com/eliasgranderubio/dagda)[^DagdaGithub], _Jfrog X-Ray_[^JFrogXRay])
+- Des chaînes d'intégration continue qui détectent, mettent à jour ou refusent automatiquement l'usage de librairies spécifiques (ex: analyse des `package.json` en Javascript ou `requirements.txt` pour Python avec [_SPDX_](https://spdx.dev/) ou [_CycloneDX_](https://cyclonedx.org/), détection de paquets vulnérables avec _Renovate_[^Renovate]; cf. _Anchore_, _OSV-Scanner_[^osvscanner]).
+- Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: _Trivy_, [_Dockle_](https://github.com/goodwithtech/dockle), _Quay Clair_, [_Dagda_](https://github.com/eliasgranderubio/dagda), _Jfrog X-Ray_)
 
 Au lieu de lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser les contributions pouvant apporter des risques, avant qu'elles soient déployées en production.
 
@@ -638,7 +638,7 @@ GitHub est la plateforme de partage de code la plus populaire sur Internet. Elle
 
 L'entreprise a opéré un virage stratégique en faisant l'acquisition en 2019 de _Semmle_, un outil d'analyse des vulnérabilités dans le code. Depuis, elle propose plusieurs moyens de sécuriser sa base de code :
 
-- SAST (_Static application security testing_) : outils d'analyse automatisée de vulnérabilités dans le code (ex: injections SQL, faille XSS et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez également ajouter vos propres règles grâce à des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _CodeQL_, _Checkmarx_ ou encore _Klocwork_.
+- SAST (_Static application security testing_) : outils d'analyse automatisée de vulnérabilités dans le code (ex: injections SQL, faille XSS et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez également ajouter vos propres règles grâce à des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _CodeQL_, _Checkmarx_, _Klocwork_ ou encore _Checkov_.
 
     ![Exemple de vulnérabilité détectée par CodeQL sur un projet GitHub. Source : GitHub (vidéo YouTube)](./images/2020_code-scanning-github.png)
 
@@ -858,7 +858,7 @@ Ces entraînements sont plus communément appelés _fire drills_. Encore une foi
 
 Netflix y va encore plus fort avec son outil _Chaos Monkey_ qui arrête automatiquement, de manière aléatoire et à tout moment des services en production. L'objectif est de s'assurer que les clients continuent d'avoir accès à Netflix, même avec un ou plusieurs services internes en panne. Leur outil _Chaos Gorilla_ va même jusqu'à simuler l'arrêt d'une région AWS complète (ex: un datacentre qui serait mis hors service) pour observer ses conséquences sur la disponibilité de la plateforme. Ces pratiques font partie de ce que l'on appelle le _chaos engineering_.
 
-Enfin, en dehors de [logiciels d'audit](https://www.tecmint.com/scan-linux-for-malware-and-rootkits) comme _Lynis_[^SecurityAuditTools] permettant de détecter certaines failles de sécurité, il existe des exercices à faire pratiquer par vos équipes de sécurité et de SRE. La manière la plus populaire d'évaluer la sécurité de son infrastructure est l'exercice "blue team / red team". Inspiré des entraînement militaires, elle consiste en un face à face entre une équipe d'experts en cybersécurité qui tente de compromettre un système d'information (la _red team_), et les équipes de réponse à incident (les SRE, la _blue team_) qui vont identifier, évaluer et neutraliser les menaces. L'idée est d'éviter de se reposer sur les capacités théoriques de ses systèmes de sécurité, mais de les confronter à des menaces concrètes pour évaluer leur intérêt et leurs points faibles. Des variantes existent avec une _purple team_, une _white team_ ou encore une _gold team_. Mais commencez par mettre en place un scénario simple. Par exemple, un de vos développeurs introduisant une image Docker ou du code vérolé.
+Enfin, en dehors de [logiciels d'audit](https://www.tecmint.com/scan-linux-for-malware-and-rootkits) comme [_Lynis_](https://cisofy.com/lynis/) ou [_Kube Hunter_](https://github.com/aquasecurity/kube-hunter) permettant de détecter certaines failles de sécurité, il existe des exercices à faire pratiquer par vos équipes de sécurité et de SRE. La manière la plus populaire d'évaluer la sécurité de son infrastructure est l'exercice "blue team / red team". Inspiré des entraînement militaires, elle consiste en un face à face entre une équipe d'experts en cybersécurité qui tente de compromettre un système d'information (la _red team_), et les équipes de réponse à incident (les SRE, la _blue team_) qui vont identifier, évaluer et neutraliser les menaces. L'idée est d'éviter de se reposer sur les capacités théoriques de ses systèmes de sécurité, mais de les confronter à des menaces concrètes pour évaluer leur intérêt et leurs points faibles. Des variantes existent avec une _purple team_, une _white team_ ou encore une _gold team_. Mais commencez par mettre en place un scénario simple. Par exemple, un de vos développeurs introduisant une image Docker ou du code vérolé.
 
 Ce sujet est vaste et les pratiques diffèrent selon la taille de l'organisation dans laquelle vous êtes employé. Ce chapitre vous donne quelques références pour entamer vos pratiques d'entraînement. Structurez-les par la suite en fonction de vos objectifs et de vos ressourcess.
 
@@ -1275,7 +1275,7 @@ Une fois archivé, il permettra aux nouvelles parties-prenantes du projet de com
 
 TODO(flavienbwk): Expliquer le [Root Cause Analysis](https://www.seniorauto.co.in/fmea-different-from-root-cause-analysis/#:~:text=Failure%20Modes%20and%20Effects%20Analysis,at%20vulnerable%20areas%20or%20processes.)
 
-<!--
+<!-- 
 Chacune des méthodes d'investigation d'incident que j'ai mentionnées - Root Cause Analysis, Failure Mode and Effects Analysis et Five Whys - peut être utile dans des circonstances différentes, et il est important de choisir la méthode la mieux adaptée en fonction du contexte de l'incident.
 
 Root Cause Analysis : cette méthode est particulièrement utile pour les incidents graves ou récurrents qui nécessitent une investigation en profondeur pour comprendre les causes sous-jacentes et mettre en place des mesures correctives pour prévenir la répétition de l'incident. La Root Cause Analysis est souvent utilisée lorsque l'incident a des conséquences importantes sur l'entreprise ou les utilisateurs.
@@ -1471,7 +1471,7 @@ Il est courant d'entendre parler de _pipeline_ d'intégration continue (en fran�
 - Build : étape contenant les _jobs_ s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
 - Test : jobs de vérification de la conformité du code / de la contribution
   - Exemples :
-    - Vérifier que le code est maintenable : grâce à des outils comme [_SonarQube_](https://www.sonarsource.com/products/sonarqube) ou des _linters_[^linter] comme [_black_](https://github.com/psf/black).
+    - Vérifier que le code est maintenable : grâce à des outils comme [_SonarQube_](https://www.sonarsource.com/products/sonarqube) ou des _linters_[^linter] comme [_black_](https://github.com/psf/black) pour Python ou [_KubeLinter_](https://github.com/stackrox/kube-linter) pour les configurations Kubernetes.
     - Vérifier que la contribution n'introduit pas de faille de sécurité : avec des outils comme _Quay Clair_ ou _Jfrog X-Ray_.
     - Vérifier que le code respecte les tests unitaires (cf. chapitre ["Développement piloté par tests"](#développement-piloté-par-tests)).
     - Vérifier la conformité de la documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. _Istio_ a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
@@ -2134,10 +2134,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^DORAFlexibleWork]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Burnout", page 40. 2022.
 
-[^Trivy]: [Trivy GitHub repository](https://github.com/aquasecurity/trivy). _github.com/aquasecurity/trivy_.
-
-[^QuayClair]: [Quay Clair GitHub repository](https://github.com/quay/clair). _github.com/quay/clair_.
-
 [^GitlabSigningProcess]: GLENN, Eddie. [How to secure your software build pipeline using code signing](https://about.gitlab.com/blog/2021/08/30/secure-pipeline-with-single-sign-in/). 2021.
 
 [^DORAReportSREPRacticesFigures]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Acknowledge the J-Curve", page 28. 2022.
@@ -2256,10 +2252,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^Helm]: Helm est une technologie standardisant et simplifiant le déploiement d'applicatifs dans Kubernetes. _helm.sh_.
 
-[^AnchoreSBOM]: Site officiel du projet Anchore : _anchore.com_.
-
-[^DagdaGithub]: Projet GitHub de Dagda : _github.com/eliasgranderubio/dagda_.
-
 [^SealedSecrets]: Sealed Secrets permet de manipuler des secrets sans pouvoir accéder à leur contenu en clair, permettant d'aller jusqu'à "pousser" un secret. Un certificat de sécurité gère le déchiffrement de ces secrets au sein du cluster Kubernetes. Projet GitHub : _github.com/bitnami-labs/sealed-secrets_.
 
 [^CloudNative]: Le terme "_Cloud Native_" fait référence à une application qui a été conçue dès le départ pour être exploitée dans le Cloud. Les projets _Cloud Native_ impliquent des technologies Cloud telles que les microservices, les orchestrateurs de conteneurs et le passage à l'échelle automatique.
@@ -2343,8 +2335,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^Protestware]: Techcrunch. "[_Protestware on the rise: Why developers are sabotaging their own code_](https://techcrunch.com/2022/07/27/protestware-code-sabotage)". 2022.
 
 [^CuratedOpenSource]: BERWICK, Flavien. "[_Top 10 Cloud Technologies Predictions (according to Google VPs)_](https://www.linkedin.com/pulse/top-10-cloud-technologies-predictions-according-google-berwick), point 2". 2022.
-
-[^JFrogXRay]: JFrog XRay website : _jfrog.com/xray_.
 
 [^EUOSSReport]: OpenForum Europe; Fraunhofer ISI. "[_Study on the impact of Open Source for the European Commission_](https://openforumeurope.org/open-source-impact-study/)". 2021.
 
