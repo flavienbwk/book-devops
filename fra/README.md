@@ -923,7 +923,7 @@ Comme nous le verrons dans le chapitre "[GitOps](#gitops)", en DevOps, tout le c
 
 Sans forge logicielle, les équipes de développement travaillaient chacunes dans leur propre dossier local et s'échangaient leur code sur un dossier réseau partagé ou par clé USB. Cela faisait perdre beaucoup de temps lors de la fusion de fonctionnalités développées par plusieurs contributeurs différents et occasionnait de réels problèmes de sécurité. Inutile de dire qu'il n'y avait aucun moyen de tracer les actions ni de retrouver ses fichiers en cas de suppression accidentelle. Qui plus est, les équipes de gestion de projet étaient totalement mises à l'écart du cycle de développement logiciel.
 
-Ces forges logicielles se reposent sur la technologie _git_[^git], permettant de tracer toute contribution. Grâce à _git_, il est possible de savoir qui a fait quelle modification à quel moment. On peut remonter l'historique des contributions et gérer simplement la fusion des contributions. Nous détaillerons plus en détails ces mécanismes dans le [chapitre suivant](#gitops).
+Ces forges logicielles se reposent sur la technologie _git_[^git], permettant de tracer toute contribution. Grâce à _git_, il est possible de savoir qui a fait quelle modification à quel moment. On peut remonter l'historique des contributions et gérer simplement la fusion des contributions. Nous détaillerons plus en détail ces mécanismes dans le [chapitre suivant](#gitops).
 
 Aujourd'hui, les équipes de développement, d'administration système, de SSI et de _management_ travaillent conjointement sur ce type de plateforme en y capitalisant :
 
@@ -1273,19 +1273,107 @@ Une fois archivé, il permettra aux nouvelles parties-prenantes du projet de com
 
 ### Investiguer les incidents
 
-TODO(flavienbwk): Expliquer le [Root Cause Analysis](https://www.seniorauto.co.in/fmea-different-from-root-cause-analysis/#:~:text=Failure%20Modes%20and%20Effects%20Analysis,at%20vulnerable%20areas%20or%20processes.)
+Vous recevez une alerte de votre infrastructure sur Slack, vous informant que votre plateforme de partage de fichiers est indisponible depuis plus de 30 secondes.
 
-<!-- 
-Chacune des méthodes d'investigation d'incident que j'ai mentionnées - Root Cause Analysis, Failure Mode and Effects Analysis et Five Whys - peut être utile dans des circonstances différentes, et il est important de choisir la méthode la mieux adaptée en fonction du contexte de l'incident.
+C'est à ce moment que commence l'investigation du problème. La technique la plus couramment utilisée est la _root cause analysis_ (RCA) : une méthode inspirée des techniques de [contrôle qualité dans l'industrie manufacturière](https://www.sciencedirect.com/topics/neuroscience/root-cause-analysis). Elle permet de comprendre les causes sous-jacentes d'un incident et de déterminer la source d'un problème. Cela dans l'objectif de mettre en place les procédures pour qu'il ne se reproduise pas.
 
-Root Cause Analysis : cette méthode est particulièrement utile pour les incidents graves ou récurrents qui nécessitent une investigation en profondeur pour comprendre les causes sous-jacentes et mettre en place des mesures correctives pour prévenir la répétition de l'incident. La Root Cause Analysis est souvent utilisée lorsque l'incident a des conséquences importantes sur l'entreprise ou les utilisateurs.
+En RCA, vous devez commencer par prendre des mesures immédiates de rectification de l'état des services. En suit une action de résolution permanente, qui élimine l'erreur. Enfin, une action préventive est mise en place pour que le problème ne se reproduise pas à l'avenir.
 
-Failure Mode and Effects Analysis : cette méthode est souvent utilisée lors de la phase de planification pour identifier les risques et les points de défaillance potentiels dans un système. Elle est utile pour évaluer les risques avant qu'un incident ne se produise, et pour déterminer les mesures préventives à mettre en place pour réduire les risques d'incidents.
+Par exemple, dans le cas d'un produit défectueux :
 
-Five Whys : cette méthode est particulièrement utile pour les incidents plus simples ou les problèmes qui sont facilement compréhensibles, mais qui nécessitent encore une investigation approfondie pour identifier les causes profondes. Elle peut être utilisée pour explorer les causes d'un incident ou pour comprendre pourquoi un processus a échoué.
+- l'action immédiate est de remplacer la pièce tombée en panne
+- l'action permanente est de re-concevoir le produit pour tenir compte des disparités d'usinage
+- l'action préventive (ou "systémique") est de changer le processus de conception, pour intégrer une étude de la disparité d'usinage en fonction des fournisseurs
 
-Dans tous les cas, il est important de choisir la méthode d'investigation qui convient le mieux au contexte de l'incident, et d'impliquer toutes les parties prenantes dans l'investigation pour s'assurer que toutes les informations pertinentes sont prises en compte.
--->
+Pour faire comprendre à votre hiérarchie l'intérêt de cette méthode, présentez-la comme un investissement pour gagner du temps et de l'argent[^CloudRCA]. La RCA réduit les risques de refonte logicielle, coûteux en temps. Priorisez vos efforts de RCA sur les incidents qui coûtent le plus à votre organisation. La mise en place de procédures et la conservation des connaissances sur la résolution des incidents, permet aussi d'améliorer la communication entre vos équipes. Au lieu de réagir en appliquant de simples rustines, l'idée est de trouver une solution pérenne.
+
+Voici les 5 étapes de la _Root Cause Analysis_ :
+
+- Identifier le problème
+- Contenir et analyser le problème
+- Définir la cause du problème
+- Résoudre le problème de manière permanente
+- Valider le correctif et faire en sorte que l'incident ne se reproduise pas
+
+Tout comme les pilotes d'avion, vos équipes SRE doivent avoir préparé une _checklist_ de réponse à incident. Ils doivent savoir comment réagir à un incident. Les pilotes d'avion suivent des listes de points à vérifier, pour ne pas oublier quelque chose même en situation stressante. Voyons en détail chacune de ces étapes, pour que vous puissiez établir votre propre _checklist_ en fonction de votre environnement :
+
+1. Identifier le problème
+
+    Vous devez analyser la situation pour vous assurer qu'il s'agit bien d'un incident, pas simplement d'une alerte sans conséquence. C'est à l'entreprise de déterminer un seuil qualifiant un incident (ex: une anomalie durant plus de 1 minute). Une alerte doit généralement être considérée comme un incident quand elle menace la stabilité de vos [indicateurs de résilience](#indicateurs-de-résilience).
+
+    Dans le doute, la bonne pratique est de déclarer les incidents tôt et souvent. Il vaut mieux déclarer un incident, puis trouver un correctif rapidement et le fermer, plutôt que de le laisser perdurer et qu'il s'aggrave. Si un incident majeur se déclare, vous devrez probablement le gérer en équipe (cf. chapitre "[Organiser la réponse à incident](#organiser-la-réponse-à-incident)"). Vous pouvez distinguer un incident majeur d'un plus mineur si vous répondez "oui" à l'une de ces questions :
+
+    - Devez-vous faire appel à une seconde équipe pour résoudre le problème ?
+    - La panne est-elle visible pour les clients ?
+    - Le problème n'est-il pas résolu, même après une heure d'investigation intense ?
+
+    Dès que l'incident débute, commencez à prendre des notes sur ce que vous allez observer et les actions que vous allez entreprendre. Cela sera utile pour votre post-mortem. Vous pouvez ensuite qualifier le problème en utilisant la méthode "5W2H" (5 quoi/_what_, 2 comment/_how_) :
+
+    - Qui ? Les personnes ou clients affectés par le problème
+    - Quoi ? La description ou la définition du problème
+    - Quand ? La date et l'heure à laquelle le problème a été identifié
+    - Où ? Localisation des plaintes (la zone, l'équipement ou les clients en question)
+    - Pourquoi ? Toute explication connue antérieurement
+    - Comment ? Comment le problème est-il survenu (cause racine) et comment il va être corrigé (action corrective)
+    - Combien ? Gravité et fréquence du problème
+
+    Sur les infrastructures matures, l'identification du problème est facilitée par la présence de systèmes de surveillance de la plateforme. Ces derniers remotent les anomalies qu'elles détectent au travers de notifications. Ces anomalies sont généralement détectées par des outils comme [Statping](https://github.com/statping/statping), qui vont par exemple alerter si un service devient indisponible. Mais elles peuvent également être détectées par des mécanismes de _machine learning_, qui révèlent des tendances anormales. L'avantage est que l'alerte n'est pas lancée uniquement quand un simple seuil est franchi, mais quand un phénomène inhabituel se produit.
+
+    ![Exemple de latence anormale détectée par DataDog. Source : _datadoghq.com/solutions/machine-learning_](./images/2023_solutions-aiops-watchdog.jpg)
+
+    Des outils comme [OpenRCA](https://openrca.io/), [OpenStack Vitrage](https://opendev.org/openstack/vitrage) ou [Datadog](https://datadoghq.com) peuvent vous aider à identifier la cause d'un problème en mettant en évidence les anomalies au sein de votre infrastructure.
+
+    Pour l'instant, vous ne connaissez pas la gravité du problème, seulement ses symptômes.
+
+2. Contenir et analyser le problème
+
+    Commencez toujours pas résoudre le problème. Rétablissez au plus tôt le service pour éviter qu'il ne dégénère, même si la solution est temporaire ou qu'elle n'est pas considérée "propre".
+
+    La confiance que vos utilisateurs portent à l'égard de votre service, est liée à votre réactivité dans votre réponse à incident. Vos utilisateurs ne s'attendent pas à 100% de disponibilité, mais ils veulent savoir que le problème est pris en charge. Cette transparence est fondamentale.
+
+    Une [page d'état des services](https://github.com/ivbeg/awesome-status-pages) (_status page_ en anglais), est un excellent moyen d'informer vos utilisateurs de l'état d'avancement d'un incident. Vous pouvez également indiquer à l'avance des opérations de maintenance.
+
+    ![Exemple de _status page_ Atlassian avec incident, état des services et prévision d'opération de maintenance. Source : _atlassian.com/software/statuspage/feature_](./images/2023_atlassian_statuspage.png)
+
+    Pour analyser le problème plus en détail et trouver la source du dysfonctionnement, utilisez vos outils d'observabilité (vos journaux d'activité, vos métriques). La suite [_Beats_ de Elastic](https://www.elastic.co/fr/beats/) est un exemple d'outil permettant de surveiller son infrastructure. Nous découvrirons l'étendue de ces technologies dans le chapitre "[Tout mesurer](#tout-mesurer)".
+
+    A cette étape, vous devez trouver une action immédiate. Par exemple, un industriel fabriquant des pièces pourrait décider de ré-inspecter celles prêtes à l'expédition, les retravailler ou faire un rappel. Pour un logiciel, l'idée est de trouver une manière de rétablir le service, souvent en poussant un correctif rapide (_hotfix_ en anglais).
+
+    Votre équipe SRE doit s'assurer que les correctifs déployés fonctionnent. Ils peuvent le faire en lançant des tests pilotes[^PilotTests] qu'ils auront préparé au préalable.
+
+3. Définir la cause du problème
+
+    L'impact de l'incident est à ce moment contrôlé. On peut désormais investiguer la cause racine du problème.
+
+    L'équipe SRE doit se concerter pour lister les causes probables du problème. Elle le fait au travers d'une session de _brainstorming_. Elle structure ensuite ces hypothèses avec le diagramme de cause à effet (ou diagramme d'Ishikawa), au travers de grandes catégories incluant de plus petites hypothèses .
+
+    ![Diagramme d'Ishikawa pour une pièce défectueuse. Source : Wikipédia](./images/2023_Cause_and_effect_diagram_for_defect.png)
+
+    Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Choisissez par un vote à majorité, les catégories qui vous semblent les plus susceptibles de se reproduire.
+
+4. Résoudre le problème de manière permanente
+
+5. Valider le correctif et faire en sorte que l'incident ne se reproduise pas
+
+L'incident est désormais résolu et vous savez pourquoi le problème s'est passé. Vous écrivez à ce moment-là un post-mortem incluant ce que vous avez fait pour vous assurer que le problème ne se reproduira plus (cf. chapitre "[Postmortems et premortems](#postmortems-et-premortems)"). C'est aussi le moment d'informer vos utilisateurs sur la _status page_ : "l'analyse de la cause du problème est terminée, l'incident a été résolu, l'incident est documenté".
+
+Tout comme les pilotes d'avion s'entraînent à faire face à des incidents, vos équipes SRE doivent s'entraîner pour ne pas perdre de temps quand un incident se déclare (cf. chapitre "[Évaluer sa sécurité et s'entraîner](#évaluer-sa-sécurité-et-sentraîner)"). Leur procédure de réponse à incident doit être simple à trouver et à l'attention de tous. Elle doit inclure les consignes à la fois pour les équipes SRE, mais aussi pour tout autre personnel non-SRE qui se retrouverait face à un incident.
+
+La RCA est une méthode dite "réactive" : elle est appliquée après qu'un problème survienne. Pour tenter d'anticiper les défaillances avant qu'elles ne surviennent, il est possible de rédiger des scénarios hypothétiques d'incidents. C'est l'analyse des modes de défaillance (_failure modes and effects_ ou FMEA en anglais), une méthode dite "proactive".
+
+TODO: schéma de l'imprimante https://cdn2.hubspot.net/hubfs/2164270/Blog/FMEA-CM-Printer.pdf
+
+Il est aussi possible de qualifier la criticité d'un problème, en tentant d'y apporter des solutions. Par exemple si une crevaison de pneu est jugée inacceptable, on peut décider d'améliorer la structure du pneu. C'est l'analyse des modes de défaillance, de leurs effets et de leur criticité (_failure modes, effects and criticality analysis_ ou FMECA). Cela se fait en multipliant un indice de fréquence, de gravité et de détection (probabilité de détecter l'incident).
+
+![Exemple de matrice FMECA](./images/2023_fmeca.png)
+
+Le choix d'investir du temps dans l'une des méthodes ou les deux, reste régit par les priorités de votre organisation en terme de sécurité. C'est pour cela que l'on retrouve souvent ces deux techniques dans le monde de la santé.
+
+### Organiser la réponse à incident
+
+Quand l'incident est important, il est utile de savoir comment s'organiser en équipe pour y faire face efficacement. Une technique efficace est celle des 3 Commandants (_3 Commanders_ ou 3Cs). Théorisée en 1968 par les équipes de pompiers, elle est désormais mise en pratique par les équipes SRE de Google[^3CsGoogle].
+
+TODO: Organiser la réponse à incider avec la méthode des 3Cs, fort de procédures bien établies au point précédent
 
 ### Postmortems et premortems
 
@@ -1831,7 +1919,8 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
 - **EdgeOps** : TODO(flavienbwk)
-- **ChatOps** : TODO(flavienbwk): Chat Operations (ChatOps) is the use of chat clients and real-time chat tools to facilitate software development and operations. Also known as “conversation-driven collaboration” or “conversation-driven DevOps,” ChatOps is designed for fast and simple instant messaging between development team members.
+- **ChatOps** : TODO(flavienbwk): Chat Operations (ChatOps) is the use of chat clients and real-time chat tools to facilitate software development and operations. Also known as "conversation-driven collaboration" or “conversation-driven DevOps,” ChatOps is designed for fast and simple instant messaging between development team members.
+- **LiveOps** (Live Game Operations) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'intérêt pour un jeu vidéo : de son lancement à son retrait. Dit vulgairement, c'est "maintenir la hype" autour d'un jeu. Les activités comprennent le suivi du nombre de joueurs, leur temps de jeu ou encore le suivi des avis. Elles incluent également des activités de promotion, développement de l'engagement, l'organisation de tournois et l'assistance faite aux joueurs.
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
@@ -2429,3 +2518,9 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^FordIndustryChain]: "Cette technique est imaginée par Louis Renault en 1898 et mise en œuvre par Henry Ford en 1913". Source : _fr.wikipedia.org/wiki/Ligne_de_montage_
 
 [^MilitaryStrategy]: Echelons de stratégie militaire, définissant des temps et des espaces d'action différents. Source : _fr.wikipedia.org/wiki/Stratégie_militaire_
+
+[^CloudRCA]: "(l'outil de RCA CloudRCA) permet aux SRE d'économiser +20% du temps consacré à la résolution de pannes au cours des douze derniers mois et améliore considérablement la fiabilité des services.". ZHANG, Yingying et al. "[_CloudRCA: A Root Cause Analysis Framework for Cloud Computing Platforms_](https://arxiv.org/abs/2111.03753)". 2021.
+
+[^3CsGoogle]: Google. Chapitre "[_Incident Command System_](https://sre.google/workbook/incident-response/)", _SRE Book_. _sre.google_.
+
+[^PilotTests]: Tests pilotes : "type de test logiciel vérifiant tout ou partie d'un système dans des conditions réelles d'exploitation (en production)". Source : [_guru99.com_](https://www.guru99.com/pilot-testing.html)
