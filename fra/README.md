@@ -1,20 +1,6 @@
-# PréfIAce
+# Préface
 
 ![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureaux modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover.png)
-
-_Pré-face automatiquement générée par intelligence artificielle[^OpenAIGPT3] puis traduite et adaptée par l'auteur. Ce chapitre illustre l'intérêt de mettre en place de nouvelles structures d'organisation face à la rapidité des innovations numériques. Considérez que cette capacité peut être maîtrisée par l'un de vos concurrents : vous devez être en mesure de déployer vos innovations au moins aussi vite que lui pour rester compétitif._
-
-_Entrée fournie à GPT3 : "Write the preface of a book whose title is "Transforming institutions thanks to DevOps" explaining the benefits of a DevOps transformation and how organizations are succeeding in their digital transformation."_
-
-La transformation numérique est un sujet d'actualité pour les institutions. Elles cherchent des moyens d'améliorer leur efficacité à l'ère numérique. Pour ce faire, elles adoptent notamment les pratiques DevOps.
-
-Le DevOps est un ensemble de principes et de pratiques qui aide les organisations à améliorer leurs pratiques de développement et de déploiement logiciels. Cela les aide à être plus agiles, à déployer des logiciels plus fréquemment et à obtenir plus rapidement des retours de la part des clients.
-
-Les organisations qui ont adopté la méthodologie DevOps ont constaté des avantages significatifs : un délai de mise sur le marché plus rapide, une satisfaction cliente accrue et une efficacité opérationnelle améliorée.
-
-Ce livre vous décrira comment le DevOps peut aider votre organisation à transformer ses pratiques de développement et de livraison de logiciels. Il fournira également des exemples de pratiques employées dans des grandes organisations, qui ont mis en œuvre avec succès la méthodologie et listera les leçons apprises.
-
-Si votre organisation cherche des moyens d'améliorer son processus de développement et de déploiement de logiciels, ce livre est fait pour vous.
 
 # Introduction
 
@@ -1103,18 +1089,18 @@ La méthodologie à 12 critères (_Twelve-Factor Methodology_) regroupe une list
 
 Le site web _12factor.net_, créé par Adam WIGGINS, liste et détaille ces règles :
 
-1. Une base de code unique : centraliser le code à un endroit (ex: git / GitLab / GitHub) et assigner un répertoire/projet unique par logiciel. Ce dernier doit pouvoir s'adapter à des environnements différents (développement, pré-production, production). Il faut par exemple éviter de créer un projet "production" et un projet "développement" pour le même logiciel.
-2. Dépendances déclarées et isolées : toutes les dépendances doivent être déclarées dans un fichier - et non pas implicitement chargées si elles sont détectées ou non dans un dossier de la machine. Par exemple les fichiers `package.json` pour NPM (Javascript) et les `requirements.txt` pour PIP (Python). Elles doivent être isolées pendant l'exécution pour s'assurer de ne pas avoir de dépendances déjà installées sur la machine. Par exemple en utilisant les _virtualenv_ Python, le _bundle exec_ dans Ruby ou Docker pour tout langage.
-3. Configuration basée sur l'environnement : le logiciel doit s'adapter à l'environnement de déploiement, pas l'inverse. Utilisez les variables d'environnement et évitez les constantes dans vos applicatifs pour adapter le comportement de votre logiciel à son environnement de déploiement.
-4. Accéder aux services tiers par des informations de connexion inscrites dans une variable : les bases de données, systèmes de queue, services d'emailing type SMTP, de cache ou autre API utilisés par l'application doivent être interchangeables en fonction de l'environnement de déploiement. Le logiciel se base sur des URLs ou identifiants déclarés en variable d'environnement pour savoir à qui s'adresser. Par exemple, le logiciel doit pouvoir autant s'adresser à `mysql://auth@host/db` qu'à `mysql://auth@rds.amazonaws.com/db` sans changement dans le code, du moment où les technologies sont les mêmes.
-5. Etapes de _build_ et de _run_ étanches : figer le code au moment de l'exécution du logiciel en rendant impossible des modifications. Attribuer à chaque _release_ du logiciel un identifiant unique (ex: un _timestamp_ au format `2022-05-07-21:33:18`) et rendre immutable le code pour cette version. Toute modification du code requiert une nouvelle _release_.
-6. Créer des applications sans état (_stateless_) : tout logiciel doit se suffire à lui-même et se connecter à un service externe s'il a besoin d'intéragir avec de la donnée (ex: les bases de données citées au point 4). Par exemple, chaque requête envoyée à une route API de l'application ne doit pas inclure de mécanisme de cache pour la session d'un utilisateur (cf. _sticky sessions_[^StickySessions]). L'API doit pouvoir utiliser uniquement les paramètres présents dans la requête pour faire sa réponse. On parle également de "microservices". L'objectif est de dissocier les fonctionnalités d'un logiciel en plusieurs petites briques indépendantes. Ces dernières peuvent être passées à l'échelle indépendamment. C'est ce que l'on nomme le passage à l'échelle horizontal (_horizontal scaling_). On oppose ce type d'architecture aux architectures dites "monolithiques".
-7. Accéder aux services par _port binding_ : Une application ne doit pas nécessiter l'ajout d'un serveur web pour fonctionner. Chaque application doit embarquer un moyen de servir son contenu et exposer son propre port. Il doit être possible d'assigner un port pour un environnement sépcifique et un autre dans un environnement différent.
-8. Simultanéité (_concurrency_) : Permettre la simultanéité de l'application signifie pouvoir en instancier plusieurs clones, sans qu'elles aient besoin de se coordonner entre elles ou de partager un état. Cette notion se rapproche du point 6, supposant que les différentes instances de l'application se basent sur des services tiers (comme les bases de données) pour gérer des données. Cela permet de passer à l'échelle les différents composants de l'applicatif (les microservices) indépendamment en fonction de la charge utilisateur (ex: le _Unix Process Model_[^UnixProcessModel], le _Horizontal Pod Autoscaling_ dans Kubernetes).
-9. Résistance et contrôle du redémarrage (_disposability_) : L'extinction inopinée de l'applicatif ne doit pas impacter son redémarrage : il doit continuer de fonctionner comme avant et s'adapter à l'état actuel de l'infrastructure. Le démarrage de l'applicatif doit être rapide (pas plus de quelques secondes). L'extinction du logiciel doit être contrôlée lors de la réception d'un `SIGTERM` (_graceful exit_).
-10. Parité des environnements : Les différents environnements de déploiement (développement, pré-production, production) doivent être aussi similaires que possibles. Utiliser des services plateforme (ex: bases de données, services de cache) avec des versions différentes favorise les incompatibilités et les erreurs une fois le logiciel en production.
-11. Traiter les journaux applicatifs comme un flux : une application ne doit jamais se charger de la redirection ou du stockage des journaux d'activité (_logs_). Elle ne doit pas essayer d'écrire ou de gérer des fichiers de _logs_. A la place, elle doit écrire les _logs_ sur la sortie standard (`stdout`) et ce dès que possible (sans mémoire tampon). Cela permet à la plateforme Cloud de facilement traiter les _logs_ des applicatifs déployés (cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)").
-12. Exécuter les tâches d'administration/gestion avec des commandes ponctuelles : les applications doivent inclure des scripts ou des outils pour lancer des actions d'administration. Par exemple, lancer la migration d'une base de données avec un script Python, accéder à une console pour investiguer la base de données de production avec `psql` ou encore déclencher une sauvegarde avec une commande). L'idée est de permettre l'exécution de scripts, dans le même environnement que celui où est déployé le logiciel.
+1. **Une base de code unique** : centraliser le code à un endroit (ex: git / GitLab / GitHub) et assigner un répertoire/projet unique par logiciel. Ce dernier doit pouvoir s'adapter à des environnements différents (développement, pré-production, production). Il faut par exemple éviter de créer un projet "production" et un projet "développement" pour le même logiciel.
+2. **Dépendances déclarées et isolées** : toutes les dépendances doivent être déclarées dans un fichier - et non pas implicitement chargées si elles sont détectées ou non dans un dossier de la machine. Par exemple les fichiers `package.json` pour NPM (Javascript) et les `requirements.txt` pour PIP (Python). Elles doivent être isolées pendant l'exécution pour s'assurer de ne pas avoir de dépendances déjà installées sur la machine. Par exemple en utilisant les _virtualenv_ Python, le _bundle exec_ dans Ruby ou Docker pour tout langage.
+3. **Configuration basée sur l'environnement** : le logiciel doit s'adapter à l'environnement de déploiement, pas l'inverse. Utilisez les variables d'environnement et évitez les constantes dans vos applicatifs pour adapter le comportement de votre logiciel à son environnement de déploiement.
+4. **Accéder aux services tiers par des informations de connexion inscrites dans une variable** : les bases de données, systèmes de queue, services d'emailing type SMTP, de cache ou autre API utilisés par l'application doivent être interchangeables en fonction de l'environnement de déploiement. Le logiciel se base sur des URLs ou identifiants déclarés en variable d'environnement pour savoir à qui s'adresser. Par exemple, le logiciel doit pouvoir autant s'adresser à `mysql://auth@host/db` qu'à `mysql://auth@rds.amazonaws.com/db` sans changement dans le code, du moment où les technologies sont les mêmes.
+5. **Etapes de _build_ et de _run_ étanches** : figer le code au moment de l'exécution du logiciel en rendant impossible des modifications. Attribuer à chaque _release_ du logiciel un identifiant unique (ex: un _timestamp_ au format `2022-05-07-21:33:18`) et rendre immutable le code pour cette version. Toute modification du code requiert une nouvelle _release_.
+6. **Créer des applications sans état** (_stateless_) : tout logiciel doit se suffire à lui-même et se connecter à un service externe s'il a besoin d'intéragir avec de la donnée (ex: les bases de données citées au point 4). Par exemple, chaque requête envoyée à une route API de l'application ne doit pas inclure de mécanisme de cache pour la session d'un utilisateur (cf. _sticky sessions_[^StickySessions]). L'API doit pouvoir utiliser uniquement les paramètres présents dans la requête pour faire sa réponse. On parle également de "microservices". L'objectif est de dissocier les fonctionnalités d'un logiciel en plusieurs petites briques indépendantes. Ces dernières peuvent être passées à l'échelle indépendamment. C'est ce que l'on nomme le passage à l'échelle horizontal (_horizontal scaling_). On oppose ce type d'architecture aux architectures dites "monolithiques".
+7. **Accéder aux services par _port binding_** : Une application ne doit pas nécessiter l'ajout d'un serveur web pour fonctionner. Chaque application doit embarquer un moyen de servir son contenu et exposer son propre port. Il doit être possible d'assigner un port pour un environnement sépcifique et un autre dans un environnement différent.
+8. **Simultanéité** (_concurrency_) : Permettre la simultanéité de l'application signifie pouvoir en instancier plusieurs clones, sans qu'elles aient besoin de se coordonner entre elles ou de partager un état. Cette notion se rapproche du point 6, supposant que les différentes instances de l'application se basent sur des services tiers (comme les bases de données) pour gérer des données. Cela permet de passer à l'échelle les différents composants de l'applicatif (les microservices) indépendamment en fonction de la charge utilisateur (ex: le _Unix Process Model_[^UnixProcessModel], le _Horizontal Pod Autoscaling_ dans Kubernetes).
+9. **Résistance et contrôle du redémarrage** (_disposability_) : L'extinction inopinée de l'applicatif ne doit pas impacter son redémarrage : il doit continuer de fonctionner comme avant et s'adapter à l'état actuel de l'infrastructure. Le démarrage de l'applicatif doit être rapide (pas plus de quelques secondes). L'extinction du logiciel doit être contrôlée lors de la réception d'un `SIGTERM` (_graceful exit_).
+10. **Parité des environnements** : Les différents environnements (développement, pré-production, production) doivent être aussi similaires que possibles. Utiliser des services plateforme (ex: bases de données, services de cache) avec des versions différentes favorise les incompatibilités et les erreurs une fois le logiciel en production.
+11. **Traiter les journaux applicatifs comme un flux** : une application ne doit jamais se charger de la redirection ou du stockage des journaux d'activité (_logs_). Elle ne doit pas essayer d'écrire ou de gérer des fichiers de _logs_. A la place, elle doit écrire les _logs_ sur la sortie standard (`stdout`) et ce dès que possible (sans mémoire tampon). Cela permet à la plateforme Cloud de facilement traiter les _logs_ des applicatifs déployés (cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)").
+12. **Exécuter les tâches d'administration/gestion avec des commandes ponctuelles** : les applications doivent inclure des scripts ou des outils pour lancer des actions d'administration. Par exemple, lancer la migration d'une base de données avec un script Python, accéder à une console pour investiguer la base de données de production avec `psql` ou encore déclencher une sauvegarde avec une commande). L'idée est de permettre l'exécution de scripts, dans le même environnement que celui où est déployé le logiciel.
 
 Ces critères - et en particulier le découpage des logiciels en microservices - couplés à des [chaînes de déploiement continue](#déploiement-continu-cd), augmentent de 43% les chances d'anticiper les incidents logiciels selon la recherche[^DORACDLooselyCoupledArchitecture] (ex: pannes, vulnérabilités ou performances de service dégradées). La conteneurisation est particulièrement adaptée à ces pratiques. En effet, les notions d'isolation y sont récurrentes et une technologie comme Docker peut facilement y répondre.
 
@@ -1295,13 +1281,11 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 - Résoudre le problème de manière permanente
 - Valider le correctif et faire en sorte que l'incident ne se reproduise pas
 
-Tout comme les pilotes d'avion, vos équipes SRE doivent avoir préparé une _checklist_ de réponse à incident. Ils doivent savoir comment réagir à un incident. Les pilotes d'avion suivent des listes de points à vérifier, pour ne pas oublier quelque chose même en situation stressante. Voyons en détail chacune de ces étapes, pour que vous puissiez établir votre propre _checklist_ en fonction de votre environnement :
+1. **Identifier le problème**
 
-1. Identifier le problème
+    Analysez la situation pour vous assurer qu'il s'agit bien d'un incident, pas d'une simple alerte sans conséquence. C'est à l'entreprise de déterminer un seuil qualifiant un incident (ex: une anomalie durant plus de 1 minute). Une alerte doit généralement être considérée comme un incident quand elle menace la stabilité de vos [indicateurs de résilience](#indicateurs-de-résilience).
 
-    Vous devez analyser la situation pour vous assurer qu'il s'agit bien d'un incident, pas simplement d'une alerte sans conséquence. C'est à l'entreprise de déterminer un seuil qualifiant un incident (ex: une anomalie durant plus de 1 minute). Une alerte doit généralement être considérée comme un incident quand elle menace la stabilité de vos [indicateurs de résilience](#indicateurs-de-résilience).
-
-    Dans le doute, la bonne pratique est de déclarer les incidents tôt et souvent. Il vaut mieux déclarer un incident, puis trouver un correctif rapidement et le fermer, plutôt que de le laisser perdurer et qu'il s'aggrave. Si un incident majeur se déclare, vous devrez probablement le gérer en équipe (cf. chapitre "[Organiser la réponse à incident](#organiser-la-réponse-à-incident)"). Vous pouvez distinguer un incident majeur d'un plus mineur si vous répondez "oui" à l'une de ces questions :
+    Dans le doute, la bonne pratique est de déclarer les incidents tôt et souvent. Il vaut mieux déclarer un incident, puis trouver un correctif rapidement et le fermer, plutôt que de le laisser perdurer et qu'il s'aggrave. Si un incident majeur se déclare, vous devrez probablement le gérer en équipe (cf. chapitre "[Organiser sa réponse à incident](#organiser-sa-réponse-à-incident)"). Vous pouvez distinguer un incident majeur d'un plus mineur si vous répondez "oui" à l'une de ces questions :
 
     - Devez-vous faire appel à une seconde équipe pour résoudre le problème ?
     - La panne est-elle visible pour les clients ?
@@ -1325,7 +1309,7 @@ Tout comme les pilotes d'avion, vos équipes SRE doivent avoir préparé une _ch
 
     Pour l'instant, vous ne connaissez pas la gravité du problème, seulement ses symptômes.
 
-2. Contenir et analyser le problème
+2. **Contenir et analyser le problème**
 
     Commencez toujours pas résoudre le problème. Rétablissez au plus tôt le service pour éviter qu'il ne dégénère, même si la solution est temporaire ou qu'elle n'est pas considérée "propre".
 
@@ -1341,37 +1325,72 @@ Tout comme les pilotes d'avion, vos équipes SRE doivent avoir préparé une _ch
 
     Votre équipe SRE doit s'assurer que les correctifs déployés fonctionnent. Ils peuvent le faire en lançant des tests pilotes[^PilotTests] qu'ils auront préparé au préalable.
 
-3. Définir la cause du problème
+3. **Définir la cause du problème**
 
     L'impact de l'incident est à ce moment contrôlé. On peut désormais investiguer la cause racine du problème.
 
-    L'équipe SRE doit se concerter pour lister les causes probables du problème. Elle le fait au travers d'une session de _brainstorming_. Elle structure ensuite ces hypothèses avec le diagramme de cause à effet (ou diagramme d'Ishikawa), au travers de grandes catégories incluant de plus petites hypothèses .
+    L'équipe SRE doit se concerter pour lister les facteurs probables contribuant au problème. Elle le fait au travers d'une session de _brainstorming_. Elle peut ensuite structurer ses hypothèses avec le diagramme de cause à effet (ou diagramme d'_Ishikawa_), au travers de grandes catégories incluant de plus petites causes suspectées.
 
-    ![Diagramme d'Ishikawa pour une pièce défectueuse. Source : Wikipédia](./images/2023_Cause_and_effect_diagram_for_defect.png)
+    ![Diagramme d'Ishikawa pour une pièce défectueuse](./images/2023_ishikawa_diagramme.jpg)
 
-    Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Choisissez par un vote à majorité, les catégories qui vous semblent les plus susceptibles de se reproduire.
+    Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Choisissez par un vote à majorité les causes qui vous semblent les plus susceptibles de se reproduire. Vous avez désormais identifié un axe de réflexion.
 
-4. Résoudre le problème de manière permanente
+    Utilisez la méthode des "5 pourquoi" (_5 Why's_). L'idée est d'identifier plusieurs symptômes en cascade, jusqu'à trouver la cause réacine d'un problème. "5" est une valeur arbitraire, elle peut être réduite ou agrandie selon le cas.
 
-5. Valider le correctif et faire en sorte que l'incident ne se reproduise pas
+    Voici un exemple :
 
-L'incident est désormais résolu et vous savez pourquoi le problème s'est passé. Vous écrivez à ce moment-là un post-mortem incluant ce que vous avez fait pour vous assurer que le problème ne se reproduira plus (cf. chapitre "[Postmortems et premortems](#postmortems-et-premortems)"). C'est aussi le moment d'informer vos utilisateurs sur la _status page_ : "l'analyse de la cause du problème est terminée, l'incident a été résolu, l'incident est documenté".
+    - Problème : Notre logiciel crash fréquemment
+    - Pourquoi ? Parce-que la mémoire utilisée augmente au cours du temps
+    - Pourquoi ? Parce-qu'il y a une fuite de mémoire dans le code
+    - Pourquoi ? Parce-que les développeurs ne libéraient pas correctement la mémoire après l'avoir allouée
+    - Pourquoi ? Parce-qu'ils n'étaient pas au courant qu'il était possible que leur programme ait une fuite de mémoire
+    - Pourquoi ? Parce-qu'il n'y avait pas de chaîne d'intégration continue le vérifiant
 
-Tout comme les pilotes d'avion s'entraînent à faire face à des incidents, vos équipes SRE doivent s'entraîner pour ne pas perdre de temps quand un incident se déclare (cf. chapitre "[Évaluer sa sécurité et s'entraîner](#évaluer-sa-sécurité-et-sentraîner)"). Leur procédure de réponse à incident doit être simple à trouver et à l'attention de tous. Elle doit inclure les consignes à la fois pour les équipes SRE, mais aussi pour tout autre personnel non-SRE qui se retrouverait face à un incident.
+4. **Résoudre le problème de manière permanente**
 
-La RCA est une méthode dite "réactive" : elle est appliquée après qu'un problème survienne. Pour tenter d'anticiper les défaillances avant qu'elles ne surviennent, il est possible de rédiger des scénarios hypothétiques d'incidents. C'est l'analyse des modes de défaillance (_failure modes and effects_ ou FMEA en anglais), une méthode dite "proactive".
+    Vous avez déterminé quelle était la cause racine du problème. Concevez une solution pour la résoudre.
 
-TODO: schéma de l'imprimante https://cdn2.hubspot.net/hubfs/2164270/Blog/FMEA-CM-Printer.pdf
+    Vérifiez que votre solution peut fonctionner : réalisez une preuve de concepte avant de l'appliquer en production.
 
-Il est aussi possible de qualifier la criticité d'un problème, en tentant d'y apporter des solutions. Par exemple si une crevaison de pneu est jugée inacceptable, on peut décider d'améliorer la structure du pneu. C'est l'analyse des modes de défaillance, de leurs effets et de leur criticité (_failure modes, effects and criticality analysis_ ou FMECA). Cela se fait en multipliant un indice de fréquence, de gravité et de détection (probabilité de détecter l'incident).
+    Définissez et inscrivez : quelles actions seront prises pour corriger le problème, qui en est responsable et quand cela sera fait.
 
-![Exemple de matrice FMECA](./images/2023_fmeca.png)
+    Définissez comment l'efficacité de la solution sera mesurée : par sondage téléphonique, sondage en ligne, mesures remontées automatiquement, mesures prises manuellement... Définissez un temps pendant lequel vous mesurerez l'action, puis appliquez la correction.
 
-Le choix d'investir du temps dans l'une des méthodes ou les deux, reste régit par les priorités de votre organisation en terme de sécurité. C'est pour cela que l'on retrouve souvent ces deux techniques dans le monde de la santé.
+5. **Valider le correctif et faire en sorte que l'incident ne se reproduise pas**
 
-### Organiser la réponse à incident
+    Fort de vos mesures définies en étape 4, assurez-vous que les actions entreprises ont eu l'effet désiré.
 
-Quand l'incident est important, il est utile de savoir comment s'organiser en équipe pour y faire face efficacement. Une technique efficace est celle des 3 Commandants (_3 Commanders_ ou 3Cs). Théorisée en 1968 par les équipes de pompiers, elle est désormais mise en pratique par les équipes SRE de Google[^3CsGoogle].
+    L'incident est désormais résolu et vous savez pourquoi le problème s'est passé. C'est le moment d'informer vos utilisateurs sur la _status page_ : "l'analyse de la cause du problème est terminée, l'incident a été résolu, l'incident est documenté".
+
+    Il ne reste plus qu'à rédiger votre post-mortem, en y inscrivant ce que vous avez fait pour vous assurer que le problème ne se reproduise plus (cf. chapitre "[Postmortems et premortems](#postmortems-et-premortems)"). Reprenez les notes prises aux points précédents et formalisez ce document.
+
+    Publiez et communiquez ce document (en interne de l'entreprise ou au public). Cela permettra aux clients d'être satisfaits en étant mis au courant, et aux équipes gérant la production de voir leur travail reconnu.
+
+Tout comme les pilotes d'avion qui s'entraînent à faire face à une situation d'urgence, vos équipes SRE doivent s'entraîner pour ne pas perdre de temps quand un incident se produit (cf. chapitre "[Évaluer sa sécurité et s'entraîner](#évaluer-sa-sécurité-et-sentraîner)").
+
+Leur procédure de réponse à incident doit être simple à trouver et être rédigée à l'attention de tout public. Elle à la fois inclure les consignes pour les équipes SRE, mais aussi pour tout non-SRE qui se retrouverait face à un incident.
+
+Quelle que soit la taille de votre organisation, vous devez disposer d'une procédure de réponse à incident.
+
+### Anticiper les incidents
+
+La RCA est une méthode dite "réactive" : elle est appliquée après qu'un problème survienne. Pour tenter d'anticiper les défaillances avant qu'elles ne surviennent, il est possible de rédiger des scénarios hypothétiques d'incidents. C'est l'analyse des modes de défaillance (_failure modes and effects analysis_ ou FMEA en anglais), une méthode dite "proactive".
+
+En FMEA, nous essayons de formaliser visuellement une cause susceptible de provoquer une situation d'erreur, ayant pour conséquence un effet :
+
+![Illustration du principe de relation de cause à effet](./images/2023_fmea_simple.jpg)
+
+Pour mieux comprendre quoi inscrire en cas de rédaction d'une FMEA, prenons le scénario du dysfonctionnement d'une imprimante de bureau :
+
+![Schéma d'une analyse de cause à effet (FMEA) pour des problèmes de fonctionnement d'une imprimante](./images/2023_fmea_printer_jam.jpg)
+
+Pour un logiciel ou une la maintenance d'une infrastructure, listez les potentiels problèmes que l'équipe pourrait rencontrer à l'avenir. Créez-en des "fiches incident" incluant des scénarios hypothétiques de panne, associés aux pistes à explorer. Exemples typiques de pannes : manque d'espace disque, base de données mal migrée, sauvegarde mal exportée. Capitalisez-les dans votre base de connaissance (ex: GitLab, Confluence).
+
+Le choix d'investir du temps dans la réalisation d'FMEA ou la formalisation de RCA reste régit par vos priorités en terme de résilience. Si vous êtes une petite structure, commencez par formaliser vos RCA, puis établissez progressivement des FMEA.
+
+### Organiser sa réponse à incident
+
+Quand l'incident est important, il est utile de savoir comment s'organiser en équipe pour y faire face efficacement. Une technique efficace est celle des 3 Commandants (_3 Commanders_ ou 3Cs). Théorisée en 1968 par les pompiers, elle est ajourd'hui utilisée par les équipes SRE de Google[^3CsGoogle].
 
 TODO: Organiser la réponse à incider avec la méthode des 3Cs, fort de procédures bien établies au point précédent
 
