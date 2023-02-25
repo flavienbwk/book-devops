@@ -34,11 +34,11 @@ Dans le privé, Microsoft lançait historiquement ses nouveaux produits tous les
 
 Pour les institutions, il ne s'agit donc plus de savoir _si_ mais _quand_ elles devront se lancer dans une démarche de transformation. Face à des concurrents économiques[^AUKUS] ou militaires[^InfluenceRussie] toujours plus offensifs, se transformer relève d'une impérieuse nécessité pour rester dans la course.
 
-Néanmoins, la grande majorité des organisations a encore du mal à instaurer tangiblement ces nouvelles pratiques. L'obstacle principal est de trouver les talents qui peuvent mettre en place les techniques et les outils, nécessaires au fonctionnement en mode DevOps. Mais nous pourrions dire la même chose de tout autre type d'innovation, qu'importe son domaine. Les ressources humaines restent un enjeu primordial.
+Néanmoins, la majorité des organisations a encore du mal à instaurer tangiblement ces nouvelles pratiques. L'obstacle principal est de trouver les talents pouvant mettre en place les techniques et les outils appropriés à un fonctionnement en mode DevOps.
 
-Le DevOps étant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études auxquelles se référer. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
+Etant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études auxquelles se référer sur le DevOps. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans son initiative de transformation. A titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur. Chaque année, un rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, afin d'être en mesure de rivaliser face aux enjeux d'un monde numérique en perpétuelle évolution.
 
-Ce livre concentre à la fois les aspects organisationnels et les aspects techniques, pour illustrer chaque notion de la méthodologie DevOps. Comprenez par là que vous n'avez pas besoin d'être ingénieur pour suivre ces notions. Néanmoins si vous désirez les mettre en pratique, une grande partie nécessitera l'intervention d'experts en ingénierie. Dans tous les cas, en tant que responsable d'une initiative de transformation numérique, il est préférable de maîtriser ses aspects techniques pour prendre les meilleures décisions et rester crédible face à vos subordonnés ou votre hiérarchie.
+Ce livre concentre à la fois les aspects organisationnels et les aspects techniques, pour illustrer chaque notion de la méthodologie DevOps. Comprenez par là que vous n'avez pas besoin d'être ingénieur pour suivre ces notions. Néanmoins si vous désirez les mettre en pratique, une grande partie nécessitera l'intervention d'experts en ingénierie. En tant que responsable d'une initiative de transformation numérique, il est dans tous les cas préférable de maîtriser ces aspects techniques. Cela vous permettra de prendre les meilleures décisions et de rester crédible face à vos subordonnés, ou votre hiérarchie.
 
 L'idée est de vous donner une ligne directrice pour vous orienter vers une première expérimentation DevOps, ou d'affiner celle que vous soutenez.
 
@@ -120,7 +120,7 @@ Google définit les cinq pilliers du DevOps suivants :
 
 1. [**Réduire les silos organisationnels**](#réduire-les-silos-organisationnels)
    - En cultivant l'engagement, le sentiment du partage de responsabilité des succès et des échecs entre les parties-prenantes (ingénieurs, responsables projet, utilisateurs/métiers). Chacun est davantage impliqué et se sent légitime à son niveau.
-2. [**Accepter l'échec comme normal**](#accepter-léchec)
+2. [**Accepter l'échec**](#accepter-léchec)
    - En partant du principe que l'échec est une conséquence du manque de procédures et de méthodes de la part de l'organisation.
 3. [**Réduire le coût du changement**](#réduire-le-coût-du-changement)
    - Mettre en place petit à petit, déployer rapidement, échouer rapidement pour itérer.
@@ -277,7 +277,7 @@ Pour éviter le retard technologique, une organisation peut adopter plusieurs pr
 
 - Former de manière continue son personnel, en particulier les décideurs (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
 - Mesurer et mettre en place des indicateurs pour éviter de s'habituer (cf. chapitre "[Tout mesurer](#tout-mesurer)")
-- Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec comme normal](#accepter-léchec)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
+- Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec](#accepter-léchec)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
 - Conserver une capacité d'innovation interne pour rester en mesure de critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)", _Comment l'entreprise peut sortir de la spirale du déclin_[^ArticlePSSortirSpiraleDeclin])
 
 # Prérequis
@@ -901,9 +901,9 @@ Dans le chapitre suivant, nous verrons comment s'organise une usine logicielle e
 
 L'usine logicielle est au cœur de votre infrastructure DevOps. C'est ici que vos ingénieurs vont passer la majorité de leur temps : s'ils ne sont pas en train de coder dans leur IDE[^IDE], ils seront en train de gérer leurs projets dans l'usine logicielle.
 
-Une usine logicielle est composée d'une forge logicielle et de services permettant à vos ingénieurs de développer et déployer des logiciels sur votre infrastructure : registre d'images de conteneurs, mirroirs de dépendances, dépôts d'artéfacts/binaires (cf. Nexus[^Nexus], Artifactory[^Artifactory], Distribution[^Distribution] (anciennement _Docker Registry_)). Désormais, la plupart de ces fonctionnalités sont disponibles directement au sein des forges logicielles.
+Une usine logicielle est composée d'une forge logicielle et de services permettant à vos ingénieurs de développer et déployer des logiciels sur votre infrastructure : registre d'images de conteneurs, mirroirs de dépendances, dépôts d'artéfacts/binaires (cf. Nexus[^Nexus], Artifactory[^Artifactory], Distribution[^Distribution]). Désormais, la plupart de ces fonctionnalités sont disponibles directement au sein des forges logicielles.
 
-Les forges logicielles les plus populaires sont GitLab et GitHub. Vous aurez tendance à retrouver GitLab de manière plus courante au sein des grandes organisations, car il est déployable sur des réseaux isolés. GitHub quant à lui est uniquement disponible par Internet.
+Les forges logicielles les plus populaires sont GitLab et GitHub. Vous aurez tendance à retrouver GitLab de manière plus courante au sein des grandes organisations, car il est simplement et gratuitement déployable sur des réseaux isolés. D'autres plateformes comme Froggit[^Froggit], Gitea ou Bitbucket.
 
 Comme nous le verrons dans le chapitre "[GitOps](#gitops)", en DevOps, tout le code source des logiciels et toutes les configurations de production sont stockées sous forme de code au sein d'une forge logicielle. On dit ainsi qu'elle est la "source unique de vérité" de votre infrastructure, centralisant toutes les ressources nécessaires au déploiement de services sur votre réseau.
 
@@ -1221,7 +1221,7 @@ Cependant, en assumant des responsabilités partagées sans les imputer, vous vo
 Vous l'aurez compris, le DevOps incite à ne pas blamer les parties-prenantes. Il est naturel de rétorquer alors que si personne n'est personnellement responsable, les équipes risquent d'être moins attentives dans leurs responsabilités quotidiennes. Comment imaginer un responsable de la production qui supprimerait l'ensemble de la base de données client sans conséquence ? Les responsables doivent bien à un moment comprendre que leurs actions ont des conséquences. Le DevOps répond de deux manières à cet enjeu :
 
 1. Si vos procédures sont valides, il n'y a pas de raison que l'ingénieur ait pu exécuter cette commande. S'il a fait une erreur, c'est que les règles gouvernant la sécurité de votre infrastructure de production n'étaient pas assez fortes (accès aux machines de production par commandes manuelles, absence de contrôle/validation des commandes, absence de sauvegardes, procédure mal décrite, manque de communication...). (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)")
-2. Vous avez embauché un employé car il connaît son métier (vous l'avez bien eu en entretien). Si vous craignez qu'il n'assume pas ses responsabilités, parlez avec lui ou séparez-vous de lui et révisez votre politique d'embauche. Faites confiance à vos experts. Si vous doutez, demandez-leurs de renforcer les règles de contrôle (cf. point 1) et de vous rassurer avec des scénarios type (cf. chapitre "[Postmortems et premortems](#postmortems-et-premortems)").
+2. Vous avez embauché un employé car il connaît son métier (vous l'avez bien eu en entretien). Si vous craignez qu'il n'assume pas ses responsabilités, parlez avec lui ou séparez-vous de lui et révisez votre politique d'embauche. Faites confiance à vos experts. Si vous doutez, demandez-leurs de renforcer les règles de contrôle (cf. point 1) et de vous rassurer avec des scénarios type (cf. chapitre "[Postmortems](#postmortems)").
 
 Voilà pourquoi il faut commencer avec des moyens, mais avoir l'audace de commencer petit dans son initiative de transformation. Votre entreprise doit progressivement mettre en place les procédures (dans notre cas, les technologies de contrôle des systèmes informatiques) selon ses moyens RH et financiers. Une fois que vous avez éprouvé ces techniques, itérez à plus large échelle.
 
@@ -1259,16 +1259,16 @@ Une fois archivé, il permettra aux nouvelles parties-prenantes du projet de com
 
 ### Investiguer les incidents
 
-Vous recevez une alerte de votre infrastructure sur Slack, vous informant que votre plateforme de partage de fichiers est indisponible depuis plus de 30 secondes.
+Vous recevez un message d'alerte du support client sur Slack. Elle vous informe que votre plateforme de partage de fichiers est indisponible.
 
-C'est à ce moment que commence l'investigation du problème. La technique la plus couramment utilisée est la _root cause analysis_ (RCA) : une méthode inspirée des techniques de [contrôle qualité dans l'industrie manufacturière](https://www.sciencedirect.com/topics/neuroscience/root-cause-analysis). Elle permet de comprendre les causes sous-jacentes d'un incident et de déterminer la source d'un problème. Cela dans l'objectif de mettre en place les procédures pour qu'il ne se reproduise pas.
+C'est dès ce moment que commence l'investigation du problème. La technique la plus courante est la _root cause analysis_ (RCA) : une méthode inspirée des techniques de [contrôle qualité dans l'industrie manufacturière](https://www.sciencedirect.com/topics/neuroscience/root-cause-analysis). Elle permet de comprendre de quels facteurs provient l'incident et d'en déterminer la source. L'objectif est alors de mettre en place les procédures pour que cet incident ne se reproduise pas.
 
-En RCA, vous devez commencer par prendre des mesures immédiates de rectification de l'état des services. En suit une action de résolution permanente, qui élimine l'erreur. Enfin, une action préventive est mise en place pour que le problème ne se reproduise pas à l'avenir.
+En RCA, vous devez en priorité rétablir l'état des services. En suit une action pour résoudre le problème de manière pérenne. Enfin, une action préventive est mise en place pour que le problème ne se reproduise pas à l'avenir.
 
-Par exemple, dans le cas d'un produit défectueux :
+Par exemple, dans le cas d'une cafetière défectueuse :
 
 - l'action immédiate est de remplacer la pièce tombée en panne
-- l'action permanente est de re-concevoir le produit pour tenir compte des disparités d'usinage
+- l'action pérenne est de re-concevoir la cafetière pour tenir compte des disparités d'usinage
 - l'action préventive (ou "systémique") est de changer le processus de conception, pour intégrer une étude de la disparité d'usinage en fonction des fournisseurs
 
 Pour faire comprendre à votre hiérarchie l'intérêt de cette méthode, présentez-la comme un investissement pour gagner du temps et de l'argent[^CloudRCA]. La RCA réduit les risques de refonte logicielle, coûteux en temps. Priorisez vos efforts de RCA sur les incidents qui coûtent le plus à votre organisation. La mise en place de procédures et la conservation des connaissances sur la résolution des incidents, permet aussi d'améliorer la communication entre vos équipes. Au lieu de réagir en appliquant de simples rustines, l'idée est de trouver une solution pérenne.
@@ -1278,12 +1278,12 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 - Identifier le problème
 - Contenir et analyser le problème
 - Définir la cause du problème
-- Résoudre le problème de manière permanente
+- Résoudre le problème de manière pérenne
 - Valider le correctif et faire en sorte que l'incident ne se reproduise pas
 
 1. **Identifier le problème**
 
-    Analysez la situation pour vous assurer qu'il s'agit bien d'un incident, pas d'une simple alerte sans conséquence. C'est à l'entreprise de déterminer un seuil qualifiant un incident (ex: une anomalie durant plus de 1 minute). Une alerte doit généralement être considérée comme un incident quand elle menace la stabilité de vos [indicateurs de résilience](#indicateurs-de-résilience).
+    Analysez la situation pour vous assurer qu'il s'agit bien d'un incident, pas d'une simple alerte sans conséquence. C'est à l'entreprise de déterminer un seuil qualifiant un incident (ex: une anomalie qui dure plus de 1 minute). Si l'évènement menace la stabilité de vos [indicateurs de résilience](#indicateurs-de-résilience), considérez-le comme un incident.
 
     Dans le doute, la bonne pratique est de déclarer les incidents tôt et souvent. Il vaut mieux déclarer un incident, puis trouver un correctif rapidement et le fermer, plutôt que de le laisser perdurer et qu'il s'aggrave. Si un incident majeur se déclare, vous devrez probablement le gérer en équipe (cf. chapitre "[Organiser sa réponse à incident](#organiser-sa-réponse-à-incident)"). Vous pouvez distinguer un incident majeur d'un plus mineur si vous répondez "oui" à l'une de ces questions :
 
@@ -1291,7 +1291,7 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
     - La panne est-elle visible pour les clients ?
     - Le problème n'est-il pas résolu, même après une heure d'investigation intense ?
 
-    Dès que l'incident débute, commencez à prendre des notes sur ce que vous allez observer et les actions que vous allez entreprendre. Cela sera utile pour votre post-mortem. Vous pouvez ensuite qualifier le problème en utilisant la méthode "5W2H" (5 quoi/_what_, 2 comment/_how_) :
+    Dès que l'incident débute, commencez à prendre des notes sur ce que vous allez observer et les actions que vous allez entreprendre. Cela sera utile pour votre postmortem. Vous pouvez ensuite qualifier le problème en utilisant la méthode "5W2H" (5 quoi/_what_, 2 comment/_how_) :
 
     - Qui ? Les personnes ou clients affectés par le problème
     - Quoi ? La description ou la définition du problème
@@ -1301,7 +1301,7 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
     - Comment ? Comment le problème est-il survenu (cause racine) et comment il va être corrigé (action corrective)
     - Combien ? Gravité et fréquence du problème
 
-    Sur les infrastructures matures, l'identification du problème est facilitée par la présence de systèmes de surveillance de la plateforme. Ces derniers remotent les anomalies qu'elles détectent au travers de notifications. Ces anomalies sont généralement détectées par des outils comme [Statping](https://github.com/statping/statping), qui vont par exemple alerter si un service devient indisponible. Mais elles peuvent également être détectées par des mécanismes de _machine learning_, qui révèlent des tendances anormales. L'avantage est que l'alerte n'est pas lancée uniquement quand un simple seuil est franchi, mais quand un phénomène inhabituel se produit.
+    Sur les infrastructures matures, l'identification d'un problème est facilitée par la présence de systèmes de surveillance de la plateforme. Ils remontent sous forme de notification les anomalies qu'ils détectent. Par exemple, ces anomalies peuvent être détectées par des outils comme [Statping](https://github.com/statping/statping), qui déclenchent une alerte quand un service devient indisponible. Mais elles peuvent également être détectées par des mécanismes de _machine learning_, qui révèlent des tendances anormales. L'avantage est que l'alerte n'est pas lancée uniquement quand un simple seuil est franchi, mais quand un phénomène inhabituel se produit.
 
     ![Exemple de latence anormale détectée par DataDog. Source : _datadoghq.com/solutions/machine-learning_](./images/2023_solutions-aiops-watchdog.jpg)
 
@@ -1319,6 +1319,12 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
     ![Exemple de _status page_ Atlassian avec incident, état des services et prévision d'opération de maintenance. Source : _atlassian.com/software/statuspage/feature_](./images/2023_atlassian_statuspage.png)
 
+    Chaque fois que vous mettez à jour l'incident, communiquez sur :
+
+    - Ce qu'il se passe actuellement
+    - Ce qu'on sait du problème / ce qui a changé
+    - Les problèmes qui sont toujours en cours
+
     Pour analyser le problème plus en détail et trouver la source du dysfonctionnement, utilisez vos outils d'observabilité (vos journaux d'activité, vos métriques). La suite [_Beats_ de Elastic](https://www.elastic.co/fr/beats/) est un exemple d'outil permettant de surveiller son infrastructure. Nous découvrirons l'étendue de ces technologies dans le chapitre "[Tout mesurer](#tout-mesurer)".
 
     A cette étape, vous devez trouver une action immédiate. Par exemple, un industriel fabriquant des pièces pourrait décider de ré-inspecter celles prêtes à l'expédition, les retravailler ou faire un rappel. Pour un logiciel, l'idée est de trouver une manière de rétablir le service, souvent en poussant un correctif rapide (_hotfix_ en anglais).
@@ -1327,13 +1333,13 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
 3. **Définir la cause du problème**
 
-    L'impact de l'incident est à ce moment contrôlé. On peut désormais investiguer la cause racine du problème.
+    L'impact de l'incident étant contrôlé, on peut désormais investiguer la cause racine du problème.
 
-    L'équipe SRE doit se concerter pour lister les facteurs probables contribuant au problème. Elle le fait au travers d'une session de _brainstorming_. Elle peut ensuite structurer ses hypothèses avec le diagramme de cause à effet (ou diagramme d'_Ishikawa_), au travers de grandes catégories incluant de plus petites causes suspectées.
+    Listez en équipe les facteurs probables contribuant au problème. Structurez ensuite vos hypothèses avec un diagramme de cause à effet (ou diagramme d'_Ishikawa_).
 
     ![Diagramme d'Ishikawa pour une pièce défectueuse](./images/2023_ishikawa_diagramme.jpg)
 
-    Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Choisissez par un vote à majorité les causes qui vous semblent les plus susceptibles de se reproduire. Vous avez désormais identifié un axe de réflexion.
+    Choisissez par un vote à majorité les causes qui vous semblent les plus susceptibles de se reproduire. Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Vous avez désormais identifié un axe de réflexion.
 
     Utilisez la méthode des "5 pourquoi" (_5 Why's_). L'idée est d'identifier plusieurs symptômes en cascade, jusqu'à trouver la cause réacine d'un problème. "5" est une valeur arbitraire, elle peut être réduite ou agrandie selon le cas.
 
@@ -1346,7 +1352,7 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
     - Pourquoi ? Parce-qu'ils n'étaient pas au courant qu'il était possible que leur programme ait une fuite de mémoire
     - Pourquoi ? Parce-qu'il n'y avait pas de chaîne d'intégration continue le vérifiant
 
-4. **Résoudre le problème de manière permanente**
+4. **Résoudre le problème de manière pérenne**
 
     Vous avez déterminé quelle était la cause racine du problème. Concevez une solution pour la résoudre.
 
@@ -1362,19 +1368,106 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
     L'incident est désormais résolu et vous savez pourquoi le problème s'est passé. C'est le moment d'informer vos utilisateurs sur la _status page_ : "l'analyse de la cause du problème est terminée, l'incident a été résolu, l'incident est documenté".
 
-    Il ne reste plus qu'à rédiger votre post-mortem, en y inscrivant ce que vous avez fait pour vous assurer que le problème ne se reproduise plus (cf. chapitre "[Postmortems et premortems](#postmortems-et-premortems)"). Reprenez les notes prises aux points précédents et formalisez ce document.
+    Il ne reste plus qu'à rédiger votre post-mortem, en y inscrivant ce que vous avez fait pour vous assurer que le problème ne se reproduise plus (cf. chapitre "[Postmortems](#postmortems)"). Reprenez les notes prises aux points précédents et formalisez ce document.
 
     Publiez et communiquez ce document (en interne de l'entreprise ou au public). Cela permettra aux clients d'être satisfaits en étant mis au courant, et aux équipes gérant la production de voir leur travail reconnu.
 
 Tout comme les pilotes d'avion qui s'entraînent à faire face à une situation d'urgence, vos équipes SRE doivent s'entraîner pour ne pas perdre de temps quand un incident se produit (cf. chapitre "[Évaluer sa sécurité et s'entraîner](#évaluer-sa-sécurité-et-sentraîner)").
 
-Leur procédure de réponse à incident doit être simple à trouver et être rédigée à l'attention de tout public. Elle à la fois inclure les consignes pour les équipes SRE, mais aussi pour tout non-SRE qui se retrouverait face à un incident.
+Leur procédure de réponse à incident doit être simple à trouver et être rédigée à l'attention de tout public. Elle à la fois inclure les consignes pour les équipes SRE, mais aussi pour tout non-SRE qui se retrouverait face à un incident. Quelle que soit la taille de votre organisation, vous devez disposer d'une procédure de réponse à incident.
 
-Quelle que soit la taille de votre organisation, vous devez disposer d'une procédure de réponse à incident.
+### Postmortems
+
+Le postmortem est une technique d'investigation des incidents. Elle permet de tirer des conclusions sur les actions à prendre pour qu'ils ne se reproduisent pas. Le postmortem se traduit par un document formalisé par votre équipe SRE, qui le rédige à partir des informations récoltées pendant la [_root cause analysis_](#investiguer-les-incidents) (cf. chapitre "[Investiguer les incidents](#investiguer-les-incidents)").
+
+Il est recommandé de stocker ces documents dans un projet _git_ pour être en mesure de les éditer et de visualiser leurs modifications au cours du temps (cf. chapitre ["GitOps"](#gitops)). Ma recommandation personnelle est de les rédiger au format Markdown.
+
+Historiquement, le terme latin "_post mortem_" signifie "après la mort" et définit le processus d'investigation réalisé par les forces de l'ordre pour comprendre comment un crime a pu se produire. Pour cela : elles analysent les preuves, identifient la cause du décès (ex: via une autopsie), puis tentent d'emprisonner le coupable ou d'adapter la loi pour que le problème ne se reproduise plus. L'idée est similaire pour les incidents informatique.
+
+#### Structure du postmortem
+
+La structure que recommande Google[^GooglePostmortems] est un bon exemple. Le document est composé de deux parties : une qui décrit ce qu'il s'est passé et une autre décrivant les mesures à mettre en place suite à cet incident.
+
+Ouvrez un nouveau document Markdown et nommez-le de cette manière :
+
+- Format : `aaaammjj_postmortem_résumé-incident_durée.md`
+- Exemple : `20230604_postmortem_partage-fichier-indisponible_00j00h38m.md`
+
+Pour la première partie, définissez les titres suivants :
+
+- **Titre**
+  - Ex: "Plateforme de partage de fichiers indisponible pendant 2 jours le 4 juin 2023"
+- **Date de l'alerte**
+  - Ex: "04/07/2023 16h55 UTC"
+- **Date du début de l'incident**
+  - Ex: "04/07/2023 16h48 UTC"
+  - Peut être inconnu par manque d'informations
+- **Date de fin de l'incident**
+  - Ex: "04/07/2023 17h26 UTC"
+- **Durée de l'incident**
+  - Ex: "00j00h38m - 04/07/2023 16h48 UTC - 04/07/2023 17h26 UTC"
+  - Prendre la date d'alerte si le début de l'incident est indéfini
+- **Auteurs**
+  - Ex: "Élise DUPONT (@edupont) - Antoine MARTIN (@amartin)"
+  - Indiquer idéalement le pseudo de la forge logicielle
+- **État**
+  - Valeurs possibles : en cours d'écriture, en cours de relecture, relu, publié en interne, publié publiquement
+- **Résumé**
+  - Résumer en cinq phrases maximum l'incident, sa durée et sa cause.
+- **Impact**
+  - Quels utilisateurs ont été impactés ? Dans quelle proportion ? Y a-t-il eu des pertes de données, de la latence, une indisponibilité ? Incluez également l'impact sur les revenus s'il y a lieu.
+- **Détection**
+  - Comment l'incident a été détecté ? (outils d'observabilité, page d'état des services, appel client, collaborateur de l'entreprise, news en ligne ?)
+- **Source(s) du problème**
+  - C'est ici que vous incluez les éléments de votre _root cause analysis_ qui décrivent comment le problème a eu lieu. Ajoutez l'heure de chaque étape de l'investigation. Ajoutez des captures d'écran comme preuves et pour aider à mieux comprendre la situation.
+  - Rappel : l'erreur n'est jamais celle d'une seule personne, mais celle de procédures mal décrites ou d'infrastructures mal conçues (cf. chapitre "[Accepter l'échec](#accepter-léchec)").
+- **Évènement déclencheur**
+  - Décrire l'action ayant mené à l'incident
+  - Ex: "Un administrateur a lancé une commande ayant supprimé un fichier critique par erreur"
+- **Résolution**
+  - Décrire les actions immédiates prises pour résoudre le problème sur le court-terme. Puis décrire les actions pérennes prises pour adresser la source du problème.
+- **Leçons apprises**
+  - Décrire ce qu'il s'est bien et mal passé
+    - Aide: Est-ce que l'incident a été détecté rapidement ou a-t-il pris un moment pour qu'un humain s'en rende compte ? Est-ce que l'équipe s'est bien organisée, ou y a-t-il eu des problèmes de communication ? Est-ce que les procédures étaient claires, ou est-ce que les ingénieurs ne savaient pas ou trouver d'aide ?
+  - Décrire ce sur quoi nous avons eu de la chance / les surprises
+    - Aide: parfois, un incident ne s'est pas passé aussi mal qu'on aurait pu le penser. Et quelque chose s'est peut-être bien passé sans que nous l'ayons préparé. Indiquez-le afin que vous puissiez mettre en place de nouveaux dispositifs pour ne pas compter sur la chance la prochaine fois.
+
+La deuxième partie décrit ce que votre équipe pourrait faire différemment la prochaine fois. Conclusion de votre postmortem, elle liste les actions à prendre pour que les problèmes ne se reproduisent pas. Ne vous concentrez pas uniquement sur la correction des bugs. Incluez aussi les changements de procédure nécessaires pour réduire l'impact d'incidents similaires.
+
+Définissez un tableau avec quatre colonnes et autant de lignes que souhaitées :
+
+- Le **responsable** de l'action à mener
+- La ou **les actions** à mener
+- La **priorité** de cette action
+- L'[_issue_](#flexible-flow--un-workflow-git-équilibré) ou le **ticket** associé
+
+Si votre équipe ou vos projets commencent à s'agrandir, il pourrait être nécessaire de structurer plus formellement vos postmortems. Le modèle de postmortem proposé par Atlassian est un bon exemple[^AtlassianPostmortem].
+
+Pour les incidents mineurs ou les bugs que vous rencontrez au quotidien, installez un service de question/réponse (Q&A) comme [_Scoold_](https://scoold.com/) ou [_question2answer_](https://github.com/q2a/question2answer). Il peut référencer des problèmes techniques (ex: "Comment résoudre un conflit de dépendances") ou des questions plus générales (ex: Q: "Je n'arrive pas à me connecter au service X". A: "Avez-vous pensé à vous inscrire à cette URL ?"). Grâce à lui, vos SRE auront une liste de problèmes mineurs à résoudre à l'avenir. Alternative à _StackOverflow_, ce type de service permet aussi à vos développeurs de poser des questions aux autres collaborateurs de l'entreprise, en toute confidentialité.
+
+#### Le postmortem pour fidéliser et attirer
+
+Comme évoqué dans le chapitre "[Investiguer les incidents](#investiguer-les-incidents)", publier ses travaux publiquement permet de voir son travail reconnu par la communauté. Cette pratique améliore aussi la fidélisation en faisant permettant au collaborateur de développer sa notoriété.
+
+> Le vidéaste Bastien MARÉCAUX (connu sous le pseudo _Basti UI_) introduit la notion de "télétralive", mix de "télétravail" et de "live". Il diffuse publiquement des sessions de travail en direct sur la plateforme Twitch, pour ses clients l'ayant accepté[^Teletralive]. Cela démontre l'importance de la reconnaissance que peut apporter le fait de publier son travail. Une tendance qui pourrait prendre de l'ampleur à l'avenir.
+
+Au delà de la perception personnelle, diffuser son travail à un public averti incite la personne derrière le nom publié à fournir un travail de qualité. Il s'agit dans un premier temps de le publier uniquement en interne aux collaborateurs de l'entreprise. Un simple message mentionnant l'existence du postmortem dans la messagerie de l'entreprise peut suffire.
+
+{Attirer : Transparence}
+
+{Attirer : blog postmortem Cloudflare, sreweekly.com}
+
+### Organiser sa réponse à incident
+
+Quand l'incident est important, il est impératif de s'organiser pour y faire face efficacement. Une technique efficace est celle des 3 Commandants (_3 Commanders_ ou 3Cs). Théorisée en 1968 par les pompiers, elle est ajourd'hui utilisée par les équipes SRE de Google[^3CsGoogle].
+
+TODO: Organiser la réponse à incider avec la méthode des 3Cs, fort de procédures bien établies au point précédent
 
 ### Anticiper les incidents
 
-La RCA est une méthode dite "réactive" : elle est appliquée après qu'un problème survienne. Pour tenter d'anticiper les défaillances avant qu'elles ne surviennent, il est possible de rédiger des scénarios hypothétiques d'incidents. C'est l'analyse des modes de défaillance (_failure modes and effects analysis_ ou FMEA en anglais), une méthode dite "proactive".
+#### FMEA
+
+La [RCA](#investiguer-les-incidents) est une méthode dite "réactive" : elle est appliquée après qu'un problème survienne. Pour tenter d'anticiper les défaillances avant qu'elles ne surviennent, il est possible de rédiger des scénarios hypothétiques d'incidents. C'est l'analyse des modes de défaillance (_failure modes and effects analysis_ ou FMEA en anglais), une méthode dite "proactive".
 
 En FMEA, nous essayons de formaliser visuellement une cause susceptible de provoquer une situation d'erreur, ayant pour conséquence un effet :
 
@@ -1386,23 +1479,19 @@ Pour mieux comprendre quoi inscrire en cas de rédaction d'une FMEA, prenons le 
 
 Pour un logiciel ou une la maintenance d'une infrastructure, listez les potentiels problèmes que l'équipe pourrait rencontrer à l'avenir. Créez-en des "fiches incident" incluant des scénarios hypothétiques de panne, associés aux pistes à explorer. Exemples typiques de pannes : manque d'espace disque, base de données mal migrée, sauvegarde mal exportée. Capitalisez-les dans votre base de connaissance (ex: GitLab, Confluence).
 
-Le choix d'investir du temps dans la réalisation d'FMEA ou la formalisation de RCA reste régit par vos priorités en terme de résilience. Si vous êtes une petite structure, commencez par formaliser vos RCA, puis établissez progressivement des FMEA.
+#### Premortems
 
-### Organiser sa réponse à incident
+Le premortem est un document permettant de savoir quoi faire si tel incident venait à se produire.
 
-Quand l'incident est important, il est utile de savoir comment s'organiser en équipe pour y faire face efficacement. Une technique efficace est celle des 3 Commandants (_3 Commanders_ ou 3Cs). Théorisée en 1968 par les pompiers, elle est ajourd'hui utilisée par les équipes SRE de Google[^3CsGoogle].
+TODO(flavienbwk): Rephrase
 
-TODO: Organiser la réponse à incider avec la méthode des 3Cs, fort de procédures bien établies au point précédent
+En amont du lancement d'un projet et ponctuellement au cours de la vie d'un projet, vos chefs de projets et ingénieurs doivent travailler conjointement pour lister . Cela doit devenir une habitude au cours de l'exploitation et une obligation avant le lancement d'un projet, d'un produit ou d'un nouveau service. Atlassian propose une méthode en 8 points[^AtlassianPremortemMethod] pour effectuer ce type d'analyse.
 
-### Postmortems et premortems
+TODO(flavienbwk): Premortem method
 
-TODO(flavienbwk): Un accélérateur de fidélisation. Réduction du [burnout](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262). Bonne communication pour réduire les burnouts.
+Le choix d'investir du temps dans la réalisation de premortems, de FMEA ou de postmortems reste régit par vos priorités en terme de résilience. [La recherche](https://devops.com/real-cost-downtime/) démontre néanmoins que l'indisponibilité d'un service [peut coûter cher](https://www.gremlin.com/ecommerce-cost-of-downtime/) aux grandes organisations, en atteignant en moyenne 500'000 à 1'000'000 de dollars par heure d'indisponibilité[^CostDowntimeStudy].
 
-TODO(flavienbwk): Postmortem [template](https://cloud.berwick.fr/f/169842).
-
-Quand le postmortem définit un document qui fait suite à un incident, le premortem est un document permettant de savoir quoi faire si tel incident venait à se produire. En amont du lancement d'un projet et tout au long de la gestion de votre production, demandez à vos équipes de rédiger des premortems. Vos chefs de projets et ingénieurs doivent travailler conjointement pour écrire ces "fiches scénario". Cela doit devenir une habitude au cours de l'exploitation et une obligation avant le lancement d'un projet, d'un produit ou d'un nouveau service. Atlassian propose une méthode en 8 points[^AtlassianPremortemMethod] pour effectuer ce type d'analyse.
-
-Il est recommandé de stocker ces documents dans un projet _git_ pour être en mesure de les éditer et de visualiser leurs modifications au cours du temps (cf. chapitre ["GitOps"](#gitops)).
+Si vous êtes une petite structure, commencez par formaliser vos RCA et rédiger des postmortems. Ensuite, établissez progressivement des FMEA et tentez de commencer vos projets par des premortems. Enfin, réalisez périodiquement des FMEA et des premortems.
 
 ### Accélérer la fidélisation
 
@@ -1437,7 +1526,7 @@ TODO(flavienbwk): Développer le [sujet](https://software.af.mil/training/devops
 
 ### Réduire les risques avec l'intégration continue
 
-TODO(flavienbwk)
+TODO(flavienbwk) : résumer pourquoi l'intégration continue permet de réduire les risques d'échec projet et d'incidents
 
 ### Design thinking
 
@@ -1457,7 +1546,7 @@ L'Armée de l'Air américaine s'est mise depuis 2019 en ordre de bataille en inv
 
 > "C'est _(la formation est)_ un investissement pour l'entreprise et pour eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix." - Nicolas CHAILLAN
 
-À l'instar de l'Armée de l'Air américaine, une méthode avait bien fonctionné dans mes précédentes expériences. Nous avions réussi à obtenir un jour de télétravail par semaine, après un temps certain à en faire comprendre le bien-fondé auprès de nos responsables. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière fournissait des statistiques sur le temps passé à se former et nos succès à la hiérarchie. Le coût de ces deux services était minime par rapport à toutes les connaissances à l'état de l'art qu'elle nous conférait.
+À l'instar de l'Armée de l'Air américaine, la solution suivante avait bien fonctionné dans l'une de mes dernières expériences : nous avions réussi à obtenir un jour de télétravail par semaine. Le faire accepter à nos responsables n'était pas simple, mais ils ont fini par l'accorder après un temps certain à leur en faire comprendre le bien-fondé. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière permettait à notre hiérarchie de visualiser les statistiques sur le temps passé à se former et les cours achevés. Le coût de ces deux services était minime par rapport à toutes les connaissances qu'ils nous conféraient.
 
 Si vous avez déjà des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, de pratiquer. C'est ce que j'ai observé de plus efficace (donc rentable) pour l'organisation : investissez du temps dans la formation de votre personnel. Par exemple, donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services, pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
 
@@ -1572,18 +1661,18 @@ Toutes ces tâches contribuent en la réduction de la dette technique de votre b
 
 Il est courant d'entendre parler de _pipeline_ d'intégration continue (en français "chaîne d'intégration continue"), qui accompagne d'autres termes dans l'univers des technologies de CI/CD. Définissons les plus courants :
 
-- Job : une tâche/script lancée automatiquement lors de l'évènement déclencheur
-- Pipeline : enchaînement de _jobs_
-- Stages : les trois étapes d'une chaîne (_pipeline_) d'intégration continue (_build_, _test_, _deploy_)
-- Build : étape contenant les _jobs_ s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
-- Test : jobs de vérification de la conformité du code / de la contribution
+- **Job** : une tâche/script lancée automatiquement lors de l'évènement déclencheur
+- **Pipeline** : enchaînement de _jobs_
+- **Stages** : les trois étapes d'une chaîne (_pipeline_) d'intégration continue (_build_, _test_, _deploy_)
+- **Build** : étape contenant les _jobs_ s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
+- **Test** : jobs de vérification de la conformité du code / de la contribution
   - Exemples :
     - Vérifier que le code est maintenable : grâce à des outils comme [_SonarQube_](https://www.sonarsource.com/products/sonarqube) ou des _linters_[^linter] comme [_black_](https://github.com/psf/black) pour Python ou [_KubeLinter_](https://github.com/stackrox/kube-linter) pour les configurations Kubernetes.
     - Vérifier que la contribution n'introduit pas de faille de sécurité : avec des outils comme _Quay Clair_ ou _Jfrog X-Ray_.
     - Vérifier que le code respecte les tests unitaires (cf. chapitre ["Développement piloté par tests"](#développement-piloté-par-tests)).
     - Vérifier la conformité de la documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. _Istio_ a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
     - Vérifier la composition d'un conteneur Docker.
-- Deploy : jobs prenant des actions affectant l'infrastructure, la production (cf. chapitre "[Déploiement Continu](#déploiement-continu-cd)").
+- **Deploy** : jobs prenant des actions affectant l'infrastructure, la production (cf. chapitre "[Déploiement Continu](#déploiement-continu-cd)").
   - Exemples :
     - Déployer la mise à jour d'un logiciel.
     - Ajouter une dépendance de développement conforme.
@@ -1611,7 +1700,7 @@ Les outils comme _ArgoCD_, _Flux_, _Spinnaker_ ou _Jenkins X_ permettent de suiv
 
 ![Interface d'ArgoCD pour le suivi du déploiement d'un logiciel](images/2022_argocd_interface.png)
 
-Basé sur la même mécanique, il est possible de déployer simultanément plusieurs instances d'un logiciel. Par exemple lors d'une revue de code dans une _merge request_, vous pouvez [configurer _ArgoCD_](https://www.youtube.com/watch?v=cpAaI8p4R60) pour qu'il déploie temporairement et de manière isolée cette version "en évaluation" du logiciel. Cette technique permet aux ingénieurs de rapidement tester un logiciel, au lieu de le déployer par leurs propres moyens. Les URLs ont souvent cette forme : `wwww-xxxx-yyyy-zzzz.staging.monapp.com`.
+Basé sur la même mécanique, il est possible de déployer simultanément plusieurs instances d'un logiciel. Par exemple lors d'une revue de code dans une _merge request_, vous pouvez [configurer _ArgoCD_](https://www.youtube.com/watch?v=cpAaI8p4R60) pour qu'il déploie temporairement et de manière isolée cette version "en évaluation" du logiciel. Cette technique permet aux ingénieurs de rapidement tester un logiciel, au lieu de le déployer par leurs propres moyens. Les URLs ont souvent cette forme : `wxyz.staging.monapp.com`.
 
 Avec ces mêmes outils, vous pouvez [adopter une stratégie de déploiement blue/green et l'automatiser](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d). Cette technique fait basculer progressivement les clients vers la nouvelle version d'un logiciel, en s'assurant que cette dernière fonctionne correctement. L'idée est d'instancier la nouvelle version du logiciel (green), en parallèle avec l'actuelle (blue). Le système dirige alors une proportion limitée de clients vers le nouveau logiciel (ex: 10%). On augmente progressivement cette proportion au cours d'une période définie, tout en mesurant le taux d'erreurs obtenu pour chaque requête. Si le taux est identique ou inférieur au précédent déploiement, on laisse le logiciel se déployer pour l'ensemble des clients. Sinon, le déploiement est annulé et on laisse l'ancienne version en production.
 
@@ -1897,6 +1986,8 @@ TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine lo
 
 TODO(flavienbwk): Outils ITOps AI-based qui peuvent changer notre futur (Copilot, GPT3) : https://www.itprotoday.com/it-operations/4-ways-ai-assisted-coding-can-benefit-itops-engineers
 
+TODO(flavienbwk): maturity models https://dsomm.timo-pagel.de/, https://www.datadoghq.com/blog/devsecops-maturity-model-self-assessment/
+
 Je m'attends à ce que les standards en matière de sécurité continuent d'évoluer à un rythme effréné. Et je l'espère, aussi vite que la vitesse à laquelle progressent les menaces informatiques. Cela plaide d'autant plus en faveur d'une transformation des organisations, leur permettant de continuer à innover, sans être contraintes de ralentir leur rythme face à la crainte d'être attaquées.
 
 Quand on maîtrise, on ne craint plus. Et les techniques de l'industrie permettent aujourd'hui de maîtriser.
@@ -1939,7 +2030,7 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
 - **EdgeOps** : TODO(flavienbwk)
 - **ChatOps** : TODO(flavienbwk): Chat Operations (ChatOps) is the use of chat clients and real-time chat tools to facilitate software development and operations. Also known as "conversation-driven collaboration" or “conversation-driven DevOps,” ChatOps is designed for fast and simple instant messaging between development team members.
-- **LiveOps** (Live Game Operations) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'intérêt pour un jeu vidéo : de son lancement à son retrait. Dit vulgairement, c'est "maintenir la hype" autour d'un jeu. Les activités comprennent le suivi du nombre de joueurs, leur temps de jeu ou encore le suivi des avis. Elles incluent également des activités de promotion, développement de l'engagement, l'organisation de tournois et l'assistance faite aux joueurs.
+- **LiveOps** (Live Game Operations) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'intérêt pour un jeu vidéo : de son lancement à son retrait. Dit vulgairement, c'est "maintenir la hype" autour d'un jeu : suivi du nombre de joueurs, du temps de jeu ou encore des avis. Les missions incluent aussi la promotion, le développement de l'engagement, l'organisation de tournois et l'assistance faite aux joueurs.
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
@@ -2200,7 +2291,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^RonWestrumTypologyOfOrganisationCulture]: WESTRUM, Ron. ["A typology of organisation culture", doi:10.1136/qshc.2003.009522](http://dx.doi.org/10.1136/qshc.2003.009522). 2004.
 
-[^CourseraSRECourse]: Google Cloud. [Developing a Google SRE Culture](https://www.coursera.org/learn/developing-a-google-sre-culture-fr), module 4. coursera.org.
+[^CourseraSRECourse]: Google Cloud. [Developing a Google SRE Culture](https://www.coursera.org/learn/developing-a-google-sre-culture-fr), module 4. _coursera.org_.
 
 [^ATheoryOfBlameResearch]: MALLE, Bertram; GUGLIELMO, Steve; MONROE, Andrew. [_A Theory of Blame. Psychological Inquiry._ 25. 147-186. doi:10.1080/1047840X.2014.877340](https://www.researchgate.net/publication/266394032_A_Theory_of_Blame). 2014.
 
@@ -2235,8 +2326,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^GitLabCustomTemplate]: [_GitLab's custom instance-level projects templates_](https://docs.gitlab.com/ee/user/admin_area/custom_project_templates.html)
 
 [^DORAsFourKeyMetrics]: [_Google Cloud DORA's 4 key metrics for measuring DevOps performances_](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance).
-
-[^OpenAIGPT3]: [OpenAI's GPT3](https://beta.openai.com/) on `text-davinci-002` model. _beta.openai.com_.
 
 [^DORACDLooselyCoupledArchitecture]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Technical practices and CD", page 33. 2022.
 
@@ -2374,7 +2463,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^Artifactory]: _JFrog Artifactory_ est une plateforme logicielle pour héberger et gérer tous les artéfacts, binaires, paquets, fichiers, conteneurs et composants utilisés dans sa chaîne logicielle. _jfrog.com/artifactory_.
 
-[^Distribution]: _Distribution_ est un logiciel permettant de stocker et distribuer des images de conteneurs. _github.com/distribution/distribution_.
+[^Distribution]: _Distribution_ est un logiciel permettant de stocker et distribuer des images de conteneurs. Anciennement "_Docker Registry_". _github.com/distribution/distribution_.
 
 [^Nexus]: _Sonatype Nexus_ est une plateforme logicielle pour héberger et gérer ses artéfacts, binaires, paquets et fichiers utilisés dans sa chaîne logicielle. _sonatype.com/products/nexus-repository_.
 
@@ -2543,3 +2632,13 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^3CsGoogle]: Google. Chapitre "[_Incident Command System_](https://sre.google/workbook/incident-response/)", _SRE Book_. _sre.google_.
 
 [^PilotTests]: Tests pilotes : "type de test logiciel vérifiant tout ou partie d'un système dans des conditions réelles d'exploitation (en production)". Source : [_guru99.com_](https://www.guru99.com/pilot-testing.html)
+
+[^Froggit]: Forge logicielle développée et hébergée en France. _froggit.fr_.
+
+[^CostDowntimeStudy]: STEPHEN, Elliot. "_DevOps and the cost of downtime: Fortune 1000 best practice metrics quantified_", International Data Corporation (IDC). 2014.
+
+[^Teletralive]: [Excelsior](https://www.youtube.com/@excelsior3838). Vidéo YouTube "[Le Canap' - Ui designer, youtubeur et streamer : Basti UI lance le « télétralive »](https://youtu.be/wthom1nsq5E?t=990)". 2022.
+
+[^GooglePostmortems]: Google Cloud. [Developing a Google SRE Culture](https://www.coursera.org/learn/developing-a-google-sre-culture-fr), module 3. _coursera.org_.
+
+[^AtlassianPostmortem]: Modèle de postmortem à retrouver sur _atlassian.com/incident-management/postmortem/templates_
