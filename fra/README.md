@@ -2,6 +2,14 @@
 
 ![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureaux modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover.png)
 
+# Avertissements
+
+Ce livre inclut de nombreuses références et de nombreux liens vers des personnes, produits, entreprises et organisations. Les opinions exprimées dans ce livre sont celles de l'auteur et ne reflètent en aucun cas les opinions des organisations mentionnées.
+
+L'auteur n'a aucune affiliation avec les entreprises mentionnées dans ce livre, que ce soit sous forme de partenariat, de parrainage ou de tout autre arrangement. Toute mention d'une entreprise ou d'un produit dans ce livre est purement pour des fins d'information et ne doit pas être interprétée comme une promotion ou une publicité.
+
+_Je crois que la transparence est essentielle dans tout travail de recherche et d'écriture, et je souhaite que mes lecteurs soient informés de mon absence d'affiliation avec les organisations qui sont citées._
+
 # Introduction
 
 De nombreuses organisations ont déjà entamé leur transformation dans le but d'atteindre un fonctionnement en mode "DevOps". Ce mouvement culturel et organisationnel s'inscrit dans la dynamique d'explosion des usages du numérique pour tous les types de structures. Elle implique pour les entreprises de répondre au besoin opérationnel toujours plus vite et de manière sécurisée, pour garder une longueur d'avance face à une concurrence toujours plus féroce.
@@ -1451,11 +1459,15 @@ Comme évoqué dans le chapitre "[Investiguer les incidents](#investiguer-les-in
 
 > Le vidéaste Bastien MARÉCAUX (connu sous le pseudo _Basti UI_) introduit la notion de "télétralive", mix de "télétravail" et de "live". Il diffuse publiquement des sessions de travail en direct sur la plateforme Twitch, pour ses clients l'ayant accepté[^Teletralive]. Cela démontre l'importance de la reconnaissance que peut apporter le fait de publier son travail. Une tendance qui pourrait prendre de l'ampleur à l'avenir.
 
-Au delà de la perception personnelle, diffuser son travail à un public averti incite la personne derrière le nom publié à fournir un travail de qualité. Il s'agit dans un premier temps de le publier uniquement en interne aux collaborateurs de l'entreprise. Un simple message mentionnant l'existence du postmortem dans la messagerie de l'entreprise peut suffire.
+Au delà de la perception personnelle, [diffuser son travail](https://github.com/danluu/post-mortems) à un public averti incite la personne derrière le nom publié à fournir un travail de qualité[^TransparencyPerformance]. Il s'agit dans un premier temps de le publier uniquement en interne aux collaborateurs de l'entreprise. Un simple message mentionnant l'existence du postmortem dans la messagerie de l'entreprise peut suffire.
 
-{Attirer : Transparence}
+La transparence est aussi un excellent moyen d'attirer les talents. Dans l'industrie, les entreprises ayant le courage de documenter et publier leurs incidents sont reconnues fiables. En effet, elles n'ont pas peur de le faire car leurs procédures sont sérieuses et leurs travaux faits avec soin. Cela donne confiance et inspire les talents.
 
-{Attirer : blog postmortem Cloudflare, sreweekly.com}
+De [nombreuses entreprises](https://github.com/kilimchoi/engineering-blogs) telles que [Spotify](https://engineering.atspotify.com/), [LinkedIn](https://engineering.linkedin.com/blog), [Meta](https://engineering.fb.com), [Airbnb](https://medium.com/airbnb-engineering) ou [Capgemini](https://capgemini.github.io/) partagent des articles sur leur blog respectif. Il peut être sujet de postmortems, mais aussi de bonnes pratiques internes ou de défis surmontés.
+
+Par exemple, Cloudflare est reconnue pour ses postmortems de qualité qu'elle publie régulièrement sur [son blog](https://blog.cloudflare.com/tag/postmortem/)[^PostmortemCloudflare]. Des lettres d'information comme _SRE Weekly_ répertorient également des incidents publics chaque semaine.
+
+Un postmortem public est souvent moins fourni qu'un postmortem interne. Dans le premier cas, on ne fera qu'un résumé du second, en enlevant les parties sensibles.
 
 ### Organiser sa réponse à incident
 
@@ -1465,37 +1477,98 @@ TODO: Organiser la réponse à incider avec la méthode des 3Cs, fort de procéd
 
 ### Anticiper les incidents
 
-#### FMEA
+Nous allons voir dans ce chapitre deux techniques pour anticiper autant que possible les incidents : le premortem et l'analyse de cause à effets.
 
-La [RCA](#investiguer-les-incidents) est une méthode dite "réactive" : elle est appliquée après qu'un problème survienne. Pour tenter d'anticiper les défaillances avant qu'elles ne surviennent, il est possible de rédiger des scénarios hypothétiques d'incidents. C'est l'analyse des modes de défaillance (_failure modes and effects analysis_ ou FMEA en anglais), une méthode dite "proactive".
+- Le premortem permet de répondre à la question : "Quels éléments pourraient faire que cette architecture/approche soit un échec ?"
+- L'analyse de cause à effets permet de répondre à la question : "Quels incidents peuvent se produire avec cette architecture/approche ?"
 
-En FMEA, nous essayons de formaliser visuellement une cause susceptible de provoquer une situation d'erreur, ayant pour conséquence un effet :
+Si plusieurs approches sont envisageables, effectuez d'abord un DACI (cf. chapitre "[Le modèle DACI](#le-modèle-daci)"). Une fois votre choix pris, l'équipe a une intuition sur l'approche à mener : c'est le moment de la mettre à l'épreuve.
 
-![Illustration du principe de relation de cause à effet](./images/2023_fmea_simple.jpg)
-
-Pour mieux comprendre quoi inscrire en cas de rédaction d'une FMEA, prenons le scénario du dysfonctionnement d'une imprimante de bureau :
-
-![Schéma d'une analyse de cause à effet (FMEA) pour des problèmes de fonctionnement d'une imprimante](./images/2023_fmea_printer_jam.jpg)
-
-Pour un logiciel ou une la maintenance d'une infrastructure, listez les potentiels problèmes que l'équipe pourrait rencontrer à l'avenir. Créez-en des "fiches incident" incluant des scénarios hypothétiques de panne, associés aux pistes à explorer. Exemples typiques de pannes : manque d'espace disque, base de données mal migrée, sauvegarde mal exportée. Capitalisez-les dans votre base de connaissance (ex: GitLab, Confluence).
+L'analyse de cause à effets intervient elle sur les considérations techniques, une fois que la décision sur l'approche à adopter ait été prise.
 
 #### Premortems
 
-Le premortem est un document permettant de savoir quoi faire si tel incident venait à se produire.
+En amont du lancement d'un projet, vos chefs de projets et ingénieurs doivent se réunir pour lister les hypothèses de son échec.
 
-TODO(flavienbwk): Rephrase
+Le premortem est une méthodologie de gestion de projet qui consiste à imaginer que le projet a échoué, avant même qu'il ne commence. Il se traduit par un document listant les incidents auxquels l'équipe doit se préparer pour que le projet réussisse.
 
-En amont du lancement d'un projet et ponctuellement au cours de la vie d'un projet, vos chefs de projets et ingénieurs doivent travailler conjointement pour lister . Cela doit devenir une habitude au cours de l'exploitation et une obligation avant le lancement d'un projet, d'un produit ou d'un nouveau service. Atlassian propose une méthode en 8 points[^AtlassianPremortemMethod] pour effectuer ce type d'analyse.
+Prenons un exemple : "Notre équipe administre aujourd'hui ses infrastructures avec des méthodes traditionnelles. Nous voulons établir un plan pour travailler en mode DevOps."
 
-TODO(flavienbwk): Premortem method
+1. **Organisez une réunion** avec les parties-prenantes. Demandez-leur de s'imaginer dans 1 an et que ce plan de transformation a échoué.
+2. Créez un **document collaboratif** (ex: Google Docs) et définissez les titres suivants :
+    - Facteurs potentiels d'échec
+    - Solutions
+    - Facteurs les plus dangereux
+    - Plan d'action
+3. **Facteurs potentiels d'échec**
+    - Raisons qui pourraient mener le projet à l'échec.
+    - Ex : manque de soutien de la part de la hiérarchie, difficulté à intégrer les pratiques DevOps aux processus et systèmes existants, formation ou expertise insuffisante des équipes aux technologies Cloud, résistance au changement de certains membres...
+4. **Solutions**
+    - Pour chaque facteur d'échec, imaginez des solutions que vous pourriez mettre en place dès maintenant pour réduire le risque d'échec du projet.
+    - Ex : réaliser des présentations de sensibilisation, commencer par une preuve de concept sur un cas d'usage précis, préparer un plan de formation, trouver de premiers expérimentateurs...
+5. **Facteurs les plus dangereux**
+    - Lister les facteurs les plus risqués que l'équipe peut quand même influencer.
+6. **Plan d'action**
+    - Lister les solutions aux facteurs les plus dangereux et en faire un plan d'action. Chaque solution devient une tâche et doit être attribuée à un membre, avec une date butoir.
+
+Voici un autre exemple plus technique : "Notre équipe déploie ses logiciels avec Docker Compose. Elle veut maintenant les déployer avec Kubernetes."
+
+1. **Organisez une réunion** avec les parties-prenantes. Demandez-leur de s'imaginer dans quelques mois et que Kubernetes demande finalement beaucoup d'efforts sans apporter plus d'avantages.
+2. Créez le **document collaboratif**
+3. Inscrivez les **facteurs potentiels d'échec**
+    - Ex : formation ou expertise insuffisante de l'équipe à Kubernetes, documentation en ligne insuffisante pour nos cas d'usage, complexité d'intégration dans notre environnement de développement, vulnérabilités de sécurité dû à la complexité de maintenance, surcoût RH pour la maintenance de l'ancien système le temps de la transition...
+4. Inscrivez les **solutions**
+    - Ex : préparer un plan de formation, payer pour l'appui de consultants spécialisés dans le Cloud, installer un service de mise à jour automatique du cluster, embaucher un apprenti pour constituer une première version du cluster...
+5. Inscrivez les **facteurs les plus dangereux**
+    - Ex : formation ou expertise insuffisante de l'équipe à Kubernetes, vulnérabilités de sécurité dû à la complexité de maintenance.
+6. Constituez votre **plan d'action**
+    - Ex : préparer un plan de formation (à présenter dans 1 semaine), contractualiser avec la société X pour obtenir un appui Cloud spécialisé (à réaliser sous 15 jours).
+
+#### Analyse de cause à effets
+
+La [RCA](#investiguer-les-incidents) est une méthode dite "réactive" : elle est menée après qu'un problème survienne. Pour tenter d'anticiper les défaillances avant qu'elles ne surviennent, il est possible de réaliser une analyse des modes de défaillance (_failure modes and effects analysis_ ou FMEA en anglais). Créée en 1949 par l'armée américaine[^FMEAHistory] puis reprise dans l'industrie automobile, elle est une méthode dite "proactive".
+
+Le résultat de cette analyse est un tableau listant les états d'erreur d'un produit ou d'un logiciel, priorisés par risque. En fonction des conséquences qu'un risque peut produire, les équipes de conception priorisent le développement des mécanismes empêchant qu'il se produise.
+
+En FMEA, il est possible de représenter visuellement une cause susceptible de provoquer une situation d'erreur :
+
+![Illustration du principe de relation de cause à effet](./images/2023_fmea_simple.jpg)
+
+On peut ainsi établir une chaîne de causes à effets, pour mieux se représenter les conséquence d'un problème. Prenons par exemple le scénario du dysfonctionnement d'une imprimante de bureau :
+
+![Schéma d'une analyse de cause à effet (FMEA) pour des problèmes de fonctionnement d'une imprimante](./images/2023_fmea_printer_jam.jpg)
+
+Vous pouvez faire de même avec des scénarios de dysfonctionnement d'un logiciel ou d'une infrastructure. Etablissez un tableau de 7 colonnes. Pour chaque hypothèse d'incident, l'auteur doit déterminer :
+
+- **La situation d'erreur**
+  - Ex: "La mise à jour du logiciel a échoué sur l'un des serveurs"
+- Le ou **les effets**
+  - Ex: "Les requêtes client atteignant ce serveur échoueront. Cela représente 20% de nos requêtes en raison de notre architecture de load-balancing."
+- La **probabilité**
+  - Indiquer de 1 à 10, la probabilité que l'évènement se produise.
+  - Ex: "3"
+- La **sévérité**
+  - Indiquer de 1 à 10, la sévérité du problème au cas où l'évènement se produise.
+  - Ex: "7"
+- L'impossibilité de **détection**
+  - Indiquer de 1 à 10, la probabilité que l'évènement ne puisse pas être détecté.
+  - Ex: "1"
+- Le **niveau de risque**
+  - Produit de la probabilité, sévérité et détection.
+  - Ex: "(3\*7\*1) = 21"
+- Les **contremesures**
+  - Décrire comment réagir au cas où l'évènement venait à se produire.
+  - Ex: "Configurer le load-balancer pour exclure le serveur où a échoué la mise à jour. Restaurer la version du logiciel à une version antérieure. Rétablir la configuration du load-balancer dans sa version initiale."
+
+A partir de ce tableau, priorisez les tâches de vos équipes pour qu'elles travaillent à anticiper les situations les plus critiques.
+
+Pour la maintenance d'une infrastructure, vous pouvez commencer par créer des "fiches incident" incluant des scénarios de panne associés aux pistes à explorer. Exemples typiques de pannes : manque d'espace disque, base de données mal migrée, sauvegarde mal exportée. Capitalisez-les dans votre base de connaissance (ex: GitLab, Confluence).
+
+### Instruire sa réponse à incident
+
+Si vous êtes une petite structure, commencez par formaliser vos RCA et rédiger des postmortems. Ensuite, établissez progressivement des FMEA et tentez de commencer vos projets par des premortems. Enfin, réalisez périodiquement des FMEA.
 
 Le choix d'investir du temps dans la réalisation de premortems, de FMEA ou de postmortems reste régit par vos priorités en terme de résilience. [La recherche](https://devops.com/real-cost-downtime/) démontre néanmoins que l'indisponibilité d'un service [peut coûter cher](https://www.gremlin.com/ecommerce-cost-of-downtime/) aux grandes organisations, en atteignant en moyenne 500'000 à 1'000'000 de dollars par heure d'indisponibilité[^CostDowntimeStudy].
-
-Si vous êtes une petite structure, commencez par formaliser vos RCA et rédiger des postmortems. Ensuite, établissez progressivement des FMEA et tentez de commencer vos projets par des premortems. Enfin, réalisez périodiquement des FMEA et des premortems.
-
-### Accélérer la fidélisation
-
-TODO(flavienbwk): [Spotify engineering culture](https://www.youtube.com/watch?v=4GK1NDTWbkY). [HR-Ops](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262).
 
 ## Réduire le coût du changement
 
@@ -1623,7 +1696,7 @@ Pour un logiciel historique, il est recommandé d'au moins adopter l'approche TL
 
 Dans tous les cas, l'idée est de tester son code pour éviter les mauvaises surprises en production. Selon _Atlassian_[^WhatIsCodeCoverage], il est recommandé de couvrir 80% de son code par des tests (_code coverage_ en anglais).
 
-Le TDD est recommandé dans certains cas, mais pas tous. Par exemple, si votre secteur d'activité est réglementé - comme celui des banques ou de la santé - il est impératif de tester votre code. La conséquence du disfonctionnement de votre logiciel peut impacter la responsabilité juridique de votre organisation. Si votre logiciel est destiné à être utilisé et maintenu de nombreuses années - comme dans la défense - il est recommandé d'adopter le TDD. En revanche, si vous êtes une start-up en étape de preuve de concept, le disfonctionnement d'un logiciel peut avoir moins de conséquence et vous pouvez vous permettre de privilégier votre productivité. Plus votre structure grandit, plus le nombre de développeurs qui contribuent à votre logiciel augmente, plus il devient nécessaire de tester votre code. Par exemple, pour un nouveau contributeur, un test permet d'avoir un exemple de la manière dont une fonction est utilisée, ce qui facilite la compréhension du code.
+Le TDD est recommandé dans certains cas, mais pas tous. Par exemple, si votre secteur d'activité est réglementé - comme celui des banques ou de la santé - il est impératif de tester votre code. La conséquence du dysfonctionnement de votre logiciel peut impacter la responsabilité juridique de votre organisation. Si votre logiciel est destiné à être utilisé et maintenu de nombreuses années - comme dans la défense - il est recommandé d'adopter le TDD. En revanche, si vous êtes une start-up en étape de preuve de concept, le dysfonctionnement d'un logiciel peut avoir moins de conséquence et vous pouvez vous permettre de privilégier votre productivité. Plus votre structure grandit, plus le nombre de développeurs qui contribuent à votre logiciel augmente, plus il devient nécessaire de tester votre code. Par exemple, pour un nouveau contributeur, un test permet d'avoir un exemple de la manière dont une fonction est utilisée, ce qui facilite la compréhension du code.
 
 En somme, il s'agit de trouver l'équilibre entre productivité, garantie de bon fonctionnement et contrôle de la dette technique.
 
@@ -2642,3 +2715,9 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^GooglePostmortems]: Google Cloud. [Developing a Google SRE Culture](https://www.coursera.org/learn/developing-a-google-sre-culture-fr), module 3. _coursera.org_.
 
 [^AtlassianPostmortem]: Modèle de postmortem à retrouver sur _atlassian.com/incident-management/postmortem/templates_
+
+[^TransparencyPerformance]: BERGGREN, Erik; BERNSHTEYN, Rob. "_Organizational transparency drives company performance_". Journal of management development 26, no. 5 411-417. 2007.
+
+[^PostmortemCloudflare]: Blog où Cloudflare publie ses postmortems : _blog.cloudflare.com/tag/postmortem_
+
+[^FMEAHistory]: US Department of Defense. "_MIL-P-1629 – Procedures for performing a failure mode effect and critical analysis. Department of Defense (US). MIL-P-1629_". 1949.
