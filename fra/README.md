@@ -1417,13 +1417,13 @@ Pour la première partie, définissez les titres suivants :
   - Prendre la date d'alerte si le début de l'incident est indéfini
 - **Auteurs**
   - Ex: "Élise DUPONT (@edupont) - Antoine MARTIN (@amartin)"
-  - Indiquer idéalement le pseudo de la forge logicielle
+  - Auteurs du postmortem. Indiquer idéalement le pseudo de la forge logicielle.
 - **État**
   - Valeurs possibles : en cours d'écriture, en cours de relecture, relu, publié en interne, publié publiquement
 - **Résumé**
   - Résumer en cinq phrases maximum l'incident, sa durée et sa cause.
 - **Impact**
-  - Quels utilisateurs ont été impactés ? Dans quelle proportion ? Y a-t-il eu des pertes de données, de la latence, une indisponibilité ? Incluez également l'impact sur les revenus s'il y a lieu.
+  - Quels utilisateurs/clients ont été impactés ? Dans quelle proportion ? Sur quel réseau (intranet ou Internet) ? Y a-t-il eu des pertes de données, de la latence, une indisponibilité ? Incluez également l'impact sur les revenus s'il y a lieu.
 - **Détection**
   - Comment l'incident a été détecté ? (outils d'observabilité, page d'état des services, appel client, collaborateur de l'entreprise, news en ligne ?)
 - **Source(s) du problème**
@@ -1433,12 +1433,12 @@ Pour la première partie, définissez les titres suivants :
   - Décrire l'action ayant mené à l'incident
   - Ex: "Un administrateur a lancé une commande ayant supprimé un fichier critique par erreur"
 - **Résolution**
-  - Décrire les actions immédiates prises pour résoudre le problème sur le court-terme. Puis décrire les actions pérennes prises pour adresser la source du problème.
+  - Lister les actions immédiates prises pour résoudre le problème sur le court-terme. Puis lister les actions pérennes prises pour adresser la source du problème.
 - **Leçons apprises**
   - Décrire ce qu'il s'est bien et mal passé
-    - Aide: Est-ce que l'incident a été détecté rapidement ou a-t-il pris un moment pour qu'un humain s'en rende compte ? Est-ce que l'équipe s'est bien organisée, ou y a-t-il eu des problèmes de communication ? Est-ce que les procédures étaient claires, ou est-ce que les ingénieurs ne savaient pas ou trouver d'aide ?
+    - Est-ce que l'incident a été détecté rapidement ou a-t-il pris un moment pour qu'un humain s'en rende compte ? Est-ce que l'équipe s'est bien organisée, ou y a-t-il eu des problèmes de communication ? Est-ce que les procédures étaient claires, ou est-ce que les ingénieurs ne savaient pas ou trouver d'aide ?
   - Décrire ce sur quoi nous avons eu de la chance / les surprises
-    - Aide: parfois, un incident ne s'est pas passé aussi mal qu'on aurait pu le penser. Et quelque chose s'est peut-être bien passé sans que nous l'ayons préparé. Indiquez-le afin que vous puissiez mettre en place de nouveaux dispositifs pour ne pas compter sur la chance la prochaine fois.
+    - Parfois, l'incident ne s'est pas passé aussi mal qu'on aurait pu le penser. Et quelque chose s'est peut-être bien passé sans l'avoir prévu. Indiquez-le pour mettre en place de nouveaux dispositifs afin de ne pas compter sur la "chance" à l'avenir.
 
 La deuxième partie décrit ce que votre équipe pourrait faire différemment la prochaine fois. Conclusion de votre postmortem, elle liste les actions à prendre pour que les problèmes ne se reproduisent pas. Ne vous concentrez pas uniquement sur la correction des bugs. Incluez aussi les changements de procédure nécessaires pour réduire l'impact d'incidents similaires.
 
@@ -1471,9 +1471,30 @@ Un postmortem public est souvent moins fourni qu'un postmortem interne. Dans le 
 
 ### Organiser sa réponse à incident
 
-Quand l'incident est important, il est impératif de s'organiser pour y faire face efficacement. Une technique efficace est celle des 3 Commandants (_3 Commanders_ ou 3Cs). Théorisée en 1968 par les pompiers, elle est ajourd'hui utilisée par les équipes SRE de Google[^3CsGoogle].
+Quand l'incident est d'ampleur, il est impératif de s'organiser pour y faire face efficacement. Une technique efficace est celle des 3 Commandants (_3 Commanders_ ou 3Cs). Théorisée en 1968 par les pompiers sous le nom de [système de commandement des incidents](https://fr.wikipedia.org/wiki/Incident_Command_System) (_Incident Command System_, ICS)[^ICSFirefighters], elle a été adaptée aux incidents informatiques. Ajourd'hui, elle est utilisée par les équipes SRE de Google[^3CsGoogle].
 
-TODO: Organiser la réponse à incider avec la méthode des 3Cs, fort de procédures bien établies au point précédent
+Lorsqu'un incident important se produit, il faut réussir dans l'urgence à : coordonner les tâches, résoudre l'incident et communiquer. Le tout en même temps. Imaginez devoir conduire une voiture en même temps que de trouver votre chemin sur une carte.
+
+_Ouch ! Le serveur gérant l'authentification de vos employés sur l'intranet vient de tomber en panne._
+
+Pour gérer la situation, désignez 3 personnes pour les 3 rôles suivants :
+
+1. Le **commandant de l'incident** (_Incident Commander_, **IC**)
+   - Il coordonne qui fait quoi en déléguant les tâches à faire. Il désigne les 2 autres rôles : l'OL et le CL.
+   - L'IC est au départ celui qui découvre l'incident. Si quelqu'un de plus expérimenté arrive, il peut lui transmettre son rôle pour ensuite retourner au travail ou devenir le nouveau CL.
+   - Il fait au besoin appel à des renforts et explique au reste de l'équipe comment elle peut continuer à travailler.
+2. Le **responsable de la communication** (_Communications Lead_, **CL**)
+   - Il s'occupe de gérer la _status page_ et d'informer les employés ou les clients ainsi que la hiérarchie de l'état d'avancée de l'incident.
+   - Il est l'interface entre l'équipe gérant l'incident et l'extérieur.
+   - Son objectif est de protéger l'OL de sollicitations extérieures.
+3. Le **responsable des opérations** (_Operations Lead_, **OL**)
+   - Il résout le problème et écrit les notes pour le postmortem.
+   - Il réfère à l'IC pour demander des renforts.
+   - Il communique l'état d'avancée de l'incident au CL.
+
+Dans les petites équipes, l'IC occupe souvent les 3 rôles. Mais vous devez être préparé à déléguer ces tâches en cas d'incident grave.
+
+Cette technique doit faire partie de votre procédure de réponse à incident. Veillez à ce qu'elle soit clairement définie dans votre base de connaissance pour que vos équipes sachent comment réagir. Veillez à  entraîner vos équipes à ce type de réponse à incident (cf. chapitre "[Évaluer sa sécurité et s'entraîner](#évaluer-sa-sécurité-et-sentraîner)").
 
 ### Anticiper les incidents
 
@@ -1482,9 +1503,9 @@ Nous allons voir dans ce chapitre deux techniques pour anticiper autant que poss
 - Le premortem permet de répondre à la question : "Quels éléments pourraient faire que cette architecture/approche soit un échec ?"
 - L'analyse de cause à effets permet de répondre à la question : "Quels incidents peuvent se produire avec cette architecture/approche ?"
 
-Si plusieurs approches sont envisageables, effectuez d'abord un DACI (cf. chapitre "[Le modèle DACI](#le-modèle-daci)"). Une fois votre choix pris, l'équipe a une intuition sur l'approche à mener : c'est le moment de la mettre à l'épreuve.
+Si plusieurs approches sont envisageables, effectuez d'abord un DACI (cf. chapitre "[Le modèle DACI](#le-modèle-daci)"). Une fois votre choix pris, l'équipe a une intuition sur l'approche à mener : c'est le moment de la mettre à l'épreuve avec le premortem.
 
-L'analyse de cause à effets intervient elle sur les considérations techniques, une fois que la décision sur l'approche à adopter ait été prise.
+L'analyse de cause à effets (FMEA) intervient elle sur les considérations techniques, une fois que la décision sur l'approche à adopter ait été prise.
 
 #### Premortems
 
@@ -1562,11 +1583,11 @@ Vous pouvez faire de même avec des scénarios de dysfonctionnement d'un logicie
 
 A partir de ce tableau, priorisez les tâches de vos équipes pour qu'elles travaillent à anticiper les situations les plus critiques.
 
-Pour la maintenance d'une infrastructure, vous pouvez commencer par créer des "fiches incident" incluant des scénarios de panne associés aux pistes à explorer. Exemples typiques de pannes : manque d'espace disque, base de données mal migrée, sauvegarde mal exportée. Capitalisez-les dans votre base de connaissance (ex: GitLab, Confluence).
+Pour la maintenance d'une infrastructure, l'une des bonnes pratiques est de créer des "fiches incident". Chacune inclut un scénario de panne, associé aux pistes à explorer pour la résoudre. Exemples typiques de pannes : manque d'espace disque, base de données mal migrée, sauvegarde mal exportée. Capitalisez-les dans votre base de connaissance (ex: GitLab, Confluence).
 
 ### Instruire sa réponse à incident
 
-Si vous êtes une petite structure, commencez par formaliser vos RCA et rédiger des postmortems. Ensuite, établissez progressivement des FMEA et tentez de commencer vos projets par des premortems. Enfin, réalisez périodiquement des FMEA.
+Si vous êtes une petite structure, commencez par formaliser vos procédures pour mener une RCA et par rédiger des postmortems. Ensuite, établissez progressivement des FMEA et tentez de commencer vos projets par des premortems. Enfin, réalisez périodiquement des FMEA.
 
 Le choix d'investir du temps dans la réalisation de premortems, de FMEA ou de postmortems reste régit par vos priorités en terme de résilience. [La recherche](https://devops.com/real-cost-downtime/) démontre néanmoins que l'indisponibilité d'un service [peut coûter cher](https://www.gremlin.com/ecommerce-cost-of-downtime/) aux grandes organisations, en atteignant en moyenne 500'000 à 1'000'000 de dollars par heure d'indisponibilité[^CostDowntimeStudy].
 
@@ -1873,7 +1894,7 @@ Comme décrit dans le chapitre "[Un socle au service de votre résilience](#un-s
 
 Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _Cloud native_[^CloudNative], il est possible de facilement "installer" des services socle au sein d'un cluster Kubernetes. Voici une liste non-exhaustive des services qui peuvent être assurés nativement dans votre cluster et administrables de manière centralisée :
 
-1. Centralisation des logs applicatifs et réseaux (cf. [Fluentd](https://www.fluentd.org/), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/))
+1. Centralisation des logs applicatifs et réseaux (cf. [Fluentd](https://www.fluentd.org/), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/), [Jaeger](https://github.com/jaegertracing/jaeger))
 
     ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com](./images/kibana_logs.png)
 
@@ -2721,3 +2742,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^PostmortemCloudflare]: Blog où Cloudflare publie ses postmortems : _blog.cloudflare.com/tag/postmortem_
 
 [^FMEAHistory]: US Department of Defense. "_MIL-P-1629 – Procedures for performing a failure mode effect and critical analysis. Department of Defense (US). MIL-P-1629_". 1949.
+
+[^ICSFirefighters]: STAMBLER, Kimberly S; BARBERA, Joseph A. [_"Engineering the Incident Command and Multiagency Coordination Systems" Journal of Homeland Security and Emergency Management 8, no. 1_](https://doi.org/10.2202/1547-7355.1838). 2011.
