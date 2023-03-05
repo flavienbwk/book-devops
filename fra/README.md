@@ -411,7 +411,7 @@ En résumé, ils ne sont pour la plupart pas en mesure d'installer leur environn
 
 Ce qui permettra à votre équipe de se différencier, c'est l'appui que vous fournissez à vos opérateurs. Votre avantage par rapport aux équipes de développement traditionnelles ou aux industriels est que vous pouvez être en forte proximité avec les métiers de votre organisation.
 
-C'est la fameuse méthodologie « agile » à l'apposé du « cycle en V » (ou méthodologie _waterfall_): les techniques DevOps vous permettent d'être tellement réactif que vous pourrez passer plus de temps avec votre client, pour mieux comprendre son besoin et traiter ses retours ou suggestions.
+C'est la fameuse méthodologie « agile » à l'opposé du « cycle en V » (ou méthodologie _waterfall_): les techniques DevOps vous permettent d'être tellement réactif que vous pourrez passer plus de temps avec votre client, pour mieux comprendre son besoin et traiter ses retours ou suggestions.
 
 Dans de nombreuses organisations, on travaille encore en « V » : l'industriel vient voir l'équipe métier qui a émis un besoin - cette équipe propose d'ailleurs souvent une solution technique plutôt que d'exposer les problématiques qu'elle rencontre – puis un PowerPoint est créé 1 mois après pour voir le résultat du développement 4 mois après. Sur des problématiques techniques, le logiciel produit est déjà périmé et les équipes ayant fait la demande ont même déjà changé.
 
@@ -1595,7 +1595,7 @@ Le choix d'investir du temps dans la réalisation de premortems, de FMEA ou de p
 
 ### Ne pas disrupter
 
-Le DevOps est souvent présenté comme un changement de paradigme, c'est à dire une disruption dans les technologies et les pratiques. Pour éviter d'intimider les parties-prenantes à votre transformation, présentez plutôt le DevOps comme une évolution des technologies traditionnelles.
+Le DevOps est souvent présenté comme un mode d'organisation disruptif, c'est à dire un changement de paradigme dans les technologies et les pratiques. Pour éviter d'intimider les parties-prenantes à votre transformation, présentez plutôt le DevOps comme une évolution des technologies traditionnelles.
 
 Par exemple, Windows 10 (sorti en 2015) n'est qu'une [évolution de Windows NT](https://superuser.com/a/1744615/680804) 3.1 (sorti en 1993) et [comporte encore du code](https://qr.ae/prvnxD) datant des débuts de l'architecture Windows NT (conçu en 1988)[^WindowsNT].
 
@@ -1612,19 +1612,49 @@ A ces évolutions technologiques s'ajoutent des méthodologies pour maîtriser l
 
 En définissant les méthodologies vues dans ce livre et en utilisant des technologies dont l'administration est standardisées (ex: Kubernetes), vous diviserez à terme les coûts d'administration.
 
-### Eviter les erreurs
+### Eviter les erreurs de conception
 
-TODO(flavienbwk): Introduire en rappelant qu'il est nécessaire d'[Être au plus proche du métier](#être-au-plus-proche-du-métier) et d'itérer avec lui.
+Comme évoqué dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)", il est courant de ne pas répondre au besoin initialement exprimé avec les méthodes traditionnelles. Figer le besoin à l'instant T n'est pas un moyen fiable de livré le produit attendu. Le besoin évolue continuellement et le client ne sait souvent pas exprimer exactement ce dont il a besoin.
 
-TODO(flavienbwk): Développer le [sujet](https://software.af.mil/training/devops/) (slide Waterfall vs Agile vs DevSecOps). L'approche DevOps permet d'éviter de se faire piéger par des clients trop spécifiques dans leurs demandes. Ils partent de 0, proposons leurs des solutions graduellement pour s'assurer de ce dont ils ont vraiment besoin. Cela permet aussi au client de s'acculturer au changement qu'apporte le logiciel, en parallèle de son développement. Exemple de Philippe B. et du projet avec Isabelle D. du c(r)@c : 3 ans sur le projet sans aboutir + frustrations.
+La méthodologie Agile vise à réduire ce risque en proposant plusieurs cycles courts de livraison (_sprints_). A chaque cycle, le client fournit ses retours. Cette boucle est rejouée jusqu'à ce que le projet convienne au client ou que le contrat prenne fin. Le DevOps vient outiller l'entreprise pour fluidifier les interactions. Dans les entreprises les plus performantes, les _sprints_ ne sont plus qu'un détail contractuel pour échanger sur les avancées : le logiciel, lui, est déjà en production et prêt à être utilisé.
 
-### Réduire les risques avec l'intégration continue
+Au contraire, cette méthodologie permet d'éviter de se faire piéger par des clients trop spécifiques dans leurs demande. Certains sont convaincus de la manière dont le logiciel devrait être conçu pour qu'il réponde le mieux à sa besoin. Or la suggestion faite n'est peut-être pas l'option la plus adaptée. Au cours de vos différentes livraisons, le client aura toujours une suggestion à faire ou un détail qu'il aura oublié de vous communiquer. Ces détails - plus ou moins grands - s'accumulent avec le temps et peuvent mener à des délais démesurés.
 
-TODO(flavienbwk) : résumer pourquoi l'intégration continue permet de réduire les risques d'échec projet et d'incidents
+Si un logiciel est voué à changer en profondeur les habitudes de son récipiendaire, le livrer tôt est nécessaire pour qu'il s'acculture progressivement aux changements qui vont lui être imposés. Il pourra par exemple faire évoluer ses procédures internes, recruter les profils adaptés et préparer sa stratégie de communication. Cela évitera les frustrations et permettra de garantir un livrable au plus proche du besoin métier.
+
+Se passer de cette approche si votre client est trop exigeant, peut mener dans des cas extrêmes à des projets perdurant des années. Voire même, à des projets abandonnés. Cela ne manquera pas d'engendrer des frustrations réciproques entre le responsable d'équipe, l'équipe de développement et le client.
+
+### Eviter les erreurs de développement
+
+L'humain est la première cause d'erreur. C'est pour cela que l'automatisation est un élément fondamental d'une organisation en mode DevOps. Les chaînes d'intégration et de déploiement continu sont particulièrement efficaces pour fluidifier le cycle de livraison logiciel.
+
+Si vous ressentez actuellement une adhérence dans votre cycle de production, vous avez probablement besoin d'investir du temps pour automatiser. Dans les entreprises matures, des équipes dédiées au développement d'outils d'automatisation au profit des équipes de développement existent. Elles ont la mission d'être à l'écoute des développeurs pour fluidifier leur expérience de développement. Par exemple, elles vont développer des outils internes analysant le code ajouté pour proposer des modifications améliorant la lisibilité ou la sécurité de la contribution. Chez Google, une plateforme interne se charge de faire ce type de suggestion : si un code n'est pas conforme, un clic suffit à le reformater. Si une librairie est considérée vulnérable, une alternative est proposée.
+
+Ces outils permettent globalement d'accélérer le processus de développement et accélèrent les revues de code pour livrer le logiciel le plus rapidement possible en production. Ces méthodes sont particulièrement efficaces quand vous recevez régulièrement de nouveaux personnels non formés à vos pratiques de développement. Des arrivants peu expérimentés, sans règles explicites et contraignantes (les chaînes de CI/CD), peuvent rapidement impacter la qualité de votre base de code. Une inattention et un bug peut rapidement survenir.
+
+Les techniques de déploiement _blue/green_ précédemment évoquées permettent également de réduire les risques de régression logicielle (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)").
 
 ### Design thinking
 
-TODO(flavienbwk): [Design thinking](https://www.coursera.org/learn/developing-a-google-sre-culture/lecture/bmXLx). [HR-Ops](https://cloud.berwick.fr/apps/files/?dir=/LIVRES/Others&openfile=183262).
+Les entreprises avec une forte culture SRE/DevOps favorisent les innovations proposées par leurs collaborateurs. Grâce aux techniques évoquées dans le chapitre précédent (CI, CD, _blue/green_, premortems, FMEA), il est heureusement possible de maîtriser le risque apporté par ces nouveautés.
+
+Pour que vos employés restent motivés à faire de grandes choses, il faut éviter à tout prix de limiter leur créativité ou leurs idées. C'est pourquoi le _design thinking_ et la réalisation de prototypes sont des techniques clé pour une organisation efficace.
+
+Le _design thinking_ est une technique d'innovation qui combine créativité et méthode pour tenter de résoudre des problèmes complexes. Elle est composée de 5 phases :
+
+1. **Compatir** : partez rencontrer l'utilisateur final et faites immersion dans son environnement pour comprendre ses enjeux. Cela permet de mettre de côté ses pré-supposés pour déceler un point de vue authentique.
+2. **Définir le problème** : définissez clairement le problème que vous essayez de résoudre. Exprimez-le du point de vue de l'utilisateur, plutôt que de décrire ce que vous souhaiteriez réaliser.
+3. **Élaborez des idées** : maintenant que le problème est ciblé, vous pouvez commencer à réfléchir à des solutions.
+4. **Réaliser une maquette** : faites de votre idée une réalité au travers d'un prototype. Identifiez les points faibles et trouvez des solutions, ou passer à une autre idée si celle expérimentée n'est pas viable (cf. chapitre "[Premortems](#premortems)").
+5. **Évaluer** : testez votre prototype dans un environnement fidèle à celui de votre utilisateur cible (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)").
+
+En résumé, vous devez vous mettre dans la peau de l'utilisateur, et des techniques comme le déploiement continu permettent de fluidifier ce processus. En étant confrontée à la réalité, l'innovation n'est pas freinée par l'organisation.
+
+Si elle échoue, l'organisation en aura appris davantage sur son client et son environnement. Si elle aboutit, c'est un succès pour tout le monde : l'équipe en charge de l'innovation, l'organisation et le client.
+
+Cette culture du prototype est importante car une entreprise qui ne prototype pas lance moins d'idées, donc provoque moins de succès et prend plus de temps pour échouer. Au contraire, une entreprise ayant pris l'habitude de tester ses prototypes échouera plus vite et engrangera mécaniquement davantage de succès.
+
+Il n'est pas obligatoire de créer le logiciel de A à Z avant de le confronter à son client. Vous pouvez réaliser une maquette sur Adobe XD ou Figma, utiliser une solution _low-code/no-code_[^lownocode] ou trouver quelqu'un qui joue le rôle du client.
 
 ### Former de manière continue
 
@@ -1650,7 +1680,7 @@ Dans tous les cas, présentez votre transformation comme une opportunité d'évo
 
 ## Tirer parti de l'automatisation
 
-Au sein de systèmes d'informations de plus en plus complexes, il devient fondamental d'automatiser les tâches récurrentes. Les erreurs produites par des machines représentent une fraction infime de celles des humains. Tout ingénieur confirmé pourra vous le confirmer : l'erreur vient 99.9% du temps de l'humain. C'est pour cela que les équipes de Google tentent de minimiser au maximum les interactions de leurs opérateurs pour administrer leurs systèmes[^GoogleWorkbookEliminatingToil].
+Au sein de systèmes d'informations de plus en plus complexes, il devient fondamental d'automatiser les tâches récurrentes. L'humain représente le facteur principal d'erreurs au sein d'un système d'information[^HumanErrorIS]. Tout ingénieur confirmé pourra vous le confirmer. C'est pour cela que les équipes de Google tentent de minimiser au maximum les interactions de leurs opérateurs pour administrer leurs systèmes[^GoogleWorkbookEliminatingToil].
 
 > "Si un opérateur humain doit toucher votre système durant le fonctionnement normal du quotidien, vous avez un bug. La définition du terme "normal" change au fur et à mesure que vos systèmes se développent." - Carla GEISSER, SRE chez Google
 
@@ -2391,8 +2421,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^BrenéBROWNVideoOnBlame]: UK's Royal Society for Arts, Manufactures and Commerce. Vidéo "[Brené Brown on Blame](https://www.youtube.com/watch?v=RZWf2_2L2v8)" sur YouTube. 2015.
 
-[^AtlassianPremortemMethod]: Atlassian. [Réalisation d'un pre-mortem de projet](https://www.atlassian.com/fr/team-playbook/plays/pre-mortem). _atlassian.com_.
-
 [^RACI-VS]: CLET, Étienne; MADERS, Henri-Pierre; LEBLANC, Jérôme; GOLDFARB, Marc. [Le métier de chef de projet, Éditions Eyrolles](https://books.google.fr/books?id=BtEiAgAAQBAJ&pg=PR21&dq=RACI+VS+validateur+signataire). 2013.
 
 [^DecisionMakingMindtools]: [Decision making tools](https://www.mindtools.com/pages/main/newMN_TED.htm). _Mindtools.com_.
@@ -2744,3 +2772,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^FMEAHistory]: US Department of Defense. "_MIL-P-1629 – Procedures for performing a failure mode effect and critical analysis. Department of Defense (US). MIL-P-1629_". 1949.
 
 [^ICSFirefighters]: STAMBLER, Kimberly S; BARBERA, Joseph A. [_"Engineering the Incident Command and Multiagency Coordination Systems" Journal of Homeland Security and Emergency Management 8, no. 1_](https://doi.org/10.2202/1547-7355.1838). 2011.
+
+[^HumanErrorIS]: Im, GHI PAUL; Richard, L. BASKERVILLE. [_"A longitudinal study of information system threat categories: the enduring problem of human error." ACM SIGMIS Database: the DATABASE for Advances in Information Systems 36.4 (2005): 68-79_](https://dl.acm.org/doi/abs/10.1145/1104004.1104010). 2005.
+
+[^lownocode]: "Le _no-code_ est une approche du développement de logiciels permettant de créer et de déployer des logiciels sans écrire de code informatique". Source : _fr.wikipedia.org_.
