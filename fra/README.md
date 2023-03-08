@@ -216,7 +216,7 @@ Il peut arriver que des décideurs nouvellement effectés, demandent à leurs su
 
 Les solutions techniques sont faciles à concevoir et à déléguer. Par exemple, acheter des technologies "sur l'étagère" ou lancer un tout nouveau projet, peut aussi sembler plus efficace. Mais opter pour une solution, en faisant fi des contraintes inhérentes à l'organisation (maturité organisationnelle et technique, ressources humaines et matérielles, dette technique, courbe d'apprentissage...) peut être risqué. D'ailleurs, ces contraintes sont souvent déjà connues et exprimées depuis des années par l'expertise interne. Elles provoquent parfois la naissance de projets pris à l'initiative des employés, face au besoin qu'ils observent ou à l'exaspération qu'ils éprouvent. Au lieu de les encourager à trouver une solution, ils sont parfois réprimandés, au titre d'insubordination. En réalité, ces projets se perdent souvent dans les strates intermédiaires et ne remontant que rarement jusqu'au décideur pour les pérenniser.
 
-En effet, les décideurs ont rarement le temps de rencontrer chacune de leurs équipes. Ils ont par conséquent tendance à privilégier leur propre avis ou à solliciter celui de leur adjoint, en lieu et place de celui de leurs experts. La décision prise est donc celle relevant de la sensibilité d'une seule personne, isolée des réalités métiers. Plus il existe de strates hiérarchiques, plus l'isolation est prononcée. Ce phénomène résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs. Accompagnés d'une communication par nature peu impactante, il produit inévitablement de la frustration dans l'entreprise.
+En effet, les décideurs ont rarement le temps de rencontrer chacune de leurs équipes. Ils ont par conséquent tendance à [privilégier leur propre avis](https://copyconstruct.medium.com/why-success-is-often-elusive-at-the-highest-echelons-3e02e4dd3e7f) ou à solliciter celui de leur adjoint, en lieu et place de celui de leurs experts. La décision prise est donc celle relevant de la sensibilité d'une seule personne, isolée des réalités métiers. Plus il existe de strates hiérarchiques, plus l'isolation est prononcée. Ce phénomène résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs. Accompagnés d'une communication par nature peu impactante, il produit inévitablement de la frustration dans l'entreprise.
 
 L'exemple du Ministère des Armées américain en est une bonne illustration. Ce ministère a lancé une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne], dont la finalité était identique. Au delà d'avoir provoqué des frustrations au sein des équipes de _Platform One_[^ChaillanDisaTweet], le programme _Vulcan_ accuse des retards et des surcoûts[^DISAVulcanDelays].
 
@@ -1654,7 +1654,7 @@ Si elle échoue, l'organisation en aura appris davantage sur son client et son e
 
 Cette culture du prototype est importante car une entreprise qui ne prototype pas lance moins d'idées, donc provoque moins de succès et prend plus de temps pour échouer. Au contraire, une entreprise ayant pris l'habitude de tester ses prototypes échouera plus vite et engrangera mécaniquement davantage de succès.
 
-Il n'est pas obligatoire de créer le logiciel de A à Z avant de le confronter à son client. Vous pouvez réaliser une maquette sur Adobe XD ou Figma, utiliser une solution _low-code/no-code_[^lownocode] ou trouver quelqu'un qui joue le rôle du client.
+Il n'est pas obligatoire de créer le logiciel de A à Z avant de le confronter au client. Vous pouvez réaliser une maquette sur Figma ou Penpot, utiliser une solution _low-code/no-code_[^lownocode] ou trouver quelqu'un qui joue le rôle du client.
 
 ### Former de manière continue
 
@@ -1836,24 +1836,169 @@ Par ailleurs, les chaînes de déploiement continu ne se limitent pas au déploi
 
 Dans le chapitre précédent - "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)" - nous avons vu en quoi l'automatisation permettait de gagner un temps considérable dans l'administration de notre infrastructure, ainsi que d'augmenter sa sécurité et sa résilience.
 
-Dans ce chapitre, nous allons aborder une dimension importante de l'automatisation : l'observabilité. C'est grâce aux mesures que l'on peut massivement automatiser nos systèmes pour prendre de meilleures décisions à l'échelle de l'organisation.
+Dans ce chapitre, nous allons aborder une dimension importante de l'automatisation : l'observabilité. C'est grâce aux mesures qu'il est possible de massivement automatiser les systèmes et prendre de meilleures décisions à l'échelle de l'organisation. Le fait de tout mesurer permet trois choses :
+
+1. Les équipes techniques et commerciales peuvent en tout temps connaître l'état d'un service (opérationnel, partiellement accessible, en panne)
+2. Les équipes techniques peuvent analyser des données pour identifier le problème et tenter de le résoudre (cf. chapitre "[Organiser sa réponse à incident](#organiser-sa-réponse-à-incident)")
+3. Les équipes techniques, forts de ces données, peuvent aider les équipes commerciales à prendre de meilleures décisions pour l'organisation
+
+Avoir confiance dans ses décisions, en se basant sur ses propres données, est l'aboutissement d'une transformation DevOps réussie. L'industrie nomme cela les "prises de décision basées sur la donnée" ou "_data-driven decision making_" en anglais.
+
+### Les 3 pilliers de l'observabilité
+
+TODO(flavienbwk): logs, metrics and traces; https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/ch04.html
 
 ### Savoir quand innover et quand s'arrêter
 
-TODO(flavienbwk): [Développer](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084).
+A première vue, il n'est pas évident de savoir où mettre le curseur entre les projets de résilience et d'innovation. L'idée est donc de mesurer l'état de services pour savoir quand on s'autorise à innover.
+
+Mesurer est une chose, mais encore faut-il mesurer les bonnes choses, au bon niveau. Dans une infrastructure distribuée, l'un des serveurs peut tomber en panne sans nécessairement impacter la disponibilité d'un logiciel pour vos clients. Mesurer la disponibilité d'un serveur est peut-être intéressant pour vos techniciens, mais peut-être n'est-elle pas la bonne mesure pour connaître l'impact du dysfonctionnement sur l'utilisateur. C'est cela que votre organisation doit définir :
+
+- Quelles sont les mesures indiquant un service qui fonctionne "correctement" ?
+- Quel taux d'indisponibilité vous accordez-vous ?
+
+Pour la deuxième question, vous ne pouvez pas répondre "100%". Si vous mettez tous vos efforts à rendre le service disponible 100% du temps, vous allez ralentir le lancement de nouvelles fonctionnalités. Or c'est cela qui fait avancer votre projet. C'est pour répondre à cette question qu'intervient la notion de "budget d'erreur".
+
+Le budget d'erreur est la quantité de temps sur une période donnée que votre entreprise accorde à vos équipes, durant lequel vos services peuvent être indisponibles. Tant que la disponibilité de votre service dépasse l'indisponibilité tolérée, vous pouvez en profiter pour déployer un nouveau service majeur, en forte interaction avec les autres, ou encore mettre à jour un système critique. Mais ce budget est essentiel pour faire face à des dysfonctionnements matériels nécessitant un remplacement, ou pour intervenir sur un système lors d'une interruption planifiée.
+
+Par exemple, si votre budget d'erreur est de 54 minutes par semaine et que vous ne dépassez pas 10 minutes depuis 3 semaines, permettez-vous de prendre davantage de risques. Si c'est l'inverse, travaillez à rendre votre infrastructure plus résiliente.
+
+En somme, le budget d'erreur est un accord entre la direction et les équipes techniques, aidant à prioriser les travaux d'innovation vis-à-vis des travaux améliorant la résilience de l'infrastructure.
+
+Il permet aux équipes d'ingénierie de réévaluer par elles-mêmes des objectifs trop ambitieux vis-à-vis du risque toléré. Elles peuvent ainsi définir des objectifs réalistes. Le budget d'erreur permet aux équipes de partager entre elles la responsabilité de la résilience d'un service : les défaillances de l'infrastructure impactent le budget d'erreur des développeurs. Inversement, les défaillances logicielles impactent le budget d'erreur des équipes SRE.
+
+TODO(flavienbwk): Google recommends monitoring on error budget burns. Ex: spending 10h instead of 1h on a task. In this case, create a ticket for a lower burn rate.
+
+Pour répondre à la première question, voyons dans le prochain chapitre quels sont les indicateurs qu'il est possible de suivre.
+
+### Indicateurs de résilience
+
+#### Les 4 signaux clé
+
+Tout indicateur de résilience se base sur des mesures. Découvrons les 4 mesures clé qui nous permettrons plus tard de créer nos propres indicateurs de résilience.
+
+TODO(flavienbwk) Développer le sujet (4 golden signals).
+
+Au sein d'une infrastructure containérisée, un _service mesh_ automatise l'acquisition de ces mesures. Nous découvrirons cette technologie dans le chapitre "[Service mesh](#service-mesh)". Nous verrons également quels outils existent pour récolter et visualiser ces métriques. Mais avant cela, découvrons comment créer nos indicateurs de résilience dans le prochain chapitre.
+
+#### SLI, SLO et SLA
+
+L'une des pratiques liées à la définition d'un budget d'erreur est la définition "d'objectif de qualité de service" (_Service Level Objective_ ou SLO en anglais).
+
+S'exprimant en pourcent et pour une durée précise, les SLOs sont des objectifs de qualité de la résilience d'un système. Ils doivent être déterminés de paire avec les décideurs, pour partager la responsabilité du niveau de résilience de leur infrastructure imposé par leurs décisions. Par exemple, si un décideur veut que ses développeurs sortent souvent et rapidement des nouveautés, les SLOs aident à savoir quand le rythme imposé est _trop_ rapide. Elles permettent d'avoir une mesure temps-réel du coût - en terme de résilience - de la publication d'une nouvelle fonctionnalité. En parallèle, atteindre trop largement ses SLOs indique que votre entreprise peut avancer plus vite sans impacter sa qualité de service. Mais à quoi ressemble un SLO ? Comment le définir ?
+
+Les SLOs se construisent à partir d'un ou plusieurs "indicateurs de niveau de service" (_Service Level Indicator_ ou SLI). Un SLI est une métrique quantifiable mesurant l'un des aspects de la résilience d'un système. Un SLI se base sur une mesure reflètant un phénomène pouvant impacter négativement votre utilisateur : le temps de réponse à une requête, le nombre de données retournées bien à jour, ou encore la latence de lecture et la vitesse d'écriture pour le stockage des données.
+
+Idéalement, les SLIs doivent être exprimées sous forme de ratio entre le nombre de "bons évènements" sur le nombre "d'évènements valides", au cours d'une période donnée[^WhatAreSLIs]. Ce format permet d'éviter toute confusion sur l'interprétation d'un SLI : 0% indique un service qui ne fonctionne pas et 100% un service qui fonctionne sans perturbation. Un évènement est qualifié "bon" quand sa mesure associée atteint une condition définie (une certaine valeur, un seuil). On parle "d'évènements valides" plutôt que du "total des évènements" car notre SLI peut parfois exclure certaines valeurs (ex: les codes HTTP 300 et 400 pour connaître la proportion de requêtes ayant abouti).
+
+Un SLO fixe quant à lui une qualité de service à maintenir, c'est à dire une certaine valeur pour un SLI. Un SLO adopte un format de ce type : "le SLI X doit être maintenue Y% du temps sur Z jours/mois/année".
+
+La durée d'échantillonage de votre SLI doit être inférieure ou égale à celle de votre SLO. Par exemple, votre SLI peut être calibrée pour spécifier une valeur sur 1 minute, quand votre SLO peut l'être sur 1 semaine. Voici quelques exemples pour bien comprendre comment passer d'une mesure, à un SLI puis à un SLO :
+
+- **Phénomène : durée de chargement d'une page**
+  - Mesure : durée de chargement d'une page pour chaque requête (en millisecondes)
+  - SLI : taux moyen de pages chargées en moins de 200ms sur 5 minutes (en pourcent)
+    - Critère de bon évènement : toute page chargée en moins de 200ms
+    - Critère d'évènement valide : toute page chargée en plus de 0ms et n'ayant pas dépassé le délai d'attente (_timeout_)
+  - SLO : 99% des pages doivent charger en moins de 200ms sur 28 jours
+- **Phénomène : conversion des visiteurs**
+  - Mesure : visites et clics des visiteurs sur les pages du site
+  - SLI : taux de visiteurs convertis sur l'ensemble des visiteurs sur 5 minutes (en pourcent)
+    - Critère de bon évènement : un visiteur unique (IP) a cliqué sur le bouton d'inscription
+    - Critère d'évènement valide : visiteurs uniques (IP) de la page d'accueil
+  - SLO : 10% des visiteurs uniques doivent cliquer sur le bouton d'inscription de la page d'accueil chaque trimestre
+- **Phénomène : réponses HTTP valides**
+  - Mesure : somme de réponses HTTP < 500 sur 5 minutes
+  - SLI : taux de réponses HTTP au code < 500 sur l'ensemble des réponses HTTP sur 5 minutes (en pourcent)
+    - Critère de bon évènement : toute réponse HTTP dont le code est < à 500
+    - Critère d'évènement valide : toute réponse HTTP dont le code n'est pas compris entre 300 et 499
+  - SLO : 99.9% des réponses HTTP doivent avoir un code < 500 sur 1 semaine
+- **Phénomène : état de fonctionnement d'un serveur**[^UptimeVsAvailability]
+  - Mesure : durée des réponses aux requêtes ICMP (en millisecondes)
+  - SLI : taux moyen de réponse aux requêtes ICMP < 100ms sur 1 minute (en pourcent)
+    - Critère de bon évènement : toute requête ayant abouti en moins de 100ms
+    - Critère d'évènement valide : toute durée de plus de 0ms et n'ayant pas dépassé le délai d'attente (_timeout_)
+  - SLO : 99.9% des requêtes ICMP doivent être < 100ms sur 1 semaine
+- **Phénomène : vitesse de téléversement des fichiers** (_upload_)
+  - Mesure 1 : taille des fichiers téléversés (en Ko)
+  - Mesure 2 : durée de téléversement des fichiers (en millisecondes)
+  - SLI : taux moyen de fichiers de moins de 10Ko téléversés en moins 100ms sur 1 semaine
+    - Critère de bon évènement : tout fichier de moins de 10ko téléversé en moins de 100ms
+    - Critère d'évènement valide : tout fichier téléversé de moins de 10ko et n'ayant pas échoué
+  - SLO : 99% des fichiers de moins de 10Ko doivent être téléversés en moins de 100ms sur 1 semaine
+
+Un SLI peut se composer d'une ou plusieurs mesures. Néanmoins, évitez de construire des SLIs ou des SLOs trop complexes au risque de représenter des phénomènes vagues ou fallacieux.
+
+L'objectif "juste" pour un SLO doit être déterminé par le seuil de tolérance qu'éprouve votre client face à un phénomène irritant. Par exemple, quantifiez ce que signifie pour lui avoir un site web "lent" (ex: grâce une étude SEO[^SEO]). Si la majorité de vos clients tolèrent des réponses prenant maximum 200ms, définissez votre SLO par "99.9% des réponses doivent être retournées en moins de 200ms, sur 1 mois". Un bon SLO doit toujours avoir une valeur proche de 100% sans jamais l'atteindre, pour les raisons évoquées dans le chapitre "[Savoir quand innover et quand s'arrêter](#savoir-quand-innover-et-quand-sarrêter)". Il n'y a pas règles pour définir initiallement la valeur exacte du "99.9%" : basez-vous sur une moyenne de votre historique de mesures ou expérimentez. Cette valeur doit être adaptée à la charge de travail que votre équipe est capable d'absorber.
+
+Voici un tableau de correspondance entre taux de résilience et la durée maximale de panne autorisée :
+
+| Taux de résilience | Par année  | Par trimestre | Par mois (28 jours) |
+| ------------------ | ---------- | ------------- | ------------------- |
+| 90%                | 36j 12h    | 9j            | 2j 19h 12m          |
+| 95%                | 18j 6h     | 4j 12h        | 1j 9h 36m           |
+| 99%                | 3j 15h 36m | 21h 36m       | 6h 43m 12s          |
+| 99.5%              | 1j 19h 48m | 10h 48m       | 3h 21m 36s          |
+| 99.9%              | 9h 45m 36s | 2h 9m 36s     | 40m 19s             |
+| 99.99%             | 52m 33.6s  | 12m 57.6s     | 4m 1.9s             |
+| 99.999%            | 5m 15.4s   | 1m 17.8s      | 24.2s               |
+
+Si les SLOs doivent représenter en priorité les irritants pour vos utilisateurs, vous pouvez en constituer pour vos propres équipes internes. Par exemple, votre infrastructure peut vérifier que chaque serveur physique répond "99% du temps en moins de 500ms aux requêtes ICMP sur 1 semaine". Dans ce cas là, définissez vos SLOs à partir de votre historique de mesures. Par exemple, si 99% de vos requêtes ICMP répondaient en moins de 300ms le mois dernier, définissez comme SLO "99% des requêtes ICMP doivent répondre en moins de 300ms sur un mois".
+
+![Aperçu du tableau de bord Grafana "Service level (SLI/SLO)" par Xabier LARRAKOETXEA. La partie supérieure représente le taux de conformité d'un service à un SLO au cours du temps. La partie inférieure représente la tendance de consommation du budget d'erreur, intrinsèquement lié au SLO. Source : [grafana.com](grafana.com/grafana/dashboards/8793-service-level-sli-slo)](./images/2023_grafana_slo_eb.png)
+
+Vos mécanismes d'alerte doivent constamment surveiller vos SLIs pour vérifier qu'ils ne dépassent pas vos SLOs (cf. chapitre "[Investiguer les incidents](#investiguer-les-incidents)"). Et surtout, qu'ils ne dépassent pas vos SLAs !
+
+Un accord de niveau de service (_Service Level Agreement_ ou SLA) est un contrat entre votre organisation et votre client. Si votre qualité de service est inférieure à celle définie par vos SLAs, votre organisation subit des pénalités.
+
+Le SLA se base sur un ou plusieurs SLOs, à des taux de résilience inférieurs. Voici quelques exemples :
+
+- En dessous de 99.9% de disponibilité, Google commence à rembourser ses clients [_Google Workspace_](https://workspace.google.com/terms/sla.html). Entre 99.9% et 99% de disponibilité, 3 jours d'accès supplémentaires sont ajoutés au compte du client. En dessous de 95%, c'est 15 jours.
+- En dessous de 99.5% de disponibilité, AWS commence à rembourser ses clients [d'instances _EC2_](https://aws.amazon.com/compute/sla). Entre 99.9% et 99% de disponibilité, le client est remboursé à hauteur de 10% des dépenses. En dessous de 95%, il est remboursé à 100%.
+- En dessous de 99.9% de disponibilité, Microsoft commence à rembourser ses [clients _Teams_](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=13). En dessous de 99.9%, le client obtient un avoir à hauteur de 25% de ses dépenses. En dessous de 95%, il obtient un avoir pour 100% de ses dépenses.
+
+Veillez donc à ce que votre SLA soit raisonnablement inférieur à votre SLO. Par exemple, si votre organisation impose un SLO à 99.5% de disponibilité, déterminez un SLA inférieur ou égal à 99%.
+
+Les SLAs ne sont pas obligatoires en France selon la loi. Néanmoins ils peuvent faire partie de votre contrat de service, pour clarifier vos engagements et éviter les litiges. En effet, il est toujours préférable de lister des conditions claires pour lesquelles vous et votre client vous êtes engagés. Les SLAs sont également un avantage concurrentiel : votre entreprise s'engage à fournir une certaine qualité de service, là où vos concurrents ne s'en donnent pas nécessairement la peine.
+
+Au sein d'une institution, vous pouvez utiliser un SLA comme un moyen de gagner en crédibilité auprès de votre hiérarchie ou de certaines équipes. Un SLA remplit peut justifier l'embauche de personnels nécessaires pour maintenir un certain niveau de service. Ou bien justifier une augmentation de budget pour développer l'activité de l'équipe. Inversement, la hiérarchie peut exiger de vos équipes un certain niveau de qualité de service, reporté sur les objectifs annuels des personnels. Dans le cadre d'une expérimentation, établir des SLOs suffit. Constituer des SLOs fiables est déjà un enjeu de taille. Maintenir les objectifs en est un autre.
+
+_Alors que le principe des SLOs semble claire dans la littérature, le sujet des SLIs fait encore débat. Certaines sources sont peu claires ou se contredisent sur la nature exacte d'un SLI[^SLIDispute]. Un SLI doit-il simplement être un indicateur auquel on appose un objectif de stabilité pour la transformer en SLO ? Ou peut-il être exprimé sous n'importe quelle unité (fréquence, pourcentage, nombre réel), se résumant ainsi à une mesure ? Ce chapitre prend le partie d'une définition stricte, pour mieux structurer son initiative DevOps : un SLI doit traduire un phénomène sous forme de pourcentage._
+
+#### Aggrégation par centile
+
+Baser ses SLIs sur la moyenne ou la médianne des mesures, n'est pas la meilleure option pour identifier une défaillance au sein d'une grande infrastructure. Google recommande une autre approche[^SLOSREBook], utilisant les centiles (_percentiles_ en anglais). Cette méthode de distribution permet de mettre en évidence les changements de tendance parmi le top X% des mesures récoltées.
+
+Imaginez que votre infrastructure serve des millions d'utilisateurs. Vous recevez des milliards de requêtes. Il se peut qu'une page défaillante, affectant seulement quelques centaines d'utilisateurs sur votre site, passe totalement inaperçu si vous utilisez la moyenne ou la médianne comme méthode de mesure. En revanche, si vous utilisez l'aggrégation par centile, vous pourrez distinguer plus finement ces anomalies. Voici un exemple :
+
+![50ème, 85ème, 95ème et 99ème centile des latences pour un système. L'axe vertical est logarithmique.](./images/2023_percentiles.png)
+
+Avec cette représentation, il est possible de déduire qu'en moyenne, la latence des requêtes est inférieure ou égale à 200ms (le 50ème centile, partie violette, représente la médianne). Mais plus intéressant encore, elle permet de comprendre que 5% des requêtes (à partir du 95ème centile, partie rouge) sont 2.5 fois plus lentes (~500ms) que la moyenne. Votre équipe SRE va pouvoir travailler à découvrir pourquoi la latence est si élevée pour ces requêtes.
+
+Attardons-nous sur un autre phénomène : le 6 mars peu après 0h00, le top 1% des requêtes les plus lentes (99ème centile, partie bleue) atteignent un pic de 8000ms de latence contre 5000ms en moyenne. Il se passe quelque chose : votre système d'alerte peut plus facilement détecter cette anomalie, et votre équipe SRE mieux isoler les requêtes concernées pour les invesiguer. En observant seulement la médianne (50ème percentile), on se rend compte que ces changements de tendance sont lissés, presque imperceptibles.
+
+Fort de ce constat, nous pouvons améliorer l'un des indicateurs du chapitre précédent :
+
+- **Phénomène : durée de chargement d'une page**
+  - Mesure : durée de chargement d'une page pour chaque requête (en millisecondes)
+  - SLI classique : taux moyen de pages chargées en moins de 200ms sur 5 minutes (en pourcent)
+  - SLO classique : 99% des pages doivent charger en moins de 200ms sur 28 jours
+  - SLI avancé : taux de pages chargées en moins de 1000ms dans le 95ème centile sur 5 minutes (en pourcent)
+  - SLO avancé : 99% des pages du 95ème centile doivent être chargées en moins de 1000ms sur 28 jours (en pourcent)
+
+Pour développer votre intuition sur ces indicateurs, commencez par des SLIs et SLOs classiques. Une fois que votre infrastructure a gagné en maturité - et particulièrement en nombre d'utilisateurs - vous pouvez vous orienter vers des SLIs et SLOs avancés.
+
+#### MTTx
+
+TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
 
 <!--
+
 Mesurer le travail manuel (toil):
 
 Measure toil by : identifying it (often are stakeholders that don't want to do much work), selecting an appropriate unit of measure (the amount of effort : time for example), track continuously the measurements.
 
 Example : count the number of tickets, alerts and collect statistics to identify source of toils.It allows to trigger a toil reduction effort. It empowers teams to think about toil to best invest their time and efforts.
-
-Error budget:
-
-Reliability : error budget (what is deem acceptable level of unreliability that you allocate to other engineering work), SLIs and SLOs.
-
-Ex: SLO could be "Is the website slow ?" with a threshold. SLIs are "CPU utilization", "memory usage"... SLO is SLIs over that to materialize a problematic.
 
 Google recommends monitoring on error budget burns. Ex: spending 10h instead of 1h on a task. In this case, create a ticket for a lower burn rate.
 
@@ -1865,20 +2010,6 @@ For example, Google uses an internal tool accessible by everyone : bugganizer.
 
 Status page avec https://github.com/louislam/uptime-kuma
 -->
-
-TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
-
-### Indicateurs de résilience
-
-Les indicateurs de résilience sont des métriques vous permettant d'évaluer la santé de votre infrastructure.
-
-TODO(flavienbwk): [Développer SLI/SLO/SLA](https://cloud.berwick.fr/apps/files/?dir=/PERSO/Flavien/Livres/Me/Transformer%20les%20institutions%20gr%C3%A2ce%20au%20DevOps/2-Developing%20a%20Google%20SRE%20Culture&fileid=169084).
-
-### Les 4 signaux clé
-
-TODO(flavienbwk) Développer le sujet (4 golden signals).
-
-Au sein d'une infrastructure containérisée, un _service mesh_ automatise l'acquisition de ces métriques. Découvrons cette technologie dans le prochain chapitre.
 
 ### Service mesh
 
@@ -2776,3 +2907,13 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^HumanErrorIS]: Im, GHI PAUL; Richard, L. BASKERVILLE. [_"A longitudinal study of information system threat categories: the enduring problem of human error." ACM SIGMIS Database: the DATABASE for Advances in Information Systems 36.4 (2005): 68-79_](https://dl.acm.org/doi/abs/10.1145/1104004.1104010). 2005.
 
 [^lownocode]: "Le _no-code_ est une approche du développement de logiciels permettant de créer et de déployer des logiciels sans écrire de code informatique". Source : _fr.wikipedia.org_.
+
+[^SEO]: _Search Engine Optimization_ : Techniques d'optimisation visant améliorer son site web pour qu'il remonte dans les résultats de recherche.
+
+[^UptimeVsAvailability]: Le taux de fonctionnement (_uptime_) est le temps pendant lequel le service est allumé sur une période donnée. La disponibilité (_availability_) indique elle si le service est accessible et retourne des réponses valides. Par exemple, une API peut être démarrée (_uptime_) sans être disponible pour retourner une réponse valide (_availability_; service inaccessible, saturé ou erreurs HTTP 500 intempestives).
+
+[^SLOSREBook]: Google. Chapitre "[_Service Level Objectives_](https://sre.google/sre-book/service-level-objectives/)", _SRE Book_. _sre.google_.
+
+[^WhatAreSLIs]: QUACH, Cindy (Blog Google). "[_Setting SLOs: a step-by-step guide_](https://cloud.google.com/blog/products/management-tools/practical-guide-to-setting-slos)". 2020.
+
+[^SLIDispute]: Participez au débat sur la définition des SLIs : _links.berwick.fr/dispute-slis_
