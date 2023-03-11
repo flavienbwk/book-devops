@@ -1883,55 +1883,53 @@ Au sein d'une infrastructure containérisée, un _service mesh_ automatise l'acq
 
 #### SLI, SLO et SLA
 
-L'une des pratiques liées à la définition d'un budget d'erreur est la définition "d'objectif de qualité de service" (_Service Level Objective_ ou SLO en anglais).
+La valeur de votre budget d'erreur découle de vos "objectifs de qualité de service" (_Service Level Objective_ ou SLO en anglais).
 
-S'exprimant en pourcent et pour une durée précise, les SLOs sont des objectifs de qualité de la résilience d'un système. Ils doivent être déterminés de paire avec les décideurs, pour partager la responsabilité du niveau de résilience de leur infrastructure imposé par leurs décisions. Par exemple, si un décideur veut que ses développeurs sortent souvent et rapidement des nouveautés, les SLOs aident à savoir quand le rythme imposé est _trop_ rapide. Elles permettent d'avoir une mesure temps-réel du coût - en terme de résilience - de la publication d'une nouvelle fonctionnalité. En parallèle, atteindre trop largement ses SLOs indique que votre entreprise peut avancer plus vite sans impacter sa qualité de service. Mais à quoi ressemble un SLO ? Comment le définir ?
+Un SLO qualifie un objectif cible de résilience pour un système. Il est représenté comme une proportion de "bons" évènements à honorer, sur l'ensemble des évènements surveillés, pour une période de temps donnée. Par exemple, votre équipe SRE peut définir l'objectif suivant : "_99% des pages doivent charger en moins de 200ms sur 28 jours_".
 
-Les SLOs se construisent à partir d'un ou plusieurs "indicateurs de niveau de service" (_Service Level Indicator_ ou SLI). Un SLI est une métrique quantifiable mesurant l'un des aspects de la résilience d'un système. Un SLI se base sur une mesure reflètant un phénomène pouvant impacter négativement votre utilisateur : le temps de réponse à une requête, le nombre de données retournées bien à jour, ou encore la latence de lecture et la vitesse d'écriture pour le stockage des données.
+L'objectif "juste" d'un SLO est déterminé par le seuil de tolérance que peut supporter votre client face à un phénomène irritant. Par exemple, quantifiez ce que signifie pour lui avoir un site web "lent" (ex: grâce une étude SEO[^SEO]). Si vos clients quittent généralement vos pages après plus de 200ms d'attente, définissez votre SLO par "_99.9% des réponses doivent être retournées en moins de 200ms, sur 1 mois_".
 
-Idéalement, les SLIs doivent être exprimées sous forme de ratio entre le nombre de "bons évènements" sur le nombre "d'évènements valides", au cours d'une période donnée[^WhatAreSLIs]. Ce format permet d'éviter toute confusion sur l'interprétation d'un SLI : 0% indique un service qui ne fonctionne pas et 100% un service qui fonctionne sans perturbation. Un évènement est qualifié "bon" quand sa mesure associée atteint une condition définie (une certaine valeur, un seuil). On parle "d'évènements valides" plutôt que du "total des évènements" car notre SLI peut parfois exclure certaines valeurs (ex: les codes HTTP 300 et 400 pour connaître la proportion de requêtes ayant abouti).
+Un bon SLO doit toujours avoir une valeur proche de 100% sans jamais l'atteindre, pour les raisons évoquées dans le chapitre "[Savoir quand innover et quand s'arrêter](#savoir-quand-innover-et-quand-sarrêter)". Quant à la fréquence à laquelle atteindre cet objectif (99.9% sur 1 mois), il n'existe pas de règle pour la définir initiallement. Vous pouvez vous baser sur une moyenne de votre historique de mesures, ou expérimenter. Cette valeur doit être adaptée à la charge de travail que votre équipe est capable d'absorber.
 
-Un SLO fixe quant à lui une qualité de service à maintenir, c'est à dire une certaine valeur pour un SLI. Un SLO adopte un format de ce type : "le SLI X doit être maintenue Y% du temps sur Z jours/mois/année".
+Les SLOs se construisent à partir d'un ou plusieurs "indicateurs de niveau de service" (_Service Level Indicator_ ou SLI). Le SLI est le taux actuel de bons évènements mesurés, sur l'ensemble des évènements pris en compte, pour une période donnée. Se basant lui-même sur une ou plusieurs mesures, il permet de mesurer l'un des aspects de la résilience d'un système. Il qualifie un phénomène pouvant impacter négativement votre utilisateur : le temps de réponse à une requête, le nombre de données retournées qui sont bien à jour, ou encore la latence en lecture et écriture pour le stockage des données.
 
-La durée d'échantillonage de votre SLI doit être inférieure ou égale à celle de votre SLO. Par exemple, votre SLI peut être calibrée pour spécifier une valeur sur 1 minute, quand votre SLO peut l'être sur 1 semaine. Voici quelques exemples pour bien comprendre comment passer d'une mesure, à un SLI puis à un SLO :
+Voici quelques exemples pour bien distinguer sur quelle SLI se base un SLO, puis sur quelle(s) mesure(s) se base(nt) un SLI :
 
 - **Phénomène : durée de chargement d'une page**
-  - Mesure : durée de chargement d'une page pour chaque requête (en millisecondes)
-  - SLI : taux moyen de pages chargées en moins de 200ms sur 5 minutes (en pourcent)
+  - SLO : 99% des pages doivent charger en moins de 200ms sur 28 jours (objectif)
+  - SLI : taux de pages chargées en moins de 200ms sur 28 jours (en pourcent)
     - Critère de bon évènement : toute page chargée en moins de 200ms
-    - Critère d'évènement valide : toute page chargée en plus de 0ms et n'ayant pas dépassé le délai d'attente (_timeout_)
-  - SLO : 99% des pages doivent charger en moins de 200ms sur 28 jours
+    - Critère de prise en compte d'un évènement : toute page chargée en plus de 0ms et n'ayant pas dépassé le délai d'attente (_timeout_)
+  - Mesure : durée de chargement d'une page pour chaque requête (en millisecondes)
 - **Phénomène : conversion des visiteurs**
-  - Mesure : visites et clics des visiteurs sur les pages du site
-  - SLI : taux de visiteurs convertis sur l'ensemble des visiteurs sur 5 minutes (en pourcent)
+  - SLO : 10% des visiteurs uniques doivent cliquer sur le bouton d'inscription de la page d'accueil chaque trimestre (objectif)
+  - SLI : taux de visiteurs convertis sur l'ensemble des visiteurs sur un trimestre (en pourcent)
     - Critère de bon évènement : un visiteur unique (IP) a cliqué sur le bouton d'inscription
-    - Critère d'évènement valide : visiteurs uniques (IP) de la page d'accueil
-  - SLO : 10% des visiteurs uniques doivent cliquer sur le bouton d'inscription de la page d'accueil chaque trimestre
+    - Critère de prise en compte d'un évènement : visiteurs uniques (IP) de la page d'accueil
+  - Mesure : visites et clics des visiteurs sur les pages du site
 - **Phénomène : réponses HTTP valides**
-  - Mesure : somme de réponses HTTP < 500 sur 5 minutes
-  - SLI : taux de réponses HTTP au code < 500 sur l'ensemble des réponses HTTP sur 5 minutes (en pourcent)
+  - SLO : 99.9% des réponses HTTP doivent avoir un code < 500 sur 1 semaine (objectif)
+  - SLI : taux de réponses HTTP au code < 500 sur l'ensemble des réponses HTTP sur 1 semaine (en pourcent)
     - Critère de bon évènement : toute réponse HTTP dont le code est < à 500
-    - Critère d'évènement valide : toute réponse HTTP dont le code n'est pas compris entre 300 et 499
-  - SLO : 99.9% des réponses HTTP doivent avoir un code < 500 sur 1 semaine
+    - Critère de prise en compte d'un évènement : toute réponse HTTP dont le code n'est pas compris entre 300 et 499
+  - Mesure : somme de réponses HTTP < 500 sur 5 minutes
 - **Phénomène : état de fonctionnement d'un serveur**[^UptimeVsAvailability]
-  - Mesure : durée des réponses aux requêtes ICMP (en millisecondes)
-  - SLI : taux moyen de réponse aux requêtes ICMP < 100ms sur 1 minute (en pourcent)
+  - SLO : 99.9% des requêtes ICMP doivent être < 100ms sur 1 semaine (objectif)
+  - SLI : taux de réponses < 100ms des requêtes ICMP sur 1 semaine (en pourcent)
     - Critère de bon évènement : toute requête ayant abouti en moins de 100ms
-    - Critère d'évènement valide : toute durée de plus de 0ms et n'ayant pas dépassé le délai d'attente (_timeout_)
-  - SLO : 99.9% des requêtes ICMP doivent être < 100ms sur 1 semaine
+    - Critère de prise en compte d'un évènement : toute durée de plus de 0ms et n'ayant pas dépassé le délai d'attente (_timeout_)
+  - Mesure : durée des réponses aux requêtes ICMP (en millisecondes)
 - **Phénomène : vitesse de téléversement des fichiers** (_upload_)
+  - SLO : 99% des fichiers de moins de 10Ko doivent être téléversés en moins de 100ms sur 1 semaine (objectif)
+  - SLI : taux de fichiers de moins de 10Ko téléversés en moins 100ms sur 1 semaine
+    - Critère de bon évènement : tout fichier de moins de 10ko téléversé en moins de 100ms
+    - Critère de prise en compte d'un évènement : tout fichier téléversé de moins de 10ko et n'ayant pas échoué
   - Mesure 1 : taille des fichiers téléversés (en Ko)
   - Mesure 2 : durée de téléversement des fichiers (en millisecondes)
-  - SLI : taux moyen de fichiers de moins de 10Ko téléversés en moins 100ms sur 1 semaine
-    - Critère de bon évènement : tout fichier de moins de 10ko téléversé en moins de 100ms
-    - Critère d'évènement valide : tout fichier téléversé de moins de 10ko et n'ayant pas échoué
-  - SLO : 99% des fichiers de moins de 10Ko doivent être téléversés en moins de 100ms sur 1 semaine
 
 Un SLI peut se composer d'une ou plusieurs mesures. Néanmoins, évitez de construire des SLIs ou des SLOs trop complexes au risque de représenter des phénomènes vagues ou fallacieux.
 
-L'objectif "juste" pour un SLO doit être déterminé par le seuil de tolérance qu'éprouve votre client face à un phénomène irritant. Par exemple, quantifiez ce que signifie pour lui avoir un site web "lent" (ex: grâce une étude SEO[^SEO]). Si la majorité de vos clients tolèrent des réponses prenant maximum 200ms, définissez votre SLO par "99.9% des réponses doivent être retournées en moins de 200ms, sur 1 mois". Un bon SLO doit toujours avoir une valeur proche de 100% sans jamais l'atteindre, pour les raisons évoquées dans le chapitre "[Savoir quand innover et quand s'arrêter](#savoir-quand-innover-et-quand-sarrêter)". Il n'y a pas règles pour définir initiallement la valeur exacte du "99.9%" : basez-vous sur une moyenne de votre historique de mesures ou expérimentez. Cette valeur doit être adaptée à la charge de travail que votre équipe est capable d'absorber.
-
-Voici un tableau de correspondance entre taux de résilience et la durée maximale de panne autorisée :
+Un SLO fixe une qualité de service à maintenir, c'est à dire une certaine valeur pour un SLI. Un SLO adopte un format de ce type : "_le SLI X doit être maintenue Y% du temps sur Z jours/mois/année_". Voici un tableau faisant correspondre taux de résilience et durée maximale de panne autorisée (partie "Z jours/mois/année" de l'exemple précédent) :
 
 | Taux de résilience | Par année  | Par trimestre | Par mois (28 jours) |
 | ------------------ | ---------- | ------------- | ------------------- |
@@ -1943,31 +1941,31 @@ Voici un tableau de correspondance entre taux de résilience et la durée maxima
 | 99.99%             | 52m 33.6s  | 12m 57.6s     | 4m 1.9s             |
 | 99.999%            | 5m 15.4s   | 1m 17.8s      | 24.2s               |
 
-Si les SLOs doivent représenter en priorité les irritants pour vos utilisateurs, vous pouvez en constituer pour vos propres équipes internes. Par exemple, votre infrastructure peut vérifier que chaque serveur physique répond "99% du temps en moins de 500ms aux requêtes ICMP sur 1 semaine". Dans ce cas là, définissez vos SLOs à partir de votre historique de mesures. Par exemple, si 99% de vos requêtes ICMP répondaient en moins de 300ms le mois dernier, définissez comme SLO "99% des requêtes ICMP doivent répondre en moins de 300ms sur un mois".
+Si les SLOs doivent représenter en priorité les irritants pour vos utilisateurs, vous pouvez aussi en constituer pour vos équipes internes. Par exemple, votre infrastructure peut vérifier que chaque serveur répond "_99% du temps en moins de 500ms aux requêtes ICMP sur 1 semaine_". Dans ce cas-là, définissez vos SLOs à partir de votre historique de mesures. Par exemple, si 99% de vos requêtes ICMP répondaient en moins de 300ms le mois dernier, définissez le SLO "_99% des requêtes ICMP doivent répondre en moins de 300ms sur un mois_".
 
 ![Aperçu du tableau de bord Grafana "Service level (SLI/SLO)" par Xabier LARRAKOETXEA. La partie supérieure représente le taux de conformité d'un service à un SLO au cours du temps. La partie inférieure représente la tendance de consommation du budget d'erreur, intrinsèquement lié au SLO. Source : [grafana.com](grafana.com/grafana/dashboards/8793-service-level-sli-slo)](./images/2023_grafana_slo_eb.png)
 
-Vos mécanismes d'alerte doivent constamment surveiller vos SLIs pour vérifier qu'ils ne dépassent pas vos SLOs (cf. chapitre "[Investiguer les incidents](#investiguer-les-incidents)"). Et surtout, qu'ils ne dépassent pas vos SLAs !
+Les SLOs doivent être définis de paire avec les décideurs. Leur implication dans cette définition est nécessaire pour qu'ils puissent comprendre comment leurs décisions (ex: priorisation des tâches, quantité de travail demandée) impactent la résilience de l'infrastructure. Si un décideur veut que ses ingénieurs développent souvent et rapidement des nouveautés, les SLOs aident à comprendre quand le rythme imposé est trop exigeant. A l'opposé, atteindre trop largement ses SLOs indique que votre entreprise peut avancer plus vite sans impacter sa qualité de service. L'implication des décideurs est d'autant plus importante qu'ils mettent parfois la responsabilité de l'entreprise en jeu. C'est la SLA qui en est à l'origine.
 
-Un accord de niveau de service (_Service Level Agreement_ ou SLA) est un contrat entre votre organisation et votre client. Si votre qualité de service est inférieure à celle définie par vos SLAs, votre organisation subit des pénalités.
-
-Le SLA se base sur un ou plusieurs SLOs, à des taux de résilience inférieurs. Voici quelques exemples :
+L'accord de niveau de service (_Service Level Agreement_ ou SLA) est un contrat entre votre organisation et un client. Si votre qualité de service est inférieure à celle définie par vos SLAs, votre organisation subit des pénalités. Un SLA se base sur un ou plusieurs SLOs, en définissant par précaution des taux de résilience inférieurs. Voici quelques exemples :
 
 - En dessous de 99.9% de disponibilité, Google commence à rembourser ses clients [_Google Workspace_](https://workspace.google.com/terms/sla.html). Entre 99.9% et 99% de disponibilité, 3 jours d'accès supplémentaires sont ajoutés au compte du client. En dessous de 95%, c'est 15 jours.
 - En dessous de 99.5% de disponibilité, AWS commence à rembourser ses clients [d'instances _EC2_](https://aws.amazon.com/compute/sla). Entre 99.9% et 99% de disponibilité, le client est remboursé à hauteur de 10% des dépenses. En dessous de 95%, il est remboursé à 100%.
 - En dessous de 99.9% de disponibilité, Microsoft commence à rembourser ses [clients _Teams_](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=13). En dessous de 99.9%, le client obtient un avoir à hauteur de 25% de ses dépenses. En dessous de 95%, il obtient un avoir pour 100% de ses dépenses.
 
-Veillez donc à ce que votre SLA soit raisonnablement inférieur à votre SLO. Par exemple, si votre organisation impose un SLO à 99.5% de disponibilité, déterminez un SLA inférieur ou égal à 99%.
+Les SLAs ne sont pas rendus obligatoires en France par la loi. Néanmoins ils peuvent faire partie de votre contrat de service, pour clarifier vos engagements et éviter les litiges. En effet, il est toujours préférable de lister des conditions claires pour lesquelles vous et votre client vous êtes engagés. Les SLAs sont également un avantage concurrentiel : votre entreprise s'engage à fournir une certaine qualité de service, là où vos concurrents ne s'en donnent pas nécessairement la peine. Instaurer un SLA dans votre méthode de gouvernance responsabilise les parties-prenantes (développeurs, SRE, décideurs) et partage les attendus. L'entreprise s'oriente désormais grâce aux mesures qu'elle récolte, puis qu'elle interprête sous forme de SLO. On dit qu'elle est _data-driven_.
 
-Les SLAs ne sont pas obligatoires en France selon la loi. Néanmoins ils peuvent faire partie de votre contrat de service, pour clarifier vos engagements et éviter les litiges. En effet, il est toujours préférable de lister des conditions claires pour lesquelles vous et votre client vous êtes engagés. Les SLAs sont également un avantage concurrentiel : votre entreprise s'engage à fournir une certaine qualité de service, là où vos concurrents ne s'en donnent pas nécessairement la peine.
+Au sein d'une institution, vous pouvez utiliser un SLO/SLA comme un moyen de gagner en crédibilité auprès de votre hiérarchie ou de certaines équipes. Un SLA remplit peut justifier l'embauche de personnels nécessaires pour maintenir un certain niveau de service. Ou bien justifier une augmentation de budget pour développer l'activité de l'équipe. Inversement, la hiérarchie peut exiger de vos équipes un certain niveau de qualité de service, reporté sur les objectifs annuels des personnels. Dans le cadre d'une expérimentation, établir des SLOs suffit. Constituer des SLOs fiables est déjà un enjeu de taille. Maintenir les objectifs en est un autre.
 
-Au sein d'une institution, vous pouvez utiliser un SLA comme un moyen de gagner en crédibilité auprès de votre hiérarchie ou de certaines équipes. Un SLA remplit peut justifier l'embauche de personnels nécessaires pour maintenir un certain niveau de service. Ou bien justifier une augmentation de budget pour développer l'activité de l'équipe. Inversement, la hiérarchie peut exiger de vos équipes un certain niveau de qualité de service, reporté sur les objectifs annuels des personnels. Dans le cadre d'une expérimentation, établir des SLOs suffit. Constituer des SLOs fiables est déjà un enjeu de taille. Maintenir les objectifs en est un autre.
+#### Alertes et aggrégation par centile
 
-_Alors que le principe des SLOs semble claire dans la littérature, le sujet des SLIs fait encore débat. Certaines sources sont peu claires ou se contredisent sur la nature exacte d'un SLI[^SLIDispute]. Un SLI doit-il simplement être un indicateur auquel on appose un objectif de stabilité pour la transformer en SLO ? Ou peut-il être exprimé sous n'importe quelle unité (fréquence, pourcentage, nombre réel), se résumant ainsi à une mesure ? Ce chapitre prend le partie d'une définition stricte, pour mieux structurer son initiative DevOps : un SLI doit traduire un phénomène sous forme de pourcentage._
+Vos mécanismes d'alerte doivent constamment surveiller vos SLIs pour vérifier qu'ils ne dépassent pas vos SLOs. Et surtout, qu'ils ne dépassent pas vos SLAs ! Mais comment lever une alerte avant que vos SLOs/SLAs soient dépassés ?
 
-#### Aggrégation par centile
+Prenons l'exemple de cet SLO : _99% des pages doivent charger en moins de 200ms sur 28 jours_.
 
-Baser ses SLIs sur la moyenne ou la médianne des mesures, n'est pas la meilleure option pour identifier une défaillance au sein d'une grande infrastructure. Google recommande une autre approche[^SLOSREBook], utilisant les centiles (_percentiles_ en anglais). Cette méthode de distribution permet de mettre en évidence les changements de tendance parmi le top X% des mesures récoltées.
+La méthode la plus simple est de calculer la moyenne du temps de chargement des pages, sur une courte période. Par exemple, la moyenne des temps de chargement sur 5 minutes. Configuré sur cette approche, votre mécanisme d'alerte se déclenche lorsque au cours des 5 dernières minutes, la moyenne des temps de chargement dépasse 200ms.
+
+Néanmoins, baser ses alertes sur la moyenne ou la médianne des mesures n'est pas la meilleure option. Cette approche ne permet pas d'identifier les défaillances à large échelle. Google recommande une autre approche[^SLOSREBook], utilisant les centiles (_percentiles_ en anglais). Cette méthode de distribution permet de mettre en évidence les changements de tendance parmi le top X% des mesures récoltées.
 
 Imaginez que votre infrastructure serve des millions d'utilisateurs. Vous recevez des milliards de requêtes. Il se peut qu'une page défaillante, affectant seulement quelques centaines d'utilisateurs sur votre site, passe totalement inaperçu si vous utilisez la moyenne ou la médianne comme méthode de mesure. En revanche, si vous utilisez l'aggrégation par centile, vous pourrez distinguer plus finement ces anomalies. Voici un exemple :
 
@@ -2055,7 +2053,7 @@ Comme décrit dans le chapitre "[Un socle au service de votre résilience](#un-s
 
 Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _Cloud native_[^CloudNative], il est possible de facilement "installer" des services socle au sein d'un cluster Kubernetes. Voici une liste non-exhaustive des services qui peuvent être assurés nativement dans votre cluster et administrables de manière centralisée :
 
-1. Centralisation des logs applicatifs et réseaux (cf. [Fluentd](https://www.fluentd.org/), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/), [Jaeger](https://github.com/jaegertracing/jaeger))
+1. Centralisation des logs applicatifs et réseaux (cf. [Filebeat](https://www.elastic.co/beats/filebeat), [Fluentd](https://www.fluentd.org/), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/), [Jaeger](https://github.com/jaegertracing/jaeger))
 
     ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com](./images/kibana_logs.png)
 
@@ -2913,7 +2911,3 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^UptimeVsAvailability]: Le taux de fonctionnement (_uptime_) est le temps pendant lequel le service est allumé sur une période donnée. La disponibilité (_availability_) indique elle si le service est accessible et retourne des réponses valides. Par exemple, une API peut être démarrée (_uptime_) sans être disponible pour retourner une réponse valide (_availability_; service inaccessible, saturé ou erreurs HTTP 500 intempestives).
 
 [^SLOSREBook]: Google. Chapitre "[_Service Level Objectives_](https://sre.google/sre-book/service-level-objectives/)", _SRE Book_. _sre.google_.
-
-[^WhatAreSLIs]: QUACH, Cindy (Blog Google). "[_Setting SLOs: a step-by-step guide_](https://cloud.google.com/blog/products/management-tools/practical-guide-to-setting-slos)". 2020.
-
-[^SLIDispute]: Participez au débat sur la définition des SLIs : _links.berwick.fr/dispute-slis_
