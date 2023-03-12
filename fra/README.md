@@ -1854,47 +1854,52 @@ Le domaine de l'observabilité peut être résumé comme l'ensemble des outils e
 
 Examinons de plus près ce que chacune de ces données peut nous apprendre :
 
-- _logs_ : enregistrements immutables et horodatés décrivant des évènements spécifiques au cours du temps. Par exemple, "[MonLogiciel] jdupont a eu accès à l'URL /users/login à 18h55m14s".
+- _logs_ : enregistrements immutables et horodatés décrivant des évènements spécifiques au cours du temps. Par exemple, "_[MonLogiciel] jdupont a eu accès à l'URL /users/login à 18h55m14s_". Le code produisant une ligne de _logs_ est généralement ajouté manuellement par un développeur dans un logiciel.
 - _metrics_ : représentations numériques de phénomènes mesurés au cours du temps. Par exemple, le nombre de requêtes, le temps de réponse ou l'utilisation de ressources (RAM, CPU, disque, réseau).
-- _traces_ : données permettant de suivre le cheminement d'une opération (ex: une requête) au sein d'un logiciel et de ceux avec lesquels elle intéragit. Une trace est composée d'une ou plusieurs travées (_span_). Les _spans_ sont toutes les sous-opérations ou fonctions par lesquelles passent notre opération. Une _span_ doit obligatoirement avoir un nom, une date et une durée.
+- _traces_ : type de _logs_ permettant de suivre le cheminement d'une opération (ex: une requête). Une trace est un groupe de _logs_ qui comporte des informations supplémentaires permettant de tracer une opération, au travers des différents services par lesquels elle passe. Chaque étape et sous-opération traversée est nommée travée (_span_). Les _logs_ d'une trace sont généralement générés automatiquement.
 
-Attardons-nous sur les traces pour bien comprendre ce qu'elles impliquent. Prenons l'exemple d'une application (un client) qui envoit une requête à une API REST (un serveur). La trace sera composée de _spans_ et de métriques, associées à un identifiant unique. Cet identifiant permet de discriminer le cheminement de notre requête au travers de tous les services qu'elle traversera. Voici un exemple :
+Attardons-nous sur les traces pour bien comprendre ce qu'elles impliquent. Prenons l'exemple d'une application (un client) qui envoit une requête à une API REST (un serveur). Une trace est composée de _spans_ et de métriques, associées à un identifiant unique. Cet identifiant permet de discriminer le cheminement de notre requête au travers de tous les services qu'elle traversera. Voici un exemple :
 
+![Lignes de logs d'une trace entre un client et un serveur.](./images/2023_trace_basic_example.png)
+
+<!--
 ```txt
-Trace ID: cb637b432e9533f845f04ca814644cf3
+Trace ID: a814644cf3
 
 Client Application:
-- 2023-04-01 09:00:00.000 [INFO] [cb637b432e9533f845f04ca814644cf3] Sending request to server
-- 2023-04-01 09:00:00.100 [INFO] [cb637b432e9533f845f04ca814644cf3] Received response from server
+- 2023-04-01 09:00:00.000 [INFO] [trace=a814644cf3, span=99e9d68c] Sending request to server
+- 2023-04-01 09:00:00.100 [INFO] [trace=a814644cf3, span=fa4a2af9] Received response from server
 - Request duration: 100 ms
 
 Server Application:
-- 2023-04-01 09:00:00.050 [INFO] [cb637b432e9533f845f04ca814644cf3] Received request from client
-- 2023-04-01 09:00:00.080 [INFO] [cb637b432e9533f845f04ca814644cf3] Processing request
-- 2023-04-01 09:00:00.090 [INFO] [cb637b432e9533f845f04ca814644cf3] Sending response to client
+- 2023-04-01 09:00:00.050 [INFO] [trace=a814644cf3, span=4197eb7e] Received request from client
+- 2023-04-01 09:00:00.080 [INFO] [trace=a814644cf3, span=e6372477] Processing request
+- 2023-04-01 09:00:00.090 [INFO] [trace=a814644cf3, span=d1a8977c] Sending response to client
 - Request duration: 40 ms
 
 Metrics:
 - Client CPU usage: 20%
 - Server CPU usage: 30%
 ```
+-->
 
-Les données d'une _trace_ peuvent être réunies sous forme de diagramme, où chaque _span_ est représentée par une brique :
+Pour mieux se représenter la temporalité de la requête, les _logs_ d'une _trace_ sont souvent affichés sous forme de diagramme. Chaque _span_ est alors représentée par un rectangle incluant un nom (à gauche) et une durée (au niveau du rectangle) :
 
-![Exemple de trace pour un appel API dans Jaeger](./images/2022_jaeger_trace.png)
-TODO(flavienbwk): Refaire schéma https://github.com/blueswen/fastapi-jaeger
+![Exemple de trace traitée par Jaeger pour un appel API entre un client et un serveur. Les espacements entre les spans bleues et orange sont dus au temps que prend la communication HTTP entre les deux services. Il n'y a pas de log émis à ce moment.](./images/2022_jaeger_trace.png)
 
-Les traces sont indépendamment remontées par des librairies comme le SDK d'OpenTelemetry. Ces dernières les envoit à un collecteur de traces comme Jaeger ou Zipkin pour qu'elles soient validées, nettoyées et/ou enrichies. Elles sont ensuite stockées dans des serveurs de logs centralisés, comme Prometheus ou Elasticsearch. L'identifiant de la trace nous permet de retrouver la chronologie des opérations pour une trace spécifique.
+Les traces sont indépendamment remontées par des librairies comme le SDK d'OpenTelemetry. Ces dernières les envoit à un collecteur de traces comme Jaeger, Tempo ou Zipkin pour qu'elles soient validées, nettoyées et/ou enrichies. Elles sont ensuite stockées dans des serveurs de logs centralisés, comme Prometheus ou Elasticsearch. L'identifiant de la trace nous permet de retrouver la chronologie des opérations par lesquelles elle est passé.
 
-Au sein de très grandes infrastructures, les logs et les traces sont parfois trop massives pour être ingérées par les serveurs de logs à temps. Ces données peuvent alors être perdues. Pour éviter ce problème, il est courant de placer un serveur Kafka devant le serveur de logs pour absorber progressivement les données. Un programme comme le [_Jaeger Ingester_](https://www.jaegertracing.io/docs/1.42/architecture/#ingester) peut ensuite progressivement venir les récupérer et les indexer. Pour les logs _rsyslog_, l'utilisation de protocoles comme le RELP[^RELP] peut être nécessaire pour s'assurer que l'enregistrement soit effectué.
+Le plus grand défi du traçage est son intégration au sein d'une infrastructure existante. En effet, pour que les traces soient pleinement utiles, il faut que chaque composant par lequel passe la requête émette un log et propage les informations de traçage à son tour. Moins précis que s'il était directement intégré à un logiciel, le traçage via _service mesh_ peut être un moyen rapide de disposer des fonctionnalités de traçage sans avoir à modifier le code de ses logiciels[^ServiceMeshTraces]. Nous verrons ce qu'est un _service mesh_ et comment cette technologie fonctionnent dans le chapitre "[Service mesh](#service-mesh)".
 
-Que ce soit à l'aide de Logstash pour les _logs_ ou avec le _Jaeger Ingester_ pour les traces, normaliser ses données est capital pour correctement pouvoir les stocker et les traiter. Pour répondre à cet enjeu, le [projet OpenTelemetry](https://opentelemetry.io/docs/concepts/what-is-opentelemetry/) définit des conventions sémantiques[^OTSemanticConventions].
+Au sein de très grandes infrastructures, les logs et les traces sont parfois trop massives pour être ingérées par son serveur de logs à temps. Des données peuvent alors être perdues. Pour éviter ce problème, il est courant d'utiliser des services qui viennent temporiser l'indexation. Un serveur comme Kafka peut être placé devant le serveur de logs pour les absorber progressivement. Puis un programme comme le [_Jaeger Ingester_](https://www.jaegertracing.io/docs/1.42/architecture/#ingester) vient progressivement les indexer. Pour les logs _rsyslog_, l'utilisation de protocoles comme le RELP[^RELP] peut être nécessaire pour s'assurer qu'ils soient bien sauvegardés.
 
-En mettant en place des mécanismes d'observabilité, vous pourrez répondre exhaustivement à la question de vos ingénieurs : "est-ce que je peux avoir les logs de la production pour corriger ce bug ?". Ces données vont nous permettre de mieux construire nos [indicateurs de résilience](#indicateurs-de-résilience), pour prendre des décisions avisées plus rapidement.
+Que ce soit à l'aide de [Logstash](https://www.elastic.co/logstash/) ou [Loki](https://grafana.com/oss/loki/) pour les logs, ou avec [Jaeger](https://www.jaegertracing.io/) ou [Tempo](https://grafana.com/oss/tempo) pour les traces, normaliser ses données est capital pour pouvoir correctement les stocker et les traiter. Pour répondre à cet enjeu, la [librairie OpenTelemetry](https://opentelemetry.io/docs/concepts/what-is-opentelemetry/) définit des conventions sémantiques[^OTSemanticConventions]. Elle est celle qui est utilisée la plupart du temps.
+
+En mettant en place des mécanismes d'observabilité, vous pourrez répondre plus facilement à la question "_qu'est-ce qu'il s'est passé pour que ce bug se produise ?_". Vos ingénieurs pourront se baser sur des données exhaustives pour corriger les bugs plus rapidement. Ces données vont nous permettre de mieux construire nos [indicateurs de résilience](#indicateurs-de-résilience), pour prendre plus rapidement des décisions avisées.
 
 ### Savoir quand innover et quand s'arrêter
 
-A première vue, il n'est pas évident de savoir où mettre le curseur entre les projets de résilience et d'innovation. L'idée est donc de mesurer l'état de services pour savoir quand on s'autorise à innover.
+A première vue, il n'est pas évident de savoir où mettre le curseur entre les travaux de résilience et d'innovation. L'idée est donc de mesurer l'état des services pour savoir quand on s'autorise à innover.
 
 Mesurer est une chose, mais encore faut-il mesurer les bonnes choses, au bon niveau. Dans une infrastructure distribuée, l'un des serveurs peut tomber en panne sans nécessairement impacter la disponibilité d'un logiciel pour vos clients. Mesurer la disponibilité d'un serveur est peut-être intéressant pour vos techniciens, mais peut-être n'est-elle pas la bonne mesure pour connaître l'impact du dysfonctionnement sur l'utilisateur. C'est cela que votre organisation doit définir :
 
@@ -2097,11 +2102,11 @@ Comme décrit dans le chapitre "[Un socle au service de votre résilience](#un-s
 
 Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _Cloud native_[^CloudNative], il est possible de facilement "installer" des services socle au sein d'un cluster Kubernetes. Voici une liste non-exhaustive des services qui peuvent être assurés nativement dans votre cluster et administrables de manière centralisée :
 
-1. Centralisation des logs applicatifs et réseaux (cf. [Filebeat](https://www.elastic.co/beats/filebeat), [Fluentd](https://www.fluentd.org/), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/), [Jaeger](https://github.com/jaegertracing/jaeger))
+1. Centralisation des logs et traces applicatifs et réseaux (cf. [Filebeat](https://www.elastic.co/beats/filebeat), [Fluentd](https://www.fluentd.org/), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/), [Jaeger](https://github.com/jaegertracing/jaeger), [Tempo](https://grafana.com/oss/tempo/), [Zipkin](https://zipkin.io/))
 
     ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com](./images/kibana_logs.png)
 
-2. Centralisation des métriques de performance des noeuds et des conteneurs du cluster (références identifiques au point 1)
+2. Centralisation des métriques de performance des noeuds et des conteneurs du cluster (cf. [Mimir](https://grafana.com/oss/mimir/), [Metricbeat](https://www.elastic.co/beats/metricbeat))
 
     ![Tableau de bord Grafana des ressources consommées par les conteneurs d'une application dans Kubernetes, remontées par Loki. Source : grafana.com](./images/grafana_loki_metrics.png)
 
@@ -2952,7 +2957,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^SEO]: _Search Engine Optimization_ : Techniques d'optimisation visant améliorer son site web pour qu'il remonte dans les résultats de recherche.
 
-[^UptimeVsAvailability]: Le taux de fonctionnement (_uptime_) est le temps pendant lequel le service est allumé sur une période donnée. La disponibilité (_availability_) indique elle si le service est accessible et retourne des réponses valides. Par exemple, une API peut être démarrée (_uptime_) sans être disponible pour retourner une réponse valide (_availability_; service inaccessible, saturé ou erreurs HTTP 500 intempestives).
+[^UptimeVsAvailability]: Le taux de fonctionnement (_uptime_) est le temps pendant lequel le service est allumé sur une période donnée. La disponibilité (_availability_) indique si le service est accessible et retourne des réponses valides. Par exemple, une API peut être démarrée (_uptime_) sans être disponible pour retourner une réponse valide (_availability_; service inaccessible, saturé ou erreurs HTTP 500 intempestives).
 
 [^SLOSREBook]: Google. Chapitre "[_Service Level Objectives_](https://sre.google/sre-book/service-level-objectives/)", _SRE Book_. _sre.google_.
 
@@ -2963,3 +2968,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^DistributedSystemsObservabilityBook]: SRIDHARAN, Cindy. "[_Distributed Systems Observability_](https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/)". 2018.
 
 [^OTSemanticConventions]: "_OpenTelemetry définit des conventions sémantiques [...] qui spécifient des noms communs pour différents types d'opérations et de données._". Source : [_opentelemetry.io_](https://opentelemetry.io/docs/concepts/semantic-conventions/).
+
+[^ServiceMeshTraces]: Grâce à son _service mesh_, [Lyft a réécrit les entêtes des requêtes qui passent dans son réseau pour ajouter ou propager les informations de traçage](https://eng.lyft.com/scaling-productivity-on-microservices-at-lyft-part-3-extending-our-envoy-mesh-with-staging-fdaafafca82f).
