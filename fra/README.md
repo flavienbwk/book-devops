@@ -1840,13 +1840,57 @@ Dans ce chapitre, nous allons aborder une dimension importante de l'automatisati
 
 1. Les équipes techniques et commerciales peuvent en tout temps connaître l'état d'un service (opérationnel, partiellement accessible, en panne)
 2. Les équipes techniques peuvent analyser des données pour identifier le problème et tenter de le résoudre (cf. chapitre "[Organiser sa réponse à incident](#organiser-sa-réponse-à-incident)")
-3. Les équipes techniques, forts de ces données, peuvent aider les équipes commerciales à prendre de meilleures décisions pour l'organisation
+3. Les équipes techniques, fortes de ces données, peuvent aider les équipes commerciales à prendre de meilleures décisions pour l'organisation
 
 Avoir confiance dans ses décisions, en se basant sur ses propres données, est l'aboutissement d'une transformation DevOps réussie. L'industrie nomme cela les "prises de décision basées sur la donnée" ou "_data-driven decision making_" en anglais.
 
 ### Les 3 pilliers de l'observabilité
 
-TODO(flavienbwk): logs, metrics and traces; https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/ch04.html
+Les journaux d'activité (_logs_), les métriques (_metrics_) et les traces (_traces_) sont considérés comme les trois pilliers de l'observabilité. Ces trois type de données peuvent être générés par les logiciels, pour identifier et résoudre les problèmes susceptibles de survenir une fois déployés.
+
+L'observabilité est un sujet très vaste dans le domaine de la résilience des systèmes[^DistributedSystemsObservabilityBook]. Nous ne survolerons que les essentiels dans ce chapitre.
+
+Le domaine de l'observabilité peut être résumé comme l'ensemble des outils et des pratiques permettant aux ingénieurs de détecter, diagnostiquer et résoudre les problèmes d'un système (bugs, lenteurs, disponibilité), le plus rapidement possible. Au delà du besoin de résilience, la récolte de certaines de ces données est parfoise requise par la loi[^ANSSIGuideJournalisation].
+
+Examinons de plus près ce que chacune de ces données peut nous apprendre :
+
+- _logs_ : enregistrements immutables et horodatés décrivant des évènements spécifiques au cours du temps. Par exemple, "[MonLogiciel] jdupont a eu accès à l'URL /users/login à 18h55m14s".
+- _metrics_ : représentations numériques de phénomènes mesurés au cours du temps. Par exemple, le nombre de requêtes, le temps de réponse ou l'utilisation de ressources (RAM, CPU, disque, réseau).
+- _traces_ : données permettant de suivre le cheminement d'une opération (ex: une requête) au sein d'un logiciel et de ceux avec lesquels elle intéragit. Une trace est composée d'une ou plusieurs travées (_span_). Les _spans_ sont toutes les sous-opérations ou fonctions par lesquelles passent notre opération. Une _span_ doit obligatoirement avoir un nom, une date et une durée.
+
+Attardons-nous sur les traces pour bien comprendre ce qu'elles impliquent. Prenons l'exemple d'une application (un client) qui envoit une requête à une API REST (un serveur). La trace sera composée de _spans_ et de métriques, associées à un identifiant unique. Cet identifiant permet de discriminer le cheminement de notre requête au travers de tous les services qu'elle traversera. Voici un exemple :
+
+```txt
+Trace ID: cb637b432e9533f845f04ca814644cf3
+
+Client Application:
+- 2023-04-01 09:00:00.000 [INFO] [cb637b432e9533f845f04ca814644cf3] Sending request to server
+- 2023-04-01 09:00:00.100 [INFO] [cb637b432e9533f845f04ca814644cf3] Received response from server
+- Request duration: 100 ms
+
+Server Application:
+- 2023-04-01 09:00:00.050 [INFO] [cb637b432e9533f845f04ca814644cf3] Received request from client
+- 2023-04-01 09:00:00.080 [INFO] [cb637b432e9533f845f04ca814644cf3] Processing request
+- 2023-04-01 09:00:00.090 [INFO] [cb637b432e9533f845f04ca814644cf3] Sending response to client
+- Request duration: 40 ms
+
+Metrics:
+- Client CPU usage: 20%
+- Server CPU usage: 30%
+```
+
+Les données d'une _trace_ peuvent être réunies sous forme de diagramme, où chaque _span_ est représentée par une brique :
+
+![Exemple de trace pour un appel API dans Jaeger](./images/2022_jaeger_trace.png)
+TODO(flavienbwk): Refaire schéma https://github.com/blueswen/fastapi-jaeger
+
+Les traces sont indépendamment remontées par des librairies comme le SDK d'OpenTelemetry. Ces dernières les envoit à un collecteur de traces comme Jaeger ou Zipkin pour qu'elles soient validées, nettoyées et/ou enrichies. Elles sont ensuite stockées dans des serveurs de logs centralisés, comme Prometheus ou Elasticsearch. L'identifiant de la trace nous permet de retrouver la chronologie des opérations pour une trace spécifique.
+
+Au sein de très grandes infrastructures, les logs et les traces sont parfois trop massives pour être ingérées par les serveurs de logs à temps. Ces données peuvent alors être perdues. Pour éviter ce problème, il est courant de placer un serveur Kafka devant le serveur de logs pour absorber progressivement les données. Un programme comme le [_Jaeger Ingester_](https://www.jaegertracing.io/docs/1.42/architecture/#ingester) peut ensuite progressivement venir les récupérer et les indexer. Pour les logs _rsyslog_, l'utilisation de protocoles comme le RELP[^RELP] peut être nécessaire pour s'assurer que l'enregistrement soit effectué.
+
+Que ce soit à l'aide de Logstash pour les _logs_ ou avec le _Jaeger Ingester_ pour les traces, normaliser ses données est capital pour correctement pouvoir les stocker et les traiter. Pour répondre à cet enjeu, le [projet OpenTelemetry](https://opentelemetry.io/docs/concepts/what-is-opentelemetry/) définit des conventions sémantiques[^OTSemanticConventions].
+
+En mettant en place des mécanismes d'observabilité, vous pourrez répondre exhaustivement à la question de vos ingénieurs : "est-ce que je peux avoir les logs de la production pour corriger ce bug ?". Ces données vont nous permettre de mieux construire nos [indicateurs de résilience](#indicateurs-de-résilience), pour prendre des décisions avisées plus rapidement.
 
 ### Savoir quand innover et quand s'arrêter
 
@@ -1889,7 +1933,7 @@ Un SLO qualifie un objectif cible de résilience pour un système. Il est repré
 
 L'objectif "juste" d'un SLO est déterminé par le seuil de tolérance que peut supporter votre client face à un phénomène irritant. Par exemple, quantifiez ce que signifie pour lui avoir un site web "lent" (ex: grâce une étude SEO[^SEO]). Si vos clients quittent généralement vos pages après plus de 200ms d'attente, définissez votre SLO par "_99.9% des réponses doivent être retournées en moins de 200ms, sur 1 mois_".
 
-Un bon SLO doit toujours avoir une valeur proche de 100% sans jamais l'atteindre, pour les raisons évoquées dans le chapitre "[Savoir quand innover et quand s'arrêter](#savoir-quand-innover-et-quand-sarrêter)". Quant à la fréquence à laquelle atteindre cet objectif (99.9% sur 1 mois), il n'existe pas de règle pour la définir initiallement. Vous pouvez vous baser sur une moyenne de votre historique de mesures, ou expérimenter. Cette valeur doit être adaptée à la charge de travail que votre équipe est capable d'absorber.
+Un bon SLO doit toujours avoir une valeur proche de 100% sans jamais l'atteindre ; nous en avons évoqué les raisons dans le chapitre "[Savoir quand innover et quand s'arrêter](#savoir-quand-innover-et-quand-sarrêter)". Quant à la fréquence à laquelle atteindre cet objectif (99.9% sur 1 mois), il n'existe pas de règle pour la définir initialement. Vous pouvez vous baser sur une moyenne de votre historique de mesures, ou expérimenter. Cette valeur doit être adaptée à la charge de travail que votre équipe est capable d'absorber.
 
 Les SLOs se construisent à partir d'un ou plusieurs "indicateurs de niveau de service" (_Service Level Indicator_ ou SLI). Le SLI est le taux actuel de bons évènements mesurés, sur l'ensemble des évènements pris en compte, pour une période donnée. Se basant lui-même sur une ou plusieurs mesures, il permet de mesurer l'un des aspects de la résilience d'un système. Il qualifie un phénomène pouvant impacter négativement votre utilisateur : le temps de réponse à une requête, le nombre de données retournées qui sont bien à jour, ou encore la latence en lecture et écriture pour le stockage des données.
 
@@ -1979,9 +2023,9 @@ Fort de ce constat, nous pouvons améliorer l'un des indicateurs du chapitre pr�
 
 - **Phénomène : durée de chargement d'une page**
   - Mesure : durée de chargement d'une page pour chaque requête (en millisecondes)
-  - SLI classique : taux moyen de pages chargées en moins de 200ms sur 5 minutes (en pourcent)
+  - SLI classique : taux de pages chargées en moins de 200ms sur 28 jours (en pourcent)
   - SLO classique : 99% des pages doivent charger en moins de 200ms sur 28 jours
-  - SLI avancé : taux de pages chargées en moins de 1000ms dans le 95ème centile sur 5 minutes (en pourcent)
+  - SLI avancé : taux de pages chargées en moins de 1000ms dans le 95ème centile sur 28 jours (en pourcent)
   - SLO avancé : 99% des pages du 95ème centile doivent être chargées en moins de 1000ms sur 28 jours (en pourcent)
 
 Pour développer votre intuition sur ces indicateurs, commencez par des SLIs et SLOs classiques. Une fois que votre infrastructure a gagné en maturité - et particulièrement en nombre d'utilisateurs - vous pouvez vous orienter vers des SLIs et SLOs avancés.
@@ -2281,8 +2325,8 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **EmpOps** (Employees Operations) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs, OfficeLife).
 - **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
-- **EdgeOps** : TODO(flavienbwk)
-- **ChatOps** : TODO(flavienbwk): Chat Operations (ChatOps) is the use of chat clients and real-time chat tools to facilitate software development and operations. Also known as "conversation-driven collaboration" or “conversation-driven DevOps,” ChatOps is designed for fast and simple instant messaging between development team members.
+- TODO(flavienbwk) **EdgeOps** :
+- TODO(flavienbwk) **ChatOps** : Chat Operations (ChatOps) is the use of chat clients and real-time chat tools to facilitate software development and operations. Also known as "conversation-driven collaboration" or “conversation-driven DevOps,” ChatOps is designed for fast and simple instant messaging between development team members.
 - **LiveOps** (Live Game Operations) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'intérêt pour un jeu vidéo : de son lancement à son retrait. Dit vulgairement, c'est "maintenir la hype" autour d'un jeu : suivi du nombre de joueurs, du temps de jeu ou encore des avis. Les missions incluent aussi la promotion, le développement de l'engagement, l'organisation de tournois et l'assistance faite aux joueurs.
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
@@ -2911,3 +2955,11 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^UptimeVsAvailability]: Le taux de fonctionnement (_uptime_) est le temps pendant lequel le service est allumé sur une période donnée. La disponibilité (_availability_) indique elle si le service est accessible et retourne des réponses valides. Par exemple, une API peut être démarrée (_uptime_) sans être disponible pour retourner une réponse valide (_availability_; service inaccessible, saturé ou erreurs HTTP 500 intempestives).
 
 [^SLOSREBook]: Google. Chapitre "[_Service Level Objectives_](https://sre.google/sre-book/service-level-objectives/)", _SRE Book_. _sre.google_.
+
+[^ANSSIGuideJournalisation]: ANSSI. ["Recommandations de sécurité pour l'architecture d'un système de journalisation"](https://www.ssi.gouv.fr/uploads/2022/01/anssi-guide-recommandations_securite_architecture_systeme_journalisation.pdf) version 2, Annexe D : aspects juridiques et réglementaires. 2022.
+
+[^RELP]: RELP (_Reliable Event Logging Protocol_ ou protocole fiable de journalisation d'évènements en français) est un protocole développé pour avoir l'assurance qu'un log émis est bien arrivé à destination. Source : [_connect.ed-diamond.com_](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmfhs-042/rsyslog-et-picviz-supervision-de-logs-a-grande-echelle).
+
+[^DistributedSystemsObservabilityBook]: SRIDHARAN, Cindy. "[_Distributed Systems Observability_](https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/)". 2018.
+
+[^OTSemanticConventions]: "_OpenTelemetry définit des conventions sémantiques [...] qui spécifient des noms communs pour différents types d'opérations et de données._". Source : [_opentelemetry.io_](https://opentelemetry.io/docs/concepts/semantic-conventions/).
