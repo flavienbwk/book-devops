@@ -1916,9 +1916,9 @@ En somme, le budget d'erreur est un accord entre la direction et les équipes te
 
 Il permet aux équipes d'ingénierie de réévaluer par elles-mêmes des objectifs trop ambitieux vis-à-vis du risque toléré. Elles peuvent ainsi définir des objectifs réalistes. Le budget d'erreur permet aux équipes de partager entre elles la responsabilité de la résilience d'un service : les défaillances de l'infrastructure impactent le budget d'erreur des développeurs. Inversement, les défaillances logicielles impactent le budget d'erreur des équipes SRE.
 
-TODO(flavienbwk): Google recommends monitoring on error budget burns. Ex: spending 10h instead of 1h on a task. In this case, create a ticket for a lower burn rate.
+Faites attention à vos pics de consommation de budget d'erreur : si un ingénieur passe dix heures au lieu d'une pour corriger un incident, il lui est recommandé d'ouvrir un ticket auprès de quelqu'un de plus expérimenté. Il évitera ainsi de consommer tout le budget d'erreur.
 
-Pour répondre à la première question, voyons dans le prochain chapitre quels sont les indicateurs qu'il est possible de suivre.
+Pour répondre à la première question, voyons quels sont les indicateurs qu'il est possible de suivre dans le prochain chapitre.
 
 ### Indicateurs de résilience
 
