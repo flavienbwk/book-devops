@@ -1924,11 +1924,22 @@ Pour répondre à la première question, voyons quels sont les indicateurs qu'il
 
 #### Les 4 signaux clé
 
-Tout indicateur de résilience se base sur des mesures. Découvrons les 4 mesures clé qui nous permettrons plus tard de créer nos propres indicateurs de résilience.
+La surveillance de systèmes distribués représente un véritable dilemme. Les équipes SRE doivent réussir à les surveiller facilement - pour permettre d'intervenir rapidement - alors que leur architecture est souvent complexe. De fait, nombreuses sont les technologies qui composent ces systèmes. Les 4 signaux clé apportent un moyen unifié de caractériser les phénomènes les plus importants à surveiller.
 
-TODO(flavienbwk) Développer le sujet (4 golden signals).
+Découvrons les 4 grandeurs qui nous permettrons ensuite de créer nos propres indicateurs de résilience :
 
-Au sein d'une infrastructure containérisée, un _service mesh_ automatise l'acquisition de ces mesures. Nous découvrirons cette technologie dans le chapitre "[Service mesh](#service-mesh)". Nous verrons également quels outils existent pour récolter et visualiser ces métriques. Mais avant cela, découvrons comment créer nos indicateurs de résilience dans le prochain chapitre.
+1. La latence : temps que prend le système à répondre à une requête.
+    - Il est important de différencier les requêtes ayant abouti avec succès de celles qui ne le sont pas. Par exemple, si vos systèmes retournent rapidement des erreurs serveur (ex: code HTTP 500), cela ne veut pas dire que votre système est en bonne santé pour autant. Il faut donc filtrer vos mesures de latence en excluant les requêtes ayant abouti à une erreur.
+2. Le trafic : la quantité de requêtes affluant vers un système.
+    - Généralement exprimé en requêtes par seconde, ou en MB/s dans le cas de flux de données.
+3. Les erreurs : le taux de requêtes qui échouent.
+    - Les requêtes peuvent échouer "explicitement" ou "implicitement". Les erreurs explicites sont celles qui peuvent par exemple retourner un code HTTP 500. Les erreurs implicites sont celles qui peuvent retourner un code HTTP 200 mais dont le contenu n'est pas celui attendu.
+4. La saturation : à quel point les ressources de votre système sont consommées.
+    - Taux d'utilisation des ressources par rapport à la charge maximale que votre système est en mesure de traiter. Elle permet de répondre à des questions du type "_Mon serveur est-il capable de traiter les requêtes clientes si l'affluence double ?_" ou bien "_Quand est-ce que mon disque-dur est susceptible d'être plein ?_". Elle se base sur des mesures d'utilisation de la RAM, du CPU, du réseau ou encore de l'I/O.
+
+Ces quatre mesures sont déjà un bon point de départ pour la surveillance de votre infrastructure. Ce sont les mesures principales qui vous permettront de définir vos SLIs, SLOs et SLAs.
+
+Au sein d'une infrastructure Cloud, un _service mesh_ automatise l'acquisition de ces mesures. Nous découvrirons cette technologie dans le chapitre "[Service mesh](#service-mesh)". Nous verrons également quels outils existent pour récolter et visualiser ces métriques. Mais avant cela, découvrons comment créer nos indicateurs de résilience dans le prochain chapitre.
 
 #### SLI, SLO et SLA
 
@@ -2037,26 +2048,44 @@ Pour développer votre intuition sur ces indicateurs, commencez par des SLIs et 
 
 #### MTTx
 
-TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
+Les MTTx sont des mesures qualifiant le temps moyen pour qu'un évènement se produise ou prenne fin. Le "x" de l'acronyme MTTx qualifie la pluralité de cette catégorie de mesures. Par exemple, le MTTR (_mean time to recovery_ ou temps moyen pour le rétablissement) est utilisé pour suivre le temps que prend une équipe avant de rétablir l'état d'un système défaillant.
 
-<!--
+Suivre ces mesures au cours du temps vous permet d'évaluer l'efficacité de vos travaux de résilience. Cela vous permet aussi de jauger l'efficacité de vos équipes pour répondre aux incidents. Si les mesures se dégradent, vous devrez étudier pourquoi et éventuellement réorganiser vos priorités afin de ne pas menacer vos SLOs. L'avantage est que vous saurez sur quoi vous concentrer.
 
-Mesurer le travail manuel (toil):
+Les MTTx sont nombreuses dans la littérature, avec chacune leurs spécificités et leurs nuances. Voyons les MTTx les plus populaires :
 
-Measure toil by : identifying it (often are stakeholders that don't want to do much work), selecting an appropriate unit of measure (the amount of effort : time for example), track continuously the measurements.
+| Acronyme | Nom complet                                                       | Signification                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| -------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **MTTD** | _mean time to detect_ ou temps moyen de détection                 | temps moyen entre le déclenchement de l'incident et le moment où vos systèmes lancent l'alerte. Détecter un incident peut prendre quelques secondes quand un problème conséquent se déclenche. Mais cela peut prendre plusieurs semaines quand il ne concerne qu'un utilisateur isolé qui ne fait pas remonter le problème... jusqu'à ce qu'il ne puisse plus le gérer.                                                                                                  |
+| **MTTA** | _mean time to acknowledge_ ou temps moyen de prise en compte      | temps moyen entre le déclenchement d'une alerte et l'attribution d'un personnel à la résolution cet incident.                                                                                                                                                                                                                                                                                                                                                            |
+| **MTTI** | _mean time to investigation_ ou temps moyen d'investigation       | une fois que l'incident a été pris en compte, temps moyen nécessaire pour que la personne qui a été désignée sache réellement ce qui ne va pas et comment y remédier. Un MTTI trop élevé suggère que votre infrastructure ou votre application est trop complexe, ou que vos mécanismes d'observabilité sont insuffisants. Cela peut aussi indiquer que vos ingénieurs sont débordés et qu'ils ont ainsi du mal à se libérer pour intervenir rapidement sur un incident. |
+| **MTTR** | _mean time to recovery_ ou temps moyen pour le rétablissement     | temps moyen entre l'alerte et la résolution du problème                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **MTTP** | _mean time to production_ ou temps moyen à la production          | temps moyen pour que le service affecté par un incident soit à nouveau opérationnel et accessible aux utilisateurs en production. Au contraire du MTTR qui mesure le temps de réparation d'un service, alors que le MTRS mesure le temps de restauration du service après la réparation du service. Par exemple en cas de panne, votre site peut afficher un avertissement "Nous sommes en maintenance" même si vous venez de réparer le service défaillant.             |
+| **MTBF** | _mean time before failure_ ou temps moyen entre deux défaillances | temps moyen entre la dernière défaillance détectée et l'actuelle. Cette mesure aide à prédire la disponibilité d'un service.                                                                                                                                                                                                                                                                                                                                             |
 
-Example : count the number of tickets, alerts and collect statistics to identify source of toils.It allows to trigger a toil reduction effort. It empowers teams to think about toil to best invest their time and efforts.
+TODO(flavienbwk): Schéma type https://www.splunk.com/content/dam/splunk2/images/data-insider/mttr/mttr-failure-metrics-timeline.svg
 
-Google recommends monitoring on error budget burns. Ex: spending 10h instead of 1h on a task. In this case, create a ticket for a lower burn rate.
+Vous pouvez commencer à suivre vos MTTx dans un tableur collaboratif (ex: _Baserow_, _NocoDB_, _Google Sheets_) puis passer à des outils plus intégrés comme _Jira Service Management_ ou [_Odoo_](https://www.odoo.com/fr_FR/app/maintenance). L'idée est de pouvoir calculer et visualiser la tendance que prennent vos MTTx avec le temps.
 
-Google recommends monitoring these 4 golden signals : latency, traffic, errors and saturation.
+Si vous optez pour un tableur, vous pouvez utiliser pour cette structure :
 
-Sharing monitoring tools including its KPIs (OKRs at Google (60/70% is good OKR)) is key to make your employees more responsible and more happy so they can work more effectively. It allows sharing communications and feedback loops.
+| Mesure | Date de début        | Date de fin          | Incident                |
+| ------ | -------------------- | -------------------- | ----------------------- |
+| TTD    | 04/07/2024 16h45 UTC | 04/07/2024 16h50 UTC | https://abcd.com/C4D5E6 |
+| TTA    | 04/07/2024 16h50 UTC | 04/07/2024 17h00 UTC | https://abcd.com/C4D5E6 |
+| TTI    | 04/07/2024 17h00 UTC | 04/07/2024 17h20 UTC | https://abcd.com/C4D5E6 |
+| TTR    | 04/07/2024 17h00 UTC | 04/07/2024 18h30 UTC | https://abcd.com/C4D5E6 |
+| TTD    | 02/06/2024 13h30 UTC | 02/06/2024 13h34 UTC | https://abcd.com/A1B2C3 |
+| ...    | ...                  | ...                  | ...                     |
 
-For example, Google uses an internal tool accessible by everyone : bugganizer.
+- La **mesure** mentionne le nom du MTTx
+- La **date de début** est le moment auquel l'évènement a débuté
+- La **date de fin** est le moment auquel l'évènement a pris fin
+- La colonne **incident** peut référencer un identifiant d'incident ou le lien vers le postmortem
 
-Status page avec https://github.com/louislam/uptime-kuma
--->
+Calculez vos MTTx en faisant la moyenne des différences entre date de début et date de fin pour chaque incident. Echantillonnez sur une période d'un mois calendaire.
+
+Comme vous pouvez l'observer, la majorité des mesures peuvent être issues de votre postmortem. Elles sont dans tous les cas intimement liées à ce dernier et la complètent. Veillez à tenir vos MTTx à jour pour chiffrer votre niveau de résilience et identifier les points névralgiques qui l'affectent.
 
 ### Service mesh
 
@@ -2282,6 +2311,8 @@ La migration du schéma d'une base de données est un autre exemple. En déclara
 
 # Conclusion
 
+Mettre en place une organisation et une infrastructure DevOps n'est pas simple. Les technologies sont nombreuses, requierent des compétences spécifiquesLes priorités commerciales ou opérationnelles empêchent souvent de s'adonner à des travaux d'infrastructure en faveur de travaux de développement produit. Néanmoins, se structurer autour de méthodes reconnues et éprouvées vous permettra de gagner en efficacité sur le long terme et éviter les écueils d'une organisation peu ou pas structurée.
+
 TODO(flavienbwk): Présenter le DevOps [comme une évolution](#ne-pas-disrupter). Séparer les étapes de montée en compétence : Cloud (apprendre la base des technologies) puis SRE (procédures, postmortems) puis DevOps (au service des développeurs).
 
 TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
@@ -2327,12 +2358,12 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **FinOps** (Financial Operations) : ensemble de pratiques pour mieux comprendre et gérer les coûts financiers d'une infrastructure cloud. Cela comprend le suivi et l'optimisation des dépenses, ainsi que la gestion de la facturation et des paiements. Par exemple à l'aide de tableaux de bord ou d'algorithmes automatisés.
 - **MLOps** (Machine Learning Operations) : ensemble de pratiques pour la collaboration et la communication entre les équipes de _datascience_ et de production pour le développement et le déploiement efficace de modèles de _machine learning_ (ML). L'objectif est d'améliorer la rapidité, la qualité et la résilience des modèles de ML en automatisant et standardisant. (cf. _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
 - **GitOps** (Git Operations) : ensemble de règles visant à utiliser _git_[^git] comme unique source de vérité pour standardiser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#intégration-continue-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
-- **EmpOps** (Employees Operations) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs, OfficeLife).
+- **EmpOps** (Employees Operations) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs).
 - **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
 - TODO(flavienbwk) **EdgeOps** :
 - TODO(flavienbwk) **ChatOps** : Chat Operations (ChatOps) is the use of chat clients and real-time chat tools to facilitate software development and operations. Also known as "conversation-driven collaboration" or “conversation-driven DevOps,” ChatOps is designed for fast and simple instant messaging between development team members.
-- **LiveOps** (Live Game Operations) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'intérêt pour un jeu vidéo : de son lancement à son retrait. Dit vulgairement, c'est "maintenir la hype" autour d'un jeu : suivi du nombre de joueurs, du temps de jeu ou encore des avis. Les missions incluent aussi la promotion, le développement de l'engagement, l'organisation de tournois et l'assistance faite aux joueurs.
+- **LiveOps** (Live Game Operations) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'engouement autour d'un jeu vidéo. De manière plus familière, c'est "maintenir la hype" autour du jeu. Ces activités incluent : le suivi du nombre de joueurs, du temps de jeu ou encore des avis, le développement de l'engagement client, l'organisation de tournois et l'assistance faite aux joueurs.
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
