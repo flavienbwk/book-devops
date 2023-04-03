@@ -22,7 +22,7 @@ Des initiatives pour créer des plateformes Cloud souveraines prennent forme aut
 
 Plus largement employé dans le privé, les grands fournisseurs de services Cloud (_Amazon Web Services_, _Google Cloud Platform_, _Microsoft Azure_, _Alibaba Cloud_) pratiquent en interne ce mode d'organisation, le promeuvent et fournissent les technologies associées.
 
-La Corée du Sud [favorise historiquement l'usage de technologies Cloud privées](https://news.bloomberglaw.com/privacy-and-data-security/south-koreas-new-cloud-computing-act-and-new-rules-on-outsourcing-of-data-processing-by-financial-institutions), en particulier depuis sa loi en 2015 facilitant la sous-traitance[^SouthKorea2015CloudLaw]. Néanmoins, elle a su s'équiper dès 2007 de centre de données nationaux hébergeant aujourd'hui les systèmes d'information de 45 agences gouvernementales[^GIDCKorea]. Elle annoncera en 2021 un plan de transformation numérique massive de son administration : le _Digital Government Master Plan 2021-2025_[^SouthKoreaMasterPlan2021], suite à la crise du COVID-19. Ce plan fournit un cadre technique nommé "[_eGovFrame_](https://www.worldbank.org/en/events/2022/02/09/digital-the-door-to-a-better-world-digital-government-strategy-and-cases-in-korea)". Ce-dernier est utilisé pour le développement et la gestion des systèmes d'information governementaux, dans l'objectif d'améliorer leur interopérabilité. Il inclut par nature des principes DevOps.
+La Corée du Sud [favorise historiquement l'usage de technologies Cloud privées](https://news.bloomberglaw.com/privacy-and-data-security/south-koreas-new-cloud-computing-act-and-new-rules-on-outsourcing-of-data-processing-by-financial-institutions), en particulier depuis sa loi en 2015 facilitant la sous-traitance[^SouthKorea2015CloudLaw]. Néanmoins, elle a su s'équiper dès 2007 de centre de données nationaux hébergeant aujourd'hui les systèmes d'information de 45 agences gouvernementales[^GIDCKorea]. Elle annoncera en 2021 un plan de transformation numérique massive de son administration : le _Digital Government Master Plan 2021-2025_[^SouthKoreaMasterPlan2021], suite à la crise du COVID-19. Ce plan fournit un cadre technique nommé "[_eGovFrame_](https://www.worldbank.org/en/events/2022/02/09/digital-the-door-to-a-better-world-digital-government-strategy-and-cases-in-korea)". Ce-dernier est utilisé pour le développement et la gestion des systèmes d'information gouvernementaux, dans l'objectif d'améliorer leur interopérabilité. Il inclut par nature des principes DevOps.
 
 D'autres gouvernements affichent une volonté claire d'adopter ces technologies et pratiques dans une démarche souveraine, sans nécessairement afficher publiquement leurs initiatives. Ces volontés prennent forme au sein de documents mentionnant la stratégie Cloud, IA ou data des pays. A titre d'exemple, le Canada a publié son rapport "Objectif 2020"[^CanadaObjectif2020] en 2013, pour moderniser la manière dont travaillent les services publics, puis le "_Cloud Adoption Strategy_"[^CanadaCAS] en 2018.
 
@@ -1840,17 +1840,66 @@ Dans ce chapitre, nous allons aborder une dimension importante de l'automatisati
 
 1. Les équipes techniques et commerciales peuvent en tout temps connaître l'état d'un service (opérationnel, partiellement accessible, en panne)
 2. Les équipes techniques peuvent analyser des données pour identifier le problème et tenter de le résoudre (cf. chapitre "[Organiser sa réponse à incident](#organiser-sa-réponse-à-incident)")
-3. Les équipes techniques, forts de ces données, peuvent aider les équipes commerciales à prendre de meilleures décisions pour l'organisation
+3. Les équipes techniques, fortes de ces données, peuvent aider les équipes commerciales à prendre de meilleures décisions pour l'organisation
 
 Avoir confiance dans ses décisions, en se basant sur ses propres données, est l'aboutissement d'une transformation DevOps réussie. L'industrie nomme cela les "prises de décision basées sur la donnée" ou "_data-driven decision making_" en anglais.
 
 ### Les 3 pilliers de l'observabilité
 
-TODO(flavienbwk): logs, metrics and traces; https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/ch04.html
+Les journaux d'activité (_logs_), les métriques (_metrics_) et les traces (_traces_) sont considérés comme les trois pilliers de l'observabilité. Ces trois type de données peuvent être générés par les logiciels, pour identifier et résoudre les problèmes susceptibles de survenir une fois déployés.
+
+L'observabilité est un sujet très vaste dans le domaine de la résilience des systèmes[^DistributedSystemsObservabilityBook]. Nous ne survolerons que les essentiels dans ce chapitre.
+
+Le domaine de l'observabilité peut être résumé comme l'ensemble des outils et des pratiques permettant aux ingénieurs de détecter, diagnostiquer et résoudre les problèmes d'un système (bugs, lenteurs, disponibilité), le plus rapidement possible. Au delà du besoin de résilience, la récolte de certaines de ces données est parfoise requise par la loi[^ANSSIGuideJournalisation].
+
+Examinons de plus près ce que chacune de ces données peut nous apprendre :
+
+- _logs_ : enregistrements immutables et horodatés décrivant des évènements spécifiques au cours du temps. Par exemple, "_[MonLogiciel] jdupont a eu accès à l'URL /users/login à 18h55m14s_". Le code produisant une ligne de _logs_ est généralement ajouté manuellement par un développeur dans un logiciel.
+- _metrics_ : représentations numériques de phénomènes mesurés au cours du temps. Par exemple, le nombre de requêtes, le temps de réponse ou l'utilisation de ressources (RAM, CPU, disque, réseau).
+- _traces_ : type de _logs_ permettant de suivre le cheminement d'une opération (ex: une requête). Une trace est un groupe de _logs_ qui comporte des informations supplémentaires permettant de tracer une opération, au travers des différents services par lesquels elle passe. Chaque étape et sous-opération traversée est nommée travée (_span_). Les _logs_ d'une trace sont généralement générés automatiquement.
+
+Attardons-nous sur les traces pour bien comprendre ce qu'elles impliquent. Prenons l'exemple d'une application (un client) qui envoit une requête à une API REST (un serveur). Une trace est composée de _spans_ et de métriques, associées à un identifiant unique. Cet identifiant permet de discriminer le cheminement de notre requête au travers de tous les services qu'elle traversera. Voici un exemple :
+
+![Lignes de logs d'une trace entre un client et un serveur.](./images/2023_trace_basic_example.png)
+
+<!--
+```txt
+Trace ID: a814644cf3
+
+Client Application:
+- 2023-04-01 09:00:00.000 [INFO] [trace=a814644cf3, span=99e9d68c] Sending request to server
+- 2023-04-01 09:00:00.100 [INFO] [trace=a814644cf3, span=fa4a2af9] Received response from server
+- Request duration: 100 ms
+
+Server Application:
+- 2023-04-01 09:00:00.050 [INFO] [trace=a814644cf3, span=4197eb7e] Received request from client
+- 2023-04-01 09:00:00.080 [INFO] [trace=a814644cf3, span=e6372477] Processing request
+- 2023-04-01 09:00:00.090 [INFO] [trace=a814644cf3, span=d1a8977c] Sending response to client
+- Request duration: 40 ms
+
+Metrics:
+- Client CPU usage: 20%
+- Server CPU usage: 30%
+```
+-->
+
+Pour mieux se représenter la temporalité de la requête, les _logs_ d'une _trace_ sont souvent affichés sous forme de diagramme. Chaque _span_ est alors représentée par un rectangle incluant un nom (à gauche) et une durée (au niveau du rectangle) :
+
+![Exemple de trace traitée par Jaeger pour un appel API entre un client et un serveur. Les espacements entre les spans bleues et orange sont dus au temps que prend la communication HTTP entre les deux services. Il n'y a pas de log émis à ce moment.](./images/2022_jaeger_trace.png)
+
+Les traces sont indépendamment remontées par des librairies comme le SDK d'OpenTelemetry. Ces dernières les envoit à un collecteur de traces comme Jaeger, Tempo ou Zipkin pour qu'elles soient validées, nettoyées et/ou enrichies. Elles sont ensuite stockées dans des serveurs de logs centralisés, comme Prometheus ou Elasticsearch. L'identifiant de la trace nous permet de retrouver la chronologie des opérations par lesquelles elle est passé.
+
+Le plus grand défi du traçage est son intégration au sein d'une infrastructure existante. En effet, pour que les traces soient pleinement utiles, il faut que chaque composant par lequel passe la requête émette un log et propage les informations de traçage à son tour. Moins précis que s'il était directement intégré à un logiciel, le traçage via _service mesh_ peut être un moyen rapide de disposer des fonctionnalités de traçage sans avoir à modifier le code de ses logiciels[^ServiceMeshTraces]. Nous verrons ce qu'est un _service mesh_ et comment cette technologie fonctionnent dans le chapitre "[Service mesh](#service-mesh)".
+
+Au sein de très grandes infrastructures, les logs et les traces sont parfois trop massives pour être ingérées par son serveur de logs à temps. Des données peuvent alors être perdues. Pour éviter ce problème, il est courant d'utiliser des services qui viennent temporiser l'indexation. Un serveur comme Kafka peut être placé devant le serveur de logs pour les absorber progressivement. Puis un programme comme le [_Jaeger Ingester_](https://www.jaegertracing.io/docs/1.42/architecture/#ingester) vient progressivement les indexer. Pour les logs _rsyslog_, l'utilisation de protocoles comme le RELP[^RELP] peut être nécessaire pour s'assurer qu'ils soient bien sauvegardés.
+
+Que ce soit à l'aide de [Logstash](https://www.elastic.co/logstash/) ou [Loki](https://grafana.com/oss/loki/) pour les logs, ou avec [Jaeger](https://www.jaegertracing.io/) ou [Tempo](https://grafana.com/oss/tempo) pour les traces, normaliser ses données est capital pour pouvoir correctement les stocker et les traiter. Pour répondre à cet enjeu, la [librairie OpenTelemetry](https://opentelemetry.io/docs/concepts/what-is-opentelemetry/) définit des conventions sémantiques[^OTSemanticConventions]. Elle est celle qui est utilisée la plupart du temps.
+
+En mettant en place des mécanismes d'observabilité, vous pourrez répondre plus facilement à la question "_qu'est-ce qu'il s'est passé pour que ce bug se produise ?_". Vos ingénieurs pourront se baser sur des données exhaustives pour corriger les bugs plus rapidement. Ces données vont nous permettre de mieux construire nos [indicateurs de résilience](#indicateurs-de-résilience), pour prendre plus rapidement des décisions avisées.
 
 ### Savoir quand innover et quand s'arrêter
 
-A première vue, il n'est pas évident de savoir où mettre le curseur entre les projets de résilience et d'innovation. L'idée est donc de mesurer l'état de services pour savoir quand on s'autorise à innover.
+A première vue, il n'est pas évident de savoir où mettre le curseur entre les travaux de résilience et d'innovation. L'idée est donc de mesurer l'état des services pour savoir quand on s'autorise à innover.
 
 Mesurer est une chose, mais encore faut-il mesurer les bonnes choses, au bon niveau. Dans une infrastructure distribuée, l'un des serveurs peut tomber en panne sans nécessairement impacter la disponibilité d'un logiciel pour vos clients. Mesurer la disponibilité d'un serveur est peut-être intéressant pour vos techniciens, mais peut-être n'est-elle pas la bonne mesure pour connaître l'impact du dysfonctionnement sur l'utilisateur. C'est cela que votre organisation doit définir :
 
@@ -1867,19 +1916,30 @@ En somme, le budget d'erreur est un accord entre la direction et les équipes te
 
 Il permet aux équipes d'ingénierie de réévaluer par elles-mêmes des objectifs trop ambitieux vis-à-vis du risque toléré. Elles peuvent ainsi définir des objectifs réalistes. Le budget d'erreur permet aux équipes de partager entre elles la responsabilité de la résilience d'un service : les défaillances de l'infrastructure impactent le budget d'erreur des développeurs. Inversement, les défaillances logicielles impactent le budget d'erreur des équipes SRE.
 
-TODO(flavienbwk): Google recommends monitoring on error budget burns. Ex: spending 10h instead of 1h on a task. In this case, create a ticket for a lower burn rate.
+Faites attention à vos pics de consommation de budget d'erreur : si un ingénieur passe dix heures au lieu d'une pour corriger un incident, il lui est recommandé d'ouvrir un ticket auprès de quelqu'un de plus expérimenté. Il évitera ainsi de consommer tout le budget d'erreur.
 
-Pour répondre à la première question, voyons dans le prochain chapitre quels sont les indicateurs qu'il est possible de suivre.
+Pour répondre à la première question, voyons quels sont les indicateurs qu'il est possible de suivre dans le prochain chapitre.
 
 ### Indicateurs de résilience
 
 #### Les 4 signaux clé
 
-Tout indicateur de résilience se base sur des mesures. Découvrons les 4 mesures clé qui nous permettrons plus tard de créer nos propres indicateurs de résilience.
+La surveillance de systèmes distribués représente un véritable dilemme. Les équipes SRE doivent réussir à les surveiller facilement - pour permettre d'intervenir rapidement - alors que leur architecture est souvent complexe. De fait, nombreuses sont les technologies qui composent ces systèmes. Les 4 signaux clé apportent un moyen unifié de caractériser les phénomènes les plus importants à surveiller.
 
-TODO(flavienbwk) Développer le sujet (4 golden signals).
+Découvrons les 4 grandeurs qui nous permettrons ensuite de créer nos propres indicateurs de résilience :
 
-Au sein d'une infrastructure containérisée, un _service mesh_ automatise l'acquisition de ces mesures. Nous découvrirons cette technologie dans le chapitre "[Service mesh](#service-mesh)". Nous verrons également quels outils existent pour récolter et visualiser ces métriques. Mais avant cela, découvrons comment créer nos indicateurs de résilience dans le prochain chapitre.
+1. La latence : temps que prend le système à répondre à une requête.
+    - Il est important de différencier les requêtes ayant abouti avec succès de celles qui ne le sont pas. Par exemple, si vos systèmes retournent rapidement des erreurs serveur (ex: code HTTP 500), cela ne veut pas dire que votre système est en bonne santé pour autant. Il faut donc filtrer vos mesures de latence en excluant les requêtes ayant abouti à une erreur.
+2. Le trafic : la quantité de requêtes affluant vers un système.
+    - Généralement exprimé en requêtes par seconde, ou en MB/s dans le cas de flux de données.
+3. Les erreurs : le taux de requêtes qui échouent.
+    - Les requêtes peuvent échouer "explicitement" ou "implicitement". Les erreurs explicites sont celles qui peuvent par exemple retourner un code HTTP 500. Les erreurs implicites sont celles qui peuvent retourner un code HTTP 200 mais dont le contenu n'est pas celui attendu.
+4. La saturation : à quel point les ressources de votre système sont consommées.
+    - Taux d'utilisation des ressources par rapport à la charge maximale que votre système est en mesure de traiter. Elle permet de répondre à des questions du type "_Mon serveur est-il capable de traiter les requêtes clientes si l'affluence double ?_" ou bien "_Quand est-ce que mon disque-dur est susceptible d'être plein ?_". Elle se base sur des mesures d'utilisation de la RAM, du CPU, du réseau ou encore de l'I/O.
+
+Ces quatre mesures sont déjà un bon point de départ pour la surveillance de votre infrastructure. Ce sont les mesures principales qui vous permettront de définir vos SLIs, SLOs et SLAs.
+
+Au sein d'une infrastructure Cloud, un _service mesh_ automatise l'acquisition de ces mesures. Nous découvrirons cette technologie dans le chapitre "[Service mesh](#service-mesh)". Nous verrons également quels outils existent pour récolter et visualiser ces métriques. Mais avant cela, découvrons comment créer nos indicateurs de résilience dans le prochain chapitre.
 
 #### SLI, SLO et SLA
 
@@ -1889,7 +1949,7 @@ Un SLO qualifie un objectif cible de résilience pour un système. Il est repré
 
 L'objectif "juste" d'un SLO est déterminé par le seuil de tolérance que peut supporter votre client face à un phénomène irritant. Par exemple, quantifiez ce que signifie pour lui avoir un site web "lent" (ex: grâce une étude SEO[^SEO]). Si vos clients quittent généralement vos pages après plus de 200ms d'attente, définissez votre SLO par "_99.9% des réponses doivent être retournées en moins de 200ms, sur 1 mois_".
 
-Un bon SLO doit toujours avoir une valeur proche de 100% sans jamais l'atteindre, pour les raisons évoquées dans le chapitre "[Savoir quand innover et quand s'arrêter](#savoir-quand-innover-et-quand-sarrêter)". Quant à la fréquence à laquelle atteindre cet objectif (99.9% sur 1 mois), il n'existe pas de règle pour la définir initiallement. Vous pouvez vous baser sur une moyenne de votre historique de mesures, ou expérimenter. Cette valeur doit être adaptée à la charge de travail que votre équipe est capable d'absorber.
+Un bon SLO doit toujours avoir une valeur proche de 100% sans jamais l'atteindre ; nous en avons évoqué les raisons dans le chapitre "[Savoir quand innover et quand s'arrêter](#savoir-quand-innover-et-quand-sarrêter)". Quant à la fréquence à laquelle atteindre cet objectif (99.9% sur 1 mois), il n'existe pas de règle pour la définir initialement. Vous pouvez vous baser sur une moyenne de votre historique de mesures, ou expérimenter. Cette valeur doit être adaptée à la charge de travail que votre équipe est capable d'absorber.
 
 Les SLOs se construisent à partir d'un ou plusieurs "indicateurs de niveau de service" (_Service Level Indicator_ ou SLI). Le SLI est le taux actuel de bons évènements mesurés, sur l'ensemble des évènements pris en compte, pour une période donnée. Se basant lui-même sur une ou plusieurs mesures, il permet de mesurer l'un des aspects de la résilience d'un système. Il qualifie un phénomène pouvant impacter négativement votre utilisateur : le temps de réponse à une requête, le nombre de données retournées qui sont bien à jour, ou encore la latence en lecture et écriture pour le stockage des données.
 
@@ -1979,35 +2039,53 @@ Fort de ce constat, nous pouvons améliorer l'un des indicateurs du chapitre pr�
 
 - **Phénomène : durée de chargement d'une page**
   - Mesure : durée de chargement d'une page pour chaque requête (en millisecondes)
-  - SLI classique : taux moyen de pages chargées en moins de 200ms sur 5 minutes (en pourcent)
+  - SLI classique : taux de pages chargées en moins de 200ms sur 28 jours (en pourcent)
   - SLO classique : 99% des pages doivent charger en moins de 200ms sur 28 jours
-  - SLI avancé : taux de pages chargées en moins de 1000ms dans le 95ème centile sur 5 minutes (en pourcent)
+  - SLI avancé : taux de pages chargées en moins de 1000ms dans le 95ème centile sur 28 jours (en pourcent)
   - SLO avancé : 99% des pages du 95ème centile doivent être chargées en moins de 1000ms sur 28 jours (en pourcent)
 
 Pour développer votre intuition sur ces indicateurs, commencez par des SLIs et SLOs classiques. Une fois que votre infrastructure a gagné en maturité - et particulièrement en nombre d'utilisateurs - vous pouvez vous orienter vers des SLIs et SLOs avancés.
 
 #### MTTx
 
-TODO(flavienbwk): D'autres MTTx [existent](https://thenewstack.io/key-metrics-for-devops-teams-dora-and-mttx/)
+Les MTTx sont des mesures qualifiant le temps moyen pour qu'un évènement se produise ou prenne fin. Le "x" de l'acronyme MTTx qualifie la pluralité de cette catégorie de mesures. Par exemple, le MTTR (_mean time to recovery_ ou temps moyen pour le rétablissement) est utilisé pour suivre le temps que prend une équipe avant de rétablir l'état d'un système défaillant.
 
-<!--
+Suivre ces mesures au cours du temps vous permet d'évaluer l'efficacité de vos travaux de résilience. Cela vous permet aussi de jauger l'efficacité de vos équipes pour répondre aux incidents. Si les mesures se dégradent, vous devrez étudier pourquoi et éventuellement réorganiser vos priorités afin de ne pas menacer vos SLOs. L'avantage est que vous saurez sur quoi vous concentrer.
 
-Mesurer le travail manuel (toil):
+Les MTTx sont nombreuses dans la littérature, avec chacune leurs spécificités et leurs nuances. Voyons les MTTx les plus populaires :
 
-Measure toil by : identifying it (often are stakeholders that don't want to do much work), selecting an appropriate unit of measure (the amount of effort : time for example), track continuously the measurements.
+| Mesure   | Nom complet                                                       | Signification                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| -------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **MTTD** | _mean time to detect_ ou temps moyen de détection                 | Temps moyen entre le déclenchement de l'incident et le moment où vos systèmes lancent l'alerte. Détecter un incident peut prendre quelques secondes quand un problème conséquent se déclenche. Mais cela peut prendre plusieurs semaines quand il ne concerne qu'un utilisateur isolé qui ne fait pas remonter le problème... jusqu'à ce qu'il ne puisse plus le gérer.                                                                                                    |
+| **MTTA** | _mean time to acknowledge_ ou temps moyen de prise en compte      | Temps moyen entre le déclenchement d'une alerte et l'attribution d'un personnel à la résolution cet incident.                                                                                                                                                                                                                                                                                                                                                              |
+| **MTTI** | _mean time to investigation_ ou temps moyen d'investigation       | Une fois que l'incident a été pris en compte, temps moyen nécessaire pour que la personne qui a été désignée sache réellement ce qui ne va pas et comment y remédier. Une MTTI trop élevée suggère que votre infrastructure ou votre application est trop complexe, ou que vos mécanismes d'observabilité sont insuffisants. Cela peut aussi indiquer que vos ingénieurs sont débordés et qu'ils ont ainsi du mal à se libérer pour intervenir rapidement sur un incident. |
+| **MTTR** | _mean time to recovery_ ou temps moyen pour le rétablissement     | Temps moyen entre l'alerte et la résolution du problème                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **MTTP** | _mean time to production_ ou temps moyen à la production          | Temps moyen pour que le service affecté par un incident soit à nouveau opérationnel et accessible aux utilisateurs en production. Au contraire du MTTR qui mesure le temps de réparation d'un service, alors que le MTRS mesure le temps de restauration du service après la réparation du service. Par exemple en cas de panne, votre site peut afficher un avertissement "Nous sommes en maintenance" même si vous venez de réparer le service défaillant.               |
+| **MTBF** | _mean time before failure_ ou temps moyen entre deux défaillances | Temps moyen entre la dernière défaillance détectée et l'actuelle. Cette mesure aide à prédire la disponibilité d'un service.                                                                                                                                                                                                                                                                                                                                               |
 
-Example : count the number of tickets, alerts and collect statistics to identify source of toils.It allows to trigger a toil reduction effort. It empowers teams to think about toil to best invest their time and efforts.
+![Chronologie des mesures MTTx lors d'un incident.](./images/2023_MTTx_timeline.jpg)
 
-Google recommends monitoring on error budget burns. Ex: spending 10h instead of 1h on a task. In this case, create a ticket for a lower burn rate.
+Vous pouvez commencer à suivre vos MTTx dans un tableur collaboratif (ex: _Baserow_, _NocoDB_, _Google Sheets_) puis passer à des outils plus intégrés comme _Jira Service Management_ ou [_Odoo_](https://www.odoo.com/fr_FR/app/maintenance). L'idée est de pouvoir calculer et visualiser la tendance que prennent vos MTTx avec le temps.
 
-Google recommends monitoring these 4 golden signals : latency, traffic, errors and saturation.
+Si vous optez pour un tableur, vous pouvez utiliser pour cette structure :
 
-Sharing monitoring tools including its KPIs (OKRs at Google (60/70% is good OKR)) is key to make your employees more responsible and more happy so they can work more effectively. It allows sharing communications and feedback loops.
+| Mesure | Date de début        | Date de fin          | Incident                |
+| ------ | -------------------- | -------------------- | ----------------------- |
+| TTD    | 04/07/2024 16h45 UTC | 04/07/2024 16h50 UTC | https://abcd.com/C4D5E6 |
+| TTA    | 04/07/2024 16h50 UTC | 04/07/2024 17h00 UTC | https://abcd.com/C4D5E6 |
+| TTI    | 04/07/2024 17h00 UTC | 04/07/2024 17h20 UTC | https://abcd.com/C4D5E6 |
+| TTR    | 04/07/2024 17h00 UTC | 04/07/2024 18h30 UTC | https://abcd.com/C4D5E6 |
+| TTD    | 02/06/2024 13h30 UTC | 02/06/2024 13h34 UTC | https://abcd.com/A1B2C3 |
+| ...    | ...                  | ...                  | ...                     |
 
-For example, Google uses an internal tool accessible by everyone : bugganizer.
+- La **mesure** mentionne le nom du MTTx
+- La **date de début** est le moment auquel l'évènement a débuté
+- La **date de fin** est le moment auquel l'évènement a pris fin
+- La colonne **incident** peut référencer un identifiant d'incident ou le lien vers le postmortem
 
-Status page avec https://github.com/louislam/uptime-kuma
--->
+Calculez vos MTTx en faisant la moyenne des différences entre date de début et date de fin pour chaque incident. Echantillonnez sur une période d'un mois calendaire.
+
+Comme vous pouvez l'observer, la majorité des mesures peuvent être issues de votre postmortem. Elles sont dans tous les cas intimement liées à ce dernier et la complètent. Veillez à tenir vos MTTx à jour pour chiffrer votre niveau de résilience et identifier les points névralgiques qui l'affectent.
 
 ### Service mesh
 
@@ -2053,11 +2131,11 @@ Comme décrit dans le chapitre "[Un socle au service de votre résilience](#un-s
 
 Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _Cloud native_[^CloudNative], il est possible de facilement "installer" des services socle au sein d'un cluster Kubernetes. Voici une liste non-exhaustive des services qui peuvent être assurés nativement dans votre cluster et administrables de manière centralisée :
 
-1. Centralisation des logs applicatifs et réseaux (cf. [Filebeat](https://www.elastic.co/beats/filebeat), [Fluentd](https://www.fluentd.org/), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/), [Jaeger](https://github.com/jaegertracing/jaeger))
+1. Centralisation des logs et traces applicatifs et réseaux (cf. [Filebeat](https://www.elastic.co/beats/filebeat), [Fluentd](https://www.fluentd.org/), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/), [Jaeger](https://github.com/jaegertracing/jaeger), [Tempo](https://grafana.com/oss/tempo/), [Zipkin](https://zipkin.io/))
 
     ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com](./images/kibana_logs.png)
 
-2. Centralisation des métriques de performance des noeuds et des conteneurs du cluster (références identifiques au point 1)
+2. Centralisation des métriques de performance des noeuds et des conteneurs du cluster (cf. [Mimir](https://grafana.com/oss/mimir/), [Metricbeat](https://www.elastic.co/beats/metricbeat))
 
     ![Tableau de bord Grafana des ressources consommées par les conteneurs d'une application dans Kubernetes, remontées par Loki. Source : grafana.com](./images/grafana_loki_metrics.png)
 
@@ -2233,6 +2311,8 @@ La migration du schéma d'une base de données est un autre exemple. En déclara
 
 # Conclusion
 
+Mettre en place une organisation et une infrastructure DevOps n'est pas simple. Les technologies sont nombreuses, requierent des compétences spécifiquesLes priorités commerciales ou opérationnelles empêchent souvent de s'adonner à des travaux d'infrastructure en faveur de travaux de développement produit. Néanmoins, se structurer autour de méthodes reconnues et éprouvées vous permettra de gagner en efficacité sur le long terme et éviter les écueils d'une organisation peu ou pas structurée.
+
 TODO(flavienbwk): Présenter le DevOps [comme une évolution](#ne-pas-disrupter). Séparer les étapes de montée en compétence : Cloud (apprendre la base des technologies) puis SRE (procédures, postmortems) puis DevOps (au service des développeurs).
 
 TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
@@ -2278,12 +2358,12 @@ Vous avez probablement déjà entendu une multitude de termes terminant par "Ops
 - **FinOps** (Financial Operations) : ensemble de pratiques pour mieux comprendre et gérer les coûts financiers d'une infrastructure cloud. Cela comprend le suivi et l'optimisation des dépenses, ainsi que la gestion de la facturation et des paiements. Par exemple à l'aide de tableaux de bord ou d'algorithmes automatisés.
 - **MLOps** (Machine Learning Operations) : ensemble de pratiques pour la collaboration et la communication entre les équipes de _datascience_ et de production pour le développement et le déploiement efficace de modèles de _machine learning_ (ML). L'objectif est d'améliorer la rapidité, la qualité et la résilience des modèles de ML en automatisant et standardisant. (cf. _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
 - **GitOps** (Git Operations) : ensemble de règles visant à utiliser _git_[^git] comme unique source de vérité pour standardiser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#intégration-continue-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
-- **EmpOps** (Employees Operations) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs, OfficeLife).
+- **EmpOps** (Employees Operations) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs).
 - **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
 - **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
-- **EdgeOps** : TODO(flavienbwk)
-- **ChatOps** : TODO(flavienbwk): Chat Operations (ChatOps) is the use of chat clients and real-time chat tools to facilitate software development and operations. Also known as "conversation-driven collaboration" or “conversation-driven DevOps,” ChatOps is designed for fast and simple instant messaging between development team members.
-- **LiveOps** (Live Game Operations) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'intérêt pour un jeu vidéo : de son lancement à son retrait. Dit vulgairement, c'est "maintenir la hype" autour d'un jeu : suivi du nombre de joueurs, du temps de jeu ou encore des avis. Les missions incluent aussi la promotion, le développement de l'engagement, l'organisation de tournois et l'assistance faite aux joueurs.
+- TODO(flavienbwk) **EdgeOps** :
+- TODO(flavienbwk) **ChatOps** : Chat Operations (ChatOps) is the use of chat clients and real-time chat tools to facilitate software development and operations. Also known as "conversation-driven collaboration" or “conversation-driven DevOps,” ChatOps is designed for fast and simple instant messaging between development team members.
+- **LiveOps** (Live Game Operations) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'engouement autour d'un jeu vidéo. De manière plus familière, c'est "maintenir la hype" autour du jeu. Ces activités incluent : le suivi du nombre de joueurs, du temps de jeu ou encore des avis, le développement de l'engagement client, l'organisation de tournois et l'assistance faite aux joueurs.
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
@@ -2908,6 +2988,16 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^SEO]: _Search Engine Optimization_ : Techniques d'optimisation visant améliorer son site web pour qu'il remonte dans les résultats de recherche.
 
-[^UptimeVsAvailability]: Le taux de fonctionnement (_uptime_) est le temps pendant lequel le service est allumé sur une période donnée. La disponibilité (_availability_) indique elle si le service est accessible et retourne des réponses valides. Par exemple, une API peut être démarrée (_uptime_) sans être disponible pour retourner une réponse valide (_availability_; service inaccessible, saturé ou erreurs HTTP 500 intempestives).
+[^UptimeVsAvailability]: Le taux de fonctionnement (_uptime_) est le temps pendant lequel le service est allumé sur une période donnée. La disponibilité (_availability_) indique si le service est accessible et retourne des réponses valides. Par exemple, une API peut être démarrée (_uptime_) sans être disponible pour retourner une réponse valide (_availability_; service inaccessible, saturé ou erreurs HTTP 500 intempestives).
 
 [^SLOSREBook]: Google. Chapitre "[_Service Level Objectives_](https://sre.google/sre-book/service-level-objectives/)", _SRE Book_. _sre.google_.
+
+[^ANSSIGuideJournalisation]: ANSSI. ["Recommandations de sécurité pour l'architecture d'un système de journalisation"](https://www.ssi.gouv.fr/uploads/2022/01/anssi-guide-recommandations_securite_architecture_systeme_journalisation.pdf) version 2, Annexe D : aspects juridiques et réglementaires. 2022.
+
+[^RELP]: RELP (_Reliable Event Logging Protocol_ ou protocole fiable de journalisation d'évènements en français) est un protocole développé pour avoir l'assurance qu'un log émis est bien arrivé à destination. Source : [_connect.ed-diamond.com_](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmfhs-042/rsyslog-et-picviz-supervision-de-logs-a-grande-echelle).
+
+[^DistributedSystemsObservabilityBook]: SRIDHARAN, Cindy. "[_Distributed Systems Observability_](https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/)". 2018.
+
+[^OTSemanticConventions]: "_OpenTelemetry définit des conventions sémantiques [...] qui spécifient des noms communs pour différents types d'opérations et de données._". Source : [_opentelemetry.io_](https://opentelemetry.io/docs/concepts/semantic-conventions/).
+
+[^ServiceMeshTraces]: Grâce à son _service mesh_, [Lyft a réécrit les entêtes des requêtes qui passent dans son réseau pour ajouter ou propager les informations de traçage](https://eng.lyft.com/scaling-productivity-on-microservices-at-lyft-part-3-extending-our-envoy-mesh-with-staging-fdaafafca82f).
