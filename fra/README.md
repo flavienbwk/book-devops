@@ -2297,7 +2297,15 @@ Au contraire du SRE qui se base sur des mesures bien spécifiques (ex. les "[Les
 
 ## Déployer en parallèle dans des environnements différents
 
-TODO(flavienbwk): Palantir Apollo (dev+deploy+monitor on multiple places) - https://www.youtube.com/watch?v=T2gF8KJDy3w - "Today, 100s of engineering teams are independently shipping 400+ services, across 100s of environments (AWS, GCP, Azure, classified on-prem clouds, airgapped, edge) with 1000s of deployments per day.". [Partent du principe](https://medium.com/palantir/why-traditional-approaches-to-continuous-deployment-dont-work-today-b5a6c33cc754) que les devs "know best how their software should be upgraded and how it should behave" quand les ops "know best what is important to their environments and customers, so they define environment specifications and constraints".
+Votre organisation est parfois menée à déployer des logiciels dans des environnements aussi variés que singuliers. Si vous avez de la chance, ces environnements sont peu nombreux et connectés. Mais cela se complique quand le nombre commence à grossir et qu'ils sont isolés. Il faut trouver un moyen standardisé de déployer ses mises à jour en réduisant au maximum les délais.
+
+Basé sur Kubernetes, Apollo est le produit utilisé par Palantir pour déployer et garder à jour ses services chez l'ensemble de ses clients. Avec ses centaines d'ingénieurs, plus de 400 logiciels et des milliers de déploiements chaque jour, Palantir revendique le déploiement de ses services sur une centaine d'environnements informatiques différents (AWS, GCP, Azure, Clouds privés classifiés et déconnectés d'Internet, edge-servers avec connexion intermitente...)[^GregDeArmentInterviewApollo].
+
+Poussée par cette contrainte d'un déploiement régulier sur des infrastructures variées, les travaux autour d'Apollo ont commencé début 2015. Il a été progressivement déployé chez ses clients dès 2017 et se voit désormais mis en vente depuis début 2022. Le service fait également tourner l'infrastructure interne de Palantir.
+
+L'entreprise part du principe que les ingénieurs logiciels et les SRE ont chacun leurs domaines d'expertise. D'un côté, les premiers savent mieux comment et quand les logiciels qu'ils développent doivent être mis à jour. De l'autre, les SRE connaissent mieux les particularités des environnements dans lequels ils déploient et les contraintes de leurs clients. Ces derniers doivent alors pouvoir définir les spécifications de leurs environnements de déploiement, quand les premiers doivent pouvoir gérer en autonomie le cycle de mise à jour des logiciels[^PalantirApolloBlogCD], sans avoir à se soucier de l'infrastructure qui les fera tourner.
+
+C'est pourquoi Apollo présente principalement deux menus dans son interface : "Environnements" (orienté SRE) et "Produits" (orienté ingénieurs logiciels). Le premier permet de se connecter à différents environnements, définir sa stratégie de déploiement au travers de plusieurs environements, de définir des critères de qualité et de sécurité logicielle ou encore d'approuver des modifications dans l'infrastructure. Le second permet de garantir que la nouvelle version d'un logiciel est correctement déployée : Apollo gère automatiquement les déploiements _blue/green_ (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)") et les retours en arrière (_rollback_). Il permet de décrire sa stratégie de mise à jour en déclarant quel service doit être mis à jour avant tel autre (cf. chapitre suivant "Déploiement basé sur les contraintes"). Enfin, il intègre la surveillance 
 
 ## Déploiement basé sur les contraintes
 
@@ -3001,3 +3009,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^OTSemanticConventions]: "_OpenTelemetry définit des conventions sémantiques [...] qui spécifient des noms communs pour différents types d'opérations et de données._". Source : [_opentelemetry.io_](https://opentelemetry.io/docs/concepts/semantic-conventions/).
 
 [^ServiceMeshTraces]: Grâce à son _service mesh_, [Lyft a réécrit les entêtes des requêtes qui passent dans son réseau pour ajouter ou propager les informations de traçage](https://eng.lyft.com/scaling-productivity-on-microservices-at-lyft-part-3-extending-our-envoy-mesh-with-staging-fdaafafca82f).
+
+[^GregDeArmentInterviewApollo]: Vidéo de la chaîne Platform Engineering sur YouTube. [_Palantir's GitOps Journey with Apollo_](https://youtu.be/T2gF8KJDy3w?t=128), avec Greg DeArment. 2022.
+
+[^PalantirApolloBlogCD]: Blog Palantir sur _medium.com_. [_Why Traditional Approaches to Continuous Deployment Don’t Work Today_](https://blog.palantir.com/why-traditional-approaches-to-continuous-deployment-dont-work-today-b5a6c33cc754). 2022.
