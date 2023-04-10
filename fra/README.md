@@ -395,17 +395,15 @@ Grâce aux règles DevOps exigeant des standards de qualité logiciels, plus de 
 
 Au delà d'apporter une solution concrète à un problème, cet ingénieur a surtout permis d'acculturer l'ensemble de la hiérarchie aux notions de développement moderne et de techniques de _machine learning_. Devant les industriels et convié aux grandes réunions stratégiques, il est devenu le référent _machine learning_ de l'organisation. Sans qui personne en interne ne serait en mesure de spécifier un besoin _machine learning_ en toute connaissance de cause.
 
-## Équipes « innovantes » et « intelligence artificielle »
+## Équipes « innovantes » et datascience
 
 Nombreuses sont les organisations qui ont voulu stimuler leurs organisations en créant des « équipes innovation » au sein de leur structure. Et nombreuses sont celles qui n'ont pas vraiment réussi à déployer en production ce qui y était développé.
 
 Les cas d'usages tournent souvent autour de la data et de l'intelligence artificielle. Les buzz-words « data-scientists », « deep learning » et « intelligence artificielle » ont procuré de nombreux faux espoirs : beaucoup d'organisations ont recruté des profils data-science qui se sont retrouvés incapables de mettre en production leurs algorithmes dans une interface à l'attention d'opérateurs non-experts.
 
-Le problème n'est pas les data-scientists, mais bien les décideurs qui jusqu'à récemment ne comprenaient pas ce qu'impliquait la réponse au besoin métier : un socle de développement fiable, des données propres, des données massives, du suivi de modèles[^ModelsIA] (MLOps), une équipe de mise en production. En somme, beaucoup pensaient (et continuent de penser) que « l'IA » peut résoudre n'importe quel problème avec quelques lignes de code. Ces personnes n'ont pas conscience de ce que ces pratiques impliquent en termes d'infrastructure et de soutien technique.
+Le problème n'est pas les data-scientists, mais bien les décideurs qui jusqu'à récemment ne comprenaient pas ce qu'impliquait la réponse au besoin métier : un socle de développement fiable, des données propres, des données massives, du suivi de modèles[^ModelsIA] (MLOps), une équipe de mise en production. En somme, beaucoup pensaient (et continuent de penser) que « l'IA » peut résoudre n'importe quel problème avec quelques lignes de code. Ces personnes n'ont pas conscience de l'infrastructure et du soutien technique qu'impliquent ces technologies.
 
-L'exemple typique de la data-science vis-à-vis du DevOps est le besoin de puissance de calcul, de capacité de stockage et de services pour développer et suivre l'entraînement de ces modèles. La plupart des data-scientists ne seront pas en mesure d'installer seul leur Jupyter Notebook[^JupyterNotebook] et drivers GPU[^DriversGPU].
-
-En résumé, ils ne sont pour la plupart pas en mesure d'installer leur environnement de développement, surtout dans des environnements singuliers, inhérents aux grandes organisations.
+L'exemple typique de la data-science vis-à-vis du DevOps est le besoin de puissance de calcul, de capacité de stockage et de services pour développer et suivre l'entraînement de ces modèles. La plupart des data-scientists ne seront pas en mesure d'installer seul leur machine, leurs drivers GPU[^DriversGPU] et leur environnement Jupyter Notebook[^JupyterNotebook]. En particulier dans des environnements complexes propres aux grandes organisations.
 
 ## Être au plus proche du métier
 
@@ -2311,11 +2309,16 @@ Votre organisation est parfois menée à déployer des logiciels dans des enviro
 
 Basé sur Kubernetes, Apollo est le produit utilisé par Palantir pour déployer et garder à jour ses services chez l'ensemble de ses clients. Avec ses centaines d'ingénieurs, plus de 400 logiciels et des milliers de déploiements chaque jour, Palantir revendique le déploiement de ses services sur une centaine d'environnements informatiques différents (AWS, GCP, Azure, Clouds privés classifiés et déconnectés d'Internet, edge-servers avec connexion intermitente...)[^GregDeArmentInterviewApollo].
 
-Poussée par cette contrainte d'un déploiement régulier sur des infrastructures variées, les travaux autour d'Apollo ont commencé début 2015. Il a été progressivement déployé chez ses clients dès 2017 et se voit désormais mis en vente depuis début 2022. Le service fait également tourner l'infrastructure interne de Palantir.
+Poussée par cette contrainte d'un déploiement régulier sur des infrastructures variées, les travaux autour d'Apollo ont commencé début 2015. Il a été progressivement déployé chez ses clients dès 2017 et se voit désormais mis en vente depuis début 2022, et fait tourner l'infrastructure interne de Palantir. La philosophie du produit est de s'interfacer avec vos infrastructures et services existants (forge logicielle, moteur d'intégration continue, registre d'artéfacts...)[^PalantirApolloWhitepaper].
 
-L'entreprise part du principe que les ingénieurs logiciels et les SRE ont chacun leurs domaines d'expertise. D'un côté, les premiers savent mieux comment et quand les logiciels qu'ils développent doivent être mis à jour. De l'autre, les SRE connaissent mieux les particularités des environnements dans lequels ils déploient et les contraintes de leurs clients. Ces derniers doivent alors pouvoir définir les spécifications de leurs environnements de déploiement, quand les premiers doivent pouvoir gérer en autonomie le cycle de mise à jour des logiciels[^PalantirApolloBlogCD], sans avoir à se soucier de l'infrastructure qui les fera tourner.
+L'entreprise part du principe que les ingénieurs logiciels et les SRE ont chacun leurs domaines d'expertise. D'un côté, les ingénieurs logiciels savent mieux comment et quand les logiciels qu'ils développent doivent être mis à jour. De l'autre, les SRE connaissent mieux les particularités et contraintes des environnements dans lesquels ils déploient[^PalantirApolloBlogCD]. Les ingénieurs logiciels développent donc le code, Apollo le déploie et les SRE surveillent que tout s'est déroulé comme prévu.
 
-C'est pourquoi Apollo présente principalement deux menus dans son interface : "Environnements" (orienté SRE) et "Produits" (orienté ingénieurs logiciels). Le premier permet de se connecter à différents environnements, définir sa stratégie de déploiement au travers de plusieurs environements, de définir des critères de qualité et de sécurité logicielle ou encore d'approuver des modifications dans l'infrastructure. Le second permet de garantir que la nouvelle version d'un logiciel est correctement déployée : Apollo gère automatiquement les déploiements _blue/green_ (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)") et les retours en arrière (_rollback_). Il permet de décrire sa stratégie de mise à jour en déclarant quel service doit être mis à jour avant tel autre (cf. chapitre suivant "Déploiement basé sur les contraintes"). Enfin, il intègre la surveillance 
+C'est pourquoi Apollo présente principalement deux menus dans son interface : "Environnements" (orienté SRE) et "Produits" (orienté ingénieurs logiciels).
+
+- Le menu "Environnements" permet de se connecter à différents environnements, définir sa stratégie de déploiement au travers de plusieurs environements, définir des critères de qualité et de sécurité logicielle ou encore d'approuver des modifications dans l'infrastructure.
+- Le menu "Produits" permet de garantir que la nouvelle version d'un logiciel est correctement déployée : Apollo gère automatiquement les déploiements _blue/green_ (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)") et les retours en arrière (_rollback_). Il permet de décrire sa stratégie de mise à jour en déclarant quel service doit être mis à jour avant tel autre (cf. chapitre suivant "[Déploiement basé sur les contraintes](#déploiement-basé-sur-les-contraintes)").
+
+Enfin, Apollo permet une surveillance centralisée de l'état des services déployés dans tous vos environnements, depuis une même plateforme. Connecté à votre service d'observabilité favoris (ex: _Datadog_, _Prometheus_, _Pagerduty_) ou en autonomie via la _Apollo Observability Platform_, il inclut la remontée de toute sorte de mesures (_logs_, _metrics_, _traces_) pour investiguer les incidents en détails.
 
 ## Déploiement basé sur les contraintes
 
@@ -2326,30 +2329,6 @@ Les applications modernes faisant appel à des services externes, ce mécanisme 
 Par exemple, si l'application `foo` en version `1.1.0` requiert un l'existence d'un service `bar` déployé avec la version `1.1.0`, Apollo ne mettra pas à jour `foo:1.1.0` tant que `bar:1.1.0` n'est pas disponible et déployé. Le déploiement d'une nouvelle version d'un applicatif dépendant d'une version spécifique d'un autre est souvent géré manuellement, même si un mécanisme de déploiement continu est mis en place. En effet, les équipes doivent au préalable s'assurer que le service duquel dépend l'application (`bar:1.1.0`) est bien disponible et déployé, avant de déployer sa nouvelle version (`foo:1.1.0`). Ces dépendances sont inscrites au sein d'un fichier spécifique, dans le même projet que le code source de l'application.
 
 La migration du schéma d'une base de données est un autre exemple. En déclarant la version d'un schéma de base de données compatible avec une version précise d'une application, Apollo évite de déployer une application incompatible avec une base de données qui n'a pas encore été mise à jour. Par exemple, si `foo:1.1.0` ne supporte que la `V2` du schéma de `bdd:V1`, `foo:1.1.0` ne sera déployé que quand `bdd:V1` aura migré à la `V2`. Apollo sait ainsi quelle version d'une application est élligible à être déployée dans quel environnement.
-
-# Conclusion
-
-Transformer une organisation - quelle qu'en soit la taille - n'est pas une tâche facile. Les enjeux politiques, techniques et humains sont importants et peuvent être lourds de conséquence en cas d'échec. Vous disposez peut-être déjà des profils expérimentés en interne, pour amorcer la démarche de manière sereine. Si ce n'est pas le cas, vous avez l'option d'embaucher. Encore faut-il savoir qui, comment séduire ces profils et embaucher dans des délais adaptés à votre mandat.
-
-L'entreprise ayant mis en place les conditions propices à la continuité de ses activités dans le temps a le choix d'opter pour l'option qu'elle préfère. A défaut d'avoir les ressources en interne, l'option de faire appel à un cabinet de conseil est peut-être la seule qui reste. Avoir préparé l'avenir en amont vous évitera les surcoûts que peuvent engendrer une transformation de dernière minute (experts externes, longues réunions, achats précipités, surcharge interne).
-
-Tout comme les grandes entreprises qui investissent constamment dans les nouvelles technologies, toute organisation ne doit pas hésiter à prendre des risques. Votre comité exécutif doit être à l'écoute des points de vue qui la surprennent et laisser place aux expérimentations. Ces dernières mènent aux innovations qui vous permettront de continuer d'exister demain. Par exemple, certains employés jugés difficiles à encadrer (appelés aussi "électrons libres") pourraient peut-être se révêler comme les visionnaires qui tracent le chemin que l'organisation doit suivre pour rester compétitive. Prenez cette vision au sérieux et étudiez son impact, au risque de vous faire surprendre par des initiatives individuelles qui créeront des silos plus tard.
-
-Faire accepter le changement est avant tout le sujet de miniser les risques entrepris (cf. chapitre "[Comment convaincre et garder la foi](#comment-convaincre-et-garder-la-foi)"). Commencer petit pour itérer est le meilleur moyen de réussir. Qui plus est, en étant conscient des réalités psychologiques et techniques derrière un projet de transformation, vous aurez toutes les clés et les arguments pour réaliser un transition plus rapide et moins périlleuse (cf. chapitre "[Les initiatives dans les organisations](#les-initiatives-dans-les-organisations)"). Présenter les technologies Cloud et le DevOps comme une évolution plutôt que des techniques disruptives est un des moyens efficaces {}. {Pour éviter les écueils dans le futures et les gens qui fuient leurs responsabilités, il faut que chacun soit consulté et d'accord (dans les pratiques militaires).}
-
-Mettre en place une organisation et une infrastructure DevOps n'est pas simple. Les technologies sont nombreuses et demande des compétences spécifiques. Les priorités opérationnelles ou commerciales empêchent souvent de s'adonner à des travaux d'infrastructure en faveur de travaux de développement produit. Néanmoins, la recherche démontre que se structurer autour de méthodes reconnues et éprouvées vous permettra de gagner en efficacité sur le long terme, tout en évitant les écueils d'une organisation peu ou non structurée (cf. chapitre "[Pourquoi le DevOps ?](#pourquoi-le-devops)").
-
-TODO(flavienbwk): Présenter le DevOps [comme une évolution](#ne-pas-disrupter). Séparer les étapes de montée en compétence : Cloud (apprendre la base des technologies) puis SRE (procédures, postmortems) puis DevOps (au service des développeurs).
-
-TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
-
-TODO(flavienbwk): Outils ITOps AI-based qui peuvent changer notre futur (Copilot, GPT3) : https://www.itprotoday.com/it-operations/4-ways-ai-assisted-coding-can-benefit-itops-engineers
-
-TODO(flavienbwk): maturity models https://dsomm.timo-pagel.de/, https://www.datadoghq.com/blog/devsecops-maturity-model-self-assessment/
-
-Je m'attends à ce que les standards en matière de sécurité continuent d'évoluer à un rythme effréné. Et je l'espère, aussi vite que la vitesse à laquelle progressent les menaces informatiques. Cela plaide d'autant plus en faveur d'une transformation des organisations, leur permettant de continuer à innover, sans être contraintes de ralentir leur rythme face à la crainte d'être attaquées.
-
-Quand on maîtrise, on ne craint plus. Et les techniques de l'industrie permettent aujourd'hui de maîtriser.
 
 # Répartition des initiatives
 
@@ -2371,6 +2350,32 @@ La répartition géographique des organisations adoptant des pratiques DevOps es
 La taille moyenne des équipes DevOps est encore limitée et tourne autour de 8 personnes[^DORATeamSize].
 
 Cela fait du DevOps une méthodologie majoritairement adoptée dans les entreprises ayant atteint une masse critique et encore peu dans les entreprises non-technologiques.
+
+# Conclusion
+
+La transformation d'une organisation, quelle que soit sa taille, est une tâche complexe qui implique des enjeux politiques, techniques et humains importants. En cas d'échec, les conséquences peuvent être lourdes. Dans le même temps, il est crucial d'envisager les conséquences à long terme pour votre organisation si elle poursuit avec son modèle actuel.
+
+La recherche et l'expérience de milliers d'entreprises nous permettent d'appréhender les défis liés à la transformation vers le Cloud. Le DevOps apporte des pratiques et techniques ayant démontré leur efficacité. Il commence à attirer l'attention des institutions, bien que peu aient encore franchi le pas pour l'adopter (cf. chapitre "[Répartition des initiatives](#répartition-des-initiatives)"). Si l'une des grandes difficultés peut être de trouver des talents dans le domaine, la première reste de convaincre l'entité dirigeante.
+
+Plusieurs stratégies sont envisageables selon votre niveau hiérarchique, technique et selon vos moyens. La plus courante est de démarrer par un projet qui séduira de premiers partenaires internes. Forts de l'intérêt qu'apportent vos services, il sera le moyen de convaincre progressivement d'autres équipes. Vous pourrez par la suite fédérer une communauté avec davantage d'impact pour porter votre vision à l'échelle de l'organisation (cf. chapitre "[Comment convaincre et garder la foi](#comment-convaincre-et-garder-la-foi)"). Il peut parfois être aussi compliqué de convaincre l'entité dirigeante que le reste des équipes.
+
+Faire accepter le changement est avant tout le sujet de miniser les risques entrepris. Commencer petit pour itérer est le meilleur moyen de réussir. Qui plus est, en étant conscient des réalités psychologiques et techniques derrière un projet de transformation, vous aurez toutes les clés et les arguments pour réaliser un transition plus rapide et moins périlleuse (cf. chapitre "[Les initiatives dans les organisations](#les-initiatives-dans-les-organisations)"). Présenter les technologies Cloud et le DevOps comme une évolution plutôt que des techniques disruptives est un des moyens efficaces de convaincre.
+
+Tout comme les grandes entreprises qui investissent constamment dans les nouvelles technologies, chaque organisation doit être prête à prendre des risques pour rester compétitive. Votre comité exécutif doit rester à l'écoute des points de vue qui la surprennent et encourager les expérimentations. C'est de ces dernières que naissent les innovations qui assureront l'avenir de son organisation. Par exemple, il est important de ne pas sous-estimer le potentiel de certains employés considérés comme difficiles à encadrer. Certains sont peut-être les visionnaires qui vous permettront d'exister demain. Etudier avec sérieux l'impact de leurs idées est essentiel, au risque de passer à côté d'opportunités qui pourraient se révéler cruciales pour votre avenir (cf. chapitre "[Réduire les silos organisationnels](#réduire-les-silos-organisationnels)").
+
+Les priorités opérationnelles ou commerciales empêchent souvent de se consacrer à des travaux d'infrastructure (Cloud/DevOps), en faveur de travaux de développement produit (logiciel). La recherche démontre pourtant que se structurer autour de ces méthodes éprouvées permet de gagner en efficacité sur le long terme (cf. chapitre "[Pourquoi le DevOps ?](#pourquoi-le-devops)"). Mais alors que l'organisation est convaincue, il reste des problématiques [de formation]
+
+TODO(flavienbwk): Présenter le DevOps [comme une évolution](#ne-pas-disrupter). Séparer les étapes de montée en compétence : Cloud (apprendre la base des technologies) puis SRE (procédures, postmortems) puis DevOps (au service des développeurs).
+
+TODO(flavienbwk): 1 réseau unique avec développeurs + exploitation, 1 usine logicielle outillée, des technologies standardisées (K8S, Docker) = former, des techniques à mettre en place (CI/CD, SRE). Soyez [ouvert au changement](#accepter-léchec), soyez [audacieux](#modèle-déquipe-interne) et [tenez vous à jour](#former-de-manière-continue).
+
+TODO(flavienbwk): Outils ITOps AI-based qui peuvent changer notre futur (Copilot, GPT3) : https://www.itprotoday.com/it-operations/4-ways-ai-assisted-coding-can-benefit-itops-engineers
+
+TODO(flavienbwk): maturity models https://dsomm.timo-pagel.de/, https://www.datadoghq.com/blog/devsecops-maturity-model-self-assessment/
+
+Je m'attends à ce que les standards en matière de sécurité continuent d'évoluer à un rythme effréné. Et je l'espère, aussi vite que la vitesse à laquelle progressent les menaces informatiques. Cela plaide d'autant plus en faveur d'une transformation des organisations, leur permettant de continuer à innover, sans être contraintes de ralentir leur rythme face à la crainte d'être attaquées.
+
+Quand on maîtrise, on ne craint plus. Et les techniques de l'industrie permettent aujourd'hui de maîtriser.
 
 # Terminologie "Ops"
 
@@ -3031,3 +3036,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^GregDeArmentInterviewApollo]: Vidéo de la chaîne Platform Engineering sur YouTube. [_Palantir's GitOps Journey with Apollo_](https://youtu.be/T2gF8KJDy3w?t=128), avec Greg DeArment. 2022.
 
 [^PalantirApolloBlogCD]: Blog Palantir sur _medium.com_. [_Why Traditional Approaches to Continuous Deployment Don’t Work Today_](https://blog.palantir.com/why-traditional-approaches-to-continuous-deployment-dont-work-today-b5a6c33cc754). 2022.
+
+[^PalantirApolloWhitepaper]: Palantir. [_Palantir Apollo Whitepaper_](https://www.palantir.com/assets/xrfr7uokpv1b/2MqgGhNYSZRmkYnnRAOi2E/0f8787169349fade4d6d9a9e5bb3c9fe/PalantirApolloWhitePaper.pdf). 2022.
