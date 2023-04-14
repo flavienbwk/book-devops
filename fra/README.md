@@ -2321,8 +2321,10 @@ L'entreprise part du principe que les ingénieurs logiciels et les SRE ont chacu
 
 C'est pourquoi Apollo présente principalement deux menus dans son interface : "Environnements" (orienté SRE) et "Produits" (orienté ingénieurs logiciels).
 
-- Le menu "Environnements" permet de se connecter à différents environnements, définir sa stratégie de déploiement au travers de plusieurs environements, définir des critères de qualité et de sécurité logicielle ou encore d'approuver des modifications dans l'infrastructure.
+- Le menu "Environnements" permet de se connecter à différents environnements, définir sa stratégie de déploiement au travers de plusieurs environnements (ex: GCP, AWS, Azure, on-premise) et canaux (cf. _release channels_), définir des critères de qualité et de sécurité logicielle ou encore d'approuver des modifications dans l'infrastructure.
 - Le menu "Produits" permet de garantir que la nouvelle version d'un logiciel est correctement déployée : Apollo gère automatiquement les déploiements _blue/green_ (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)") et les retours en arrière (_rollback_). Il permet de décrire sa stratégie de mise à jour en déclarant quel service doit être mis à jour avant tel autre (cf. chapitre suivant "[Déploiement basé sur les contraintes](#déploiement-basé-sur-les-contraintes)").
+
+Connecté à des répertoires _git_, il permet de suivre et d'approuver toute modification apportée au code avant son déploiement.
 
 Enfin, Apollo permet une surveillance centralisée de l'état des services déployés dans tous vos environnements, depuis une même plateforme. Connecté à votre service d'observabilité favoris (ex: _Datadog_, _Prometheus_, _Pagerduty_) ou en autonomie via la _Apollo Observability Platform_, il inclut la remontée de toute sorte de mesures (_logs_, _metrics_, _traces_) pour investiguer les incidents en détails.
 
@@ -2393,7 +2395,7 @@ Une infrastructure DevOps révêle son plein potentiel une fois connectée au r�
 
 Mesurer l'efficacité de son initiative au cours du temps est critique : à la fois pour s'assurer que l'on avance sans dogmatisme dans la bonne direction, mais aussi pour donner des arguments chiffrés à sa hiérarchie ou aux équipes qui ont encore besoin d'être convaincues. Veillez à garder un tableau de bord clair de ces indicateurs (cf. chapitre "[Mesurer le succès de sa transformation](#mesurer-le-succès-de-sa-transformation)").
 
-Les outils tels que ChatGPT basés sur l'intelligence artificielle offrent autant de nouvelles opportunités qu'elles ouvrent à de nouvelles menaces. En parallèle, les standards en matière de sécurité continueront d'évoluer à un rythme effréné. Cela plaide d'autant plus pour une transformation des organisations vers un univers numérique plus agile. Les entreprises qui réussiront le mieux seront celles qui arrivent à s'approprier ces technologies et les intégrer à leur cycle de développement logiciel (cf. chapitre "[Refuser le retard technologique](#refuser-le-retard-technologique)").
+Les outils tels que ChatGPT basés sur l'intelligence artificielle offrent autant de nouvelles opportunités qu'elles ouvrent à de nouvelles menaces. En parallèle, les standards en matière de sécurité continueront d'évoluer à un rythme effréné. Cela plaide d'autant plus pour une transformation des organisations vers un univers numérique plus agile. Des outils basés dessus commencent à émerger. Le futur se dessine aujourd'hui et les entreprises qui réussiront le mieux seront celles qui arrivent à s'approprier ces technologies pour les intégrer à leur cycle de développement logiciel (cf. chapitre "[Refuser le retard technologique](#refuser-le-retard-technologique)").
 
 Au delà de la vitesse à laquelle ces outils évoluent et comme pour tout domaine d'expertise, ce type d'infrastructure nécessite l'entretien des compétences requises pour l'administrer. Nous arrivons facilement à nous imaginer qu'un pilote de chasse entretienne son aptitude à piloter. Pourquoi cela serait-il différent pour des ingénieurs qui réalisent la maintenance de logiciels critiques au bon fonctionnement de l'enreprise ? Vous et vos équipes devez continuer d'être à la pointe en vous formant (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
 
@@ -2401,7 +2403,7 @@ En mode DevOps, les organisations pourront se permettre d'échouer plus rapideme
 
 # Terminologie "Ops"
 
-Maintenant que vous comprenez la variété des enjeux du DevOps, il est intéressant de découvrir les nombreux termes que l'on peut entendre ci et là dans l'industrie.
+Maintenant que vous comprenez la variété des enjeux du DevOps, il est intéressant de découvrir quelques termes que l'on peut entendre ci et là dans le domaine.
 
 Vous avez probablement déjà entendu une multitude de termes suffixé par "Ops" : dans les propositions industrielles, les offres d'emploi ou les services en ligne. Tous ces termes décrivent des spécialités de l'exploitation des systèmes informatiques au travers de différentes techniques et de méthodologies. Définissons en quelques-uns :
 
