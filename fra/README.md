@@ -1275,7 +1275,7 @@ Exemple de DACI, listant les options considérées pour une prise de décision s
 
 > Exemple d'emploi du modèle DACI pour trier avantages & inconvénients et prendre une décision (dans ce cas l'option 1). Traduit depuis l'anglais. Source : _atlassian.com_
 
-Une fois votre décision prise, il est temps de communiquer votre décision pour que tout le monde soit à la page. Envoyez le document aux personnes qui doivent en prendre connaissance puis archivez-le.
+Une fois votre décision prise, il est temps de la communiquer pour que tout le monde soit à la page. Envoyez le document aux personnes qui doivent en prendre connaissance puis archivez-le.
 
 Une fois archivé, il permettra aux nouvelles parties-prenantes du projet de comprendre pourquoi telle ou telle décision a été prise. En menant cette réflexion collective, vous évitez également les biais cognitifs individuels.
 
@@ -1305,23 +1305,25 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
 1. **Identifier le problème**
 
-    Analysez la situation pour vous assurer qu'il s'agit bien d'un incident, pas d'une simple alerte sans conséquence. C'est à l'entreprise de déterminer un seuil qualifiant un incident (ex: une anomalie qui dure plus de 1 minute). Si l'évènement menace la stabilité de vos [indicateurs de résilience](#indicateurs-de-résilience), considérez-le comme un incident.
+    Analysez la situation pour vous assurer qu'il s'agit bien d'un incident, pas d'une simple alerte sans conséquence. L'entreprise doit déterminer un seuil pour qualifier un incident, par exemple une anomalie qui dure plus de 1 minute. Si l'évènement menace la stabilité de vos [indicateurs de résilience](#indicateurs-de-résilience), considérez-le comme un incident.
 
     Dans le doute, la bonne pratique est de déclarer les incidents tôt et souvent. Il vaut mieux déclarer un incident, puis trouver un correctif rapidement et le fermer, plutôt que de le laisser perdurer et qu'il s'aggrave. Si un incident majeur se déclare, vous devrez probablement le gérer en équipe (cf. chapitre "[Organiser sa réponse à incident](#organiser-sa-réponse-à-incident)"). Vous pouvez distinguer un incident majeur d'un plus mineur si vous répondez "oui" à l'une de ces questions :
 
     - Devez-vous faire appel à une seconde équipe pour résoudre le problème ?
     - La panne est-elle visible pour les clients ?
-    - Le problème n'est-il pas résolu, même après une heure d'investigation intense ?
+    - Le problème impacte-t-il toujours le système, même après une heure d'investigation intense ?
 
     Dès que l'incident débute, commencez à prendre des notes sur ce que vous allez observer et les actions que vous allez entreprendre. Cela sera utile pour votre postmortem. Vous pouvez ensuite qualifier le problème en utilisant la méthode "5W2H" (5 quoi/_what_, 2 comment/_how_) :
 
-    - Qui ? Les personnes ou clients affectés par le problème
-    - Quoi ? La description ou la définition du problème
-    - Quand ? La date et l'heure à laquelle le problème a été identifié
-    - Où ? Localisation des plaintes (la zone, l'équipement ou les clients en question)
-    - Pourquoi ? Toute explication connue antérieurement
-    - Comment ? Comment le problème est-il survenu (cause racine) et comment il va être corrigé (action corrective)
-    - Combien ? Gravité et fréquence du problème
+    | Interrogation | Description                                                                                         |
+    | ------------- | --------------------------------------------------------------------------------------------------- |
+    | Qui ?         | Personnes ou clients affectés par le problème                                                       |
+    | Quoi ?        | Description ou la définition du problème                                                            |
+    | Quand ?       | Date et l'heure à laquelle le problème a été identifié                                              |
+    | Où ?          | Localisation des plaintes (zone, équipement ou clients en question)                                 |
+    | Pourquoi ?    | Toute explication connue antérieuremen                                                              |
+    | Comment ?     | Comment le problème est-il survenu (cause racine) et comment il va être corrigé (action corrective) |
+    | Combien ?     | Gravité et fréquence du problème                                                                    |
 
     Sur les infrastructures matures, l'identification d'un problème est facilitée par la présence de systèmes de surveillance de la plateforme. Ils remontent sous forme de notification les anomalies qu'ils détectent. Par exemple, ces anomalies peuvent être détectées par des outils comme [Statping](https://github.com/statping/statping), qui déclenchent une alerte quand un service devient indisponible. Mais elles peuvent également être détectées par des mécanismes de _machine learning_, qui révèlent des tendances anormales. L'avantage est que l'alerte n'est pas lancée uniquement quand un simple seuil est franchi, mais quand un phénomène inhabituel se produit.
 
@@ -1329,25 +1331,27 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
     Des outils comme [OpenRCA](https://openrca.io/), [OpenStack Vitrage](https://opendev.org/openstack/vitrage) ou [Datadog](https://datadoghq.com) peuvent vous aider à identifier la cause d'un problème en mettant en évidence les anomalies au sein de votre infrastructure.
 
-    Pour l'instant, vous ne connaissez pas la gravité du problème, seulement ses symptômes.
+    A cette étape, vous ne connaissez pas la gravité du problème, seulement ses symptômes.
 
 2. **Contenir et analyser le problème**
 
-    Commencez toujours pas résoudre le problème. Rétablissez au plus tôt le service pour éviter qu'il ne dégénère, même si la solution est temporaire ou qu'elle n'est pas considérée "propre".
+    Toujours commencer pas résoudre le problème. Rétablir au plus tôt le service pour éviter qu'il ne dégénère, même si la solution est temporaire ou qu'elle n'est pas considérée "propre".
 
-    La confiance que vos utilisateurs portent à l'égard de votre service, est liée à votre réactivité dans votre réponse à incident. Vos utilisateurs ne s'attendent pas à 100% de disponibilité, mais ils veulent savoir que le problème est pris en charge. Cette transparence est fondamentale.
+    La confiance que vos utilisateurs portent à l'égard de votre service, est liée à votre réactivité dans votre réponse à incident. Vos utilisateurs ne s'attendent pas à 100% de disponibilité, mais ils s’attendent à une communication claire en cas d’incident. Cette transparence est fondamentale.
 
     Une [page d'état des services](https://github.com/ivbeg/awesome-status-pages) (_status page_ en anglais), est un excellent moyen d'informer vos utilisateurs de l'état d'avancement d'un incident. Vous pouvez également indiquer à l'avance des opérations de maintenance.
 
     ![Exemple de _status page_ Atlassian avec incident, état des services et prévision d'opération de maintenance. Source : _atlassian.com/software/statuspage/feature_](./images/2023_atlassian_statuspage.png)
 
-    Chaque fois que vous mettez à jour l'incident, communiquez sur :
+    A chaque mise à jour du status de l’incident, communiquer sur :
 
-    - Ce qu'il se passe actuellement
+    - La situation actuelle et l’impact mesuré
     - Ce qu'on sait du problème / ce qui a changé
-    - Les problèmes qui sont toujours en cours
+    - Les services toujours impactés
 
-    Pour analyser le problème plus en détail et trouver la source du dysfonctionnement, utilisez vos outils d'observabilité (vos journaux d'activité, vos métriques). La suite [_Beats_ de Elastic](https://www.elastic.co/fr/beats/) est un exemple d'outil permettant de surveiller son infrastructure. Nous découvrirons l'étendue de ces technologies dans le chapitre "[Tout mesurer](#tout-mesurer)".
+    Pour analyser le problème plus en détail et trouver la source du dysfonctionnement, utiliser ses outils d'observabilité (journaux d'activité, métriques).
+
+    > La suite [_Beats_ de Elastic](https://www.elastic.co/fr/beats/) est un exemple d'outil permettant de surveiller son infrastructure. Nous découvrirons l'étendue de ces technologies dans le chapitre "[Tout mesurer](#tout-mesurer)".
 
     A cette étape, vous devez trouver une action immédiate. Par exemple, un industriel fabriquant des pièces pourrait décider de ré-inspecter celles prêtes à l'expédition, les retravailler ou faire un rappel. Pour un logiciel, l'idée est de trouver une manière de rétablir le service, souvent en poussant un correctif rapide (_hotfix_ en anglais).
 
@@ -1357,42 +1361,43 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
     L'impact de l'incident étant contrôlé, on peut désormais investiguer la cause racine du problème.
 
-    Listez en équipe les facteurs probables contribuant au problème. Structurez ensuite vos hypothèses avec un diagramme de cause à effet (ou diagramme d'_Ishikawa_).
+    Lister en équipe les facteurs probables contribuant au problème. Structurez ensuite vos hypothèses avec un diagramme de cause à effet (ou diagramme d'_Ishikawa_).
 
     ![Diagramme d'Ishikawa pour une pièce défectueuse](./images/2023_ishikawa_diagramme.jpg)
 
-    Choisissez par un vote à majorité les causes qui vous semblent les plus susceptibles de se reproduire. Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Vous avez désormais identifié un axe de réflexion.
+    Choisir par un vote à majorité les causes qui vous semblent les plus susceptibles de se reproduire. Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Vous avez désormais identifié un axe de réflexion.
 
-    Utilisez la méthode des "5 pourquoi" (_5 Why's_). L'idée est d'identifier plusieurs symptômes en cascade, jusqu'à trouver la cause réacine d'un problème. "5" est une valeur arbitraire, elle peut être réduite ou agrandie selon le cas.
+    Utiliser la méthode des "5 pourquoi" (_5 Why's_). L'idée est d'identifier plusieurs symptômes en cascade, jusqu'à trouver la cause réacine d'un problème. "5" est une valeur arbitraire, elle peut être réduite ou agrandie selon le cas.
 
-    Voici un exemple :
+    Voici un exemple pour le problème identifié "Notre logiciel crash fréquemment" :
 
-    - Problème : Notre logiciel crash fréquemment
-    - Pourquoi ? Parce-que la mémoire utilisée augmente au cours du temps
-    - Pourquoi ? Parce-qu'il y a une fuite de mémoire dans le code
-    - Pourquoi ? Parce-que les développeurs ne libéraient pas correctement la mémoire après l'avoir allouée
-    - Pourquoi ? Parce-qu'ils n'étaient pas au courant qu'il était possible que leur programme ait une fuite de mémoire
-    - Pourquoi ? Parce-qu'il n'y avait pas de chaîne d'intégration continue le vérifiant
+    | Question   | Réponse                                                                                                |
+    | ---------- | ------------------------------------------------------------------------------------------------------ |
+    | Pourquoi ? | Parce-que la mémoire utilisée augmente au cours du temps                                               |
+    | Pourquoi ? | Parce-qu'il y a une fuite de mémoire dans le code                                                      |
+    | Pourquoi ? | Parce-que les développeurs ne libéraient pas correctement la mémoire après l'avoir allouée             |
+    | Pourquoi ? | Parce-qu'ils n'étaient pas au courant qu'il était possible que leur programme ait une fuite de mémoire |
+    | Pourquoi ? | Parce-qu'il n'y avait pas de chaîne d'intégration continue le vérifiant                                |
 
 4. **Résoudre le problème de manière pérenne**
 
-    Vous avez déterminé quelle était la cause racine du problème. Concevez une solution pour la résoudre.
+    En ayant déterminé quelle était la cause racine du problème, il faut maintenant concevoir une solution pour la résoudre.
 
-    Vérifiez que votre solution peut fonctionner : réalisez une preuve de concepte avant de l'appliquer en production.
+    Vérifier que la solution peut fonctionner en réalisant une preuve de concept avant de l'appliquer en production.
 
-    Définissez et inscrivez : quelles actions seront prises pour corriger le problème, qui en est responsable et quand cela sera fait.
+    Définir et rédiger les actions qui seront prises pour corriger le problème, qui en est responsable et quand cela sera fait.
 
-    Définissez comment l'efficacité de la solution sera mesurée : par sondage téléphonique, sondage en ligne, mesures remontées automatiquement, mesures prises manuellement... Définissez un temps pendant lequel vous mesurerez l'action, puis appliquez la correction.
+    Définir comment l'efficacité de la solution sera mesurée : par sondage téléphonique, sondage en ligne, mesures remontées automatiquement, mesures prises manuellement... Définir un temps pendant lequel mesurerer l'action, puis appliquer la correction.
 
 5. **Valider le correctif et faire en sorte que l'incident ne se reproduise pas**
 
-    Fort de vos mesures définies en étape 4, assurez-vous que les actions entreprises ont eu l'effet désiré.
+    Fort de vos mesures définies en étape 4, s'assurer que les actions entreprises ont eu l'effet désiré.
 
     L'incident est désormais résolu et vous savez pourquoi le problème s'est passé. C'est le moment d'informer vos utilisateurs sur la _status page_ : "l'analyse de la cause du problème est terminée, l'incident a été résolu, l'incident est documenté".
 
-    Il ne reste plus qu'à rédiger votre post-mortem, en y inscrivant ce que vous avez fait pour vous assurer que le problème ne se reproduise plus (cf. chapitre "[Postmortems](#postmortems)"). Reprenez les notes prises aux points précédents et formalisez ce document.
+    Il ne reste plus qu'à rédiger votre post-mortem, en y inscrivant ce que vous avez fait pour vous assurer que le problème ne se reproduise plus (cf. chapitre "[Postmortems](#postmortems)"). Reprendre ici les notes prises aux points précédents et formalisez ce document.
 
-    Publiez et communiquez ce document (en interne de l'entreprise ou au public). Cela permettra aux clients d'être satisfaits en étant mis au courant, et aux équipes gérant la production de voir leur travail reconnu.
+    Publier et communiquer ce document (en interne de l'entreprise ou au public). Cela permettra aux clients d'être satisfaits en étant mis au courant, et aux équipes gérant la production de voir leur travail reconnu.
 
 Tout comme les pilotes d'avion qui s'entraînent à faire face à une situation d'urgence, vos équipes SRE doivent s'entraîner pour ne pas perdre de temps quand un incident se produit (cf. chapitre "[Évaluer sa sécurité et s'entraîner](#évaluer-sa-sécurité-et-sentraîner)").
 
