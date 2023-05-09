@@ -52,11 +52,11 @@ Néanmoins, la majorité des organisations a encore du mal à instaurer pragmati
 
 Étant avant tout un sujet de transformation culturelle des équipes techniques et du _management_, il existe déjà de nombreuses études auxquelles se référer sur le DevOps. Ces dernières permettent de s'appuyer sur une expérience avérée de nombreux acteurs, pour ne pas faire d'erreur dans sa démarche de transformation. À titre d'exemple, le programme de recherche DORA[^DORAWebsite] de Google Cloud (_DevOps Research & Assessment_) s'est conduit depuis 2014 avec plus de 33 000 professionnels du secteur Cloud. Chaque année, son rapport sur l'état du DevOps dans le monde est publié. Ce domaine est donc loin d'être nouveau. Mais le secteur ne cesse de trouver des manières toujours plus efficaces de se transformer, pour tenir le rythme face à la cadence élevée des évolutions qu'apportent le secteur du numérique.
 
-Ce livre concentre à la fois les aspects organisationnels et les aspects techniques, pour illustrer chaque notion de la méthodologie DevOps. Ces notions sont accessibles à tous. Néanmoins, les mettre en pratique nécessitera souvent l'intervention d'experts en ingénierie. En tant que responsable d'une initiative de transformation numérique, il est dans tous les cas préférable de maîtriser ces aspects techniques. Cela vous permettra de prendre les meilleures décisions et de rester crédible face à vos subordonnés, ou votre hiérarchie.
-
-L'objectif est de proposer une ligne directrice pour une première expérimentation DevOps ou d'affiner une transformation déjà entammée.
+Ce livre a pour vocation de vulgariser les aspects organisationnels et techniques du DevOps. Ces notions sont accessibles à tous et vous permettront d'avoir une vue d'ensemble des enjeux du Cloud pour une transformation réussie. Il résume une ligne de conduite à tenir pour une première expérimentation DevOps, ou pour affiner une transformation déjà entammée.
 
 Comme vous le comprendrez par la suite, chaque organisation a ses propres besoins, son propre niveau de maturité sur le sujet et il n'y a pas de recette unique. Néanmoins, les expériences successives du secteur ont abouti à la création de standards qui vous seront présentés au cours de cet ouvrage.
+
+Nous explorerons les raisons de l'émergence de cette méthodologie, son contenu et comment inspirer votre organisation à se transformer. Chaque structure a ses propres besoins, son propre niveau de maturité sur le sujet et il n'y a pas de recette unique. Néanmoins, les expériences successives du secteur ont abouti à la création de standards qui vous seront présentés au cours de cet ouvrage.
 
 Soyez assuré que les efforts que vous déploierez à faire du DevOps dans votre organisation, seront récompensés par une structure plus efficace, agile et pérenne.
 
