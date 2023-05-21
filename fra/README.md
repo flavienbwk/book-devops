@@ -60,66 +60,6 @@ Nous explorerons les raisons de l'émergence de cette méthodologie, son contenu
 
 Soyez assuré que les efforts que vous déploierez à faire du DevOps dans votre organisation, seront récompensés par une structure plus efficace, agile et pérenne.
 
-# DevOps vs Site Reliability Engineering
-
-Si le terme DevOps devient de plus en plus populaire et commence à devenir courant dans les offres d'emploi, celui de _Site Reliability Engineering_ (SRE) est moins connu, en particulier en France.
-
-![Évolution de l'intérêt pour le terme 'DevOps' (2014 à 2022, trends.google.com)](./images/figure_1.png)
-
-![Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48e sur 58. La Chine 1ère, suivie des États-Unis.](./images/figure_2.png)
-
-Pour bien débuter et comprendre comment le DevOps peut aider votre organisation, commençons par définir deux des termes les plus importants à connaître dans le domaine.
-
-## DevOps
-
-C'est le lien entre le monde du développement et de la production.
-
-« Dev » signifie « développement » quand « Ops » désigne l'exploitation des systèmes informatiques en production.
-
-On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques, aujourd'hui majoritairement orientés vers l'emploi des technologies _Cloud_.
-
-L'ingénieur « DevOps » est celui en charge de définir et de mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#intégration-continue-ci) au sein d'une [usine logicielle](#usine-logicielle). Ses clients sont les équipes techniques internes : il fait en sorte que tout le monde puisse travailler ensemble de la manière la plus efficace possible.
-
-Ce poste impliquant de mettre d'accord toutes les parties prenantes sur une méthode de travail commune, il est exigé de disposer d'excellentes compétences en communication et en pédagogie.
-
-## Site Reliability Engineering (SRE)
-
-Le _Site Reliability Engineer_ ou _Ingénieur de la Résilience des Systèmes_ a la charge de concevoir, déployer et maintenir l'infrastructure qui met à disposition les services de l'entreprise. Il s'assure du bon fonctionnement du socle technique sur lequel sont déployés les logiciels, assure leur sécurité et garantit leur disponibilité.
-
-L'équipe SRE a donc la responsabilité de votre infrastructure informatique. Cette dernière est souvent composée de plusieurs environnements : développement, pré-production (également appelé _staging_), production.
-
-L'entreprise l'emploie principalement pour honorer son contrat de service (_Service Level Agreement_, cf. chapitre "[Indicateurs de résilience](#indicateurs-de-résilience)") vis-à-vis de ses clients. Si la disponibilité du service tombe sous la valeur indiquée dans le contrat, l'entreprise doit généralement financer des pénalités.
-
-## Collaboration entre DevOps et SRE
-
-De manière simplifiée, l'entreprise donne la mission au SRE de rendre l'infrastructure de entreprise plus résiliente. C'est à dire plus disponible, plus stable. Il tente de répondre à la question "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?", en se basant sur des mesures qui lui sont rapportées par les outils qu'il aura mis en place.
-
-Se pose alors la question d'utiliser des techniques pour standardiser les développements, les déploiements ou encore mettre en place des mécanismes d'observabilité et de suivi des performances. Une fois ces outils en place, le SRE demande aux équipes techniques d'employer des méthodologies et des techniques communes, pour atteindre un objectif de résilience.
-
-L'ingénieur DevOps intervient à ce moment alors qu'aux yeux des équipes de développement, la volonté est plutôt de sortir la dernière fonctionnalité le plus rapidement possible. Passer du temps à formatter ses journaux d'activités (_logs_) ou gérer des rapports d'erreur - ce que demande le SRE - est beaucoup plus ennuyant que de passer du temps à développer une innovation.
-
-L'ingénieur DevOps est là pour amener les gens à se soucier des problématiques de résilience. Il le fait en mettant en place des procédures et des outils qui rempliront les exigences de résilience, le plus simplement possible. Idéalement, sans que les développeurs ne s'en rendent compte, c'est à dire sans que ces pratiques n'impactent la vélocité des développements. Il doit trouver l'équilibre entre la complexité induite par les exigences SRE et le temps que les développeurs passent à coder.
-
-En résumé, l'ingénieur DevOps est responsable de la mise en place de l'ensemble des prérequis nécessaires à la mise en production rapide d'un logiciel, selon les standards de qualité des équipes SRE. Le SRE est lui responsable de la mise en production effective des logiciels et garantit leur disponibilité.
-
-## DevSecOps
-
-Le terme DevSecOps est également populaire. Il qualifie un mode d'organisation DevOps intégrant nativement les équipes de Sécurité des Systèmes d'Information (SSI) au sein du cycle de développement et de déploiement du logiciel. Il s'agit d'y imposer des règles automatisées qui garantissent l'application des règles et standards de sécurité.
-
-En terme organisationnel, cette méthode implique les équipes SSI dans tous les échanges entre les développeurs et les équipes de production. Ces équipes auront la charge de définir et contrôler l'existence des fonctionnalités de confidentialité et de sécurité dans les logiciels, dès la phase de conception.
-
-Par exemple, l'existence des fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d'en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#intégration-continue-ci) dans le code.
-
-Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'Armée de l'Air américaine [le définit](https://podcast.ausha.co/postmortem/19)[^DevSecOpsUSAirForce] de manière plus générale avec les termes suivants :
-
-> « Le DevSecOps est l'évolution de l'ingénierie logicielle. C'est l'équilibre entre la vélocité de développement et le temps alloué aux considérations de sécurité. On veut que la sécurité soit intégrée pour être sûr qu'elle ne soit pas oubliée mais ajoutée au cycle de développement logiciel. C'est utiliser les procédés de cybersécurité modernes pour être sûr que le logiciel est à la fois performant et construit d'une manière sécurisée pour être sûr qu'il n'ait pas de problème au fil du temps. C'est ce qui va permettre aux sociétés et organisations de rester concurrentielles et d'avancer à l'avenir à la vitesse nécessaire face à leurs concurrents. »
-
-Nous n'en parlerons pas davantage en ce terme car le DevSecOps est à mon sens analogue à la méthodologie DevOps et plus généralement à l'ingénierie logicielle moderne : la sécurité est un prérequis indiscutable de toute organisation et ses bonnes pratiques s'intègrent nativement avec les techniques DevOps qui vont vous être présentées.
-
-Il peut être néanmoins intéressant de communiquer avec ce terme au sein des institutions. Dans ces dernières, les équipes de la Sécurité des Systèmes d'Information (SSI) occupent une place toute particulière dans les initiatives numériques. Parler de "DevSecOps" plutôt que de "DevOps" permet de bien faire comprendre aux équipes SSI qu'elles ont un [rôle concret](#ingénieur-ssi-devops) à jouer dans cette nouvelle approche.
-
-Le paradigme et les techniques de sécurité dans un modèle d'organisation DevOps, seront abordés dans le chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)".
-
 # Les cinq piliers du DevOps
 
 Selon la réputée entreprise américaine [Atlassian](https://www.atlassian.com/devops/what-is-devops/history-of-devops)[^AtlassianHistoryOfDevops], le mouvement DevOps a commencé à prendre forme entre 2007 et 2008, lorsque les métiers de l'ingénierie système (ceux qui déploient) et du développement logiciel (ceux qui développent) se sont inquiétés de ce qu'ils considéraient comme un dysfonctionnement fatal avec leurs pratiques opposées dues à leur manque de proximité.
@@ -142,6 +82,66 @@ Google définit les cinq pilliers du DevOps suivants :
    - Automatiser pour ne pas perdre de temps et améliorer la maintenabilité de l'infrastructure.
 5. [**Tout mesurer**](#tout-mesurer)
    - Avec la mise en place d'indicateurs de performance, de fiabilité des systèmes, pour mieux comprendre le comportement des services déployés, réagir plus rapidement voire prédire.
+
+# DevOps vs Site Reliability Engineering
+
+Pour bien débuter et comprendre en quoi le DevOps peut aider votre organisation, commençons par définir deux des termes les plus importants à connaître dans le domaine.
+
+## DevOps
+
+C'est le lien qui unit le monde du développement et de la production.
+
+« Dev » signifie « développement » quand « Ops » désigne l'exploitation des systèmes informatiques en production.
+
+On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques, aujourd'hui majoritairement orientés vers l'emploi des technologies _Cloud_.
+
+L'ingénieur « DevOps » est celui en charge de définir et de mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#intégration-continue-ci) au sein d'une [usine logicielle](#usine-logicielle). Ses clients sont les équipes techniques internes : il fait en sorte que tout le monde puisse travailler ensemble de la manière la plus efficace possible.
+
+Ce poste impliquant de mettre d'accord toutes les parties prenantes sur une méthode de travail commune, il est exigé de disposer d'excellentes compétences en communication et en pédagogie.
+
+Si le terme DevOps devient de plus en plus populaire et commence à devenir courant dans les offres d'emploi, celui de _Site Reliability Engineering_ (SRE) est moins connu, en particulier en France.
+
+![Évolution de l'intérêt pour le terme 'DevOps' (2014 à 2022, trends.google.com)](./images/figure_1.png)
+
+![Intérêt pour le terme 'Site Reliability Engineering' selon les pays (2014 à 2022). La France est 48e sur 58. La Chine 1ère, suivie des États-Unis.](./images/figure_2.png)
+
+## Site Reliability Engineering (SRE)
+
+Le _Site Reliability Engineer_ ou "Ingénieur de la Résilience des Systèmes" a la charge de concevoir, déployer et maintenir l'infrastructure qui met à disposition les services de l'entreprise. Il s'assure du bon fonctionnement du socle technique sur lequel sont déployés les logiciels, assure leur sécurité et garantit leur disponibilité.
+
+L'équipe SRE a donc la responsabilité de votre infrastructure informatique. Cette dernière est souvent composée de plusieurs environnements : développement, pré-production (également appelé _staging_), production.
+
+L'entreprise l'emploie principalement pour honorer son contrat de service (_Service Level Agreement_, cf. chapitre "[Indicateurs de résilience](#indicateurs-de-résilience)") vis-à-vis de ses clients. Dans le privé, si la disponibilité du service tombe sous la valeur indiquée dans le contrat, l'entreprise doit généralement financer des pénalités.
+
+## Collaboration entre DevOps et SRE
+
+De manière simplifiée, l'entreprise donne la mission au SRE de rendre son infrastructure plus résiliente. C'est à dire plus disponible, plus stable. Il tente de répondre à la question "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?", en se basant sur des mesures qui lui sont rapportées par les outils qu'il aura mis en place.
+
+Des sujets comme l'usage de techniques pour standardiser les développements, les déploiements ou encore instaurer des mécanismes d'observabilité se posent alors. Une fois ces outils en place, le SRE instruit aux équipes techniques d'employer des méthodologies et techniques communes à l'organisation, pour atteindre un objectif de résilience précis.
+
+L'ingénieur DevOps intervient à ce moment alors qu'aux yeux des équipes de développement, la volonté est plutôt de sortir la dernière fonctionnalité le plus rapidement possible. Passer du temps à formatter ses journaux d'activités (_logs_) ou gérer des rapports d'erreur - ce que demande le SRE - est beaucoup plus ennuyant que de passer du temps à développer une innovation.
+
+L'ingénieur DevOps a pour rôle de sensibiliser l'ensemble des équipes de l'organisation aux problématiques de résilience. Les plus expérimentés arrivent à instruire les procédures et les outils qui rempliront les exigences de résilience, sans impacter la vélocité des développement. Ces ingénieurs doivent donc trouver l'équilibre entre la complexité induite par les exigences SRE et le temps que les développeurs passent à produire de nouvelles fonctionnalités.
+
+En résumé, l'ingénieur DevOps est responsable de la mise en place de l'ensemble des prérequis nécessaires à la mise en production rapide d'un logiciel, selon les standards de qualité des équipes SRE. Le SRE est lui responsable de la mise en production effective des logiciels et garantit leur disponibilité.
+
+## DevSecOps
+
+Le terme DevSecOps est également populaire. Il qualifie un mode d'organisation DevOps intégrant nativement les équipes de Sécurité des Systèmes d'Information (SSI) au sein du cycle de développement et de déploiement du logiciel. Il s'agit d'y imposer des règles automatisées qui garantissent l'application des règles et standards de sécurité.
+
+En terme organisationnel, cette méthode implique les équipes SSI dans tous les échanges entre les développeurs et les équipes de production. Ces équipes auront la charge de définir et contrôler l'existence des fonctionnalités de confidentialité et de sécurité dans les logiciels, dès la phase de conception.
+
+Par exemple, l'existence des fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d'en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#intégration-continue-ci) dans le code.
+
+Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'_United States Air Force_ (USAF) [le définit](https://podcast.ausha.co/postmortem/19)[^DevSecOpsUSAirForce] de manière plus générale avec les termes suivants :
+
+> « Le DevSecOps est l'évolution de l'ingénierie logicielle. C'est l'équilibre entre la vélocité de développement et le temps alloué aux considérations de sécurité. On veut que la sécurité soit intégrée pour être sûr qu'elle ne soit pas oubliée mais ajoutée au cycle de développement logiciel. C'est utiliser les procédés de cybersécurité modernes pour être sûr que le logiciel est à la fois performant et construit d'une manière sécurisée pour être sûr qu'il n'ait pas de problème au fil du temps. C'est ce qui va permettre aux sociétés et organisations de rester concurrentielles et d'avancer à l'avenir à la vitesse nécessaire face à leurs concurrents. »
+
+Nous n'en parlerons pas davantage en ce terme car le DevSecOps est à mon sens analogue à la méthodologie DevOps et plus généralement à l'ingénierie logicielle moderne : la sécurité est un prérequis indiscutable à toute organisation et ses bonnes pratiques s'intègrent nativement avec les techniques DevOps qui vont vous être présentées.
+
+Il peut être néanmoins intéressant de communiquer avec ce terme au sein des institutions. Dans ces dernières, les équipes de la Sécurité des Systèmes d'Information (SSI) occupent une place toute particulière dans les initiatives numériques. Parler de "DevSecOps" plutôt que de "DevOps" permet de bien faire comprendre aux équipes SSI qu'elles ont un [rôle concret](#ingénieur-ssi-devops) à jouer dans cette nouvelle approche.
+
+Le paradigme et les techniques de sécurité dans un modèle d'organisation DevOps, seront abordés dans le chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)".
 
 # Le DevOps par la pratique
 
@@ -169,9 +169,9 @@ C'est bien dans cette tendance que le DevOps trouve tout son intérêt : alors q
 
 Ce mode d'organisation vise à rendre les infrastructures plus fiables, réduire les tâches manuelles pour tirer meilleur parti du temps de ses ingénieurs et _in fine_, accélérer le cycle de déploiement logiciel.
 
-Le DevOps est aux infrastructures traditionnelles ce que la construction à la chaîne est à l'artisanat : en construisant à la chaîne, on réduit les coûts et on répond à la demande. L'avantage supplémentaire dans le domaine logiciel est qu'il est possible d'ajuster en quelques heures le produit que l'on souhaite livrer. Cette action peut être réitérée plusieurs fois par jours !
+Le DevOps est aux infrastructures traditionnelles ce que la construction à la chaîne est à l'artisanat : en construisant à la chaîne, on réduit les coûts et on répond à la demande. L'avantage supplémentaire dans le domaine logiciel est qu'il est possible d'ajuster en quelques heures le produit que l'on souhaite livrer. Cette action peut être réitérée plusieurs fois par jour !
 
-En résumé, les pratiques informatiques historiques ont tout l'honneur d'avoir fait fonctionner des logiciels pendant des années. Mais d'autres méthodes plus agiles existent aujourd'hui. _Les arcs et les flèches ont servi, mais depuis on a inventé l'AR-15[^RedGate2021Report]._
+Si les pratiques historiques ont tout l'honneur d'avoir fait fonctionner des systèmes d'informations pendant des années, d'autres méthodes plus agiles existent aujourd'hui[^RedGate2021Report]. Pour militariser le propos : les arcs et les flèches ont servi, mais depuis on a inventé l'AR-15.
 
 Tout l'enjeu d'une transformation est de réussir à faire adhérer votre hiérarchie à cet investissement initial (non-négligeable mais nécessaire), alors que les bénéfices peuvent être au départ difficiles à voir émerger. C'est un défi courant que nous verrons comment adresser dans le chapitre ["comment convaincre et garder la foi"](#comment-convaincre-et-garder-la-foi).
 
@@ -194,13 +194,13 @@ Prenons un exemple pour bien nous représenter ce scénario. Vous commencez avec
 - Qui gère les sauvegardes ?
 - Qui définit les règles de développement et leur cohérence pour maintenir les logiciels dans le temps ?
 
-Si vous ne comptez que sur vos ingénieurs logiciels pour gérer l'infrastructure, ils finiront par générer de la dette technique qui empirera à mesure que votre équipe croît. Ils ne se concentrerons pas sur le développement et s'éparpilleront sur des tâches de SRE. Cette situation nécessite déjà au moins 1 ingénieur SRE/DevOps.
+Si vous ne comptez que sur vos ingénieurs logiciels pour gérer l'infrastructure, ils finiront par générer de la dette technique. Des coûts et des efforts en maintenance qui empireront à mesure que votre équipe croît. Ils ne se concentreront pas sur le développement et s'éparpilleront sur des tâches de SRE. Cette situation nécessite déjà au moins 1 ingénieur SRE/DevOps.
 
-Vous avez recruté et votre équipe compte désormais 6 ingénieurs : il faut leur fournir des machines, les configurer, certains rencontrent des bugs, d'autres vous demandent de mettre à jour des librairies… Si en plus vous avez des impératifs en termes de sécurité (ex : homologation, journaux d'évènements), il faut prendre le temps de correctement configurer les outils et l'infrastructure. Cela vous fait donc au moins 1 ingénieur SRE/DevOps supplémentaire.
+Et si vous recrutiez et que votre équipe comptais désormais 6 ingénieurs ? Il faut à présent leur fournir des machines et les configurer. Certains rencontrent des bugs, d'autres vous demandent de mettre à jour des librairies… Si en plus vous avez des impératifs en termes de sécurité (ex : homologation, journaux d'évènements), il faut prendre le temps de correctement configurer les outils et l'infrastructure. Cela demande au moins 1 ingénieur SRE/DevOps supplémentaire.
 
-Admettons que 2 ingénieurs quittent votre structure : vous devez toujours maintenir l'infrastructure qui a évolué, pour répondre aux besoins de vos 6 ingénieurs et les X machines que vous avez installées.
+Deux ingénieurs quittent maintenant votre structure ? Vous devez hélas toujours maintenir l'infrastructure qui a évolué, pour répondre aux besoins de vos 4 ingénieurs et pour maintenir les X machines ou serveurs que vous avez installés.
 
-Comprenez que vous avez besoin d'une masse critique de profils SRE/DevOps dans votre équipe. Cette masse critique doit évoluer en fonction du nombre de collaborateurs et vous ne pouvez pas en retirer sans essuyer de lourdes difficultés d'exploitation.
+Comprenez que vous devez atteindre une masse critique de profils SRE/DevOps pour maintenir un socle robuste. Ce dernier constitue les fondations permettant à vos ingénieurs d'être outillés pour travailler correctement. Cette masse critique doit évoluer en fonction du nombre de collaborateurs et vous ne pouvez pas en retirer sans essuyer de lourdes difficultés d'exploitation.
 
 > Par exemple, Google - employant plusieurs dizaines de milliers d'ingénieurs - maintient son ratio de SRE vis-à-vis des développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio SRE/développeurs tend néanmoins à être [logarithmique](https://en.wikipedia.org/wiki/Logarithm#/media/File:Binary_logarithm_plot_with_grid.png) quand vous débutez. Cela est dû aux forts besoins en infrastructure au moment de la constitution de votre initiative.
 
@@ -224,7 +224,7 @@ Les solutions techniques sont faciles à concevoir et à déléguer. Par exemple
 
 En effet, les décideurs ont rarement le temps de rencontrer chacune de leurs équipes. Ils ont par conséquent tendance à [privilégier leur propre avis](https://copyconstruct.medium.com/why-success-is-often-elusive-at-the-highest-echelons-3e02e4dd3e7f) ou à solliciter celui de leur adjoint, en lieu et place de celui de leurs experts. La décision prise est donc celle relevant de la sensibilité d'une seule personne, isolée des réalités métiers. Plus il existe de strates hiérarchiques, plus l'isolation est prononcée. Ce phénomène résulte en une concentration des efforts vers des projets peu étudiés et peu fédérateurs. Accompagnés d'une communication par nature peu impactante, il produit inévitablement de la frustration dans l'entreprise.
 
-L'exemple du Ministère des Armées américain en est une bonne illustration. Ce ministère a lancé une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne], dont la finalité était identique. Au delà d'avoir provoqué des frustrations au sein des équipes de _Platform One_[^ChaillanDisaTweet], le programme _Vulcan_ accuse des retards et des surcoûts[^DISAVulcanDelays].
+L'exemple de l'_U.S. Department of Defense_ (DoD) en est une bonne illustration. Ce ministère a lancé une nouvelle initiative DevSecOps nommée _Vulcan_[^DISAVulcan] 4 ans après l'initiative _Platform One_[^PlatformOne], dont la finalité était identique. Au delà d'avoir provoqué des frustrations au sein des équipes de _Platform One_[^ChaillanDisaTweet], le programme _Vulcan_ accuse des retards et des surcoûts[^DISAVulcanDelays].
 
 Dans d'autres cas, la méfiance de certains responsables les mènent à remettre en doute les propositions faites par leurs experts internes. À outrance, cela mène à considérer ses propres experts comme des acteurs externes à l'organisation, balayant l'avantage d'avoir des personnels qualifiés, au contact quotidien des sujets de l'entreprise.
 
@@ -239,11 +239,11 @@ Ceci dit, Google a perçu les écueils d'une absence de prise de risque et trava
 - **Faire de la veille** : garder un œil sur les tendances émergentes et les nouveaux besoins de ses clients en en organisant des visites entre partenaires, en participant à des salons, ou en consultant des experts pour s'informer des évolutions du marché. Vous pouvez par exemple demander à vos experts de rédiger une newsletter trimestrielle à l'attentation de la direction, reprenant les grandes tendances technologiques du moment.
 - **(Ré-)évaluer régulièrement sa stratégie** (son _business model_) : fort de cette veille, rechercher de nouvelles opportunités de croissance en adressant de nouveaux cas d'usage. Proposer de nouveaux produits et employer de nouvelles technologies. Dans une institution, la veille est aussi interne : il faut aller voir ses métiers pour comprendre les freins à leur travail quotidien, et mettre en perspective les innovations pouvant y répondre.
 - **Encourager la prise de risque et l'expérimentation** : encourager ses équipes à proposer de nouvelles idées et à tester des projets pour explorer de nouvelles technologies. Récompenser la prise de risque.
-- **Investissez dans l'innovation** : allouer des ressources suffisantes pour la recherche et développement (R&D). Par exemple, accorder 1 jour de télétravail par semaine à ses experts, pour qu'ils expérimentent la mise en place d'une technologie innovante. Accorder les financements à ses équipes pour acheter le matériel leur permettant d'expérimenter. Ou encore, leur donner accès à un hébergeur Cloud (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
+- **Investir dans l'innovation** : allouer des ressources suffisantes pour la recherche et développement (R&D). Par exemple, accorder 1 jour de télétravail par semaine à ses experts, pour qu'ils expérimentent la mise en place d'une technologie innovante. Accorder les financements à ses équipes pour acheter le matériel leur permettant d'expérimenter. Ou encore, leur donner accès à un hébergeur Cloud (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
 
 Plus pragmatiquement, si vous décidez de monter votre propre équipe, il se peut que certains membres quittent votre structure à tout instant. Elles risquent alors de laisser derrière elles un travail fastidieux à reprendre, au vu de la maturité des réflexions qu'elles entreprenaient. Voilà pourquoi beaucoup d'organisations préfèrent payer un tiers-partie, avec un cahier des charges bien définit pour que le décideur soit certain d'obtenir un résultat (au travers de l'obligation contractuelle du tiers-partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique peut avoir des conséquences néfastes à long terme pour l'organisation.
 
-Les évolutions organisationnelles impliquent toujours un changement culturel qu'il faut savoir appréhender. Parfois trop difficile à surmonter pour l'organisation toute entière, ce faussé culturel indique qu'il est probablement encore trop tôt pour exposer votre plan. Cela peut être frustrant, mais vous devez encore pour l'instant continuer d'acculturer l'organisation. Faites-le au travers de présentations et d'exemples de réussites. Le décideur doit comprendre clairement l'impact que peut avoir cette transformation et les risques associés : rupture de service, changement de stratégie RH, formation du personnel ou encore achat de matériel. Aidez vos responsables à se projeter pendant que vous travaillez à construire vos preuves.
+Les évolutions organisationnelles impliquent toujours un changement culturel qu'il faut savoir appréhender. Parfois trop difficile à surmonter pour l'organisation toute entière, ce fossé culturel indique qu'il est probablement encore trop tôt pour exposer votre plan. Cela peut être frustrant, mais vous devez encore pour l'instant continuer d'acculturer l'organisation. Faites-le au travers de présentations et d'exemples de réussites. Le décideur doit comprendre clairement l'impact que peut avoir cette transformation et les risques associés : rupture de service, changement de stratégie RH, formation du personnel ou encore achat de matériel. Aidez vos responsables à se projeter pendant que vous travaillez à construire vos preuves.
 
 Nous verrons dans la suite de ce livre comment appréhender la psychologie du changement pour faire aboutir votre projet.
 
@@ -259,11 +259,11 @@ Le risque de changer considérablement les missions d'une équipe implique que v
 
 Changer les missions d'une équipe sans considérer sa culture et son passif revient à risquer de perdre des collaborateurs : soit ils seront démotivés par votre projet, soit ils démissionneront. Vous devez leur proposer une vision claire et les convaincre avec des arguments étayés, mais surtout être à leur écoute.
 
-Du fait de leur passif au sein de votre structure, la connaissances de vos équipes vous permettra de saisir des notions que vous n'avez pas encore totalement bien appréhendées. Soyez ouvert à leurs recommandations et leurs remarques pour comprendre comment réorganiser au mieux cette équipe - et seulement si nécessaire - en fonction de ses aspirations. Un excellent moyen d'obtenir l'adhésion de son équipe et de mieux comprendre ses enjeux est d'effectuer pendant quelques jours son travail. Cela peut se faire au moment de l'arrivée du décideur dans la structure.
+Du fait de leur passif au sein de votre structure, la connaissances de vos équipes vous permettra de saisir des notions que vous n'avez pas encore totalement bien appréhendées. Soyez ouvert à leurs recommandations et leurs remarques pour comprendre en quoi réorganiser au mieux cette équipe - et seulement si nécessaire - en fonction de ses aspirations. Un excellent moyen d'obtenir l'adhésion de son équipe et de mieux comprendre ses enjeux est d'effectuer pendant quelques jours son travail. Cela peut se faire au moment de l'arrivée du décideur dans la structure.
 
 Si vous estimez ne pas avoir les ressources en interne, ne craignez pas de recruter. Il est risqué d'impacter les équipes historiques si elles répondent à un besoin exprimé par votre organisation. Le propre d'une transformation est d'assurer la continuité du service tout en changeant ses pratiques.
 
-Soyez plus subtile que d'annoncer un "grand plan de transformation". Ces pratiques frustrent à coup sûr bon nombre de collaborateurs, n'obtient pas l'adhésion de toutes vos équipes et risque de vous décrédibiliser. Elles peuvent également vous rendre otage de votre prédécesseur en associant votre personne aux précédentes transformations ayant échoué.
+Soyez plus subtil que d'annoncer un "grand plan de transformation". Ces pratiques frustrent à coup sûr bon nombre de collaborateurs, ne permet pas d'obtenir l'adhésion de toutes vos équipes et risque de vous décrédibiliser. Elles peuvent également vous rendre otage de votre prédécesseur en associant votre personne aux précédentes transformations ayant échoué.
 
 Comme évoqué dans le chapitre "[Too big, too soon](#too-big-too-soon)", adoptez la stratégie des petits pas et développez progressivement votre intuition sur qui vous devez réorganiser. Obtenez l'adhésion des équipes, en illustrant le champs des possibles pour leur donner envie. Puis laissez-les convaincre leurs pairs à votre place. Nous détaillerons ces stratégies dans le chapitre "[Comment convaincre et garder la foi](#comment-convaincre-et-garder-la-foi)".
 
@@ -275,7 +275,7 @@ Si vous avez l'impression d'avoir déjà entendu cela et que vous lisez ce livre
 
 Il est compréhensive d'avoir, selon la structure, des délais (exigences de sécurité, taille des équipes) mais l'organisation ne doit pas tolérer un retard. En aucun cas l'affirmation "c'est normal ici" ne doit devenir une réponse acceptable.
 
-Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire de fainéantise intellectuelle.
+Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire de paresse intellectuelle.
 
 Si la majorité des collaborateurs d'une entreprise en viennent à penser qu'elle a du retard, il y a un sérieux problème. Maintenir le _statu quo_ sur cette situation mène inévitablement au déclin de l'organisation et en la perte irrémédiable de crédibilité, de la part de ses employés et de ses partenaires.
 
@@ -283,7 +283,7 @@ Dans l'un de ses articles[^ArticlePSSyndromeCanard], le conférencier et expert 
 
 Alors qu'au début le dysfonctionnement est considéré inadmissible, il devient avec le temps de plus en plus acceptable par l'organisation, sans qu'elle se rende compte que cette situation lui coûte du temps et de l'argent. L'effort pour corriger le problème devient de moins en moins justifiable et le silence devient le choix par défaut pour conserver son énergie. Jusqu'à ce qu'une situation irrémédiable se produise (ou qu'un groupe de quelques courageux secouent la structure!).
 
-Mais il faut également savoir _quand_ dévoiler ses innovations. Preston DUNLAP, premier directeur technique (CTO) de l'Armée de l'Air américaine, décrit dans sa lettre publique _Défier la Gravité_ combien les "forces bureaucratiques" peuvent nuire à l'innovation si on les présente trop tôt.
+Mais il faut également savoir _quand_ dévoiler ses innovations. Preston DUNLAP, premier directeur technique (CTO) de l'USAF, décrit dans sa lettre publique _Défier la Gravité_ combien les "forces bureaucratiques" peuvent nuire à l'innovation si on les présente trop tôt.
 
 > "Certains m'ont demandé quelle fut ma recette pour réussir durant ces 3 dernières années. Je n'en ai pas beaucoup parlé parce-que je savais que si je révélais les éléments trop à l'avance, les forces naturelles de la bureaucratie reviendraient de plus belle, pour rejeter à chaque occasion tout le potentiel de l'innovation." - Preston DUNLAP, Défier la Gravité (_Defying Gravity_) [^DefyingGravity]
 
@@ -310,7 +310,7 @@ Ne croyez pas que « l'industriel » pourra résoudre tous vos problèmes : v
 
 Pour amorcer votre initiative DevOps, vous avez besoin :
 
-- D'un responsable d'équipe avec d'excellentes compétences en communication
+- D'un responsable d'équipe reconnu en ingénierie et avec d'excellentes compétences en communication
 - De plusieurs ingénieurs logiciels qui développeront vos solutions aux besoins métiers
 - De plusieurs profils SRE/DevOps qui développeront votre socle et géreront le cycle de développement/déploiement des logiciels
 
@@ -370,36 +370,37 @@ Nous pouvons désormais avancer plus sereinement en tant que responsable d'une t
 
 ## Le développement interne comme véritable alternative
 
-Dans le chapitre "[Refuser le retard technologique](#refuser-le-retard-technologique)", j'évoque l'innovation interne comme moyen pour éviter le déclin d'une organisation. Mais je me dois de préciser en quoi le développement interne, au delà d'être efficace, s'avère être une condition si l'entreprise souhaite rester compétitive.
+Dans le chapitre "[Refuser le retard technologique](#refuser-le-retard-technologique)", j'évoque l'innovation interne comme moyen pour éviter le déclin d'une organisation. Mais il est aussi important de préciser en quoi le développement interne, au delà d'être efficace, s'avère être une condition si l'entreprise souhaite rester compétitive.
 
-Quelle entreprise responsable d'un gros projet informatique dans le privé (c'est à dire quasiment toutes en 2022), pourrait se permettre de dire "Nous n'avons pas besoin d'expert informatique" ? Le recours aux sociétés de conseil est chronique dans les grandes entreprises. Cela est dû principalement au manque d'audace des décideurs à l'idée de monter leurs propres équipes techniques.
+Quelle entreprise responsable d'un gros projet informatique pourrait se permettre de dire "Nous n'avons pas besoin d'expert informatique" ? Le recours aux sociétés de conseil est parfois chronique dans les grandes organisations. Cela est principalement dû au manque d'acculturation des décideurs aux sujets techniques.
 
-Les différentes forces d'une équipe interne vis-à-vis d'équipes externes :
+A l'instar d'organisations d'envergure mondiales comme l'Organisation Mondiale de la Santé (OMS) ou les Nations Unies (UN), des organisanismes nationaux comme le Centre National de la Recherche Scientifique (CNRS), l'Education Nationale et l'agence Santé publique France intègrent un conseil scientifique interne[^ConseilScientifiqueSPF]. Ils leurs permettent de rester à jours sur les dernières connaissances scientifiques pour que les décideurs puissent prendre des décisions éclairées. Dans le privé, c'est le rôle du Directeur Technique (_CTO_ en anglais) et de ses cadres supérieurs (_VPs_ en anglais).
 
-- Une compréhension au jour le jour des enjeux de l'entreprise
-- Une meilleure compréhension des forces et des faiblesses de l'entreprise
-- Une meilleure compréhension des produits et des clients/métiers de l'entreprise
-- Un meilleur contrôle sur la feuille de route des projets
-- Des outils qui répondent mieux au client / aux besoins métiers
-- Des coûts de développement réduits
-- Une source d'expertise pour conseiller les décideurs (capacité de critique)
-- Un support de proximité pour les utilisateurs, sans surcoût
-- Des mises à jour plus rapides, en lien direct avec le besoin exprimé
-- Si votre entreprise manipule des données confidentielles ou classifiées : moins de risques de fuite et des coûts limités
+Bien qu'un conseil scientifique puisse aider l'organisation à rester à la pointe des connaissances scientifiques, il ne suffit pas à la rendre innovante. D'autant plus si ses membres ne sont pas renouvelés périodiquement. Pour innover, il faut pratiquer.
 
-Compter uniquement sur une ressource externe (des industriels) pour effectuer vos projets informatiques mènera inévitablement à des coûts prohibitifs. Sans expertise interne, vous êtes à la merci des talentueuses équipes commerciales de ces entreprises qui ne manqueront pas de vous vendre un tas de services dont vous n'aurez jamais l'usage.
+Si vous souhaitez répondre efficacement aux enjeux auxquels fait face votre organisation, seule une équipe interne qui pratique les technologies liées à vos sujets pourra vous y aider. Ainsi, avoir l'audace de monter sa propre équipe technique interne offre une multitude d'avantages. Ces atouts incluent une compréhension intrinsèque des défis quotidiens, des produits ou services proposés et des besoins spécifiques de ses clients. Le contact direct et constant avec les différents métiers permet à cette équipe de concevoir des outils sur-mesure, finement adaptés pour répondre efficacement à leurs exigences.
 
-La raison principale de la frilosité des décideurs à l'égard des développements internes est la maintenance. Ils ont raison : payer un industriel leur coûte cher mais ce dernier est tenu d'honorer sa prestation par un contrat. Voire de maintenir le logiciel, pourvu qu'on le paye. Un seul développeur interne - peu outillé car peu soutenu - risque d'échouer. Cela mettrait en cause la responsabilité du décideur.
+Cette proximité immédiate avec le demandeur facilite également la fourniture d'assistance en temps réel, éliminant ainsi les coûts supplémentaires et les délais habituellement associés à un soutien externe. Cela permet de réaliser des cycles d'amélioration plus courts et d'assurer une livraison plus rapide des demandes.
+
+En ayant la feuille de route des projets sous leur contrôle direct, les décideurs peuvent s'assurer que les développements correspondent parfaitement à leurs besoins et visions. Cette gestion interne des développements permet de réduire significativement les coûts, grâce à la mutualisation des investissements au profit de plusieurs projets simultanément.
+
+L'une des forces majeures d'une équipe interne réside dans la sécurité des données, celles-ci restant strictement confinées aux infrastructures de l'organisation et ne sont accessibles qu'aux membres autorisés. Cela limite ainsi le risque de fuites de données.
+
+De plus, une équipe interne possède une capacité unique à évaluer rapidement et avec pertinence les innovations technologiques, en les plaçant dans le contexte des enjeux métiers de l'organisation. Elle est également en mesure de favoriser l'assimilation de ces nouvelles technologies à travers l'organisation, grâce à des présentations adaptées à tous les niveaux.
+
+Compter uniquement sur une ressource externe pour effectuer vos projets informatiques mènera inévitablement à des coûts prohibitifs. Sans expertise interne, vous êtes à la merci des talentueuses équipes commerciales d'entreprises qui ne manqueront pas de vous vendre des services dont votre organisation n'aura jamais l'usage - quand bien même ils arriveraient à vous en persuader.
+
+La raison principale de la frilosité des décideurs à l'égard des développements internes est la maintenance. Ils ont raison : payer un prestataire peut coûter cher, mais ce dernier est tenu d'honorer sa prestation par un contrat. Ce même contrat est souvent accompagné d'une prestation de maintenance. Un seul développeur interne - peu outillé car peu soutenu - risquerait d'échouer à la même tâche. Cela mettrait finalement en cause la responsabilité du décideur.
 
 Ainsi, embaucher deux ou trois ingénieurs ne suffira pas pour pérenniser vos développements. Pour réussir à proposer une solution utile, qui puisse être une véritable alternative maintenable et crédible pour votre hiérarchie, vous devrez monter une équipe plus conséquente.
 
-En outillant cette équipe d'un véritable environnement de développement (cf. "[Usine logicielle](#usine-logicielle)") et en incluant de bonnes pratiques DevOps, elle aura le temps de s'attarder sur la qualité de vos logiciels. C'est un investissement en temps, un moment difficile à passer avec votre hiérarchie, mais elle ne sait pas encore que ce sera prochainement une véritable aubaine !
+En outillant cette équipe d'un véritable environnement de développement (cf. "[Usine logicielle](#usine-logicielle)") et en incluant de bonnes pratiques DevOps, elle aura le temps de s'attarder sur la qualité de vos logiciels. Bien que cela demande un investissement en temps et puisse être une étape éprouvante avec votre hiérarchie, celle-ci ne réalise pas encore à quel point cette avancée lui sera précieuse à l'avenir ! Gardez le cap.
 
 Dans l'une des entreprises pour laquelle j'ai travaillé, le développement interne d'un logiciel par un ingénieur a permis d'économiser plusieurs millions d'euros. Les programmes industriels équivalents n'avançaient pas et les métiers restaient démunis. Il a fallu un seul ingénieur - certes brillant - pour résoudre un problème qui durait depuis plus de 6 ans.
 
-Grâce aux règles DevOps exigeant des standards de qualité logiciels, plus de 10 développeurs au cours des 3 dernières années ont pu contribuer à ce projet pour le maintenir et l'améliorer. Il reçoit encore aujourd'hui de nombreuses mises à jour hebdomadaires.
+Grâce aux règles DevOps exigeant des standards de qualité logiciel, plus de dix développeurs au cours des trois dernières années ont pu contribuer à ce projet pour le maintenir et l'améliorer. Il reçoit encore aujourd'hui de nombreuses mises à jour hebdomadaires.
 
-Au delà d'apporter une solution concrète à un problème, cet ingénieur a surtout permis d'acculturer l'ensemble de la hiérarchie aux notions de développement moderne et de techniques de _machine learning_. Devant les industriels et convié aux grandes réunions stratégiques, il est devenu le référent _machine learning_ de l'organisation. Sans qui personne en interne ne serait en mesure de spécifier un besoin _machine learning_ en toute connaissance de cause.
+Au delà d'apporter une solution concrète à un problème, cet ingénieur a surtout permis d'acculturer l'ensemble de la hiérarchie aux notions de développement moderne et de techniques de _machine learning_. Convié devant les prestataires externes traditionnels aux grandes réunions stratégiques, il est devenu le référent _machine learning_ de l'organisation. Sans lui, personne en interne ne serait en mesure de spécifier un besoin ou d'évaluer une solution de _machine learning_ en toute connaissance de cause.
 
 ## Équipes « innovantes » et datascience
 
@@ -413,15 +414,21 @@ L'exemple typique de la data-science vis-à-vis du DevOps est le besoin de puiss
 
 ## Être au plus proche du métier
 
-Ce qui permettra à votre équipe de se différencier, c'est l'appui que vous fournissez à vos opérateurs. Votre avantage par rapport aux équipes de développement traditionnelles ou aux industriels est que vous pouvez être en forte proximité avec les métiers de votre organisation.
+Ce qui permettra à votre équipe de se différencier, c'est l'appui que vous fournissez à vos opérateurs. Votre avantage par rapport aux équipes de développement traditionnelles ou aux prestataires externes est la possibilité d'être en forte proximité avec les métiers de votre organisation.
 
-C'est la fameuse méthodologie « agile » à l'opposé du « cycle en V » (ou méthodologie _waterfall_): les techniques DevOps vous permettent d'être tellement réactif que vous pourrez passer plus de temps avec votre client, pour mieux comprendre son besoin et traiter ses retours ou suggestions.
+C'est la fameuse méthodologie « agile » à l'opposé du « cycle en V » (ou méthodologie _waterfall_).
 
-Dans de nombreuses organisations, on travaille encore en « V » : l'industriel vient voir l'équipe métier qui a émis un besoin - cette équipe propose d'ailleurs souvent une solution technique plutôt que d'exposer les problématiques qu'elle rencontre – puis un PowerPoint est créé 1 mois après pour voir le résultat du développement 4 mois après. Sur des problématiques techniques, le logiciel produit est déjà périmé et les équipes ayant fait la demande ont même déjà changé.
+Dans de nombreuses organisations, on travaille encore en « V » : le prestataire vient rencontrer l'équipe métier qui a émis un besoin, produit un PowerPoint 1 mois après, puis dévoile le résultat du développement entre 6 mois et 6 ans. Dans le domaine logiciel, le produit livré est déjà périmé et les équipes en ayant fait la demande ont parfois déjà changé.
+
+Dans le domaine manufacturier - tel que la conception d'un navire de guerre par exemple - il est légitime de s'assurer que son bâtiment va correctement flotter et que son gouvernail l'orientera correctement avant de le mettre à l'eau. Les caractéristiques du navire sont d'ailleurs souvent fixées : son autonomie, la portée de ses missiles, son temps de service... On ne va pas changer la composition de la coque au dernier moment ou modifier le palier de ligne d'arbre. Le cycle en "V" est alors adapté.
+
+Cependant en logiciel, il est possible d'adopter une approche plus agile. Le comportement d'un programme informatique est évaluable et peut être simulée en quasi temps-réel. Cela permet d'adapter un logiciel à tout moment, en s'assurant qu'il remplisse correctement les objectifs fixés.
 
 ![Illustration des différentes étapes "cycle en V" : l'ensemble des besoins sont décrits avant le lancement du projet, réduisant le risque mais également la flexibilité. Le produit final risque de ne pas ou plus répondre aux besoins de l'entreprise.](./images/cycle_v.jpg)
 
-Au-delà de la solution que vous apporterez en elle-même, vos métiers constateront que votre modèle de fonctionnement est efficace et soutiendront par conséquent votre initiative. Votre objectif en tant que chef d'équipe doit être de pouvoir faire témoigner des représentants d'équipes métiers que vous avez aidé grâce à vos outils lors de présentations importantes. Ces représentations permettront d'asseoir votre crédibilité et d'éviter que votre équipe ait une image de simple « prestataire de développement technique ».
+Ainsi, au sein d'un programme d'armement, l'informatique embarquée à bord d'un navire (ex: capteurs, systèmes d'information) peut être pilotée par la méthodologie agile, quand la production du porteur[^DefPorteur] peut être régie par la méthodologie en "V". Alors que la coque subira peu de changements, les logiciels peuvent être renouvelés à la vitesse exigée par les opérations[^VoeuxCEMA].
+
+Au-delà de la solution technique que vous leur apporterez, vos métiers constateront que votre mode d'organisation - plus agile - est efficace pour eux. Ils soutiendront par conséquent votre initiative. En tant que chef d'équipe, votre objectif doit être de pouvoir faire témoigner, lors de présentations importantes, des représentants d'équipes métiers que vous avez aidé grâce à vos outils. Ces représentations permettront d'asseoir votre crédibilité et d'éviter que votre équipe soient reconnus comme de simples « prestataires de développement technique ».
 
 ![Parallèle entre méthodologie traditionnelle et méthodologie agile : pendant que la méthodologie en V fixe la spécification des besoins, la méthodologie agile s'adapte au besoin utilisateur au cours du temps.](./images/cycle_v_vs_agile.png)
 
@@ -429,7 +436,7 @@ Cette proximité avec les métiers permettra à vos équipes de se sentir davant
 
 L'illustration de Henrik KNIBERG[^HenrikKNIBERG], coach agile, nous permet de bien cerner l'intérêt de la méthodologie agile : on préfère livrer à chaque étape quelque chose qui fonctionne - bien que non abouti - pour récolter les retours utilisateur et itérer.
 
-Vous avez dû probablement vous en rendre compte au cours de votre carrière : le client ne sait souvent pas exprimer ce qu'il veut exactement. La méthodologie agile et ultimement la méthodologie DevOps permettent de s'adapter aux réalités du métier au cours du temps, pour mieux le comprendre et livrer un produit qui répond réellement à ses besoins.
+Vous avez dû probablement vous en rendre compte au cours de votre carrière : le client ne sait souvent pas exprimer ce qu'il veut exactement. La méthodologie agile et ultimement la méthodologie DevOps permettent de s'adapter aux réalités du métier au cours du temps, pour mieux le comprendre et livrer un produit qui répond réellement à ses besoins. Les techniques DevOps vous permettront de libérer du temps pour en passer davantage avec votre client, mieux comprendre son besoin et mieux traiter ses retours ou suggestions.
 
 ![Illustration du processus d'itération entre méthodologie traditionnelle et méthodologie agile. Exemple d'un projet de transport.](./images/agile_illustration_henrik_kniberg.jpg)
 
@@ -451,7 +458,7 @@ Dans le cas contraire, il n'est peut-être pas nécessaire d'embaucher des perso
 
 L'idée selon laquelle le DevOps permet de rapprocher les différents métiers pour collaborer ensemble n'est pas simple à appliquer. Les métiers historiques de la sécurité des systèmes d'information (SSI) se sont vu imposer des pratiques auxquelles ils n'étaient pas habitués et qu'ils n'ont parfois pas eu le temps d'appréhender.
 
-Dans les grandes organisations, les règles de l'entreprise ou la loi elle-même imposent que des versions bien arrêtées soient définies pour que le logiciel soit qualifié[^ANSSIQualifiedSoftware] ou homologué. Imaginez alors avoir la charge de faire respecter ces conditions quand les méthodes DevOps impliquent des dizaines de mise à jour logicielles chaque jour : il y a de quoi prendre peur ! Il est donc nécessaire de bien comprendre de quoi est composée une infrastructure cloud, pour correctement définir ce qu'implique sa "sécurité".
+Dans les grandes organisations, les règles de l'entreprise ou la loi elle-même imposent que des versions bien précises soient définies pour que le logiciel soit qualifié[^ANSSIQualifiedSoftware] ou homologué. Imaginez alors avoir la charge de faire respecter ces conditions quand les méthodes DevOps impliquent des dizaines de mise à jour logicielles chaque jour : il y a de quoi prendre peur ! Il est donc nécessaire de bien comprendre de quoi est composée une infrastructure cloud, pour correctement définir ce qu'implique sa "sécurité".
 
 La sécurité affecte tous les [piliers du DevOps](#les-piliers-du-devops-en-pratique). Ce chapitre se concentre sur une description haut-niveau des notions de la sécurité dans une approche DevOps.
 
@@ -461,9 +468,9 @@ Dans ce mode d'organisation, les pratiques de sécurité sont automatisées pour
 
 Le rapport DORA[^DORAWebsite] "_State of DevOps 2022_"[^DORAStateOfDevops2022Announcement] se concentre sur les enjeux de sécurité dans les initiatives de transformation des entreprises en mode DevOps. Il fait état du fait qu'une entreprise favorisant la confiance et la [sécurité psychologique](#accepter-léchec), est 60% plus susceptible d'adopter des pratiques de sécurité innovantes. Il ajoute que cette culture permet de réduire de 40% le nombre de _burnouts_[^Burnout] et augmente les chances qu'un collaborateur recommande son entreprise.
 
-La sécurité a toujours été une affaire de culture. La méthodologie DevOps vient cependant apporter toutes les techniques qui permettront à une organisation de ne plus passer à côté des bonnes pratiques, autrefois négligées ou oubliées dans une paperasse longue et indigeste.
+La sécurité a toujours été une affaire de culture. La méthodologie DevOps vient cependant apporter toutes les techniques qui permettront à une organisation de ne plus passer à côté des bonnes pratiques, autrefois négligées ou oubliées dans des archives volumineuses et indigestes.
 
-L'essentiel est de comprendre qu'en mode DevOps, nous travaillons dans un principe de [cycle itératif d'amélioration](#être-au-plus-proche-du-métier). Les projets ne sont jamais figés en terme de technologie utilisée et les déploiements sont continus sans interaction humaine. Cela permet de ne pas nuire à la vélocité des innovations et de toujours répondre le plus justement possible au besoin du client. Mais ce n'est pas la jungle : il existe des standards technologiques et des procédés qui permettent de contrôler ce qui est déployé, selon les standards de sécurité de votre organisation.
+L'essentiel est de comprendre qu'en mode DevOps, nous travaillons dans un principe de [cycle itératif d'amélioration](#être-au-plus-proche-du-métier). Les projets ne sont jamais figés en terme de technologie utilisée et les déploiements sont continus sans interaction humaine. Cela permet de ne pas nuire à la vélocité des innovations et de toujours répondre le plus justement possible au besoin du client. Mais ce n'est pas la loi de la jungle : il existe des standards technologiques et des procédés qui permettent de contrôler ce qui est déployé, selon les standards de sécurité exigés par votre organisation.
 
 Nous détaillerons plus en détail les aspects culturels de la méthodologie DevOps dans le chapitre "[Accepter l'échec](#accepter-léchec)".
 
@@ -476,7 +483,7 @@ Il existe trois manières de gérer le risque lorsque l'on doit faire un choix t
 
 La certification/qualification concerne un produit. L'homologation concerne le déploiement de ce produit dans un environnement (un système d'information). Alors que la certification n'est pas une obligation légale, l'homologation peut l'être selon si vos règles SSI ou parfois la loi l'imposent (ex: si vous êtes un [^OIV]OIV). Elle représente l'acceptation du risque face aux bénéfices que l'installation apporte. En ce sens, elle peut être validée par une autorité SSI indépendamment de l'existence d'une certification/qualification du produit.
 
-Les qualification, certification et homologations sont donc en l'état assez peu adaptées aux pratiques de déploiement continu, car elles figent le risque à l'instant T. Or les menaces s'imposent au jour le jour : une faille dans une librairie peut par exemple être détectée 1 jour après l'approbation d'une homologation. Bien que l'homologation soit temporaire, la faille va quand même persister pendant ce temps, au risque d'être exploitée. Faut-il encore qu'elle soit détectée et que la personne ayant subit l'aventure administrative que représente l'homologation, ne daigne réitérer l'expérience.
+Les qualifications, certifications et homologations sont donc en l'état assez peu adaptées aux pratiques de déploiement continu, car elles figent le risque à l'instant T. Or les menaces s'imposent au jour le jour : une faille dans une librairie peut par exemple être détectée un jour après l'approbation d'une homologation. Bien que l'homologation soit temporaire, la faille va quand même persister pendant ce temps, au risque d'être exploitée. Faut-il encore qu'elle soit détectée et que la personne ayant subit l'aventure administrative que représente l'homologation, ne daigne réitérer l'expérience.
 
 La sécurité d'un système d'information innovant est de partir du principe qu'une faille risque à tout moment de survenir ou d'être déployée. Mais que les procédés mis en place permettent de réagir vite à cette menace pour l'inhiber. Une bonne approche pour limiter les risques est l'intégration continue.
 
@@ -496,7 +503,7 @@ Ces tests peuvent se composer : d'une analyse antivirus, de l'analyse de failles
 
 Dans la capture d'écran ci-dessus, vous pouvez observer une chaîne d'intégration continue à 5 étapes (Build, Test, Release, Preprod, Integration). La colonne qui nous intéresse est "Test". Elle comporte différents tests de sécurité qui sont lancés et qui ont dans ce cas soit réussi (coche verte), soit comporte des avertissements (point d'exclamation jaune). Si un test avait échoué, nous aurions vu une croix rouge. Un point d'exclamation signifie que le test en question n'est pas passé mais qu'il n'était pas critique (ex: une dépendance logicielle dépréciée mais sans faille de sécurité).
 
-Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (_template_ en anglais)[^GitLabCustomTemplate] qu'ils copient et qui intègrent toutes les règles de sécurité, en plus d'autres fichiers utiles pour démarrer. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité. Cela permettra de faire gagner du temps à tout le monde.
+Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (_template_ en anglais)[^GitLabCustomTemplate] qu'ils copient et qui intègrent toutes les règles de sécurité, en plus d'autres fichiers utiles pour démarrer. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité (cf. chapitre "[Intégration continue et sécurité](#intégration-continue-et-sécurité)"). Cela permettra de faire gagner du temps à tout le monde.
 
 ## Dépendances externes
 
@@ -517,7 +524,7 @@ Au lieu de lister les dépendances, il s'agit de mettre en place une détection 
 
 Pour limiter les risques, il est possible de baser les logiciels développés sur des ressources pré-approuvées mises à disposition des développeurs. Chaque brique externe qui constitue le logiciel est vérifiée. Il peut s'agir de paquets Python, NPM, Go ou encore d'images Docker qui ont été analysés et pour lesquels les équipes de sécurité se sont assurées qu'il n'y avait pas de faille.
 
-C'est le cas par exemple du service _Iron Bank_[^IronBankPresentation] mis en place par le Ministère des Armées américain au sein de _Platform One_[^PlatformOnePresentationWebsite]. Les images Docker doivent passer par une rigoureuse procédure de sécurité avant d'être approuvées. Ces étapes [combinent des vérifications](https://docs-ironbank.dso.mil/hardening/overview/) [manuelles](https://docs-ironbank.dso.mil/hardening/justifications/) et automatiques mais peuvent déjà faire, dans un premier temps, l'objet de procédures seulement automatisées. Les actions manuelles sont nécessaires pour justifier de l'intérêt d'ajouter une nouvelle image. C'est ce que les équipes de _Platform One_ appellent "l'homologation continue d'images approuvées"[^IronBankHardeningOverview].
+C'est le cas par exemple du service _Iron Bank_[^IronBankPresentation] mis en place par l'_U.S. Department of Defense_ au sein de _Platform One_[^PlatformOnePresentationWebsite]. Les images Docker doivent passer par une rigoureuse procédure de sécurité avant d'être approuvées. Ces étapes [combinent des vérifications](https://docs-ironbank.dso.mil/hardening/overview/) [manuelles](https://docs-ironbank.dso.mil/hardening/justifications/) et automatiques mais peuvent déjà faire, dans un premier temps, l'objet de procédures seulement automatisées. Les actions manuelles sont nécessaires pour justifier de l'intérêt d'ajouter une nouvelle image. C'est ce que les équipes de _Platform One_ appellent "l'homologation continue d'images approuvées"[^IronBankHardeningOverview].
 
 ![Processus d'homologation continue des images de Iron Bank.](./images/continuous-accreditation-approved-images.png)
 
@@ -694,7 +701,7 @@ Des documents de référence tels que le papier de recherche _Beyondcorp_ de Goo
 
 ## Développement basé sur le _zero trust_
 
-Dans le cadre d'un environnement de développement (R&D), le sujet se corse. Pour rester innovantes, vos équipes ont besoin de flexibilité. Elles utilisent des librairies de dernière génération, installent les derniers drivers GPU pour faire des expérimentations de _machine learning_ ou encore en testent les performances de leur logiciel, avec une consommation totale ressources de leur machine. En résumé, vos équipes ont besoin d'un accès complet à la configuration de leur machine pour efficacement développer.
+Dans le cadre d'un environnement de développement (R&D), le sujet se complique. Pour rester innovantes, vos équipes ont besoin de flexibilité. Elles utilisent des librairies de dernière génération, installent les derniers drivers GPU pour faire des expérimentations de _machine learning_ ou encore en testent les performances de leur logiciel, avec une consommation totale ressources de leur machine. En résumé, vos équipes ont besoin d'un accès complet à la configuration de leur machine pour efficacement développer.
 
 Or, comme citée plus haut, la 3ème règle d'une architecture _zero trust_ est de s'assurer que la machine de l'utilisateur est sécurisée. Si vous laissez les droits d'administration à un développeur, il pourra toujours désactiver les paramètres de sécurité de sa machine. Donc que faire ?
 
@@ -833,7 +840,7 @@ Cette mise en doute n'est pas dénuée de sens. L'idée d'importer une librairie
 
 Il s'agit donc de trouver l'équilibre entre la productivité apportée par les librairies/logiciels open-source et la confiance qu'on leur accorde (sécurité).
 
-Evitons néanmoins le piège de s'abandonner à croire qu'acheter (très cher) le logiciel à une entreprise, permettra de le rendre sécurisé[^DependencyConfusion]. Bien que la responsabilité soit déléguée, le mal - s'il se produit - sera fait. Les responsables de l'ingénierie chez Google pensent que d'ici 2025, 80% des entreprises utiliseront des technologies open-source maintenues par des personnes payées pour le faire[^CuratedOpenSource] (cf. _[GitHub Sponsors](https://github.com/sponsors)_).
+Evitons néanmoins le piège de s'abandonner à croire qu'acheter le logiciel à une entreprise, permettra de le rendre sécurisé[^DependencyConfusion]. Bien que la responsabilité soit déléguée, le mal - s'il se produit - sera fait. Les responsables de l'ingénierie chez Google pensent que d'ici 2025, 80% des entreprises utiliseront des technologies open-source maintenues par des personnes payées pour le faire[^CuratedOpenSource] (cf. _[GitHub Sponsors](https://github.com/sponsors)_).
 
 Jusqu'à présent, la politique officielle pour approuver l'usage de certaines librairies passait par un cycle d'homologation. Ce dernier a pour objectif de cartographier les risques apportés par l'usage d'une technologie, pour savoir si on l'accepte ou non. Le choix peut être appuyé par un audit de code, mais n'est souvent pas fait par manque de ressources humaines.
 
@@ -964,7 +971,7 @@ En revanche, _git_ n'est pas fait pour stocker des fichiers lourds. On évitera 
 
 Mais l'usine logicielle ne se limite pas à la capitalisation de connaissance. Elle est aussi un point de contrôle pour toutes les contributions. Un premier niveau de contrôle se fait en ajoutant les utilisateurs aux projets auxquels ils ont le droit de contribuer. Mais un deuxième niveau de contrôle peut être configuré : grâce aux mécanismes d'intégration continue (cf. chapitre "[Intégration continue](#intégration-continue-ci)"), des scripts automatisés peuvent vérifier la validité d'une contribution en fonction de règles définies par votre organisation (qualité du logiciel, conformité SSI). Si la contribution ne répond pas à vos règles, elle est refusée. Le contributeur le voit immédiatement, sait pourquoi et peut dans les minutes qui suivent proposer une correction.
 
-Les usines logicielles pouvant gérer l'accès aux ressources selon le profil de l'utilisateur, il est tout à fait envisageable d'ouvrir la votre à des partenaires industriels. Ils pourront ainsi ajouter leurs logiciels selon les règles établies par votre organisation et sauront immédiatement comment s'y conformer. Ces dernières sont définies par des [ingénieurs SSI](#ingénieur-ssi-devops) internes. C'est déjà le cas de _Platform One_[^PlatformOne] qui ouvre son usine logicielle à des industriels contractualisant avec le Ministère des Armées américain. Ou encore de la [_NATO Software Factory_](https://nsf.dev.nato.int/), l'usine logicielle de l'OTAN[^NatoSoftwareFactory].
+Les usines logicielles pouvant gérer l'accès aux ressources selon le profil de l'utilisateur, il est tout à fait envisageable d'ouvrir la votre à des partenaires industriels. Ils pourront ainsi ajouter leurs logiciels selon les règles établies par votre organisation et sauront immédiatement comment s'y conformer. Ces dernières sont définies par des [ingénieurs SSI](#ingénieur-ssi-devops) internes. C'est déjà le cas de _Platform One_[^PlatformOne] qui ouvre son usine logicielle à des industriels contractualisant avec l'_U.S. Department of Defense_. Ou encore de la [_NATO Software Factory_](https://nsf.dev.nato.int/), l'usine logicielle de l'OTAN[^NatoSoftwareFactory].
 
 Néanmoins, je rappelle ici qu'il s'agit de pouvoir développer une expertise en interne avant d'être capable de définir des règles pour les autres. Vous devez maîtriser les technologies évoquées dans ce chapitre pour maîtriser la sécurité de votre plateforme. Travaillez donc d'abord pour vos projets internes avant de contrôler des projets externes. Chaque organisation est différente mais se doit [de disposer de ses propres experts en interne, pour la conseiller au mieux](#le-développement-interne-comme-véritable-alternative).
 
@@ -1343,15 +1350,15 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
     Toujours commencer pas résoudre le problème. Rétablir au plus tôt le service pour éviter qu'il ne dégénère, même si la solution est temporaire ou qu'elle n'est pas considérée "propre".
 
-    La confiance que vos utilisateurs portent à l'égard de votre service, est liée à votre réactivité dans votre réponse à incident. Vos utilisateurs ne s'attendent pas à 100% de disponibilité, mais ils s’attendent à une communication claire en cas d’incident. Cette transparence est fondamentale.
+    La confiance que vos utilisateurs portent à l'égard de votre service, est liée à votre réactivité dans votre réponse à incident. Vos utilisateurs ne s'attendent pas à 100% de disponibilité, mais ils s'attendent à une communication claire en cas d'incident. Cette transparence est fondamentale.
 
     Une [page d'état des services](https://github.com/ivbeg/awesome-status-pages) (_status page_ en anglais), est un excellent moyen d'informer vos utilisateurs de l'état d'avancement d'un incident. Vous pouvez également indiquer à l'avance des opérations de maintenance.
 
     ![Exemple de _status page_ Atlassian avec incident, état des services et prévision d'opération de maintenance. Source : _atlassian.com/software/statuspage/feature_](./images/2023_atlassian_statuspage.png)
 
-    A chaque mise à jour du status de l’incident, communiquer sur :
+    A chaque mise à jour du status de l'incident, communiquer sur :
 
-    - La situation actuelle et l’impact mesuré
+    - La situation actuelle et l'impact mesuré
     - Ce qu'on sait du problème / ce qui a changé
     - Les services toujours impactés
 
@@ -1415,7 +1422,7 @@ Le postmortem est une technique d'investigation des incidents. Elle permet de ti
 
 Il est recommandé de stocker ces documents dans un projet _git_ pour être en mesure de les éditer et de visualiser leurs modifications au cours du temps (cf. chapitre ["GitOps"](#gitops)). Ma recommandation personnelle est de les rédiger au format Markdown.
 
-Historiquement, le terme latin "_post mortem_" signifie "après la mort" et définit le processus d'investigation réalisé par les forces de l'ordre pour comprendre comment un crime a pu se produire. Pour cela : elles analysent les preuves, identifient la cause du décès (ex: via une autopsie), puis tentent d'emprisonner le coupable ou d'adapter la loi pour que le problème ne se reproduise plus. L'idée est similaire pour les incidents informatique.
+Historiquement, le terme latin "_post mortem_" signifie "après la mort" et définit le processus d'investigation réalisé par les forces de l'ordre pour comprendre en quoi un crime a pu se produire. Pour cela : elles analysent les preuves, identifient la cause du décès (ex: via une autopsie), puis tentent d'emprisonner le coupable ou d'adapter la loi pour que le problème ne se reproduise plus. L'idée est similaire pour les incidents informatique.
 
 #### Structure du postmortem
 
@@ -1691,11 +1698,11 @@ Mais garder le rythme n'est pas simple, surtout à la vitesse à laquelle les te
 
 Par exemple chez Google, les stagiaires commencent par une semaine complète dédiée à la formation. Ils reçoivent des instructions sur les bonnes pratiques de sécurité, les formalités administratives qu'ils doivent remplir et sont sensibilisés aux outils techniques internes. Par la suite et comme pour tous les employés, ils devront valider périodiquement des modules de sensibilisation sur une plateforme dédiée avec des cours écrits ou vidéo.
 
-L'Armée de l'Air américaine s'est mise depuis 2019 en ordre de bataille en investissant massivement dans des solutions d'auto-apprentissage. Dans un podcast[^DevSecOpsUSAirForce], son ancien Directeur de l'Ingénierie Logicielle (_Chief Software Officer_) Nicolas CHAILLAN explique comment il a mis en place ce système pour plus de 100 000 développeurs. Une plateforme web a été déployée avec du contenu pédagogique spécialement sélectionné ou créé par ses équipes. Il ajoute qu'une heure par jour a été accordé aux collaborateurs pour "rattraper le retard et continuer d'être à jour sur les dernières technologies".
+L'_United States Air Force_ (USAF) s'est mise depuis 2019 en ordre de bataille en investissant massivement dans des solutions d'auto-apprentissage. Dans un podcast[^DevSecOpsUSAirForce], son ancien Directeur de l'Ingénierie Logicielle (_Chief Software Officer_) Nicolas CHAILLAN explique comment il a mis en place ce système pour plus de 100 000 développeurs. Une plateforme web a été déployée avec du contenu pédagogique spécialement sélectionné ou créé par ses équipes. Il ajoute qu'une heure par jour a été accordé aux collaborateurs pour "rattraper le retard et continuer d'être à jour sur les dernières technologies".
 
 > "C'est _(la formation est)_ un investissement pour l'entreprise et pour eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix." - Nicolas CHAILLAN
 
-À l'instar de l'Armée de l'Air américaine, la solution suivante avait bien fonctionné dans l'une de mes dernières expériences : nous avions réussi à obtenir un jour de télétravail par semaine. Le faire accepter à nos responsables n'était pas simple, mais ils ont fini par l'accorder après un temps certain à leur en faire comprendre le bien-fondé. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière permettait à notre hiérarchie de visualiser les statistiques sur le temps passé à se former et les cours achevés. Le coût de ces deux services était minime par rapport à toutes les connaissances qu'ils nous conféraient.
+À l'instar de l'USAF, la solution suivante avait bien fonctionné dans l'une de mes dernières expériences : nous avions réussi à obtenir un jour de télétravail par semaine. Le faire accepter à nos responsables n'était pas simple, mais ils ont fini par l'accorder après un temps certain à leur en faire comprendre le bien-fondé. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière permettait à notre hiérarchie de visualiser les statistiques sur le temps passé à se former et les cours achevés. Le coût de ces deux services était minime par rapport à toutes les connaissances qu'ils nous conféraient.
 
 Si vous avez déjà des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, de pratiquer. C'est ce que j'ai observé de plus efficace (donc rentable) pour l'organisation : investissez du temps dans la formation de votre personnel. Par exemple, donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services, pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
 
@@ -2030,7 +2037,7 @@ Si les SLOs doivent représenter en priorité les irritants pour vos utilisateur
 
 ![Aperçu du tableau de bord Grafana "Service level (SLI/SLO)" par Xabier LARRAKOETXEA. La partie supérieure représente le taux de conformité d'un service à un SLO au cours du temps. La partie inférieure représente la tendance de consommation du budget d'erreur, intrinsèquement lié au SLO. Source : [grafana.com](grafana.com/grafana/dashboards/8793-service-level-sli-slo)](./images/2023_grafana_slo_eb.png)
 
-Les SLOs doivent être définis de paire avec les décideurs. Leur implication dans cette définition est nécessaire pour qu'ils puissent comprendre comment leurs décisions (ex: priorisation des tâches, quantité de travail demandée) impactent la résilience de l'infrastructure. Si un décideur veut que ses ingénieurs développent souvent et rapidement des nouveautés, les SLOs aident à comprendre quand le rythme imposé est trop exigeant. À l'opposé, atteindre trop largement ses SLOs indique que votre entreprise peut avancer plus vite sans impacter sa qualité de service. L'implication des décideurs est d'autant plus importante qu'ils mettent parfois la responsabilité de l'entreprise en jeu. C'est la SLA qui en est à l'origine.
+Les SLOs doivent être définis de paire avec les décideurs. Leur implication dans cette définition est nécessaire pour qu'ils puissent comprendre en quoi leurs décisions (ex: priorisation des tâches, quantité de travail demandée) impactent la résilience de l'infrastructure. Si un décideur veut que ses ingénieurs développent souvent et rapidement des nouveautés, les SLOs aident à comprendre quand le rythme imposé est trop exigeant. À l'opposé, atteindre trop largement ses SLOs indique que votre entreprise peut avancer plus vite sans impacter sa qualité de service. L'implication des décideurs est d'autant plus importante qu'ils mettent parfois la responsabilité de l'entreprise en jeu. C'est la SLA qui en est à l'origine.
 
 L'accord de niveau de service (_Service Level Agreement_ ou SLA) est un contrat entre votre organisation et un client. Si votre qualité de service est inférieure à celle définie par vos SLAs, votre organisation subit des pénalités. Un SLA se base sur un ou plusieurs SLOs, en définissant par précaution des taux de résilience inférieurs. Voici quelques exemples :
 
@@ -2984,7 +2991,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^CertificationANSSI]: Source : _ssi.gouv.fr/administration/produits-certifies_
 
-[^PASSI]: L'évaluateur tiers doit être un PASSI (Prestataires d’Audit de la Sécurité des Systèmes d’Information).
+[^PASSI]: L'évaluateur tiers doit être un PASSI (Prestataires d'Audit de la Sécurité des Systèmes d'Information).
 
 [^OIV]: OIV : Organisme d'Importance Vitale
 
@@ -3070,6 +3077,12 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^GregDeArmentInterviewApollo]: Vidéo de la chaîne Platform Engineering sur YouTube. [_Palantir's GitOps Journey with Apollo_](https://youtu.be/T2gF8KJDy3w?t=128), avec Greg DeArment. 2022.
 
-[^PalantirApolloBlogCD]: Blog Palantir sur _medium.com_. [_Why Traditional Approaches to Continuous Deployment Don’t Work Today_](https://blog.palantir.com/why-traditional-approaches-to-continuous-deployment-dont-work-today-b5a6c33cc754). 2022.
+[^PalantirApolloBlogCD]: Blog Palantir sur _medium.com_. [_Why Traditional Approaches to Continuous Deployment Don't Work Today_](https://blog.palantir.com/why-traditional-approaches-to-continuous-deployment-dont-work-today-b5a6c33cc754). 2022.
 
 [^PalantirApolloWhitepaper]: Palantir. [_Palantir Apollo Whitepaper_](https://www.palantir.com/assets/xrfr7uokpv1b/2MqgGhNYSZRmkYnnRAOi2E/0f8787169349fade4d6d9a9e5bb3c9fe/PalantirApolloWhitePaper.pdf). 2022.
+
+[^ConseilScientifiqueSPF]: "(Le Conseil scientifique) assiste Santé publique France dans sa mission de contribution à l'élaboration et à la mise en œuvre des politiques nationale et européenne de santé publique.". _santepubliquefrance.fr_. 2022.
+
+[^VoeuxCEMA]: Vœux du CEMA Thierry BURKHARD. ["... les chefs doivent s'adapter à l'accélération de notre monde si nécessaire en prenant des risques calculés."](https://www.defense.gouv.fr/ema/actualites/voeux-du-chef-detat-major-armees). 2022.
+
+[^DefPorteur]: Le "porteur" qualifie la structure, les machines et les équipements lourds d'un bateau.
