@@ -1515,6 +1515,7 @@ Pour gérer la situation, désignez 3 personnes pour les 3 rôles suivants :
    - Il fait au besoin appel à des renforts et explique au reste de l'équipe comment elle peut continuer à travailler.
 2. Le **responsable de la communication** (_Communications Lead_, **CL**)
    - Il s'occupe de gérer la _status page_ et d'informer les employés ou les clients ainsi que la hiérarchie de l'état d'avancée de l'incident.
+   - Il crée un canal de communication interne réservé à l'incident et invite les parties-prenantes.
    - Il est l'interface entre l'équipe gérant l'incident et l'extérieur.
    - Son objectif est de protéger l'OL de sollicitations extérieures.
 3. Le **responsable des opérations** (_Operations Lead_, **OL**)
@@ -1524,7 +1525,17 @@ Pour gérer la situation, désignez 3 personnes pour les 3 rôles suivants :
 
 Dans les petites équipes, l'IC occupe souvent les 3 rôles. Mais vous devez être préparé à déléguer ces tâches en cas d'incident grave.
 
-Cette technique doit faire partie de votre procédure de réponse à incident. Veillez à ce qu'elle soit clairement définie dans votre base de connaissance pour que vos équipes sachent comment réagir. Veillez à  entraîner vos équipes à ce type de réponse à incident (cf. chapitre "[Évaluer sa sécurité et s'entraîner](#évaluer-sa-sécurité-et-sentraîner)").
+La définition et l'organisation des rôles doit faire partie de votre procédure de réponse à incident. Veillez à ce qu'elle soit clairement définie dans votre base de connaissance pour que vos équipes sachent comment réagir. Veillez à entraîner vos équipes pour répondre efficacemnet à de potentiels incidents (cf. chapitre "[Évaluer sa sécurité et s'entraîner](#évaluer-sa-sécurité-et-sentraîner)"). Vous pouvez faire en sorte que vos équipes soient régulièrement entraînées en définissant un seuil d'alerte bas. Elles seront alors davantage confrontées à vos procédures de réponse à incident.
+
+### L'importance de la communication
+
+Communiquer est essentiel, que ce soit auprès de vos clients ou de vos équipes internes. A l'occasion d'un incident de grande envergure, Datadog pointe dans son postmortem[^DatadogMarch2023PM] l'importance de communiquer tôt les pannes, à la fois à ses clients et ses équipes internes. Voici quelques enseignements qu'ils ont su en tirer :
+
+Dans le cas d'un incident n'étant pas encore totalement identifié et affectant différemment vos clients selon leur localisation ou le produit utilisé, la règle est de communiquer sur le problème ayant les "pires symptômes". Pour éviter de frustrer vos clients et de passer trop de temps à communiquer sur chaque zone ou chaque produit, vous devez décider de communiquer au plus tôt, sur la zone ou le produit le plus impacté. Par exemple, si la zone "UE" a des symptômes plus importants que la zone "US" de vos datacentres, communiquez sur les symptômes de la zone "UE" : vous ne savez pas encore si la panne est globale, si elle va se propager ou si elle n'impacte qu'une seule zone. Indiquez clairement que la zone "US" est possiblement impactée de la même manière que la zone "UE".
+
+Lors d'un incident d'ampleur, de nombreux clients peuvent ouvrir des tickets. Des ingénieurs "support" sont alors assignés à ces tickets pour répondre à des clients en détresse. Sans communication claire en interne pour que vos ingénieurs support sachent quoi dire à vos clients, vos équipes et vos clients vont chacun commencer à s'impatienter. Veillez à disposer d'un canal de communication interne auxquels tous vos ingénieurs support ont accès (ex: canal Slack, document Google Docs) pour qu'ils sachent quoi répondre à leurs clients et sans discours contradictoire.
+
+De manière plus générale, l'entreprise a découvert avec le temps qu'informer ses clients une fois toutes les 30 minutes était la fréquence idéale. Les équipes techniques peuvent ainsi se concentrer sur la résolution du problème sans être dérangées trop souvent pour communiquer.
 
 ### Anticiper les incidents
 
@@ -3084,3 +3095,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^VoeuxCEMA]: Vœux du CEMA Thierry BURKHARD. ["... les chefs doivent s'adapter à l'accélération de notre monde si nécessaire en prenant des risques calculés."](https://www.defense.gouv.fr/ema/actualites/voeux-du-chef-detat-major-armees). 2022.
 
 [^DefPorteur]: Le "porteur" qualifie la structure, les machines et les équipements lourds d'un bateau.
+
+[^DatadogMarch2023PM]: Datadog. [_2023-03-08 Incident: A deep dive into our incident response_](https://www.datadoghq.com/blog/engineering/2023-03-08-deep-dive-into-incident-response/#the-communication-clock-is-inexorably-ticking). 2023.
