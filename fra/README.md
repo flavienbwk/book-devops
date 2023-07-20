@@ -503,7 +503,11 @@ Dans l'illustration ci-dessus (fig. 9), vous pouvez observer une chaîne d'inté
 
 > Un point d'exclamation signifie que le test n'est pas passé mais qu'il n'était pas considéré critique (ex: une dépendance logicielle dépréciée mais sans faille de sécurité).
 
-Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (_template_ en anglais)[^GitLabCustomTemplate] qu'ils copient et qui intègrent toutes les règles de sécurité, en plus d'autres fichiers utiles pour démarrer. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité (cf. chapitre "[Intégration continue et sécurité](#intégration-continue-et-sécurité)"). Cela permettra de faire gagner du temps à tout le monde.
+Pour les ingénieurs, le Graal est de voir son projet accompagné d'une coche verte, signifiant que tous les tests sont passés avec succès.
+
+![Projet accompagné d'une coche verte, illustrant le succès de toutes les étapes d'intégration continue.](./images/ci-pipeline-gitlab-check.png)
+
+Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (_template_ en anglais)[^GitLabCustomTemplate] qu'ils copient et qui intègre - en plus des fichiers pour le développement - toutes les règles de sécurité. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité (cf. chapitre "[Intégration continue et sécurité](#intégration-continue-et-sécurité)") pour faire gagner du temps à tout le monde.
 
 ### SAST
 
@@ -1842,14 +1846,14 @@ Il est courant d'entendre parler de _pipeline_ d'intégration continue (en fran�
 - **Pipeline** : enchaînement de _jobs_
 - **Stages** : les trois étapes d'une chaîne (_pipeline_) d'intégration continue (_build_, _test_, _deploy_)
 - **Build** : étape contenant les _jobs_ s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
-- **Test** : jobs de vérification de la conformité du code / de la contribution
+- **Test** : _jobs_ de vérification de la conformité du code / de la contribution
   - Exemples :
     - Vérifier que le code est maintenable : grâce à des outils comme [_SonarQube_](https://www.sonarsource.com/products/sonarqube) ou des _linters_[^linter] comme [_black_](https://github.com/psf/black) pour Python ou [_KubeLinter_](https://github.com/stackrox/kube-linter) pour les configurations Kubernetes (cf. [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/criteria/0)).
     - Vérifier que la contribution n'introduit pas de faille de sécurité : avec des logiciels comme _Quay Clair_, _Jfrog X-Ray_, _ClamAV_ ou les _Scorecards_ de la OpenSSF.
     - Vérifier que le code respecte les tests unitaires (cf. chapitre ["Développement piloté par tests"](#développement-piloté-par-tests)).
     - Vérifier la conformité de la documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. _Istio_ a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
     - Vérifier la composition d'un conteneur Docker.
-- **Deploy** : jobs prenant des actions affectant l'infrastructure, la production (cf. chapitre "[Déploiement Continu](#déploiement-continu-cd)").
+- **Deploy** : _jobs_ prenant des actions affectant l'infrastructure, la production (cf. chapitre "[Déploiement Continu](#déploiement-continu-cd)").
   - Exemples :
     - Déployer la mise à jour d'un logiciel.
     - Ajouter une dépendance de développement conforme.
