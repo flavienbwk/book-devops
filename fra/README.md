@@ -503,7 +503,7 @@ Dans l'illustration ci-dessus (fig. 9), vous pouvez observer une chaîne d'inté
 
 > Un point d'exclamation signifie que le test n'est pas passé mais qu'il n'était pas considéré critique (ex: une dépendance logicielle dépréciée mais sans faille de sécurité).
 
-Pour les ingénieurs, le Graal est de voir son projet accompagné d'une coche verte, signifiant que tous les tests sont passés avec succès.
+Pour les ingénieurs, le Graal est de voir son projet accompagné d'une coche verte, signifiant que tous les tests ont été passés avec succès.
 
 ![Projet accompagné d'une coche verte, illustrant le succès de toutes les étapes d'intégration continue.](./images/ci-pipeline-gitlab-check.png)
 
