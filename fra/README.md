@@ -495,13 +495,27 @@ C'est ici qu'on attend l'expertise des responsables de la sécurité. Ces profil
 
 Ces règles étant versionnées [sous forme de code](#infrastructure-as-code-iac) deviennent des tests automatisés. Elles pourront être mises à jour à souhait et impacteront immédiatement l'ensemble des projets.
 
-Ces tests peuvent se composer : d'une analyse antivirus, de l'analyse de failles dans les images Docker du projet ou encore de s'assurer qu'il n'y ait pas de secrets poussés par inadvertance.
+Ces tests peuvent se composer par exemple d'une analyse antivirus, d'une analyse de failles dans les images Docker utilisées, ou encore s'assurer qu'il n'y ait pas de mots de passe poussés par inadvertance.
 
-![Exemple de chaîne d'intégration continue dans GitLab par _kilala.nl_](./images/ci-pipeline-gitlab-security.png)
+![Exemple d'une chaîne d'intégration continue à 5 étapes dans GitLab.](./images/ci-pipeline-gitlab-security.png)
 
-Dans l'illustration ci-dessus (fig. 9), vous pouvez observer une chaîne d'intégration continue à 5 étapes (Build, Test, Release, Preprod, Integration). La colonne qui nous intéresse est "Test". Elle comporte différents tests de sécurité qui sont lancés et qui ont dans ce cas soit réussi (coche verte), soit comporte des avertissements (point d'exclamation jaune). Si un test avait échoué, nous aurions vu une croix rouge. Un point d'exclamation signifie que le test en question n'est pas passé mais qu'il n'était pas critique (ex: une dépendance logicielle dépréciée mais sans faille de sécurité).
+Dans l'illustration ci-dessus (fig. 9), vous pouvez observer une chaîne d'intégration continue à 5 étapes (_build_, _test-code_, _test-lint_, _test-security_ et _deploy_). La colonne qui nous intéresse est _test-security_. Elle comporte différents tests de sécurité qui sont lancés. Ils peuvent chacun réussir (coche verte), échouer (croix rouge), ou échouer avec un simple avertissement (point d'exclamation jaune).
+
+> Un point d'exclamation signifie que le test n'est pas passé mais qu'il n'était pas considéré critique (ex: une dépendance logicielle dépréciée mais sans faille de sécurité).
 
 Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (_template_ en anglais)[^GitLabCustomTemplate] qu'ils copient et qui intègrent toutes les règles de sécurité, en plus d'autres fichiers utiles pour démarrer. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité (cf. chapitre "[Intégration continue et sécurité](#intégration-continue-et-sécurité)"). Cela permettra de faire gagner du temps à tout le monde.
+
+### SAST
+
+_To be written_
+
+### DAST
+
+_To be written_
+
+### IAST
+
+_To be written_
 
 ## Dépendances externes
 
@@ -649,7 +663,7 @@ L'entreprise a opéré un virage stratégique en faisant l'acquisition en 2019 d
 
 - SAST (_Static application security testing_) : outils d'analyse automatisée de vulnérabilités dans le code (ex: injections SQL, faille XSS et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez également ajouter vos propres règles grâce à des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _CodeQL_ (fig. 16), _Checkmarx_, _Klocwork_ ou encore _Checkov_.
 
-    ![Exemple de vulnérabilité détectée par CodeQL sur un projet GitHub. Source : GitHub (vidéo YouTube)](./images/2020_code-scanning-github.png)
+    ![Exemple de vulnérabilité détectée par CodeQL sur un projet GitHub.](./images/2020_code-scanning-github.png)
 
 - Analyseur de secrets : analyse, détecte et alerte sur de potentiels mots de passe ou _tokens_ laissés par erreur dans le code source. Alternative open-source : [_Gitleaks_](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools).
 - _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative (fig. 17). Alternative open-source : [_Faraday_](https://github.com/infobyte/faraday).
@@ -683,7 +697,7 @@ Trois piliers constituent une architecture réseau _zero trust_ :
 3. **Sécurité** : le matériel avec lequel l'utilisateur se connecte au réseau
      - Sécurité de la machine : s'assurer que la machine qui se connecte est conforme aux exigences de sécurité (ex: vérifier qu'un antivirus tourne ou que l'OS mis à jour)
 
-![Schéma des éléments pris en compte dans une architecture _zero trust_. Source : Microsoft](./images/zero_trust_schema_msft.jpg)
+![Schéma des éléments pris en compte dans une architecture _zero trust_. Source : [Microsoft Azure Documentation](https://github.com/MicrosoftDocs/azure-docs/blob/1aca57e362ca6f5db0f00633f5d777ee2d48048b/articles/active-directory/conditional-access/plan-conditional-access.md?plain=1#L26C1-L26C1).](./images/zero_trust_schema_msft.jpg)
 
 L'idée est qu'en _zero trust_, chaque requête implique une nouvelle vérification de ces critères de sécurité. C'est l'intermédiaire de confiance (_trust broker_ ou CASB[^CASB]) qui vérifie ces critères (cf. _OpenID_, _Active Directory_, _PKI_, _SAML_).
 
@@ -893,7 +907,7 @@ La hiérarchie n'ayant pas anticipé le déclin, ni prêté attention aux remarq
 
 ![Chronologie du silo en déclin](./images/2023_cycle_silotage.jpg)
 
-Pour éviter le déclin d'un silo qui se propagera à l'entreprise (fig. 23), il s'agit à l'origine de savoir faire communiquer les silos entre eux (le COMEX, les centres d'expertise, les équipes...). La hiérarchie doit fournir les outils pour que toute l'entreprise parle le même langage. Elle devra également proposer une vision commune pour que ses équipes puissent collaborer aisément.
+Pour éviter le déclin d'un silo qui se propagera à l'échelle de l'entreprise (fig. 23), il faut au départ faire communiquer ces silos entre eux (le COMEX, les centres d'expertise, les équipes...). La hiérarchie doit fournir les outils pour que toute l'entreprise parle la même langue. Elle devra également proposer une vision commune, pour que ses équipes puissent collaborer en faveur d'un seul et même objectif.
 
 Le mouvement DevOps croit en l'union de méthodologies et d'outils communs et intégrés pour faciliter ces échanges. Ce chapitre décrit les méthodologies à adopter pour atteindre cet objectif.
 
@@ -1118,9 +1132,7 @@ Les technologies Cloud apportent une flexibilité indéniable et donnent la poss
 
 La méthodologie à 12 critères (_Twelve-Factor Methodology_) regroupe une liste de bonnes pratiques pour créer des applicatifs adaptés aux plateformes Cloud. Elle constitue la synthèse de l'expérience vécue par Adam WIGGINS et ses ingénieurs à _Heroku_. L'objectif est d'éviter "l'érosion logicielle"[^SoftwareErosion], un phénomène définit par la lente détérioration des logiciels au fil du temps, qui finissent par devenir défectueux ou inutilisables. En d'autres termes, cela permet de créer des applications plus faciles à maintenir, à déployer, à mettre à l'échelle et plus résistants aux pannes.
 
-#### Les règles
-
-Le site web _12factor.net_, créé par Adam WIGGINS, liste et détaille ces règles :
+Le site Internet _12factor.net_, créé par Adam WIGGINS, liste et détaille ces règles :
 
 1. **Une base de code unique** : centraliser le code à un endroit (ex: git / GitLab / GitHub) et assigner un répertoire/projet unique par logiciel. Ce dernier doit pouvoir s'adapter à des environnements différents (développement, pré-production, production). Il faut par exemple éviter de créer un projet "production" et un projet "développement" pour le même logiciel.
 2. **Dépendances déclarées et isolées** : toutes les dépendances doivent être déclarées dans un fichier - et non pas implicitement chargées si elles sont détectées ou non dans un dossier de la machine. Par exemple les fichiers `package.json` pour NPM (Javascript) et les `requirements.txt` pour PIP (Python). Elles doivent être isolées pendant l'exécution pour s'assurer de ne pas avoir de dépendances déjà installées sur la machine. Par exemple en utilisant les _virtualenv_ Python, le _bundle exec_ dans Ruby ou Docker pour tout langage.
