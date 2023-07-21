@@ -183,24 +183,26 @@ Les plus sceptiques ou les plus optimistes pensent même s'en sortir en démarra
 
 Navré, **non.**
 
-Il est avéré que transformer une structure traditionnelle en mode DevOps demande un investissement substantiel. Et mettre en place les bases permettant de révéler les avantages de ce mode de travail prend un certain temps. Mais grâce à ce livre, vous aurez toutes les clés pour débuter avec des ressources adaptées à votre situation.
+Prenons un exemple pour illustrer ce scénario. Vous commencez avec une équipe de 2 personnes qui développent un logiciel. Plusieurs problèmes sont d'ores-et-déjà identifiés, en particulier si vous travaillez dans un secteur réglementé :
 
-Prenons un exemple pour bien nous représenter ce scénario. Vous commencez avec une équipe de 2 personnes qui développent un logiciel. Plusieurs problèmes sont d'ores-et-déjà identifiés, en particulier si vous travaillez dans un secteur réglementé :
-
-- Qui met en place l'infrastructure pour correctement développer ce logiciel ? (usine logicielle, miroirs de dépendances, registres de librairies…)
+- Qui met en place l'infrastructure pour correctement développer ce logiciel ? (usine logicielle, miroirs de dépendances, registres de librairies...)
 - Qui sécurise cette infrastructure ?
 - Qui gère les sauvegardes ?
 - Qui définit les règles de développement et leur cohérence pour maintenir les logiciels dans le temps ?
 
-Si vous ne comptez que sur vos ingénieurs logiciels pour gérer l'infrastructure, ils finiront par générer de la dette technique. Des coûts et des efforts en maintenance qui empireront à mesure que votre équipe croît. Ils ne se concentreront pas sur le développement et s'éparpilleront sur des tâches de SRE. Cette situation nécessite déjà au moins 1 ingénieur SRE/DevOps.
+Si vous ne comptez que sur vos ingénieurs logiciels pour gérer l'infrastructure, ils finiront par générer de la dette technique puisque ce n'est pas leur métier. Cette dette représente des coûts et des efforts en maintenance, qui empireront à mesure que votre équipe croît. Les développeurs ne se concentreront pas sur le développement et s'éparpilleront sur des tâches incombant au SRE. Cette situation nécessite déjà au moins 1 ingénieur SRE/DevOps.
 
-Et si vous recrutiez et que votre équipe comptais désormais 6 ingénieurs ? Il faut à présent leur fournir des machines et les configurer. Certains rencontrent des bugs, d'autres vous demandent de mettre à jour des librairies… Si en plus vous avez des impératifs en termes de sécurité (ex : homologation, journaux d'évènements), il faut prendre le temps de correctement configurer les outils et l'infrastructure. Cela demande au moins 1 ingénieur SRE/DevOps supplémentaire.
+Et si vous recrutiez et que votre équipe comptais désormais 6 ingénieurs ? Il faut à présent leur fournir des machines et les configurer. Certains rencontrent des bugs, d'autres vous demandent de mettre à jour des librairies... Si en plus vous avez des impératifs en termes de sécurité (ex : homologation, journaux d'évènements), il faut prendre le temps de correctement configurer les outils et l'infrastructure. Cela demande au moins 1 ingénieur SRE/DevOps supplémentaire.
 
 Deux ingénieurs quittent maintenant votre structure ? Vous devez hélas toujours maintenir l'infrastructure qui a évolué, pour répondre aux besoins de vos 4 ingénieurs et pour maintenir les X machines ou serveurs que vous avez installés.
 
 Comprenez que vous devez atteindre une masse critique de profils SRE/DevOps pour maintenir un socle robuste. Ce dernier constitue les fondations permettant à vos ingénieurs d'être outillés pour travailler correctement. Cette masse critique doit évoluer en fonction du nombre de collaborateurs et vous ne pouvez pas en retirer sans essuyer de lourdes difficultés d'exploitation.
 
+Nous en revenons souvent au débat "faut-il de la qualité ou de la quantité ?". L'histoire des conflits armés dans le monde démontre qu'il faut souvent les deux[^MassInArmedConflicts]. Les armées doivent s'équiper d'une masse critique de soldats et de matériel pour imposer des rapports de force favorables, et compenser les pertes pour continuer à avancer. Bien qu'un matériel de qualité puisse en faire davantage, il ne pourra pas tout faire en même temps. C'est la même chose pour une équipe d'ingénieurs. Aussi brillants soient-ils, il faut une masse critique pour répondre au besoin initial d'un service efficace et résilient.
+
 > Par exemple, Google - employant plusieurs dizaines de milliers d'ingénieurs - maintient son ratio de SRE vis-à-vis des développeurs à environ 10%[^GoogleWorkBookEngagementModel]. Ce ratio SRE/développeurs et les coûts engendrés tendent à être élevés au début de votre initiative, puis se lissent à mesure que le nombre de services déployés croit. Cela est dû aux forts besoins en infrastructure lors de la constitution de votre initiative, qui réduisent à mesure les tâches d'administration soient automatisées.
+
+Il est avéré que transformer une structure traditionnelle en mode DevOps demande un investissement substantiel. Mettre en place le socle permettant d'en voir les avantages prend également un certain temps. Mais gardez en tête que l'intérêt des pratiques DevOps est de réussir à maîtriser une activité exponentielle avec un coût à tendance logarithmique (cf. chapitre "[Pourquoi le DevOps ?](#pourquoi-le-devops-)").
 
 ## Too big, too soon
 
@@ -1066,7 +1068,7 @@ Nommée "_Flexible flow_" (fig. 30), elle se base sur le _GitHub flow_ mais ajou
 
 Pour faire le lien entre gestion de projet et contributions techniques, les projets GitLab ou GitHub utilisent des _issues_. Ces dernières sont des tâches assignables à un collaborateur, décrivant quoi et comment développer une nouvelle fonctionnalité ou corriger un bug (fig. 31).
 
-![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
+![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
 
 En _Flexible flow_, toute contribution doit faire référence à une _issue_ qui décrit la genèse de la tâche, comment elle peut être résolue et centralise les réflexions des parties-prenantes. N'importe qui peut créer ces tâches (responsable projet, développeur, utilisateur). C'est le responsable du projet qui les priorise ensuite. Tout développeur nouvellement attribué doit savoir : quoi faire, où commencer et pourquoi, en consultant l'_issue_. Chacune est numérotée automatiquement par la forge logicielle.
 
@@ -2230,7 +2232,7 @@ L'importance du responsable de projet n'est pas à considérer comme une simple 
 
 Il est important que se profil soit assez proche des utilisateurs pour comprendre les problématiques des métiers mais également assez proche des équipes techniques pour comprendre les enjeux d'ingénierie. Souvent, le chef de projet va avoir tendance à « sur-vendre » les délais auprès des métiers. Cette pratique génère du stress pour les équipes internes et de la frustration pour les clients, qui se sont vus promettre un nouvel outil qui prendra finalement plus de temps à être disponible.
 
-Annoncez un calendrier réaliste discuté au préalable avec vos équipes techniques. Imposer un calendrier est le meilleur moyen d'échouer. Vos ingénieurs voudront peut-être faire de leur mieux pour respecter les délais mais le résultat ne sera qu'un produit de frustration pour tout le monde : risque de bugs élevés, de fonctionnalité mal évaluées… Si vous doutez du temps que peut prendre l'un des développements, posez des questions. Ne prenez pas de décision arbitraire car vous « pensez » que telle ou telle fonctionnalité peut être développée rapidement.
+Annoncez un calendrier réaliste discuté au préalable avec vos équipes techniques. Imposer un calendrier est le meilleur moyen d'échouer. Vos ingénieurs voudront peut-être faire de leur mieux pour respecter les délais mais le résultat ne sera qu'un produit de frustration pour tout le monde : risque de bugs élevés, de fonctionnalité mal évaluées... Si vous doutez du temps que peut prendre l'un des développements, posez des questions. Ne prenez pas de décision arbitraire car vous « pensez » que telle ou telle fonctionnalité peut être développée rapidement.
 
 > « Under-promise, over deliver »
 
@@ -2291,15 +2293,15 @@ En ce sens si vous souhaitez travailler efficacement avec une entreprise externe
 
 GitLab permet aussi de réaliser du déploiement continu : l'industriel peut alors mettre à disposition de ses clients une URL à laquelle est accessible la dernière version du logiciel. Vous évitez ainsi les réunions de plusieurs heures et gagnez en flexibilité. L'objectif est atteint : vous itérez, rapidement.
 
-![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
+![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
 
-> Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
+> Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).
 
 Dans le cas où vous ne pouvez pas agir sur vos pratiques avec l'industriel, organisez-vous à minima en interne pour disposer d'un outil de gestion de projet collaboratif. Par exemple, avec le logiciel _Atlassian Confluence_ (fig. 54) qui permet de constituer une base de connaissance interne.
 
-![Exemple de vue Kanban dans Atlassian Confluence](./images/figure_4.png "Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).")
+![Exemple de vue Kanban dans Atlassian Confluence](./images/figure_4.png "Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
 
-> Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs…).
+> Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).
 
 À titre d'exemple, le _ITZBund_ (Centre Fédéral Allemand des Technologies de l'Information, l'équivalent allemand de l'ANSSI[^ANSSI]) emploie depuis 2018 au sein de son _Bundescloud_ (cloud inter-ministériel) le logiciel open-source _Nextcloud_[^NextcloudITZBund]. Ce dernier permet de partager des fichiers et collaborer sur une plateforme unifiée. Environ 300 000 utilisateurs institutionnels et industriels l'utilisent. Un an après, c'est le Ministère de l'Intérieur français qui l'adopte[^NextCloudMinint].
 
@@ -3126,3 +3128,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^DefPorteur]: Le "porteur" qualifie la structure, les machines et les équipements lourds d'un bateau.
 
 [^DatadogMarch2023PM]: Datadog. [_2023-03-08 Incident: A deep dive into our incident response_](https://www.datadoghq.com/blog/engineering/2023-03-08-deep-dive-into-incident-response/#the-communication-clock-is-inexorably-ticking). 2023.
+
+[^MassInArmedConflicts]: Revue Défense Nationale. ["Les défis de la « haute intensité » : enjeu stratégique ou capacitaire ?"](https://www.defnat.com/pdf/cahiers/CAH081/3.%20Pesqueur_Tenenbaum%20(AdT%202020).pdf). 2020.
