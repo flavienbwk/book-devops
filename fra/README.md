@@ -489,9 +489,9 @@ La sécurité d'un système d'information innovant est de partir du principe qu'
 
 ## Intégration continue et sécurité
 
-Décrite en détail dans le chapitre "[Intégration Continue (CI)](#intégration-continue-ci)", l'intégration continue permet de contrôler automatiquement une modification apportée à un logiciel.
+L'intégration continue permet de contrôler automatiquement une modification apportée à un logiciel.
 
-Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans son [usine logicielle](#usine-logicielle) (ex: GitLab) que sa contribution[^contribution] ne répond pas à la politique de l'organisation et peut voir un message d'erreur lui expliquant le problème. Il peut ainsi immédiatement effectuer les modifications pour se conformer.
+Dès que la moindre ligne de code est modifiée, des tests se lancent. Si une modification du code ne satisfait pas les standards de sécurité définis, elle est refusée. Le développeur est automatiquement informé dans son [usine logicielle](#usine-logicielle) (ex: GitLab) que sa contribution[^contribution] ne répond pas à la politique de l'organisation. Il peut voir un message d'erreur lui expliquant le problème. Ainsi, il est immédiatement en mesure d'effectuer les modifications pour se conformer.
 
 C'est ici qu'on attend l'expertise des responsables de la sécurité. Ces profils doivent expliquer aux ingénieurs DevOps et aux SRE ce qui concrètement doit être contrôlé. Ces règles sont ensuite transcrites en code qui formera des tests automatisés, dans une chaîne d'intégration continue utilisée par tous les projets de l'entreprise.
 
@@ -511,32 +511,136 @@ Pour les ingénieurs, le Graal est de voir son projet accompagné d'une coche ve
 
 Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils partent d'un modèle (_template_ en anglais)[^GitLabCustomTemplate] qu'ils copient et qui intègre - en plus des fichiers pour le développement - toutes les règles de sécurité. Veillez à ce que les équipes de sécurité co-contribuent à ces modèles pour que tout nouveau projet intègre vos standards de sécurité (cf. chapitre "[Intégration continue et sécurité](#intégration-continue-et-sécurité)") pour faire gagner du temps à tout le monde.
 
-### SAST
+Les chaînes d'intégration continue ne se limitent pas à des tests de sécurité. Voyez les comme des scripts lancés automatiquement à chaque modification du code. Bien que le déclencheur traditionnel soit la "modification du code", les hébergeurs Cloud comme AWS peuvent aussi proposer leurs propres déclencheurs (ex: l'ajout d'un fichier dans un bucket S3)[^AWSCodePipeline]. Nous verrons plus en détails le fonctionne de l'intégration continue dans le chapitre "[Intégration Continue (CI)](#intégration-continue-ci)".
 
-_To be written_
+## Sécuriser sa chaîne logicielle
 
-### DAST
+Pour simplifier la compréhension des notions abordées, le terme "chaîne logicielle" est employé à la place de "chaîne de développement et de déploiement des logiciels" (_software supply-chain_ en anglais).
 
-_To be written_
+En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Parmi 7 priorités[^FactSheetUSASecurity] décrites, la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des États-Unis[^NSM2022].
 
-### IAST
+Dans un premier temps, nous découvrirons les techniques et outils utilisés pour sécuriser sa chaîne logicielle. Nous verrons ensuite comment ils s'intègrent pour répondre à des problématiques globales de sécurité grâce aux _frameworks_.
 
-_To be written_
+### Les techniques et outils
 
-## Dépendances externes
+#### SCA
 
-Les pratiques SSI au sein des grandes organisation, requièrent que tout logiciel déployé soit homologué. Le document d'homologation doit lister les dépendances utilisées dans le logiciel : les librairies tiers-partie sur lesquelles ils se basent. Cela se nomme en anglais le _Software Bill of Materials (SBOM[^SBOM])_, en français "Nomenclature du logiciel".
+Les pratiques SSI au sein des grandes organisation requièrent souvent que tout logiciel déployé soit homologué. Le document d'homologation doit lister les dépendances utilisées dans le logiciel : les librairies tiers-partie sur lesquelles il se base. Cette liste se nomme le _Software Bill of Materials_ (SBOM[^SBOM]) ou "Nomenclature du logiciel" en français.
 
-Cette pratique est fastidieuse quand elle est manuelle, mais permet, lorsqu'une nouvelle faille est découverte, de pouvoir rapidement répondre aux questions "Sommes-nous affecté ?" ou encore "Où est utilisée cette librairie dans nos logiciels ?" pour la mitiger.
+Le SBOM permet de rapidement répondre à des questions comme "Sommes-nous affecté ?" ou "Où est utilisée cette librairie dans nos logiciels ?", lorsqu'une nouvelle faille est découverte. Dans une approche DevOps, les librairies utilisées dans un logiciel changent au cours du temps. Une librairie ou une technologie utilisée un jour sera peut-être remplacée demain. Vous ne pouvez donc pas demander aux développeurs de lister manuellement ces centaines (voire milliers) de dépendances utilisées dans leurs logiciels.
 
-Néanmoins dans une approche DevOps, l'usage de ces librairies évolue au cours du temps. Une technologie utilisée un jour sera peut-être remplacée demain. Vous ne pouvez donc pas demander aux développeurs de mettre à jour la liste de ces centaines (voire milliers) de dépendances utilisées dans leurs logiciels.
+Le SBOM fait partie du domaine de la _Software Component Analysis_ (SCA) ou "Analyse des composants logiciel". Il regroupe les techniques pour déterminer quels sont les composants et les dépendances d'un logiciel, pour s'assurer qu'ils n'introduisent pas de risques de sécurité ou de bugs.
 
-L'avantage de la méthodologie DevOps est que l'ensemble du code est centralisé au sein de l'usine logicielle. Cela nous permet d'utiliser [des outils](medium.com/@geralexgr/opensource-devsecops-tools-for-devops-engineers-f6cbd5e3017a) pour analyser de quoi chaque projet est composé et prévenir les failles de sécurité. Le SBOM traditionnel peut donc être automatisé par deux choses :
+L'avantage de la méthodologie DevOps est que l'ensemble du code est centralisé au sein de l'usine logicielle. Cela nous permet d'utiliser des outils pour analyser de quoi chaque projet est composé et prévenir les failles de sécurité.
 
-- Des chaînes d'intégration continue qui détectent, mettent à jour ou refusent automatiquement l'usage de librairies spécifiques (ex: analyse des `package.json` en Javascript ou `requirements.txt` pour Python avec [_SPDX_](https://spdx.dev/) ou [_CycloneDX_](https://cyclonedx.org/), détection de paquets vulnérables avec _Renovate_[^Renovate]; cf. _Anchore_, _OSV-Scanner_[^osvscanner]).
+Il est possible de générer le SBOM de son logiciel grâce à des outils comme [_Syft_](https://github.com/anchore/syft), [_Tern_](https://github.com/tern-tools/tern) ou [_CycloneDX_](https://github.com/CycloneDX). Le format standard d'un fichier SBOM est [SPDX](https://spdx.dev/spdx-specification-is-now-an-iso-standard/), mais cetains outils comme CycloneDX ont le leur. La pratique est de stocker ce fichier dans un [artéfact](https://docs.gitlab.com/ee/ci/jobs/job_artifacts.html) à chaque nouvelle version du logiciel que vous souhaitez déployer.
+
+L'objectif reste de savoir si une librairie utilisée est vulnérable pour la mettre à jour ou la remplacer. Hormis pour répondre à des contraintes réglementaires, laisser ce fichier à l'état de simple document n'est pas très utile. Voilà pourquoi il faut désormais analyser le SBOM.
+
+Mettre en place des outils de SAST/IAST/DAST est déjà un excellent point de départ. Ils peuvent détecter les vulnérabilités dans un logiciel, mais ne permettent pas d'avoir une vue d'ensemble sur l'ensemble des logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_ ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ permettent d'avoir une vue d'ensemble des menaces en permanence et d'alerter au besoin.
+
+![Tableau de bord Dependency Track listant des vulnérabilités trouvées dans un ensemble de logiciels.](./images/2023_dependency_track.png)
+
+> En résumé : Au lieu de simplement lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser les contributions pouvant apporter des risques, avant qu'elles soient déployées en production.
+
+#### SAST
+
+Les outils de SAST ont vocation à analyser le code développé plutôt que les dépendances d'un logiciel (analysées elles par des outils de SCA).
+
+_TODO: To be written_
 - Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: _Trivy_, [_Dockle_](https://github.com/goodwithtech/dockle), _Quay Clair_, [_Dagda_](https://github.com/eliasgranderubio/dagda), _Jfrog X-Ray_)
+détection de paquets vulnérables avec _Renovate_[^Renovate], _OSV-Scanner_[^osvscanner]
 
-Au lieu de lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser les contributions pouvant apporter des risques, avant qu'elles soient déployées en production.
+#### DAST
+
+_TODO: To be written_
+
+#### IAST
+
+_TODO: To be written_
+
+### Les frameworks
+
+Aujourd'hui, des standards décrivent la manière dont il est possible de correctement sécuriser sa chaîne logicielle. Ils sont regroupés au sein de ce que l'on appelle des _frameworks_[^SecurityFramework]. Ces derniers continueront à évoluer mais fournissent déjà des règles de sécurité, sur lesquelles nous pouvons sereinement nous baser.
+
+Chacun des _frameworks_ présentés dans ce chapitre (SLSA, SCVS, SSCSP, SSDF) contient une liste de recommandations, sur les techniques de sécurité à mettre en place au sein de sa chaîne logicielle. Ils induisent l'usage des techniques et outils de SCA, SAST, IAST et DAST pour répondre à des problématiques globales de sécurité.
+
+#### SLSA
+
+Le framework _Supply-chain Levels for Software Artifacts_ (SLSA[^SLSA], prononcé "salsa") se concentre historiquement sur la provenance des données et la notion d'artéfacts.
+
+Le SLSA est né des pratiques internes de Google. L'entreprise a développé des techniques pour veiller à ce que les employés, en agissant seuls, ne puissent pas accéder directement ou indirectement aux données des utilisateurs - ni les manipuler de toute autre manière - sans autorisation et justification appropriées[^BinaryAuthorizationForBorg].
+
+En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente et que ces artéfacts sont un vecteur privilégié de menace (fig. 15).
+
+![Étapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).](./images/slsa-supply-chain-threats.jpg)
+
+Ses règles tournent autour de la vérification automatique de l'intégrité des données manipulées. Quelques exemples des vulnérabilités auxquelles le SLSA répond :
+
+- s'assurer que le code source utilisé dans les scripts compilant le logiciel (CI) n'a pas été altéré
+- s'assurer de la provenance des dépendances de développement
+- s'assurer que l'usine logicielle dispose d'une connectivité réseau minimale
+
+En fonction de la maturité technique de son équipe, il est possible d'appliquer les règles SLSA selon 4 niveaux de sécurité et de complexité. L'idée est de pouvoir progressivement améliorer la sécurité de sa chaîne logicielle au cours du temps.
+
+Le SLSA se compose de deux parties :
+
+- les [pré-requis](https://slsa.dev/spec/v0.1/requirements) (_requirements_) : ensemble de règles de sécurité plus ou moins complexes à mettre en place selon le niveau SLSA (1 à 4) que l'organisation souhaite atteindre
+- les [menaces et contremesures](https://slsa.dev/spec/v0.1/threats) (_threats and mitigations_) : qui donnent des scénarios de menaces, des exemples publics connus et la manière dont il est possible d'y remédier
+
+Le projet FRSCA[^FRSCAGithub] est un exemple pragmatique d'une usine logicielle mettant en œuvre les pré-requis SLSA.
+
+La documentation du SLSA, continuellement mise à jour par la communauté[^GitHubSLSA], est disponible sur son [site officiel](https://slsa.dev).
+
+#### SCVS
+
+Le framework _OWASP Software Component Verification Standard_ (SCVS).
+TODO(flavienbwk)
+
+#### SSCSP
+
+Les spécifications du _Software Supply Chain Security Paper_ (SSCSP ou SSCP) de la réputée _Cloud Native Computing Foundation_ (CNCF) sont complémentaires aux SLSA. Elles couvrent historiquement un panel plus large de sujets, mais beaucoup de recommandations se recoupent aujourd'hui.
+
+Bien que le SLSA propose une documentation plus interactive, bien illustrée (avec des exemples d'outils à utiliser ou de menaces pour chaque règle) et presque gamifiée grâce à ses "badges de niveau de sécurité", les spécifications SSCSP semblent permettre - au moment de l'écriture de ce livre - de donner une vision plus haut-niveau sur les menaces au sein d'une chaîne logicielle.
+
+Plus concises pour débuter, je recommande de démarrer son projet de sécurisation d'usine logicielle avec le SSCSP, puis de progresser avec le SLSA.
+
+Ce document de référence est également contributif[^CNCFSSCSPGithub] et fait plus largement partie des standards[^CNCFTAGGithub] adoptés par l'équipe des conseillers techniques en sécurité (TAG) de la CNCF. Ces derniers rédigent différents documents de référence ayant vocation à améliorer la sécurité de l'écosystème cloud[^CNCFTAGAnnouncement].
+
+#### SSDF
+
+Le _Secure Software Development Framework_ (SSDF[^SSDF]) est un document rédigé par le _National Institute of Standards and Technology_ (NIST) de l'_US Department of Commerce_ à l'attention de tout éditeur et tout acquéreur de logiciels, indépendamment de leur appartenance ou non à une entité gouvernementale.
+
+Le travail du NIST est à saluer par la variété et la qualité des rapports produits, sur des technologies et techniques à l'état de l'art. Leurs travaux sont la plupart du temps le fruit d'une réflexion menée en concertation avec de nombreuses institutions et entreprises du privé. On y retrouve par exemple Google, AWS, IBM, Microsoft, la _Naval Sea Systems Command_ ou encore le _Software Engineering Institute_.
+
+Plus complet que les deux précédents, le SSDF agit comme un annuaire regroupant les recommandations issues de dizaines d'autres _frameworks_ (ex: SSCSP, OWASP SAMM, MSSDL, BSIMM, PCI SSLC). Il les classe en 4 grands thèmes : préparer l'organisation, protéger les logiciels, produire des logiciels bien sécurisés, répondre aux vulnérabilités.
+
+Le framework répertorie des notions générales associées progressivement à des règles plus concrètes. Chacun des thèmes regroupe des grandes pratiques à suivre, qui incluent elle-mêmes des tâches contenant des exemples, associées à des références aux _frameworks_ concernés.
+
+Par exemple pour le thème "protéger les logiciels", la pratique "protéger toutes les formes de code contre l'accès non autorisé et la falsification" propose d'utiliser la "signature des _commits_" en référence au SSCSP avec le chapitre concerné "Sécuriser le code source".
+
+Ce document [est à retrouver](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) sur le site Internet du NIST. La bibliothèque en ligne du directeur de l'information[^CIOLibrary] (CIO) de l'_US Department of Defense_ est également une excellente source d'inspiration.
+
+#### L'exemple de GitHub
+
+GitHub est la plateforme de partage de code la plus populaire sur Internet. Elle héberge plus de 100 millions de projets avec plus de 40 millions de développeurs y contribuant. Pillier dans le domaine de l'open-source, elle propose des outils de sécurité nativement intégrés à sa plateforme. L'objectif de GitHub est de faire en sorte que protéger son code, ne nécessite que quelques clics pour activer les outils opportuns.
+
+L'entreprise a opéré un virage stratégique en faisant l'acquisition en 2019 de _Semmle_, un outil d'analyse des vulnérabilités dans le code. Depuis, elle propose plusieurs moyens de sécuriser sa base de code :
+
+- SAST (_Static application security testing_) : outils d'analyse automatisée de vulnérabilités dans le code (ex: injections SQL, faille XSS et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez ajouter vos propres règles en écrivant des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _GitHub Code Scanning_ (fig. 16), _Checkmarx_, _Klocwork_ ou encore _Checkov_.
+
+    ![Exemple de vulnérabilité détectée par Code Scanning sur un projet GitHub.](./images/2020_code-scanning-github.png)
+
+- Analyseur de secrets : analyse, détecte et alerte sur de potentiels mots de passe ou _tokens_ laissés par erreur dans le code source. Alternative open-source : [_Gitleaks_](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools).
+- _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative (fig. 17). Alternative open-source : [_Faraday_](https://github.com/infobyte/faraday).
+
+    ![Liste de vulnérabilités découvertes dans un projet GitHub par Dependabot. Source : github.com](./images/2020_github-dependabot.png)
+
+Toutes les failles de sécurité liées à un projet sont centralisées au sein d'une vue d'ensemble, permettant de facilement détecter et remédier aux menaces (fig. 18).
+
+![Tableau de bord des risques de sécurité dans un projet GitHub. Source : github.com](./images/2021_github-screenshot-of-security-overview.png)
+
+GitHub se base sur le référentiel international des CVEs[^CVE] (_Common Vulnerabilities and Exposures_) pour reconnaître les failles, une liste de vulnérabilités identifiées dans les systèmes informatiques et décrites sous un format précis. Vous pouvez ajouter des mécanismes de vérification supplémentaires grâce aux _GitHub Actions_, le mécanisme d'intégration continue de GitHub.
 
 ## Ressources pré-approuvées
 
@@ -552,13 +656,13 @@ Comme il est assez inenvisageable d'analyser "à la main" chaque librairie de d�
 
 Une méthode plus simple est de n'utiliser que la clé de hachage des fichiers. Chaque fichier est identifié par une chaîne de caractères nommée _hash_, que l'ordinateur peut facilement calculer.
 
-> Exemple de _hash_ : _52dd368c0ed9714f9b84fb885c925da4_.
+> Exemple de _hash_ : _a21c218df41f6d7fd032535fe20394e2_.
 
 Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ différent de celui de référence (récupéré depuis Internet sur le site de l'éditeur), le lancement du logiciel est refusé. Ce mécanisme est déjà la plupart du temps implémenté par les gestionnaires de paquets des langages de programmation (ex: `package-lock.json` pour NPM, `poetry.lock` pour Python).
 
 ## Revues de code
 
-Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées, ou vous n'êtes peut-être pas dimensionné en terme RH pour le faire.
+Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées. Il est aussi simplement possible que vous ne soyez pas dimensionné en RH pour développer ces scripts.
 
 En DevOps, on pratique la méthodologie [GitOps](#gitops) : chaque développeur travaille sur sa propre branche et développe sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" (communément appelée _merge request_ ou _pull request_) dans la branche principale. Ce processus est détaillé dans le chapitre "[Workflows git](#workflows-git)".
 
@@ -599,88 +703,6 @@ La figure 14 représente un exemple de configuration sous forme de code, permett
 ![Exemple de configuration Ansible illustrant la notion d'_Infrastructure as Code_.](./images/ansible-iac-playbook-example.png)
 
 L'exemple ci-dessus est simple mais l'IaC peut aller jusqu'à décrire la manière dont des machines peuvent être instanciées et configurées. Une configuration d'Iac peut par exemple totalement configurer une machine de 0 (paramètres réseau, certificats de sécurité, ajout d'utilisateurs, installation des _drivers_ d'une imprimante, configuration des favoris du navigateur...). L'idée est encore une fois d'éviter au maximum l'intervention humaine, pour éviter des commandes erronées, lancées par erreur.
-
-## Sécuriser sa chaîne logicielle
-
-Le terme "chaîne logicielle" doit être compris comme "chaîne de développement et de déploiement des logiciels" (_software supply-chain_ en anglais). Il est raccourcis pour simplifier la compréhension des notions abordées.
-
-En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Parmi 7 priorités[^FactSheetUSASecurity] décrites, la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des États-Unis[^NSM2022].
-
-Aujourd'hui, des standards décrivent la manière dont il est possible de correctement sécuriser sa chaîne logicielle. Ces standards sont regroupés au sein de ce que l'on appelle des frameworks[^SecurityFramework]. Ces derniers continueront à évoluer mais fournissent déjà des règles de sécurité, sur lesquelles nous pouvons sereinement nous baser.
-
-Chacun des frameworks présentés dans ce chapitre contient une liste de recommandations, sur les techniques de sécurité à mettre en place au sein de sa chaîne logicielle.
-
-### SLSA
-
-Les framework _Supply-chain Levels for Software Artifacts_ (SLSA[^SLSA], prononcé "salsa") se concentre historiquement sur la provenance des données et la notion d'artéfacts.
-
-Le SLSA est né des pratiques internes de Google. L'entreprise a développé des techniques pour veiller à ce que les employés, en agissant seuls, ne puissent pas accéder directement ou indirectement aux données des utilisateurs - ni les manipuler de toute autre manière - sans autorisation et justification appropriées[^BinaryAuthorizationForBorg].
-
-En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente et que ces artéfacts sont un vecteur privilégié de menace (fig. 15).
-
-![Étapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).](./images/slsa-supply-chain-threats.jpg)
-
-Ses règles tournent autour de la vérification automatique de l'intégrité des données manipulées. Quelques exemples des vulnérabilités auxquelles le SLSA répond :
-
-- s'assurer que le code source utilisé dans les scripts compilant le logiciel (CI) n'a pas été altéré
-- s'assurer de la provenance des dépendances de développement
-- s'assurer que l'usine logicielle dispose d'une connectivité réseau minimale
-
-En fonction de la maturité technique de son équipe, il est possible d'appliquer les règles SLSA selon 4 niveaux de sécurité et de complexité. L'idée est de pouvoir progressivement améliorer la sécurité de sa chaîne logicielle au cours du temps.
-
-Le SLSA se compose de deux parties :
-
-- les [pré-requis](https://slsa.dev/spec/v0.1/requirements) (_requirements_) : ensemble de règles de sécurité plus ou moins complexes à mettre en place selon le niveau SLSA (1 à 4) que l'organisation souhaite atteindre
-- les [menaces et contremesures](https://slsa.dev/spec/v0.1/threats) (_threats and mitigations_) : qui donnent des scénarios de menaces, des exemples publics connus et la manière dont il est possible d'y remédier
-
-Le projet FRSCA[^FRSCAGithub] est un exemple pragmatique d'une usine logicielle mettant en œuvre les pré-requis SLSA.
-
-La documentation du SLSA, continuellement mise à jour par la communauté[^GitHubSLSA], est disponible sur son [site officiel](https://slsa.dev).
-
-### SSCSP
-
-Les spécifications du _Software Supply Chain Security Paper_ (SSCSP ou SSCP) de la réputée _Cloud Native Computing Foundation_ (CNCF) sont complémentaires aux SLSA. Elles couvrent historiquement un panel plus large de sujets, mais beaucoup de recommandations se recoupent aujourd'hui.
-
-Bien que le SLSA propose une documentation plus interactive, bien illustrée (avec des exemples d'outils à utiliser ou de menaces pour chaque règle) et presque gamifiée grâce à ses "badges de niveau de sécurité", les spécifications SSCSP semblent permettre - au moment de l'écriture de ce livre - de donner une vision plus haut-niveau sur les menaces au sein d'une chaîne logicielle.
-
-Plus concises pour débuter, je recommande de démarrer son projet de sécurisation d'usine logicielle avec le SSCSP, puis de progresser avec le SLSA.
-
-Ce document de référence est également contributif[^CNCFSSCSPGithub] et fait plus largement partie des standards[^CNCFTAGGithub] adoptés par l'équipe des conseillers techniques en sécurité (TAG) de la CNCF. Ces derniers rédigent différents documents de référence ayant vocation à améliorer la sécurité de l'écosystème cloud[^CNCFTAGAnnouncement].
-
-### SSDF
-
-Le _Secure Software Development Framework_ (SSDF[^SSDF]) est un document rédigé par le _National Institute of Standards and Technology_ (NIST) de l'_US Department of Commerce_ à l'attention de tout éditeur et tout acquéreur de logiciels, indépendamment de leur appartenance ou non à une entité gouvernementale.
-
-Le travail du NIST est à saluer par la variété et la qualité des rapports produits, sur des technologies et techniques à l'état de l'art. Leurs travaux sont la plupart du temps le fruit d'une réflexion menée en concertation avec de nombreuses institutions et entreprises du privé. On y retrouve par exemple Google, AWS, IBM, Microsoft, la _Naval Sea Systems Command_ ou encore le _Software Engineering Institute_.
-
-Plus complet que les deux précédents, le SSDF agit comme un annuaire regroupant les recommandations issues de dizaines d'autres frameworks (ex: SSCSP, OWASP SAMM, MSSDL, BSIMM, PCI SSLC). Il les classe en 4 grands thèmes : préparer l'organisation, protéger les logiciels, produire des logiciels bien sécurisés, répondre aux vulnérabilités.
-
-Le framework répertorie des notions générales associées progressivement à des règles plus concrètes. Chacun des thèmes regroupe des grandes pratiques à suivre, qui incluent elle-mêmes des tâches contenant des exemples, associées à des références aux frameworks concernés.
-
-Par exemple pour le thème "protéger les logiciels", la pratique "protéger toutes les formes de code contre l'accès non autorisé et la falsification" propose d'utiliser la "signature des _commits_" en référence au SSCSP avec le chapitre concerné "Sécuriser le code source".
-
-Ce document [est à retrouver](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) sur le site Internet du NIST. La bibliothèque en ligne du directeur de l'information[^CIOLibrary] (CIO) de l'_US Department of Defense_ est également une excellente source d'inspiration.
-
-### L'exemple de GitHub
-
-GitHub est la plateforme de partage de code la plus populaire sur Internet. Elle héberge plus de 100 millions de projets avec plus de 40 millions de développeurs y contribuant. Pillier dans le domaine de l'open-source, elle propose des outils de sécurité nativement intégrés à sa plateforme. L'objectif de GitHub est de faire en sorte que protéger son code, ne nécessite que quelques clics pour activer les outils opportuns.
-
-L'entreprise a opéré un virage stratégique en faisant l'acquisition en 2019 de _Semmle_, un outil d'analyse des vulnérabilités dans le code. Depuis, elle propose plusieurs moyens de sécuriser sa base de code :
-
-- SAST (_Static application security testing_) : outils d'analyse automatisée de vulnérabilités dans le code (ex: injections SQL, faille XSS et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez également ajouter vos propres règles grâce à des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _CodeQL_ (fig. 16), _Checkmarx_, _Klocwork_ ou encore _Checkov_.
-
-    ![Exemple de vulnérabilité détectée par CodeQL sur un projet GitHub.](./images/2020_code-scanning-github.png)
-
-- Analyseur de secrets : analyse, détecte et alerte sur de potentiels mots de passe ou _tokens_ laissés par erreur dans le code source. Alternative open-source : [_Gitleaks_](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools).
-- _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative (fig. 17). Alternative open-source : [_Faraday_](https://github.com/infobyte/faraday).
-
-    ![Liste de vulnérabilités découvertes dans un projet GitHub par Dependabot. Source : github.com](./images/2020_github-dependabot.png)
-
-Toutes les failles de sécurité liées à un projet sont centralisées au sein d'une vue d'ensemble, permettant de facilement détecter et remédier aux menaces (fig. 18).
-
-![Tableau de bord des risques de sécurité dans un projet GitHub. Source : github.com](./images/2021_github-screenshot-of-security-overview.png)
-
-GitHub se base sur le référentiel international des CVEs[^CVE] (_Common Vulnerabilities and Exposures_) pour reconnaître les failles, une liste de vulnérabilités identifiées dans les systèmes informatiques et décrites sous un format précis. Vous pouvez ajouter des mécanismes de vérification supplémentaires grâce aux _GitHub Actions_, le mécanisme d'intégration continue de GitHub.
 
 ## Les bases de l'architecture réseau _zero trust_
 
@@ -3130,3 +3152,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^DatadogMarch2023PM]: Datadog. [_2023-03-08 Incident: A deep dive into our incident response_](https://www.datadoghq.com/blog/engineering/2023-03-08-deep-dive-into-incident-response/#the-communication-clock-is-inexorably-ticking). 2023.
 
 [^MassInArmedConflicts]: Revue Défense Nationale. ["Les défis de la « haute intensité » : enjeu stratégique ou capacitaire ?"](https://www.defnat.com/pdf/cahiers/CAH081/3.%20Pesqueur_Tenenbaum%20(AdT%202020).pdf). 2020.
+
+[^AWSCodePipeline]: AWS CodePipeline. _aws.amazon.com/codepipeline_.
