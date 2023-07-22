@@ -513,13 +513,45 @@ Dans une approche DevOps, les développeurs ne partent pas d'un projet vide. Ils
 
 Les chaînes d'intégration continue ne se limitent pas à des tests de sécurité. Voyez les comme des scripts lancés automatiquement à chaque modification du code. Bien que le déclencheur traditionnel soit la "modification du code", les hébergeurs Cloud comme AWS peuvent aussi proposer leurs propres déclencheurs (ex: l'ajout d'un fichier dans un bucket S3)[^AWSCodePipeline]. Nous verrons plus en détails le fonctionne de l'intégration continue dans le chapitre "[Intégration Continue (CI)](#intégration-continue-ci)".
 
+## Revues de code
+
+Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées. Il est aussi simplement possible que vous ne soyez pas dimensionné en RH pour développer ces scripts.
+
+En DevOps, on pratique la méthodologie [GitOps](#gitops) : chaque développeur travaille sur sa propre branche et développe sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" (communément appelée _merge request_ ou _pull request_) dans la branche principale. Ce processus est détaillé dans le chapitre "[Workflows git](#workflows-git)".
+
+La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale. C'est à ce moment que les différentes personnes impliquées dans la vérification de la qualité d'une contribution peuvent écrire leurs commentaires (fig. 11).
+
+![Les usines logicielles comme GitLab permettent d'ajouter des commentaires directement au sein d'une proposition de contribution, à la ligne exacte concernée par ce commentaire. Source : about.gitlab.com](./images/gitlab-review-comment.png)
+
+L'objectif est de vérifier que le développeur n'ait pas fait de grosse erreur dans le fonctionnement du code, ou de s'assurer qu'il n'ajoute pas de dette technique. Par exemple chez Google, une _merge request_ requiert l'approbation d'au moins deux ingénieurs avant de pouvoir être validée.
+
+![Illustration de la méthodologie GitOps (simplifiée)](./images/gitops-simple-flow.png)
+
+La publication d'une nouvelle version d'un logiciel en production est le moment idéal pour que les équipes de sécurité auditent le code. Cette pratique s'appelle la "revue de sécurité". Toute nouvelle version d'un logiciel est soumise aux règles d'intégration continue précédemment citées avec des tests automatisés de sécurité supplémentaires et optionnellement la validation de l'équipe de sécurité.
+
+Pour les équipes des sécurité, la revue de code a pour objectif de vérifier que le maximum de critères de sécurité sont respectés. Par exemple :
+
+- Présence de journaux d'activité qui recensent les actions utilisateur
+- Accès à des sources de données autorisées (cf. chapitre "[Service mesh](#service-mesh)" pour forcer ces politiques de sécurité)
+- Pas d'envoi de données vers un service non autorisé (cf. chapitre "[Service mesh](#service-mesh)" pour forcer ces politiques de sécurité)
+- Technique de stockage des mots de passe / des cookies
+- Respect des fonctionnalités RGPD
+
+GitLab permet par exemple d'obliger l'approbation d'une _merge request_ par des équipes spécifiques[^GitLabRequiredApprovals] (ex: l'équipe de sécurité), avant qu'une contribution puisse être fusionnée dans la branche principale (fig. 13).
+
+![Aperçu de l'interface GitLab d'approbation d'un groupe de contributions (elles ne paraissent pas), par plusieurs équipes de l'organisation (_frontend_, _backend_, qualité (_QA_)). Source : about.gitlab.com](./images/gitlab-review-approval.png)
+
+Des outils comme [_ReviewDog_](https://github.com/reviewdog/reviewdog), [_Hound_](https://houndci.com/) ou [_Sider Scan_](https://siderlabs.com/scan/en/) permettent d'assister les ingénieurs lors de la revue de code. Par exemple, ces outils font passer des _linters_[^linter] et ajoutent automatiquement des commentaires à la ligne concernée.
+
 ## Sécuriser sa chaîne logicielle
 
-Pour simplifier la compréhension des notions abordées, le terme "chaîne logicielle" est employé à la place de "chaîne de développement et de déploiement des logiciels" (_software supply-chain_ en anglais).
+> Pour simplifier la compréhension des notions abordées, le terme "chaîne logicielle" est employé à la place de "chaîne de développement et de déploiement des logiciels" (_software supply-chain_ en anglais).
 
-En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Parmi 7 priorités[^FactSheetUSASecurity] décrites, la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des mécanismes plus rigoureux et prévisibles pour garantir que les produits fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des États-Unis[^NSM2022].
+En mai 2021, la Maison Blanche a fait paraître un décret décrivant de nouvelles pistes pour "améliorer la cybersécurité du pays". Parmi 7 priorités[^FactSheetUSASecurity] décrites, la volonté d'améliorer la sécurité de la chaîne logicielle est citée. Il stipule qu'il est "urgent de mettre en œuvre des techniques plus rigoureuses, permettant d'anticiper plus rapidement, pour garantir que les produits (logiciels achetés par les gouvernements) fonctionnent en toute sécurité et comme prévu"[^USAExecOrderImproveCybersec]. Cette volonté a été renouvelée en janvier 2022 lors de la signature par Joe BIDEN du _mémorandum_ sur la sécurité nationale des États-Unis[^NSM2022].
 
-Dans un premier temps, nous découvrirons les techniques et outils utilisés pour sécuriser sa chaîne logicielle. Nous verrons ensuite comment ils s'intègrent pour répondre à des problématiques globales de sécurité grâce aux _frameworks_.
+Les guides de montée en maturité DevSecOps (_DevSecOps * Models_) comme ceux de OWASP[^DSOMM], DataDog[^DSOMMDatadog], AWS[^DSOMMAWS] ou GitLab[^DSOMMGitLab] présentent des techniques générales pour améliorer ses pratiques DevSecOps. Ils permettent de découper la montée en maturité de l'organisation en plusieurs étapes plus accessibles, pour atteindre de meilleures pratiques de sécurité.
+
+Dans un premier temps, nous découvrirons les techniques et outils utilisés pour sécuriser sa chaîne logicielle. Nous verrons ensuite comment ils s'intègrent pour répondre à des problématiques globales de sécurité grâce aux _frameworks_. La vaste majorité des outils cités dans ce chapitre sont lancés au sein de chaînes d'intégration continues, dans l'intérêt de valider toutes les règles de sécurité à chaque modification du code.
 
 ### Les techniques et outils
 
@@ -529,27 +561,38 @@ Les pratiques SSI au sein des grandes organisation requièrent souvent que tout 
 
 Le SBOM permet de rapidement répondre à des questions comme "Sommes-nous affecté ?" ou "Où est utilisée cette librairie dans nos logiciels ?", lorsqu'une nouvelle faille est découverte. Dans une approche DevOps, les librairies utilisées dans un logiciel changent au cours du temps. Une librairie ou une technologie utilisée un jour sera peut-être remplacée demain. Vous ne pouvez donc pas demander aux développeurs de lister manuellement ces centaines (voire milliers) de dépendances utilisées dans leurs logiciels.
 
-Le SBOM fait partie du domaine de la _Software Component Analysis_ (SCA) ou "Analyse des composants logiciel". Il regroupe les techniques pour déterminer quels sont les composants et les dépendances d'un logiciel, pour s'assurer qu'ils n'introduisent pas de risques de sécurité ou de bugs.
+Le SBOM fait partie des techniques de _Software Component Analysis_ (SCA) ou "Analyse des composants logiciel". La SCA regroupe les techniques et outils pour déterminer quels sont les composants des logiciels tiers d'un logiciel (ex: les dépendances, leur code et leurs licences), pour s'assurer qu'ils n'introduisent pas de risques de sécurité ou de bugs.
 
 L'avantage de la méthodologie DevOps est que l'ensemble du code est centralisé au sein de l'usine logicielle. Cela nous permet d'utiliser des outils pour analyser de quoi chaque projet est composé et prévenir les failles de sécurité.
 
-Il est possible de générer le SBOM de son logiciel grâce à des outils comme [_Syft_](https://github.com/anchore/syft), [_Tern_](https://github.com/tern-tools/tern) ou [_CycloneDX_](https://github.com/CycloneDX). Le format standard d'un fichier SBOM est [SPDX](https://spdx.dev/spdx-specification-is-now-an-iso-standard/), mais cetains outils comme CycloneDX ont le leur. La pratique est de stocker ce fichier dans un [artéfact](https://docs.gitlab.com/ee/ci/jobs/job_artifacts.html) à chaque nouvelle version du logiciel que vous souhaitez déployer.
+Il est possible de générer le SBOM de son logiciel grâce à des outils comme [_Syft_](https://github.com/anchore/syft), [_Tern_](https://github.com/tern-tools/tern) ou [_CycloneDX_](https://github.com/CycloneDX). Le format standard d'un fichier SBOM est [SPDX](https://spdx.dev/spdx-specification-is-now-an-iso-standard/), mais cetains outils comme CycloneDX ont le leur. La pratique veut que vous stockiez ce fichier dans un [artéfact](https://docs.gitlab.com/ee/ci/jobs/job_artifacts.html) signé par votre forge logicielle, à chaque nouvelle version du logiciel que vous souhaitez déployer.
 
-L'objectif reste de savoir si une librairie utilisée est vulnérable pour la mettre à jour ou la remplacer. Hormis pour répondre à des contraintes réglementaires, laisser ce fichier à l'état de simple document n'est pas très utile. Voilà pourquoi il faut désormais analyser le SBOM.
+L'objectif reste de savoir si une librairie utilisée est vulnérable, pour la mettre à jour ou la remplacer. Hormis pour répondre à des contraintes réglementaires, laisser ce fichier à l'état de simple document n'est pas très utile. Voilà pourquoi il faut désormais analyser le SBOM.
 
-Mettre en place des outils de SAST/IAST/DAST est déjà un excellent point de départ. Ils peuvent détecter les vulnérabilités dans un logiciel, mais ne permettent pas d'avoir une vue d'ensemble sur l'ensemble des logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_ ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ permettent d'avoir une vue d'ensemble des menaces en permanence et d'alerter au besoin.
+Un outil léger d'analyse comme [_OSV-Scanner_](https://github.com/google/osv-scanner) pourra s'intégrer facilement à vos chaînes d'intégration continue et fournir un premier niveau de protection. Néanmoins, il ne permettra pas d'avoir une vue d'ensemble sur tous les logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_ ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ sont alors nécessaires. Eux peuvent ingérer plusieurs fichiers SBOM et afficher une vue d'ensemble des menaces pour alerter les ingénieurs selon une politique définie.
 
 ![Tableau de bord Dependency Track listant des vulnérabilités trouvées dans un ensemble de logiciels.](./images/2023_dependency_track.png)
+
+Des logiciels comme [_Renovate_](https://github.com/renovatebot/renovate) ou [_GitHub Dependabot_](https://github.com/dependabot) permettent de détecter les dépendances comportant des vulnérabilités, et d'automatiquement proposer une mise à jour dans la forge logicielle en ouvrant une _merge request_ (cf. chapitre "[Revues de code](#revues-de-code)").
 
 > En résumé : Au lieu de simplement lister les dépendances, il s'agit de mettre en place une détection continue des librairies utilisées, pour tous les projets. Il faut pouvoir alerter au plus tôt des menaces et refuser les contributions pouvant apporter des risques, avant qu'elles soient déployées en production.
 
 #### SAST
 
-Les outils de SAST ont vocation à analyser le code développé plutôt que les dépendances d'un logiciel (analysées elles par des outils de SCA).
+Alors que les outils de SCA vous permettront d'analyser de quoi est composé votre projet (ses dépendances et logiciels utilisés), les outils de SAST ont pour vocation d'analyser le code du logiciel que vous développez.
+
+Le _Static Application Security Testing_ (SAST) ou "Test statique de la sécurité des applications" en français, concentre les techniques et les outils ayant vocation à trouver des vulnérabilités dans votre code source avant qu'il ne soit lancé. Ils constituent une forme de test en boîte blanche (le code étant exposé). Par exemple, les outils de SAST vont identifier des configurations non sécurisées, des risques d'injection SQL, des fuites mémoire, des risques de [traversée de chemins](https://owasp.org/www-community/attacks/Path_Traversal) ou des [situations de concurrence](https://stackoverflow.com/a/34550/4958081).
+
+Voici une liste d'outils SAST accompagnés de leur description pour bien comprendre leur variété :
+
+# Parmi les solutions SAST, l’on peut énumérer Synopsys de Coverity, HCL AppScan Source, SonarQube, Kiuwan Code Security, AttackFlow et Micro Focus Fortify Static Code Analyzer.
+# https://github.com/ajinabraham/njsscan
+
 
 _TODO: To be written_
-- Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: _Trivy_, [_Dockle_](https://github.com/goodwithtech/dockle), _Quay Clair_, [_Dagda_](https://github.com/eliasgranderubio/dagda), _Jfrog X-Ray_)
-détection de paquets vulnérables avec _Renovate_[^Renovate], _OSV-Scanner_[^osvscanner]
+- Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: _Trivy_, [_Dockle_](https://github.com/goodwithtech/dockle), _Quay Clair_, [_Dagda_](https://github.com/eliasgranderubio/dagda),)
+
+> En résumé : Le SAST est une approche proactive de la sécurité, qui permet d'identifier et de corriger les vulnérabilités avant même qu'elles ne puissent être exploitées. Intégré au sein du processus de développement, il permet de réduire les risques et d'assurer une meilleure qualité du code. L'objectif est de garder un œil vigilant sur la sécurité du code source, tout au long de son cycle de vie, pour prévenir des erreurs qui pourraient être exploitées par des acteurs malveillants.
 
 #### DAST
 
@@ -559,15 +602,17 @@ _TODO: To be written_
 
 _TODO: To be written_
 
+Des logiciels tout-en-un dédiés à la sécurisation du cycle de développement et intégrés aux forges logicielles existent : _Snyk_, _Sontype Nexus Lifecycle_, _Faraday_ ou encore _Jfrog X-Ray_.
+
 ### Les frameworks
 
 Aujourd'hui, des standards décrivent la manière dont il est possible de correctement sécuriser sa chaîne logicielle. Ils sont regroupés au sein de ce que l'on appelle des _frameworks_[^SecurityFramework]. Ces derniers continueront à évoluer mais fournissent déjà des règles de sécurité, sur lesquelles nous pouvons sereinement nous baser.
 
-Chacun des _frameworks_ présentés dans ce chapitre (SLSA, SCVS, SSCSP, SSDF) contient une liste de recommandations, sur les techniques de sécurité à mettre en place au sein de sa chaîne logicielle. Ils induisent l'usage des techniques et outils de SCA, SAST, IAST et DAST pour répondre à des problématiques globales de sécurité.
+Chacun des _frameworks_ présentés dans ce chapitre (SLSA, SSCSP, SSDF) contient une liste de recommandations, sur les techniques de sécurité à mettre en place au sein de sa chaîne logicielle. Ils induisent l'usage des techniques et outils de SCA, SAST, IAST et DAST.
 
 #### SLSA
 
-Le framework _Supply-chain Levels for Software Artifacts_ (SLSA[^SLSA], prononcé "salsa") se concentre historiquement sur la provenance des données et la notion d'artéfacts.
+Le framework _Supply-chain Levels for Software Artifacts_ (SLSA[^SLSA], prononcé "salsa") se concentre sur l'intégrité des données et des artéfacts, tout au long du cycle de développement et déploiement logiciel.
 
 Le SLSA est né des pratiques internes de Google. L'entreprise a développé des techniques pour veiller à ce que les employés, en agissant seuls, ne puissent pas accéder directement ou indirectement aux données des utilisateurs - ni les manipuler de toute autre manière - sans autorisation et justification appropriées[^BinaryAuthorizationForBorg].
 
@@ -588,14 +633,9 @@ Le SLSA se compose de deux parties :
 - les [pré-requis](https://slsa.dev/spec/v0.1/requirements) (_requirements_) : ensemble de règles de sécurité plus ou moins complexes à mettre en place selon le niveau SLSA (1 à 4) que l'organisation souhaite atteindre
 - les [menaces et contremesures](https://slsa.dev/spec/v0.1/threats) (_threats and mitigations_) : qui donnent des scénarios de menaces, des exemples publics connus et la manière dont il est possible d'y remédier
 
-Le projet FRSCA[^FRSCAGithub] est un exemple pragmatique d'une usine logicielle mettant en œuvre les pré-requis SLSA.
+Le projet FRSCA[^FRSCAGithub] est un exemple pragmatique d'une usine logicielle mettant en œuvre les pré-requis SLSA. Des intégrations au sein de chaînes d'intégration continue de GitHub sont aussi disponibles comme avec la "_SLSA Build Provenance Action_".
 
-La documentation du SLSA, continuellement mise à jour par la communauté[^GitHubSLSA], est disponible sur son [site officiel](https://slsa.dev).
-
-#### SCVS
-
-Le framework _OWASP Software Component Verification Standard_ (SCVS).
-TODO(flavienbwk)
+La documentation du SLSA est régulièrement mise à jour par la communauté[^GitHubSLSA] et disponible sur son [site officiel](https://slsa.dev).
 
 #### SSCSP
 
@@ -613,7 +653,7 @@ Le _Secure Software Development Framework_ (SSDF[^SSDF]) est un document rédig�
 
 Le travail du NIST est à saluer par la variété et la qualité des rapports produits, sur des technologies et techniques à l'état de l'art. Leurs travaux sont la plupart du temps le fruit d'une réflexion menée en concertation avec de nombreuses institutions et entreprises du privé. On y retrouve par exemple Google, AWS, IBM, Microsoft, la _Naval Sea Systems Command_ ou encore le _Software Engineering Institute_.
 
-Plus complet que les deux précédents, le SSDF agit comme un annuaire regroupant les recommandations issues de dizaines d'autres _frameworks_ (ex: SSCSP, OWASP SAMM, MSSDL, BSIMM, PCI SSLC). Il les classe en 4 grands thèmes : préparer l'organisation, protéger les logiciels, produire des logiciels bien sécurisés, répondre aux vulnérabilités.
+Plus complet que les deux précédents, le SSDF agit comme un annuaire regroupant les recommandations issues de dizaines d'autres _frameworks_ (ex: SSCSP, OWASP SAMM, MSSDL, BSIMM, PCI SSLC, OWASP SCVS[^SCVS]). Il les classe en 4 grands thèmes : préparer l'organisation, protéger les logiciels, produire des logiciels bien sécurisés, répondre aux vulnérabilités.
 
 Le framework répertorie des notions générales associées progressivement à des règles plus concrètes. Chacun des thèmes regroupe des grandes pratiques à suivre, qui incluent elle-mêmes des tâches contenant des exemples, associées à des références aux _frameworks_ concernés.
 
@@ -659,36 +699,6 @@ Une méthode plus simple est de n'utiliser que la clé de hachage des fichiers. 
 > Exemple de _hash_ : _a21c218df41f6d7fd032535fe20394e2_.
 
 Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ différent de celui de référence (récupéré depuis Internet sur le site de l'éditeur), le lancement du logiciel est refusé. Ce mécanisme est déjà la plupart du temps implémenté par les gestionnaires de paquets des langages de programmation (ex: `package-lock.json` pour NPM, `poetry.lock` pour Python).
-
-## Revues de code
-
-Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est parfois compliqué de "coder" des vérifications de sécurité avancées. Il est aussi simplement possible que vous ne soyez pas dimensionné en RH pour développer ces scripts.
-
-En DevOps, on pratique la méthodologie [GitOps](#gitops) : chaque développeur travaille sur sa propre branche et développe sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" (communément appelée _merge request_ ou _pull request_) dans la branche principale. Ce processus est détaillé dans le chapitre "[Workflows git](#workflows-git)".
-
-La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale. C'est à ce moment que les différentes personnes impliquées dans la vérification de la qualité d'une contribution peuvent écrire leurs commentaires (fig. 11).
-
-![Les usines logicielles comme GitLab permettent d'ajouter des commentaires directement au sein d'une proposition de contribution, à la ligne exacte concernée par ce commentaire. Source : about.gitlab.com](./images/gitlab-review-comment.png)
-
-L'objectif est de vérifier que le développeur n'ait pas fait de grosse erreur dans le fonctionnement du code, ou de s'assurer qu'il n'ajoute pas de dette technique. Par exemple chez Google, une _merge request_ requiert l'approbation d'au moins deux ingénieurs avant de pouvoir être validée.
-
-![Illustration de la méthodologie GitOps (simplifiée)](./images/gitops-simple-flow.png)
-
-La publication d'une nouvelle version d'un logiciel en production est le moment idéal pour que les équipes de sécurité auditent le code. Cette pratique s'appelle la "revue de sécurité". Toute nouvelle version d'un logiciel est soumise aux règles d'intégration continue précédemment citées avec des tests automatisés de sécurité supplémentaires et optionnellement la validation de l'équipe de sécurité.
-
-Pour les équipes des sécurité, la revue de code a pour objectif de vérifier que le maximum de critères de sécurité sont respectés. Par exemple :
-
-- Présence de journaux d'activité qui recensent les actions utilisateur
-- Accès à des sources de données autorisées (cf. chapitre "[Service mesh](#service-mesh)" pour forcer ces politiques de sécurité)
-- Pas d'envoi de données vers un service non autorisé (cf. chapitre "[Service mesh](#service-mesh)" pour forcer ces politiques de sécurité)
-- Technique de stockage des mots de passe / des cookies
-- Respect des fonctionnalités RGPD
-
-GitLab permet par exemple d'obliger l'approbation d'une _merge request_ par des équipes spécifiques[^GitLabRequiredApprovals] (ex: l'équipe de sécurité), avant qu'une contribution puisse être fusionnée dans la branche principale (fig. 13).
-
-![Aperçu de l'interface GitLab d'approbation d'un groupe de contributions (elles ne paraissent pas), par plusieurs équipes de l'organisation (_frontend_, _backend_, qualité (_QA_)). Source : about.gitlab.com](./images/gitlab-review-approval.png)
-
-Des outils comme [_ReviewDog_](https://github.com/reviewdog/reviewdog), [_Hound_](https://houndci.com/) ou [_Sider Scan_](https://siderlabs.com/scan/en/) permettent d'assister les ingénieurs lors de la revue de code. Par exemple, ces outils font passer des _linters_[^linter] et ajoutent automatiquement des commentaires à la ligne concernée.
 
 ## Gérer son infrastructure avec du code
 
@@ -1872,7 +1882,7 @@ Il est courant d'entendre parler de _pipeline_ d'intégration continue (en fran�
 - **Build** : étape contenant les _jobs_ s'assurant que le code compile correctement, que l'image Docker se construit correctement avec les éléments présents dans le répertoire
 - **Test** : _jobs_ de vérification de la conformité du code / de la contribution
   - Exemples :
-    - Vérifier que le code est maintenable : grâce à des outils comme [_SonarQube_](https://www.sonarsource.com/products/sonarqube) ou des _linters_[^linter] comme [_black_](https://github.com/psf/black) pour Python ou [_KubeLinter_](https://github.com/stackrox/kube-linter) pour les configurations Kubernetes (cf. [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/criteria/0)).
+    - Vérifier que le code est maintenable : grâce à des outils comme [_SonarQube_](https://www.sonarsource.com/products/sonarqube) ou des _linters_[^linter] comme [_black_](https://github.com/psf/black) pour Python ou [_KubeLinter_](https://github.com/stackrox/kube-linter) pour les configurations Kubernetes (cf. [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/criteria/0), chapitre ["Sécuriser sa chaîne logicielle"](#sécuriser-sa-chaîne-logicielle)).
     - Vérifier que la contribution n'introduit pas de faille de sécurité : avec des logiciels comme _Quay Clair_, _Jfrog X-Ray_, _ClamAV_ ou les _Scorecards_ de la OpenSSF.
     - Vérifier que le code respecte les tests unitaires (cf. chapitre ["Développement piloté par tests"](#développement-piloté-par-tests)).
     - Vérifier la conformité de la documentation : Au cours de l'évolution d'un logiciel dans le temps, les extraits de code dans les documentations peuvent devenir obsolètes et ne plus fonctionner. _Istio_ a développé un outil[^IstioTestDocumentationTool] permettant de s'assurer automatiquement que ces extraits de code soient à jour. Il extrait ces derniers à partir des fichiers _Markdown_ de la documentation et les convertit en exécutables à tester.
@@ -3045,8 +3055,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^linter]: Scripts qui analysent le code source pour signaler les erreurs de programmation, les bugs, les erreurs stylistiques et les constructions suspectes de code. L'objectif du _linting_ est d'imposer un style de code cohérent et de trouver des erreurs potentielles avant l'exécution du code.
 
-[^osvscanner]: Analyseur de dépendances détectant leurs vulnérabilités, conçu par Google. _github.com/google/osv-scanner_.
-
 [^Longhorn]: Stockage _Cloud-native_ distribué de type "block" pour Kubernetes. _longhorn.io_.
 
 [^QualificationANSSI]: Source : _ssi.gouv.fr/administration/qualifications_
@@ -3154,3 +3162,13 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^MassInArmedConflicts]: Revue Défense Nationale. ["Les défis de la « haute intensité » : enjeu stratégique ou capacitaire ?"](https://www.defnat.com/pdf/cahiers/CAH081/3.%20Pesqueur_Tenenbaum%20(AdT%202020).pdf). 2020.
 
 [^AWSCodePipeline]: AWS CodePipeline. _aws.amazon.com/codepipeline_.
+
+[^DSOMM]: [OWASP DevSecOps Maturity Model (DSOMM)](https://dsomm.owasp.org/). _dsomm.owasp.org_.
+
+[^SCVS]: [OWASP Software Component Verification Standard](https://scvs.owasp.org/). _scvs.owasp.org_.
+
+[^DSOMMDatadog]: [DataDog DevSecOps Maturity Model](https://www.datadoghq.com/resources/devsecops-maturity-model/). _datadoghq.com_.
+
+[^DSOMMAWS]: [AWS Security Maturity Model](https://maturitymodel.security.aws.dev/en/). _maturitymodel.security.aws.dev_.
+
+[^DSOMMGitLab]: [GitLab DevSecOps Maturity Assessment](https://about.gitlab.com/resources/devsecops-methodology-assessment/). _about.gitlab.com_.
