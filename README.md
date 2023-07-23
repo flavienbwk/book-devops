@@ -32,7 +32,7 @@ _That said, this way of writing is very convenient for not being annoyed by comp
 
 It automatically :
 
-- [Checks spells](https://github.com/check-spelling/check-spelling/blob/main/.github/workflows/spelling.yml) of english-written texts
+<!-- - [Checks spells](https://github.com/check-spelling/check-spelling/blob/main/.github/workflows/spelling.yml) of english-written texts -->
 - [Validates Markdown](https://github.com/marketplace/actions/markdown-linting-action) format
 - Renders a PDF version on _develop_ and _main_
 - Creates a release on _main_ (for physical book)
@@ -40,7 +40,7 @@ It automatically :
 
 ## Publishing
 
-This book has a double life. Let's make sure it reflects the state of the art DevOps practices at all times with your contributions.
+This book has a double life. Let's make sure it reflects DevOps' state of the art practices at all times with your contributions.
 
 - "Source edition" : the original book, unique, written exclusively by the author
 - "Community edition(s)" : annual versions of the book including community contributions to improve it
