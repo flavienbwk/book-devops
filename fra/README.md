@@ -569,7 +569,7 @@ Il est possible de générer le SBOM de son logiciel grâce à des outils comme 
 
 L'objectif reste de savoir si une librairie utilisée est vulnérable, pour la mettre à jour ou la remplacer. Hormis pour répondre à des contraintes réglementaires, laisser ce fichier à l'état de simple document n'est pas très utile. Voilà pourquoi il faut désormais analyser le SBOM.
 
-Un outil léger d'analyse comme [_OSV-Scanner_](https://github.com/google/osv-scanner) pourra s'intégrer facilement à vos chaînes d'intégration continue et fournir un premier niveau de protection. Néanmoins, il ne permettra pas d'avoir une vue d'ensemble sur tous les logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_ ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ sont alors nécessaires. Ils peuvent ingérer plusieurs fichiers SBOM et afficher une vue d'ensemble des menaces pour alerter les ingénieurs si besoin.
+Un outil léger d'analyse comme [_OSV-Scanner_](https://github.com/google/osv-scanner) pourra s'intégrer facilement à vos chaînes d'intégration continue et fournir un premier niveau de protection. Néanmoins, il ne permettra pas d'avoir une vue d'ensemble sur tous les logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_, [_Faraday_](https://github.com/infobyte/faraday) ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ sont alors nécessaires. Ils peuvent ingérer plusieurs fichiers SBOM et afficher une vue d'ensemble des menaces pour alerter les ingénieurs si besoin.
 
 ![Tableau de bord Dependency Track listant des vulnérabilités trouvées dans un ensemble de logiciels.](./images/2023_dependency_track.png)
 
@@ -601,17 +601,43 @@ Le SAST permet d'améliorer significativement la sécurité de sa chaîne logici
 
 #### DAST
 
-_TODO: To be written_
+Le _Dynamic Application Security Testing_ (DAST) ou "Test de sécurité dynamique des applications" en français, est une technique d'analyse qui se concentre sur la détection des vulnérabilités dans une application en cours d'exécution.
 
-Le _Dynamic Application Security Testing_ (DAST), ou "Test de sécurité dynamique des applications" en français. est une technique d'analyse qui, contrairement à la SAST, se concentre sur la détection des vulnérabilités dans une application en cours d'exécution. Il s'agit en quelque sorte d'un test d'intrusion automatisé qui permet d'identifier des vulnérabilités potentielles que les attaquants pourraient exploiter lors de l'exécution du logiciel. Ces vulnérabilités peuvent être des injections SQL, des attaques Cross-Site Scripting (XSS), ou des problèmes de configuration.
+Il s'agit en quelque sorte d'un test d'intrusion automatisé en mode _black box_ qui permet d'identifier de potentielles vulnérabilités que les attaquants pourraient exploiter une fois le logiciel en production. Ces vulnérabilités peuvent être des injections SQL, des attaques de _Cross-Site Scripting_ (XSS), ou des problèmes sur les mécanismes d'authentification.
 
-OWASP ZAP / https://owasp.org/www-community/Vulnerability_Scanning_Tools
+L'un des intérêts du DAST est qu'il ne nécessite pas d'accéder au code source de l'application. Utilisé en complément du SAST, il offre une couverture de sécurité plus complète. En effet, le DAST peut détecter des vulnérabilités qui seraient passées inaperçues lors d'une analyse statique, et vice versa.
+
+Voici une liste d'outils DAST accompagnés de leur description pour bien comprendre leur variété :
+
+De nombreux produits dont les fonctionnalités se recoupent existent. Ils permettent généralement de scanner des vulnérabilités de manière automatisé comprenant : du _fuzzing_ (entrées aléatoires), de l'analyse de traffic entre navigateur et API, de l'attaque par force brute ou encore de l'analyse de vulnérabilités dans le code Javascript. L'outil de DAST incontournable est [_OWASP ZAP_](https://github.com/zaproxy/zaproxy), mais d'autres existent comme [_Burp Suite_](https://portswigger.net/burp), [_W3af_](https://github.com/andresriancho/w3af), [_SQLMap_](https://github.com/sqlmapproject/sqlmap), [_Arachni_](https://github.com/Arachni/arachni), [_Nikto_](https://github.com/sullo/nikto) et [_Nessus_](https://www.tenable.com/products/nessus).
+
+![Capture d'écran de l'interface OWASP ZAP montrant une liste de vulnérabilités détectées sur [Juice Shop](https://hub.docker.com/r/bkimminich/juice-shop).](./images/2023_owasp_zap_juice_shop.png)
+
+Une vaste liste d'outils open-source et commerciaux d'analyse de code est disponible sur le site de la fondation OWASP[^DASTToolsOWASP].
+
+Cependant, le DAST n'est pas une solution miracle : les tests peuvent parfois produire des faux positifs ou des faux négatifs, il ne peut pas détecter de vulnérabilités ou des mauvaises pratiques au niveau du code source et il peut demander des connaissances avancées pour configurer les tests. Les outils de DAST doivent donc être utilisés en combinaison avec d'autres techniques de sécurité, comme le SAST et l'IAST.
+
+> En résumé : Le DAST englobe les outils permettant d'analyser les applications en temps réel pour détecter de potentielles vulnérabilités. Il complète l'analyse statique (SAST). En intégrant le DAST dans sa chaîne logicielle, il est possible d'assurer la sécurité de ses applications tout au long du cycle de vie du logiciel : en développement et en production.
 
 #### IAST
 
-_TODO: To be written_
+Le _Interactive Application Security Testing_ (IAST) ou "Test interactif de sécurité des applications" en français, regroupe les outils qui identifient et diagnostiquent les problèmes de sécurité dans les applications, qu'elles soient en cours d'exécution ou pendant la phase de développement.
 
-Des logiciels tout-en-un dédiés à la sécurisation du cycle de développement et intégrés aux forges logicielles existent : _Snyk_, _Sontype Nexus Lifecycle_, _Faraday_ ou encore _Jfrog X-Ray_.
+Selon OWASP[^IASTOWASP], les outils IAST sont aujourd'hui principalement conçus pour analyser les applications Web et les API Web. Mais certains produits IAST peuvent également analyser des logiciels non-Web.
+
+Les IAST ont accès à l'ensemble du code de l'application - tout comme les outils SAST - mais peuvent également surveiller le comportement de l'application pendant son exécution - comme le font les outils de DAST. Cela leur donne une vue d'ensemble plus complète de l'application et de son environnement, leur permettant d'identifier des vulnérabilités qui pourraient être manquées par les SAST et DAST.
+
+> « Les IAST sont fantastiques ! Je peux donc mettre mes outils de SAST et DAST à la poubelle ? »
+
+Bien entendu, non. Chacun ont leurs avantages et leurs inconvénients :
+
+- Les **SAST** sont généralement plus simples à mettre en place que les DAST et IAST. Ce sont de plus petits programmes, plus rapides et plus simple à intégrer au cycle de développement. Ils permettent de rapidement remonter le niveau de sécurité de votre chaîne logicielle.
+- Les **DAST** fonctionnent en boîte noire, leur permettant d'analyser des applications dont vous n'avez pas le code source. Ils peuvent aussi être lancés ponctuellement, sans payer le coût d'intégration au cycle de développement que les IAST nécessitent (pour avoir accès au code source). Aussi, peut-être que les politiques de sécurité de votre organisation interdisent l'accès d'un outil au code source de ses logiciels. Le DAST vous permettra alors quand même d'évaluer la sécurité d'un logiciel tiers.
+- Les **IAST** sont connectés à la fois au code source et à l'application qui tourne en production. Ils peuvent combiner les analyses de IAST et de DAST mais peuvent être plus lents. Le fait de lancer un IAST n'est pas non plus anodin : cela impact les performances de l'application en production. C'est pourquoi certains préfèrent que ces tests soient lancés dans un environnement isolé. Mais le logiciel testé n'est alors pas réellement celui à disposition des attaquants (en production) et vous pourriez manquer quelque chose.
+
+DAST ou IAST, les outils nécessitent généralement une solide connaissance de l'application pour réaliser les bons tests et les interpréter. Cela repose souvent sur des ingénieurs ayant une expertise poussée du logiciel à tester, et plus généralement de bonnes connaissances en sécurité. Enfin, très rares sont les solutions open-source dans le domaine, ce qui va nécessairement engendrer des coûts. Ces deux types d'outils sont donc intéressants mais demandent un certain investissement en temps, en ressources humaines et en argent.
+
+Dans une infrastructure DevSecOps mature, les approches de SAST, DAST et IAST se combinent. Des logiciels tout-en-un dédiés à la sécurisation du cycle de développement et intégrés aux sein des forges logicielles existent. _Snyk_, _Acunetix_, _Checkmarx_, _Invicti_ ou encore _Veracode_ en sont des exemples.
 
 ### Les frameworks
 
@@ -633,7 +659,7 @@ Ses règles tournent autour de la vérification automatique de l'intégrité des
 
 - s'assurer que le code source utilisé dans les scripts compilant le logiciel (CI) n'a pas été altéré
 - s'assurer de la provenance des dépendances de développement
-- s'assurer que l'usine logicielle dispose d'une connectivité réseau minimale
+- s'assurer que l'usine logicielle dispose d'une connectivité réseau minimal
 
 En fonction de la maturité technique de son équipe, il est possible d'appliquer les règles SLSA selon 4 niveaux de sécurité et de complexité. L'idée est de pouvoir progressivement améliorer la sécurité de sa chaîne logicielle au cours du temps.
 
@@ -670,18 +696,19 @@ Par exemple pour le thème "protéger les logiciels", la pratique "protéger tou
 
 Ce document [est à retrouver](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) sur le site Internet du NIST. La bibliothèque en ligne du directeur de l'information[^CIOLibrary] (CIO) de l'_US Department of Defense_ est également une excellente source d'inspiration.
 
-#### L'exemple de GitHub
+#### L'exemple sur GitHub
 
 GitHub est la plateforme de partage de code la plus populaire sur Internet. Elle héberge plus de 100 millions de projets avec plus de 40 millions de développeurs y contribuant. Pillier dans le domaine de l'open-source, elle propose des outils de sécurité nativement intégrés à sa plateforme. L'objectif de GitHub est de faire en sorte que protéger son code, ne nécessite que quelques clics pour activer les outils opportuns.
 
 L'entreprise a opéré un virage stratégique en faisant l'acquisition en 2019 de _Semmle_, un outil d'analyse des vulnérabilités dans le code. Depuis, elle propose plusieurs moyens de sécuriser sa base de code :
 
-- SAST (_Static application security testing_) : outils d'analyse automatisée de vulnérabilités dans le code (ex: injections SQL, faille XSS et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez ajouter vos propres règles en écrivant des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _GitHub Code Scanning_ (fig. 16), _Checkmarx_, _Klocwork_ ou encore _Checkov_.
+- SCA et SAST : outils d'analyse automatisée de vulnérabilités dans le code source et ses dépendances (ex: injections SQL, faille XSS, erreurs de configuration et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez ajouter vos propres règles en écrivant des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _GitHub Code Scanning_ (fig. 16), _Klocwork_ ou encore _Checkov_.
 
     ![Exemple de vulnérabilité détectée par Code Scanning sur un projet GitHub.](./images/2020_code-scanning-github.png)
 
 - Analyseur de secrets : analyse, détecte et alerte sur de potentiels mots de passe ou _tokens_ laissés par erreur dans le code source. Alternative open-source : [_Gitleaks_](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools).
-- _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative (fig. 17). Alternative open-source : [_Faraday_](https://github.com/infobyte/faraday).
+
+- _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative (fig. 17).
 
     ![Liste de vulnérabilités découvertes dans un projet GitHub par Dependabot. Source : github.com](./images/2020_github-dependabot.png)
 
@@ -903,7 +930,7 @@ Evitons néanmoins le piège de s'abandonner à croire qu'acheter le logiciel à
 
 Jusqu'à présent, la politique officielle pour approuver l'usage de certaines librairies passait par un cycle d'homologation. Ce dernier a pour objectif de cartographier les risques apportés par l'usage d'une technologie, pour savoir si on l'accepte ou non. Le choix peut être appuyé par un audit de code, mais n'est souvent pas fait par manque de ressources humaines.
 
-Pour se protéger correctement, il faut assurer une veille active et permanente des menaces de sécurité introduites dans le code. En mode DevOps, votre usine logicielle est équipée d'outils permettant de détecter les dépendances ou le code malicieux. En sécurisant sa chaîne logicielle (cf. chapitre "[Sécuriser sa chaîne logicielle](#sécuriser-sa-chaîne-logicielle)", fiche de poste "[Ingénieur SSI](#ingénieur-ssi-devops)"), vous minimisez les risques. Par exemple, si vous n'êtes pas en mesure d'installer par vous-même une forge logicielle sécurisée, vous pouvez bénéficier des fonctionnalités de _GitHub_ (cf. chapitre "[L'exemple de GitHub](#lexemple-de-github)"). Plus généralement, les pratiques de sécurité chez GitLab[^SecurityPracticesGitLab] sont un excellent point de départ pour vous organiser.
+Pour se protéger correctement, il faut assurer une veille active et permanente des menaces de sécurité introduites dans le code. En mode DevOps, votre usine logicielle est équipée d'outils permettant de détecter les dépendances ou le code malicieux. En sécurisant sa chaîne logicielle (cf. chapitre "[Sécuriser sa chaîne logicielle](#sécuriser-sa-chaîne-logicielle)", fiche de poste "[Ingénieur SSI](#ingénieur-ssi-devops)"), vous minimisez les risques. Par exemple, si vous n'êtes pas en mesure d'installer par vous-même une forge logicielle sécurisée, vous pouvez bénéficier des fonctionnalités de _GitHub_ (cf. chapitre "[L'exemple sur GitHub](#lexemple-sur-github)"). Plus généralement, les pratiques de sécurité chez GitLab[^SecurityPracticesGitLab] sont un excellent point de départ pour vous organiser.
 
 Une pratique commune chez les grandes entreprises est d'adhérer à une plateforme de _bug bounty_, que cela soit pour leurs sites en ligne ou des logiciels libres qu'ils utilisent[^BugBountyLinuxKnl]. Un _bug bounty_ est un programme qui récompense des individus ayant identifié et à signalé des vulnérabilités logicielles. L'objectif est d'identifier et de corriger les vulnérabilités avant qu'elles ne puissent être exploitées par des hackers malveillants. Les plateformes les plus populaires dans ce domaine sont _Hackerone_, _Bugcrowd_, _Synack_ ou encore _Open Bug Bounty_.
 
@@ -2862,8 +2889,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^ZTNA]: Le _Zero Trust Network Access_ (ZTNA) est une catégorie de technologies qui fournit un accès à distance sécurisé aux applications et aux services sur la base de politiques de contrôle d'accès définies. [Définition par paloaltonetworks.com](https://www.paloaltonetworks.com/cyberpedia/what-is-zero-trust-network-access-ztna).
 
-[^Renovate]: Renovate par [Mend](https://www.mend.io/) est un analyseur de dépendances logicielles. [_github.com/renovatebot/renovate_](https://github.com/renovatebot/renovate).
-
 [^NSM2022]: Administration BIDEN. [_National Security Memorandum_](https://www.whitehouse.gov/briefing-room/statements-releases/2022/01/19/fact-sheet-president-biden-signs-national-security-memorandum-to-improve-the-cybersecurity-of-national-security-department-of-defense-and-intelligence-community-systems). 2022.
 
 [^USAExecOrderImproveCybersec]: Administration BIDEN. [_Executive Order on Improving the Nation's Cybersecurity_](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/). 2021.
@@ -3187,3 +3212,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^SCAToolsOWASP]: [_Source Code Analysis Tools_](https://owasp.org/www-community/Source_Code_Analysis_Tools). _owasp.org_.
 
 [^CISBenchmarks]: Les [_CIS Benchmarks_](https://www.cisecurity.org/cis-benchmarks) sont un ensemble de règles et de bonnes pratiques de configurations informatiques. Elles sont publiées par l'association américaine _Center for Internet Security_ (CIS).
+
+[^DASTToolsOWASP]: [_Vulnerability Scanning Tools_](https://owasp.org/www-community/Vulnerability_Scanning_Tools). _owasp.org_.
+
+[^IASTOWASP]: [_Free for Open Source Application Security Tools_](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools). _owasp.org_.
