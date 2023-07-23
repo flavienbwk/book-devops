@@ -597,7 +597,7 @@ Une vaste liste d'outils open-source et commerciaux d'analyse de code est dispon
 
 Le SAST permet d'améliorer significativement la sécurité de sa chaîne logicielle, mais il ne se substitue pas aux autres pratiques de sécurité. En effet, les analyses statiques peuvent produire des faux positifs ou manquer des vulnérabilités qui ne se manifestent qu'à l'exécution du programme. Il est donc recommandé de compléter le SAST par d'autres techniques comme le DAST (_Dynamic Application Security Testing_) ou l'IAST (_Interactive Application Security Testing_). Nous les verrons dans les chapitres suivants.
 
-> En résumé : Le SAST est une approche dite "proactive" de la sécurité, qui permet d'identifier et de corriger les vulnérabilités avant même qu'elles ne puissent être exploitées. Intégré au sein du processus de développement, il permet de réduire les risques et d'assurer une meilleure qualité du code. L'objectif est de garder un œil vigilant sur la sécurité du code source, tout au long de son cycle de vie, pour prévenir des erreurs qui pourraient être exploitées par des acteurs malveillants.
+> En résumé : Le SAST est une approche dite "proactive" de la sécurité, qui permet d'identifier et de corriger les vulnérabilités avant même qu'elles ne puissent être exploitées. Intégré au sein du processus de développement, il permet de réduire les risques de sécurité et d'assurer une meilleure qualité du code. L'objectif est de garder un œil attentif sur la sécurité du code source, tout au long de son cycle de vie, pour éviter des erreurs qui pourraient être exploitées en production par des acteurs malveillants.
 
 #### DAST
 
