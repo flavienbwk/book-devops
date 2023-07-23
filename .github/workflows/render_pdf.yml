@@ -2,6 +2,9 @@ name: Render PDF book
 
 on:
   push:
+    branches:
+      - main
+      - develop
   pull_request:
     branches:
       - develop
