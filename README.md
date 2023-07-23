@@ -61,7 +61,7 @@ cd ./fra && make pdf && cd -
 
 ## License
 
-Copyright © 2022 Flavien BERWICK
+Copyright © 2023 Flavien BERWICK
 
 ## Useful VSCode extensions when writing
 
