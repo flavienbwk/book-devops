@@ -14,5 +14,7 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
 
-    - name: Lint changelog file
+    - name: Lint all MD files
       uses: docker://avtodev/markdown-lint:v1 # fastest way
+      with:
+        args: '.'
