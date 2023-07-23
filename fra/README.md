@@ -585,6 +585,10 @@ Le _Static Application Security Testing_ (SAST) ou "Test statique de la sécurit
 
 Voici une liste d'outils SAST accompagnés de leur description pour bien comprendre leur variété :
 
+- [_Sonarqube_]() : {}
+- [_Trivy_]() ou [_Quay Clair_]() : analyse de vulnérabilités dans les conteneurs {}
+- [_Spotbugs_](https://github.com/spotbugs/spotbugs) : {}
+
 # Parmi les solutions SAST, l’on peut énumérer Synopsys de Coverity, HCL AppScan Source, SonarQube, Kiuwan Code Security, AttackFlow et Micro Focus Fortify Static Code Analyzer.
 # https://github.com/ajinabraham/njsscan
 
@@ -592,11 +596,15 @@ Voici une liste d'outils SAST accompagnés de leur description pour bien compren
 _TODO: To be written_
 - Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: _Trivy_, [_Dockle_](https://github.com/goodwithtech/dockle), _Quay Clair_, [_Dagda_](https://github.com/eliasgranderubio/dagda),)
 
-> En résumé : Le SAST est une approche proactive de la sécurité, qui permet d'identifier et de corriger les vulnérabilités avant même qu'elles ne puissent être exploitées. Intégré au sein du processus de développement, il permet de réduire les risques et d'assurer une meilleure qualité du code. L'objectif est de garder un œil vigilant sur la sécurité du code source, tout au long de son cycle de vie, pour prévenir des erreurs qui pourraient être exploitées par des acteurs malveillants.
+Le SAST permet d'améliorer significativement la sécurité de sa chaîne logicielle, mais il ne se substitue pas aux autres pratiques de sécurité. En effet, les analyses statiques peuvent produire des faux positifs ou manquer des vulnérabilités qui ne se manifestent qu'à l'exécution du programme. Il est donc recommandé de compléter le SAST par d'autres techniques comme le DAST (_Dynamic Application Security Testing_) ou l'IAST (_Interactive Application Security Testing_). Nous les verrons dans les chapitres suivants.
+
+> En résumé : Le SAST est une approche dite "proactive" de la sécurité, qui permet d'identifier et de corriger les vulnérabilités avant même qu'elles ne puissent être exploitées. Intégré au sein du processus de développement, il permet de réduire les risques et d'assurer une meilleure qualité du code. L'objectif est de garder un œil vigilant sur la sécurité du code source, tout au long de son cycle de vie, pour prévenir des erreurs qui pourraient être exploitées par des acteurs malveillants.
 
 #### DAST
 
 _TODO: To be written_
+
+Le _Dynamic Application Security Testing_ (DAST), ou "Test de sécurité dynamique des applications" en français. est une technique d'analyse qui, contrairement à la SAST, se concentre sur la détection des vulnérabilités dans une application en cours d'exécution. Il s'agit en quelque sorte d'un test d'intrusion automatisé qui permet d'identifier des vulnérabilités potentielles que les attaquants pourraient exploiter lors de l'exécution du logiciel. Ces vulnérabilités peuvent être des injections SQL, des attaques Cross-Site Scripting (XSS), ou des problèmes de configuration.
 
 #### IAST
 
@@ -2160,6 +2168,7 @@ Vous pouvez commencer à suivre vos MTTx dans un tableur collaboratif (ex: _Base
 
 Si vous optez pour un tableur, vous pouvez utiliser pour cette structure :
 
+<!-- markdownlint-disable MD034 -->
 | Mesure | Date de début        | Date de fin          | Incident                |
 | ------ | -------------------- | -------------------- | ----------------------- |
 | TTD    | 04/07/2024 16h45 UTC | 04/07/2024 16h50 UTC | https://abcd.com/C4D5E6 |
@@ -2168,6 +2177,7 @@ Si vous optez pour un tableur, vous pouvez utiliser pour cette structure :
 | TTR    | 04/07/2024 17h00 UTC | 04/07/2024 18h30 UTC | https://abcd.com/C4D5E6 |
 | TTD    | 02/06/2024 13h30 UTC | 02/06/2024 13h34 UTC | https://abcd.com/A1B2C3 |
 | ...    | ...                  | ...                  | ...                     |
+<!-- markdownlint-enable MD034 -->
 
 - La **mesure** mentionne le nom du MTTx
 - La **date de début** est le moment auquel l'évènement a débuté
@@ -2691,7 +2701,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 ![Flexible flow cheatsheet](./images/flexible_flow_git_cheatsheet.jpg)
 
 <style>
-    /* Inserting figure numbers to identify them better */
+    /*Inserting figure numbers to identify them better*/
     body { counter-reset: figureCounter; }
     figure { counter-increment: figureCounter; }
     figure figcaption:before {
