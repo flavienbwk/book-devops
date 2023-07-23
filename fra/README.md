@@ -569,7 +569,7 @@ Il est possible de générer le SBOM de son logiciel grâce à des outils comme 
 
 L'objectif reste de savoir si une librairie utilisée est vulnérable, pour la mettre à jour ou la remplacer. Hormis pour répondre à des contraintes réglementaires, laisser ce fichier à l'état de simple document n'est pas très utile. Voilà pourquoi il faut désormais analyser le SBOM.
 
-Un outil léger d'analyse comme [_OSV-Scanner_](https://github.com/google/osv-scanner) pourra s'intégrer facilement à vos chaînes d'intégration continue et fournir un premier niveau de protection. Néanmoins, il ne permettra pas d'avoir une vue d'ensemble sur tous les logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_ ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ sont alors nécessaires. Eux peuvent ingérer plusieurs fichiers SBOM et afficher une vue d'ensemble des menaces pour alerter les ingénieurs selon une politique définie.
+Un outil léger d'analyse comme [_OSV-Scanner_](https://github.com/google/osv-scanner) pourra s'intégrer facilement à vos chaînes d'intégration continue et fournir un premier niveau de protection. Néanmoins, il ne permettra pas d'avoir une vue d'ensemble sur tous les logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_ ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ sont alors nécessaires. Ils peuvent ingérer plusieurs fichiers SBOM et afficher une vue d'ensemble des menaces pour alerter les ingénieurs si besoin.
 
 ![Tableau de bord Dependency Track listant des vulnérabilités trouvées dans un ensemble de logiciels.](./images/2023_dependency_track.png)
 
@@ -579,22 +579,21 @@ Des logiciels comme [_Renovate_](https://github.com/renovatebot/renovate) ou [_G
 
 #### SAST
 
-Alors que les outils de SCA vous permettront d'analyser de quoi est composé votre projet (ses dépendances et logiciels utilisés), les outils de SAST ont pour vocation d'analyser le code du logiciel que vous développez.
+Alors que les outils de SCA vous permettront d'analyser de quoi est composé votre projet (ses dépendances et logiciels utilisés), les outils de SAST ont pour vocation d'analyser le code du logiciel que vous développez. Néanmoins, les outils de SAST prennent également en charge des fonctionnalités du SCA. Les deux se regroupent dans le domaine de la _Source code analysis_ ou "Analyse de code source".
 
-Le _Static Application Security Testing_ (SAST) ou "Test statique de la sécurité des applications" en français, concentre les techniques et les outils ayant vocation à trouver des vulnérabilités dans votre code source avant qu'il ne soit lancé. Ils constituent une forme de test en boîte blanche (le code étant exposé). Par exemple, les outils de SAST vont identifier des configurations non sécurisées, des risques d'injection SQL, des fuites mémoire, des risques de [traversée de chemins](https://owasp.org/www-community/attacks/Path_Traversal) ou des [situations de concurrence](https://stackoverflow.com/a/34550/4958081).
+Le _Static Application Security Testing_ (SAST) ou "Test statique de la sécurité des applications" en français, concentre les techniques et les outils ayant vocation à trouver des vulnérabilités dans votre code source avant qu'il ne soit lancé. Ils constituent une forme de test en boîte blanche. Par exemple, les outils de SAST vont identifier des configurations non sécurisées, des risques d'injection SQL, des fuites mémoire, des risques de [traversée de chemins](https://owasp.org/www-community/attacks/Path_Traversal) ou des [situations de concurrence](https://stackoverflow.com/a/34550/4958081).
 
 Voici une liste d'outils SAST accompagnés de leur description pour bien comprendre leur variété :
 
-- [_Sonarqube_]() : {}
-- [_Trivy_]() ou [_Quay Clair_]() : analyse de vulnérabilités dans les conteneurs {}
-- [_Spotbugs_](https://github.com/spotbugs/spotbugs) : {}
+- [_Sonarqube_](https://github.com/SonarSource/sonarqube) : détecte les vulnérabilités et mauvaises pratiques dans +20 langages de programmation, attribue un score de dette technique et permet de réaliser des revues de code dans une interface dédiée.
+- [_HuskyCI_](https://github.com/globocom/huskyCI) : détecte les vulnérabilités dans le code en lançant plusieurs sous-outils de SAST et peut intégrer les rapports à SonarQube.
+- [_Horusec_](https://github.com/ZupIT/horusec) : similaire à HuskyCI mais recherche également dans l'historique git complet, et comprend une interface web dédiée permettant de centraliser et visualiser les vulnérabilités. Il peut être [facilement intégré](https://docs.horusec.io/docs/extensions/visual-studio-code/) à l'IDE d'un développeur.
+- [_Semgrep_](https://github.com/returntocorp/semgrep) : trouve des bugs, les mauvaises pratiques de code et détecte des vulnérabilités des dépendances. Une interface est disponible avec [leur offre commerciale](https://semgrep.dev/products/cloud-platform).
+- [_Dockle_](https://github.com/goodwithtech/dockle) : détecte les mauvaises pratiques et les failles dans les conteneurs en respectant les règles _CIS Benchmarks_[^CISBenchmarks].
+- [_Trivy_](https://trivy.dev) : détecte les vulnérabilités, erreurs de configuration, secrets et SBOM dans les conteneurs, Kubernetes et les bases de code.
+- [_Trufflehog_](https://github.com/trufflesecurity/trufflehog) : détecte les secrets exposés publiquement dans les dépôts Git.
 
-# Parmi les solutions SAST, l’on peut énumérer Synopsys de Coverity, HCL AppScan Source, SonarQube, Kiuwan Code Security, AttackFlow et Micro Focus Fortify Static Code Analyzer.
-# https://github.com/ajinabraham/njsscan
-
-
-_TODO: To be written_
-- Des chaînes d'intégration continue qui intègrent de l'analyse de vulnérabilités dans les containers (ex: _Trivy_, [_Dockle_](https://github.com/goodwithtech/dockle), _Quay Clair_, [_Dagda_](https://github.com/eliasgranderubio/dagda),)
+Une vaste liste d'outils open-source et commerciaux d'analyse de code est disponible sur le site de la fondation OWASP[^SCAToolsOWASP].
 
 Le SAST permet d'améliorer significativement la sécurité de sa chaîne logicielle, mais il ne se substitue pas aux autres pratiques de sécurité. En effet, les analyses statiques peuvent produire des faux positifs ou manquer des vulnérabilités qui ne se manifestent qu'à l'exécution du programme. Il est donc recommandé de compléter le SAST par d'autres techniques comme le DAST (_Dynamic Application Security Testing_) ou l'IAST (_Interactive Application Security Testing_). Nous les verrons dans les chapitres suivants.
 
@@ -605,6 +604,8 @@ Le SAST permet d'améliorer significativement la sécurité de sa chaîne logici
 _TODO: To be written_
 
 Le _Dynamic Application Security Testing_ (DAST), ou "Test de sécurité dynamique des applications" en français. est une technique d'analyse qui, contrairement à la SAST, se concentre sur la détection des vulnérabilités dans une application en cours d'exécution. Il s'agit en quelque sorte d'un test d'intrusion automatisé qui permet d'identifier des vulnérabilités potentielles que les attaquants pourraient exploiter lors de l'exécution du logiciel. Ces vulnérabilités peuvent être des injections SQL, des attaques Cross-Site Scripting (XSS), ou des problèmes de configuration.
+
+OWASP ZAP / https://owasp.org/www-community/Vulnerability_Scanning_Tools
 
 #### IAST
 
@@ -665,7 +666,7 @@ Plus complet que les deux précédents, le SSDF agit comme un annuaire regroupan
 
 Le framework répertorie des notions générales associées progressivement à des règles plus concrètes. Chacun des thèmes regroupe des grandes pratiques à suivre, qui incluent elle-mêmes des tâches contenant des exemples, associées à des références aux _frameworks_ concernés.
 
-Par exemple pour le thème "protéger les logiciels", la pratique "protéger toutes les formes de code contre l'accès non autorisé et la falsification" propose d'utiliser la "signature des _commits_" en référence au SSCSP avec le chapitre concerné "Sécuriser le code source".
+Par exemple pour le thème "protéger les logiciels", la pratique "protéger toutes les formes de code contre l'accès non autorisé et la falsification" propose d'utiliser la "signature des _commits_" en référence au SSCSP dans son chapitre "Sécuriser le code source".
 
 Ce document [est à retrouver](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) sur le site Internet du NIST. La bibliothèque en ligne du directeur de l'information[^CIOLibrary] (CIO) de l'_US Department of Defense_ est également une excellente source d'inspiration.
 
@@ -3173,12 +3174,16 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^AWSCodePipeline]: AWS CodePipeline. _aws.amazon.com/codepipeline_.
 
-[^DSOMM]: [OWASP DevSecOps Maturity Model (DSOMM)](https://dsomm.owasp.org/). _dsomm.owasp.org_.
+[^DSOMM]: [_OWASP DevSecOps Maturity Model (DSOMM)_](https://dsomm.owasp.org/). _dsomm.owasp.org_.
 
-[^SCVS]: [OWASP Software Component Verification Standard](https://scvs.owasp.org/). _scvs.owasp.org_.
+[^SCVS]: [_OWASP Software Component Verification Standard_](https://scvs.owasp.org/). _scvs.owasp.org_.
 
-[^DSOMMDatadog]: [DataDog DevSecOps Maturity Model](https://www.datadoghq.com/resources/devsecops-maturity-model/). _datadoghq.com_.
+[^DSOMMDatadog]: [_DataDog DevSecOps Maturity Model_](https://www.datadoghq.com/resources/devsecops-maturity-model/). _datadoghq.com_.
 
-[^DSOMMAWS]: [AWS Security Maturity Model](https://maturitymodel.security.aws.dev/en/). _maturitymodel.security.aws.dev_.
+[^DSOMMAWS]: [_AWS Security Maturity Model_](https://maturitymodel.security.aws.dev/en/). _maturitymodel.security.aws.dev_.
 
-[^DSOMMGitLab]: [GitLab DevSecOps Maturity Assessment](https://about.gitlab.com/resources/devsecops-methodology-assessment/). _about.gitlab.com_.
+[^DSOMMGitLab]: [_GitLab DevSecOps Maturity Assessment_](https://about.gitlab.com/resources/devsecops-methodology-assessment/). _about.gitlab.com_.
+
+[^SCAToolsOWASP]: [_Source Code Analysis Tools_](https://owasp.org/www-community/Source_Code_Analysis_Tools). _owasp.org_.
+
+[^CISBenchmarks]: Les [_CIS Benchmarks_](https://www.cisecurity.org/cis-benchmarks) sont un ensemble de règles et de bonnes pratiques de configurations informatiques. Elles sont publiées par l'association américaine _Center for Internet Security_ (CIS).
