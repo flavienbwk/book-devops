@@ -115,7 +115,7 @@ L'entreprise l'emploie principalement pour honorer son contrat de service (_Serv
 
 ## Collaboration entre DevOps et SRE
 
-De manière simplifiée, l'entreprise donne la mission au SRE de rendre son infrastructure plus résiliente. C'est à dire plus disponible, plus stable. Il tente de répondre à la question "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?", en se basant sur des mesures qui lui sont rapportées par les outils qu'il aura mis en place.
+De manière simplifiée, l'entreprise donne pour mission au SRE de rendre son infrastructure plus résiliente. C'est à dire plus disponible, plus stable. Le SRE tente de répondre à la question "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?", en se basant sur des mesures qui lui sont rapportées par les outils qu'il aura mis en place.
 
 Des sujets comme l'usage de techniques pour standardiser les développements, les déploiements ou encore instaurer des mécanismes d'observabilité se posent alors. Une fois ces outils en place, le SRE instruit aux équipes techniques d'employer des méthodologies et techniques communes à l'organisation, pour atteindre un objectif de résilience précis.
 
@@ -127,11 +127,15 @@ En résumé, l'ingénieur DevOps est responsable de la mise en place de l'ensemb
 
 ## DevSecOps
 
-Le terme DevSecOps est également populaire. Il qualifie un mode d'organisation DevOps intégrant nativement les équipes de Sécurité des Systèmes d'Information (SSI) au sein du cycle de développement et de déploiement des logiciels. Il s'agit d'y imposer des règles automatisées qui garantissent l'application des règles et standards de sécurité de l'organisation.
+Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant dès la phase de conception du logiciel, puis tout au long de son cycle de vie, les équipes de Sécurité des Systèmes d'Information (SSI). Plus pragmatiquement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, par des règles automatisées qui vérifient la conformité des logiciels développés.
 
-En terme organisationnel, cette méthode implique les équipes SSI dans tous les échanges entre les développeurs et les équipes de production. Ces équipes auront la charge de définir et contrôler l'existence des fonctionnalités de confidentialité et de sécurité dans les logiciels, dès la phase de conception.
+Peut-être avez-vous déjà entendu parler de "_shift left security_" ? Cette expression évoque le fait d'intégrer au plus tôt les travaux de sécurité dans le projet logiciel (bonnes pratiques, analyses de vulnérabilités, audits).
 
-Par exemple, l'existence des fonctionnalités rendant le logiciel conforme au RGPD[^RGPD] ou aux politiques de besoin d'en connaître de votre organisation. Cela peut également être la mise en place de [détecteurs automatiques de vulnérabilités](#intégration-continue-ci) dans le code.
+![Comprendre l'expression _shift left security_.](./images/2023_shift_left_security.jpg)
+
+En terme organisationnel, cette méthode implique les équipes SSI au cœur des échanges entre les développeurs et les équipes de production. Ces équipes auront la charge d'appuyer les développeurs pour qu'ils puissent intégrer le plus facilement possible les exigences de sécurité de l'organisation à leurs logiciels.
+
+Dès la phase de conception, les équipes SSI DevSecOps définissent et fournissent les outils contrôlant l'existence des fonctionnalités de confidentialité et de sécurité dans les logiciels. Par exemple, elles vérifieront l'existence des fonctionnalités RGPD[^RGPD] dans un logiciel, ou le bon fonctionnement du mécanisme de "besoin d'en connaître" pour l'accès aux données. Cela peut aussi inclure la mise en place de [détecteurs automatiques de vulnérabilités](#intégration-continue-ci) dans le code.
 
 Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'_United States Air Force_ (USAF) [le définit](https://podcast.ausha.co/postmortem/19)[^DevSecOpsUSAirForce] de manière plus générale avec les termes suivants :
 
