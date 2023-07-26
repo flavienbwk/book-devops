@@ -34,13 +34,13 @@ Dans une volonté de regain de souveraineté, d'autres gouvernements affichent u
 
 Au Royaume-Uni, le Ministère de la Défense annonce en 2022 vouloir devenir une organisation "prête pour l'IA", dans sa "Stratégie d'Intelligence Artificielle de Défense"[^UKDefenceAIStrategy]. Dans l'expression qu'elle fait de sa transformation, elle résume parfaitement les finalités du DevOps.
 
-> "Nous devons nous transformer en une organisation fortement orientée vers le logiciel, organisée et motivée à valoriser et exploiter les données, prête à tolérer des risques accrus, à apprendre par la pratique et à se réorienter rapidement pour trouver des succès et des gains d'efficacité. Nous devons être capables de développer, tester et déployer de nouveaux algorithmes plus rapidement que nos adversaires. Nous devons être agiles et intégrés (unifiés), [...]" - Ministère de la Défense du Royaume-Uni, chapitre "Culture, Compétences et Politiques", page 17.
+> « Nous devons nous transformer en une organisation fortement orientée vers le logiciel, organisée et motivée à valoriser et exploiter les données, prête à tolérer des risques accrus, à apprendre par la pratique et à se réorienter rapidement pour trouver des succès et des gains d'efficacité. Nous devons être capables de développer, tester et déployer de nouveaux algorithmes plus rapidement que nos adversaires. Nous devons être agiles et intégrés (unifiés), [...] » - Ministère de la Défense du Royaume-Uni, chapitre "Culture, Compétences et Politiques", page 17.
 
 Dès 2018, il lançait le programme NELSON[^NELSON] pour s'équiper d'une [plateforme big-data](https://joinup.ec.europa.eu/collection/open-source-observatory-osor/news/open-source-royal-navy) au profit de la _Royal Navy_. Cet environnement technique à base de technologies Cloud, inclut des pratiques DevOps.
 
 Outre-Atlantique, les États-Unis considéraient déjà en 2011 la nécessité de maîtriser l'information de manière unifiée et agile, d'y accéder via un point d'accès unique (cf. chapitre "[Zero trust](#développement-basé-sur-le-zero-trust)"). Le _Department of Defense_ (DoD) décrit cette vision dans le document "Stratégie et feuille de route des systèmes informatiques industrialisés au DoD"[^DoDITEnterpriseStrategyRoadmap].
 
-> "Les opérations militaires du XXIe siècle nécessitent un environnement informationnel agile afin d'obtenir un avantage stratégique pour les effectifs et les partenaires des missions. [...] Pour relever ce défi, le DoD entreprend un effort coordonné pour unifier ses réseaux dans un environnement informatique unique qui améliorera à la fois l'efficacité opérationnelle et la posture de sécurité vis-à-vis des systèmes d'information."
+> « Les opérations militaires du XXIe siècle nécessitent un environnement informationnel agile afin d'obtenir un avantage stratégique pour les effectifs et les partenaires des missions. [...] Pour relever ce défi, le DoD entreprend un effort coordonné pour unifier ses réseaux dans un environnement informatique unique qui améliorera à la fois l'efficacité opérationnelle et la posture de sécurité vis-à-vis des systèmes d'information. »
 >
 > - Ministère des Armées des États-Unis, chapitre "Vision pour des systèmes d'information industriels plus efficaces et sécurisés au DoD", page 13.
 
@@ -273,7 +273,7 @@ Comme évoqué dans le chapitre "[Too big, too soon](#too-big-too-soon)", adopte
 
 ## Refuser le retard technologique
 
-> "C'est normal, nous aurons toujours du retard ici."
+> « C'est normal, nous aurons toujours du retard ici. »
 
 Si vous avez l'impression d'avoir déjà entendu cela et que vous lisez ce livre, ces paroles ont probablement suscité chez vous un sentiment de consternement.
 
@@ -289,7 +289,7 @@ Alors qu'au début le dysfonctionnement est considéré inadmissible, il devient
 
 Mais il faut également savoir _quand_ dévoiler ses innovations. Preston DUNLAP, premier directeur technique (CTO) de l'USAF, décrit dans sa lettre publique _Défier la Gravité_ combien les "forces bureaucratiques" peuvent nuire à l'innovation si on les présente trop tôt.
 
-> "Certains m'ont demandé quelle fut ma recette pour réussir durant ces 3 dernières années. Je n'en ai pas beaucoup parlé parce-que je savais que si je révélais les éléments trop à l'avance, les forces naturelles de la bureaucratie reviendraient de plus belle, pour rejeter à chaque occasion tout le potentiel de l'innovation." - Preston DUNLAP, Défier la Gravité (_Defying Gravity_) [^DefyingGravity]
+> « Certains m'ont demandé quelle fut ma recette pour réussir durant ces 3 dernières années. Je n'en ai pas beaucoup parlé parce-que je savais que si je révélais les éléments trop à l'avance, les forces naturelles de la bureaucratie reviendraient de plus belle, pour rejeter à chaque occasion tout le potentiel de l'innovation. » - Preston DUNLAP, Défier la Gravité (_Defying Gravity_) [^DefyingGravity]
 
 Pour éviter le retard technologique, une organisation peut adopter plusieurs pratiques :
 
@@ -340,11 +340,11 @@ La théorie des modèles mentaux[^ModelesMentaux] nous permet de mieux comprendr
 
 Quand bien même le DevOps peut s'appuyer sur des études et s'avère une évidence dans le privé, les initiatives institutionnelles ne sont pas encore assez nombreuses[^DORAIndustry]. Vous êtes donc dans une situation où vous avez la certitude de la direction à prendre, mais vous n'êtes pas entièrement capable de la justifier par des chiffres et/ou des exemples. Face à votre proposition de transformation avant-gardiste, le décideur est par conséquent face à un risque. Or, question de survie :
 
-> "Il vaut mieux avoir tord avec le groupe, qu'avoir raison contre le groupe."
+> « Il vaut mieux avoir tord avec le groupe, qu'avoir raison contre le groupe. »
 
 Pour aider le décideur à prendre sa décision, vous devez travailler à réduire ce risque. Mais comment ? L'idée est de ralier à votre cause de premiers expérimentateurs (_early adopters_) à votre projet, sans l'annoncer au collectif.
 
-> "Le 1er qui fait le pas prend un risque énorme. Le 150ème n'en prend plus."
+> « Le 1er qui fait le pas prend un risque énorme. Le 150ème n'en prend plus. »
 
 En plus d'améliorer votre proposition de valeur, vous obtiendrez des exemples à citer et du soutien : vous ne serez plus le "1er" à prendre le risque et votre organisation non plus.
 
@@ -363,7 +363,7 @@ Si vous rencontrez une opposition frontale de personnes ayant l'oreille du déci
   - Si votre projet propose des fonctionnalités similaires à un outil existant mais qu'il se distingue par l'échelon où il permet d'agir (tactique, opératif, stratégique[^MilitaryStrategy]), expliquez comment, avec des exemples de cas d'usage.
 - **Fédérez une coalition** : c'est l'idée des _early adopters_ évoquée plus tôt. Attirez des personnes qui partagent votre vision de la transformation. Ce sont souvent celles qui partagent avec vous les points sur l'inefficacité d'une partie de votre organisation.
   - En créant une communauté qui vous soutient, vous démontrez à votre interlocuteur que votre approche est légitime et qu'elle est soutenue par un grand nombre de parties prenantes.
-  - Demandez des remerciements officiels : une lettre ou un e-mail signé par le responsable reconnu d'une entité que vous avez servi, attestant de l'utilité de vos méthodes ou de vos outils.
+  - Demandez des témoignages officiels : une lettre ou un e-mail signé par le responsable reconnu d'une entité que vous avez servi, attestant de l'utilité de vos méthodes ou de vos outils.
 - **Soyez persévérant** : faire changer quelqu'un d'avis peut prendre du temps, surtout lorsque des raisons politiques sont en jeu. Soyez persévérant et continuez à faire valoir vos arguments, même si vous rencontrez de la résistance.
   - Restez ouvert à l'idée de continuer le dialogue avec votre interlocuteur, toujours de manière respectueuse et constructive. Si votre approche est la bonne et la sienne la mauvaise (vous pourriez avoir tord après tout!), vous parviendrez peut-être à le rallier à votre cause avec le temps.
   - Acceptez aussi que vous n'êtes pas éternel au sein de l'entreprise. Si votre initiative ne trouve pas sa place ici, tant pis pour votre entreprise! Vous pourriez avoir un tout autre impact dans une autre structure, avec la même initiative. Et vous-seul déterminez les limites que vous vous fixez.
@@ -446,9 +446,47 @@ Vous avez dû probablement vous en rendre compte au cours de votre carrière : l
 
 Mettre au contact profils techniques et opératifs est un enjeu de fidélisation au-delà de la plus-value d'une réponse plus rapidement et précise aux problématiques internes. Rappelez-vous : vos équipes sont en quête de sens. Elles ne viennent pas au travail le matin pour répondre à l'ordre de leur supérieur de développer un logiciel, mais pour concevoir avec leurs compétences d'expert la solution technique qui répondra le mieux au problème du métier. L'aboutissement du travail d'un ingénieur est de voir le métier utiliser la création qu'il a conçu.
 
+\newpage
+
 ## Adapter son discours
 
-TODO(flavienbwk): Métier vs Décideurs
+Une transformation réussie demande de la part de son instigateur une communication irréprochable. Il est important de savoir comment présenter selon le public visé, tout en gardant en tête certains phénomènes organisationnels communs.
+
+> « Pourquoi ne semble-t-elle pas convaincue ? »
+
+Après l'une de vos présentations, peut-être vous êtes-vous déjà retrouvé dans cette situation ? Validée par nombre de vos pairs, après répétition, et alors même qu'elle vous semblait parfaitement adaptée, cette dernière n'a visiblement pas eu l'effet escompté. La personne en face de vous ne posait pas les bonnes questions, ou semblait ennuyée, voire irritée.
+
+Présenter à différents publics nécessite d'adapter son style de présentation, ses exemples et arguments en fonction de leurs rôles, contraintes et besoins. N'attendez de personne qu'elle comprenne le _so what_[^SoWhat] de votre présentation, sans avoir compris vous-même l'intérêt qu'elle avait d'y assister. En général, deux présentations suffisent : l'une pour les métiers (ou "clients") et l'autre pour les hauts responsables (ou "politiques"). 
+
+Il est néanmoins important de distinguer les hauts responsables (ou _executives_) des responsables de proximité (ou _managers_). Ces derniers ont souvent un lien plus fort avec leurs collaborateurs, leur permettant d'être sensibles aux arguments métiers. Les hauts responsables opèrent quant à eux à un échelon stratégique[^MilitaryStrategy], où ils définissent la vision de l'organisation. Les considérations subsidiaires doivent donc être déléguées et le message remonté par les différentes couches hiérarchiques peut arriver brouillé. Voilà pourquoi il ne faut pas considérer que les responsables soient nécessairement au courant de tout ce que vous observez à votre niveau. Même ceux qui vous semblent les plus évidents.
+
+Distinguons les intérêts respectifs de ces deux profils :
+
+| _Catégorie_               | Métiers                                     | Décideurs                                                                                                             |
+| ------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Niveau de détail**      | Informations pratiques détaillées           | Vue d'ensemble                                                                                                        |
+| **Terminologie**          | Jargon métier et outils spécifiques         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit |
+| **Données et preuves**    | Exemples pratiques, études de cas           | Données, statistiques, impacts                                                                                        |
+| **Objectif**              | Instruire, informer, solliciter des retours | Convaincre, obtenir l'approbation                                                                                     |
+| **Style de présentation** | Interactif, pratique                        | Formel, concis, direct                                                                                                |
+
+Prenons l'exemple d'une entreprise dont les employés ont besoin d'acquérir un logiciel de traduction performant. Le fournisseur d'une solution vient la présenter au directeur de l'organisation. Voici les arguments à aborder pour chaque profil :
+
+| _Catégorie_               | Employés                                                                                                     | Directeur                                                                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Niveau de détail**      | Comment utiliser l'outil, ses fonctionnalités spécifiques, comment il améliore l'efficacité de la traduction | Vue d'ensemble de l'outil, son rôle et son impact sur l'organisation                                                                     |
+| **Terminologie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances                                         |
+| **Données et preuves**    | Démonstration de l'outil en action, comparaisons avant/après, études de cas d'amélioration du travail        | Statistiques sur l'amélioration de l'efficacité, réduction du temps de travail, satisfaction des utilisateurs, retour sur investissement |
+| **Objectif**              | Comprendre et utiliser efficacement l'outil, améliorer la qualité et vitesse des traductions                 | Approbation pour acquérir l'outil, compréhension de l'impact positif de l'outil sur l'organisation                                       |
+| **Style de présentation** | Pratique, interactif avec démonstrations et questions/réponses                                               | Formel, concis, direct, axé sur les plus-values organisationnels                                                                         |
+
+Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre et lui fournir les bons éléments de parole. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti/gouvernement).
+
+Enfin, vous ne pouvez pas totalement écarter l'hypothèse selon laquelle votre interlocuteur serait en conflit avec d'autres acteurs dans votre organisation. Cela le freinerait à l'idée de prendre certaines décisions d'un intérêt incontestable, dans l'objectif de conserver son statut ou de protéger sa carrière. Dans ce cas-là, tentez de trouver des relais d'influence qui porteront votre vision parmi les décideurs de responsabilités équivalentes ou supérieures. Une fois votre message porté par plusieurs hauts dirigeants, il sera difficile pour le concerné de refuser ce que le reste de l'organisation considère comme essentiel.
+
+En résumé, préparez au moins une présentation métiers et une orientée vers les hauts décideurs. Chaque sujet important de votre transformation devrait idéalement disposer de ces deux présentations, mais veillez au moins à ce que votre présentation de transformation globale soit disponible dans ces deux formats.
+
+Une communication peu impactante est souvent le fruit d'un contexte peu ou mal compris par le présentateur, plutôt qu'à un interlocuteur de mauvaise foi. A défaut d'en être certain, partez du principe que le problème n'est pas la personne en face de vous.
 
 ## Libérer la parole et dé-siloter l'accès aux données
 
@@ -1269,7 +1307,7 @@ Cet état d'esprit est un changement culturel qu'une organisation doit instiller
 
 ### Sécurité psychologique
 
-> "La sécurité psychologique est la culture selon laquelle une personne ne sera pas punie ou humiliée pour avoir exprimé ses idées, questions, préoccupations ou erreurs." - Amy C. EDMONDSON, professeure en gestion et leadership à la _Harvard Business School_.
+> « La sécurité psychologique est la culture selon laquelle une personne ne sera pas punie ou humiliée pour avoir exprimé ses idées, questions, préoccupations ou erreurs. » - Amy C. EDMONDSON, professeure en gestion et leadership à la _Harvard Business School_.
 
 La culture d'une organisation est le fondement de son potentiel. Une bonne culture aide à promouvoir la collaboration et la communication entre les équipes, atout fondamental pour une mise en œuvre réussie d'une initiative DevOps. Cette idée n'est pas nouvelle, et fut théorisée en 2004 par le sociologue Ron WESTRUM dans son article "_Une typologie des cultures organisationnelles_"[^RonWestrumTypologyOfOrganisationCulture].
 
@@ -1803,7 +1841,7 @@ Par exemple chez Google, les stagiaires commencent par une semaine complète dé
 
 L'_United States Air Force_ (USAF) s'est mise depuis 2019 en ordre de bataille en investissant massivement dans des solutions d'auto-apprentissage. Dans un podcast[^DevSecOpsUSAirForce], son ancien Directeur de l'Ingénierie Logicielle (_Chief Software Officer_) Nicolas CHAILLAN explique comment il a mis en place ce système pour plus de 100 000 développeurs. Une plateforme web a été déployée avec du contenu pédagogique spécialement sélectionné ou créé par ses équipes. Il ajoute qu'une heure par jour a été accordé aux collaborateurs pour "rattraper le retard et continuer d'être à jour sur les dernières technologies".
 
-> "C'est _(la formation est)_ un investissement pour l'entreprise et pour eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix." - Nicolas CHAILLAN
+> « C'est _(la formation est)_ un investissement pour l'entreprise et pour eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix. » - Nicolas CHAILLAN
 
 À l'instar de l'USAF, la solution suivante avait bien fonctionné dans l'une de mes dernières expériences : nous avions réussi à obtenir un jour de télétravail par semaine. Le faire accepter à nos responsables n'était pas simple, mais ils ont fini par l'accorder après un temps certain à leur en faire comprendre le bien-fondé. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière permettait à notre hiérarchie de visualiser les statistiques sur le temps passé à se former et les cours achevés. Le coût de ces deux services était minime par rapport à toutes les connaissances qu'ils nous conféraient.
 
@@ -1817,7 +1855,7 @@ Dans tous les cas, présentez votre transformation comme une opportunité d'évo
 
 Au sein de systèmes d'informations de plus en plus complexes, il devient fondamental d'automatiser les tâches récurrentes. L'humain représente le facteur principal d'erreurs au sein d'un système d'information[^HumanErrorIS]. Tout ingénieur confirmé pourra vous le confirmer. C'est pour cela que les équipes de Google tentent de minimiser au maximum les interactions de leurs opérateurs pour administrer leurs systèmes[^GoogleWorkbookEliminatingToil].
 
-> "Si un opérateur humain doit toucher votre système durant le fonctionnement normal du quotidien, vous avez un bug. La définition du terme "normal" change au fur et à mesure que vos systèmes se développent." - Carla GEISSER, SRE chez Google
+> « Si un opérateur humain doit toucher votre système durant le fonctionnement normal du quotidien, vous avez un bug. La définition du terme "normal" change au fur et à mesure que vos systèmes se développent. » - Carla GEISSER, SRE chez Google
 
 Si vous souhaitez faire de votre système informatique un outil intégré au sein de votre entreprise, vous devez d'abord automatiser les actions répétitives et coûteuses en temps : les actions manuelles (ou _toil_ en anglais).
 
@@ -3227,3 +3265,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^DASTToolsOWASP]: [_Vulnerability Scanning Tools_](https://owasp.org/www-community/Vulnerability_Scanning_Tools). _owasp.org_.
 
 [^IASTOWASP]: [_Free for Open Source Application Security Tools_](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools). _owasp.org_.
+
+[^SoWhat]: Idée centrale ou le message principal que l'orateur souhaite communiquer à son public, généralement dans le but qu'il prenne une action.
