@@ -1223,7 +1223,7 @@ Gestion des contributions :
 
 1. _Trunk branch_ : une branche `main`/`master` unique de laquelle les développeurs peuvent partir pour ajouter une contribution
 2. _Features branching_ : modification du code = 1 branche = 1 _issue_
-    - Nomenclature de la branche : `f/#65-add-users-profile-page` pour l'_issue_ n°65 de type _feature_ et ayant pour nom "_Add users profile page_" (cf. chapitre "[Cheatsheet : _Flexible flow_](#cheatsheet--flexible-flow)")
+    - Nomenclature de la branche : `f/#65-add-users-profile-page` pour l'_issue_ n°65 de type _feature_ et ayant pour nom "_Add users profile page_"
     - Permet de faciliter le suivi des modifications (onglet _Changes_ dans GitHub/GitLab)
     - Ne PAS traiter autre chose que le sujet de l'_issue_ dans sa branche
 3. Mentionner le numéro d'_issue_ à chaque _commit_
@@ -1232,7 +1232,7 @@ Gestion des contributions :
     - Utiliser la fonctionnalité _squash_ pour éviter de polluer l'historique des contributions
     - Nomenclature : _"#65 : Add users profile page"_
     - Permet d'automatiquement faire référence à la merge request dans l'issue
-5. _Release_ : mettre à jour la version du logiciel (dans les fichiers type `package.json`) et créer une _release_ à partir de la _trunk branch_.
+5. _Release_ : mettre à jour la version du logiciel (dans les fichiers type `package.json`) et créer une _release_ à partir de la _trunk branch_
 
 Autres recommandations :
 
@@ -1240,11 +1240,11 @@ Autres recommandations :
 2. Limiter la taille des contributions en préférant créer plusieurs petites tâches
 3. Limiter le temps passé sur une _review_ pour éviter les conflits chronophages (cf. bonnes pratiques de revue de code[^engpractices])
 4. Chaque contribution doit être validée par une chaîne d'intégration continue (CI)
-5. Si votre équipe gagne en maturité, vous pouvez ajouter une chaîne de déploiement continu à chaque contribution qui passe la CI sur la _trunk branch_.
+5. Si votre équipe gagne en maturité, vous pouvez ajouter une chaîne de déploiement continu à chaque contribution qui passe la CI sur la _trunk branch_
 
 Cette méthode a démontré son efficacité au cours du temps pour les projets auxquels j'ai contribués. Simple de prise en main même pour les débutants, je l'ai affinée au cours du temps pour qu'elle soit moins lourde à utiliser, tout en permettant de répondre aux problématiques de dette technique des logiciels et de _turn-over_ des équipes.
 
-Pour présenter cette méthodologie à vos équipes et retrouver facilement les références, vous pouvez retrouver sa fiche pratique à la fin du livre, chapitre "[Cheatsheet : _Flexible flow_](#cheatsheet--flexible-flow)".
+Pour présenter cette méthodologie à vos équipes et retrouver facilement les références, accédez à son [illustration en pleine résolution](https://links.berwick.fr/flexible-flow)[^FlexibleFlowCheatsheet].
 
 ### Méthodologie à 12 critères
 
@@ -2770,10 +2770,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 - Licence/bachelor ou master en ingénierie réseaux et systèmes avec une forte expérience en ingénierie logicielle
 - Expérience professionnelle significative dans le domaine
 
-# Cheatsheet : _Flexible flow_
-
-![Flexible flow cheatsheet](./images/flexible_flow_git_cheatsheet.jpg)
-
 <style>
     /*Inserting figure numbers to identify them better*/
     body { counter-reset: figureCounter spanCounter 1; }
@@ -3267,3 +3263,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^IASTOWASP]: [_Free for Open Source Application Security Tools_](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools). _owasp.org_.
 
 [^SoWhat]: Idée centrale ou le message principal que l'orateur souhaite communiquer à son public, généralement dans le but qu'il prenne une action.
+
+[^FlexibleFlowCheatsheet]: [Illustration en pleine résolution](https://links.berwick.fr/flexible-flow) du _Flexible Flow_. _links.berwick.fr/flexible-flow_.
