@@ -1271,23 +1271,6 @@ Ces critères - et en particulier le découpage des logiciels en microservices -
 
 Bien qu'elles soient aujourd'hui des pratiques standard dans l'industrie, il peut être utile de les inclure dans un guide pour vos nouveaux arrivants.
 
-#### Serverless computing
-
-Pour permettre un passage à l'échelle encore plus performant, les architectures dites "sans serveur" (_serverless_) ont émergé et commencent à gagner en popularité. L'intérêt d'une architecture _serverless_ par rapport traditionnelles approches micro-services est multiple :
-
-- Ne plus avoir à gérer l'infrastructure sous-jacente
-- Payer uniquement quand le service est utilisé
-- Provision automatique des ressources en cas de forte affluence
-- Suppression automatique des ressources en cas de perte d'affluence
-
-Lorsqu'une application _serverless_ est instanciée, la plateforme Cloud se charge automatiquement l'attribution des ressources (mémoire, CPU), sans avoir à créer et installer soi-même le serveur, le VPS ou la VM.
-
-On y retrouve des technologies du type _Function as a Service_ (ou FaaS, ex: _GCP Cloud Functions_, _AWS Lambda_, _Azure Functions_), les technologies de type _Container as a Service_ (CaaS) ou _serverless compute platforms_ à la main des développeurs pour déployer leurs services (ex: _GCP Cloud Run_, _AWS Elastic Beanstalk_, _Azure App Service_), ainsi que des ressources gérées par les hébergeurs Cloud telles que les _serverless databases_ (ex: _AWS DynamoDB_, _GCP Firestore_ ou _Azure Cosmos DB_, _AWS S3_) et les _serverless messaging services_ (ex: _AWS SQS_, _GCP Pub/Sub_ et _Azure Service Bus_).
-
-En plus d'en faire un argument écologique en n'utilisant les ressources qu'au moment où elles sont demandées, le _serverless_ représente un argument économique de taille. Ces technologies peuvent vous faire passer d'une facture de 50€ à quelques centimes chaque mois.
-
-Néanmoins, les architecture _serverless_ demandent des équipes techniquement plus matures pour les maintenir et peuvent vous lier aux technologies propriétaires d'un fournisseur Cloud (cf. enfermement propriétaire ou _vendor lock-in_[^VendorLockin]). Mais les plus-values en terme de passage à l'échelle et d'économies peuvent dépasser ces contraintes.
-
 ### Messagerie instantanée
 
 Une manière simple mais particulièrement efficace pour rapprocher les silos, est d'instaurer une messagerie instantanée commune. Les collaborateurs peuvent par ce biais échanger rapidement au lieu de surcharger leur boite mail, faire des discussions de groupe sur la prochaine fonctionnalité à développer, s'échanger des bouts de code ou des documents facilement, favoriser la cohésion en partageant des memes, faire des annonces générales ou encore réaliser des sondages pour trancher sur une liste de choix. Au delà de fluidifier la collaboration, la messagerie rend possible le travail en mobilité ou avec des équipes décentralisées (dans d'autres villes ou pays).
@@ -1298,13 +1281,92 @@ Les messageries telles que _Mattermost_, _Element_, _Zulip_ ou _Slack_ intègren
 
 De nombreuses entreprises comme _Scaleway_ ouvrent leurs messagerie d'entreprise à leurs clients. Elles constituent alors une communauté d'entre-aide et une base de connaissance pour les nouveaux utilisateurs. Cela favorise l'engagement et rassure ceux qui n'ont pas encore franchit le pas, en sachant qu'il y aura quelqu'un pour leur répondre en cas de problème. Les utilisateurs se confrontant à un soucis posent leur question, auquel un utilisateur ou un expert de l'entreprise pourra répondre. Chez _Canonical_ et _Prefect_, il existe même des "ingénieurs de la communauté" (_Community Engineers_) dont le rôle est précisément d'aider la communauté face aux problèmes qu'elle peut rencontrer[^PrefectCommunityEngineers]. Certaines entreprises préfèrent faire entièrement payer ce soutien utilisateur.
 
-#### Télétravail (aparté)
+#### Télétravail
 
-Les grandes organisations sont souvent frileuses à l'idée de proposer du télétravail à leurs employés. Le risque selon eux, est que l'employé ne travaille pas sur les sujets de l'entreprise.
+Les grandes organisations sont souvent frileuses à l'idée de proposer du télétravail à leurs employés. Le risque selon elles, est que l'employé ne travaille pas sur les sujets de l'entreprise.
 
 Si vous devez convaincre votre hiérarchie, listez clairement les objectifs de l'employé en télétravail (avec l'aide du [chapitre précédent](#former-de-manière-continue)). Si cela ne suffit pas, vous pouvez par exemple lui proposer que l'employé écrive un compte rendu sur son travail en fin de journée. Mais cela revient à dire au collaborateur "je ne te fais pas confiance sur ton sérieux". Réfléchissez-y à deux fois.
 
 La recherche[^DORAFlexibleWork] a démontré qu'un environnement de travail flexible était associé à une baisse de _burnout_ et une augmentation des chances que l'employé recommande son entreprise.
+
+### Architectures logicielles et agilité
+
+Connaître les différentes architectures logicielles est important pour éviter les décisions techniques engendrant de la dette. En fonction de votre maturité organisationnelle, certaines rendront vos logiciels plus complexes à maintenir, à mettre à jour ou les rendront moins résilients dans la durée.
+
+Ce chapitre présente trois architectures célèbres et décrit leurs avantages et inconvénients. Enfin, nous verrons comment transformer progressivement vos logiciels historiques en microservices.
+
+#### Architecture monolithique et microservices
+
+Une aplication monolithique (conçue comme un monolithe) est développée comme un tout unique et indivisible, où chaque fonction ou module est interconnecté. Les composants du logiciel sont dépendants les uns des autres.
+
+![Illustration d'une architecture monolithique](./images/2023_monoliths_microservices_serverless_monolith.jpg)
+
+Plus simples à développer et utiliser dans un premier temps, les logiciels conçus comme des monolithes rendent complexe l'ajout de nouvelles fonctionnalités à mesure qu'ils grossissent[^AddingFeaturesToMonolithsIsComplex].
+
+Les mises à jour apportées à une partie du système affectent l'ensemble de l'application, ce qui nécessite des batteries de tests importantes pour s'assurer que tout fonctionnera comme attendu au moment du déploiement. Le "rayon d'explosion" d'un bug (ou _blast radius_ en anglais) est très important dans ce type d'architecture.
+
+De nombreux logiciels réputés comme _Wordpress_ et _Magento_ utilisent encore aujourd'hui une architecture monolithique. Mais la tendance se porte vers les architectures en microservices, plus adaptées à la montée en charge et plus résilientes[^MicroservicesResiliency].
+
+Une application conçue en microservices, décompose chaque fonctionnalité d'un logiciel en services isolés (ex: gestion de l'envoi des e-mails, gestion de la connexion, gestion des commandes). Chacun s'exécute de manière indépendante. Chaque microservice communique avec les autres grâce à un format d'échange prédéfini (une _API_).
+
+![Illustration d'une architecture en microservices](./images/2023_monoliths_microservices_serverless_microservices.jpg)
+
+Cette modularité permet la mise à jour en continu des services sans perturber l'ensemble du système. De la même manière, si des bugs ou des crashes se produisent, ils n'affecteront que le microservice affecté; le reste du logiciel continuera de fonctionner.
+
+Mais l'un des grands avantages des microservices est de pouvoir passer à l'échelle simplement : les services les plus sollicités peuvent être instanciés plusieurs fois et simultanément pour répartir la charge. Certains orchestrateurs de services comme Kubernetes permettent d'automatiser ce comportement[^HorizontalPodAutoscaling].
+
+Cependant, cette architecture demande d'utiliser des outils avancés pour maintenir des centaines de microservices communiquant entre eux. Les équipes DevOps facilitent la mise en place de ce type d'architecture. Par exemple, ils outillent les développeurs avec des modèles d'applications (_templates_ / _boilerplates_) embarquant tout ce qu'il faut pour bien démarrer une application en microservices, sur sa propre infrastructure.
+
+#### Architectures sans serveur et fonctions en tant que service
+
+Pour permettre un passage à l'échelle encore plus performant, les architectures dites "sans serveur" (ou _serverless_ en anglais) ont émergé. L'intérêt d'une architecture _serverless_ par rapport aux traditionnelles approches micro-services est multiple :
+
+- Ne plus avoir à gérer l'infrastructure sous-jacente
+- Payer uniquement quand le service est utilisé
+- Provision automatique des ressources en cas de forte affluence
+- Suppression automatique des ressources en cas de perte d'affluence
+
+Lorsqu'une application _serverless_ est instanciée, la plateforme Cloud se charge automatiquement l'attribution des ressources (mémoire, CPU), sans avoir à créer et installer soi-même le serveur, le VPS ou la VM.
+
+On y retrouve des technologies de _Function as a Service_ ou FaaS (ex: _GCP Cloud Functions_, _AWS Lambda_, _Azure Functions_), les technologies de type _Container as a Service_ (CaaS) ou _serverless compute platforms_ à la main des développeurs pour déployer leurs services (ex: _GCP Cloud Run_, _AWS Elastic Beanstalk_, _Azure App Service_), ainsi que des ressources gérées par les hébergeurs Cloud telles que les _serverless databases_ (ex: _AWS DynamoDB_, _GCP Firestore_ ou _Azure Cosmos DB_, _AWS S3_) et les _serverless messaging services_ (ex: _AWS SQS_, _GCP Pub/Sub_ et _Azure Service Bus_).
+
+On ne facturant les ressources que lorsqu'elles sont utilisées, le _serverless_ représente un argument économique et écologique de taille. Ces technologies peuvent vous faire passer d'une facture de cinquante euros à quelques centimes chaque mois.
+
+Les _Functions as a Service_ représentent une fonctionnalité isolée de votre microservice. Si seulement 10% de vos fonctions sont utilisées 90% du temps, inutile de payer pour le reste des ressources qui restent actives.
+
+Par exemple, si vous décidez de lancer une campagne marketing d'emails, c'est précisément votre fonction d'envoi d'emails qui va être sur-sollicitée pendant un court instant. Il n'y a pas besoin pour autant passer à l'échelle la fonction listant vos produits. L'infrastructure ne provisionnera donc des instances que de la fonction d'envoi d'emails.
+
+![Illustration d'une architecture serverless en FaaS](./images/2023_monoliths_microservices_serverless_serverless.jpg)
+
+Néanmoins, les architecture _serverless_ demandent des équipes spécialisées pour les maintenir. Elles peuvent aussi vous lier aux technologies propriétaires d'un fournisseur Cloud (cf. enfermement propriétaire ou _vendor lock-in_[^VendorLockin]). Selon le cas d'usage, les plus-values en terme de passage à l'échelle et d'économies peuvent dépasser ces contraintes.
+
+Récapitulons quelques avantages et inconvénients de chaque approche :
+
+| Architecture  | Avantages  | Inconvénients  |
+| ------------- | ----- | ----- |
+| **Monolithique**    | • Simplicité de développement et de déploiement<br>• Gestion centralisée<br>• Facile à tester et débugger | • Difficile à passer à l'échelle<br>• Une mise à jour affecte tout le logiciel<br>• Déploiements plus lents et moins fréquents |
+| **Microservices** | • Passable à l'échelle sur demande<br>• Déploiements rapides<br>• Bugs et crashes isolés<br>• Agnostique au langage de programmation | • Compétences spécifiques pour les gérer<br>• Cohérence des formats de données à maintenir (API)<br>• Plus difficile à débugger |
+| **FaaS**    | • Pas de gestion de l'infrastructure<br>• Passable à l'échelle ciblé<br>• Rentable pour une affluence sporadique | • Enfermement propriétaire<br>• Moins de contrôle sur l'environnement d'exécution<br>• Temps de démarrage si inutilisé (_cold start_)<br>• Durée d'exécution limitée |
+
+La plupart des avantages et inconvénients des microservices sont transposables aux _FaaS_. Néanmoins et bien qu'elles puissent être rentables sur la durée, il peut être coûteux de les mettre en place. Voilà pourquoi elles sont plus adaptées à cas d'usage précis, par exemple pour le traitement de données massives et sporadiques. N'excluez pas non plus une approche hybride de ces deux architectures.
+
+#### Du monolithe aux microservices
+
+La marche la plus haute à franchir est celle du passage d'un logiciel monolithique à une architecture en microservices. Cette dernière apporte une flexibilité améliorée dans les développements et rend le passage à l'échelle possible face à l'approche monolithique traditionnelle. Mais comment réaliser cette transition ?
+
+Prendre la décision de passer en microservice est tentant mais comme pour toute décision, il y a des compromis à faire. L'ingénieur logiciel et auteur britannique Martin FOWLER nous éclaire sur les pré-requis à considérer[^MicroservicePrerequisites].
+
+La bataille d'Alésia, menée pendant la guerre des Gaules en 52 avant J.-C., est souvent citée comme un exemple de planification militaire stratégique. L'armée romaine de Jules César s'oppose alors à l'armée gauloise de Vercingétorix. Repoussé par les germains, alors alliés des romains, le chef militaire gaulois est contraint de se réfugier avec 80 000 hommes dans l'oppidum d'Alésia. Jules César décide d'ériger deux lignes fortifiées autour de la ville pour déloger l'armée gauloise.
+
+Ce stratagème permettait à Jules César de contrôler les entrées et sorties de la zone, pour maîtriser la quantité de soldats arrivant d'une part de l'oppidum, et d'autre part de l'extérieur où les renforts affluaient.
+
+![Lignes fortifiées romaines autour de l'oppidum d'Alésia. Source: [Julien FABRE](https://drolehistoire.weebly.com/parcours-2--la-conquecircte-de-la-gaule-autonomie.html)](./images/2023_illustration_bataille_alesia.jpg)
+
+Sans avoir à nous considérer comme de grands chefs militaires, nous utiliserons néanmoins cette stratégie pour contrôler d'une part la charge utilisateur, et d'autre part le monolithe que nous allons progressivement découper en microservices.
+
+C'est la première étape de l'aventure : mettre un proxy devant notre application. Il nous permettra de rediriger chaque requête soit vers le monolithe, soit vers un microservice nouvellement créé. Par exemple, si l'on choisit d'extraire les fonctionnalités d'authentification vers un microservice, nous redirigerons les requêtes commençant par `/auth` vers le microservice d'authentification.
+
+Comme 
 
 ## Accepter l'échec
 
@@ -3276,3 +3338,11 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^FlexibleFlowCheatsheet]: [Illustration en pleine résolution](https://links.berwick.fr/flexible-flow) du _Flexible Flow_. _links.berwick.fr/flexible-flow_.
 
 [^VendorLockin]: L'enfermement propriétaire est une situation où un fournisseur a créé une particularité volontairement non-standard dans le logiciel vendu, empêchant son client de l'utiliser avec les produits d'un autre fournisseur. Cela l'empêche également de modifier le logiciel ou d'accéder à ses caractéristiques pour le modifier. [Source](https://fr.wikipedia.org/wiki/Enfermement_propri%C3%A9taire) : _fr.wikipedia.org_.
+
+[^MicroservicesResiliency]: A. B. Raharjo, P. K. Andyartha, W. H. Wijaya, Y. Purwananto, D. Purwitasari and N. Juniarta, "_Reliability Evaluation of Microservices and Monolithic Architectures_". 2022 International Conference on Computer Engineering, Network, and Intelligent Multimedia (CENIM), Surabaya, Indonesia, 2022, pp. 1-7, [doi: _10.1109/CENIM56801.2022.10037281_](https://ieeexplore.ieee.org/abstract/document/10037281).
+
+[^AddingFeaturesToMonolithsIsComplex]: D. Kuryazov, D. Jabborov and B. Khujamuratov, "_Towards Decomposing Monolithic Applications into Microservices_" 2020 IEEE 14th International Conference on Application of Information and Communication Technologies (AICT), Tashkent, Uzbekistan, 2020, pp. 1-4, [doi: _10.1109/AICT50176.2020.9368571_](https://ieeexplore.ieee.org/abstract/document/9368571).
+
+[^HorizontalPodAutoscaling]: La fonctionnalité [_Horizontal Pod Autoscaling_](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) de Kubernetes permet d'automatiquement ajuster le nombre de microservices lancés en fonction de la charge utilisateur.
+
+[^MicroservicePrerequisites]: FOWLER, Martin. [_Microservice prerequisites_](https://martinfowler.com/bliki/MicroservicePrerequisites.html). 2014.
