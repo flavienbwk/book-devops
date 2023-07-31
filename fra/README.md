@@ -465,28 +465,28 @@ Distinguons les intérêts respectifs de ces deux profils :
 | _Catégorie_               | Métiers                                     | Décideurs                                                                                                             |
 | ------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Niveau de détail**      | Informations pratiques détaillées           | Vue d'ensemble                                                                                                        |
-| **Terminologie**          | Jargon métier et outils spécifiques         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit |
+| **Termino-logie**          | Jargon métier et outils spécifiques         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit |
 | **Données et preuves**    | Exemples pratiques, études de cas           | Données, statistiques, impacts                                                                                        |
 | **Objectif**              | Instruire, informer, solliciter des retours | Convaincre, obtenir l'approbation                                                                                     |
-| **Style de présentation** | Interactif, pratique                        | Formel, concis, direct                                                                                                |
+| **Style de présen-tation** | Interactif, pratique                        | Formel, concis, direct                                                                                                |
 
 Prenons l'exemple d'une entreprise dont les employés ont besoin d'acquérir un logiciel de traduction performant. Le fournisseur d'une solution vient la présenter au directeur de l'organisation. Voici les arguments à aborder pour chaque profil :
 
 | _Catégorie_               | Employés                                                                                                     | Directeur                                                                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | **Niveau de détail**      | Comment utiliser l'outil, ses fonctionnalités spécifiques, comment il améliore l'efficacité de la traduction | Vue d'ensemble de l'outil, son rôle et son impact sur l'organisation                                                                     |
-| **Terminologie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances                                         |
+| **Termino-logie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances                                         |
 | **Données et preuves**    | Démonstration de l'outil en action, comparaisons avant/après, études de cas d'amélioration du travail        | Statistiques sur l'amélioration de l'efficacité, réduction du temps de travail, satisfaction des utilisateurs, retour sur investissement |
 | **Objectif**              | Comprendre et utiliser efficacement l'outil, améliorer la qualité et vitesse des traductions                 | Approbation pour acquérir l'outil, compréhension de l'impact positif de l'outil sur l'organisation                                       |
-| **Style de présentation** | Pratique, interactif avec démonstrations et questions/réponses                                               | Formel, concis, direct, axé sur les plus-values organisationnels                                                                         |
+| **Style de présen-tation** | Pratique, interactif avec démonstrations et questions/réponses                                               | Formel, concis, direct, axé sur les plus-values organisationnels                                                                         |
 
-Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre et lui fournir les bons éléments de parole. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti/gouvernement).
+Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre et lui fournir les bons éléments de parole. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti / du gouvernement).
 
 Enfin, vous ne pouvez pas totalement écarter l'hypothèse selon laquelle votre interlocuteur serait en conflit avec d'autres acteurs dans votre organisation. Cela le freinerait à l'idée de prendre certaines décisions d'un intérêt incontestable, dans l'objectif de conserver son statut ou de protéger sa carrière. Dans ce cas-là, tentez de trouver des relais d'influence qui porteront votre vision parmi les décideurs de responsabilités équivalentes ou supérieures. Une fois votre message porté par plusieurs hauts dirigeants, il sera difficile pour le concerné de refuser ce que le reste de l'organisation considère comme essentiel.
 
-En résumé, préparez au moins une présentation métiers et une orientée vers les hauts décideurs. Chaque sujet important de votre transformation devrait idéalement disposer de ces deux présentations, mais veillez au moins à ce que votre présentation de transformation globale soit disponible dans ces deux formats.
+Une communication peu impactante reste souvent le fruit d'un interlocuteur peu ou mal compris par le présentateur, plutôt qu'à un interlocuteur de mauvaise foi. A défaut d'en être certain, partez du principe que le problème n'est pas la personne en face de vous.
 
-Une communication peu impactante est souvent le fruit d'un contexte peu ou mal compris par le présentateur, plutôt qu'à un interlocuteur de mauvaise foi. A défaut d'en être certain, partez du principe que le problème n'est pas la personne en face de vous.
+En résumé, préparez au moins une présentation métiers et une orientée vers les hauts décideurs. Chaque sujet important de votre transformation devrait idéalement disposer de ces deux présentations, mais veillez au moins à ce que votre présentation de transformation globale soit disponible dans ces deux formats.
 
 ## Libérer la parole et dé-siloter l'accès aux données
 
@@ -1291,7 +1291,7 @@ La recherche[^DORAFlexibleWork] a démontré qu'un environnement de travail flex
 
 ### Architectures logicielles et agilité
 
-Connaître les différentes architectures logicielles est important pour éviter les décisions techniques engendrant de la dette. En fonction de votre maturité organisationnelle, certaines rendront vos logiciels plus complexes à maintenir, à mettre à jour ou les rendront moins résilients dans la durée.
+Connaître les différentes architectures logicielles vous aidera à éviter les décisions techniques engendrant rapidement de la dette. En fonction de votre maturité organisationnelle, certaines rendront vos logiciels plus complexes à maintenir, à mettre à jour ou les rendront moins résilients dans la durée.
 
 Ce chapitre présente trois architectures célèbres et décrit leurs avantages et inconvénients. Enfin, nous verrons comment transformer progressivement vos logiciels historiques en microservices.
 
@@ -1352,15 +1352,19 @@ La plupart des avantages et inconvénients des microservices sont transposables 
 
 #### Du monolithe aux microservices
 
-La marche la plus haute à franchir est celle du passage d'un logiciel monolithique à une architecture en microservices. Cette dernière apporte une flexibilité améliorée dans les développements et rend le passage à l'échelle possible face à l'approche monolithique traditionnelle. Mais comment réaliser cette transition progressivement ?
+La marche à franchir pour passer d'un logiciel monolithique à une architecture en microservices est souvent haute. Néanmoins, cette approche apporte une flexibilité sans précédent dans les développements et rend le passage à l'échelle drastiquement plus efficace. Mais comment réaliser cette transition sans chambouler toute votre activité ?
 
-Prendre la décision de passer en microservice est tentant mais comme pour toute décision, des compromis sont à faire. L'ingénieur logiciel et auteur britannique Martin FOWLER nous éclaire sur les pré-requis à détenir[^MicroservicePrerequisites] :
+Prendre la décision de passer en microservice est tentant mais comme pour toute décision, des compromis sont à faire. L'ingénieur logiciel et auteur britannique Martin FOWLER nous éclaire sur les pré-requis dont votre équipe doit disposer[^MicroservicePrerequisites] :
 
 - Être en capacité de rapidement provisionner (cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)")
 - Être en mesure de déployer rapidement (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)")
 - Être outillé pour surveiller ses services (cf. chapitre "[Tout mesurer](#tout-mesurer)")
 
-En sommes, nous parlons ici des techniques et outils DevOps sur un socle Cloud. Ces techniques doivent déjà être en place sur une infrastructure outillée pour faire efficacement la transition et industrialiser ses logiciels. C'est l'étape numéro un.
+En sommes, nous parlons ici des technologies Cloud et des techniques DevOps. A ce stade, vous souhaitez seulement valider le processus de développement et de déploiement automatisé d'un microservice.
+
+Débutez par découpler une fonctionnalité qui n'a pas besoin d'être modifiée partout dans votre logiciel. Par exemple, le mécanisme d'authentification d'une application est souvent centralisé dans une classe ou une fonction : créez et interfacez ce microservice.
+
+1. Constituer un environnement de développement avec des tests automatisés, du déploiement continu et des outils de supervision, pour prendre en main un premier microservice généralisable.
 
 La bataille d'Alésia, menée pendant la guerre des Gaules en 52 avant J.-C., est souvent citée comme un exemple de planification militaire stratégique. L'armée romaine de Jules César s'oppose alors à l'armée gauloise de Vercingétorix. Repoussé par les germains, alors alliés des romains, le chef militaire gaulois est contraint de se réfugier avec 80 000 hommes dans l'oppidum d'Alésia. Jules César décide d'ériger deux lignes fortifiées autour de la ville pour déloger l'armée gauloise.
 
@@ -1368,16 +1372,20 @@ Ce stratagème permettait à Jules César de contrôler les entrées et sorties 
 
 ![Lignes fortifiées romaines autour de l'oppidum d'Alésia. Source: [Julien FABRE](https://drolehistoire.weebly.com/parcours-2--la-conquecircte-de-la-gaule-autonomie.html)](./images/2023_illustration_bataille_alesia.jpg)
 
-Sans avoir à nous considérer comme de grands chefs militaires, nous utiliserons néanmoins cette stratégie pour contrôler d'une part la charge utilisateur, et d'autre part le monolithe que nous allons progressivement découper en microservices.
+Sans nous considérer comme de grands chefs militaires, nous pouvons néanmoins utiliser cette stratégie pour contrôler d'une part la charge utilisateur, et d'autre part les flux vers le monolithe ou les microservices que nous allons progressivement créer.
 
-C'est la seconde étape de l'aventure : mettre un proxy devant notre application. Il nous permettra de rediriger chaque requête soit vers le monolithe, soit vers un microservice nouvellement créé. Par exemple, si l'on choisit d'extraire les fonctionnalités d'authentification vers un microservice, nous redirigerons les requêtes commençant par `/auth` vers le microservice d'authentification.
+C'est la deuxième étape de l'aventure : mettre un proxy ou un _service mesh_ devant notre application (cf. chapitre "[Service mesh](#service-mesh)"). Il nous permettra de rediriger chaque requête soit vers les nouveaux microservices, soit vers le monolithe pour les fonctions qui n'ont pas encore été migrées. Par exemple, si l'on choisit d'extraire les fonctionnalités d'authentification vers un microservice, nous redirigerons les requêtes commençant par `/auth` vers le microservice d'authentification.
+
+2. Mettre un proxy devant notre application pour contrôler les flux "monolithe / microservices"
+
+
+
+
+
+
 
 Une nouvelle règle doit être imposée en parallèle de la transformation que vous opérez : toute nouvelle fonctionnalité doit être développée dans un microservice.
 
-Résumons les étapes :
-
-1. Constituer un environnement de développement et de déploiement avec les outils et pratiques DevOps
-2. Mettre un proxy devant notre application pour contrôler les flux "monolithe / microservices"
 3. Exiger des nouvelles fonctionnalités qu'elles soient développées dans des microservices
 4. 
 
