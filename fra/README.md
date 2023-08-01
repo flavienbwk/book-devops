@@ -66,7 +66,7 @@ Selon la réputée entreprise américaine [Atlassian](https://www.atlassian.com/
 
 Initialement, le DevOps se concentrait sur la manière d'améliorer l'efficacité du développement et du déploiement des logiciels. En 2022, cette méthodologie a évolué et regroupe désormais un nombre bien plus vaste de domaines comme l'administration système, la sécurité ou encore la garantie de qualité système et logicielle. Autour de 2015, la méthodologie DevOps était principalement employée dans les grandes entreprises américaines de la technologie (GAFAM[^GAFAM] et NATU[^NATU]) ou des entreprises employant déjà la [méthodologie agile](#être-au-plus-proche-du-métier). Bien répandue aujourd'hui, des organisations de toute taille l'utilisent partout dans le monde, au sein de tout type de secteur[^GoogleCloudDevopsLeaders] (santé, finances, transports, gouvernements, industrie lourde...) et même si elles ne travaillaient pas encore en mode agile.
 
-Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant en 2007, le gouvernement belge lui avait confié un projet de migration d'un centre de données. Ayant passé un temps considérable à discuter avec les développeurs et les administrateurs systèmes, il aura fait le constat de ce que les ingénieurs Andrew CLAY SHAFER et Lee THOMPSON décriront comme le "mur de la confusion"[^WallofConfusion]. Une métaphore pouvant se résumer par des parties-prenantes qui ne se comprennent pas. La communauté mettait un mot sur un vrai phénomène entravant la communication et la collaboration entre les équipes, ce qui entraîne un manque d'efficacité et des retards. En suivra la rédaction de son livre en 2015 « Le manuel du DevOps : comment créer des organisations technologiques agiles, fiables et sécurisées »[^TheDevopsHandbook]. Patrick y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser les objectifs grâce aux pratiques DevOps.
+Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant en 2007, le gouvernement belge lui avait confié un projet de migration d'un centre de données. Ayant passé un temps considérable à discuter avec les développeurs et les administrateurs systèmes, il aura fait le constat de ce que les ingénieurs Andrew CLAY SHAFER et Lee THOMPSON décriront comme le "mur de la confusion"[^WallofConfusion]. Une métaphore pouvant se résumer par des parties-prenantes qui ne se comprennent pas. La communauté mettait un mot sur un vrai phénomène entravant la communication et la collaboration entre les équipes, ce qui entraîne un manque d'efficacité et des retards. En suivra la rédaction de son livre en 2015 « Le manuel du DevOps : comment créer des organisations technologiques agiles, fiables et sécurisées »[^TheDevopsHandbook]. DEBOIS y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser les objectifs grâce aux pratiques DevOps.
 
 La SRE est une discipline plus ancienne du temps où Ben TREYNOR SLOSS, ingénieur chez Google, fonda en 2003 une équipe de ce nom. Il sera le père fondateur de la SRE et des premières pratiques DevOps.
 
@@ -1291,7 +1291,9 @@ La recherche[^DORAFlexibleWork] a démontré qu'un environnement de travail flex
 
 ### Architectures logicielles et agilité
 
-Connaître les différentes architectures logicielles vous aidera à éviter les décisions techniques engendrant rapidement de la dette. En fonction de votre maturité organisationnelle, certaines rendront vos logiciels plus complexes à maintenir, à mettre à jour ou les rendront moins résilients dans la durée.
+Connaître les différentes architectures logicielles vous aidera à bien comprendre comment les logiciels sont déployés dans les architectures Cloud.
+
+En fonction de votre maturité organisationnelle et de la taille de vos équipes, certaines rendront vos logiciels plus simples à maintenir, à mettre à jour ou plus résilients dans la durée.
 
 Ce chapitre présente trois architectures célèbres et décrit leurs avantages et inconvénients. Enfin, nous verrons comment transformer progressivement vos logiciels historiques en microservices.
 
@@ -1303,42 +1305,40 @@ Une aplication monolithique (conçue comme un monolithe) est développée comme 
 
 Plus simples à développer et utiliser dans un premier temps, les logiciels conçus comme des monolithes rendent complexe l'ajout de nouvelles fonctionnalités à mesure qu'ils grossissent[^AddingFeaturesToMonolithsIsComplex].
 
-Les mises à jour apportées à une partie du système affectent l'ensemble de l'application, ce qui nécessite des batteries de tests importantes pour s'assurer que tout fonctionnera comme attendu au moment du déploiement. Le "rayon d'explosion" d'un bug (ou _blast radius_ en anglais) est très important dans ce type d'architecture.
+Les mises à jour apportées à une partie du système affectent l'ensemble de l'application, ce qui nécessite des batteries de tests importantes pour s'assurer qu'elle fonctionne comme attendu lors du déploiement. Le "rayon d'explosion" d'un bug (_blast radius_ en anglais) est très important dans ce type d'architecture.
 
 De nombreux logiciels réputés comme _Wordpress_ et _Magento_ utilisent encore aujourd'hui une architecture monolithique. Mais la tendance se porte vers les architectures en microservices, plus adaptées à la montée en charge et plus résilientes[^MicroservicesResiliency].
 
-Une application conçue en microservices, décompose chaque fonctionnalité d'un logiciel en services isolés (ex: gestion de l'envoi des e-mails, gestion de la connexion, gestion des commandes). Chacun s'exécute de manière indépendante. Chaque microservice communique avec les autres grâce à un format d'échange prédéfini (une _API_).
+Une application conçue en microservices, décompose chaque fonctionnalité d'un logiciel en services isolés (ex: gestion de l'envoi des e-mails, gestion de la connexion, gestion des commandes). Chacun s'exécute de manière indépendante. Chaque microservice communique avec les autres grâce à un format d'échange prédéfini (une API[^API]) et les mises à jours peuvent être déployées sans perturber l'ensemble du système.
 
 ![Illustration d'une architecture en microservices](./images/2023_monoliths_microservices_serverless_microservices.jpg)
 
-Cette modularité permet la mise à jour en continu des services sans perturber l'ensemble du système. De la même manière, si des bugs ou des crashes se produisent, ils n'affecteront que le microservice affecté; le reste du logiciel continuera de fonctionner.
+En divisant votre logiciels en microservices, vous pouvez paralléliser le travail des équipes sur chaque partie de votre logiciel. Chacune développe et déploie indépendamment.
 
 Mais l'un des grands avantages des microservices est de pouvoir passer à l'échelle simplement : les services les plus sollicités peuvent être instanciés plusieurs fois et simultanément pour répartir la charge. Certains orchestrateurs de services comme Kubernetes permettent d'automatiser ce comportement[^HorizontalPodAutoscaling].
 
-Cependant, cette architecture demande d'utiliser des outils avancés pour maintenir des centaines de microservices communiquant entre eux. Les équipes DevOps facilitent la mise en place de ce type d'architecture. Par exemple, ils outillent les développeurs avec des modèles d'applications (_templates_ / _boilerplates_) embarquant tout ce qu'il faut pour bien démarrer une application en microservices, sur sa propre infrastructure.
+Cependant, cette architecture demande des outils avancés pour maintenir des centaines de microservices communiquant entre eux. Les équipes DevOps facilitent la mise en place de ce type d'architecture. Par exemple, ils outillent les développeurs avec des modèles d'applications (_templates_ / _boilerplates_) embarquant tout ce qu'il faut pour bien démarrer une application en microservices, sur sa propre infrastructure.
 
 #### Architectures sans serveur et fonctions en tant que service
 
-Pour permettre un passage à l'échelle encore plus performant, les architectures dites "sans serveur" (ou _serverless_ en anglais) ont émergé. L'intérêt d'une architecture _serverless_ par rapport aux traditionnelles approches micro-services est multiple :
+Pour permettre un passage à l'échelle fin sur des fonctionnalités isolées, les architectures dites "sans serveur" (ou _serverless_ en anglais) ont émergé. L'intérêt d'une architecture _serverless_ par rapport aux approches traditionnelles en micro-services est multiple :
 
 - Ne plus avoir à gérer l'infrastructure sous-jacente
 - Payer uniquement quand le service est utilisé
-- Provision automatique des ressources en cas de forte affluence
-- Suppression automatique des ressources en cas de perte d'affluence
+- Provisionner automatiquement des ressources en cas de forte affluence
+- Supprimer automatiquement les ressources inutilisées
 
-Lorsqu'une application _serverless_ est instanciée, la plateforme Cloud se charge automatiquement l'attribution des ressources (mémoire, CPU), sans avoir à créer et installer soi-même le serveur, le VPS ou la VM.
-
-On y retrouve des technologies de _Function as a Service_ ou _FaaS_[^TechFaaS], celles de type _Container as a Service_ (CaaS), les _serverless compute platforms_ ou _SCP_[^TechSCP], les services de stockage auto-gérés[^TechDBmanaged] ou encore les services de messagerie auto-gérés[^ManagedQueues].
+On y retrouve des technologies de _Function as a Service_ ou _FaaS_[^TechFaaS], de _Container as a Service_ (CaaS), les _serverless compute platforms_ ou _SCP_[^TechSCP], les services de stockage auto-gérés[^TechDBmanaged] ou encore les services de messagerie auto-gérés[^ManagedQueues].
 
 En ne facturant les ressources que lorsqu'elles sont utilisées, le _serverless_ représente un argument économique et écologique de taille. Ces technologies peuvent vous faire passer d'une facture de dizaines d'euros à quelques centimes chaque mois.
 
-Les _Functions as a Service_ représentent une fonctionnalité isolée de votre microservice. Si seulement 10% de vos fonctions sont utilisées 90% du temps, inutile de payer pour le reste des ressources qui restent actives.
+Par exemple, les _Functions as a Service_ représentent chacune une fonctionnalité isolée de votre microservice. Si vous savez que seulement 10% de vos fonctions sont utilisées 90% du temps, inutile de payer pour 100% des ressources en permanence.
 
-Par exemple, si vous décidez de lancer une campagne marketing d'emails, c'est précisément votre fonction d'envoi d'emails qui va être sur-sollicitée pendant un court instant. Il n'y a pas besoin pour autant passer à l'échelle la fonction listant vos produits. L'infrastructure ne provisionnera donc des instances que de la fonction d'envoi d'emails.
+Prenons un cas précis : vous décidez de démarrer une campagne marketing d'emailing. C'est alors précisément la fonction d'envoi d'emails qui va être sur-sollicitée pendant un court instant. Il n'y a ici pas besoin de passer à l'échelle la fonction qui liste vos produits. L'infrastructure ne provisionnera des instances que de la fonction d'envoi d'emails.
 
 ![Illustration d'une architecture serverless en FaaS](./images/2023_monoliths_microservices_serverless_serverless.jpg)
 
-Néanmoins, les architecture _serverless_ demandent des équipes spécialisées pour les maintenir. Elles peuvent aussi vous lier aux technologies propriétaires d'un fournisseur Cloud (cf. enfermement propriétaire ou _vendor lock-in_[^VendorLockin]). Selon le cas d'usage, les plus-values en terme de passage à l'échelle et d'économies peuvent dépasser ces contraintes.
+Néanmoins, les architecture _serverless_ demandent des compétences spécifiques pour les maintenir. Elles peuvent aussi vous lier aux technologies propriétaires d'un fournisseur Cloud (cf. enfermement propriétaire ou _vendor lock-in_[^VendorLockin]) ou faire exploser les coûts selon le cas d'usage[^AmazonPrimeVideoMonoliths].
 
 Récapitulons quelques avantages et inconvénients de chaque approche :
 
@@ -1346,15 +1346,13 @@ Récapitulons quelques avantages et inconvénients de chaque approche :
 | ------------- | ----- | ----- |
 | **Monolithique**    | • Simplicité de développement et de déploiement<br>• Gestion centralisée<br>• Facile à tester et débugger | • Difficile à passer à l'échelle<br>• Une mise à jour affecte tout le logiciel<br>• Déploiements plus lents et moins fréquents |
 | **Microservices** | • Passable à l'échelle sur demande<br>• Déploiements rapides<br>• Bugs et crashes isolés<br>• Agnostique au langage de programmation | • Compétences spécifiques pour les gérer<br>• Cohérence des formats de données à maintenir (API)<br>• Plus difficile à débugger |
-| **FaaS**    | • Pas de gestion de l'infrastructure<br>• Passable à l'échelle ciblé<br>• Rentable pour une affluence sporadique | • Enfermement propriétaire<br>• Moins de contrôle sur l'environnement d'exécution<br>• Temps de démarrage si inutilisé (_cold start_)<br>• Durée d'exécution limitée |
-
-La plupart des avantages et inconvénients des microservices sont transposables aux _FaaS_. Néanmoins et bien qu'elles puissent être rentables sur la durée, il peut être coûteux de les mettre en place. Voilà pourquoi elles sont plus adaptées à des cas d'usage précis, par exemple pour le traitement de données massives et sporadiques. Les approches hybrides de ces deux architectures peuvent aussi être étudiées.
+| **FaaS**    | • Pas de gestion de l'infrastructure<br>• Passable à l'échelle ciblé<br>• Rentable pour une affluence sporadique | • Enfermement propriétaire<br>• Moins de contrôle sur l'environnement d'exécution<br>• Temps de démarrage si inutilisée (_cold start_)<br>• Durée d'exécution limitée |
 
 #### Du monolithe aux microservices
 
 La marche à franchir pour passer d'un logiciel monolithique à une architecture en microservices est souvent haute. Néanmoins, cette approche apporte une flexibilité sans précédent dans les développements et rend le passage à l'échelle drastiquement plus efficace. Mais comment réaliser cette transition sans chambouler toute votre activité ?
 
-Prendre la décision de passer en microservice est tentant mais comme pour toute décision, des compromis sont à faire. L'ingénieur logiciel et auteur britannique Martin FOWLER nous éclaire sur les pré-requis dont votre équipe doit disposer[^MicroservicePrerequisites] :
+Prendre la décision de passer en microservice est tentant mais implique des compromis. L'ingénieur logiciel et auteur britannique Martin FOWLER nous éclaire sur les pré-requis dont votre équipe doit disposer[^MicroservicePrerequisites] :
 
 - Être en capacité de rapidement provisionner (cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)")
 - Être en mesure de déployer rapidement (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)")
@@ -1362,7 +1360,7 @@ Prendre la décision de passer en microservice est tentant mais comme pour toute
 
 En sommes, nous parlons ici des technologies Cloud et des techniques DevOps. A ce stade, vous souhaitez seulement valider le processus de développement et de déploiement automatisé d'un microservice.
 
-Débutez par découpler une fonctionnalité qui n'a pas besoin d'être modifiée partout dans votre logiciel. Par exemple, le mécanisme d'authentification d'une application est souvent centralisé dans une classe ou une fonction : créez et interfacez ce microservice.
+Pour commencer, découplez une fonctionnalité qui n'a pas besoin d'être modifiée partout dans votre logiciel. Par exemple, le mécanisme d'authentification d'une application est souvent centralisé dans une classe ou une fonction : créez et interfacez ce microservice.
 
 1. Constituer un environnement de développement avec des tests automatisés, du déploiement continu et des outils de supervision, pour prendre en main un premier microservice généralisable.
 
@@ -1376,18 +1374,20 @@ Sans nous considérer comme de grands chefs militaires, nous pouvons néanmoins 
 
 C'est la deuxième étape de l'aventure : mettre un proxy ou un _service mesh_ devant notre application (cf. chapitre "[Service mesh](#service-mesh)"). Il nous permettra de rediriger chaque requête soit vers les nouveaux microservices, soit vers le monolithe pour les fonctions qui n'ont pas encore été migrées. Par exemple, si l'on choisit d'extraire les fonctionnalités d'authentification vers un microservice, nous redirigerons les requêtes commençant par `/auth` vers le microservice d'authentification.
 
-2. Mettre un proxy devant notre application pour contrôler les flux "monolithe / microservices"
+2. Mettre un proxy devant notre application pour contrôler les flux
 
+Une nouvelle règle doit être instaurée en parallèle de la transformation que vous opérez : toute nouvelle fonctionnalité doit être développée dans un microservice.
 
+Ex-directrice des technologies émergentes chez Thoughtworks, l'ingénieure Zhamak DEHGHANI nous offre de précieuses directives dans son article "Comment décomposer un monolithe en microservices[^ZDBreakMonolith]".
 
+{Il est possible d'être rapidement tenté de refaire appel à des fonctions du monolith depuis son microservice. DEHGHANI conseille d'éviter de lier les microservices au cycle de mise en production du monolithe.}
 
+1. Minimiser les dépendances vers le monolithe 
 
+Voilà pourquoi il faut rapidement s'attaquer au coeur du monolithe pour éviter un cercle vicieux de
 
-
-Une nouvelle règle doit être imposée en parallèle de la transformation que vous opérez : toute nouvelle fonctionnalité doit être développée dans un microservice.
-
-3. Exiger des nouvelles fonctionnalités qu'elles soient développées dans des microservices
-4. 
+4. Exiger des nouvelles fonctionnalités qu'elles soient développées dans des microservices
+5. 
 
 ## Accepter l'échec
 
@@ -3375,3 +3375,9 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^TechDBmanaged]: Exemple de technologies de base de données gérées par les hébergeurs Cloud : _AWS DynamoDB_, _GCP Firestore_, _Azure Cosmos DB_, _AWS S3_
 
 [^ManagedQueues]: Exemple de technologies de queues gérées par les hébergeurs Cloud : _AWS SQS_, _GCP Pub/Sub_ et _Azure Service Bus_
+
+[^API]: Une API (_application programming interface_) est un ensemble de règles qui permettent à deux applications de communiquer entre elles.
+
+[^ZDBreakMonolith]: DEHGHANI, Zhamak. [_How to break a Monolith into Microservices_](https://martinfowler.com/articles/break-monolith-into-microservices.html). 2018.
+
+[^AmazonPrimeVideoMonoliths]: Amazon Prime Video. [_Scaling up the Prime Video audio/video monitoring service and reducing costs by 90%_](https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90). 2023.
