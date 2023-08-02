@@ -66,7 +66,7 @@ Selon la réputée entreprise américaine [Atlassian](https://www.atlassian.com/
 
 Initialement, le DevOps se concentrait sur la manière d'améliorer l'efficacité du développement et du déploiement des logiciels. En 2022, cette méthodologie a évolué et regroupe désormais un nombre bien plus vaste de domaines comme l'administration système, la sécurité ou encore la garantie de qualité système et logicielle. Autour de 2015, la méthodologie DevOps était principalement employée dans les grandes entreprises américaines de la technologie (GAFAM[^GAFAM] et NATU[^NATU]) ou des entreprises employant déjà la [méthodologie agile](#être-au-plus-proche-du-métier). Bien répandue aujourd'hui, des organisations de toute taille l'utilisent partout dans le monde, au sein de tout type de secteur[^GoogleCloudDevopsLeaders] (santé, finances, transports, gouvernements, industrie lourde...) et même si elles ne travaillaient pas encore en mode agile.
 
-Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant en 2007, le gouvernement belge lui avait confié un projet de migration d'un centre de données. Ayant passé un temps considérable à discuter avec les développeurs et les administrateurs systèmes, il aura fait le constat de ce que les ingénieurs Andrew CLAY SHAFER et Lee THOMPSON décriront comme le "mur de la confusion"[^WallofConfusion]. Une métaphore pouvant se résumer par des parties-prenantes qui ne se comprennent pas. La communauté mettait un mot sur un vrai phénomène entravant la communication et la collaboration entre les équipes, ce qui entraîne un manque d'efficacité et des retards. En suivra la rédaction de son livre en 2015 « Le manuel du DevOps : comment créer des organisations technologiques agiles, fiables et sécurisées »[^TheDevopsHandbook]. Patrick y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser les objectifs grâce aux pratiques DevOps.
+Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant en 2007, le gouvernement belge lui avait confié un projet de migration d'un centre de données. Ayant passé un temps considérable à discuter avec les développeurs et les administrateurs systèmes, il aura fait le constat de ce que les ingénieurs Andrew CLAY SHAFER et Lee THOMPSON décriront comme le "mur de la confusion"[^WallofConfusion]. Une métaphore pouvant se résumer par des parties-prenantes qui ne se comprennent pas. La communauté mettait un mot sur un vrai phénomène entravant la communication et la collaboration entre les équipes, ce qui entraîne un manque d'efficacité et des retards. En suivra la rédaction de son livre en 2015 « Le manuel du DevOps : comment créer des organisations technologiques agiles, fiables et sécurisées »[^TheDevopsHandbook]. DEBOIS y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser les objectifs grâce aux pratiques DevOps.
 
 La SRE est une discipline plus ancienne du temps où Ben TREYNOR SLOSS, ingénieur chez Google, fonda en 2003 une équipe de ce nom. Il sera le père fondateur de la SRE et des premières pratiques DevOps.
 
@@ -465,28 +465,28 @@ Distinguons les intérêts respectifs de ces deux profils :
 | _Catégorie_               | Métiers                                     | Décideurs                                                                                                             |
 | ------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Niveau de détail**      | Informations pratiques détaillées           | Vue d'ensemble                                                                                                        |
-| **Terminologie**          | Jargon métier et outils spécifiques         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit |
+| **Termino-logie**          | Jargon métier et outils spécifiques         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit |
 | **Données et preuves**    | Exemples pratiques, études de cas           | Données, statistiques, impacts                                                                                        |
 | **Objectif**              | Instruire, informer, solliciter des retours | Convaincre, obtenir l'approbation                                                                                     |
-| **Style de présentation** | Interactif, pratique                        | Formel, concis, direct                                                                                                |
+| **Style de présen-tation** | Interactif, pratique                        | Formel, concis, direct                                                                                                |
 
 Prenons l'exemple d'une entreprise dont les employés ont besoin d'acquérir un logiciel de traduction performant. Le fournisseur d'une solution vient la présenter au directeur de l'organisation. Voici les arguments à aborder pour chaque profil :
 
 | _Catégorie_               | Employés                                                                                                     | Directeur                                                                                                                                |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | **Niveau de détail**      | Comment utiliser l'outil, ses fonctionnalités spécifiques, comment il améliore l'efficacité de la traduction | Vue d'ensemble de l'outil, son rôle et son impact sur l'organisation                                                                     |
-| **Terminologie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances                                         |
+| **Termino-logie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances                                         |
 | **Données et preuves**    | Démonstration de l'outil en action, comparaisons avant/après, études de cas d'amélioration du travail        | Statistiques sur l'amélioration de l'efficacité, réduction du temps de travail, satisfaction des utilisateurs, retour sur investissement |
 | **Objectif**              | Comprendre et utiliser efficacement l'outil, améliorer la qualité et vitesse des traductions                 | Approbation pour acquérir l'outil, compréhension de l'impact positif de l'outil sur l'organisation                                       |
-| **Style de présentation** | Pratique, interactif avec démonstrations et questions/réponses                                               | Formel, concis, direct, axé sur les plus-values organisationnels                                                                         |
+| **Style de présen-tation** | Pratique, interactif avec démonstrations et questions/réponses                                               | Formel, concis, direct, axé sur les plus-values organisationnels                                                                         |
 
-Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre et lui fournir les bons éléments de parole. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti/gouvernement).
+Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre et lui fournir les bons éléments de parole. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti / du gouvernement).
 
 Enfin, vous ne pouvez pas totalement écarter l'hypothèse selon laquelle votre interlocuteur serait en conflit avec d'autres acteurs dans votre organisation. Cela le freinerait à l'idée de prendre certaines décisions d'un intérêt incontestable, dans l'objectif de conserver son statut ou de protéger sa carrière. Dans ce cas-là, tentez de trouver des relais d'influence qui porteront votre vision parmi les décideurs de responsabilités équivalentes ou supérieures. Une fois votre message porté par plusieurs hauts dirigeants, il sera difficile pour le concerné de refuser ce que le reste de l'organisation considère comme essentiel.
 
-En résumé, préparez au moins une présentation métiers et une orientée vers les hauts décideurs. Chaque sujet important de votre transformation devrait idéalement disposer de ces deux présentations, mais veillez au moins à ce que votre présentation de transformation globale soit disponible dans ces deux formats.
+Une communication peu impactante reste souvent le fruit d'un interlocuteur peu ou mal compris par le présentateur, plutôt qu'à un interlocuteur de mauvaise foi. A défaut d'en être certain, partez du principe que le problème n'est pas la personne en face de vous.
 
-Une communication peu impactante est souvent le fruit d'un contexte peu ou mal compris par le présentateur, plutôt qu'à un interlocuteur de mauvaise foi. A défaut d'en être certain, partez du principe que le problème n'est pas la personne en face de vous.
+En résumé, préparez au moins une présentation métiers et une orientée vers les hauts décideurs. Chaque sujet important de votre transformation devrait idéalement disposer de ces deux présentations, mais veillez au moins à ce que votre présentation de transformation globale soit disponible dans ces deux formats.
 
 ## Libérer la parole et dé-siloter l'accès aux données
 
@@ -1271,23 +1271,6 @@ Ces critères - et en particulier le découpage des logiciels en microservices -
 
 Bien qu'elles soient aujourd'hui des pratiques standard dans l'industrie, il peut être utile de les inclure dans un guide pour vos nouveaux arrivants.
 
-#### Serverless computing
-
-Pour permettre un passage à l'échelle encore plus performant, les architectures dites "sans serveur" (_serverless_) ont émergé et commencent à gagner en popularité. L'intérêt d'une architecture _serverless_ par rapport traditionnelles approches micro-services est multiple :
-
-- Ne plus avoir à gérer l'infrastructure sous-jacente
-- Payer uniquement quand le service est utilisé
-- Provision automatique des ressources en cas de forte affluence
-- Suppression automatique des ressources en cas de perte d'affluence
-
-Lorsqu'une application _serverless_ est instanciée, la plateforme Cloud se charge automatiquement l'attribution des ressources (mémoire, CPU), sans avoir à créer et installer soi-même le serveur, le VPS ou la VM.
-
-On y retrouve des technologies du type _Function as a Service_ (ou FaaS, ex: _GCP Cloud Functions_, _AWS Lambda_, _Azure Functions_), les technologies de type _Container as a Service_ (CaaS) ou _serverless compute platforms_ à la main des développeurs pour déployer leurs services (ex: _GCP Cloud Run_, _AWS Elastic Beanstalk_, _Azure App Service_), ainsi que des ressources gérées par les hébergeurs Cloud telles que les _serverless databases_ (ex: _AWS DynamoDB_, _GCP Firestore_ ou _Azure Cosmos DB_, _AWS S3_) et les _serverless messaging services_ (ex: _AWS SQS_, _GCP Pub/Sub_ et _Azure Service Bus_).
-
-En plus d'en faire un argument écologique en n'utilisant les ressources qu'au moment où elles sont demandées, le _serverless_ représente un argument économique de taille. Ces technologies peuvent vous faire passer d'une facture de 50€ à quelques centimes chaque mois.
-
-Néanmoins, les architecture _serverless_ demandent des équipes techniquement plus matures pour les maintenir et peuvent vous lier aux technologies propriétaires d'un fournisseur Cloud (cf. enfermement propriétaire ou _vendor lock-in_[^VendorLockin]). Mais les plus-values en terme de passage à l'échelle et d'économies peuvent dépasser ces contraintes.
-
 ### Messagerie instantanée
 
 Une manière simple mais particulièrement efficace pour rapprocher les silos, est d'instaurer une messagerie instantanée commune. Les collaborateurs peuvent par ce biais échanger rapidement au lieu de surcharger leur boite mail, faire des discussions de groupe sur la prochaine fonctionnalité à développer, s'échanger des bouts de code ou des documents facilement, favoriser la cohésion en partageant des memes, faire des annonces générales ou encore réaliser des sondages pour trancher sur une liste de choix. Au delà de fluidifier la collaboration, la messagerie rend possible le travail en mobilité ou avec des équipes décentralisées (dans d'autres villes ou pays).
@@ -1298,13 +1281,130 @@ Les messageries telles que _Mattermost_, _Element_, _Zulip_ ou _Slack_ intègren
 
 De nombreuses entreprises comme _Scaleway_ ouvrent leurs messagerie d'entreprise à leurs clients. Elles constituent alors une communauté d'entre-aide et une base de connaissance pour les nouveaux utilisateurs. Cela favorise l'engagement et rassure ceux qui n'ont pas encore franchit le pas, en sachant qu'il y aura quelqu'un pour leur répondre en cas de problème. Les utilisateurs se confrontant à un soucis posent leur question, auquel un utilisateur ou un expert de l'entreprise pourra répondre. Chez _Canonical_ et _Prefect_, il existe même des "ingénieurs de la communauté" (_Community Engineers_) dont le rôle est précisément d'aider la communauté face aux problèmes qu'elle peut rencontrer[^PrefectCommunityEngineers]. Certaines entreprises préfèrent faire entièrement payer ce soutien utilisateur.
 
-#### Télétravail (aparté)
+#### Télétravail
 
-Les grandes organisations sont souvent frileuses à l'idée de proposer du télétravail à leurs employés. Le risque selon eux, est que l'employé ne travaille pas sur les sujets de l'entreprise.
+Les grandes organisations sont souvent frileuses à l'idée de proposer du télétravail à leurs employés. Le risque selon elles, est que l'employé ne travaille pas sur les sujets de l'entreprise.
 
 Si vous devez convaincre votre hiérarchie, listez clairement les objectifs de l'employé en télétravail (avec l'aide du [chapitre précédent](#former-de-manière-continue)). Si cela ne suffit pas, vous pouvez par exemple lui proposer que l'employé écrive un compte rendu sur son travail en fin de journée. Mais cela revient à dire au collaborateur "je ne te fais pas confiance sur ton sérieux". Réfléchissez-y à deux fois.
 
 La recherche[^DORAFlexibleWork] a démontré qu'un environnement de travail flexible était associé à une baisse de _burnout_ et une augmentation des chances que l'employé recommande son entreprise.
+
+### Architectures logicielles et agilité
+
+Connaître les différentes architectures logicielles vous aidera à bien comprendre comment les logiciels sont déployés dans les architectures Cloud.
+
+En fonction de votre maturité organisationnelle et de la taille de vos équipes, certaines rendront vos logiciels plus simples à maintenir, à mettre à jour ou plus résilients dans la durée.
+
+Ce chapitre présente trois architectures célèbres et décrit leurs avantages et inconvénients. Enfin, nous verrons comment transformer progressivement vos logiciels historiques en microservices.
+
+#### Architecture monolithique et microservices
+
+Une aplication monolithique (conçue comme un monolithe) est développée comme un tout unique et indivisible, où chaque fonction ou module est interconnecté. Les composants du logiciel sont dépendants les uns des autres.
+
+![Illustration d'une architecture monolithique](./images/2023_monoliths_microservices_serverless_monolith.jpg)
+
+Plus simples à développer et utiliser dans un premier temps, les logiciels conçus comme des monolithes rendent complexe l'ajout de nouvelles fonctionnalités à mesure qu'ils grossissent[^AddingFeaturesToMonolithsIsComplex].
+
+Les mises à jour apportées à une partie du système affectent l'ensemble de l'application, ce qui nécessite des batteries de tests importantes pour s'assurer qu'elle fonctionne comme attendu lors du déploiement. Le "rayon d'explosion" d'un bug (_blast radius_ en anglais) est très important dans ce type d'architecture.
+
+De nombreux logiciels réputés comme _Wordpress_ et _Magento_ utilisent encore aujourd'hui une architecture monolithique. Mais la tendance se porte vers les architectures en microservices, plus adaptées à la montée en charge et plus résilientes[^MicroservicesResiliency].
+
+Une application conçue en microservices, décompose chaque fonctionnalité d'un logiciel en services isolés (ex: gestion de l'envoi des e-mails, gestion de la connexion, gestion des commandes). Chacun s'exécute de manière indépendante. Chaque microservice communique avec les autres grâce à un format d'échange prédéfini (une API[^API]) et les mises à jours peuvent être déployées sans perturber l'ensemble du système.
+
+![Illustration d'une architecture en microservices](./images/2023_monoliths_microservices_serverless_microservices.jpg)
+
+En divisant votre logiciels en microservices, vous pouvez paralléliser le travail des équipes sur chaque partie de votre logiciel. Chacune développe et déploie indépendamment.
+
+Mais l'un des grands avantages des microservices est de pouvoir passer à l'échelle simplement : les services les plus sollicités peuvent être instanciés plusieurs fois et simultanément pour répartir la charge. Certains orchestrateurs de services comme Kubernetes permettent d'automatiser ce comportement[^HorizontalPodAutoscaling].
+
+Cependant, cette architecture demande des outils avancés pour maintenir des centaines de microservices communiquant entre eux. Les équipes DevOps facilitent la mise en place de ce type d'architecture. Par exemple, ils outillent les développeurs avec des modèles d'applications (_templates_ / _boilerplates_) embarquant tout ce qu'il faut pour bien démarrer une application en microservices, sur sa propre infrastructure.
+
+#### Architectures sans serveur et fonctions en tant que service
+
+Pour permettre un passage à l'échelle fin sur des fonctionnalités isolées, les architectures dites "sans serveur" (ou _serverless_ en anglais) ont émergé. L'intérêt d'une architecture _serverless_ par rapport aux approches traditionnelles en micro-services est multiple :
+
+- Ne plus avoir à gérer l'infrastructure sous-jacente
+- Payer uniquement quand le service est utilisé
+- Provisionner automatiquement des ressources en cas de forte affluence
+- Supprimer automatiquement les ressources inutilisées
+
+On y retrouve des technologies de _Function as a Service_ ou _FaaS_[^TechFaaS], de _Container as a Service_ (CaaS), les _serverless compute platforms_ ou _SCP_[^TechSCP], les services de stockage auto-gérés[^TechDBmanaged] ou encore les services de messagerie auto-gérés[^ManagedQueues].
+
+En ne facturant les ressources que lorsqu'elles sont utilisées, le _serverless_ représente un argument économique et écologique de taille. Ces technologies peuvent vous faire passer d'une facture de dizaines d'euros à quelques centimes chaque mois.
+
+Par exemple, les _Functions as a Service_ représentent chacune une fonctionnalité isolée de votre microservice. Si vous savez que seulement 10% de vos fonctions sont utilisées 90% du temps, inutile de payer pour 100% des ressources en permanence.
+
+Prenons un cas précis : vous décidez de démarrer une campagne marketing d'emailing. C'est alors précisément la fonction d'envoi d'emails qui va être sur-sollicitée pendant un court instant. Il n'y a ici pas besoin de passer à l'échelle la fonction qui liste vos produits. L'infrastructure ne provisionnera des instances que de la fonction d'envoi d'emails.
+
+![Illustration d'une architecture serverless en FaaS](./images/2023_monoliths_microservices_serverless_serverless.jpg)
+
+Néanmoins, les architecture _serverless_ demandent des compétences spécifiques pour les maintenir. Elles peuvent aussi vous lier aux technologies propriétaires d'un fournisseur Cloud (cf. enfermement propriétaire ou _vendor lock-in_[^VendorLockin]) ou faire exploser les coûts si le cas d'usage n'est pas approprié[^AmazonPrimeVideoMonoliths].
+
+Récapitulons quelques avantages et inconvénients de chaque approche :
+
+| Architecture  | Avantages  | Inconvénients  |
+| ------------- | ----- | ----- |
+| **Monolithique**    | • Simplicité de développement et de déploiement<br>• Gestion centralisée<br>• Facile à tester et débugger | • Difficile à passer à l'échelle<br>• Une mise à jour affecte tout le logiciel<br>• Déploiements plus lents et moins fréquents |
+| **Microservices** | • Passable à l'échelle sur demande<br>• Déploiements rapides<br>• Bugs et crashes isolés<br>• Agnostique au langage de programmation | • Compétences spécifiques pour les gérer<br>• Cohérence des formats de données à maintenir (API)<br>• Plus difficile à débugger |
+| **FaaS**    | • Pas de gestion de l'infrastructure<br>• Passable à l'échelle ciblé<br>• Rentable pour une affluence sporadique | • Enfermement propriétaire<br>• Moins de contrôle sur l'environnement d'exécution<br>• Temps de démarrage si inutilisée (_cold start_)<br>• Durée d'exécution limitée |
+
+#### Du monolithe aux microservices
+
+La marche à franchir est souvent haute pour passer d'un logiciel monolithique à une architecture en microservices. Néanmoins, cette approche apporte une flexibilité sans précédent dans les développements et rend le passage à l'échelle drastiquement plus efficace. Mais comment réaliser cette transition sans chambouler toute votre activité ?
+
+Prendre la décision de passer en microservice est tentant mais implique des compromis. L'ingénieur logiciel et auteur britannique Martin FOWLER nous éclaire sur les pré-requis dont votre équipe doit disposer avant de démarrer l'aventure[^MicroservicePrerequisites] :
+
+- Être en capacité de rapidement provisionner des machines (cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)")
+- Être en mesure de déployer rapidement (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)")
+- Être outillé pour surveiller ses services (cf. chapitre "[Tout mesurer](#tout-mesurer)")
+
+En sommes, nous parlons ici des technologies Cloud et des techniques DevOps. A ce stade, vous souhaitez seulement valider le processus de développement d'un microservice et savoir le déployer automatiquement.
+
+Pour vous entraîner à créer des microservices, découplez une première fonctionnalité qui n'a pas besoin d'être modifiée partout dans votre logiciel. Par exemple, le mécanisme d'authentification d'une application est souvent centralisé dans une classe ou une fonction : créez et interfacez ce microservice.
+
+<!-- markdownlint-disable MD029 -->
+1. Constituer un environnement de développement avec des tests automatisés, du déploiement continu et des outils de supervision, pour prendre en main un premier microservice généralisable.
+<!-- markdownlint-enable MD029 -->
+
+La bataille d'Alésia, menée pendant la guerre des Gaules en 52 avant J.-C., est souvent citée comme un exemple de planification militaire stratégique. L'armée romaine de Jules César s'oppose alors à l'armée gauloise de Vercingétorix. Repoussé par les germains - alliés des romains - le chef militaire gaulois est contraint de se réfugier avec 80 000 hommes dans l'oppidum d'Alésia. Jules César décide d'ériger deux lignes fortifiées autour de la ville pour déloger l'armée gauloise.
+
+Ce stratagème permettait à Jules César de contrôler les entrées et sorties de la zone, pour maîtriser la quantité de soldats arrivant d'une part de l'oppidum, et d'autre part de l'extérieur où les renforts affluaient.
+
+![Lignes fortifiées romaines autour de l'oppidum d'Alésia. Source: [Julien FABRE](https://drolehistoire.weebly.com/parcours-2--la-conquecircte-de-la-gaule-autonomie.html)](./images/2023_illustration_bataille_alesia.jpg)
+
+Sans nous considérer comme de grands chefs militaires, nous pouvons néanmoins utiliser cette stratégie pour contrôler d'une part la charge utilisateur, et d'autre part les flux soit vers le monolithe, soit vers les microservices que nous allons progressivement créer.
+
+C'est la deuxième étape de l'aventure : mettre un proxy ou un _service mesh_ autour de notre application (cf. chapitre "[Service mesh](#service-mesh)"). Il nous permettra de rediriger chaque requête soit vers les nouveaux microservices, soit vers le monolithe pour les fonctions qui n'ont pas encore été migrées. Par exemple, si l'on choisit d'extraire les fonctionnalités d'authentification vers un microservice, nous redirigerons les requêtes commençant par `/auth` vers le microservice d'authentification.
+
+<!-- markdownlint-disable MD029 -->
+2. Mettre un proxy autour de notre application pour contrôler les flux.
+<!-- markdownlint-enable MD029 -->
+
+Une nouvelle règle doit désormais être instaurée en parallèle de la transformation que vous opérez : toute nouvelle fonctionnalité doit être développée sous forme d'un microservice.
+
+Ex-directrice des technologies émergentes chez Thoughtworks, l'ingénieure Zhamak DEHGHANI nous offre de précieux retours d'expérience dans son article "Comment décomposer un monolithe en microservices[^ZDBreakMonolith]". Passons-en quelques-uns en revue.
+
+L'un de ses premiers conseils est d'éviter la création de microservices qui vont rappeler le monolithe. Il faut au contraire privilégier les appels du monolithe vers les microservices.
+
+<!-- markdownlint-disable MD029 -->
+3. Minimiser les rappels au monolithe.
+<!-- markdownlint-enable MD029 -->
+
+L'objectif est d'éviter un cercle vicieux de modifications qui ne vont qu'enrichir le monolithe. Voilà pourquoi il faut rapidement s'attaquer au coeur du logiciel. Commencez par en découper les fonctions les plus intégrées et qui traitent les données principales de votre projet.
+
+Priorisez le découpage des fonctions difficiles à découpler par domaine logique (ex: la gestion des produits puis celle des commandes). Puis concentrez-vous sur les parties du logiciels les plus fréquemment mises à jour.
+
+<!-- markdownlint-disable MD029 -->
+4. Découper le logiciel par domaine logique et prioriser les fonctions les plus complexes au début.
+<!-- markdownlint-enable MD029 -->
+
+Enfin, envisagez la réécriture complète d'une partie du code. Parfois, le code historique est trop complexe, trop lent, trop différent de la stack technique actuellement utilisée et nécessite une bonne mise à jour. Il convient alors de réfléchir s'il n'est pas préférable de le réécrire. N'hésitez pas, surtout s'il manque de clarté.
+
+<!-- markdownlint-disable MD029 -->
+5. Envisager de réécrire les capacités plutôt que d'extraire le code pour le réutiliser.
+<!-- markdownlint-enable MD029 -->
+
+Ces quelques notions et conseils vous permettront d'appréhender avec sérénité vos travaux de réécriture de votre logiciel pour mieux l'intégrer dans une infrastructure Cloud et bénéficier de l'agilité qu'elle procure pour votre organisation.
 
 ## Accepter l'échec
 
@@ -3276,3 +3376,25 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^FlexibleFlowCheatsheet]: [Illustration en pleine résolution](https://links.berwick.fr/flexible-flow) du _Flexible Flow_. _links.berwick.fr/flexible-flow_.
 
 [^VendorLockin]: L'enfermement propriétaire est une situation où un fournisseur a créé une particularité volontairement non-standard dans le logiciel vendu, empêchant son client de l'utiliser avec les produits d'un autre fournisseur. Cela l'empêche également de modifier le logiciel ou d'accéder à ses caractéristiques pour le modifier. [Source](https://fr.wikipedia.org/wiki/Enfermement_propri%C3%A9taire) : _fr.wikipedia.org_.
+
+[^MicroservicesResiliency]: A. B. Raharjo, P. K. Andyartha, W. H. Wijaya, Y. Purwananto, D. Purwitasari and N. Juniarta, "_Reliability Evaluation of Microservices and Monolithic Architectures_". 2022 International Conference on Computer Engineering, Network, and Intelligent Multimedia (CENIM), Surabaya, Indonesia, 2022, pp. 1-7, [doi: _10.1109/CENIM56801.2022.10037281_](https://ieeexplore.ieee.org/abstract/document/10037281).
+
+[^AddingFeaturesToMonolithsIsComplex]: D. Kuryazov, D. Jabborov and B. Khujamuratov, "_Towards Decomposing Monolithic Applications into Microservices_" 2020 IEEE 14th International Conference on Application of Information and Communication Technologies (AICT), Tashkent, Uzbekistan, 2020, pp. 1-4, [doi: _10.1109/AICT50176.2020.9368571_](https://ieeexplore.ieee.org/abstract/document/9368571).
+
+[^HorizontalPodAutoscaling]: La fonctionnalité [_Horizontal Pod Autoscaling_](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) de Kubernetes permet d'automatiquement ajuster le nombre de microservices lancés en fonction de la charge utilisateur.
+
+[^MicroservicePrerequisites]: FOWLER, Martin. [_Microservice prerequisites_](https://martinfowler.com/bliki/MicroservicePrerequisites.html). 2014.
+
+[^TechFaaS]: Exemples de technologies FaaS : _GCP Cloud Functions_, _AWS Lambda_, _Azure Functions_.
+
+[^TechSCP]: Exemple de technologies de calcul sans serveur : _GCP Cloud Run_, _AWS Elastic Beanstalk_, _Azure App Service_
+
+[^TechDBmanaged]: Exemple de technologies de base de données gérées par les hébergeurs Cloud : _AWS DynamoDB_, _GCP Firestore_, _Azure Cosmos DB_, _AWS S3_
+
+[^ManagedQueues]: Exemple de technologies de queues gérées par les hébergeurs Cloud : _AWS SQS_, _GCP Pub/Sub_ et _Azure Service Bus_
+
+[^API]: Une API (_application programming interface_) est un ensemble de règles qui permettent à deux applications de communiquer entre elles.
+
+[^ZDBreakMonolith]: DEHGHANI, Zhamak. [_How to break a Monolith into Microservices_](https://martinfowler.com/articles/break-monolith-into-microservices.html). 2018.
+
+[^AmazonPrimeVideoMonoliths]: Amazon Prime Video. [_Scaling up the Prime Video audio/video monitoring service and reducing costs by 90%_](https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90). 2023.
