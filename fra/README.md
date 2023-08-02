@@ -1338,7 +1338,7 @@ Prenons un cas précis : vous décidez de démarrer une campagne marketing d'ema
 
 ![Illustration d'une architecture serverless en FaaS](./images/2023_monoliths_microservices_serverless_serverless.jpg)
 
-Néanmoins, les architecture _serverless_ demandent des compétences spécifiques pour les maintenir. Elles peuvent aussi vous lier aux technologies propriétaires d'un fournisseur Cloud (cf. enfermement propriétaire ou _vendor lock-in_[^VendorLockin]) ou faire exploser les coûts selon le cas d'usage[^AmazonPrimeVideoMonoliths].
+Néanmoins, les architecture _serverless_ demandent des compétences spécifiques pour les maintenir. Elles peuvent aussi vous lier aux technologies propriétaires d'un fournisseur Cloud (cf. enfermement propriétaire ou _vendor lock-in_[^VendorLockin]) ou faire exploser les coûts si le cas d'usage n'est pas approprié[^AmazonPrimeVideoMonoliths].
 
 Récapitulons quelques avantages et inconvénients de chaque approche :
 
@@ -1350,44 +1350,51 @@ Récapitulons quelques avantages et inconvénients de chaque approche :
 
 #### Du monolithe aux microservices
 
-La marche à franchir pour passer d'un logiciel monolithique à une architecture en microservices est souvent haute. Néanmoins, cette approche apporte une flexibilité sans précédent dans les développements et rend le passage à l'échelle drastiquement plus efficace. Mais comment réaliser cette transition sans chambouler toute votre activité ?
+La marche à franchir est souvent haute pour passer d'un logiciel monolithique à une architecture en microservices. Néanmoins, cette approche apporte une flexibilité sans précédent dans les développements et rend le passage à l'échelle drastiquement plus efficace. Mais comment réaliser cette transition sans chambouler toute votre activité ?
 
-Prendre la décision de passer en microservice est tentant mais implique des compromis. L'ingénieur logiciel et auteur britannique Martin FOWLER nous éclaire sur les pré-requis dont votre équipe doit disposer[^MicroservicePrerequisites] :
+Prendre la décision de passer en microservice est tentant mais implique des compromis. L'ingénieur logiciel et auteur britannique Martin FOWLER nous éclaire sur les pré-requis dont votre équipe doit disposer avant de démarrer l'aventure[^MicroservicePrerequisites] :
 
-- Être en capacité de rapidement provisionner (cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)")
+- Être en capacité de rapidement provisionner des machines (cf. chapitre "[Un socle au service de votre résilience](#un-socle-au-service-de-votre-résilience)")
 - Être en mesure de déployer rapidement (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)")
 - Être outillé pour surveiller ses services (cf. chapitre "[Tout mesurer](#tout-mesurer)")
 
-En sommes, nous parlons ici des technologies Cloud et des techniques DevOps. A ce stade, vous souhaitez seulement valider le processus de développement et de déploiement automatisé d'un microservice.
+En sommes, nous parlons ici des technologies Cloud et des techniques DevOps. A ce stade, vous souhaitez seulement valider le processus de développement d'un microservice et savoir le déployer automatiquement.
 
-Pour commencer, découplez une fonctionnalité qui n'a pas besoin d'être modifiée partout dans votre logiciel. Par exemple, le mécanisme d'authentification d'une application est souvent centralisé dans une classe ou une fonction : créez et interfacez ce microservice.
+Pour vous entraîner à créer des microservices, découplez une première fonctionnalité qui n'a pas besoin d'être modifiée partout dans votre logiciel. Par exemple, le mécanisme d'authentification d'une application est souvent centralisé dans une classe ou une fonction : créez et interfacez ce microservice.
 
 1. Constituer un environnement de développement avec des tests automatisés, du déploiement continu et des outils de supervision, pour prendre en main un premier microservice généralisable.
 
-La bataille d'Alésia, menée pendant la guerre des Gaules en 52 avant J.-C., est souvent citée comme un exemple de planification militaire stratégique. L'armée romaine de Jules César s'oppose alors à l'armée gauloise de Vercingétorix. Repoussé par les germains, alors alliés des romains, le chef militaire gaulois est contraint de se réfugier avec 80 000 hommes dans l'oppidum d'Alésia. Jules César décide d'ériger deux lignes fortifiées autour de la ville pour déloger l'armée gauloise.
+La bataille d'Alésia, menée pendant la guerre des Gaules en 52 avant J.-C., est souvent citée comme un exemple de planification militaire stratégique. L'armée romaine de Jules César s'oppose alors à l'armée gauloise de Vercingétorix. Repoussé par les germains - alliés des romains - le chef militaire gaulois est contraint de se réfugier avec 80 000 hommes dans l'oppidum d'Alésia. Jules César décide d'ériger deux lignes fortifiées autour de la ville pour déloger l'armée gauloise.
 
 Ce stratagème permettait à Jules César de contrôler les entrées et sorties de la zone, pour maîtriser la quantité de soldats arrivant d'une part de l'oppidum, et d'autre part de l'extérieur où les renforts affluaient.
 
 ![Lignes fortifiées romaines autour de l'oppidum d'Alésia. Source: [Julien FABRE](https://drolehistoire.weebly.com/parcours-2--la-conquecircte-de-la-gaule-autonomie.html)](./images/2023_illustration_bataille_alesia.jpg)
 
-Sans nous considérer comme de grands chefs militaires, nous pouvons néanmoins utiliser cette stratégie pour contrôler d'une part la charge utilisateur, et d'autre part les flux vers le monolithe ou les microservices que nous allons progressivement créer.
+Sans nous considérer comme de grands chefs militaires, nous pouvons néanmoins utiliser cette stratégie pour contrôler d'une part la charge utilisateur, et d'autre part les flux soit vers le monolithe, soit vers les microservices que nous allons progressivement créer.
 
-C'est la deuxième étape de l'aventure : mettre un proxy ou un _service mesh_ devant notre application (cf. chapitre "[Service mesh](#service-mesh)"). Il nous permettra de rediriger chaque requête soit vers les nouveaux microservices, soit vers le monolithe pour les fonctions qui n'ont pas encore été migrées. Par exemple, si l'on choisit d'extraire les fonctionnalités d'authentification vers un microservice, nous redirigerons les requêtes commençant par `/auth` vers le microservice d'authentification.
+C'est la deuxième étape de l'aventure : mettre un proxy ou un _service mesh_ autour de notre application (cf. chapitre "[Service mesh](#service-mesh)"). Il nous permettra de rediriger chaque requête soit vers les nouveaux microservices, soit vers le monolithe pour les fonctions qui n'ont pas encore été migrées. Par exemple, si l'on choisit d'extraire les fonctionnalités d'authentification vers un microservice, nous redirigerons les requêtes commençant par `/auth` vers le microservice d'authentification.
 
-2. Mettre un proxy devant notre application pour contrôler les flux
+2. Mettre un proxy autour de notre application pour contrôler les flux
 
-Une nouvelle règle doit être instaurée en parallèle de la transformation que vous opérez : toute nouvelle fonctionnalité doit être développée dans un microservice.
+Une nouvelle règle doit désormais être instaurée en parallèle de la transformation que vous opérez : toute nouvelle fonctionnalité doit être développée sous forme d'un microservice.
 
-Ex-directrice des technologies émergentes chez Thoughtworks, l'ingénieure Zhamak DEHGHANI nous offre de précieuses directives dans son article "Comment décomposer un monolithe en microservices[^ZDBreakMonolith]".
+Ex-directrice des technologies émergentes chez Thoughtworks, l'ingénieure Zhamak DEHGHANI nous offre de précieux retours d'expérience dans son article "Comment décomposer un monolithe en microservices[^ZDBreakMonolith]". Passons-en quelques-uns en revue.
 
-{Il est possible d'être rapidement tenté de refaire appel à des fonctions du monolith depuis son microservice. DEHGHANI conseille d'éviter de lier les microservices au cycle de mise en production du monolithe.}
+L'un de ses premiers conseils est d'éviter la création de microservices qui vont rappeler le monolithe. Il faut au contraire privilégier les appels du monolithe vers les microservices.
 
-1. Minimiser les dépendances vers le monolithe 
+3. Minimiser les appels vers le monolithe
 
-Voilà pourquoi il faut rapidement s'attaquer au coeur du monolithe pour éviter un cercle vicieux de
+L'objectif est d'éviter un cercle vicieux de modifications qui ne vont qu'enrichir le monolithe. Voilà pourquoi il faut rapidement s'attaquer au coeur du logiciel. Commencez par en découper les fonctions les plus intégrées et qui traitent les données principales de votre projet.
 
-4. Exiger des nouvelles fonctionnalités qu'elles soient développées dans des microservices
-5. 
+Priorisez le découpage des fonctions difficiles à découpler par domaine logique (ex: la gestion des produits puis celle des commandes). Puis concentrez-vous sur les parties du logiciels les plus fréquemment mises à jour.
+
+4. Découper le logiciel par domaine logique et prioriser les fonctions les plus complexes au début
+
+Enfin, envisagez la réécriture complète d'une partie du code. Parfois, le code historique est trop complexe, trop lent, trop différent de la stack technique actuellement utilisée et nécessite une bonne mise à jour. Il convient alors de réfléchir s'il n'est pas préférable de le réécrire. N'hésitez pas, surtout s'il manque de clarté.
+
+5. Envisager de réécrire les capacités plutôt que d'extraire le code pour le réutiliser
+
+Ces quelques notions et conseils vous permettront d'appréhender avec sérénité vos travaux de réécriture de votre logiciel pour mieux l'intégrer dans une infrastructure Cloud et bénéficier de l'agilité qu'elle procure pour votre organisation.
 
 ## Accepter l'échec
 
