@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - develop
+      - f/check-latex-refs
   pull_request:
     branches:
       - develop
@@ -66,10 +67,10 @@ jobs:
           sed -i -E "s/date: Undefined/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
           cd ./fra && make pdf
 
-      - uses: actions/upload-artifact@v2
-        with:
-          name: book-${{ env.BOOK_VERSION }}
-          path: ./fra/build/pdf/book.pdf
+      #- uses: actions/upload-artifact@v2
+      #  with:
+      #    name: book-${{ env.BOOK_VERSION }}
+      #    path: ./fra/build/pdf/book.pdf
 
 
   # Pictures in the book may be referenced at some place in the text.
