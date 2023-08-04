@@ -617,7 +617,7 @@ L'objectif reste de savoir si une librairie utilisée est vulnérable, pour la m
 
 Un outil léger d'analyse comme [_OSV-Scanner_](https://github.com/google/osv-scanner) pourra s'intégrer facilement à vos chaînes d'intégration continue et fournir un premier niveau de protection. Néanmoins, il ne permettra pas d'avoir une vue d'ensemble sur tous les logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_ (fig. <spanc/>\ref{fig:2023_dependency_track}), [_Faraday_](https://github.com/infobyte/faraday) ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ sont alors nécessaires. Ils peuvent ingérer plusieurs fichiers SBOM et afficher une vue d'ensemble des menaces pour alerter les ingénieurs si besoin.
 
-![Tableau de bord Dependency Track listant des vulnérabilités trouvées dans un ensemble de logiciels.\label{fig:2023_dependency_track](./images/2023_dependency_track.png)
+![Tableau de bord Dependency Track listant des vulnérabilités trouvées dans un ensemble de logiciels.\label{fig:2023_dependency_track}](./images/2023_dependency_track.png)
 
 Des logiciels comme [_Renovate_](https://github.com/renovatebot/renovate) ou [_GitHub Dependabot_](https://github.com/dependabot) permettent de détecter les dépendances comportant des vulnérabilités, et d'automatiquement proposer une mise à jour dans la forge logicielle en ouvrant une _merge request_ (cf. chapitre "[Revues de code](#revues-de-code)").
 
@@ -699,7 +699,7 @@ Le SLSA est né des pratiques internes de Google. L'entreprise a développé des
 
 En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente et que ces artéfacts sont un vecteur privilégié de menace (fig. <spanc/>\ref{fig:slsa-supply-chain-threats}).
 
-![Étapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).\ref{fig:slsa-supply-chain-threats}](./images/slsa-supply-chain-threats.jpg)
+![Étapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).\label{fig:slsa-supply-chain-threats}](./images/slsa-supply-chain-threats.jpg)
 
 Ses règles tournent autour de la vérification automatique de l'intégrité des données manipulées. Quelques exemples des vulnérabilités auxquelles le SLSA répond :
 
