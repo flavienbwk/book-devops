@@ -426,23 +426,23 @@ Dans de nombreuses organisations, on travaille encore en « V » : le prestat
 
 Dans le domaine manufacturier - tel que la conception d'un navire de guerre par exemple - il est légitime de s'assurer que son bâtiment va correctement flotter et que son gouvernail l'orientera correctement avant de le mettre à l'eau. Les caractéristiques du navire sont d'ailleurs souvent fixées : son autonomie, la portée de ses missiles, son temps de service... On ne va pas changer la composition de la coque au dernier moment ou modifier le palier de ligne d'arbre. Le cycle en "V" est alors adapté.
 
-Cependant en logiciel, il est possible d'adopter une approche plus agile. Le comportement d'un programme informatique est évaluable et peut être simulée en quasi temps-réel. Cela permet d'adapter un logiciel à tout moment, en s'assurant qu'il remplisse correctement les objectifs fixés (fig. <spanc/>).
+Cependant en logiciel, il est possible d'adopter une approche plus agile. Le comportement d'un programme informatique est évaluable et peut être simulée en quasi temps-réel. Cela permet d'adapter un logiciel à tout moment, en s'assurant qu'il remplisse correctement les objectifs fixés (fig. <spanc/>\ref{fig:cycle_v}).
 
-![Illustration des différentes étapes "cycle en V" : l'ensemble des besoins sont décrits avant le lancement du projet, réduisant le risque mais également la flexibilité. Le produit final risque de ne pas ou plus répondre aux besoins de l'entreprise.](./images/cycle_v.jpg)
+![Illustration des différentes étapes "cycle en V" : l'ensemble des besoins sont décrits avant le lancement du projet, réduisant le risque mais également la flexibilité. Le produit final risque de ne pas ou plus répondre aux besoins de l'entreprise.\label{fig:cycle_v}](./images/cycle_v.jpg)
 
 Ainsi, au sein d'un programme d'armement, l'informatique embarquée à bord d'un navire (ex: capteurs, systèmes d'information) peut être pilotée par la méthodologie agile, quand la production du porteur[^DefPorteur] peut être régie par la méthodologie en "V". Alors que la coque subira peu de changements, les logiciels peuvent être renouvelés à la vitesse exigée par les opérations[^VoeuxCEMA].
 
 Au-delà de la solution technique que vous leur apporterez, vos métiers constateront que votre mode d'organisation - plus agile - est efficace pour eux. Ils soutiendront par conséquent votre initiative. En tant que chef d'équipe, votre objectif doit être de pouvoir faire témoigner, lors de présentations importantes, des représentants d'équipes métiers que vous avez aidé grâce à vos outils. Ces représentations permettront d'asseoir votre crédibilité et d'éviter que votre équipe soient reconnus comme de simples « prestataires de développement technique ».
 
-![Parallèle entre méthodologie traditionnelle et méthodologie agile : pendant que la méthodologie en V fixe la spécification des besoins, la méthodologie agile s'adapte au besoin utilisateur au cours du temps.](./images/cycle_v_vs_agile.png)
+![Parallèle entre méthodologie traditionnelle et méthodologie agile : pendant que la méthodologie en V fixe la spécification des besoins, la méthodologie agile s'adapte au besoin utilisateur au cours du temps.\label{fig:cycle_v_vs_agile}](./images/cycle_v_vs_agile.png)
 
 Cette proximité avec les métiers permettra à vos équipes de se sentir davantage impliquées dans les missions de votre institution. C'est une dynamique gagnante à la fois pour vos ingénieurs et les opérateurs. Chacun se nourrit ainsi de la connaissance de l'autre : l'ingénieur découvre le fond du sujet, comprend mieux le problème, pendant que l'opérateur spécifie son besoin le plus précisément possible.
 
-L'illustration de Henrik KNIBERG[^HenrikKNIBERG], coach agile, nous permet de bien cerner l'intérêt de la méthodologie agile : on préfère livrer à chaque étape quelque chose qui fonctionne - bien que non abouti - pour récolter les retours utilisateur et itérer (fig. <spanc/>).
+L'illustration de Henrik KNIBERG[^HenrikKNIBERG], coach agile, nous permet de bien cerner l'intérêt de la méthodologie agile : on préfère livrer à chaque étape quelque chose qui fonctionne - bien que non abouti - pour récolter les retours utilisateur et itérer (fig. <spanc/>\ref{fig:agile_illustration_henrik_kniberg}).
 
 Vous avez dû probablement vous en rendre compte au cours de votre carrière : le client ne sait souvent pas exprimer ce qu'il veut exactement. La méthodologie agile et ultimement la méthodologie DevOps permettent de s'adapter aux réalités du métier au cours du temps, pour mieux le comprendre et livrer un produit qui répond réellement à ses besoins. Les techniques DevOps vous permettront de libérer du temps pour en passer davantage avec votre client, mieux comprendre son besoin et mieux traiter ses retours ou suggestions.
 
-![Illustration du processus d'itération entre méthodologie traditionnelle et méthodologie agile par Henrik KNIBERG. Exemple d'un projet pour produire un véhicule.](./images/agile_illustration_henrik_kniberg.jpg)
+![Illustration du processus d'itération entre méthodologie traditionnelle et méthodologie agile par Henrik KNIBERG. Exemple d'un projet pour produire un véhicule.\label{fig:agile_illustration_henrik_kniberg}](./images/agile_illustration_henrik_kniberg.jpg)
 
 Mettre au contact profils techniques et opératifs est un enjeu de fidélisation au-delà de la plus-value d'une réponse plus rapidement et précise aux problématiques internes. Rappelez-vous : vos équipes sont en quête de sens. Elles ne viennent pas au travail le matin pour répondre à l'ordre de leur supérieur de développer un logiciel, mais pour concevoir avec leurs compétences d'expert la solution technique qui répondra le mieux au problème du métier. L'aboutissement du travail d'un ingénieur est de voir le métier utiliser la création qu'il a conçu.
 
@@ -545,9 +545,9 @@ Ces règles étant versionnées [sous forme de code](#infrastructure-as-code-iac
 
 Ces tests peuvent se composer par exemple d'une analyse antivirus, d'une analyse de failles dans les images Docker utilisées, ou encore s'assurer qu'il n'y ait pas de mots de passe poussés par inadvertance.
 
-![Exemple d'une chaîne d'intégration continue à 5 étapes dans GitLab.](./images/ci-pipeline-gitlab-security.png)
+![Exemple d'une chaîne d'intégration continue à 5 étapes dans GitLab.\label{fig:ci-pipeline-gitlab-security}](./images/ci-pipeline-gitlab-security.png)
 
-Dans l'illustration ci-dessus (fig. <spanc/>), vous pouvez observer une chaîne d'intégration continue à 5 étapes (_build_, _test-code_, _test-lint_, _test-security_ et _deploy_). La colonne qui nous intéresse est _test-security_. Elle comporte différents tests de sécurité qui sont lancés. Ils peuvent chacun réussir (coche verte), échouer (croix rouge), ou échouer avec un simple avertissement (point d'exclamation jaune).
+Dans l'illustration ci-dessus (fig. <spanc/>\ref{fig:ci-pipeline-gitlab-security}), vous pouvez observer une chaîne d'intégration continue à 5 étapes (_build_, _test-code_, _test-lint_, _test-security_ et _deploy_). La colonne qui nous intéresse est _test-security_. Elle comporte différents tests de sécurité qui sont lancés. Ils peuvent chacun réussir (coche verte), échouer (croix rouge), ou échouer avec un simple avertissement (point d'exclamation jaune).
 
 > Un point d'exclamation signifie que le test n'est pas passé mais qu'il n'était pas considéré critique (ex: une dépendance logicielle dépréciée mais sans faille de sécurité).
 
@@ -565,9 +565,9 @@ Dans un monde idéal, toute vérification est automatisée. Néanmoins, il est p
 
 En DevOps, on pratique la méthodologie [GitOps](#gitops) : chaque développeur travaille sur sa propre branche et développe sa fonctionnalité. Il teste si tout fonctionne comme attendu, puis crée une "demande de fusion" (communément appelée _merge request_ ou _pull request_) dans la branche principale. Ce processus est détaillé dans le chapitre "[Workflows git](#workflows-git)".
 
-La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale. C'est à ce moment que les différentes personnes impliquées dans la vérification de la qualité d'une contribution peuvent écrire leurs commentaires (fig. <spanc/>).
+La revue de code se passe à ce moment-là. Elle est l'occasion pour les ingénieurs d'approuver les modifications des autres, en apportant un regard extérieur avant qu'elle soit fusionnée sur la branche de développement principale. C'est à ce moment que les différentes personnes impliquées dans la vérification de la qualité d'une contribution peuvent écrire leurs commentaires (fig. <spanc/>\ref{fig:gitlab-review-comment}).
 
-![Les usines logicielles comme GitLab permettent d'ajouter des commentaires directement au sein d'une proposition de contribution, à la ligne exacte concernée par ce commentaire. Source : about.gitlab.com](./images/gitlab-review-comment.png)
+![Les usines logicielles comme GitLab permettent d'ajouter des commentaires directement au sein d'une proposition de contribution, à la ligne exacte concernée par ce commentaire. Source : about.gitlab.com\label{fig:gitlab-review-comment}](./images/gitlab-review-comment.png)
 
 L'objectif est de vérifier que le développeur n'ait pas fait de grosse erreur dans le fonctionnement du code, ou de s'assurer qu'il n'ajoute pas de dette technique. Par exemple chez Google, une _merge request_ requiert l'approbation d'au moins deux ingénieurs avant de pouvoir être validée.
 
