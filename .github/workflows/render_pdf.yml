@@ -111,7 +111,6 @@ jobs:
 
     - name: Get text from book
       run: |
-        ls ./*
         pdftotext ./book.pdf
 
     - name: Get text from book
