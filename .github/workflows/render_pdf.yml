@@ -72,3 +72,54 @@ jobs:
         with:
           name: book-${{ env.BOOK_VERSION }}
           path: ./fra/build/pdf/book.pdf
+
+
+  # Pictures in the book may be referenced at some place in the text.
+  # Ex: \ref{fig:name} in the text to reference the \label{fig:name} illustration.
+  #
+  # When badly referenced, pandoc generates a double questionmarks ("??") in the place
+  # of the latex tags. This Action checks if there are no "??" in the generated PDF.
+  markdownlint:
+    name: Markdownlint
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Install poppler-utils
+      run: |
+        sudo apt-get update && sudo apt-get install -y poppler-utils
+
+    - name: Get version
+      run: |
+        version=$(cat ./VERSION)
+        version=${version##+( )} # Trim left whitespaces
+        version=${version%%+( )} # Trim right whitespaces
+        echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+        echo "version : $version"
+    - name: Checking version format
+      run: |
+        if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+        then
+          echo "Invalid version format. Check your ./VERSION file."
+          exit 1
+        fi
+
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: book-${{ env.BOOK_VERSION }}
+        path: ./book.pdf
+
+    - name: Get text from book
+      run: |
+        pdftotext ./book.pdf
+
+    - name: Get text from book
+      run: |
+        if grep -q "??" ./book.pdf; then
+          echo "The file contains the string '??'"
+        else
+          echo "The file does not contain the string '??'"
+        fi
