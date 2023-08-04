@@ -107,7 +107,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: book-${{ env.BOOK_VERSION }}
-        path: ./book.pdf
+        path: ./
 
     - name: Get text from book
       run: |
