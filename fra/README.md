@@ -583,9 +583,9 @@ Pour les équipes des sécurité, la revue de code a pour objectif de vérifier 
 - Technique de stockage des mots de passe / des cookies
 - Respect des fonctionnalités RGPD
 
-GitLab permet par exemple d'obliger l'approbation d'une _merge request_ par des équipes spécifiques[^GitLabRequiredApprovals] (ex: l'équipe de sécurité), avant qu'une contribution puisse être fusionnée dans la branche principale (fig. <spanc/>).
+GitLab permet par exemple d'obliger l'approbation d'une _merge request_ par des équipes spécifiques[^GitLabRequiredApprovals] (ex: l'équipe de sécurité), avant qu'une contribution puisse être fusionnée dans la branche principale (fig. <spanc/>\ref{fig:gitlab-review-approval}).
 
-![Aperçu de l'interface GitLab d'approbation d'un groupe de contributions (elles ne paraissent pas), par plusieurs équipes de l'organisation (_frontend_, _backend_, qualité (_QA_)). Source : about.gitlab.com](./images/gitlab-review-approval.png)
+![Aperçu de l'interface GitLab d'approbation d'un groupe de contributions (elles ne paraissent pas), par plusieurs équipes de l'organisation (_frontend_, _backend_, qualité (_QA_)). Source : about.gitlab.com\label{fig:gitlab-review-approval}](./images/gitlab-review-approval.png)
 
 Des outils comme [_ReviewDog_](https://github.com/reviewdog/reviewdog), [_Hound_](https://houndci.com/) ou [_Sider Scan_](https://siderlabs.com/scan/en/) permettent d'assister les ingénieurs lors de la revue de code. Par exemple, ces outils font passer des _linters_[^linter] et ajoutent automatiquement des commentaires à la ligne concernée.
 
@@ -615,9 +615,9 @@ Il est possible de générer le SBOM de son logiciel grâce à des outils comme 
 
 L'objectif reste de savoir si une librairie utilisée est vulnérable, pour la mettre à jour ou la remplacer. Hormis pour répondre à des contraintes réglementaires, laisser ce fichier à l'état de simple document n'est pas très utile. Voilà pourquoi il faut désormais analyser le SBOM.
 
-Un outil léger d'analyse comme [_OSV-Scanner_](https://github.com/google/osv-scanner) pourra s'intégrer facilement à vos chaînes d'intégration continue et fournir un premier niveau de protection. Néanmoins, il ne permettra pas d'avoir une vue d'ensemble sur tous les logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_ (fig. <spanc/>), [_Faraday_](https://github.com/infobyte/faraday) ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ sont alors nécessaires. Ils peuvent ingérer plusieurs fichiers SBOM et afficher une vue d'ensemble des menaces pour alerter les ingénieurs si besoin.
+Un outil léger d'analyse comme [_OSV-Scanner_](https://github.com/google/osv-scanner) pourra s'intégrer facilement à vos chaînes d'intégration continue et fournir un premier niveau de protection. Néanmoins, il ne permettra pas d'avoir une vue d'ensemble sur tous les logiciels affectés au sein de votre infrastructure. Des outils comme _[Dependency Track](https://github.com/DependencyTrack/dependency-track)_ (fig. <spanc/>\ref{fig:2023_dependency_track}), [_Faraday_](https://github.com/infobyte/faraday) ou _[Snyk Open Source](https://snyk.io/product/open-source-security-management/)_ sont alors nécessaires. Ils peuvent ingérer plusieurs fichiers SBOM et afficher une vue d'ensemble des menaces pour alerter les ingénieurs si besoin.
 
-![Tableau de bord Dependency Track listant des vulnérabilités trouvées dans un ensemble de logiciels.](./images/2023_dependency_track.png)
+![Tableau de bord Dependency Track listant des vulnérabilités trouvées dans un ensemble de logiciels.\label{fig:2023_dependency_track](./images/2023_dependency_track.png)
 
 Des logiciels comme [_Renovate_](https://github.com/renovatebot/renovate) ou [_GitHub Dependabot_](https://github.com/dependabot) permettent de détecter les dépendances comportant des vulnérabilités, et d'automatiquement proposer une mise à jour dans la forge logicielle en ouvrant une _merge request_ (cf. chapitre "[Revues de code](#revues-de-code)").
 
@@ -655,9 +655,9 @@ L'un des intérêts du DAST est qu'il ne nécessite pas d'accéder au code sourc
 
 Voici une liste d'outils DAST accompagnés de leur description pour bien comprendre leur variété :
 
-De nombreux produits dont les fonctionnalités se recoupent existent. Ils permettent généralement de scanner des vulnérabilités de manière automatisé comprenant : du _fuzzing_ (entrées aléatoires), de l'analyse de traffic entre navigateur et API, de l'attaque par force brute ou encore de l'analyse de vulnérabilités dans le code Javascript. L'outil de DAST incontournable est [_OWASP ZAP_](https://github.com/zaproxy/zaproxy) (fig. <spanc/>), mais d'autres existent comme [_Burp Suite_](https://portswigger.net/burp), [_W3af_](https://github.com/andresriancho/w3af), [_SQLMap_](https://github.com/sqlmapproject/sqlmap), [_Arachni_](https://github.com/Arachni/arachni), [_Nikto_](https://github.com/sullo/nikto) et [_Nessus_](https://www.tenable.com/products/nessus).
+De nombreux produits dont les fonctionnalités se recoupent existent. Ils permettent généralement de scanner des vulnérabilités de manière automatisé comprenant : du _fuzzing_ (entrées aléatoires), de l'analyse de traffic entre navigateur et API, de l'attaque par force brute ou encore de l'analyse de vulnérabilités dans le code Javascript. L'outil de DAST incontournable est [_OWASP ZAP_](https://github.com/zaproxy/zaproxy) (fig. <spanc/>\ref{fig:2023_owasp_zap_juice_shop}), mais d'autres existent comme [_Burp Suite_](https://portswigger.net/burp), [_W3af_](https://github.com/andresriancho/w3af), [_SQLMap_](https://github.com/sqlmapproject/sqlmap), [_Arachni_](https://github.com/Arachni/arachni), [_Nikto_](https://github.com/sullo/nikto) et [_Nessus_](https://www.tenable.com/products/nessus).
 
-![Capture d'écran de l'interface OWASP ZAP montrant une liste de vulnérabilités détectées sur [Juice Shop](https://hub.docker.com/r/bkimminich/juice-shop).](./images/2023_owasp_zap_juice_shop.png)
+![Capture d'écran de l'interface OWASP ZAP montrant une liste de vulnérabilités détectées sur [Juice Shop](https://hub.docker.com/r/bkimminich/juice-shop).\label{fig:2023_owasp_zap_juice_shop}](./images/2023_owasp_zap_juice_shop.png)
 
 Une vaste liste d'outils open-source et commerciaux d'analyse de code est disponible sur le site de la fondation OWASP[^DASTToolsOWASP].
 
@@ -697,9 +697,9 @@ Le framework _Supply-chain Levels for Software Artifacts_ (SLSA[^SLSA], prononc�
 
 Le SLSA est né des pratiques internes de Google. L'entreprise a développé des techniques pour veiller à ce que les employés, en agissant seuls, ne puissent pas accéder directement ou indirectement aux données des utilisateurs - ni les manipuler de toute autre manière - sans autorisation et justification appropriées[^BinaryAuthorizationForBorg].
 
-En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente et que ces artéfacts sont un vecteur privilégié de menace (fig. <spanc/>).
+En développant des logiciels, vous utilisez et produisez des artéfacts (_artifacts_ en anglais). Ces derniers peuvent qualifier une librairie de développement utilisée dans votre code, un binaire de machine learning ou encore le produit de la compilation de votre logiciel (un `.bin`, `.exe`, `.whl`...). Le SLSA part du principe que chaque étape de la création d'un logiciel implique une vulnérabilité différente et que ces artéfacts sont un vecteur privilégié de menace (fig. <spanc/>\ref{fig:slsa-supply-chain-threats}).
 
-![Étapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).](./images/slsa-supply-chain-threats.jpg)
+![Étapes de création d'un logiciel et hypothétiques vulnérabilités associées, au sein de la chaîne logicielle. Source : slsa.dev (The Linux Foundation).\ref{fig:slsa-supply-chain-threats}](./images/slsa-supply-chain-threats.jpg)
 
 Ses règles tournent autour de la vérification automatique de l'intégrité des données manipulées. Quelques exemples des vulnérabilités auxquelles le SLSA répond :
 
@@ -748,19 +748,19 @@ GitHub est la plateforme de partage de code la plus populaire sur Internet. Elle
 
 L'entreprise a opéré un virage stratégique en faisant l'acquisition en 2019 de _Semmle_, un outil d'analyse des vulnérabilités dans le code. Depuis, elle propose plusieurs moyens de sécuriser sa base de code :
 
-- SCA et SAST : outils d'analyse automatisée de vulnérabilités dans le code source et ses dépendances (ex: injections SQL, faille XSS, erreurs de configuration et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez ajouter vos propres règles en écrivant des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _GitHub Code Scanning_ (fig. <spanc/>), _Klocwork_ ou encore _Checkov_.
+- SCA et SAST : outils d'analyse automatisée de vulnérabilités dans le code source et ses dépendances (ex: injections SQL, faille XSS, erreurs de configuration et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez ajouter vos propres règles en écrivant des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _GitHub Code Scanning_ (fig. <spanc/>\ref{fig:2020_code-scanning-github}), _Klocwork_ ou encore _Checkov_.
 
-    ![Exemple de vulnérabilité détectée par Code Scanning sur un projet GitHub.](./images/2020_code-scanning-github.png)
+    ![Exemple de vulnérabilité détectée par Code Scanning sur un projet GitHub.\label{fig:2020_code-scanning-github}](./images/2020_code-scanning-github.png)
 
 - Analyseur de secrets : analyse, détecte et alerte sur de potentiels mots de passe ou _tokens_ laissés par erreur dans le code source. Alternative open-source : [_Gitleaks_](https://owasp.org/www-community/Free_for_Open_Source_Application_Security_Tools).
 
-- _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative (fig. <spanc/>).
+- _Dependabot_ : outil d'analyse dynamique des risques liés aux dépendances utilisées (ex: [vulnérabilités, librairie non maintenue, risques légaux](https://github.blog/2020-12-17-shifting-supply-chain-security-left-with-dependency-review)). _Dependabot_ ouvre automatiquement une proposition de modification du code (_pull-request_) sur le projet et suggère la mise à jour de la dépendance ou bien une alternative (fig. <spanc/>\ref{fig:2020_github-dependabot}).
 
-    ![Liste de vulnérabilités découvertes dans un projet GitHub par Dependabot. Source : github.com](./images/2020_github-dependabot.png)
+    ![Liste de vulnérabilités découvertes dans un projet GitHub par Dependabot. Source : github.com.\label{fig:2020_github-dependabot}](./images/2020_github-dependabot.png)
 
-Toutes les failles de sécurité liées à un projet sont centralisées au sein d'une vue d'ensemble, permettant de facilement détecter et remédier aux menaces (fig. <spanc/>).
+Toutes les failles de sécurité liées à un projet sont centralisées au sein d'une vue d'ensemble, permettant de facilement détecter et remédier aux menaces (fig. <spanc/>\ref{fig:2021_github-screenshot-of-security-overview}).
 
-![Tableau de bord des risques de sécurité dans un projet GitHub. Source : github.com](./images/2021_github-screenshot-of-security-overview.png)
+![Tableau de bord des risques de sécurité dans un projet GitHub. Source : github.com.\label{fig:2021_github-screenshot-of-security-overview}](./images/2021_github-screenshot-of-security-overview.png)
 
 GitHub se base sur le référentiel international des CVEs[^CVE] (_Common Vulnerabilities and Exposures_) pour reconnaître les failles, une liste de vulnérabilités identifiées dans les systèmes informatiques et décrites sous un format précis. Vous pouvez ajouter des mécanismes de vérification supplémentaires grâce aux _GitHub Actions_, le mécanisme d'intégration continue de GitHub.
 
@@ -768,9 +768,9 @@ GitHub se base sur le référentiel international des CVEs[^CVE] (_Common Vulner
 
 Pour limiter les risques, il est possible de baser les logiciels développés sur des ressources pré-approuvées mises à disposition des développeurs. Chaque brique externe qui constitue le logiciel est vérifiée. Il peut s'agir de paquets Python, NPM, Go ou encore d'images Docker qui ont été analysés et pour lesquels les équipes de sécurité se sont assurées qu'il n'y avait pas de faille.
 
-C'est le cas par exemple du service _Iron Bank_[^IronBankPresentation] mis en place par l'_U.S. Department of Defense_ au sein de _Platform One_[^PlatformOnePresentationWebsite]. Les images Docker doivent passer par une rigoureuse procédure de sécurité avant d'être approuvées. Ces étapes [combinent des vérifications](https://docs-ironbank.dso.mil/hardening/overview/) [manuelles](https://docs-ironbank.dso.mil/hardening/justifications/) et automatiques mais peuvent déjà faire, dans un premier temps, l'objet de procédures seulement automatisées. Les actions manuelles sont nécessaires pour justifier de l'intérêt d'ajouter une nouvelle image. C'est ce que les équipes de _Platform One_ nomment "l'homologation continue d'images approuvées"[^IronBankHardeningOverview] (fig. <spanc/>).
+C'est le cas par exemple du service _Iron Bank_[^IronBankPresentation] mis en place par l'_U.S. Department of Defense_ au sein de _Platform One_[^PlatformOnePresentationWebsite]. Les images Docker doivent passer par une rigoureuse procédure de sécurité avant d'être approuvées. Ces étapes [combinent des vérifications](https://docs-ironbank.dso.mil/hardening/overview/) [manuelles](https://docs-ironbank.dso.mil/hardening/justifications/) et automatiques mais peuvent déjà faire, dans un premier temps, l'objet de procédures seulement automatisées. Les actions manuelles sont nécessaires pour justifier de l'intérêt d'ajouter une nouvelle image. C'est ce que les équipes de _Platform One_ nomment "l'homologation continue d'images approuvées"[^IronBankHardeningOverview] (fig. <spanc/>\ref{fig:continuous-accreditation-approved-images}).
 
-![Processus d'homologation continue des images de Iron Bank.](./images/continuous-accreditation-approved-images.png)
+![Processus d'homologation continue des images de Iron Bank.\label{fig:continuous-accreditation-approved-images}](./images/continuous-accreditation-approved-images.png)
 
 Dans les organisations traitant de données très sensibles (c'est à dire des données pouvant mettre en péril la sécurité ou la crédibilité d'un pays si elles sont dévoilées), la politique par défaut est de n'autoriser que l'utilisation de librairies et d'images pré-approuvées (_hardened images_). Veillez néanmoins à considérer l'impact d'un tel choix sur la vélocité des développements. Soyez certain que vos équipes de sécurité et SRE puissent suivre le rythme de la mise à disposition des librairies.
 
@@ -790,9 +790,9 @@ C'est à dire que pour opérer l'infrastructure au quotidien (en dehors d'un cas
 
 Le domaine englobant les techniques de gestion de la production en code, est communément appelé _Infrastructure as Code_ (IaC). Cette notion et sa pertinence sont développés dans le chapitre "[Infrastructure as Code](#infrastructure-as-code-iac)".
 
-La figure <spanc/> représente un exemple de configuration sous forme de code, permettant de mettre à jour le fuseau horaire et l'heure de la machine `prod-fr-zone-c-server-18`.
+La figure <spanc/>\ref{fig:ansible-iac-playbook-example} représente un exemple de configuration sous forme de code, permettant de mettre à jour le fuseau horaire et l'heure de la machine `prod-fr-zone-c-server-18`.
 
-![Exemple de configuration Ansible illustrant la notion d'_Infrastructure as Code_.](./images/ansible-iac-playbook-example.png)
+![Exemple de configuration Ansible illustrant la notion d'_Infrastructure as Code_.\label{fig:ansible-iac-playbook-example}](./images/ansible-iac-playbook-example.png)
 
 L'exemple ci-dessus est simple mais l'IaC peut aller jusqu'à décrire la manière dont des machines peuvent être instanciées et configurées. Une configuration d'Iac peut par exemple totalement configurer une machine de 0 (paramètres réseau, certificats de sécurité, ajout d'utilisateurs, installation des _drivers_ d'une imprimante, configuration des favoris du navigateur...). L'idée est encore une fois d'éviter au maximum l'intervention humaine, pour éviter des commandes erronées, lancées par erreur.
 
@@ -806,7 +806,7 @@ Le _zero trust_ part du principe qu'aucun utilisateur n'est "de confiance" par d
 
 Prenons un exemple : Sophie est une employée que vous côtoyez depuis 3 ans. Elle présente son badge à l'entrée et s'installe comme tous les jours à son poste de travail. Vous apprenez quelques jours après que Sophie a été licenciée depuis 1 mois. Il se peut qu'elle ait eu accès à des informations stratégiques sur votre entreprise. Des informations qu'elle utilisera dans son nouvel emploi, chez une société concurrente. Ici, sur le simple fait d'avoir "l'habitude" de voir ce collaborateur, l'entreprise s'est faite dérobée des informations précieuses. Les technologies _zero trust_ fournissant des moyens de gestion des accès centralisés, Sophie n'aurait pas pu se connecter à sa session.
 
-Trois piliers constituent une architecture réseau _zero trust_ (fig. <spanc/>) :
+Trois piliers constituent une architecture réseau _zero trust_ (fig. <spanc/>\ref{fig:zero_trust_schema_msft}) :
 
 1. **Identification** : identifier l'utilisateur
      - _Identification_ : Qui êtes-vous ?
@@ -817,7 +817,7 @@ Trois piliers constituent une architecture réseau _zero trust_ (fig. <spanc/>) 
 3. **Sécurité** : le matériel avec lequel l'utilisateur se connecte au réseau
      - Sécurité de la machine : s'assurer que la machine qui se connecte est conforme aux exigences de sécurité (ex: vérifier qu'un antivirus tourne ou que l'OS mis à jour)
 
-![Schéma des éléments pris en compte dans une architecture _zero trust_. Source : [Microsoft Azure Documentation](https://github.com/MicrosoftDocs/azure-docs/blob/1aca57e362ca6f5db0f00633f5d777ee2d48048b/articles/active-directory/conditional-access/plan-conditional-access.md?plain=1#L26C1-L26C1).](./images/zero_trust_schema_msft.jpg)
+![Schéma des éléments pris en compte dans une architecture _zero trust_. Source : [Microsoft Azure Documentation](https://github.com/MicrosoftDocs/azure-docs/blob/1aca57e362ca6f5db0f00633f5d777ee2d48048b/articles/active-directory/conditional-access/plan-conditional-access.md?plain=1#L26C1-L26C1).\label{fig:zero_trust_schema_msft}](./images/zero_trust_schema_msft.jpg)
 
 L'idée est qu'en _zero trust_, chaque requête implique une nouvelle vérification de ces critères de sécurité. C'est l'intermédiaire de confiance (_trust broker_ ou CASB[^CASB]) qui vérifie ces critères (cf. _OpenID_, _Active Directory_, _PKI_, _SAML_).
 
@@ -837,9 +837,9 @@ Dans le cadre d'un environnement de développement (R&D), le sujet se complique.
 
 Cependant comme citée plus haut, la 3ème règle d'une architecture _zero trust_ est de s'assurer que la machine de l'utilisateur est sécurisée. Si vous laissez les droits d'administration à un développeur, il pourra toujours désactiver les paramètres de sécurité de sa machine. Donc que faire ?
 
-![Briques d'une infrastructure d'entreprise.](./images/security_parts_software_delivery.jpg)
+![Briques d'une infrastructure d'entreprise.\label{fig:security_parts_software_delivery}](./images/security_parts_software_delivery.jpg)
 
-La suite de ce chapitre traite de la brique bleue sur la figure <spanc/> : les postes de développement.
+La suite de ce chapitre traite de la brique bleue sur la figure <spanc/>\ref{fig:security_parts_software_delivery} : les postes de développement.
 
 Ils sont un élément particulier de notre infrastructure _zero trust_ car ils impliquent la captation de ressources externes à l'entreprise, déployées par la suite au sein de son infrastructure. Inversement, le code source de l'usine logicielle ou les données de l'entreprise sont copiés sur ces machines. Avec des librairies téléchargées ou des éditeurs de code aux extensions non-vérifiées, on ajoute le risque d'une fuite de données vers l'extérieur.
 
@@ -906,9 +906,9 @@ Pour les ingénieurs ayant la charge de déployer des logiciels, le socle fourni
 
 Comparons un socle traditionnel à un socle Cloud pour mieux comprendre la plus-value de ce dernier.
 
-![Illustration des services dans un socle traditionnel (type ESXI).](./images/illustration_socle_esxi.jpg)
+![Illustration des services dans un socle traditionnel (type ESXI).\label{fig:illustration_socle_esxi}](./images/illustration_socle_esxi.jpg)
 
-Dans un socle traditionnel (fig. <spanc/>), une machine virtuelle (VM) est attribuée à chaque logiciel pour l'isoler logiquement. Chaque logiciel a la charge de gérer ses propres logs, certificats, secrets et générer ses propres métriques. Il est possible que le socle héberge des services centralisant ces données, mais le développeur du logiciel devra alors apporter des modifications à son code pour se conformer aux services du socle.
+Dans un socle traditionnel (fig. <spanc/>\ref{fig:illustration_socle_esxi}), une machine virtuelle (VM) est attribuée à chaque logiciel pour l'isoler logiquement. Chaque logiciel a la charge de gérer ses propres logs, certificats, secrets et générer ses propres métriques. Il est possible que le socle héberge des services centralisant ces données, mais le développeur du logiciel devra alors apporter des modifications à son code pour se conformer aux services du socle.
 
 La robustesse de ce type de socle n'est plus à prouver et se voit encore largement utilisé aujourd'hui dans les grandes institutions. L'isolation est très efficace. Néanmoins, les besoins en maintenance de ce type de socle augmentent proportionnellement au nombre de logiciels déployés. Chaque logiciel dispose de consignes d'installation, auxquelles s'ajoutent de la documentation de conformité au socle. L'installation et la configuration sont souvent manuelles. Or, les organisations ont tendance à installer de plus en plus de services au cours du temps, afin de continuer de répondre aux besoins métiers.
 
@@ -916,9 +916,9 @@ En résumé, on force ici le logiciel déployé à s'adapter au socle. Ce qui g�
 
 Ce type de socle est efficace avec un nombre raisonnable de services déployés, mais il passe difficilement à l'échelle sans une RH proportionnellement dimensionnée.
 
-![Illustration des services dans un socle cloud (type Kubernetes baremetal).](./images/illustration_socle_kubernetes.jpg)
+![Illustration des services dans un socle cloud (type Kubernetes baremetal).\label{fig:illustration_socle_kubernetes}](./images/illustration_socle_kubernetes.jpg)
 
-Dans un socle Cloud (fig. <spanc/>), l'interaction entre les logiciels déployés et le socle est nativement plus forte. Les interfaces standardisées des conteneurs permettent aux services socles d'un orchestrateur (ex: Kubernetes) de s'y "connecter", tout en conservant une isolation logique des ressources[^ANSSIContainerRecommandation].
+Dans un socle Cloud (fig. <spanc/>\ref{fig:illustration_socle_kubernetes}), l'interaction entre les logiciels déployés et le socle est nativement plus forte. Les interfaces standardisées des conteneurs permettent aux services socles d'un orchestrateur (ex: Kubernetes) de s'y "connecter", tout en conservant une isolation logique des ressources[^ANSSIContainerRecommandation].
 
 Par exemple, les logs applicatifs ou les métriques de performance peuvent automatiquement être récupérés et capitalisés dans un outil central, pour ensuite configurer des alertes. Un antivirus vérifiant de manière continue la présence de menaces dans un conteneur peut être installé. C'est le mécanisme de _sidecars_[^sidecars] dans Kubernetes qui permet la plupart du temps de rendre ces capacités possibles.
 
@@ -1025,9 +1025,9 @@ Par exemple, votre centre d'expertise prend de l'âge et ne renouvelle pas ses o
 
 La hiérarchie n'ayant pas anticipé le déclin, ni prêté attention aux remarques internes, lance alors un projet de transformation. En parallèle, l'initiative isolée lancée sans en informer la hiérarchie provoque des guerres de périmètres et des objectifs confus. La hiérarchie perd peu à peu pied avec ses équipes, n'étant pas au courant que ses équipes ont adopté de nouvelles pratiques. Le manque de communication avec le reste des collaborateurs et la duplication des efforts se font alors ressentir. C'est la conséquence d'un manque de cohérence globale. Voilà un terreau fertile pour une résistance au changement, face à la réaction trop tardive de l'entité dirigeante.
 
-![Chronologie du silo en déclin](./images/2023_cycle_silotage.jpg)
+![Chronologie du silo en déclin.\label{fig:2023_cycle_silotage}](./images/2023_cycle_silotage.jpg)
 
-Pour éviter le déclin d'un silo qui se propagera à l'échelle de l'entreprise (fig. <spanc/>), il faut au départ faire communiquer ces silos entre eux (le COMEX, les centres d'expertise, les équipes...). La hiérarchie doit fournir les outils pour que toute l'entreprise parle la même langue. Elle devra également proposer une vision commune, pour que ses équipes puissent collaborer en faveur d'un seul et même objectif.
+Pour éviter le déclin d'un silo qui se propagera à l'échelle de l'entreprise (fig. <spanc/>\ref{fig:2023_cycle_silotage}), il faut au départ faire communiquer ces silos entre eux (le COMEX, les centres d'expertise, les équipes...). La hiérarchie doit fournir les outils pour que toute l'entreprise parle la même langue. Elle devra également proposer une vision commune, pour que ses équipes puissent collaborer en faveur d'un seul et même objectif.
 
 Le mouvement DevOps croit en l'union de méthodologies et d'outils communs et intégrés pour faciliter ces échanges. Ce chapitre décrit les méthodologies à adopter pour atteindre cet objectif.
 
@@ -1089,15 +1089,15 @@ Aujourd'hui, les équipes de développement, d'administration système, de SSI e
 - Les règles de sécurité (cf. chapitre "[Intégration continue et sécurité](#intégration-continue-et-sécurité)")
 - Les règles de qualité logicielle
 
-![Interfaces GitLab et GitHub pour (de gauche à droite) : la gestion de projet, la visualisation de documentation, la capitalisation du code.](./images/gitlab_github_illustrations_screenshots.png)
+![Interfaces GitLab et GitHub pour (de gauche à droite) : la gestion de projet, la visualisation de documentation, la capitalisation du code.\label{fig:gitlab_github_illustrations_screenshots}](./images/gitlab_github_illustrations_screenshots.png)
 
-L'objectif est de stocker dans un seul endroit le maximum de connaissances, de sorte à être certain de consulter la documentation la plus à jour (fig. <spanc/>).
+L'objectif est de stocker dans un seul endroit le maximum de connaissances, de sorte à être certain de consulter la documentation la plus à jour (fig. <spanc/>\ref{fig:gitlab_github_illustrations_screenshots}]).
 
 Pour moi, _git_ est par exemple un moyen privilégié de capitaliser des guides, des tutoriels et même des procédures administratives pour mes équipes. Si quelqu'un observe une erreur ou une information obsolète dans une documentation, il peut directement proposer la modification dans _git_ pour garder le document à jour. On peut résumer ce mode de travail en disant que les équipes adoptant le DevOps remplacent les traditionnels _Word_ ou _Excel_ en _Markdown_ (format des documentations dans les projets _git_). Ce format conçu pour être intuitif à la fois pour les humains et les machines[^Markdown], est indépendant de toute technologie propriétaire (ex: _Microsoft Word_ est une technologie propriétaire).
 
-Il est même possible de réaliser des présentations sous forme de code, visualisables dans un simple navigateur (cf. [Markdown-Slides](https://github.com/dadoomer/markdown-slides)[^MarkdownSlides] (fig. <spanc/>), [Slides](https://github.com/maaslalani/slides)[^SlidesProject], [Remark](https://github.com/gnab/remark)[^Remark], [reveal.js](https://github.com/hakimel/reveal.js)[^RevealJS]).
+Il est même possible de réaliser des présentations sous forme de code, visualisables dans un simple navigateur (cf. [Markdown-Slides](https://github.com/dadoomer/markdown-slides)[^MarkdownSlides] (fig. <spanc/>\ref{fig:markdown-slides-browser}), [Slides](https://github.com/maaslalani/slides)[^SlidesProject], [Remark](https://github.com/gnab/remark)[^Remark], [reveal.js](https://github.com/hakimel/reveal.js)[^RevealJS]).
 
-![Exemple de présentation créée avec du Markdown et visualisable dans un navigateur avec Markdown-Slides. Source: github.com/dadoomer/markdown-slides](./images/markdown-slides-browser.png)
+![Exemple de présentation créée avec du Markdown et visualisable dans un navigateur avec Markdown-Slides. Source: github.com/dadoomer/markdown-slides.\label{fig:markdown-slides-browser}](./images/markdown-slides-browser.png)
 
 En revanche, _git_ n'est pas fait pour stocker des fichiers lourds. On évitera d'y stocker de grandes images, des vidéos, des binaires ou des archives. D'autres technologies permettent de stocker ces types de fichiers (cf. [Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)[^AmazonS3], [Minio S3](https://min.io/)[^MinioS3], [HDFS](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html)[^HDFS], [CephFS](https://docs.ceph.com/)[^CephFS], [Longhorn](https://longhorn.io/)[^Longhorn]) sans ou avec une référence vers un projet _git_ (ex. [DVC](https://dvc.org/)[^DVC]).
 
@@ -1139,9 +1139,9 @@ C'est pareil en logiciel. En travaillant au même endroit au même moment, on en
 
 _git_ fonctionne avec un principe de branches. Par défaut, seule la branche principale `main` ou `master` existe. Elle est la branche considérée comme "stable". Si un intégrateur doit déployer un logiciel en production, il choisira le code présent sur cette branche.
 
-Un développeur qui souhaite concevoir une nouvelle fonctionnalité va créer une nouvelle branche, qui part de la branche principale. Il se retrouve avec une copie du code dont les modifications (_commits_) sont à sa discrétion, sans déranger les autres. Une fois la fonctionnalité finaliséee, le développeur peut faire une "demande de fusion" (_merge request_) vers la branche principale. La figure <spanc/> illustre le _workflow git_ le plus simple possible.
+Un développeur qui souhaite concevoir une nouvelle fonctionnalité va créer une nouvelle branche, qui part de la branche principale. Il se retrouve avec une copie du code dont les modifications (_commits_) sont à sa discrétion, sans déranger les autres. Une fois la fonctionnalité finaliséee, le développeur peut faire une "demande de fusion" (_merge request_) vers la branche principale. La figure <spanc/>\ref{fig:classic_git_merge} illustre le _workflow git_ le plus simple possible.
 
-![Méthode élémentaire d'organisation dans un projet _git_ : une branche par fonctionnalité développée.](./images/classic_git_merge.jpg)
+![Méthode élémentaire d'organisation dans un projet _git_ : une branche par fonctionnalité développée.\label{fig:classic_git_merge}](./images/classic_git_merge.jpg)
 
 Il y a trois questions à se poser pour déterminer un "bon" _workflow git_ :
 
@@ -1152,17 +1152,17 @@ Il y a trois questions à se poser pour déterminer un "bon" _workflow git_ :
 Plusieurs méthodes ont émergé au cours du temps[^TrunkBaseDevHistory] mais il en existe 4 principales :
 
 - _Release Branching_ : Orientée vers la publication (_release_) périodique d'un logiciel, cette méthode consiste à créer une nouvelle branche à partir de la branche principale, puis à la stabiliser avec des corrections de bugs et d'autres changements avant publication. Ici, une _release_ correspond à une branche qui évolue longtemps en parallèle de la branche principale, puis devient éventuellement dépréciée au bout d'un moment. Elle permet à des "groupes de développeurs" de travailler ensemble sur une _release_ en particulier ou une version personnalisée du logiciel pour un client. Cela limite les conflits mais complexifie l'unification des contributions entre versions.
-- _Gitflow_ : Extension de la méthode _Release Branching_, celle-ci utilise 6 branches[^gitflowgithub] vivant en parallèle et adressant des besoins précis (_release_, _hotfix_, _feature_, _support_, _bugfix_ en plus de la branche principale _master_ ou _main_). Elle est historiquement utilisée pour gérer de très grands projets (fig. <spanc/>).
+- _Gitflow_ : Extension de la méthode _Release Branching_, celle-ci utilise 6 branches[^gitflowgithub] vivant en parallèle et adressant des besoins précis (_release_, _hotfix_, _feature_, _support_, _bugfix_ en plus de la branche principale _master_ ou _main_). Elle est historiquement utilisée pour gérer de très grands projets (fig. <spanc/>\ref{fig:gitflow}).
 
-    ![Exemple de Gitflow. Source : fpy.cz (Filip PYTLOUN)](./images/gitflow.png)
+    ![Exemple de Gitflow. Source : fpy.cz (Filip PYTLOUN).\label{fig:gitflow}](./images/gitflow.png)
 
-- _GitHub flow_ / _GitLab flow_ : Cette méthode élimine la complexité apportée par le _Gitflow_ en supprimant ses 5 branches parallèles à la branche principale (fig. <spanc/>). Un développeur doit créer une branche par nouvelle fonctionnalité, à partir de la branche principale. Une _release_ peut être créée à n'importe quel moment à partir de la branche principale. Au delà de sa simplicité, l'intérêt est d'avoir une branche qui contient un code fonctionnel en permanence et de savoir qu'il est à jour à tout moment.
+- _GitHub flow_ / _GitLab flow_ : Cette méthode élimine la complexité apportée par le _Gitflow_ en supprimant ses 5 branches parallèles à la branche principale (fig. <spanc/>\ref{fig:gitlab-flow}). Un développeur doit créer une branche par nouvelle fonctionnalité, à partir de la branche principale. Une _release_ peut être créée à n'importe quel moment à partir de la branche principale. Au delà de sa simplicité, l'intérêt est d'avoir une branche qui contient un code fonctionnel en permanence et de savoir qu'il est à jour à tout moment.
 
-    ![Exemple de flow GitLab. Source : gitlab.com](./images/gitlab-flow.png)
+    ![Exemple de flow GitLab. Source : gitlab.com.\label{fig:gitlab-flow}](./images/gitlab-flow.png)
 
-- _Trunk-based_ : Cette méthode est orientée vers la publication en continu d'un logiciel (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)"). Contrairement au _GitHub flow_, il n'y qu'une seule branche avec cette méthode. Chacun pousse son code directement dans la branche principale (le _trunk_, fig. <spanc/>). Elle incite à réaliser de petites contributions qui sont facilement annulables en cas de bug. Elle réduit le temps passé sur les conflits car le développeur synchronise plus régulièrement son code avec le reste des contributions. Cette méthode s'appuie fortement sur les mécanismes de CI/CD : chaque contribution est évaluée (CI). Si elle passe, le logiciel peut être automatiquement mis à jour (CD) en créant une _release_. Cela permet également de s'assurer que les mécanismes de mise en production (CD) fonctionnent à tout moment. Plusieurs sources défendent néanmoins une approche alternative du _trunk-based development_, en rendant possible la création de branches de très courte durée (maximum 1 jour).
+- _Trunk-based_ : Cette méthode est orientée vers la publication en continu d'un logiciel (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)"). Contrairement au _GitHub flow_, il n'y qu'une seule branche avec cette méthode. Chacun pousse son code directement dans la branche principale (le _trunk_, fig. <spanc/>\ref{fig:trunk_git}). Elle incite à réaliser de petites contributions qui sont facilement annulables en cas de bug. Elle réduit le temps passé sur les conflits car le développeur synchronise plus régulièrement son code avec le reste des contributions. Cette méthode s'appuie fortement sur les mécanismes de CI/CD : chaque contribution est évaluée (CI). Si elle passe, le logiciel peut être automatiquement mis à jour (CD) en créant une _release_. Cela permet également de s'assurer que les mécanismes de mise en production (CD) fonctionnent à tout moment. Plusieurs sources défendent néanmoins une approche alternative du _trunk-based development_, en rendant possible la création de branches de très courte durée (maximum 1 jour).
 
-    ![Exemple de workflow git _trunk-based_](./images/trunk_git.jpg)
+    ![Exemple de workflow git _trunk-based_.\label{fig:trunk_git}](./images/trunk_git.jpg)
 
 Selon Atlassian, le _workflow git_ à l'état de l'art est aujourd'hui le _trunk-based development_[^AtlassianGitflow]. La base de code de Google est un bon exemple : malgré des dizaines de milliers de contributions quotidiennes, c'est cette méthode qu'elle a choisie[^GoogleSingleRepository].
 
@@ -1176,13 +1176,13 @@ Vous n'avez peut-être pas à votre main une grande équipe mais souhaitez bén�
 
 S'inspirant du meilleur de plusieurs méthodologies Agile (_Scrum_[^Scrum], _Extreme Programming_, _Kanban_[^KanbanMethod]), elle emprunte leur pragmatisme sans inclure leur lourdeur organisationnelle. Cette méthodologie conviendra davantage à une hiérarchie en transformation, par rapport au _trunk-based development_. Les responsables SSI y sont également plus favorables car elle fixe des versions logicielles et facilite la maintenance de projet de toute taille sur le long terme. Enfin, elle permet aux responsables de projet autant qu'aux développeurs de suivre simplement les développements.
 
-Nommée "_Flexible flow_" (fig. <spanc/>), elle se base sur le _GitHub flow_ mais ajoute un lien entre les équipes de gestion de projet et les équipes techniques.
+Nommée "_Flexible flow_" (fig. <spanc/>\ref{fig:flexible_flow_git}), elle se base sur le _GitHub flow_ mais ajoute un lien entre les équipes de gestion de projet et les équipes techniques.
 
-![Exemple de gestion des branches avec la méthode _Flexible flow_](./images/flexible_flow_git.jpg)
+![Exemple de gestion des branches avec la méthode _Flexible flow_.\label{fig:flexible_flow_git}](./images/flexible_flow_git.jpg)
 
-Pour faire le lien entre gestion de projet et contributions techniques, les projets GitLab ou GitHub utilisent des _issues_. Ces dernières sont des tâches assignables à un collaborateur, décrivant quoi et comment développer une nouvelle fonctionnalité ou corriger un bug (fig. <spanc/>).
+Pour faire le lien entre gestion de projet et contributions techniques, les projets GitLab ou GitHub utilisent des _issues_. Ces dernières sont des tâches assignables à un collaborateur, décrivant quoi et comment développer une nouvelle fonctionnalité ou corriger un bug (fig. <spanc/>\ref{fig:figure_3}).
 
-![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
+![Exemple de vue Kanban dans GitLab.\label{fig:figure_3}](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
 
 En _Flexible flow_, toute contribution doit faire référence à une _issue_ qui décrit la genèse de la tâche, comment elle peut être résolue et centralise les réflexions des parties-prenantes. N'importe qui peut créer ces tâches (responsable projet, développeur, utilisateur). C'est le responsable du projet qui les priorise ensuite. Tout développeur nouvellement attribué doit savoir : quoi faire, où commencer et pourquoi, en consultant l'_issue_. Chacune est numérotée automatiquement par la forge logicielle.
 
@@ -1591,9 +1591,9 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
     La confiance que vos utilisateurs portent à l'égard de votre service, est liée à votre réactivité dans votre réponse à incident. Vos utilisateurs ne s'attendent pas à 100% de disponibilité, mais ils s'attendent à une communication claire en cas d'incident. Cette transparence est fondamentale.
 
-    Une [page d'état des services](https://github.com/ivbeg/awesome-status-pages) (_status page_ en anglais), est un excellent moyen d'informer vos utilisateurs de l'état d'avancement d'un incident (fig. <spanc/>). Vous pouvez également indiquer à l'avance des opérations de maintenance.
+    Une [page d'état des services](https://github.com/ivbeg/awesome-status-pages) (_status page_ en anglais), est un excellent moyen d'informer vos utilisateurs de l'état d'avancement d'un incident (fig. <spanc/>\ref{fig:2023_atlassian_statuspage}). Vous pouvez également indiquer à l'avance des opérations de maintenance.
 
-    ![Exemple de _status page_ Atlassian avec incident, état des services et prévision d'opération de maintenance. Source : _atlassian.com/software/statuspage/feature_](./images/2023_atlassian_statuspage.png)
+    ![Exemple de _status page_ Atlassian avec incident, état des services et prévision d'opération de maintenance. Source : _atlassian.com/software/statuspage/feature_.\label{fig:2023_atlassian_statuspage}](./images/2023_atlassian_statuspage.png)
 
     A chaque mise à jour du status de l'incident, communiquer sur :
 
@@ -1613,9 +1613,9 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
     L'impact de l'incident étant contrôlé, on peut désormais investiguer la cause racine du problème.
 
-    Lister en équipe les facteurs probables contribuant au problème. Structurez ensuite vos hypothèses avec un diagramme de cause à effet (ou diagramme d'_Ishikawa_, fig. <spanc/>).
+    Lister en équipe les facteurs probables contribuant au problème. Structurez ensuite vos hypothèses avec un diagramme de cause à effet (ou diagramme d'_Ishikawa_, fig. <spanc/>\ref{fig:2023_ishikawa_diagramme}).
 
-    ![Diagramme d'Ishikawa pour une pièce défectueuse](./images/2023_ishikawa_diagramme.jpg)
+    ![Diagramme d'Ishikawa pour une pièce défectueuse.\label{fig:2023_ishikawa_diagramme}](./images/2023_ishikawa_diagramme.jpg)
 
     Choisir par un vote à majorité les causes qui vous semblent les plus susceptibles de se reproduire. Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Vous avez désormais identifié un axe de réflexion.
 
@@ -1833,13 +1833,13 @@ La [RCA](#investiguer-les-incidents) est une méthode dite "réactive" : elle es
 
 Le résultat de cette analyse est un tableau listant les états d'erreur d'un produit ou d'un logiciel, priorisés par risque. En fonction des conséquences qu'un risque peut produire, les équipes de conception priorisent le développement des mécanismes empêchant qu'il se produise.
 
-En FMEA, il est possible de représenter visuellement une cause susceptible de provoquer une situation d'erreur (fig. <spanc/>).
+En FMEA, il est possible de représenter visuellement une cause susceptible de provoquer une situation d'erreur (fig. <spanc/>\ref{fig:2023_fmea_simple}).
 
-![Illustration du principe de relation de cause à effet](./images/2023_fmea_simple.jpg)
+![Illustration du principe de relation de cause à effet.\label{fig:2023_fmea_simple}](./images/2023_fmea_simple.jpg)
 
-On peut ainsi établir une chaîne de causes à effets, pour mieux se représenter les conséquence d'un problème. Prenons comme exemple la figure <spanc/> : un scénario de dysfonctionnement d'une imprimante de bureau.
+On peut ainsi établir une chaîne de causes à effets, pour mieux se représenter les conséquence d'un problème. Prenons comme exemple la figure <spanc/>\ref{fig:2023_fmea_printer_jam} : un scénario de dysfonctionnement d'une imprimante de bureau.
 
-![Schéma d'une analyse de cause à effet (FMEA) pour des problèmes de fonctionnement d'une imprimante](./images/2023_fmea_printer_jam.jpg)
+![Schéma d'une analyse de cause à effet (FMEA) pour des problèmes de fonctionnement d'une imprimante.\label{fig:2023_fmea_printer_jam}](./images/2023_fmea_printer_jam.jpg)
 
 Vous pouvez faire de même avec des scénarios de dysfonctionnement d'un logiciel ou d'une infrastructure. Etablissez un tableau de 7 colonnes. Pour chaque hypothèse d'incident, l'auteur doit déterminer :
 
@@ -2004,9 +2004,9 @@ Vous pouvez tout d'abord commencer à automatiser vos infrastructures à l'aide 
 
 Reportez-vous au [projet GitHub « ToDevOps »](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) [^ToDevOps] pour voir cette technologie en pratique.
 
-Pour superviser et automatiser ces tâches d'administration, des outils avancés comme _Ansible AWX_, _Ansible Tower_ (fig. <spanc/>), _RedHat Satellite_, _Alcali_, _Uyuni_ ou _Palantir Apollo_ peuvent être intéressants à considérer, si la maturité de votre organisation vous le permet.
+Pour superviser et automatiser ces tâches d'administration, des outils avancés comme _Ansible AWX_, _Ansible Tower_ (fig. <spanc/>\ref{fig:2020_ansible_tower_interface}), _RedHat Satellite_, _Alcali_, _Uyuni_ ou _Palantir Apollo_ peuvent être intéressants à considérer, si la maturité de votre organisation vous le permet.
 
-![Interface affichant les tâches Ansible lancées dans Ansible Tower. Extrait de l'article de Stuart CUNLIFFE[^Ansible101] sur le blog d'IBM.](./images/2020_ansible_tower_interface.png)
+![Interface affichant les tâches Ansible lancées dans Ansible Tower. Extrait de l'article de Stuart CUNLIFFE[^Ansible101] sur le blog d'IBM.\label{fig:2020_ansible_tower_interface}](./images/2020_ansible_tower_interface.png)
 
 Gardez en tête que maintenir une infrastructure est une tâche complexe, donc _keep it simple_ ! N'allez pas adopter la dernière technologie du moment seulement parce-qu'elle est "sexy" : plus vous ajoutez des technologies et des niveaux d'abstraction, plus votre équipe doit être fournie et expérimentée pour la maintenir et la réparer (cf. chapitre "[Too big, too soon](#too-big-too-soon)").
 
@@ -2039,7 +2039,7 @@ L'ensemble de ces tests est vérifiable automatiquement avant toute mise en prod
 
 ### Intégration Continue (CI)
 
-L'intégration continue (_continuous integration_ ou _CI_ en anglais) est une pratique de développement au sein de l'usine logicielle. L'idée est la suivante : à chaque modification du code, des scripts automatisés se lancent pour vérifier la conformité de la contribution (fig. <spanc/>). Cette conformité peut être d'ordre SSI, vérifier la qualité logicielle ou contrôler les pré-requis pour la mise en production.
+L'intégration continue (_continuous integration_ ou _CI_ en anglais) est une pratique de développement au sein de l'usine logicielle. L'idée est la suivante : à chaque modification du code, des scripts automatisés se lancent pour vérifier la conformité de la contribution (fig. <spanc/>\ref{fig:ci-pipeline-gitlab}). Cette conformité peut être d'ordre SSI, vérifier la qualité logicielle ou contrôler les pré-requis pour la mise en production.
 
 Par exemple, vos équipes SSI n'ont probablement pas le temps de vérifier la conformité de chaque contribution. Elles peuvent alors déléguer une partie de ces vérifications à des scripts qui vérifieront automatiquement et systématiquement que la base de code respecte vos standards de sécurité. L'avantage est triple :
 
@@ -2047,11 +2047,11 @@ Par exemple, vos équipes SSI n'ont probablement pas le temps de vérifier la co
 - La conformité de vos règles SSI n'est plus "édictée" mais garantie par des vérifications "codées"
 - Vos développeurs voient directement si leur code est conforme et peuvent immédiatement le modifier s'il ne l'est pas
 
-![Illustration d'une chaîne d'intégration continue dans GitLab. Source : [gitlab.com](https://docs.gitlab.com/ee/ci/pipelines)](./images/ci-pipeline-gitlab.png)
+![Illustration d'une chaîne d'intégration continue dans GitLab. Source : [gitlab.com](https://docs.gitlab.com/ee/ci/pipelines).\label{fig:ci-pipeline-gitlab}](./images/ci-pipeline-gitlab.png)
 
-Ainsi, en mode DevOps, les responsables SSI ne sont plus des personne édictant des règles au format papier, mais [des ingénieurs "codant" des règles SSI](#ingénieur-ssi-devops) sous forme de scripts automatisés, dans la forge logicielle (fig. <spanc/>). Cela garantie le respect de ces règles par les développeurs et la production.
+Ainsi, en mode DevOps, les responsables SSI ne sont plus des personne édictant des règles au format papier, mais [des ingénieurs "codant" des règles SSI](#ingénieur-ssi-devops) sous forme de scripts automatisés, dans la forge logicielle (fig. <spanc/>\ref{fig:2023_gitlab_job_example}). Cela garantie le respect de ces règles par les développeurs et la production.
 
-![Exemple de job GitLab vérifiant la conformité de la documentation d'un projet, grâce à l'outil Markdownlint](./images/2023_gitlab_job_example.png)
+![Exemple de job GitLab vérifiant la conformité de la documentation d'un projet, grâce à l'outil Markdownlint.\label{fig:2023_gitlab_job_example}](./images/2023_gitlab_job_example.png)
 
 Voici quelques exemples d'algorithmes qu'il est possible de lancer pour vérifier automatiquement des règles ou prendre des actions lors d'un évènement déclencheur :
 
@@ -2102,9 +2102,9 @@ Dans un premier temps, il s'agit d'au moins automatiser la mise à jour de votre
 
 D'autres pratiques existent pour des utilisateurs plus avancés. Comme nous avons pu l'évoquer dans le chapitre "[GitOps](#gitops)", notre répertoire _git_ est la "source unique de vérité" d'un logiciel. Par conséquent, l'infrastructure doit idéalement se baser dessus pour définir l'état attendu d'un logiciel en production. Par exemple, l'outil _ArgoCD_ va vérifier en permanence la présence de modifications dans un répertoire _git_, sur une branche spécifique (souvent _main_ ou _master_). Dès qu'ArgoCD détecte un changement, il tente de déployer la toute dernière version du logiciel surveillé.
 
-Les outils comme _ArgoCD_ (fig. <spanc/>), _Flux_, _Spinnaker_ ou _Jenkins X_ permettent de suivre visuellement l'état du déploiement d'un logiciel. Ils révèlent tout leur potentiel dans un environnement Cloud, en pouvant observer l'état de chaque micro-service.
+Les outils comme _ArgoCD_ (fig. <spanc/>\ref{fig:2022_argocd_interface}), _Flux_, _Spinnaker_ ou _Jenkins X_ permettent de suivre visuellement l'état du déploiement d'un logiciel. Ils révèlent tout leur potentiel dans un environnement Cloud, en pouvant observer l'état de chaque micro-service.
 
-![Interface d'ArgoCD pour le suivi du déploiement d'un logiciel](images/2022_argocd_interface.png)
+![Interface d'ArgoCD pour le suivi du déploiement d'un logiciel.\label{fig:2022_argocd_interface}](images/2022_argocd_interface.png)
 
 Basé sur la même mécanique, il est possible de déployer simultanément plusieurs instances d'un logiciel. Par exemple lors d'une revue de code dans une _merge request_, vous pouvez [configurer _ArgoCD_](https://www.youtube.com/watch?v=cpAaI8p4R60) pour qu'il déploie temporairement et de manière isolée cette version "en évaluation" du logiciel. Cette technique permet aux ingénieurs de rapidement tester un logiciel, au lieu de le déployer par leurs propres moyens. Les URLs ont souvent cette forme : `wxyz.staging.monapp.com`.
 
@@ -2140,9 +2140,9 @@ Examinons de plus près ce que chacune de ces données peut nous apprendre :
 - _metrics_ : représentations numériques de phénomènes mesurés au cours du temps. Par exemple, le nombre de requêtes, le temps de réponse ou l'utilisation de ressources (RAM, CPU, disque, réseau).
 - _traces_ : type de _logs_ permettant de suivre le cheminement d'une opération (ex: une requête). Une trace est un groupe de _logs_ qui comporte des informations supplémentaires permettant de tracer une opération, au travers des différents services par lesquels elle passe. Chaque étape et sous-opération traversée est nommée travée (_span_). Les _logs_ d'une trace sont généralement générés automatiquement.
 
-Attardons-nous sur les traces pour bien comprendre ce qu'elles impliquent. Prenons l'exemple d'une application (un client) qui envoit une requête à une API REST (un serveur). Une trace est composée de _spans_ et de métriques, associées à un identifiant unique. Cet identifiant permet de discriminer le cheminement de notre requête au travers de tous les services qu'elle traversera. La figure <spanc/> nous fournit un exemple.
+Attardons-nous sur les traces pour bien comprendre ce qu'elles impliquent. Prenons l'exemple d'une application (un client) qui envoit une requête à une API REST (un serveur). Une trace est composée de _spans_ et de métriques, associées à un identifiant unique. Cet identifiant permet de discriminer le cheminement de notre requête au travers de tous les services qu'elle traversera. La figure <spanc/>\ref{fig:2023_trace_basic_example} nous illustre un exemple.
 
-![Lignes de logs d'une trace entre un client et un serveur.](./images/2023_trace_basic_example.png)
+![Lignes de logs d'une trace entre un client et un serveur.\label{fig:2023_trace_basic_example}](./images/2023_trace_basic_example.png)
 
 <!--
 ```txt
@@ -2165,9 +2165,9 @@ Metrics:
 ```
 -->
 
-Pour mieux se représenter la temporalité de la requête, les _logs_ d'une _trace_ sont souvent affichés sous forme de diagramme. Chaque _span_ est alors représentée par un rectangle incluant un nom (à gauche) et une durée (au niveau du rectangle) comme illustré en figure <spanc/>.
+Pour mieux se représenter la temporalité de la requête, les _logs_ d'une _trace_ sont souvent affichés sous forme de diagramme. Chaque _span_ est alors représentée par un rectangle incluant un nom (à gauche) et une durée (au niveau du rectangle) comme illustré en figure <spanc/>\ref{fig:2022_jaeger_trace}.
 
-![Exemple de trace traitée par Jaeger pour un appel API entre un client et un serveur. Les espacements entre les spans bleues et orange sont dus au temps que prend la communication HTTP entre les deux services. Il n'y a pas de log émis à ce moment.](./images/2022_jaeger_trace.png)
+![Exemple de trace traitée par Jaeger pour un appel API entre un client et un serveur. Les espacements entre les spans bleues et orange sont dus au temps que prend la communication HTTP entre les deux services. Il n'y a pas de log émis à ce moment.\label{fig:2022_jaeger_trace}](./images/2022_jaeger_trace.png)
 
 Les traces sont indépendamment remontées par des librairies comme le SDK d'OpenTelemetry. Ces dernières les envoit à un collecteur de traces comme Jaeger, Tempo ou Zipkin pour qu'elles soient validées, nettoyées et/ou enrichies. Elles sont ensuite stockées dans des serveurs de logs centralisés, comme Prometheus ou Elasticsearch. L'identifiant de la trace nous permet de retrouver la chronologie des opérations par lesquelles elle est passé.
 
@@ -2283,9 +2283,9 @@ Un SLO fixe une qualité de service à maintenir, c'est à dire une certaine val
 | 99.99%             | 52m 33.6s  | 12m 57.6s     | 4m 1.9s             |
 | 99.999%            | 5m 15.4s   | 1m 17.8s      | 24.2s               |
 
-Si les SLOs doivent représenter en priorité les irritants pour vos utilisateurs, vous pouvez aussi en constituer pour vos équipes internes. Par exemple, votre infrastructure peut vérifier que chaque serveur répond "_99% du temps en moins de 500ms aux requêtes ICMP sur 1 semaine_". Dans ce cas-là, définissez vos SLOs à partir de votre historique de mesures (fig. <spanc/>). Par exemple, si 99% de vos requêtes ICMP répondaient en moins de 300ms le mois dernier, définissez le SLO "_99% des requêtes ICMP doivent répondre en moins de 300ms sur un mois_".
+Si les SLOs doivent représenter en priorité les irritants pour vos utilisateurs, vous pouvez aussi en constituer pour vos équipes internes. Par exemple, votre infrastructure peut vérifier que chaque serveur répond "_99% du temps en moins de 500ms aux requêtes ICMP sur 1 semaine_". Dans ce cas-là, définissez vos SLOs à partir de votre historique de mesures (fig. <spanc/>\ref{fig:2023_grafana_slo_eb}). Par exemple, si 99% de vos requêtes ICMP répondaient en moins de 300ms le mois dernier, définissez le SLO "_99% des requêtes ICMP doivent répondre en moins de 300ms sur un mois_".
 
-![Aperçu du tableau de bord Grafana "Service level (SLI/SLO)" par Xabier LARRAKOETXEA. La partie supérieure représente le taux de conformité d'un service à un SLO au cours du temps. La partie inférieure représente la tendance de consommation du budget d'erreur, intrinsèquement lié au SLO. Source : [grafana.com](grafana.com/grafana/dashboards/8793-service-level-sli-slo).](./images/2023_grafana_slo_eb.png)
+![Aperçu du tableau de bord Grafana "Service level (SLI/SLO)" par Xabier LARRAKOETXEA. La partie supérieure représente le taux de conformité d'un service à un SLO au cours du temps. La partie inférieure représente la tendance de consommation du budget d'erreur, intrinsèquement lié au SLO. Source : [grafana.com](grafana.com/grafana/dashboards/8793-service-level-sli-slo).\label{fig:2023_grafana_slo_eb}](./images/2023_grafana_slo_eb.png)
 
 Les SLOs doivent être définis de paire avec les décideurs. Leur implication dans cette définition est nécessaire pour qu'ils puissent comprendre en quoi leurs décisions (ex: priorisation des tâches, quantité de travail demandée) impactent la résilience de l'infrastructure. Si un décideur veut que ses ingénieurs développent souvent et rapidement des nouveautés, les SLOs aident à comprendre quand le rythme imposé est trop exigeant. À l'opposé, atteindre trop largement ses SLOs indique que votre entreprise peut avancer plus vite sans impacter sa qualité de service. L'implication des décideurs est d'autant plus importante qu'ils mettent parfois la responsabilité de l'entreprise en jeu. C'est la SLA qui en est à l'origine.
 
@@ -2309,9 +2309,9 @@ La méthode la plus simple est de calculer la moyenne du temps de chargement des
 
 Néanmoins, baser ses alertes sur la moyenne ou la médianne des mesures n'est pas la meilleure option. Cette approche ne permet pas d'identifier les défaillances à large échelle. Google recommande une autre approche[^SLOSREBook], utilisant les centiles (_percentiles_ en anglais). Cette méthode de distribution permet de mettre en évidence les changements de tendance parmi le top X% des mesures récoltées.
 
-Imaginez que votre infrastructure serve des millions d'utilisateurs. Vous recevez des milliards de requêtes. Il se peut qu'une page défaillante, affectant seulement quelques centaines d'utilisateurs sur votre site, passe totalement inaperçu si vous utilisez la moyenne ou la médianne comme méthode de mesure. En revanche, si vous utilisez l'aggrégation par centile, vous pourrez distinguer plus finement ces anomalies (fig. <spanc/>).
+Imaginez que votre infrastructure serve des millions d'utilisateurs. Vous recevez des milliards de requêtes. Il se peut qu'une page défaillante, affectant seulement quelques centaines d'utilisateurs sur votre site, passe totalement inaperçu si vous utilisez la moyenne ou la médianne comme méthode de mesure. En revanche, si vous utilisez l'aggrégation par centile, vous pourrez distinguer plus finement ces anomalies (fig. <spanc/>\ref{fig:2023_percentiles}).
 
-![50ème, 85ème, 95ème et 99ème centile des latences pour un système. L'axe vertical est logarithmique.](./images/2023_percentiles.png)
+![50ème, 85ème, 95ème et 99ème centile des latences pour un système. L'axe vertical est logarithmique.\label{fig:2023_percentiles}](./images/2023_percentiles.png)
 
 Avec cette représentation, il est possible de déduire qu'en moyenne, la latence des requêtes est inférieure ou égale à 200ms (le 50ème centile, partie violette, représente la médianne). Mais plus intéressant encore, elle permet de comprendre que 5% des requêtes (à partir du 95ème centile, partie rouge) sont 2.5 fois plus lentes (~500ms) que la moyenne. Votre équipe SRE va pouvoir travailler à découvrir pourquoi la latence est si élevée pour ces requêtes.
 
@@ -2334,7 +2334,7 @@ Les MTTx sont des mesures qualifiant le temps moyen pour qu'un évènement se pr
 
 Suivre ces mesures au cours du temps vous permet d'évaluer l'efficacité de vos travaux de résilience. Cela vous permet aussi de jauger l'efficacité de vos équipes pour répondre aux incidents. Si les mesures se dégradent, vous devrez étudier pourquoi et éventuellement réorganiser vos priorités afin de ne pas menacer vos SLOs. L'avantage est que vous saurez sur quoi vous concentrer.
 
-Les MTTx sont nombreuses dans la littérature, avec chacune leurs spécificités et leurs nuances (fig. <spanc/>). Voyons les MTTx les plus populaires :
+Les MTTx sont nombreuses dans la littérature, avec chacune leurs spécificités et leurs nuances (fig. <spanc/>\ref{fig:2023_MTTx_timeline}). Voyons les MTTx les plus populaires :
 
 | Mesure   | Nom complet                                                       | Signification                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | -------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -2345,7 +2345,7 @@ Les MTTx sont nombreuses dans la littérature, avec chacune leurs spécificités
 | **MTTP** | _mean time to production_ ou temps moyen à la production          | Temps moyen pour que le service affecté par un incident soit à nouveau opérationnel et accessible aux utilisateurs en production. Au contraire du MTTR qui mesure le temps de réparation d'un service, alors que le MTRS mesure le temps de restauration du service après la réparation du service. Par exemple en cas de panne, votre site peut afficher un avertissement "Nous sommes en maintenance" même si vous venez de réparer le service défaillant.               |
 | **MTBF** | _mean time before failure_ ou temps moyen entre deux défaillances | Temps moyen entre la dernière défaillance détectée et l'actuelle. Cette mesure aide à prédire la disponibilité d'un service.                                                                                                                                                                                                                                                                                                                                               |
 
-![Chronologie des mesures MTTx lors d'un incident.](./images/2023_MTTx_timeline.jpg)
+![Chronologie des mesures MTTx lors d'un incident.\label{fig:2023_MTTx_timeline}](./images/2023_MTTx_timeline.jpg)
 
 Vous pouvez commencer à suivre vos MTTx dans un tableur collaboratif (ex: _Baserow_, _NocoDB_, _Google Sheets_) puis passer à des outils plus intégrés comme _Jira Service Management_ ou [_Odoo_](https://www.odoo.com/fr_FR/app/maintenance). L'idée est de pouvoir calculer et visualiser la tendance que prennent vos MTTx avec le temps.
 
@@ -2393,13 +2393,13 @@ Grâce aux mécanismes de déploiement standardisés que proposent les systèmes
 - Récoltant les _logs_ d'accès aux applications (cf. _Istio access logs_[^IstioAccessLogs])
 - Permettant de détailler le cheminement des requêtes entre des pods distribués sur plusieurs nœuds (cf. _Istio distributed traces_[^IstioDistributedTraces])
 
-Les métriques étant standardisées, la plupart des _service mesh_ permettent de les utiliser pour configurer des règles automatiques selon l'activité réseau de l'infrastructure (fig. <spanc/>).
+Les métriques étant standardisées, la plupart des _service mesh_ permettent de les utiliser pour configurer des règles automatiques selon l'activité réseau de l'infrastructure (fig. <spanc/>\ref{fig:figure-6}).
 
-![Cheminement réseau d'une seule requête via Istio. Source : istio.io](./images/figure-6.png)
+![Cheminement réseau d'une seule requête via Istio. Source : istio.io.\label{fig:figure-6}](./images/figure-6.png)
 
-En résumé, un _service mesh_ gère tout ou partie des aspects suivants : gestion du traffic réseau, sécurité des flux et observabilité réseau (fig. <spanc/>). Cela permet de mieux sécuriser l'infrastructure, de mieux pouvoir l'auditer et de réduire la rupture de service.
+En résumé, un _service mesh_ gère tout ou partie des aspects suivants : gestion du traffic réseau, sécurité des flux et observabilité réseau (fig. <spanc/>\ref{fig:figure-5}). Cela permet de mieux sécuriser l'infrastructure, de mieux pouvoir l'auditer et de réduire la rupture de service.
 
-![Illustration du fonctionnement d'un service mesh. Source : weave.works](./images/figure-5.png)
+![Illustration du fonctionnement d'un service mesh. Source : weave.works.\label{fig:figure-5}](./images/figure-5.png)
 
 > Vue d'ensemble du fonctionnement d'un service de maillage de services : des conteneurs "proxy" sont ajoutés dans chaque pod pour gérer les interactions avec le _service mesh_.[^WeaveWorksServiceMeshArticle]
 
@@ -2415,31 +2415,31 @@ Comme décrit dans le chapitre "[Un socle au service de votre résilience](#un-s
 
 Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _Cloud native_[^CloudNative], il est possible de facilement "installer" des services socle au sein d'un cluster Kubernetes. Voici une liste non-exhaustive des services qui peuvent être assurés nativement dans votre cluster et administrables de manière centralisée :
 
-1. Centralisation des logs et traces applicatifs et réseaux (cf. [Filebeat](https://www.elastic.co/beats/filebeat), [Fluentd](https://www.fluentd.org/) (fig. <spanc/>), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/), [Jaeger](https://github.com/jaegertracing/jaeger), [Tempo](https://grafana.com/oss/tempo/), [Zipkin](https://zipkin.io/))
+1. Centralisation des logs et traces applicatifs et réseaux (cf. [Filebeat](https://www.elastic.co/beats/filebeat), [Fluentd](https://www.fluentd.org/) (fig. <spanc/>\ref{fig:kibana_logs}), [Loki](https://grafana.com/oss/loki/), [OpenTelemetry](https://opentelemetry.io/), [Jaeger](https://github.com/jaegertracing/jaeger), [Tempo](https://grafana.com/oss/tempo/), [Zipkin](https://zipkin.io/))
 
-    ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com](./images/kibana_logs.png)
+    ![Tableau de bord Kibana de logs applicatifs remontés via Fluentd. Source : digitalocean.com.\label{fig:kibana_logs}](./images/kibana_logs.png)
 
-2. Centralisation des métriques de performance des nœuds et des conteneurs du cluster (cf. [Mimir](https://grafana.com/oss/mimir/), [Metricbeat](https://www.elastic.co/beats/metricbeat), fig. <spanc/>)
+2. Centralisation des métriques de performance des nœuds et des conteneurs du cluster (cf. [Mimir](https://grafana.com/oss/mimir/), [Metricbeat](https://www.elastic.co/beats/metricbeat), fig. <spanc/>\ref{fig:grafana_loki_metrics})
 
-    ![Tableau de bord Grafana des ressources consommées par les conteneurs d'une application dans Kubernetes, remontées par Loki. Source : grafana.com](./images/grafana_loki_metrics.png)
+    ![Tableau de bord Grafana des ressources consommées par les conteneurs d'une application dans Kubernetes, remontées par Loki. Source : grafana.com.\label{fig:grafana_loki_metrics}](./images/grafana_loki_metrics.png)
 
 3. Analyse antivirus du contenu des nœuds et des conteneurs (cf. [Docker Antivirus Exclusions](https://docs.docker.com/engine/security/antivirus/), [Kubernetes ClamAV](https://cloud.google.com/community/tutorials/gcp-cos-clamav))
 
 4. Détection de comportements suspects d'appels système Linux (cf. [Sysdig Falco](https://github.com/falcosecurity/falco))
 
-5. Contrôle et audit des configurations du cluster (cf. [Gatekeeper](https://github.com/open-policy-agent/gatekeeper) (fig. <spanc/>), [OpenSCAP](https://www.open-scap.org))
+5. Contrôle et audit des configurations du cluster (cf. [Gatekeeper](https://github.com/open-policy-agent/gatekeeper) (fig. <spanc/>\ref{fig:gatekeeper_k8s_resource_refusal}), [OpenSCAP](https://www.open-scap.org))
 
-    ![Exemple de refus du déploiement d'un applicatif par Gatekeeper en raison de ressources demandées trop importantes. Source : DevOps Toolkit (YouTube)](./images/gatekeeper_k8s_resource_refusal.png)
+    ![Exemple de refus du déploiement d'un applicatif par Gatekeeper en raison de ressources demandées trop importantes. Source : DevOps Toolkit (YouTube).\label{fig:gatekeeper_k8s_resource_refusal}](./images/gatekeeper_k8s_resource_refusal.png)
 
-6. Gestion des secrets (mots de passe, tokens) des applicatifs (cf. [Vault](https://www.vaultproject.io/) (fig. <spanc/>), [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)[^SealedSecrets])
+6. Gestion des secrets (mots de passe, tokens) des applicatifs (cf. [Vault](https://www.vaultproject.io/) (fig. <spanc/>\ref{fig:hashicorp_vault_ui}), [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets)[^SealedSecrets])
 
-    ![Interface web de Hashicorp Vault permettant de manipuler les secrets utilisés au sein d'une infrastructure.](./images/hashicorp_vault_ui.png)
+    ![Interface web de Hashicorp Vault permettant de manipuler les secrets utilisés au sein d'une infrastructure.\label{fig:hashicorp_vault_ui}](./images/hashicorp_vault_ui.png)
 
 7. Sauvegarde automatique des volumes persistants (cf. [Valero](https://velero.io/docs/v1.10/))
 
-8. Chiffrement des flux réseau entre les conteneurs (cf. chapitre "[Service mesh](#service-mesh)", fig. <spanc/>)
+8. Chiffrement des flux réseau entre les conteneurs (cf. chapitre "[Service mesh](#service-mesh)", fig. <spanc/>\ref{fig:istio_kiali_tls_communication})
 
-    ![Interface de Kiali affichant l'usage du protocole mTLS par le service `details` vers le pod `details-v1`. Source : istio.io](./images/istio_kiali_tls_communication.png)
+    ![Interface de Kiali affichant l'usage du protocole mTLS par le service `details` vers le pod `details-v1`. Source : istio.io.\label{fig:istio_kiali_tls_communication}](./images/istio_kiali_tls_communication.png)
 
 9. Gestion des certificats de sécurité (cf. chapitre "[Service mesh](#service-mesh)")
 
@@ -2518,13 +2518,13 @@ En ce sens si vous souhaitez travailler efficacement avec une entreprise externe
 
 GitLab permet aussi de réaliser du déploiement continu : l'industriel peut alors mettre à disposition de ses clients une URL à laquelle est accessible la dernière version du logiciel. Vous évitez ainsi les réunions de plusieurs heures et gagnez en flexibilité. L'objectif est atteint : vous itérez, rapidement.
 
-![Exemple de vue Kanban dans GitLab](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
+![Exemple de vue Kanban dans GitLab.\label{fig:figure_3}](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
 
-> La figure <spanc/> représente la vue Kanban dans GitLab, où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).
+> La figure <spanc/>\ref{fig:figure_3} représente la vue Kanban dans GitLab, où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).
 
-Dans le cas où vous ne pouvez pas agir sur vos pratiques avec l'industriel, organisez-vous à minima en interne pour disposer d'un outil de gestion de projet collaboratif. Par exemple, avec le logiciel _Atlassian Confluence_ (fig. <spanc/>) qui permet de constituer une base de connaissance interne.
+Dans le cas où vous ne pouvez pas agir sur vos pratiques avec l'industriel, organisez-vous à minima en interne pour disposer d'un outil de gestion de projet collaboratif. Par exemple, avec le logiciel _Atlassian Confluence_ (fig. <spanc/>\ref{fig:figure_4}) qui permet de constituer une base de connaissance interne.
 
-![Exemple de vue Kanban dans Atlassian Confluence](./images/figure_4.png "Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
+![Exemple de vue Kanban dans Atlassian Confluence.\label{fig:figure_4}](./images/figure_4.png "Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
 
 > Exemple de vue Kanban dans Atlassian Confluence où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).
 
@@ -2560,9 +2560,9 @@ Le rapport DORA 2022 a classé les organisations sondées en trois catégories d
 | Durée pour restaurer un service | < 1 mois                     | < 1 semaine           | < 1 jour                          |
 | Taux d'échec des déploiements   | 46% - 60%                    | 16% - 30%             | 0% - 15%                          |
 
-GitLab permet même de [visualiser en temps-réel ces mesures](https://gitlab.com/gitlab-org/gitlab/-/value_stream_analytics) depuis la version _12.3_ (fig. <spanc/>).
+GitLab permet même de [visualiser en temps-réel ces mesures](https://gitlab.com/gitlab-org/gitlab/-/value_stream_analytics) depuis la version _12.3_ (fig. <spanc/>\ref{fig:2023_gitlab-value-stream-analytics}).
 
-![Onglet _Value Stream Analytics_ du menu _Analytics_ du projet GitLab sur gitlab.com](./images/2023_gitlab-value-stream-analytics.png)
+![Onglet _Value Stream Analytics_ du menu _Analytics_ du projet GitLab sur gitlab.com.\label{fig:2023_gitlab-value-stream-analytics}](./images/2023_gitlab-value-stream-analytics.png)
 
 Si vous disposez d'une version assez récente de GitLab ou avez mis en place des chaînes d'intégration continue, vous pouvez mesurer la plupart des phénomènes. Sinon, demandez à vos équipes de noter les évènements sur une interface collaborative (ex: _Google Sheets_, _Airtable_, _Atlassian Confluence_, _Baserow_, _NocoDB_).
 
