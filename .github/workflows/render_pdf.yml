@@ -15,9 +15,7 @@ jobs:
   render-pdf-fr:
     name: Render FR PDF book
     runs-on: ubuntu-20.04
-
     steps:
-
       - name: Extract branch name
         if: github.event_name != 'pull_request'
         shell: bash
@@ -29,9 +27,7 @@ jobs:
         run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF})" >> $GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ env.BRANCH_NAME }}
+        uses: actions/checkout@v3
 
       - name: Get version
         run: |
@@ -68,7 +64,58 @@ jobs:
           sed -i -E "s/date: Undefined/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
           cd ./fra && make pdf
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: book-${{ env.BOOK_VERSION }}
           path: ./fra/build/pdf/book.pdf
+
+
+  # Pictures in the book may be referenced at some place in the text.
+  # Ex: \ref{fig:name} in the text to reference the \label{fig:name} illustration.
+  #
+  # When badly referenced, pandoc generates a double questionmarks ("??") in the place
+  # of the latex tags. This Action checks if there are no "??" in the generated PDF.
+  check_picture_references:
+    needs: render-pdf-fr
+    name: Check valid latex references for pictures
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Install poppler-utils
+      run: |
+        sudo apt-get update && sudo apt-get install -y poppler-utils
+
+    - name: Get version
+      run: |
+        version=$(cat ./VERSION)
+        version=${version##+( )} # Trim left whitespaces
+        version=${version%%+( )} # Trim right whitespaces
+        echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+        echo "version : $version"
+    - name: Checking version format
+      run: |
+        if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+        then
+          echo "Invalid version format. Check your ./VERSION file."
+          exit 1
+        fi
+
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: book-${{ env.BOOK_VERSION }}
+        path: ./
+
+    - name: Get text from book
+      run: |
+        pdftotext ./book.pdf
+
+    - name: Get text from book
+      run: |
+        if grep -q "??" ./book.pdf; then
+          echo "The file contains the string '??'"
+        else
+          echo "The file does not contain the string '??'"
+        fi
