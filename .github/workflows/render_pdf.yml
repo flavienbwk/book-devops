@@ -28,7 +28,7 @@ jobs:
         run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF})" >> $GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ env.BRANCH_NAME }}
 
@@ -67,7 +67,7 @@ jobs:
           sed -i -E "s/date: Undefined/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
           cd ./fra && make pdf
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: book-${{ env.BOOK_VERSION }}
           path: ./fra/build/pdf/book.pdf
@@ -81,10 +81,9 @@ jobs:
   check_picture_references:
     name: Check valid latex references for pictures
     runs-on: ubuntu-22.04
-    if: github.ref != 'refs/heads/main'
     steps:
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Install poppler-utils
       run: |
@@ -106,7 +105,7 @@ jobs:
         fi
 
     - name: Download artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: book-${{ env.BOOK_VERSION }}
         path: ./book.pdf
