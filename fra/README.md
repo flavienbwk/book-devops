@@ -157,17 +157,17 @@ Voilà pourquoi il est important d'acculturer aussi souvent que possible sa hié
 
 Des rapports de recherche appuient la théorie selon laquelle les bénéfices des efforts investis en SRE se révêlent sur le moyen-terme[^DORAReportSREPractice].
 
-Selon eux, pratiquer le SRE n'affecte pas la résilience de l'entreprise avant d'avoir acquis un certain niveau de maturité. C'est à dire qu'il est nécessaire d'atteindre une masse critique, avant d'être en mesure de tirer les bénéfices de ces outils et ces pratiques (fig. <spanc/>).
+Selon eux, pratiquer le SRE n'affecte pas la résilience de l'entreprise avant d'avoir acquis un certain niveau de maturité. C'est à dire qu'il est nécessaire d'atteindre une masse critique, avant d'être en mesure de tirer les bénéfices de ces outils et ces pratiques (fig. <spanc/>\ref{fig:adoption-of-sre-practices}).
 
-![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE.](./images/adoption-of-sre-practices.png)
+![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE.\label{fig:adoption-of-sre-practices}](./images/adoption-of-sre-practices.png)
 
 Le rapport DORA 2022 fait le constat qu'il est nécessaire d'adopter une quantité substantielle de pratiques SRE, avant d'en récolter des bénéfices significatifs en terme de résilience[^DORAReportSREPRacticesFigures]. Ce phénomène peut être un frein pour les décideurs, à l'idée de se transformer en mode DevOps.
 
 Mais les bénéfices dépassent bien les coûts engendrés, au delà de cette période initiale d'investissement.
 
-C'est bien dans cette tendance que le DevOps trouve tout son intérêt : alors que les infrastructures traditionnelles ne nécessitent que peu d'investissement initial pour rendre un service, le coût de leur maintenance augmente proportionnellement au nombre de services déployés. Cela rend leur gestion insoutenable à long terme. Le DevOps lui, propose un investissement initial supérieur mais offre la possibilité de maîtriser une activité exponentielle, avec un coût à tendance logarithmique (fig. <spanc/>).
+C'est bien dans cette tendance que le DevOps trouve tout son intérêt : alors que les infrastructures traditionnelles ne nécessitent que peu d'investissement initial pour rendre un service, le coût de leur maintenance augmente proportionnellement au nombre de services déployés. Cela rend leur gestion insoutenable à long terme. Le DevOps lui, propose un investissement initial supérieur mais offre la possibilité de maîtriser une activité exponentielle, avec un coût à tendance logarithmique (fig. <spanc/>\ref{fig:courbes_interet_devops}).
 
-![Ratio coût RH et matériel / services déployés entre une infrastructure traditionnelle et une infrastructure Cloud DevOps.](./images/courbes_interet_devops.jpg)
+![Ratio coût RH et matériel / services déployés entre une infrastructure traditionnelle et une infrastructure Cloud DevOps.\label{fig:courbes_interet_devops}](./images/courbes_interet_devops.jpg)
 
 Ce mode d'organisation vise à rendre les infrastructures plus fiables, réduire les tâches manuelles pour tirer meilleur parti du temps de ses ingénieurs et _in fine_, accélérer le cycle de déploiement logiciel.
 
@@ -1619,7 +1619,7 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
     Choisir par un vote à majorité les causes qui vous semblent les plus susceptibles de se reproduire. Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Vous avez désormais identifié un axe de réflexion.
 
-    Utiliser la méthode des "5 pourquoi" (_5 Why's_). L'idée est d'identifier plusieurs symptômes en cascade, jusqu'à trouver la cause réacine d'un problème. "5" est une valeur arbitraire, elle peut être réduite ou agrandie selon le cas.
+    Utiliser la méthode des "5 Pourquoi" (_5 Why's_). L'idée est d'identifier plusieurs symptômes en cascade, jusqu'à trouver la cause réacine d'un problème. "5" est une valeur arbitraire, elle peut être réduite ou agrandie selon le cas.
 
     Voici un exemple pour le problème identifié "Notre logiciel crash fréquemment" :
 
@@ -2886,7 +2886,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
     figure figcaption:before {
         content: "Fig " counter(figureCounter) ": ";
     }
-    spanc::before {
+    spanc:before {
         content: counter(spanCounter);
     }
 </style>
@@ -2983,7 +2983,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^Burnout]: [Syndrome d'épuisement professionnel, ou _burnout_ en anglais](https://fr.wikipedia.org/wiki/Syndrome_d%27%C3%A9puisement_professionnel).
 
-[^GAFAM]: GAFAM : [Grandes entreprise technologiques américaines](https://fr.wikipedia.org/wiki/GAFAM) (Google, Facebook, Amazon, Apple, Microsoft). Synonymes : [FAANG](https://en.wikipedia.org/wiki/Big_Tech), NATU[^NATU], MAMMA, [MANAMANA](https://www.fool.com/investing/2021/11/05/faang-is-dead-long-live-manamana/).
+[^GAFAM]: GAFAM : [Grandes entreprise technologiques américaines](https://fr.wikipedia.org/wiki/GAFAM) (Google, Facebook, Amazon, Apple, Microsoft). Synonymes : [FAANG](https://en.wikipedia.org/wiki/Big_Tech), NATU, MAMMA, [MANAMANA](https://www.fool.com/investing/2021/11/05/faang-is-dead-long-live-manamana/).
 
 [^NATU]: NATU : [Autres grandes entreprises technologiques américaines, plus récentes dans l'usage](https://fr.wikipedia.org/wiki/GAFAM) (Airbnb, Tesla, Uber, Netflix).
 
