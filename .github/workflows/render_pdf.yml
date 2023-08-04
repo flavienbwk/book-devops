@@ -15,9 +15,7 @@ jobs:
   render-pdf-fr:
     name: Render FR PDF book
     runs-on: ubuntu-20.04
-
     steps:
-
       - name: Extract branch name
         if: github.event_name != 'pull_request'
         shell: bash
@@ -79,10 +77,10 @@ jobs:
   #
   # When badly referenced, pandoc generates a double questionmarks ("??") in the place
   # of the latex tags. This Action checks if there are no "??" in the generated PDF.
-  markdownlint:
-    name: Markdownlint
+  check_picture_references:
+    name: Check valid latex references for pictures
     runs-on: ubuntu-22.04
-
+    if: github.ref != 'refs/heads/main'
     steps:
     - name: Check out code
       uses: actions/checkout@v2
