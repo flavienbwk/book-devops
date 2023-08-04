@@ -1,7 +1,7 @@
 # Scaling Institutions with DevOps - The book
 
-<div style="text-align:center">
-  <table style="margin-left:auto; margin-right:auto;">
+<div style="text-align: center;">
+  <table style="width: 100%; max-width: 600px; margin: 0 auto;">
     <tr>
       <td>
         <img src="./fra/images/cover_a5_source.png" width="128px"/>
