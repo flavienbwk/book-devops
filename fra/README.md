@@ -1295,7 +1295,7 @@ Connaître les différentes architectures logicielles vous aidera à bien compre
 
 En fonction de votre maturité organisationnelle et de la taille de vos équipes, certaines rendront vos logiciels plus simples à maintenir, à mettre à jour ou plus résilients dans la durée.
 
-Ce chapitre présente trois architectures célèbres et décrit leurs avantages et inconvénients. Enfin, nous verrons comment transformer progressivement vos logiciels historiques en microservices.
+Ce chapitre présente trois architectures célèbres et décrit leurs avantages et inconvénients. Enfin, nous verrons comment réaliser progressivement la refonte vos logiciels historiques en microservices.
 
 #### Architecture monolithique et microservices
 
