@@ -66,14 +66,14 @@ Selon la réputée entreprise américaine [Atlassian](https://www.atlassian.com/
 
 Initialement, le DevOps se concentrait sur la manière d'améliorer l'efficacité du développement et du déploiement des logiciels. En 2022, cette méthodologie a évolué et regroupe désormais un nombre bien plus vaste de domaines comme l'administration système, la sécurité ou encore la garantie de qualité système et logicielle. Autour de 2015, la méthodologie DevOps était principalement employée dans les grandes entreprises américaines de la technologie (GAFAM[^GAFAM] et NATU[^NATU]) ou des entreprises employant déjà la [méthodologie agile](#être-au-plus-proche-du-métier). Bien répandue aujourd'hui, des organisations de toute taille l'utilisent partout dans le monde, au sein de tout type de secteur[^GoogleCloudDevopsLeaders] (santé, finances, transports, gouvernements, industrie lourde...) et même si elles ne travaillaient pas encore en mode agile.
 
-Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant en 2007, le gouvernement belge lui avait confié un projet de migration d'un centre de données. Ayant passé un temps considérable à discuter avec les développeurs et les administrateurs systèmes, il aura fait le constat de ce que les ingénieurs Andrew CLAY SHAFER et Lee THOMPSON décriront comme le "mur de la confusion"[^WallofConfusion]. Une métaphore pouvant se résumer par des parties-prenantes qui ne se comprennent pas. La communauté mettait un mot sur un vrai phénomène entravant la communication et la collaboration entre les équipes, ce qui entraîne un manque d'efficacité et des retards. En suivra la rédaction de son livre en 2015 « Le manuel du DevOps : comment créer des organisations technologiques agiles, fiables et sécurisées »[^TheDevopsHandbook]. DEBOIS y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser les objectifs grâce aux pratiques DevOps.
+Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant en 2007, le gouvernement belge lui avait confié un projet de migration d'un centre de données. Ayant passé un temps considérable à discuter avec les développeurs et les administrateurs systèmes, il aura fait le constat de ce que les ingénieurs Andrew CLAY SHAFER et Lee THOMPSON décriront comme le "mur de la confusion"[^WallofConfusion]. Une métaphore pouvant se résumer par des parties prenantes qui ne se comprennent pas. La communauté mettait un mot sur un vrai phénomène entravant la communication et la collaboration entre les équipes, ce qui entraîne un manque d'efficacité et des retards. En suivra la rédaction de son livre en 2015 « Le manuel du DevOps : comment créer des organisations technologiques agiles, fiables et sécurisées »[^TheDevopsHandbook]. DEBOIS y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser les objectifs grâce aux pratiques DevOps.
 
 La SRE est une discipline plus ancienne du temps où Ben TREYNOR SLOSS, ingénieur chez Google, fonda en 2003 une équipe de ce nom. Il sera le père fondateur de la SRE et des premières pratiques DevOps.
 
-Google définit les cinq pilliers du DevOps suivants :
+Google définit les cinq piliers du DevOps suivants :
 
 1. [**Réduire les silos organisationnels**](#réduire-les-silos-organisationnels)
-   - En cultivant l'engagement, le sentiment du partage de responsabilité des succès et des échecs entre les parties-prenantes (ingénieurs, responsables projet, utilisateurs/métiers). Chacun est davantage impliqué et se sent légitime à son niveau.
+   - En cultivant l'engagement, le sentiment du partage de responsabilité des succès et des échecs entre les parties prenantes (ingénieurs, responsables projet, utilisateurs/métiers). Chacun est davantage impliqué et se sent légitime à son niveau.
 2. [**Accepter l'échec**](#accepter-léchec)
    - En partant du principe que l'échec est une conséquence du manque de procédures et de méthodes de la part de l'organisation.
 3. [**Réduire le coût du changement**](#réduire-le-coût-du-changement)
@@ -93,7 +93,7 @@ C'est le lien qui unit le monde du développement et de la production.
 
 « Dev » signifie « développement » quand « Ops » désigne l'exploitation des systèmes informatiques en production.
 
-On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties-prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques, aujourd'hui majoritairement orientés vers l'emploi des technologies _Cloud_.
+On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques, aujourd'hui majoritairement orientés vers l'emploi des technologies _Cloud_.
 
 L'ingénieur « DevOps » est celui en charge de définir et de mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#intégration-continue-ci) au sein d'une [usine logicielle](#usine-logicielle). Ses clients sont les équipes techniques internes : il fait en sorte que tout le monde puisse travailler ensemble de la manière la plus efficace possible.
 
@@ -275,11 +275,11 @@ Comme évoqué dans le chapitre "[Too big, too soon](#too-big-too-soon)", adopte
 
 > « C'est normal, nous aurons toujours du retard ici. »
 
-Si vous avez l'impression d'avoir déjà entendu cela et que vous lisez ce livre, ces paroles ont probablement suscité chez vous un sentiment de consternement.
+Si vous avez l'impression d'avoir déjà entendu cela, ces paroles ont probablement suscité chez vous un sentiment de consternement.
 
-Il est compréhensive d'avoir, selon la structure, des délais (exigences de sécurité, taille des équipes) mais l'organisation ne doit pas tolérer un retard. En aucun cas l'affirmation "c'est normal ici" ne doit devenir une réponse acceptable.
+Il est compréhensif d'accumuler des retards selon la taille, les moyens et les exigences de sécurité de son entreprise. Mais l'organisation ne doit pas tolérer un retard. En aucun cas l'affirmation "c'est normal ici" ne doit devenir une réponse acceptable.
 
-Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il s'agit d'un manque de courage, voire de paresse intellectuelle.
+Si le locuteur est sincère, cet état d'esprit ne résulte que d'un manque de connaissance sur les moyens d'atteindre l'objectif. Dans le cas contraire, il peut s'agir d'un manque de courage, voire de paresse intellectuelle.
 
 Si la majorité des collaborateurs d'une entreprise en viennent à penser qu'elle a du retard, il y a un sérieux problème. Maintenir le _statu quo_ sur cette situation mène inévitablement au déclin de l'organisation et en la perte irrémédiable de crédibilité, de la part de ses employés et de ses partenaires.
 
@@ -291,40 +291,44 @@ Mais il faut également savoir _quand_ dévoiler ses innovations. Preston DUNLAP
 
 > « Certains m'ont demandé quelle fut ma recette pour réussir durant ces 3 dernières années. Je n'en ai pas beaucoup parlé parce-que je savais que si je révélais les éléments trop à l'avance, les forces naturelles de la bureaucratie reviendraient de plus belle, pour rejeter à chaque occasion tout le potentiel de l'innovation. » - Preston DUNLAP, Défier la Gravité (_Defying Gravity_) [^DefyingGravity]
 
-Pour éviter le retard technologique, une organisation peut adopter plusieurs pratiques :
+Pour éviter le retard technologique, les dirigeants d'une organisation peuvent adopter plusieurs pratiques :
 
 - Former de manière continue son personnel, y compris les décideurs (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
+- Conserver une capacité d'innovation interne pour rester en mesure de critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)")
+- Accepter la prise de risque maîtriséé et libérer la parole (cf. chapitre "[Accepter l'échec](#accepter-léchec)")
 - Mesurer et mettre en place des indicateurs pour éviter de s'habituer (cf. chapitre "[Tout mesurer](#tout-mesurer)")
-- Accepter les réalités et libérer la parole (cf. chapitre "[Accepter l'échec](#accepter-léchec)", _How SRE creates a blameless culture_[^SREBlamelessCulture])
-- Conserver une capacité d'innovation interne pour rester en mesure de critiquer (cf. chapitre "[Modèle d'équipe interne](#modèle-déquipe-interne)", _Comment l'entreprise peut sortir de la spirale du déclin_[^ArticlePSSortirSpiraleDeclin])
 
 # Prérequis
 
-Vous avez beau avoir le meilleur des logiciels, si vous n'arrivez pas à le déployer (sans bug, sans interruption de service, sans assistance), personne n'en sera témoin.
+Avoir conçu le meilleur des services (une méthode, un logiciel, un outil) ne vous permettra pas de rayonner tant que vous n'y donnerez pas facilement accès, sans interruption de service et avec de l'assitance. Le DevOps va nous permettre de structurer et maitenir cette source de valeur.
 
-Ce livre n'exigera même pas de votre équipe qu'elle soit particulièrement grande ni même que vos responsables soient déjà convaincus. Néanmoins il exigera que votre équipe, elle, soit convaincue qu'elle peut porter son projet. Bien entendu au cours du temps, l'appui d'autres équipes de votre organisation dans vos expérimentations DevOps sera un argument précieux pour illustrer le succès de votre initiative.
+Ce livre n'exigera même pas de votre équipe qu'elle soit particulièrement grande, ni même que vos responsables soient déjà convaincus. Néanmoins il exigera que votre équipe, elle, soit convaincue qu'elle peut porter son projet. Bien entendu, avec le temps, l'appui d'autres équipes dans votre organisation constituera un argument précieux pour illustrer le succès de votre initiative.
 
 Un responsable ne demande qu'à être convaincu par une initiative de ses subordonnés. Aidez-le à se projeter et à comprendre la plus-value de ce que vous lui proposez.
 
-Cela nécessitera des présentations constantes de l'avancée de votre projet : à la fois pour qu'il se souvienne et pour qu'il comprenne. Il est toujours risqué d'estimer qu'un projet est compris dès la première présentation, surtout quand il s'agit d'un nouveau paradigme que l'on souhaite introduire.
+Cela vous demandera de présenter régulièrement l'avancée de votre projet : à la fois pour qu'il se souvienne et pour qu'il comprenne. Il est toujours risqué d'estimer qu'un projet est compris dès la première présentation, surtout quand il s'agit d'un nouveau paradigme que l'on souhaite introduire.
 
-Vous avez besoin d'équipes internes : il y aura toujours des bugs à résoudre, des configurations à adapter et des fonctionnalités à ajouter. Développés en interne ou en externe, vous subirez le phénomène d'érosion des logiciels[^SoftwareErosion]. Ce dernier qualifie les problèmes qu'un logiciel peut subir au cours du temps quand il est laissé à l'abandon (mises à jour de sécurité critiques, espace disque plein, processus qui cessent de fonctionner...).
+Projetez de monter une équipe interne : il y aura toujours des bugs à résoudre, des configurations à adapter et des fonctionnalités à ajouter. Développées en interne ou par un prestataire, vous subirez le phénomène d'érosion des logiciels[^SoftwareErosion]. Ce dernier qualifie les problèmes qu'un logiciel peut subir au cours du temps quand il est laissé à l'abandon (mises à jour de sécurité critiques, espace disque plein, processus qui cessent de fonctionner...).
 
-Ne croyez pas que « l'industriel » pourra résoudre tous vos problèmes : vous allez perdre beaucoup d'argent et vous n'atteindrez pas les objectifs. L'industriel ne peut pas être en permanence dans votre organisation et comprendre chacun de vos enjeux.
+Ne croyez pas qu'un prestataire pourra résoudre tous vos problèmes : vous perdrez de l'argent et vous n'atteindrez pas vos objectifs. Le résultat d'un prestataire ne sera que le produit de votre capacité à synthétiser vos problématiques. Or dans une phase de transformation, vous allez prendre connaissance de nouveaux enjeux chaque semaine.  Contrairement à vous et votre équipe, le prestataire ne pourra probablement pas être présent en permanence au sein de votre organisation pour capter tous les enjeux des parties prenantes.
 
-Pour amorcer votre initiative DevOps, vous avez besoin :
+Amorcer son initiative DevOps demande de se projeter dans le recrutement de plusieurs profils :
 
-- D'un responsable d'équipe reconnu en ingénierie et avec d'excellentes compétences en communication
-- De plusieurs ingénieurs logiciels qui développeront vos solutions aux besoins métiers
-- De plusieurs profils SRE/DevOps qui développeront votre socle et géreront le cycle de développement/déploiement des logiciels
+- Un responsable d'équipe dont les compétences en ingénierie sont reconnues et avec d'excellentes qualités en communication
+- Des ingénieurs logiciels qui développeront des solutions aux besoins métiers ou usagers
+- Des SRE/DevOps qui développeront votre socle et géreront le cycle de développement/déploiement des logiciels
 
-# Comment convaincre et garder la foi
+Que vous soyez un haut responsable ou un chargé de mission dont l'objectif est d'améliorer les services que votre organisation fournit, vous devrez motiver votre initiative vis-à-vis de votre hiérarchie et du reste de votre organisation. Il est donc nécessaire de comprendre comment communiquer efficacement pour que chacun adhère à votre projet. Voyons dans le prochain chapitre quelques pistes pour le faire.
 
-Premièrement, il ne s'agit pas de convaincre. Vous ne pouvez pas arriver devant quelqu'un et lui dire "vous avez tord, j'ai raison". Votre objectif doit être de donner envie à vos interlocuteurs d'adhérer à votre vision, votre projet. Ainsi, ils seront convaincus par eux-mêmes.
+# Bien orchestrer sa communication
+
+## Comment convaincre et garder la foi
+
+Premièrement, il ne s'agit pas de convaincre. Vous ne pouvez pas arriver devant quelqu'un et lui dire "vous avez tord, j'ai raison". Votre objectif doit être de donner envie à vos interlocuteurs d'adhérer à votre vision, votre projet. Ainsi, ils se convaincront d'eux-mêmes.
 
 Faire adhérer sa hiérarchie ou des collègues de travail à une initiative n'est pas toujours simple. William MORGAN - directeur général d'une startup réputée dans les technologies - préconise 4 règles à suivre[^WilliamMorganKubecon2018] :
 
-1. Identifier qui est affecté (les parties-prenantes)
+1. Identifier qui est affecté (les parties prenantes)
 2. Déterminer ce que la nouvelle solution va leur apporter (les avantages)
 3. Comprendre quelles sont leurs craintes (les préoccupations)
 4. Atténuer les préoccupations, promouvoir les avantages et communiquer
@@ -348,7 +352,29 @@ Pour aider le décideur à prendre sa décision, vous devez travailler à rédui
 
 En plus d'améliorer votre proposition de valeur, vous obtiendrez des exemples à citer et du soutien : vous ne serez plus le "1er" à prendre le risque et votre organisation non plus.
 
-Gardez en tête que si les choses sont telles qu'elles le sont aujourd'hui, c'est qu'il existe des raisons : vous n'avez pas obligatoirement une connaissance exhaustive de ces causes (temps alloué, moyens RH, moyens financiers, appui politique...) et n'êtes pas là pour blamer les acteurs du passé. Il faut aussi rester conscient que pendant la transformation, l'entreprise doit être en mesure de fournir les mêmes services qu'avant. Le décideur doit alors maîtriser l'environnement en transformation en parallèle de l'environnement actuel, sans que le premier tue le second.
+## Agir avec tact
+
+Opérer en coulisse (ne pas annoncer votre projet au collectif) implique d'en comprendre les hypothétiques répercussions. Bien que vous souhaitiez améliorer les choses en toute bonne foi, vous pourriez mal percevoir la situation d'ensemble de votre organisation. Ainsi, votre projet viendrait perturber des jeux de pouvoir établis, vous rendant indésirable aux yeux de certains.
+
+Par exemple, une équipe est en manque de moyens dans votre structure. La remarquant en détresse, vous lui mettez en place un tout nouveau logiciel. Vous omettez d'en informer votre hiérarchie, car elle risquerait de mettre son veto pour ce type d'appui.
+
+Ce que vous ne savez pas, c'est que l'équipe que vous appuyez ne fait plus le travail demandé par la direction depuis plusieurs semaines. Alors que les dirigeants tentent de rééquilibrer la situation, un soudain protagoniste (votre équipe) vient fournir des faveurs à l'équipe fautive.
+
+En apprenant la nouvelle, les dirigeants se trouvent donc dans une situation désagréable : ils comprennent l'appui que vous fournissez (elle est vertueuse en toute bonne foi) mais vous en veulent d'avoir interféré dans leurs affaires.
+
+Et voilà que votre initiative s'enferme dans un cercle vicieux (fig. <spanc/>\ref{fig:power_games}). D'un côté, votre équipe ne voit pas le mal à aider et arrête de rendre compte à l'équipe dirigeante. De l'autre, l'équipe dirigeante abdique à l'idée d'entreprendre avec vous et de vous faire confiance.
+
+![Interaction entre des acteurs communiquant faiblement lors d'une transformation.\label{fig:power_games}](./images/power_games.jpg)
+
+Le problème est tout d'abord culturel : l'organisation n'est pas formée à soutenir l'innovation et il devient donc difficilement d'innover. Les innovateurs doivent alors trouver des moyens détournés pour changer les choses. D'un autre côté, les innovateurs sont par nature peu acculturés aux interactions dans les structures où on leur demande d'innover. Cela dénotte le besoin de former ces profils pour mieux comprendre l'organisation. En mettant en place les 5 piliers du DevOps, vous aiderez votre organisation à transformer sa culture et favoriser l'innovation (cf. chapitre "[Les cinq piliers du DevOps](#les-cinq-piliers-du-devops)")
+
+Veillez donc à bien saisir la situation politique entre l'équipe dirigeante et vos premiers expérimentateurs avant d'agir dans l'ombre, au risque de compliquer votre progression.
+
+## Entre humilité, critiques et persévérance
+
+Gardez en tête que si les choses sont telles qu'elles le sont aujourd'hui, c'est qu'il existe bien des raisons : vous n'avez pas obligatoirement une connaissance exhaustive de ces causes passées (temps alloué aux projets, moyens RH/financiers, jeux de pouvoir...) et n'êtes pas là pour en blamer les acteurs.
+
+Restez également conscient que pendant une transformation, les dirigeants doivent assurer les mêmes services qu'avant. Le décideur doit alors maîtriser l'environnement en transformation en parallèle de l'environnement actuel, sans que le premier tue le second.
 
 Enfin, ne vous découragez pas devant la première personne réticente. Toute innovation à ses débuts fait objet d'une moquerie morale et passe par trois phase : ridicule, dangereuse puis évidente[^InnovationPhases]. L'ayant vécu, je peux attester de la véracité de ce phénomène, mais des exemples historiques existent :
 
@@ -356,21 +382,62 @@ Enfin, ne vous découragez pas devant la première personne réticente. Toute in
 - Henri FORD qui portait la vision selon laquelle chaque Américain devait avoir une voiture personnelle et qu'elle ne coûte pas cher. À l'époque, la voiture était considérée comme un gadget pour les riches : "on ne sait pas à quoi ça sert mais c'est joli". Il a créé la première chaîne de montage en mouvement de l'industrie (1913)[^FordIndustryChain] et _Ford_ fait encore aujourd'hui partie des leaders de l'industrie automobile.
 - Elon MUSK qui disait pouvoir créer des lanceurs de fusée réutilisables : moqué[^ElonMuskBiography] ou fortement mis en doute[^MuskImpossibleQuote] à ses débuts par l'industrie spatiale russe et américaine, désormais respecté par cette dernière et [craint](https://www.ft.com/content/24cca993-b249-45a5-8c42-b39c0ec30c5b) par [l'industrie spatiale européenne](https://www.latribune.fr/entreprises-finance/industrie/aeronautique-defense/satellites-europeens-lances-par-spacex-la-terrible-defaite-de-l-europe-spatiale-937632.html).
 
-Si vous rencontrez une opposition frontale de personnes ayant l'oreille du décideur, commencez toujours par tenter de comprendre leur point de vue. Si vous estimez qu'ils veulent délibéremment couper court aux discussions (par exemple, pour des raisons politiques ou d'égo), tentez les approches suivantes :
+Si vous rencontrez une opposition frontale, vous allez devoir retravailler votre communication (cf. chapitre suivant "[Adapter son discours](#adapter-son-discours)"). Commencez alors par  les points de vue opposés. Si vous ressentez que certains veulent délibéremment couper court aux discussions, considérez les approches suivantes.
 
-- **Mettez l'accent sur vos valeurs communes** : même si vous et votre interlocuteur avez des convictions politiques différentes, vous pouvez partager certaines valeurs communes. Essayez de les mettre en avant et démontrez comment votre initiative y répond. Exemples :
-  - Si vous et votre interlocuteur valorisez tous deux l'innovation, vous pouvez souligner comment votre approche la favorise et comment elle offre de nouvelles opportunités.
-  - Si votre projet propose des fonctionnalités similaires à un outil existant mais qu'il se distingue par l'échelon où il permet d'agir (tactique, opératif, stratégique[^MilitaryStrategy]), expliquez comment, avec des exemples de cas d'usage.
-- **Fédérez une coalition** : c'est l'idée des _early adopters_ évoquée plus tôt. Attirez des personnes qui partagent votre vision de la transformation. Ce sont souvent celles qui partagent avec vous les points sur l'inefficacité d'une partie de votre organisation.
+- **Evoquez des valeurs communes** : même si vous et votre interlocuteur avez des convictions différentes, vous pouvez partager certaines valeurs communes. Démontrez comment votre initiative y répond.
+  - Si vous valorisez tous deux l'innovation, vous pouvez mentionner comment votre approche la favorise et en quoi elle offre de nouvelles opportunités.
+  - Si vous avez tous-deux attrait à améliorer le quotidien d'une catégorie de métier ou d'un usager, donnez des cas d'usage sur comment votre solution peut aider.
+- **Les mettre sous le feu des projecteurs** : décideur ou client, quiconque adhérera à une idée si elle leur permet de rayonner. Identifiez le calendrier politique de votre interlocuteur et aidez-le à comprendre comment votre projet lui permettra d'atteindre ses objectifs.
+  - Le sentiment d'un égo mal placé est souvent synonyme de décalage entre les objectifs affichés du projet et ceux de l'individu.
+  - Si votre interlocuteur cherche à se démarquer et à gagner en influence dans son organisation, montrez comment votre projet pourrait renforcer sa position et son image en tant que responsable améliorant le quotidien de ses subordonnés.
+- **Fédérez une coalition** : attirez des personnes qui partagent votre vision de la transformation (_early adopters_ évoqués plus tôt). Ce sont souvent celles qui partagent avec vous des avis sur l'inefficacité de votre organisation.
   - En créant une communauté qui vous soutient, vous démontrez à votre interlocuteur que votre approche est légitime et qu'elle est soutenue par un grand nombre de parties prenantes.
-  - Demandez des témoignages officiels : une lettre ou un e-mail signé par le responsable reconnu d'une entité que vous avez servi, attestant de l'utilité de vos méthodes ou de vos outils.
-- **Soyez persévérant** : faire changer quelqu'un d'avis peut prendre du temps, surtout lorsque des raisons politiques sont en jeu. Soyez persévérant et continuez à faire valoir vos arguments, même si vous rencontrez de la résistance.
-  - Restez ouvert à l'idée de continuer le dialogue avec votre interlocuteur, toujours de manière respectueuse et constructive. Si votre approche est la bonne et la sienne la mauvaise (vous pourriez avoir tord après tout!), vous parviendrez peut-être à le rallier à votre cause avec le temps.
-  - Acceptez aussi que vous n'êtes pas éternel au sein de l'entreprise. Si votre initiative ne trouve pas sa place ici, tant pis pour votre entreprise! Vous pourriez avoir un tout autre impact dans une autre structure, avec la même initiative. Et vous-seul déterminez les limites que vous vous fixez.
+  - Demandez des témoignages officiels : une lettre ou un e-mail signé par le responsable reconnu d'une entité que vous avez servi, attestant de l'utilité de vos méthodes ou de vos services.
+  - Acceptez aussi que vous n'êtes pas éternel au sein de l'entreprise. Si votre initiative ne trouve pas sa place ici, tant pis pour votre entreprise! Vos efforts pourraient avoir un tout autre impact dans une autre structure, avec la même initiative. Et vous-seul déterminez les limites que vous vous fixez.
 
-Nous pouvons désormais avancer plus sereinement en tant que responsable d'une transformation, ayant en tête des pistes pour réagir face à des situations communes. Voyons alors plus en détail comment il est possible de s'organiser et d'accumuler des arguments, pour lancer son initiative.
+## Adapter son discours
+
+Une transformation réussie demande de la part de son instigateur une communication irréprochable. Il est important de savoir comment présenter selon le public visé, tout en gardant en tête certains phénomènes organisationnels communs.
+
+> « Pourquoi ne semblent-ils pas convaincus ? »
+
+Après l'une de vos présentations, peut-être vous êtes-vous déjà retrouvé dans cette situation ? Validée par nombre de vos pairs, après répétition, et alors même qu'elle vous semblait parfaitement adaptée, cette dernière n'a visiblement pas eu l'effet escompté. La personne en face de vous ne posait pas les bonnes questions, ou semblait ennuyée, voire irritée.
+
+Présenter à différents publics nécessite d'adapter son style de présentation, ses exemples et arguments en fonction de leurs rôles, contraintes et besoins. N'attendez de personne qu'elle comprenne le _so what_[^SoWhat] de votre présentation, sans avoir compris vous-même l'intérêt qu'elle avait d'y assister. En général, deux présentations suffisent : l'une pour les métiers (ou "clients") et l'autre pour les hauts responsables (ou "politiques").
+
+Il est néanmoins important de distinguer les hauts responsables (ou _executives_) des responsables de proximité (ou _managers_). Ces derniers ont souvent un lien plus fort avec leurs collaborateurs, leur permettant d'être sensibles aux arguments métiers. Les hauts responsables opèrent quant à eux à un échelon stratégique[^MilitaryStrategy], où ils définissent la vision de l'organisation. Les considérations subsidiaires doivent donc être déléguées et le message remonté par les différentes couches hiérarchiques peut arriver brouillé. Voilà pourquoi il ne faut pas considérer que les responsables soient nécessairement au courant de tout ce que vous observez à votre niveau. Même ceux qui vous semblent les plus évidents.
+
+Distinguons les intérêts respectifs de ces deux profils :
+
+| _Catégorie_               | Métiers                                     | Décideurs                                                                                                             |
+| ------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Niveau de détail**      | Informations pratiques détaillées           | Vue d'ensemble                                                                                                        |
+| **Termino-logie**          | Jargon métier et outils spécifiques         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit |
+| **Données et preuves**    | Exemples pratiques, études de cas           | Données, statistiques, impacts                                                                                        |
+| **Objectif**              | Instruire, informer, solliciter des retours | Convaincre, obtenir l'approbation                                                                                     |
+| **Style de présen-tation** | Interactif, pratique                        | Formel, concis, direct                                                                                                |
+
+Prenons l'exemple d'une entreprise dont les employés ont besoin d'acquérir un logiciel de traduction performant. Le fournisseur d'une solution vient la présenter au directeur de l'organisation. Voici les arguments à aborder pour chaque profil :
+
+| _Catégorie_               | Employés                                                                                                     | Directeur                                                                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Niveau de détail**      | Comment utiliser l'outil, ses fonctionnalités spécifiques, comment il améliore l'efficacité de la traduction | Vue d'ensemble de l'outil, son rôle et son impact sur l'organisation                                                                     |
+| **Termino-logie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances                                         |
+| **Données et preuves**    | Démonstration de l'outil en action, comparaisons avant/après, études de cas d'amélioration du travail        | Statistiques sur l'amélioration de l'efficacité, réduction du temps de travail, satisfaction des utilisateurs, retour sur investissement |
+| **Objectif**              | Comprendre et utiliser efficacement l'outil, améliorer la qualité et vitesse des traductions                 | Approbation pour acquérir l'outil, compréhension de l'impact positif de l'outil sur l'organisation                                       |
+| **Style de présen-tation** | Pratique, interactif avec démonstrations et questions/réponses                                               | Formel, concis, direct, axé sur les plus-values organisationnels                                                                         |
+
+Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre et lui fournir les bons éléments de parole. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti / du gouvernement).
+
+Enfin, vous ne pouvez pas totalement écarter l'hypothèse selon laquelle votre interlocuteur serait en conflit avec d'autres acteurs dans votre organisation. Cela le freinerait à l'idée de prendre certaines décisions d'un intérêt incontestable, dans l'objectif de conserver son statut ou de protéger sa carrière. Dans ce cas-là, tentez de trouver des relais d'influence qui porteront votre vision parmi les décideurs de responsabilités équivalentes ou supérieures. Une fois votre message porté par plusieurs hauts dirigeants, il sera difficile pour le concerné de refuser ce que le reste de l'organisation considère comme essentiel.
+
+Une communication peu impactante reste souvent le fruit d'un interlocuteur peu ou mal compris par le présentateur, plutôt qu'à un interlocuteur de mauvaise foi. A défaut d'en être certain, partez du principe que le problème n'est pas la personne en face de vous.
+
+En résumé, préparez au moins une présentation métiers et une orientée vers les hauts décideurs. Chaque sujet important de votre transformation devrait idéalement disposer de ces deux présentations, mais veillez au moins à ce que votre présentation de transformation globale soit disponible dans ces deux formats.
 
 # Modèle d'équipe interne
+
+En connaissant les techniques pour répondre à des situations courantes d'opposition au changement, nous pouvons progresser avec davantage de confiance. Examinons désormais comment structurer notre démarche et renforcer nos arguments pour lancer efficacement notre initiative.
 
 ## Le développement interne comme véritable alternative
 
@@ -447,46 +514,6 @@ Vous avez dû probablement vous en rendre compte au cours de votre carrière : l
 Mettre au contact profils techniques et opératifs est un enjeu de fidélisation au-delà de la plus-value d'une réponse plus rapidement et précise aux problématiques internes. Rappelez-vous : vos équipes sont en quête de sens. Elles ne viennent pas au travail le matin pour répondre à l'ordre de leur supérieur de développer un logiciel, mais pour concevoir avec leurs compétences d'expert la solution technique qui répondra le mieux au problème du métier. L'aboutissement du travail d'un ingénieur est de voir le métier utiliser la création qu'il a conçu.
 
 \newpage
-
-## Adapter son discours
-
-Une transformation réussie demande de la part de son instigateur une communication irréprochable. Il est important de savoir comment présenter selon le public visé, tout en gardant en tête certains phénomènes organisationnels communs.
-
-> « Pourquoi ne semble-t-elle pas convaincue ? »
-
-Après l'une de vos présentations, peut-être vous êtes-vous déjà retrouvé dans cette situation ? Validée par nombre de vos pairs, après répétition, et alors même qu'elle vous semblait parfaitement adaptée, cette dernière n'a visiblement pas eu l'effet escompté. La personne en face de vous ne posait pas les bonnes questions, ou semblait ennuyée, voire irritée.
-
-Présenter à différents publics nécessite d'adapter son style de présentation, ses exemples et arguments en fonction de leurs rôles, contraintes et besoins. N'attendez de personne qu'elle comprenne le _so what_[^SoWhat] de votre présentation, sans avoir compris vous-même l'intérêt qu'elle avait d'y assister. En général, deux présentations suffisent : l'une pour les métiers (ou "clients") et l'autre pour les hauts responsables (ou "politiques").
-
-Il est néanmoins important de distinguer les hauts responsables (ou _executives_) des responsables de proximité (ou _managers_). Ces derniers ont souvent un lien plus fort avec leurs collaborateurs, leur permettant d'être sensibles aux arguments métiers. Les hauts responsables opèrent quant à eux à un échelon stratégique[^MilitaryStrategy], où ils définissent la vision de l'organisation. Les considérations subsidiaires doivent donc être déléguées et le message remonté par les différentes couches hiérarchiques peut arriver brouillé. Voilà pourquoi il ne faut pas considérer que les responsables soient nécessairement au courant de tout ce que vous observez à votre niveau. Même ceux qui vous semblent les plus évidents.
-
-Distinguons les intérêts respectifs de ces deux profils :
-
-| _Catégorie_               | Métiers                                     | Décideurs                                                                                                             |
-| ------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Niveau de détail**      | Informations pratiques détaillées           | Vue d'ensemble                                                                                                        |
-| **Termino-logie**          | Jargon métier et outils spécifiques         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit |
-| **Données et preuves**    | Exemples pratiques, études de cas           | Données, statistiques, impacts                                                                                        |
-| **Objectif**              | Instruire, informer, solliciter des retours | Convaincre, obtenir l'approbation                                                                                     |
-| **Style de présen-tation** | Interactif, pratique                        | Formel, concis, direct                                                                                                |
-
-Prenons l'exemple d'une entreprise dont les employés ont besoin d'acquérir un logiciel de traduction performant. Le fournisseur d'une solution vient la présenter au directeur de l'organisation. Voici les arguments à aborder pour chaque profil :
-
-| _Catégorie_               | Employés                                                                                                     | Directeur                                                                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Niveau de détail**      | Comment utiliser l'outil, ses fonctionnalités spécifiques, comment il améliore l'efficacité de la traduction | Vue d'ensemble de l'outil, son rôle et son impact sur l'organisation                                                                     |
-| **Termino-logie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances                                         |
-| **Données et preuves**    | Démonstration de l'outil en action, comparaisons avant/après, études de cas d'amélioration du travail        | Statistiques sur l'amélioration de l'efficacité, réduction du temps de travail, satisfaction des utilisateurs, retour sur investissement |
-| **Objectif**              | Comprendre et utiliser efficacement l'outil, améliorer la qualité et vitesse des traductions                 | Approbation pour acquérir l'outil, compréhension de l'impact positif de l'outil sur l'organisation                                       |
-| **Style de présen-tation** | Pratique, interactif avec démonstrations et questions/réponses                                               | Formel, concis, direct, axé sur les plus-values organisationnels                                                                         |
-
-Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre et lui fournir les bons éléments de parole. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti / du gouvernement).
-
-Enfin, vous ne pouvez pas totalement écarter l'hypothèse selon laquelle votre interlocuteur serait en conflit avec d'autres acteurs dans votre organisation. Cela le freinerait à l'idée de prendre certaines décisions d'un intérêt incontestable, dans l'objectif de conserver son statut ou de protéger sa carrière. Dans ce cas-là, tentez de trouver des relais d'influence qui porteront votre vision parmi les décideurs de responsabilités équivalentes ou supérieures. Une fois votre message porté par plusieurs hauts dirigeants, il sera difficile pour le concerné de refuser ce que le reste de l'organisation considère comme essentiel.
-
-Une communication peu impactante reste souvent le fruit d'un interlocuteur peu ou mal compris par le présentateur, plutôt qu'à un interlocuteur de mauvaise foi. A défaut d'en être certain, partez du principe que le problème n'est pas la personne en face de vous.
-
-En résumé, préparez au moins une présentation métiers et une orientée vers les hauts décideurs. Chaque sujet important de votre transformation devrait idéalement disposer de ces deux présentations, mais veillez au moins à ce que votre présentation de transformation globale soit disponible dans ces deux formats.
 
 ## Libérer la parole et dé-siloter l'accès aux données
 
@@ -1184,7 +1211,7 @@ Pour faire le lien entre gestion de projet et contributions techniques, les proj
 
 ![Exemple de vue Kanban dans GitLab.\label{fig:figure_3}](./images/figure_3.png "Exemple de vue Kanban dans GitLab où sont centralisés les commentaires sur un logiciel (tâches à réaliser, feedbacks, bugs...).")
 
-En _Flexible flow_, toute contribution doit faire référence à une _issue_ qui décrit la genèse de la tâche, comment elle peut être résolue et centralise les réflexions des parties-prenantes. N'importe qui peut créer ces tâches (responsable projet, développeur, utilisateur). C'est le responsable du projet qui les priorise ensuite. Tout développeur nouvellement attribué doit savoir : quoi faire, où commencer et pourquoi, en consultant l'_issue_. Chacune est numérotée automatiquement par la forge logicielle.
+En _Flexible flow_, toute contribution doit faire référence à une _issue_ qui décrit la genèse de la tâche, comment elle peut être résolue et centralise les réflexions des parties prenantes. N'importe qui peut créer ces tâches (responsable projet, développeur, utilisateur). C'est le responsable du projet qui les priorise ensuite. Tout développeur nouvellement attribué doit savoir : quoi faire, où commencer et pourquoi, en consultant l'_issue_. Chacune est numérotée automatiquement par la forge logicielle.
 
 Gestion de projet :
 
@@ -1456,9 +1483,9 @@ Ce chapitre vise à mettre en perspectives un modèle de responsabilité traditi
 
 #### Le modèle RACI
 
-L'un des modèles de partage des responsabilités est le "RACI", pour _Responsible_ (Exécutant), _Accountable_ (Responsable), _Consulted_ (Consulté) et _Informed_ (Informé). Il permet de s'assurer que toutes les parties-prenantes sont conscientes de leurs rôles et de leurs responsabilités dans un projet.
+L'un des modèles de partage des responsabilités est le "RACI", pour _Responsible_ (Exécutant), _Accountable_ (Responsable), _Consulted_ (Consulté) et _Informed_ (Informé). Il permet de s'assurer que toutes les parties prenantes sont conscientes de leurs rôles et de leurs responsabilités dans un projet.
 
-Dans le tableau suivant, nous avons cinq parties-prenantes pour le développement d'un nouveau site web. Un responsable, un exécutant (personne en charge de la réalisation), des consultés et des informés sont désignés pour chaque activité.
+Dans le tableau suivant, nous avons cinq parties prenantes pour le développement d'un nouveau site web. Un responsable, un exécutant (personne en charge de la réalisation), des consultés et des informés sont désignés pour chaque activité.
 
 | Livrable du projet (ou activité) | Responsable du projet | Architec -te | Design -er | Développeur front-end | Développeur back-end |
 | -------------------------------- | --------------------- | ------------ | ---------- | --------------------- | -------------------- |
@@ -1492,7 +1519,7 @@ La plupart du temps, il n'est pas souhaitable de se séparer immédiatement d'un
 
 Cependant, en assumant des responsabilités partagées sans les imputer, vous vous concentrez sur l'amélioration du service afin d'atteindre l'effet final recherché (ex: une infrastructure plus stable). Et ce, plutôt que de trouver un coupable. Fort de ce principe, analysons alors une réflexion qui peut nous venir à l'esprit.
 
-Vous l'aurez compris, le DevOps incite à ne pas blamer les parties-prenantes. Il est naturel de rétorquer alors que si personne n'est personnellement responsable, les équipes risquent d'être moins attentives dans leurs responsabilités quotidiennes. Comment imaginer un responsable de la production qui supprimerait l'ensemble de la base de données client sans conséquence ? Les responsables doivent bien à un moment comprendre que leurs actions ont des conséquences. Le DevOps répond de deux manières à cet enjeu :
+Vous l'aurez compris, le DevOps incite à ne pas blamer les parties prenantes. Il est naturel de rétorquer alors que si personne n'est personnellement responsable, les équipes risquent d'être moins attentives dans leurs responsabilités quotidiennes. Comment imaginer un responsable de la production qui supprimerait l'ensemble de la base de données client sans conséquence ? Les responsables doivent bien à un moment comprendre que leurs actions ont des conséquences. Le DevOps répond de deux manières à cet enjeu :
 
 1. Si vos procédures sont valides, il n'y a pas de raison que l'ingénieur ait pu exécuter cette commande. S'il a fait une erreur, c'est que les règles gouvernant la sécurité de votre infrastructure de production n'étaient pas assez fortes (accès aux machines de production par commandes manuelles, absence de contrôle/validation des commandes, absence de sauvegardes, procédure mal décrite, manque de communication...). (cf. chapitre "[Tirer parti de l'automatisation](#tirer-parti-de-lautomatisation)")
 2. Vous avez embauché un employé car il connaît son métier (vous l'avez bien eu en entretien). Si vous craignez qu'il n'assume pas ses responsabilités, parlez avec lui ou séparez-vous de lui et révisez votre politique d'embauche. Faites confiance à vos experts. Si vous doutez, demandez-leurs de renforcer les règles de contrôle (cf. point 1) et de vous rassurer avec des scénarios type (cf. chapitre "[Postmortems](#postmortems)").
@@ -1529,7 +1556,7 @@ Exemple de DACI, listant les options considérées pour une prise de décision s
 
 Une fois votre décision prise, il est temps de la communiquer pour que tout le monde soit à la page. Envoyez le document aux personnes qui doivent en prendre connaissance puis archivez-le.
 
-Une fois archivé, il permettra aux nouvelles parties-prenantes du projet de comprendre pourquoi telle ou telle décision a été prise. En menant cette réflexion collective, vous évitez également les biais cognitifs individuels.
+Une fois archivé, il permettra aux nouvelles parties prenantes du projet de comprendre pourquoi telle ou telle décision a été prise. En menant cette réflexion collective, vous évitez également les biais cognitifs individuels.
 
 ### Investiguer les incidents
 
@@ -1756,7 +1783,7 @@ Pour gérer la situation, désignez 3 personnes pour les 3 rôles suivants :
    - Il fait au besoin appel à des renforts et explique au reste de l'équipe comment elle peut continuer à travailler.
 2. Le **responsable de la communication** (_Communications Lead_, **CL**)
    - Il s'occupe de gérer la _status page_ et d'informer les employés ou les clients ainsi que la hiérarchie de l'état d'avancée de l'incident.
-   - Il crée un canal de communication interne réservé à l'incident et invite les parties-prenantes.
+   - Il crée un canal de communication interne réservé à l'incident et invite les parties prenantes.
    - Il est l'interface entre l'équipe gérant l'incident et l'extérieur.
    - Son objectif est de protéger l'OL de sollicitations extérieures.
 3. Le **responsable des opérations** (_Operations Lead_, **OL**)
@@ -1797,7 +1824,7 @@ Le premortem est une méthodologie de gestion de projet qui consiste à imaginer
 
 Prenons un exemple : "Notre équipe administre aujourd'hui ses infrastructures avec des méthodes traditionnelles. Nous voulons établir un plan pour travailler en mode DevOps."
 
-1. **Organisez une réunion** avec les parties-prenantes. Demandez-leur de s'imaginer dans 1 an et que ce plan de transformation a échoué.
+1. **Organisez une réunion** avec les parties prenantes. Demandez-leur de s'imaginer dans 1 an et que ce plan de transformation a échoué.
 2. Créez un **document collaboratif** (ex: Google Docs) et définissez les titres suivants :
     - Facteurs potentiels d'échec
     - Solutions
@@ -1816,7 +1843,7 @@ Prenons un exemple : "Notre équipe administre aujourd'hui ses infrastructures a
 
 Voici un autre exemple plus technique : "Notre équipe déploie ses logiciels avec Docker Compose. Elle veut maintenant les déployer avec Kubernetes."
 
-1. **Organisez une réunion** avec les parties-prenantes. Demandez-leur de s'imaginer dans quelques mois et que Kubernetes demande finalement beaucoup d'efforts sans apporter plus d'avantages.
+1. **Organisez une réunion** avec les parties prenantes. Demandez-leur de s'imaginer dans quelques mois et que Kubernetes demande finalement beaucoup d'efforts sans apporter plus d'avantages.
 2. Créez le **document collaboratif**
 3. Inscrivez les **facteurs potentiels d'échec**
     - Ex : formation ou expertise insuffisante de l'équipe à Kubernetes, documentation en ligne insuffisante pour nos cas d'usage, complexité d'intégration dans notre environnement de développement, vulnérabilités de sécurité dû à la complexité de maintenance, surcoût RH pour la maintenance de l'ancien système le temps de la transition...
@@ -1877,7 +1904,7 @@ Le choix d'investir du temps dans la réalisation de premortems, de FMEA ou de p
 
 ### Ne pas disrupter
 
-Le DevOps est souvent présenté comme un mode d'organisation disruptif, c'est à dire un changement de paradigme dans les technologies et les pratiques. Pour éviter d'intimider les parties-prenantes à votre transformation, présentez plutôt le DevOps comme une évolution des technologies traditionnelles.
+Le DevOps est souvent présenté comme un mode d'organisation disruptif, c'est à dire un changement de paradigme dans les technologies et les pratiques. Pour éviter d'intimider les parties prenantes à votre transformation, présentez plutôt le DevOps comme une évolution des technologies traditionnelles.
 
 Par exemple, Windows 10 (sorti en 2015) n'est qu'une [évolution de Windows NT](https://superuser.com/a/1744615/680804) 3.1 (sorti en 1993) et [comporte encore du code](https://qr.ae/prvnxD) datant des débuts de l'architecture Windows NT (conçu en 1988)[^WindowsNT].
 
@@ -2126,9 +2153,9 @@ Dans ce chapitre, nous allons aborder une dimension importante de l'automatisati
 
 Avoir confiance dans ses décisions, en se basant sur ses propres données, est l'aboutissement d'une transformation DevOps réussie. L'industrie nomme cela les "prises de décision basées sur la donnée" ou "_data-driven decision making_" en anglais.
 
-### Les 3 pilliers de l'observabilité
+### Les 3 piliers de l'observabilité
 
-Les journaux d'activité (_logs_), les métriques (_metrics_) et les traces (_traces_) sont considérés comme les trois pilliers de l'observabilité. Ces trois type de données peuvent être générés par les logiciels, pour identifier et résoudre les problèmes susceptibles de survenir une fois déployés.
+Les journaux d'activité (_logs_), les métriques (_metrics_) et les traces (_traces_) sont considérés comme les trois piliers de l'observabilité. Ces trois type de données peuvent être générés par les logiciels, pour identifier et résoudre les problèmes susceptibles de survenir une fois déployés.
 
 L'observabilité est un sujet très vaste dans le domaine de la résilience des systèmes[^DistributedSystemsObservabilityBook]. Nous ne survolerons que les essentiels dans ce chapitre.
 
@@ -2295,7 +2322,7 @@ L'accord de niveau de service (_Service Level Agreement_ ou SLA) est un contrat 
 - En dessous de 99.5% de disponibilité, AWS commence à rembourser ses clients [d'instances _EC2_](https://aws.amazon.com/compute/sla). Entre 99.9% et 99% de disponibilité, le client est remboursé à hauteur de 10% des dépenses. En dessous de 95%, il est remboursé à 100%.
 - En dessous de 99.9% de disponibilité, Microsoft commence à rembourser ses [clients _Teams_](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=13). En dessous de 99.9%, le client obtient un avoir à hauteur de 25% de ses dépenses. En dessous de 95%, il obtient un avoir pour 100% de ses dépenses.
 
-Les SLAs ne sont pas rendus obligatoires en France par la loi. Néanmoins ils peuvent faire partie de votre contrat de service, pour clarifier vos engagements et éviter les litiges. En effet, il est toujours préférable de lister des conditions claires pour lesquelles vous et votre client vous êtes engagés. Les SLAs sont également un avantage concurrentiel : votre entreprise s'engage à fournir une certaine qualité de service, là où vos concurrents ne s'en donnent pas nécessairement la peine. Instaurer un SLA dans votre méthode de gouvernance responsabilise les parties-prenantes (développeurs, SRE, décideurs) et partage les attendus. L'entreprise s'oriente désormais grâce aux mesures qu'elle récolte, puis qu'elle interprête sous forme de SLO. On dit qu'elle est _data-driven_.
+Les SLAs ne sont pas rendus obligatoires en France par la loi. Néanmoins ils peuvent faire partie de votre contrat de service, pour clarifier vos engagements et éviter les litiges. En effet, il est toujours préférable de lister des conditions claires pour lesquelles vous et votre client vous êtes engagés. Les SLAs sont également un avantage concurrentiel : votre entreprise s'engage à fournir une certaine qualité de service, là où vos concurrents ne s'en donnent pas nécessairement la peine. Instaurer un SLA dans votre méthode de gouvernance responsabilise les parties prenantes (développeurs, SRE, décideurs) et partage les attendus. L'entreprise s'oriente désormais grâce aux mesures qu'elle récolte, puis qu'elle interprête sous forme de SLO. On dit qu'elle est _data-driven_.
 
 Au sein d'une institution, vous pouvez utiliser un SLO/SLA comme un moyen de gagner en crédibilité auprès de votre hiérarchie ou de certaines équipes. Un SLA remplit peut justifier l'embauche de personnels nécessaires pour maintenir un certain niveau de service. Ou bien justifier une augmentation de budget pour développer l'activité de l'équipe. Inversement, la hiérarchie peut exiger de vos équipes un certain niveau de qualité de service, reporté sur les objectifs annuels des personnels. Dans le cadre d'une expérimentation, établir des SLOs suffit. Constituer des SLOs fiables est déjà un enjeu de taille. Maintenir les objectifs en est un autre.
 
@@ -2479,7 +2506,7 @@ Afin de tirer parti de toutes les ressources à votre disposition, considérez l
 
 ## Synergie public / privé : une approche gagnante
 
-Les grandes organisations se basent majoritairement aujourd'hui sur des prestations fournies par des industriels pour leurs projets techniques. Soit en raison du manque d'experts en interne, du manque de RH ou des deux. L'erreur est de s'abandonner à l'industriel et se dire « c'est l'expert, tout va fonctionner, il suffit que je paye ». Toute personne ayant mené un programme industriel s'est confrontée aux problématiques de compréhension des enjeux métiers par les parties-prenantes (chefs de projets vs métiers vs industriels) et n'a pu que constater qu'un projet ne se déroule jamais 100% selon le plan prévu.
+Les grandes organisations se basent majoritairement aujourd'hui sur des prestations fournies par des industriels pour leurs projets techniques. Soit en raison du manque d'experts en interne, du manque de RH ou des deux. L'erreur est de s'abandonner à l'industriel et se dire « c'est l'expert, tout va fonctionner, il suffit que je paye ». Toute personne ayant mené un programme industriel s'est confrontée aux problématiques de compréhension des enjeux métiers par les parties prenantes (chefs de projets vs métiers vs industriels) et n'a pu que constater qu'un projet ne se déroule jamais 100% selon le plan prévu.
 
 Il est une erreur stratégique de se dire que le simple fait de payer un prestataire va nous apporter la solution qu'on attend. Si vous n'êtes pas un technicien expert du domaine qui a pratiqué depuis récemment, vous ne serez jamais au niveau pour challenger efficacement les propositions de votre prestataire. Vous risquez soit de ne pas répondre à vos problématiques métier, soit de perdre de l'argent, soit probablement les deux.
 
@@ -2514,7 +2541,7 @@ Il n'est pas concevable de travailler de cette manière en 2023. L'une des prati
 
 Vous vous souvenez de ce pilier ? « Réduire les silos organisationnels en impliquant chacun » : vous devez impliquer vos clients tout au long du cycle du projet. Si vous ne prenez pas régulièrement en compte leurs retours, le produit final risque de ne pas leur être utile. Quand bien même il serait utile, il serait peut-être trop complexe à utiliser et donc peu attirant.
 
-En ce sens si vous souhaitez travailler efficacement avec une entreprise externe à votre organisation, vous devez rapprocher toutes les parties-prenantes liées à ce projet. Faites en sorte que la voix de chacun puisse être entendue en mettant en place un moyen de communication simple et pratique à utiliser pour faire des retours et des suggestions. Par exemple, vous pourriez demander à l'industriel de vous partager l'accès à sa usine logicielle (ex : GitLab, BitBucket, GitHub) pour y ajouter les commentaires de vos équipes et que les ingénieurs puissent y répondre en boucle courte.
+En ce sens si vous souhaitez travailler efficacement avec une entreprise externe à votre organisation, vous devez rapprocher toutes les parties prenantes liées à ce projet. Faites en sorte que la voix de chacun puisse être entendue en mettant en place un moyen de communication simple et pratique à utiliser pour faire des retours et des suggestions. Par exemple, vous pourriez demander à l'industriel de vous partager l'accès à sa usine logicielle (ex : GitLab, BitBucket, GitHub) pour y ajouter les commentaires de vos équipes et que les ingénieurs puissent y répondre en boucle courte.
 
 GitLab permet aussi de réaliser du déploiement continu : l'industriel peut alors mettre à disposition de ses clients une URL à laquelle est accessible la dernière version du logiciel. Vous évitez ainsi les réunions de plusieurs heures et gagnez en flexibilité. L'objectif est atteint : vous itérez, rapidement.
 
@@ -2647,7 +2674,7 @@ Faire accepter le changement est avant tout le sujet de minimiser les risques en
 
 Tout comme les grandes entreprises qui investissent constamment dans les nouvelles technologies, chaque organisation doit être prête à prendre des risques pour rester compétitive. Votre comité exécutif doit rester à l'écoute des points de vue qui la surprennent et encourager les expérimentations. Par exemple, il est important de ne pas sous-estimer le potentiel des employés considérés difficiles à encadrer. Certains sont peut-être les visionnaires qui vous permettront d'exister demain. Etudier avec sérieux l'impact de leurs idées est essentiel, au risque de passer à côté d'opportunités cruciales pour l'avenir de l'organisation (cf. chapitre "[Réduire les silos organisationnels](#réduire-les-silos-organisationnels)").
 
-Alors que les métiers auxquels vous rendrez service y voient un intérêt immédiat, cet intérêt est souvent plus abstrait pour l'équipe dirigeante. En tant qu'instigateur d'une transformation, vous devez donc investir du temps à acculturer les décideurs de votre organisation. N'hésitez pas à repartir des notions de base sur le Cloud pour faire progressivement comprendre les enjeux du DevOps aux parties-prenantes. Il est fondamental de trouver des exemples sur comment vous avez pu résoudre un dysfonctionnement interne, grâce à votre approche.
+Alors que les métiers auxquels vous rendrez service y voient un intérêt immédiat, cet intérêt est souvent plus abstrait pour l'équipe dirigeante. En tant qu'instigateur d'une transformation, vous devez donc investir du temps à acculturer les décideurs de votre organisation. N'hésitez pas à repartir des notions de base sur le Cloud pour faire progressivement comprendre les enjeux du DevOps aux parties prenantes. Il est fondamental de trouver des exemples sur comment vous avez pu résoudre un dysfonctionnement interne, grâce à votre approche.
 
 L'instigateur doit toujours rester prêt à répondre aux questions suivantes :
 
@@ -2926,10 +2953,6 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^MLOpsPaper]: KREUZBERGER, Dominik; KÜHL, Niklas; HIRSCHL, Sebastian. [_MLOps: Overview, Definition, and Architecture_](https://arxiv.org/abs/2205.02302). 2022.
 
 [^ArticlePSSyndromeCanard]: SILBERZAHN, Philippe. [_Le syndrome du canard: comment les organisations en déclin s'habituent à la médiocrité_](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite/). 2022.
-
-[^SREBlamelessCulture]: devops.com, [_How SRE creates a blameless culture_](https://devops.com/how-sre-creates-a-blameless-culture/). 2019.
-
-[^ArticlePSSortirSpiraleDeclin]: SILBERZAHN, Philippe. [_Le canard était toujours vivant: comment l'entreprise peut sortir de la spirale du déclin_](https://philippesilberzahn.com/2022/09/26/le-canard-etait-toujours-vivant-comment-lentreprise-peut-sortir-de-la-spirale-du-declin/). 2022.
 
 [^DefyingGravity]: DUNLAP, Preston. [_Defying gravity_](https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z/). 2022.
 
