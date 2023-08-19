@@ -352,7 +352,7 @@ Pour aider le décideur à prendre sa décision, vous devez travailler à rédui
 
 En plus d'améliorer votre proposition de valeur, vous obtiendrez des exemples à citer et du soutien : vous ne serez plus le "1er" à prendre le risque et votre organisation non plus.
 
-## Agir avec tact
+## Agir avec finesse
 
 Opérer en coulisse (ne pas annoncer votre projet au collectif) implique d'en comprendre les hypothétiques répercussions. Bien que vous souhaitiez améliorer les choses en toute bonne foi, vous pourriez mal percevoir la situation d'ensemble de votre organisation. Ainsi, votre projet viendrait perturber des jeux de pouvoir établis, vous rendant indésirable aux yeux de certains.
 
@@ -366,7 +366,7 @@ Et voilà que votre initiative s'enferme dans un cercle vicieux (fig. <spanc/>\r
 
 ![Interaction entre des acteurs communiquant faiblement lors d'une transformation.\label{fig:power_games}](./images/power_games.jpg)
 
-Le problème est tout d'abord culturel : l'organisation n'est pas formée à soutenir l'innovation et il devient donc difficilement d'innover. Les innovateurs doivent alors trouver des moyens détournés pour changer les choses. D'un autre côté, les innovateurs sont par nature peu acculturés aux interactions dans les structures où on leur demande d'innover. Cela dénotte le besoin de former ces profils pour mieux comprendre l'organisation. En mettant en place les 5 piliers du DevOps, vous aiderez votre organisation à transformer sa culture et favoriser l'innovation (cf. chapitre "[Les cinq piliers du DevOps](#les-cinq-piliers-du-devops)")
+Le problème est tout d'abord culturel : l'organisation n'est pas formée à soutenir l'innovation et il est donc difficile d'innover. Les innovateurs doivent alors trouver des moyens détournés pour changer les choses. D'un autre côté, les innovateurs sont souvent peu acculturés aux structures où on leur demande d'innover. Cela dénotte le besoin de former ces profils pour qu'ils comprennent mieux comment fonctionne l'organisation. En mettant en place les 5 piliers du DevOps, vous aiderez votre organisation à transformer sa culture et favoriser l'innovation (cf. chapitre "[Les cinq piliers du DevOps](#les-cinq-piliers-du-devops)")
 
 Veillez donc à bien saisir la situation politique entre l'équipe dirigeante et vos premiers expérimentateurs avant d'agir dans l'ombre, au risque de compliquer votre progression.
 
