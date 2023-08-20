@@ -356,11 +356,11 @@ En plus d'améliorer votre proposition de valeur, vous obtiendrez des exemples �
 
 Opérer en coulisse (ne pas annoncer votre projet au collectif) implique d'en comprendre les hypothétiques répercussions. Bien que vous souhaitiez améliorer les choses en toute bonne foi, vous pourriez mal percevoir la situation d'ensemble de votre organisation. Ainsi, votre projet viendrait perturber des jeux de pouvoir établis, vous rendant indésirable aux yeux de certains.
 
-Par exemple, une équipe est en manque de moyens dans votre structure. La remarquant en détresse, vous lui mettez en place un tout nouveau logiciel. Vous omettez d'en informer votre hiérarchie, car elle risquerait de mettre son veto pour ce type d'appui.
+Par exemple, une équipe en manque de moyen vient vous demander de l'aide. Constatant sa détresse, vous lui concevez un tout nouvel outil développé rapidement grâce à votre plateforme DevOps. Vous omettez d'en informer votre hiérarchie, car elle risquerait de refuser cette innovation (cf. chapitre précédent).
 
 Ce que vous ne savez pas, c'est que l'équipe que vous appuyez ne fait plus le travail demandé par la direction depuis plusieurs semaines. Alors que les dirigeants tentent de rééquilibrer la situation, un soudain protagoniste (votre équipe) vient fournir des faveurs à l'équipe fautive.
 
-En apprenant la nouvelle, les dirigeants se trouvent donc dans une situation désagréable : ils comprennent l'appui que vous fournissez (elle est vertueuse en toute bonne foi) mais vous en veulent d'avoir interféré dans leurs affaires.
+En apprenant la nouvelle, les dirigeants se retrouvent dans une situation désagréable : ils comprennent l'appui que vous fournissez (il est vertueux en toute bonne foi) mais vous en veulent d'avoir interféré dans leurs affaires.
 
 Et voilà que votre initiative s'enferme dans un cercle vicieux (fig. <spanc/>\ref{fig:power_games}). D'un côté, votre équipe ne voit pas le mal à aider et arrête de rendre compte à l'équipe dirigeante. De l'autre, l'équipe dirigeante abdique à l'idée d'entreprendre avec vous et de vous faire confiance.
 
@@ -409,22 +409,22 @@ Il est néanmoins important de distinguer les hauts responsables (ou _executives
 
 Distinguons les intérêts respectifs de ces deux profils :
 
-| _Catégorie_               | Métiers                                     | Décideurs                                                                                                             |
-| ------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Niveau de détail**      | Informations pratiques détaillées           | Vue d'ensemble                                                                                                        |
+| Objet                      | Métiers                                     | Décideurs                                                                                                             |
+| -------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Niveau de détail**       | Informations pratiques détaillées           | Vue d'ensemble                                                                                                        |
 | **Termino-logie**          | Jargon métier et outils spécifiques         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit |
-| **Données et preuves**    | Exemples pratiques, études de cas           | Données, statistiques, impacts                                                                                        |
-| **Objectif**              | Instruire, informer, solliciter des retours | Convaincre, obtenir l'approbation                                                                                     |
+| **Données et preuves**     | Exemples pratiques, études de cas           | Données, statistiques, impacts                                                                                        |
+| **Objectif**               | Instruire, informer, solliciter des retours | Convaincre, obtenir l'approbation                                                                                     |
 | **Style de présen-tation** | Interactif, pratique                        | Formel, concis, direct                                                                                                |
 
 Prenons l'exemple d'une entreprise dont les employés ont besoin d'acquérir un logiciel de traduction performant. Le fournisseur d'une solution vient la présenter au directeur de l'organisation. Voici les arguments à aborder pour chaque profil :
 
-| _Catégorie_               | Employés                                                                                                     | Directeur                                                                                                                                |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Niveau de détail**      | Comment utiliser l'outil, ses fonctionnalités spécifiques, comment il améliore l'efficacité de la traduction | Vue d'ensemble de l'outil, son rôle et son impact sur l'organisation                                                                     |
+| Objet                      | Employés                                                                                                     | Directeur                                                                                                                                |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Niveau de détail**       | Comment utiliser l'outil, ses fonctionnalités spécifiques, comment il améliore l'efficacité de la traduction | Vue d'ensemble de l'outil, son rôle et son impact sur l'organisation                                                                     |
 | **Termino-logie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances                                         |
-| **Données et preuves**    | Démonstration de l'outil en action, comparaisons avant/après, études de cas d'amélioration du travail        | Statistiques sur l'amélioration de l'efficacité, réduction du temps de travail, satisfaction des utilisateurs, retour sur investissement |
-| **Objectif**              | Comprendre et utiliser efficacement l'outil, améliorer la qualité et vitesse des traductions                 | Approbation pour acquérir l'outil, compréhension de l'impact positif de l'outil sur l'organisation                                       |
+| **Données et preuves**     | Démonstration de l'outil en action, comparaisons avant/après, études de cas d'amélioration du travail        | Statistiques sur l'amélioration de l'efficacité, réduction du temps de travail, satisfaction des utilisateurs, retour sur investissement |
+| **Objectif**               | Comprendre et utiliser efficacement l'outil, améliorer la qualité et vitesse des traductions                 | Approbation pour acquérir l'outil, compréhension de l'impact positif de l'outil sur l'organisation                                       |
 | **Style de présen-tation** | Pratique, interactif avec démonstrations et questions/réponses                                               | Formel, concis, direct, axé sur les plus-values organisationnels                                                                         |
 
 Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre et lui fournir les bons éléments de parole. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti / du gouvernement).
@@ -1369,11 +1369,11 @@ Néanmoins, les architecture _serverless_ demandent des compétences spécifique
 
 Récapitulons quelques avantages et inconvénients de chaque approche :
 
-| Architecture  | Avantages  | Inconvénients  |
-| ------------- | ----- | ----- |
-| **Monolithique**    | • Simplicité de développement et de déploiement<br>• Gestion centralisée<br>• Facile à tester et débugger | • Difficile à passer à l'échelle<br>• Une mise à jour affecte tout le logiciel<br>• Déploiements plus lents et moins fréquents |
-| **Microservices** | • Passable à l'échelle sur demande<br>• Déploiements rapides<br>• Bugs et crashes isolés<br>• Agnostique au langage de programmation | • Compétences spécifiques pour les gérer<br>• Cohérence des formats de données à maintenir (API)<br>• Plus difficile à débugger |
-| **FaaS**    | • Pas de gestion de l'infrastructure<br>• Passable à l'échelle ciblé<br>• Rentable pour une affluence sporadique | • Enfermement propriétaire<br>• Moins de contrôle sur l'environnement d'exécution<br>• Temps de démarrage si inutilisée (_cold start_)<br>• Durée d'exécution limitée |
+| Architecture      | Avantages                                                                                                                            | Inconvénients                                                                                                                                                         |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Monolithique**  | • Simplicité de développement et de déploiement<br>• Gestion centralisée<br>• Facile à tester et débugger                            | • Difficile à passer à l'échelle<br>• Une mise à jour affecte tout le logiciel<br>• Déploiements plus lents et moins fréquents                                        |
+| **Microservices** | • Passable à l'échelle sur demande<br>• Déploiements rapides<br>• Bugs et crashes isolés<br>• Agnostique au langage de programmation | • Compétences spécifiques pour les gérer<br>• Cohérence des formats de données à maintenir (API)<br>• Plus difficile à débugger                                       |
+| **FaaS**          | • Pas de gestion de l'infrastructure<br>• Passable à l'échelle ciblé<br>• Rentable pour une affluence sporadique                     | • Enfermement propriétaire<br>• Moins de contrôle sur l'environnement d'exécution<br>• Temps de démarrage si inutilisée (_cold start_)<br>• Durée d'exécution limitée |
 
 #### Du monolithe aux microservices
 
