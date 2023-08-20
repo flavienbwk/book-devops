@@ -5,3 +5,4 @@ Pour parler d'informatique avec classe, même en français.
 - _Refactoring_ : refonte
 - _Monitoring_ : surveillance
 - _Design_ : conception
+- _Deepfake_: hypertrucage
