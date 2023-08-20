@@ -403,35 +403,37 @@ Après l'une de vos présentations, peut-être vous êtes-vous déjà retrouvé 
 
 Présenter à différents publics nécessite d'adapter son style de présentation, ses exemples et arguments en fonction de leurs rôles, contraintes et besoins. N'attendez de personne qu'elle comprenne le _so what_[^SoWhat] de votre présentation, sans avoir compris vous-même l'intérêt qu'elle avait d'y assister. En général, deux présentations suffisent : l'une pour les métiers (ou "clients") et l'autre pour les hauts responsables (ou "politiques").
 
-Il est néanmoins important de distinguer les hauts responsables (ou _executives_) des responsables de proximité (ou _managers_). Ces derniers ont souvent un lien plus fort avec leurs collaborateurs, leur permettant d'être sensibles aux arguments métiers. Les hauts responsables opèrent quant à eux à un échelon stratégique[^MilitaryStrategy], où ils définissent la vision de l'organisation. Les considérations subsidiaires doivent donc être déléguées et le message remonté par les différentes couches hiérarchiques peut arriver brouillé. Voilà pourquoi il ne faut pas considérer que les responsables soient nécessairement au courant de tout ce que vous observez à votre niveau. Même ceux qui vous semblent les plus évidents.
+Il est néanmoins important de distinguer les hauts responsables (ou _executives_) des responsables de proximité (ou _managers_). Ces derniers ont souvent un lien plus fort avec leurs collaborateurs, leur permettant d'être sensibles aux arguments métiers. Les hauts responsables opèrent quant à eux à l'échelon stratégique[^MilitaryStrategy], où ils définissent la vision de l'organisation et fixent les grandes orientations. Les considérations opératives, tactiques et techniques sont déléguées. Le message alors transmis du bas à travers les niveaux hiérarchiques peut s'en retrouver altéré ou déformé.
 
-Distinguons les intérêts respectifs de ces deux profils :
+C'est pourquoi il ne faut pas considérer que les responsables soient nécessairement au courant de tout ce que vous observez à votre niveau. N'hésitez pas à rappeler à votre audience l'effort requis pour les tâches même les plus communes. Par exemple, rappelez-lui que 80% du travail de _n_ individus est dévolu à telle tâche. Et que grâce à votre approche, vous pourriez faire gagner _x_ temps par jour à chaque employé, ce qui représente _y_ euros d'économies ou _z_ fois plus de production.
 
-| Objet                      | Métiers                                     | Décideurs                                                                                                             |
-| -------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Niveau de détail**       | Informations pratiques détaillées           | Vue d'ensemble                                                                                                        |
-| **Termino-logie**          | Jargon métier et outils spécifiques         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit |
-| **Données et preuves**     | Exemples pratiques, études de cas           | Données, statistiques, impacts                                                                                        |
-| **Objectif**               | Instruire, informer, solliciter des retours | Convaincre, obtenir l'approbation                                                                                     |
-| **Style de présen-tation** | Interactif, pratique                        | Formel, concis, direct                                                                                                |
+Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre pour lui fournir les clés de communication qu'il pourra réutiliser. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique, quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti / du gouvernement).
+
+Tout comme vous, le décideur qui découvre un sujet ne peut retenir que quelques informations clés. Veillez donc à limiter à 2 ou 3 maximum le nombre d'idées que vous souhaitez lui faire passer. Terminez la présentation par un appel à l'action. Il devra lui permettre de comprendre comment il peut vous aider à réaliser ce projet.
+
+Résumons les intérêts respectifs de nos deux profils :
+
+| Objet                      | Métiers                                      | Décideurs                                                                                                              |
+| ------------------------------------ | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Niveau de détail**       | Informations pratiques détaillées.           | Vue d'ensemble                                                                                                         |
+| **Termino-logie**          | Jargon métier et outils spécifiques.         | Stratégique, orientée sur les plus-values pour l'organisation elle-même ou la communauté dans laquelle elle s'inscrit. |
+| **Données et preuves**     | Exemples pratiques, études de cas.           | Métriques d'impacts en temps, en argent, en rayonnement.                                                               |
+| **Objectif**               | Instruire, informer, solliciter des retours. | Convaincre, obtenir l'approbation                                                                                      |
+| **Style de présen-tation** | Interactifs, pratiques.                      | Formel, concis, direct. Orienté vers l'effet final recherché.                                                          |
 
 Prenons l'exemple d'une entreprise dont les employés ont besoin d'acquérir un logiciel de traduction performant. Le fournisseur d'une solution vient la présenter au directeur de l'organisation. Voici les arguments à aborder pour chaque profil :
 
-| Objet                      | Employés                                                                                                     | Directeur                                                                                                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Niveau de détail**       | Comment utiliser l'outil, ses fonctionnalités spécifiques, comment il améliore l'efficacité de la traduction | Vue d'ensemble de l'outil, son rôle et son impact sur l'organisation                                                                     |
-| **Termino-logie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances                                         |
-| **Données et preuves**     | Démonstration de l'outil en action, comparaisons avant/après, études de cas d'amélioration du travail        | Statistiques sur l'amélioration de l'efficacité, réduction du temps de travail, satisfaction des utilisateurs, retour sur investissement |
-| **Objectif**               | Comprendre et utiliser efficacement l'outil, améliorer la qualité et vitesse des traductions                 | Approbation pour acquérir l'outil, compréhension de l'impact positif de l'outil sur l'organisation                                       |
-| **Style de présen-tation** | Pratique, interactif avec démonstrations et questions/réponses                                               | Formel, concis, direct, axé sur les plus-values organisationnels                                                                         |
+| Objet                      | Employés                                                                                                      | Directeur                                                                                                                                 |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Niveau de détail**       | A quel point l'outil facilite le travail, comment l'utiliser et quelles sont ses fonctionnalités spécifiques. | Pourquoi l'organisation a-t-elle besoin de cet outil, quel impact il aura.                                                                |
+| **Termino-logie**          | Termes techniques liés à la traduction et au fonctionnement de l'outil.                                       | Discours axé sur la stratégie, l'efficacité organisationnelle et l'amélioration des performances des collaborateurs.                      |
+| **Données et preuves**     | Démonstration de l'outil en action, comparaisons avant/après, études de cas.                                  | Vue d'ensemble des fonctionnalités. Statistiques d'augmentation de la productivité, retour sur investissement. RETEX d'usages internes.   |
+| **Objectif**               | Découvrir la plus-value métier (vitesse et qualité de traduction). Comment utiliser l'outil et ses limites.   | Comprendre l'impact positif de l'outil sur l'organisation et les investissements qu'il requiert.                                          |
+| **Style de présen-tation** | Pratique, interactif avec démonstrations et questions/réponses.                                               | Synthétique. Axé sur les plus-values organisationnelles avec appel à l'action et fiche synthèse à la fin.                                 |
 
-Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son tour. Essayez de bien cerner les directives auxquelles lui-même doit répondre et lui fournir les bons éléments de parole. Par exemple, le chef d'une multinationale sera plus sensible aux arguments de rentabilité économique quand le haut responsable politique considérera davantage l'impact social. Mais tous deux porteront un vif intérêt à s'aligner avec la politique de leur organisation (stratégie de l'entreprise ou priorités du parti / du gouvernement).
+Enfin, vous ne pouvez pas totalement écarter l'hypothèse selon laquelle votre interlocuteur serait en conflit avec d'autres acteurs dans votre organisation. Cela le freinerait à l'idée de prendre certaines décisions d'un intérêt incontestable, dans l'objectif de conserver son statut ou de protéger sa carrière. Dans ce cas-là, tentez de trouver des relais d'influence de niveau équivalent ou supérieur, qui porteront votre vision parmi les décideurs. Une fois votre message porté par plusieurs hauts dirigeants, il sera difficile pour le concerné de refuser ce que le reste de l'organisation considère comme essentiel.
 
-Enfin, vous ne pouvez pas totalement écarter l'hypothèse selon laquelle votre interlocuteur serait en conflit avec d'autres acteurs dans votre organisation. Cela le freinerait à l'idée de prendre certaines décisions d'un intérêt incontestable, dans l'objectif de conserver son statut ou de protéger sa carrière. Dans ce cas-là, tentez de trouver des relais d'influence qui porteront votre vision parmi les décideurs de responsabilités équivalentes ou supérieures. Une fois votre message porté par plusieurs hauts dirigeants, il sera difficile pour le concerné de refuser ce que le reste de l'organisation considère comme essentiel.
-
-Une communication peu impactante reste souvent le fruit d'un interlocuteur peu ou mal compris par le présentateur, plutôt qu'à un interlocuteur de mauvaise foi. A défaut d'en être certain, partez du principe que le problème n'est pas la personne en face de vous.
-
-En résumé, préparez au moins une présentation métiers et une orientée vers les hauts décideurs. Chaque sujet important de votre transformation devrait idéalement disposer de ces deux présentations, mais veillez au moins à ce que votre présentation de transformation globale soit disponible dans ces deux formats.
+Une communication peu impactante reste souvent le fruit d'un interlocuteur ayant mal compris, plutôt que d'une personne de mauvaise foi. A défaut d'en être certain, partez du principe que le problème n'est pas la personne en face de vous.
 
 # Modèle d'équipe interne
 
@@ -519,7 +521,7 @@ L'un des piliers du DevOps est de réduire les silos. Cela inclut l'accès aux d
 
 Si vous souhaitez que vos équipes techniques répondent du mieux possible à votre besoin, elles ont besoin d'un accès privilégié aux données de votre entreprise.
 
-Abandonnez les « échantillons anonymisés ». Les ingénieurs ont besoin de comprendre précisément de quoi est composée la donnée qu'ils sont censés traiter. Tenter de développer un outil sur des données « anonymes » revient à développer un outil qui ne répond que partiellement à un cas d'usage.
+Lorsque le cadre juridique vous le permet, abandonnez les « échantillons anonymisés ». Les ingénieurs ont besoin de comprendre précisément de quoi est composée la donnée qu'ils sont censés traiter. Tenter de développer un outil sur des données « anonymes » revient à développer un outil qui ne répond que partiellement à un cas d'usage.
 
 Autrement dit, vous êtes certain qu'un bug se produira dès lors qu'une donnée « inconnue » passera dans le logiciel (cf. _edge cases_). Fournissez à vos équipes les données de production qui ont vocation à être utilisées dans les outils : vous perdrez moins de temps en résolution de bugs et améliorerez la qualité du service fournit par vos logiciels.
 
@@ -904,8 +906,8 @@ Il existe plusieurs moyens d'adresser la problématique des environnements de d�
    - Cas : votre entreprise est mature, votre activité nécessite que vos ingénieurs aient une autonomie particulièrement élevée pour innover sur du matériel spécifique (ex: librairies GPU de dernière génération, recherche), qu'ils ne soient pas contraints par des outils intermédiaires (VM), mais vous manipulez des données critiques et avez des besoins élevés de sécurité.
    - Remarque : Cette pratique est déconseillée si vous n'avez pas des équipes dédiées et assez nombreuses pour maintenir régulièrement cette infrastructure (ex: Google). En terme de sécurité, pensez entre-autres à contrôler les extensions utilisées par votre IDE[^IDE].
 
-| Méthode                                                  | Flexibilité  | Complexité                               | Risque      |
-| -------------------------------------------------------- | ------------ | ---------------------------------------- | ----------- |
+| Méthode                             | Flexibilité  | Complexité                  | Risque      |
+| ----------------------------------- | ------------ | --------------------------- | ----------- |
 | _Bring Your Own Device_                                  | Maximale     | Aucune                                   | Haut        |
 | Machines partiellement contrôlées                        | Maximale     | Plutôt faible                            | Moyen       |
 | Machines entièrement contrôlées avec env. de dev. cloud  | Moyenne      | Moyenne (_Codespaces_) à Haute (_Coder_) | Faible      |
@@ -2379,11 +2381,11 @@ Si vous optez pour un tableur, vous pouvez utiliser pour cette structure :
 <!-- markdownlint-disable MD034 -->
 | Mesure | Date de début        | Date de fin          | Incident                |
 | ------ | -------------------- | -------------------- | ----------------------- |
-| TTD    | 04/07/2024 16h45 UTC | 04/07/2024 16h50 UTC | https://abcd.com/C4D5E6 |
-| TTA    | 04/07/2024 16h50 UTC | 04/07/2024 17h00 UTC | https://abcd.com/C4D5E6 |
-| TTI    | 04/07/2024 17h00 UTC | 04/07/2024 17h20 UTC | https://abcd.com/C4D5E6 |
-| TTR    | 04/07/2024 17h00 UTC | 04/07/2024 18h30 UTC | https://abcd.com/C4D5E6 |
-| TTD    | 02/06/2024 13h30 UTC | 02/06/2024 13h34 UTC | https://abcd.com/A1B2C3 |
+| TTD    | 04/07/2024 16h45 UTC | 04/07/2024 16h50 UTC | abcd.com/C4D5E6         |
+| TTA    | 04/07/2024 16h50 UTC | 04/07/2024 17h00 UTC | abcd.com/C4D5E6         |
+| TTI    | 04/07/2024 17h00 UTC | 04/07/2024 17h20 UTC | abcd.com/C4D5E6         |
+| TTR    | 04/07/2024 17h00 UTC | 04/07/2024 18h30 UTC | abcd.com/C4D5E6         |
+| TTD    | 02/06/2024 13h30 UTC | 02/06/2024 13h34 UTC | abcd.com/A1B2C3         |
 | ...    | ...                  | ...                  | ...                     |
 <!-- markdownlint-enable MD034 -->
 
