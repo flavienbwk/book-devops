@@ -300,7 +300,7 @@ Pour éviter le retard technologique, les dirigeants d'une organisation peuvent 
 
 # Prérequis
 
-Avoir conçu le meilleur des services (une méthode, un logiciel, un outil) ne vous permettra pas de rayonner tant que vous n'y donnerez pas facilement accès, sans interruption de service et avec de l'assitance. Le DevOps va nous permettre de structurer et maitenir cette source de valeur.
+Avoir conçu le meilleur des services (une méthode, un logiciel, un outil) ne vous permettra pas de rayonner tant que vous n'y donnerez pas facilement accès, sans interruption de service et en fournissant du soutien. Le DevOps vous permettra de structurer et maintenir cette source de valeur.
 
 Ce livre n'exigera même pas de votre équipe qu'elle soit particulièrement grande, ni même que vos responsables soient déjà convaincus. Néanmoins il exigera que votre équipe, elle, soit convaincue qu'elle peut porter son projet. Bien entendu, avec le temps, l'appui d'autres équipes dans votre organisation constituera un argument précieux pour illustrer le succès de votre initiative.
 
@@ -320,13 +320,11 @@ Amorcer son initiative DevOps demande de se projeter dans le recrutement de plus
 
 Que vous soyez un haut responsable ou un chargé de mission dont l'objectif est d'améliorer les services que votre organisation fournit, vous devrez motiver votre initiative vis-à-vis de votre hiérarchie et du reste de votre organisation. Il est donc nécessaire de comprendre comment communiquer efficacement pour que chacun adhère à votre projet. Voyons dans le prochain chapitre quelques pistes pour le faire.
 
-# Bien orchestrer sa communication
+# Comment convaincre et garder la foi
 
-## Comment convaincre et garder la foi
+Premièrement, il ne s'agit pas de convaincre. Vous ne pouvez pas arriver devant quelqu'un et lui dire "vous avez tord, j'ai raison". Vous devez plutôt donner envie à vos interlocuteurs d'adhérer à votre vision, votre projet. Ainsi, ils se convaincront d'eux-mêmes.
 
-Premièrement, il ne s'agit pas de convaincre. Vous ne pouvez pas arriver devant quelqu'un et lui dire "vous avez tord, j'ai raison". Votre objectif doit être de donner envie à vos interlocuteurs d'adhérer à votre vision, votre projet. Ainsi, ils se convaincront d'eux-mêmes.
-
-Faire adhérer sa hiérarchie ou des collègues de travail à une initiative n'est pas toujours simple. William MORGAN - directeur général d'une startup réputée dans les technologies - préconise 4 règles à suivre[^WilliamMorganKubecon2018] :
+Faire adhérer sa hiérarchie ou des collègues de travail à une initiative n'est pas toujours simple. William MORGAN - dirigeant d'une startup réputée dans les technologies - préconise 4 règles à suivre[^WilliamMorganKubecon2018] :
 
 1. Identifier qui est affecté (les parties prenantes)
 2. Déterminer ce que la nouvelle solution va leur apporter (les avantages)
@@ -366,11 +364,11 @@ Et voilà que votre initiative s'enferme dans un cercle vicieux (fig. <spanc/>\r
 
 ![Interaction entre des acteurs communiquant faiblement lors d'une transformation.\label{fig:power_games}](./images/power_games.jpg)
 
-Le problème est tout d'abord culturel : l'organisation n'est pas formée à soutenir l'innovation et il est donc difficile d'innover. Les innovateurs doivent alors trouver des moyens détournés pour changer les choses. D'un autre côté, les innovateurs sont souvent peu acculturés aux structures où on leur demande d'innover. Cela dénotte le besoin de former ces profils pour qu'ils comprennent mieux comment fonctionne l'organisation. En mettant en place les 5 piliers du DevOps, vous aiderez votre organisation à transformer sa culture et favoriser l'innovation (cf. chapitre "[Les cinq piliers du DevOps](#les-cinq-piliers-du-devops)")
+Le problème est avant tout culturel : l'organisation n'est pas formée à soutenir l'innovation et il est donc difficile d'innover. Les innovateurs doivent alors trouver des moyens détournés pour changer les choses. D'un autre côté, les innovateurs sont souvent peu acculturés aux structures où on leur demande d'innover. Cela dénotte le besoin de former ces profils pour qu'ils comprennent mieux comment fonctionne l'organisation. En mettant en place les 5 piliers du DevOps, vous aiderez votre organisation à transformer sa culture et favoriser l'innovation (cf. chapitre "[Les cinq piliers du DevOps](#les-cinq-piliers-du-devops)")
 
 Veillez donc à bien saisir la situation politique entre l'équipe dirigeante et vos premiers expérimentateurs avant d'agir dans l'ombre, au risque de compliquer votre progression.
 
-## Entre humilité, critiques et persévérance
+## Approches face à l'opposition
 
 Gardez en tête que si les choses sont telles qu'elles le sont aujourd'hui, c'est qu'il existe bien des raisons : vous n'avez pas obligatoirement une connaissance exhaustive de ces causes passées (temps alloué aux projets, moyens RH/financiers, jeux de pouvoir...) et n'êtes pas là pour en blamer les acteurs.
 
@@ -384,16 +382,16 @@ Enfin, ne vous découragez pas devant la première personne réticente. Toute in
 
 Si vous rencontrez une opposition frontale, vous allez devoir retravailler votre communication (cf. chapitre suivant "[Adapter son discours](#adapter-son-discours)"). Commencez alors par  les points de vue opposés. Si vous ressentez que certains veulent délibéremment couper court aux discussions, considérez les approches suivantes.
 
-- **Evoquez des valeurs communes** : même si vous et votre interlocuteur avez des convictions différentes, vous pouvez partager certaines valeurs communes. Démontrez comment votre initiative y répond.
-  - Si vous valorisez tous deux l'innovation, vous pouvez mentionner comment votre approche la favorise et en quoi elle offre de nouvelles opportunités.
+- **Evoquer des valeurs communes** : même si vous et votre interlocuteur avez des convictions différentes, vous pouvez partager certaines valeurs communes. Démontrez comment votre initiative y répond.
+  - Si vous valorisez tous deux l'innovation, expliquez-lui comment votre approche la favorise et en quoi elle offre de nouvelles opportunités.
   - Si vous avez tous-deux attrait à améliorer le quotidien d'une catégorie de métier ou d'un usager, donnez des cas d'usage sur comment votre solution peut aider.
-- **Les mettre sous le feu des projecteurs** : décideur ou client, quiconque adhérera à une idée si elle leur permet de rayonner. Identifiez le calendrier politique de votre interlocuteur et aidez-le à comprendre comment votre projet lui permettra d'atteindre ses objectifs.
+- **Les mettre sous le feu des projecteurs** : décideur ou client, quiconque adhérera à votre idée si elle leur permet de rayonner. Identifiez en quoi votre projet peut lui permettre d'atteindre ses objectifs et expliquez-le lui.
   - Le sentiment d'un égo mal placé est souvent synonyme de décalage entre les objectifs affichés du projet et ceux de l'individu.
-  - Si votre interlocuteur cherche à se démarquer et à gagner en influence dans son organisation, montrez comment votre projet pourrait renforcer sa position et son image en tant que responsable améliorant le quotidien de ses subordonnés.
-- **Fédérez une coalition** : attirez des personnes qui partagent votre vision de la transformation (_early adopters_ évoqués plus tôt). Ce sont souvent celles qui partagent avec vous des avis sur l'inefficacité de votre organisation.
-  - En créant une communauté qui vous soutient, vous démontrez à votre interlocuteur que votre approche est légitime et qu'elle est soutenue par un grand nombre de parties prenantes.
+  - Si votre interlocuteur cherche à se démarquer et à gagner en influence dans son organisation, montrez comment votre projet pourrait renforcer sa réputation de dirigeant innovant, œuvrant pour améliorer le quotidien de ses subordonnés.
+- **Fédérer une coalition** : attirez des personnes qui partagent votre vision de la transformation (_early adopters_ évoqués plus tôt). Ce sont souvent les mêmes qui partagent votre avis sur l'inefficacité de l'organisation.
+  - En créant une communauté qui vous soutient, vous démontrez à vos interlocuteurs que votre approche est légitime et qu'elle est soutenue par un grand nombre de parties prenantes.
   - Demandez des témoignages officiels : une lettre ou un e-mail signé par le responsable reconnu d'une entité que vous avez servi, attestant de l'utilité de vos méthodes ou de vos services.
-  - Acceptez aussi que vous n'êtes pas éternel au sein de l'entreprise. Si votre initiative ne trouve pas sa place ici, tant pis pour votre entreprise! Vos efforts pourraient avoir un tout autre impact dans une autre structure, avec la même initiative. Et vous-seul déterminez les limites que vous vous fixez.
+  - Acceptez aussi que vous n'êtes pas éternel au sein de la structure. Si votre initiative ne trouve pas sa place ici, tant pis pour votre organisation! Vos efforts pourraient avoir un tout autre impact dans une autre structure, avec la même initiative. Et vous-seul déterminez les limites que vous vous fixez.
 
 ## Adapter son discours
 
