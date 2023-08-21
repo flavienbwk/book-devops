@@ -493,17 +493,17 @@ Au delà d'apporter une solution pragmatique à un problème, cet ingénieur a s
 
 ## Équipes « innovantes » et datascience
 
-Nombreuses sont les organisations qui ont voulu stimuler leurs organisations en créant des « équipes innovation » au sein de leur structure. Et nombreuses sont celles qui n'ont pas vraiment réussi à déployer en production ce qui y était développé.
+Nombreuses sont les organisations qui ont souhaité stimuler leurs organisations en montant des « équipes innovation ». Et nombreuses sont celles qui n'ont pas vraiment réussi à déployer en production ce qui y était développé.
 
-Les cas d'usages tournent souvent autour de la data et de l'intelligence artificielle. Les buzz-words « data-scientists », « deep learning » et « intelligence artificielle » ont procuré de nombreux faux espoirs : beaucoup d'organisations ont recruté des profils data-science qui se sont retrouvés incapables de mettre en production leurs algorithmes dans une interface à l'attention d'opérateurs non-experts.
+Les cas d'usage tournent souvent autour de la data et de l'intelligence artificielle. Les buzz-words « data-scientists », « deep learning » et « intelligence artificielle » ont procuré de nombreux faux espoirs : beaucoup d'organisations ont recruté des profils data-science qui se sont retrouvés incapables de mettre en production leurs algorithmes dans une interface à l'attention d'opérateurs non-experts.
 
 Le problème n'est pas les data-scientists, mais bien les décideurs qui jusqu'à récemment ne comprenaient pas ce qu'impliquait la réponse au besoin métier : un socle de développement fiable, des données propres, des données massives, du suivi de modèles[^ModelsIA] (MLOps), une équipe de mise en production. En somme, beaucoup pensaient (et continuent de penser) que « l'IA » peut résoudre n'importe quel problème avec quelques lignes de code. Ces personnes n'ont pas conscience de l'infrastructure et du soutien technique qu'impliquent ces technologies.
 
-L'exemple typique de la data-science vis-à-vis du DevOps est le besoin de puissance de calcul, de capacité de stockage et de services pour développer et suivre l'entraînement de ces modèles. La plupart des data-scientists ne seront pas en mesure d'installer seul leur machine, leurs drivers GPU[^DriversGPU] et leur environnement Jupyter Notebook[^JupyterNotebook]. En particulier dans des environnements complexes propres aux grandes organisations.
+L'exemple typique de la data-science vis-à-vis du DevOps est le besoin de puissance de calcul, de capacité de stockage et de services pour développer et suivre l'entraînement de ces modèles. Or la plupart des data-scientists ne seront pas en mesure d'installer seul leur machine, leurs drivers GPU[^DriversGPU] et leur environnement Jupyter Notebook[^JupyterNotebook]. En particulier dans des environnements complexes propres aux grandes organisations (contraintes réglementaires).
 
 ## Être au plus proche du métier
 
-Ce qui permettra à votre équipe de se différencier, c'est l'appui que vous fournissez à vos opérateurs. Votre avantage par rapport aux équipes de développement traditionnelles ou aux prestataires externes est la possibilité d'être en forte proximité avec les métiers de votre organisation.
+Ce qui permettra à votre équipe de se différencier, c'est l'appui que vous fournissez à vos opérateurs. Par rapport aux équipes de développement traditionnelles ou aux prestataires externes, votre avantage est la possibilité d'être en forte proximité avec les métiers de votre organisation.
 
 C'est la fameuse méthodologie « agile » à l'opposé du « cycle en V » (ou méthodologie _waterfall_).
 
@@ -517,19 +517,21 @@ Cependant en logiciel, il est possible d'adopter une approche plus agile. Le com
 
 Ainsi, au sein d'un programme d'armement, l'informatique embarquée à bord d'un navire (ex: capteurs, systèmes d'information) peut être pilotée par la méthodologie agile, quand la production du porteur[^DefPorteur] peut être régie par la méthodologie en "V". Alors que la coque subira peu de changements, les logiciels peuvent être renouvelés à la vitesse exigée par les opérations[^VoeuxCEMA].
 
-Au-delà de la solution technique que vous leur apporterez, vos métiers constateront que votre mode d'organisation - plus agile - est efficace pour eux. Ils soutiendront par conséquent votre initiative. En tant que chef d'équipe, votre objectif doit être de pouvoir faire témoigner, lors de présentations importantes, des représentants d'équipes métiers que vous avez aidé grâce à vos outils. Ces représentations permettront d'asseoir votre crédibilité et d'éviter que votre équipe soient reconnus comme de simples « prestataires de développement technique ».
+Au-delà de la solution technique que vous leur apporterez, vos métiers constateront que votre mode d'organisation - plus agile - est efficace pour eux. Ils soutiendront par conséquent votre initiative. En tant que chef d'équipe, votre objectif doit être de pouvoir faire témoigner, lors de présentations importantes, des représentants d'équipes métiers que vous avez aidé grâce à vos outils. Ces représentations permettront d'asseoir votre crédibilité et d'éviter que vos équipes soient reconnues comme de simples « prestataires de développement technique ».
 
 ![Parallèle entre méthodologie traditionnelle et méthodologie agile : pendant que la méthodologie en V fixe la spécification des besoins, la méthodologie agile s'adapte au besoin utilisateur au cours du temps.\label{fig:cycle_v_vs_agile}](./images/cycle_v_vs_agile.png)
 
-Cette proximité avec les métiers permettra à vos équipes de se sentir davantage impliquées dans les missions de votre institution. C'est une dynamique gagnante à la fois pour vos ingénieurs et les opérateurs. Chacun se nourrit ainsi de la connaissance de l'autre : l'ingénieur découvre le fond du sujet, comprend mieux le problème, pendant que l'opérateur spécifie son besoin le plus précisément possible.
+Cette proximité avec les métiers permettra à vos équipes de se sentir davantage impliquées dans les missions de votre organisation. C'est une dynamique gagnante à la fois pour vos ingénieurs et vos clients. Chacun se nourrit ainsi de la connaissance de l'autre : l'ingénieur découvre le fond du sujet, comprend mieux le problème, pendant que l'opérateur spécifie son besoin le plus précisément possible.
 
 L'illustration de Henrik KNIBERG[^HenrikKNIBERG], coach agile, nous permet de bien cerner l'intérêt de la méthodologie agile : on préfère livrer à chaque étape quelque chose qui fonctionne - bien que non abouti - pour récolter les retours utilisateur et itérer (fig. <spanc/>\ref{fig:agile_illustration_henrik_kniberg}).
 
-Vous avez dû probablement vous en rendre compte au cours de votre carrière : le client ne sait souvent pas exprimer ce qu'il veut exactement. La méthodologie agile et ultimement la méthodologie DevOps permettent de s'adapter aux réalités du métier au cours du temps, pour mieux le comprendre et livrer un produit qui répond réellement à ses besoins. Les techniques DevOps vous permettront de libérer du temps pour en passer davantage avec votre client, mieux comprendre son besoin et mieux traiter ses retours ou suggestions.
+Vous avez dû probablement vous en rendre compte au cours de votre carrière : le client a souvent du mal à exprimer ce qu'il veut exactement. La méthodologie agile et ultimement la méthodologie DevOps permettent de s'adapter aux réalités du métier au cours du temps, pour mieux les comprendre et livrer un produit qui répond réellement à ses besoins.
+
+En automatisant les procédés rébarbatifs, les techniques DevOps vous permettront de libérer du temps pour en passer davantage avec votre client, mieux comprendre son besoin et mieux traiter ses retours ou suggestions.
 
 ![Illustration du processus d'itération entre méthodologie traditionnelle et méthodologie agile par Henrik KNIBERG. Exemple d'un projet pour produire un véhicule.\label{fig:agile_illustration_henrik_kniberg}](./images/agile_illustration_henrik_kniberg.jpg)
 
-Mettre au contact profils techniques et opératifs est un enjeu de fidélisation au-delà de la plus-value d'une réponse plus rapidement et précise aux problématiques internes. Rappelez-vous : vos équipes sont en quête de sens. Elles ne viennent pas au travail le matin pour répondre à l'ordre de leur supérieur de développer un logiciel, mais pour concevoir avec leurs compétences d'expert la solution technique qui répondra le mieux au problème du métier. L'aboutissement du travail d'un ingénieur est de voir le métier utiliser la création qu'il a conçu.
+Mettre au contact profils techniques et métiers est un enjeu de fidélisation au-delà de la plus-value d'une réponse plus rapidement et précise aux problématiques internes. Rappelez-vous : vos équipes sont en quête de sens. Elles ne viennent pas au travail le matin pour répondre à l'ordre de leur supérieur, mais pour concevoir grâce à leur expertise la solution technique qui répondra le mieux au problème du métier. L'aboutissement du travail d'un ingénieur est de voir le métier utiliser la création qu'il a conçu.
 
 \newpage
 
@@ -541,9 +543,9 @@ Si vous souhaitez que vos équipes techniques répondent du mieux possible à vo
 
 Lorsque le cadre juridique vous le permet, abandonnez les « échantillons anonymisés ». Les ingénieurs ont besoin de comprendre précisément de quoi est composée la donnée qu'ils sont censés traiter. Tenter de développer un outil sur des données « anonymes » revient à développer un outil qui ne répond que partiellement à un cas d'usage.
 
-Autrement dit, vous êtes certain qu'un bug se produira dès lors qu'une donnée « inconnue » passera dans le logiciel (cf. _edge cases_). Fournissez à vos équipes les données de production qui ont vocation à être utilisées dans les outils : vous perdrez moins de temps en résolution de bugs et améliorerez la qualité du service fournit par vos logiciels.
+Autrement, vous êtes certain qu'un bug se produira dès lors qu'une donnée « inconnue » passera dans le logiciel (cf. _edge cases_). Fournissez à vos équipes les données de production qui ont vocation à être utilisées dans les outils : vous perdrez moins de temps en résolution de bugs et améliorerez la qualité du service fournit par vos logiciels.
 
-Dans le cas contraire, il n'est peut-être pas nécessaire d'embaucher des personnes en interne. Un prestataire pourra tout aussi bien construire le logiciel. Considérez néanmoins les risques de procéder ainsi (cf. [Être au plus proche du métier](#être-au-plus-proche-du-métier)).
+Si vous ne disposez pas des autorisations nécessaires, il n'est peut-être pas nécessaire d'embaucher des personnes en interne. Un prestataire pourra tout aussi bien construire le logiciel à partir de données en source ouverte. Considérez néanmoins les risques de procéder ainsi (cf. [Être au plus proche du métier](#être-au-plus-proche-du-métier)).
 
 # Sécurité : un nouveau paradigme avec l'approche DevOps
 
