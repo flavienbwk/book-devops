@@ -402,16 +402,17 @@ $if(logo)$
 $endif$
 $endif$
 
-% Force titles color
+% Force titles colors and spacing
 \usepackage{titlesec}
 \usepackage{xcolor}
-\definecolor{titlegreen}{rgb}{0.26,0.38,0.55}
+\definecolor{titlecolor}{rgb}{0.26,0.38,0.55}
 \titleformat{\chapter}[display]
-{\color{titlegreen}\normalfont\huge\bfseries}
-{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+{\color{titlecolor}\normalfont\huge\bfseries}
+{\chaptertitlename\ \thechapter}{20pt}{\huge}
 \titleformat{\section}
-{\color{titlegreen}\normalfont\Large\bfseries}
+{\color{titlecolor}\normalfont\Large\bfseries}
 {\thesection}{1em}{}
+\titlespacing*{\chapter}{0pt}{30pt}{15pt}
 
 \begin{document}
 $if(has-frontmatter)$

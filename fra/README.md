@@ -372,6 +372,8 @@ En plus d'améliorer votre proposition de valeur, vous obtiendrez des exemples �
 
 ## Agir avec finesse
 
+> « L'initiative est la forme la plus élaborée de la discipline. » - Général LAGARDE
+
 Opérer en coulisse (ne pas annoncer votre projet au collectif) implique d'en comprendre les hypothétiques répercussions. Bien que vous souhaitiez améliorer les choses en toute bonne foi, vous pourriez mal percevoir la situation d'ensemble de votre organisation. Ainsi, votre projet viendrait perturber des jeux de pouvoir établis, vous rendant indésirable aux yeux de certains.
 
 Par exemple, une équipe en manque de moyen vient vous demander de l'aide. Constatant sa détresse, vous lui concevez un tout nouvel outil développé rapidement grâce à votre plateforme DevOps. Vous omettez d'en informer votre hiérarchie, car elle risquerait de refuser cette innovation (cf. chapitre précédent).
@@ -383,6 +385,8 @@ En apprenant la nouvelle, les dirigeants se retrouvent dans une situation désag
 Et voilà que votre initiative s'enferme dans un cercle vicieux (fig. <spanc/>\ref{fig:power_games}). D'un côté, votre équipe ne voit pas le mal à aider et arrête de rendre compte à l'équipe dirigeante. De l'autre, l'équipe dirigeante abdique à l'idée d'entreprendre avec vous et de vous faire confiance.
 
 ![Interaction entre des acteurs communiquant faiblement lors d'une transformation.\label{fig:power_games}](./images/power_games.jpg)
+
+\newpage
 
 Le problème est avant tout culturel : l'organisation n'est pas formée à soutenir l'innovation et il est donc difficile d'innover. Les innovateurs doivent alors trouver des moyens détournés pour changer les choses. D'un autre côté, les innovateurs sont souvent peu acculturés aux structures où on leur demande d'innover. Cela dénotte le besoin de former ces profils pour qu'ils comprennent mieux comment fonctionne l'organisation. En mettant en place les 5 piliers du DevOps, vous aiderez votre organisation à transformer sa culture et favoriser l'innovation (cf. chapitre "[Les cinq piliers du DevOps](#les-cinq-piliers-du-devops)")
 
@@ -400,7 +404,7 @@ Enfin, ne vous découragez pas devant la première personne réticente. Toute in
 - Henri FORD qui portait la vision selon laquelle chaque Américain devait avoir une voiture personnelle et qu'elle ne coûte pas cher. À l'époque, la voiture était considérée comme un gadget pour les riches : "on ne sait pas à quoi ça sert mais c'est joli". Il a créé la première chaîne de montage en mouvement de l'industrie (1913)[^FordIndustryChain] et _Ford_ fait encore aujourd'hui partie des leaders de l'industrie automobile.
 - Elon MUSK qui disait pouvoir créer des lanceurs de fusée réutilisables : moqué[^ElonMuskBiography] ou fortement mis en doute[^MuskImpossibleQuote] à ses débuts par l'industrie spatiale russe et américaine, désormais respecté par cette dernière et [craint](https://www.ft.com/content/24cca993-b249-45a5-8c42-b39c0ec30c5b) par [l'industrie spatiale européenne](https://www.latribune.fr/entreprises-finance/industrie/aeronautique-defense/satellites-europeens-lances-par-spacex-la-terrible-defaite-de-l-europe-spatiale-937632.html).
 
-Si vous rencontrez une opposition frontale, vous allez devoir retravailler votre communication (cf. chapitre suivant "[Adapter son discours](#adapter-son-discours)"). Commencez alors par  les points de vue opposés. Si vous ressentez que certains veulent délibéremment couper court aux discussions, considérez les approches suivantes.
+Si vous rencontrez une opposition frontale, vous allez devoir retravailler votre communication (cf. chapitre suivant "[Adapter son discours](#adapter-son-discours)"). Commencez alors par les points de vue opposés. Si vous ressentez que certains veulent délibéremment couper court aux discussions, considérez les approches suivantes.
 
 - **Evoquer des valeurs communes** : même si vous et votre interlocuteur avez des convictions différentes, vous pouvez partager certaines valeurs communes. Démontrez comment votre initiative y répond.
   - Si vous valorisez tous deux l'innovation, expliquez-lui comment votre approche la favorise et en quoi elle offre de nouvelles opportunités.
@@ -973,7 +977,7 @@ Néanmoins, les besoins en maintenance de ce type de socle augmentent proportion
 
 En résumé, on force ici le logiciel déployé à s'adapter au socle. Ce qui génère de la dette technique. Qui plus est, des services socle centralisés comme ceux pour gérer logs ou les métriques, n'existent pas toujours.
 
-Ce type de socle est efficace avec un nombre raisonnable de services déployés, mais il passe difficilement à l'échelle sans une RH proportionnellement dimensionnée.
+Ce type de socle est efficace avec un nombre raisonnable de services déployés, mais il passe difficilement à l'échelle sans une RH dimensionnée en proportion.
 
 ![Illustration des services dans un socle cloud (type Kubernetes baremetal).\label{fig:illustration_socle_kubernetes}](./images/illustration_socle_kubernetes.jpg)
 
@@ -1369,6 +1373,8 @@ Les grandes organisations sont souvent frileuses à l'idée de proposer du tél�
 Si vous devez convaincre votre hiérarchie, listez clairement les objectifs de l'employé en télétravail (avec l'aide du [chapitre précédent](#former-de-manière-continue)). Si cela ne suffit pas, vous pouvez par exemple lui proposer que l'employé écrive un compte rendu sur son travail en fin de journée. Mais cela revient à dire au collaborateur "je ne te fais pas confiance sur ton sérieux". Réfléchissez-y à deux fois.
 
 La recherche[^DORAFlexibleWork] a démontré qu'un environnement de travail flexible était associé à une baisse de _burnout_ et une augmentation des chances que l'employé recommande son entreprise.
+
+\newpage
 
 ### Architectures logicielles et agilité
 
@@ -2041,6 +2047,8 @@ Il peut être tentant de penser que former un personnel sur une technologie inno
 
 Dans tous les cas, présentez votre transformation comme une opportunité d'évolution de carrière. Et soyez honnête avec les personnes qui devront monter en compétence : oui cela demandera des efforts personnels et du temps. Mais développer ces nouvelles expertises en vaut la chandelle.
 
+\newpage
+
 ## Tirer parti de l'automatisation
 
 Au sein de systèmes d'informations de plus en plus complexes, il devient fondamental d'automatiser les tâches récurrentes. L'humain représente le facteur principal d'erreurs au sein d'un système d'information[^HumanErrorIS]. Tout ingénieur confirmé pourra vous le confirmer. C'est pour cela que les équipes de Google tentent de minimiser au maximum les interactions de leurs opérateurs pour administrer leurs systèmes[^GoogleWorkbookEliminatingToil].
@@ -2194,6 +2202,8 @@ Avec ces mêmes outils, vous pouvez [adopter une stratégie de déploiement blue
 Des outils encore plus avancés existent pour adresser les enjeux du déploiement à très grande échelle. Nous découvrirons l'exemple de Palantir et son produit Apollo dans le chapitre "[Déployer en parallèle dans des environnements différents](#déployer-en-parallèle-dans-des-environnements-différents)".
 
 Par ailleurs, les chaînes de déploiement continu ne se limitent pas au déploiement du logiciel ou au lancement de tâches d'administration. Elles peuvent constituer un point de départ pour la supervision de votre logiciel. Par exemple, une chaîne de déploiement continu peut configurer une instance _Prometheus / Grafana_ et commencer à envoyer ses journaux d'activité. Le déploiement de votre logiciel ne signe pas la fin du cycle de résilience de votre infrastructure : vous devez maintenant le superviser. Nous découvrirons ces techniques dans le chapitre "[Tout mesurer](#tout-mesurer)".
+
+\newpage
 
 ## Tout mesurer
 
@@ -2427,6 +2437,8 @@ Les MTTx sont nombreuses dans la littérature, avec chacune leurs spécificités
 | **MTBF** | _mean time before failure_ ou temps moyen entre deux défaillances | Temps moyen entre la dernière défaillance détectée et l'actuelle. Cette mesure aide à prédire la disponibilité d'un service.                                                                                                                                                                                                                                                                                                                                               |
 
 ![Chronologie des mesures MTTx lors d'un incident.\label{fig:2023_MTTx_timeline}](./images/2023_MTTx_timeline.jpg)
+
+\newpage
 
 Vous pouvez commencer à suivre vos MTTx dans un tableur collaboratif (ex: _Baserow_, _NocoDB_, _Google Sheets_) puis passer à des outils plus intégrés comme _Jira Service Management_ ou [_Odoo_](https://www.odoo.com/fr_FR/app/maintenance). L'idée est de pouvoir calculer et visualiser la tendance que prennent vos MTTx avec le temps.
 
@@ -2800,6 +2812,8 @@ Les niveaux d'exigence des postes sont décrits selon la maturité de l'entrepri
 
 Une section "Formation" est également disponible, pour vous donner une idée des cursus que le candidat peut avoir suivi pour prétendre au poste. Néanmoins, considérez dans l'informatique que le diplôme n'est plus d'aucune importance après 5 ans d'expérience professionnelle. C'est cette dernière et les projets que le candidat réalise qui définissent son niveau d'expertise.
 
+\newpage
+
 ## Ingénieur DevOps
 
 |                                                 |                                                                                            |
@@ -2847,6 +2861,8 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 Ce poste peut mener au poste d'Ingénieur Systèmes, de SRE ou d'Ingénieur SSI DevOps.
 
+\newpage
+
 ## Ingénieur SSI DevOps
 
 |                                                 |                                                                    |
@@ -2893,6 +2909,8 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 Ce poste peut mener au poste d'Ingénieur Systèmes ou de SRE.
 
+\newpage
+
 ## Ingénieur Résilience des Systèmes (SRE)
 
 |                                                 |                                                                                                                                                                  |
@@ -2935,6 +2953,8 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 - Expérience professionnelle significative dans le domaine
 
 Ce poste peut mener au poste de Responsable de l'Infrastructure, d'Ingénieur SSI DevOps ou d'Ingénieur Systèmes.
+
+\newpage
 
 ## Ingénieur Systèmes ou Ingénieur Plateforme
 
