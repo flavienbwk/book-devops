@@ -35,14 +35,15 @@ It automatically :
 <!-- - [Checks spells](https://github.com/check-spelling/check-spelling/blob/main/.github/workflows/spelling.yml) of english-written texts -->
 - [Validates Markdown](https://github.com/marketplace/actions/markdown-linting-action) format
 - Renders a PDF version on _develop_ and _main_
-- Creates a release on _main_ (for physical book)
 - [Updates](./.github/workflows/publish.yml) the Amazon physical version book through their API
+
+This repo uses a [trunk-based git workflow](./fra/README.md#workflows-git) with releases automatically triggering optional actions.
 
 ## Publishing
 
 This book has a double life. Let's make sure it reflects DevOps' state of the art practices at all times with your contributions.
 
-- "Source edition" : the original book, unique, written exclusively by the author
+- "Source edition" : the original book, unique, exclusively written by the author
 - "Community edition(s)" : annual versions of the book including community contributions to improve it
 
 ## Supporting the author
