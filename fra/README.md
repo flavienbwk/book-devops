@@ -2546,23 +2546,23 @@ Les technologies évoquées ci-dessus s'interfacent automatiquement au logiciel 
 
 ## Trouver des ambassadeurs pour son projet
 
-L'importance du responsable de projet n'est pas à considérer comme une simple plus-value. C'est lui qui est responsable du fait que le projet atteigne ses objectifs. Il joue aussi souvent le rôle de _product owner_ - un terme défini dans la méthode Agile - dont le rôle est de faire le lien entre les équipes techniques et métiers. C'est lui qui « vend » votre projet à vos utilisateurs.
+Le chef de projet a la responsabilité de tout mettre en œuvre pour que le projet atteigne ses objectifs. Il joue souvent le rôle de _product owner_ - un terme défini dans la méthode Agile - dont le rôle est de faire le lien entre les équipes techniques et métiers. C'est lui qui « vend » votre projet à vos utilisateurs.
 
-Il est important que se profil soit assez proche des utilisateurs pour comprendre les problématiques des métiers mais également assez proche des équipes techniques pour comprendre les enjeux d'ingénierie. Souvent, le chef de projet va avoir tendance à « sur-vendre » les délais auprès des métiers. Cette pratique génère du stress pour les équipes internes et de la frustration pour les clients, qui se sont vus promettre un nouvel outil qui prendra finalement plus de temps à être disponible.
+Il est important que ce profil soit à la fois proche des utilisateurs finaux et des équipes techniques. Pour le premier dans l'objectif comprendre les problématiques métiers et pour le second afin de bien saisir les enjeux d'ingénierie.
 
-Annoncez un calendrier réaliste discuté au préalable avec vos équipes techniques. Imposer un calendrier est le meilleur moyen d'échouer. Vos ingénieurs voudront peut-être faire de leur mieux pour respecter les délais mais le résultat ne sera qu'un produit de frustration pour tout le monde : risque de bugs élevés, de fonctionnalité mal évaluées... Si vous doutez du temps que peut prendre l'un des développements, posez des questions. Ne prenez pas de décision arbitraire car vous « pensez » que telle ou telle fonctionnalité peut être développée rapidement.
+Quelques fois, le chef de projet va avoir tendance à « sur-vendre » les délais. Cette pratique génère du stress pour les équipes et provoque à terme de la frustration chez les clients. En effet, ces derniers se seront vus promettre un outil qui n'arrivera finalement que plus tard. Il s'agit donc de maîtriser les attentes.
 
-> « Under-promise, over deliver »
+> « Under-promise, over-deliver »
 
-Afin d'accélérer l'adoption de vos solutions, conviez un métier à vos présentations. Si cette personne est convaincue par votre produit, elle sera tentée de le présenter elle-même à votre assemblée pour expliquer à quel point il lui a été précieux pour son travail de tous les jours.
+Afin d'accélérer l'adoption de vos solutions, conviez un intervenant métier à vos présentations. Si cette personne est convaincue par votre produit, elle sera tentée de le présenter elle-même à votre assemblée, pour expliquer à quel point il lui a été précieux dans son travail quotidien.
 
-Arriver à faire parler un métier à votre place est le meilleur moyen de gagner en crédibilité et prouver que votre solution répond à un besoin d'actualité. En illustrant un cas d'usage, vos invités se projetteront bien plus vite sur l'utilisation qu'ils peuvent faire de votre outil. Si vous avez des utilisateurs récalcitrants ou qui ont du mal à se projeter, un métier qui témoigne sur l'intérêt de votre projet est votre meilleur allié.
+Arriver à faire témoigner vos clients à votre place est le meilleur moyen de gagner en crédibilité. Cela prouve que votre solution répond à un besoin d'actualité. En illustrant un cas d'usage, vos invités se projetteront rapidement sur l'utilisation qu'ils peuvent faire de votre outil. Si vous souhaitez convaincre une audience ayant du mal à se projeter, le témoignage d'un client est votre meilleur allié.
 
 Tentez d'établir un réseau solide de quelques « ambassadeurs » (product advocates) au sein de votre organisation pour asseoir votre légitimité et soutenir votre initiative. En plus de ce soutien, l'ambassadeur vous permettra de capter les retours utilisateur ou d'en émettre lui-même pour affiner votre proposition de valeur.
 
 ## Réservistes ou projet « 20% »
 
-Dans le privé et en particulier chez les GAFAM[^GAFAM], il est courant pour les employés d'avoir une journée dédiée dans leur semaine pour travailler sur un projet différent au sein de l'entreprise. En ce sens, ils choisissent de travailler au profit d'une autre équipe 1 jour sur 5. Cette possibilité est intéressante car elle profite à la fois à l'employé et à l'entreprise : l'employé peut voir autre chose et monter en compétence dans un autre domaine tout en aidant quand même l'entreprise.
+Dans le privé et en particulier chez les GAFAM[^GAFAM], il est courant pour les employés d'obtenir une journée hebdomadaire dédiée pour participer à un projet différent au sein de l'entreprise. Un jour sur cinq, ils choisissent de travailler au profit d'une autre équipe. Cette option est intéressante car elle profite à la fois à l'employé et à l'entreprise : l'employé découvre d'autres technologies et pratiques, monte en compétence dessus et peut réinvestir ses connaissances au profit du reste des projets qu'il gère.
 
 Il est également possible de citer le ["Programme 10%"](https://www.10pourcent.etalab.gouv.fr/) de la DINUM et de l'INSEE. Basé sur le volontariat, l'objectif est de proposer aux agents de la fonction publique de consacrer 10% de leur temps de travail à des projets d'intérêt commun[^Programme10p].
 
@@ -2584,9 +2584,9 @@ Pour référence, même Google [ne promet pas plus de 99.9% de disponibilité](h
 
 ### Mieux s'organiser pour ne pas échouer
 
-La méthode traditionnelle des institutions pour travailler avec des industriels peut s'assimiler aux développements de type « waterfall » : une grande réunion est organisée pour recueillir le besoin, un cahier des charges technique et fonctionnel est rédigé pour structurer le contrat, les développements sont réalisés sans retour des métiers et le produit final est livré, clôturant le contrat.
+La méthode traditionnelle des institutions pour travailler avec des industriels peut s'assimiler aux développements de type « waterfall » : une grande réunion est organisée pour recueillir le besoin, un cahier des charges technique et fonctionnel est rédigé pour structurer le contrat, les développements sont réalisés dans la foulée et le produit final est livré, clôturant le contrat.
 
-Cette méthode ne fonctionne plus aujourd'hui avec la dynamique du développement logiciel. La durée de vie moyenne d'un logiciel ne dépasse pas 3 à 5 ans[^TimeToOutdatedSoftware] et ce quand bien même en incluant des mises à jour régulières.
+Avec la dynamique intense du domaine numérique, cette méthode n'est pas optimale. La durée de vie moyenne d'un logiciel ne dépasse pas 3 à 5 ans[^TimeToOutdatedSoftware], quand bien même des mises à jours périodiques seraient apportées.
 
 Prenons un exemple : vous avez la charge d'équiper votre organisation d'un nouvel outil numérique.
 
@@ -2599,11 +2599,11 @@ Prenons un exemple : vous avez la charge d'équiper votre organisation d'un nou
 - Les présentations et validation du bon fonctionnement : 1 mois.
 - La mise en production 2 semaines à 2 mois supplémentaires selon votre politique SSI et les réseaux à votre disposition.
 
-Résultat : le processus vous aura pris environ 1 an tout en n'ayant jamais mis l'outil entre les mains du métier. Vous n'êtes à cette étape même pas sûr qu'il réponde au besoin : rappelez-vous que le besoin exprimé n'est jamais vraiment le besoin effectif.
+Résultat, le processus vous aura pris environ 1 an tout en n'ayant jamais mis l'outil entre les mains du métier. Vous n'êtes à cette étape même pas sûr qu'il réponde au besoin : rappelez-vous que le besoin exprimé n'est jamais vraiment le besoin effectif.
 
 Le métier a enfin l'outil entre les mains : manque de chance, il ne répond pas pleinement au besoin, n'est pas pratique à utiliser et vos collaborateurs préfèrent rester sur les anciens outils qu'ils maîtrisent.
 
-Il n'est pas concevable de travailler de cette manière en 2023. L'une des pratiques du DevOps est de permettre « d'échouer rapidement », pour itérer plus régulièrement et atteindre plus rapidement la version qui répond au besoin. En ce sens, la méthodologie DevOps vous recommande de ne pas partir tête baissée sur une version « parfaitement aboutie » du cahier des charges : partez sur une première version, échouez, itérez et construisez l'outil parfait avec votre client.
+Il n'est pas concevable de travailler de cette manière aujourd'hui. L'une des pratiques du DevOps est de permettre « d'échouer rapidement », pour itérer plus régulièrement et atteindre plus rapidement la version qui répond au besoin. En ce sens, la méthodologie DevOps vous recommande de ne pas partir tête baissée sur une version « parfaitement aboutie » du cahier des charges : partez sur une première version, échouez, itérez et construisez l'outil parfait avec votre client.
 
 Vous vous souvenez de ce pilier ? « Réduire les silos organisationnels en impliquant chacun » : vous devez impliquer vos clients tout au long du cycle du projet. Si vous ne prenez pas régulièrement en compte leurs retours, le produit final risque de ne pas leur être utile. Quand bien même il serait utile, il serait peut-être trop complexe à utiliser et donc peu attirant.
 
@@ -2623,13 +2623,13 @@ Dans le cas où vous ne pouvez pas agir sur vos pratiques avec l'industriel, org
 
 À titre d'exemple, le _ITZBund_ (Centre Fédéral Allemand des Technologies de l'Information, l'équivalent allemand de l'ANSSI[^ANSSI]) emploie depuis 2018 au sein de son _Bundescloud_ (cloud inter-ministériel) le logiciel open-source _Nextcloud_[^NextcloudITZBund]. Ce dernier permet de partager des fichiers et collaborer sur une plateforme unifiée. Environ 300 000 utilisateurs institutionnels et industriels l'utilisent. Un an après, c'est le Ministère de l'Intérieur français qui l'adopte[^NextCloudMinint].
 
-Cette pratique est une approche gagnante pour chacun : le client réduit les délais de livraison, le métier obtient un outil qui répond mieux à ses besoins, l'industriel favorise la possibilité d'une nouvelle contractualisation en ayant satisfait son client et le contribuable en a pour son argent. Globalement, tout le monde gagne du temps, est satisfait du résultat et se voit fidélisé en étant davantage impliqué dans chacune des interactions.
+Cette pratique est une approche gagnante pour chacun : le client voit les délais de livraison réduits, le métier obtient un outil qui répond mieux à ses besoins, l'industriel favorise l'opportunité d'une nouvelle contractualisation avec un client satisfait et le contribuable en a pour son argent. Globalement, tout le monde gagne du temps, est satisfait du résultat et se voit fidélisé en étant davantage impliqué dans chacune des interactions.
 
 # Mesurer le succès de sa transformation
 
 Il est impératif de mesurer les efforts que vous investissez dans votre initiative. Cela permet de constater factuellement l'efficacité de vos prises de décisions. Bien sûr, au début, il n'est pas rare d'observer une dégradation des performances puisque vous changez les habitudes, c'est à dire l'équilibre de l'organisation. Si vous observez une dégradation des indicateurs au cours du temps, vous savez que vous devrez adopter une autre stratégie pour corriger la tendance (cf. chapitre "[Savoir quand innover et quand s'arrêter](#savoir-quand-innover-et-quand-sarrêter)").
 
-Selon la recherche, la maturité technique d'une organisation permet de quadrupler[^DORATechnicalCapabilities] la performance de ses équipes. Découvrons quelques indicateurs utilisés dans l'industrie. Ces derniers font régulièrement l'objet de nombreux débats, mais semblent tout de même être la référence faisant consensus.
+Selon la recherche, la maturité technique d'une organisation permet de quadrupler la performance de ses équipes[^DORATechnicalCapabilities]. Découvrons quelques indicateurs utilisés dans l'industrie. Ces derniers font régulièrement l'objet de nombreux débats, mais semblent tout de même être la référence faisant consensus.
 
 Le succès d'une initiative DevOps se mesure grâce à 4 mesures théorisées (_4 key metrics_[^DORAsFourKeyMetrics]). À ces mesures s'ajoutent une cinquième qui révèle les performances opérationnelles de l'organisation. Elles font état des résultats obtenus à l'échelle globale de vos systèmes informatiques et de votre organisation plutôt que seulement sur des mesures logicielles. Ces dernières peuvent résulter d'amélioration locales, au détriment des performances globales. Découvrons-les :
 
