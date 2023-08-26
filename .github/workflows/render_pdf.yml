@@ -61,7 +61,7 @@ jobs:
 
       - name: Render PDF
         run: |
-          sed -i -E "s/date: Undefined/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
+          sed -i -E "s/date: .+/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
           cd ./fra && make pdf
 
       - uses: actions/upload-artifact@v3
