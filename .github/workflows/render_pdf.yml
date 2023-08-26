@@ -59,6 +59,11 @@ jobs:
           sudo apt-get update && sudo apt-get install -y pdftk
           sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
 
+      - name: Install mainfont
+        run: |
+          mkdir -p "$HOME/.local/share/fonts"
+          cp ./fra/templates/fonts/* "$HOME/.local/share/fonts"
+
       - name: Render PDF
         run: |
           sed -i -E "s/date: .+/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
