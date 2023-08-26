@@ -1,5 +1,7 @@
 # Préface
 
+Partie réservée à la préface.
+
 \newpage
 
 ![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureaux modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover.png)
@@ -259,7 +261,7 @@ La réponse est simple : le risque qu'a Google - 84% des parts de marché sur le
 Ceci dit, Google a perçu les écueils d'une absence de prise de risque et travaille depuis un moment sur un concurrent, Bard[^Bard]. Pour éviter de se retrouver devant ce dilemme, l'organisation doit :
 
 - **Faire de la veille** : garder un œil sur les tendances émergentes et les nouveaux besoins de ses clients en organisant des visites entre partenaires, en participant à des salons, ou en consultant des experts pour s'informer des évolutions du marché. Vous pouvez par exemple demander à vos experts de rédiger une newsletter trimestrielle à l'attentation de la direction, reprenant les grandes tendances technologiques du moment.
-- **(Ré-)évaluer régulièrement sa stratégie** (son _business model_) : fort de cette veille, rechercher de nouvelles opportunités de croissance en adressant de nouveaux cas d'usage. Proposer de nouveaux produits et employer de nouvelles technologies. Dans une institution, la veille est aussi interne : il faut aller voir ses métiers pour comprendre les freins à leur travail quotidien, et mettre en perspective les innovations pouvant y répondre.
+- **Ré-évaluer régulièrement sa stratégie** (son _business model_) : fort de cette veille, rechercher de nouvelles opportunités de croissance en adressant de nouveaux cas d'usage. Proposer de nouveaux produits et employer de nouvelles technologies. Dans une institution, la veille est aussi interne : il faut aller voir ses métiers pour comprendre les freins à leur travail quotidien, et mettre en perspective les innovations pouvant y répondre.
 - **Encourager la prise de risque et l'expérimentation** : encourager ses équipes à proposer de nouvelles idées et à tester des projets pour explorer de nouvelles technologies. Récompenser la prise de risque.
 - **Investir dans l'innovation** : allouer des ressources suffisantes pour la recherche et développement (R&D). Par exemple, accorder 1 jour de télétravail par semaine à ses experts, pour qu'ils explorent une technologie innovante. Accorder des financements à ses équipes pour acheter le matériel leur permettant d'expérimenter, ou bien leur donner accès à un hébergeur Cloud (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
 
@@ -1419,10 +1421,10 @@ Néanmoins, les architecture _serverless_ demandent des compétences spécifique
 
 Récapitulons quelques avantages et inconvénients de chaque approche :
 
-| Architecture      | Avantages                                                                                                                            | Inconvénients                                                                                                                                                         |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Monolithique**  | • Simplicité de développement et de déploiement<br>• Gestion centralisée<br>• Facile à tester et débugger                            | • Difficile à passer à l'échelle<br>• Une mise à jour affecte tout le logiciel<br>• Déploiements plus lents et moins fréquents                                        |
-| **Microservices** | • Passable à l'échelle sur demande<br>• Déploiements rapides<br>• Bugs et crashes isolés<br>• Agnostique au langage de programmation | • Compétences spécifiques pour les gérer<br>• Cohérence des formats de données à maintenir (API)<br>• Plus difficile à débugger                                       |
+| Archi-tecture      | Avantages                                                                                                                            | Inconvénients                                                                                                                                                         |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mono-lithique**  | • Simplicité de développement et de déploiement<br>• Gestion centralisée<br>• Facile à tester et débugger                            | • Difficile à passer à l'échelle<br>• Une mise à jour affecte tout le logiciel<br>• Déploiements plus lents et moins fréquents                                        |
+| **Micro-services** | • Passable à l'échelle sur demande<br>• Déploiements rapides<br>• Bugs et crashes isolés<br>• Agnostique au langage de programmation | • Compétences spécifiques pour les gérer<br>• Cohérence des formats de données à maintenir (API)<br>• Plus difficile à débugger                                       |
 | **FaaS**          | • Pas de gestion de l'infrastructure<br>• Passable à l'échelle ciblé<br>• Rentable pour une affluence sporadique                     | • Enfermement propriétaire<br>• Moins de contrôle sur l'environnement d'exécution<br>• Temps de démarrage si inutilisée (_cold start_)<br>• Durée d'exécution limitée |
 
 #### Du monolithe aux microservices
@@ -1440,7 +1442,7 @@ En sommes, nous parlons ici des technologies Cloud et des techniques DevOps. A c
 Pour vous entraîner à créer des microservices, découplez une première fonctionnalité qui n'a pas besoin d'être modifiée partout dans votre logiciel. Par exemple, le mécanisme d'authentification d'une application est souvent centralisé dans une classe ou une fonction : créez et interfacez ce microservice.
 
 <!-- markdownlint-disable MD029 -->
-1. Constituer un environnement de développement avec des tests automatisés, du déploiement continu et des outils de supervision, pour prendre en main un premier microservice généralisable.
+1. **Constituer un environnement de développement avec des tests automatisés, du déploiement continu et des outils de supervision, pour prendre en main un premier microservice généralisable.**
 <!-- markdownlint-enable MD029 -->
 
 La bataille d'Alésia, menée pendant la guerre des Gaules en 52 avant J.-C., est souvent citée comme un exemple de planification militaire stratégique. L'armée romaine de Jules César s'oppose alors à l'armée gauloise de Vercingétorix. Repoussé par les germains - alliés des romains - le chef militaire gaulois est contraint de se réfugier avec 80 000 hommes dans l'oppidum d'Alésia. Jules César décide d'ériger deux lignes fortifiées autour de la ville pour déloger l'armée gauloise.
@@ -1454,7 +1456,7 @@ Sans nous considérer comme de grands chefs militaires, nous pouvons néanmoins 
 C'est la deuxième étape de l'aventure : mettre un proxy ou un _service mesh_ autour de notre application (cf. chapitre "[Service mesh](#service-mesh)"). Il nous permettra de rediriger chaque requête soit vers les nouveaux microservices, soit vers le monolithe pour les fonctions qui n'ont pas encore été migrées. Par exemple, si l'on choisit d'extraire les fonctionnalités d'authentification vers un microservice, nous redirigerons les requêtes commençant par `/auth` vers le microservice d'authentification.
 
 <!-- markdownlint-disable MD029 -->
-2. Mettre un proxy autour de notre application pour contrôler les flux.
+2. **Mettre un proxy autour de notre application pour contrôler les flux.**
 <!-- markdownlint-enable MD029 -->
 
 Une nouvelle règle doit désormais être instaurée en parallèle de la transformation que vous opérez : toute nouvelle fonctionnalité doit être développée sous forme d'un microservice.
@@ -1464,7 +1466,7 @@ Ex-directrice des technologies émergentes chez Thoughtworks, l'ingénieure Zham
 L'un de ses premiers conseils est d'éviter la création de microservices qui vont rappeler le monolithe. Il faut au contraire privilégier les appels du monolithe vers les microservices.
 
 <!-- markdownlint-disable MD029 -->
-3. Minimiser les rappels au monolithe.
+3. **Minimiser les rappels au monolithe.**
 <!-- markdownlint-enable MD029 -->
 
 L'objectif est d'éviter un cercle vicieux de modifications qui ne vont qu'enrichir le monolithe. Voilà pourquoi il faut rapidement s'attaquer au coeur du logiciel. Commencez par en découper les fonctions les plus intégrées et qui traitent les données principales de votre projet.
@@ -1472,13 +1474,13 @@ L'objectif est d'éviter un cercle vicieux de modifications qui ne vont qu'enric
 Priorisez le découpage des fonctions difficiles à découpler par domaine logique (ex: la gestion des produits puis celle des commandes). Puis concentrez-vous sur les parties du logiciels les plus fréquemment mises à jour.
 
 <!-- markdownlint-disable MD029 -->
-4. Découper le logiciel par domaine logique et prioriser les fonctions les plus complexes au début.
+4. **Découper le logiciel par domaine logique et prioriser les fonctions les plus complexes au début.**
 <!-- markdownlint-enable MD029 -->
 
 Enfin, envisagez la réécriture complète d'une partie du code. Parfois, le code historique est trop complexe, trop lent, trop différent de la stack technique actuellement utilisée et nécessite une bonne mise à jour. Il convient alors de réfléchir s'il n'est pas préférable de le réécrire. N'hésitez pas, surtout s'il manque de clarté.
 
 <!-- markdownlint-disable MD029 -->
-5. Envisager de réécrire les capacités plutôt que d'extraire le code pour le réutiliser.
+5. **Envisager de réécrire les capacités plutôt que d'extraire le code pour le réutiliser.**
 <!-- markdownlint-enable MD029 -->
 
 Ces quelques notions et conseils vous permettront d'appréhender avec sérénité vos travaux de réécriture de votre logiciel pour mieux l'intégrer dans une infrastructure Cloud et bénéficier de l'agilité qu'elle procure pour votre organisation.
@@ -1595,7 +1597,7 @@ Une fois les options regroupées, les approbateurs prennent la décision et l'au
 
 Exemple de DACI, listant les options considérées pour une prise de décision sur la problématique "Comment devrions-nous finaliser les spécifications de notre produit ?" :
 
-| _Critères_                                          | Option 1: Groupes de discussion / Groupes de discussion de personas cibles rémunérées | Option 2: Revues internet / Équipe interne d'experts en contenu                                          | Option 3: Ne pas finaliser / Ne rien faire pour adresser le problème pour le moment       |
+| **Critères**                                          | **Option 1:** Groupes de discussion / Groupes de discussion de personas cibles rémunérées | **Option 2:** Revues internet / Équipe interne d'experts en contenu                                          | **Option 3:** Ne pas finaliser / Ne rien faire pour adresser le problème pour le moment       |
 | --------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | Stratégiqu -ement fiable / _priorité haute_         | (+) Cibles ancrées dans la stratégie = retours ancré dans la stratégie                | (+) 2 nouveaux membres d'équipe correspondent au persona = quelques retours ancrés dans la stratégie     | (-) Risque d'erreur importante ou coûteuse, (-) Risque de prise de délais ou de confusion |
 | Centré sur l'utilisateur / _priorité haute_         | (+) Retour précis de clients                                                          | (-) Biais d'expert                                                                                       | (-) Naviguer à l'aveugle                                                                  |
@@ -1645,7 +1647,7 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
     Dès que l'incident débute, commencez à prendre des notes sur ce que vous allez observer et les actions que vous allez entreprendre. Cela sera utile pour votre postmortem. Vous pouvez ensuite qualifier le problème en utilisant la méthode "5W2H" (5 quoi/_what_, 2 comment/_how_) :
 
     | Interrogation | Description                                                                                         |
-    | ------------- | --------------------------------------------------------------------------------------------------- |
+    | --------------------------- | --------------------------------------------------------------------------------------------------- |
     | Qui ?         | Personnes ou clients affectés par le problème                                                       |
     | Quoi ?        | Description ou la définition du problème                                                            |
     | Quand ?       | Date et l'heure à laquelle le problème a été identifié                                              |
@@ -1701,7 +1703,7 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
     Voici un exemple pour le problème identifié "Notre logiciel crash fréquemment" :
 
     | Question   | Réponse                                                                                                |
-    | ---------- | ------------------------------------------------------------------------------------------------------ |
+    | --------------------------- | ------------------------------------------------------------------------------------------------------ |
     | Pourquoi ? | Parce-que la mémoire utilisée augmente au cours du temps                                               |
     | Pourquoi ? | Parce-qu'il y a une fuite de mémoire dans le code                                                      |
     | Pourquoi ? | Parce-que les développeurs ne libéraient pas correctement la mémoire après l'avoir allouée             |
@@ -1747,7 +1749,7 @@ La structure que recommande Google[^GooglePostmortems] est un bon exemple. Le do
 Ouvrez un nouveau document Markdown et nommez-le de cette manière :
 
 - Format : `aaaammjj_postmortem_résumé-incident_durée.md`
-- Exemple : `20230604_postmortem_partage-fichier-indisponible_00j00h38m.md`
+- Exemple : `20230604_postmortem_ptg-fichier-indispo_00j00h38m.md`
 
 Pour la première partie, définissez les titres suivants :
 
@@ -2414,7 +2416,7 @@ Suivre ces mesures au cours du temps vous permet d'évaluer l'efficacité de vos
 Les MTTx sont nombreuses dans la littérature, avec chacune leurs spécificités et leurs nuances (fig. <spanc/>\ref{fig:2023_MTTx_timeline}). Voyons les MTTx les plus populaires :
 
 | Mesure   | Nom complet                                                       | Signification                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| -------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------ | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
 | **MTTD** | _mean time to detect_ ou temps moyen de détection                 | Temps moyen entre le déclenchement de l'incident et le moment où vos systèmes lancent l'alerte. Détecter un incident peut prendre quelques secondes quand un problème conséquent se déclenche. Mais cela peut prendre plusieurs semaines quand il ne concerne qu'un utilisateur isolé qui ne fait pas remonter le problème... jusqu'à ce qu'il ne puisse plus le gérer.                                                                                                    |
 | **MTTA** | _mean time to acknowledge_ ou temps moyen de prise en compte      | Temps moyen entre le déclenchement d'une alerte et l'attribution d'un personnel à la résolution cet incident.                                                                                                                                                                                                                                                                                                                                                              |
 | **MTTI** | _mean time to investigation_ ou temps moyen d'investigation       | Une fois que l'incident a été pris en compte, temps moyen nécessaire pour que la personne qui a été désignée sache réellement ce qui ne va pas et comment y remédier. Une MTTI trop élevée suggère que votre infrastructure ou votre application est trop complexe, ou que vos mécanismes d'observabilité sont insuffisants. Cela peut aussi indiquer que vos ingénieurs sont débordés et qu'ils ont ainsi du mal à se libérer pour intervenir rapidement sur un incident. |
