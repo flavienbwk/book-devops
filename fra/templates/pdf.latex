@@ -201,6 +201,8 @@ $endif$
 \usepackage{xcolor}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\definecolor{chapterscolorlink}{HTML}{1c4699}
+\definecolor{externalcolorlink}{HTML}{1f3e7a}
 \hypersetup{
 $if(title-meta)$
   pdftitle={$title-meta$},
@@ -219,10 +221,10 @@ $if(keywords)$
 $endif$
 $if(colorlinks)$
   colorlinks=true,
-  linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
-  filecolor=$if(filecolor)$$filecolor$$else$Maroon$endif$,
-  citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
-  urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
+  linkcolor=chapterscolorlink,
+  filecolor=chapterscolorlink,
+  citecolor=externalcolorlink,
+  urlcolor=externalcolorlink,
 $else$
   hidelinks,
 $endif$
@@ -399,6 +401,17 @@ $if(logo)$
 \logo{\includegraphics{$logo$}}
 $endif$
 $endif$
+
+% Force titles color
+\usepackage{titlesec}
+\usepackage{xcolor}
+\definecolor{titlegreen}{rgb}{0.26,0.38,0.55}
+\titleformat{\chapter}[display]
+{\color{titlegreen}\normalfont\huge\bfseries}
+{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+{\color{titlegreen}\normalfont\Large\bfseries}
+{\thesection}{1em}{}
 
 \begin{document}
 $if(has-frontmatter)$
