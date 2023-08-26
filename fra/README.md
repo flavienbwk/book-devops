@@ -896,7 +896,6 @@ Cependant comme citée plus haut, la 3ème règle d'une architecture _zero trust
 
 ![Briques d'une infrastructure d'entreprise.\label{fig:security_parts_software_delivery}](./images/security_parts_software_delivery.jpg)
 
-
 <!-- markdownlint-disable MD037 -->
 Les postes de développement (fig. <spanc/>\ref{fig:security_parts_software_delivery}) sont un élément particulier de notre infrastructure _zero trust_. Ils impliquent l'intégration de ressources externes à l'entreprise au sein de son infrastructure. Inversement, le code source de l'usine logicielle ou les données de l'entreprise sont copiés sur ces machines. Avec des librairies téléchargées sans précaution ou des éditeurs de code aux extensions non-vérifiées, on ajoute le risque d'une fuite de données vers l'extérieur.
 <!-- markdownlint-enable MD037 -->
