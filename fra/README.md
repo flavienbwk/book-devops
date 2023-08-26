@@ -565,7 +565,7 @@ Le rapport DORA[^DORAWebsite] "_State of DevOps 2022_"[^DORAStateOfDevops2022Ann
 
 La sécurité a toujours été une affaire de culture. La méthodologie DevOps vient cependant apporter toutes les techniques qui permettront à une organisation de ne plus passer à côté des bonnes pratiques, autrefois négligées ou oubliées dans des archives volumineuses et indigestes.
 
-L'essentiel est de comprendre qu'en mode DevOps, nous travaillons dans un principe de [cycle d'amélioration itératif](#être-au-plus-proche-du-métier). Les projets ne sont jamais figés en terme de technologie utilisée et les déploiements sont continus sans interaction humaine. Cela permet de ne pas nuire à la vélocité des innovations et de toujours répondre le plus justement possible au besoin du client. 
+L'essentiel est de comprendre qu'en mode DevOps, nous travaillons dans un principe de [cycle d'amélioration itératif](#être-au-plus-proche-du-métier). Les projets ne sont jamais figés en terme de technologie utilisée et les déploiements sont continus sans interaction humaine. Cela permet de ne pas nuire à la vélocité des innovations et de toujours répondre le plus justement possible au besoin du client.
 
 Mais ce n'est pas la loi de la jungle : il existe des standards technologiques et des procédés qui permettent de contrôler ce qui est déployé, selon les standards de sécurité exigés par votre organisation.
 
@@ -896,7 +896,10 @@ Cependant comme citée plus haut, la 3ème règle d'une architecture _zero trust
 
 ![Briques d'une infrastructure d'entreprise.\label{fig:security_parts_software_delivery}](./images/security_parts_software_delivery.jpg)
 
+
+<!-- markdownlint-disable MD037 -->
 Les postes de développement (fig. <spanc/>\ref{fig:security_parts_software_delivery}) sont un élément particulier de notre infrastructure _zero trust_. Ils impliquent l'intégration de ressources externes à l'entreprise au sein de son infrastructure. Inversement, le code source de l'usine logicielle ou les données de l'entreprise sont copiés sur ces machines. Avec des librairies téléchargées sans précaution ou des éditeurs de code aux extensions non-vérifiées, on ajoute le risque d'une fuite de données vers l'extérieur.
+<!-- markdownlint-enable MD037 -->
 
 Nous avons ici un dilemme. Soit nous acceptons de laisser les droits complets à nos développeurs et ils peuvent désactiver nos mesures de sécurité, soit nous restreignons ces droits mais amputons d'une portion significative la vélocité et l'innovation des développement, et acceptons de passer plus longtemps à former les personnels à leur environnement de travail atypique.
 
@@ -949,7 +952,7 @@ Plus l'on souhaite faire baisser le risque tout en augmentant la flexibilité (a
 
 Les administrateurs d'une infrastructure manipulent régulièrement des "secrets" : des mots de passe ou des _tokens_. Il est comment d'avoir à se les échanger entre administrateurs. Dans d'autres cas, nous pouvons avoir besoin de partager le mot de passe d'un compte à la personne concernée. Les gestionnaires de mot de passe sont un excellent moyen pour centraliser et partager ces ressources.
 
-Vous pouvez y gérer vos mots de passe et les partager granulairement à d'autres utilisateurs. Chacun dispose de son compte pour accéder aux secrets qu'il a le droit de voir. Il est recommandé d'en faire l'usage autant que possible. 
+Vous pouvez y gérer vos mots de passe et les partager granulairement à d'autres utilisateurs. Chacun dispose de son compte pour accéder aux secrets qu'il a le droit de voir. Il est recommandé d'en faire l'usage autant que possible.
 
 Travailler en réseau vous permet de faire l'usage de ces outils. Voici quelques services de gestion collaborative de mots de passe : Vaultwarden, Bitwarden, Lastpass.
 
@@ -965,7 +968,7 @@ Comparons un socle traditionnel à un socle Cloud pour mieux comprendre la plus-
 
 Dans un socle traditionnel (fig. <spanc/>\ref{fig:illustration_socle_esxi}), une machine virtuelle (VM) est attribuée à chaque logiciel pour l'isoler logiquement. Chaque logiciel a la charge de gérer ses propres logs, certificats, secrets et générer ses propres métriques. Il est possible que le socle héberge des services centralisant ces données, mais le développeur du logiciel devra alors apporter des modifications à son code pour se conformer aux services du socle.
 
-La robustesse de ce type de socle n'est plus à prouver et se voit encore largement utilisé aujourd'hui parmi les grandes institutions. L'isolation est très efficace. 
+La robustesse de ce type de socle n'est plus à prouver et se voit encore largement utilisé aujourd'hui parmi les grandes institutions. L'isolation est très efficace.
 
 Néanmoins, les besoins en maintenance de ce type de socle augmentent proportionnellement au nombre de logiciels déployés. Chaque logiciel dispose de ses consignes d'installation, auxquelles s'ajoutent de la documentation de conformité au socle. L'installation et la configuration sont souvent manuelles. Or, les organisations ont tendance à installer de plus en plus de services au cours du temps, afin de continuer de répondre aux besoins métiers.
 
@@ -1035,7 +1038,7 @@ Il s'agit donc de trouver l'équilibre entre la productivité apportée par les 
 
 Evitons néanmoins le piège de s'abandonner à croire qu'acheter le logiciel à une entreprise permettra de le rendre sécurisé[^DependencyConfusion]. Bien que la responsabilité soit déléguée, le mal - s'il se produit - sera fait. Les responsables de l'ingénierie chez Google pensent que d'ici 2025, 80% des entreprises utiliseront des technologies open-source maintenues par des personnes payées pour le faire[^CuratedOpenSource] (cf. _[GitHub Sponsors](https://github.com/sponsors)_).
 
-Jusqu'à présent, la politique officielle pour approuver l'usage de certaines librairies passait par un cycle d'homologation. Ce dernier a pour objectif de cartographier les risques apportés par l'usage d'une technologie, pour savoir si on l'accepte ou non. Le choix peut être appuyé par un audit de code; 
+Jusqu'à présent, la politique officielle pour approuver l'usage de certaines librairies passait par un cycle d'homologation. Ce dernier a pour objectif de cartographier les risques apportés par l'usage d'une technologie, pour savoir si on l'accepte ou non. Le choix peut être appuyé par un audit de code.
 
 Pour se protéger correctement, il faut assurer une veille active et systématique des menaces de sécurité introduites dans le code. En mode DevOps, votre usine logicielle est équipée d'outils permettant de détecter les dépendances ou le code malicieux. Vous minisez les risques en sécurisant votre chaîne logicielle (cf. chapitre "[Sécuriser sa chaîne logicielle](#sécuriser-sa-chaîne-logicielle)" et fiche de poste "[Ingénieur SSI](#ingénieur-ssi-devops)").
 
@@ -1186,7 +1189,7 @@ Comme décrit dans le chapitre "[Revues de code](#revues-de-code)", ces dernièr
 
 Enfin, c'est dans l'usine logicielle que les logiciels développés par vos équipes seront construits (compilés, mis sous un format déployable) puis déployés sur votre infrastructure. Analogues au principe d'[intégration continue](#intégration-continue-ci), les chaînes de déploiement continue ont la charge de déployer en production des logiciels, selon des règles définies sous forme de code (cf. chapitre "[Déploiement Continu (CD)](#déploiement-continu-cd)").
 
-Attention : en aucun cas une usine logicielle ne permet à vos équipes de développer à proprement parler un logiciel. L'usine logicielle fournit des ressources permettant aux ingénieurs de développer leurs logiciels (dépendances, paquets, binaires) mais ne permet pas de rédiger ni d'exécuter du code à l'intérieur. 
+Attention : en aucun cas une usine logicielle ne permet à vos équipes de développer à proprement parler un logiciel. L'usine logicielle fournit des ressources permettant aux ingénieurs de développer leurs logiciels (dépendances, paquets, binaires) mais ne permet pas de rédiger ni d'exécuter du code à l'intérieur.
 
 L'usine logicielle est au développeur ce qu'est la trousse de pinceaux à l'artiste : la trousse contient tous les outils pour peindre, mais c'est sur son chevalet que l'artiste passe son temps à accomplir son œuvre. Le chevalet du développeur c'est son IDE[^IDE] sur son ordinateur : il code et lance son code pour le tester, à mesure qu'il l'écrit. Les options pour mettre en place des environnements de développement, sont décrits dans le chapitre "[Développement basé sur le zero trust](#développement-basé-sur-le-zero-trust)".
 
