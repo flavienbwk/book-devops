@@ -10,8 +10,6 @@ on:
     branches:
       - develop
       - staging
-  release:
-    types: [published]
 
 jobs:
 
@@ -138,6 +136,7 @@ jobs:
           echo "The file does not contain the string '??'"
         fi
 
+
   deploy_to_gh_pages:
     if: github.ref == 'refs/heads/main'
     needs: check_picture_references
@@ -176,9 +175,26 @@ jobs:
         publish_dir: output/
         full_commit_message: Publishing version ${{ env.BOOK_VERSION }} - ${{ github.event.head_commit.message }}
 
-  attach_file_to_release:
-    if: github.event_name == 'release'
+
+  check_version_change:
     needs: check_picture_references
+    runs-on: ubuntu-22.04
+    outputs:
+      version_changed: ${{ steps.check.outputs.version_changed }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      
+      - name: Check VERSION file change
+        id: check
+        run: |
+          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^VERSION$'
+          echo "::set-output name=version_changed::$?"
+
+
+  release:
+    if: needs.check_version_change.outputs.version_changed == '0' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
+    needs: check_version_change
     runs-on: ubuntu-22.04
     name: Generate book files for release
 
@@ -207,9 +223,24 @@ jobs:
         name: book-pdf-${{ env.BOOK_VERSION }}
         path: ./
 
-    - name: Attach artifact to release
+    - name: Get version
+      id: get-version
+      run: |
+        VERSION_CONTENT=$(cat VERSION)
+        echo "::set-output name=version::$VERSION_CONTENT"
+        if [[ $VERSION_CONTENT == *"-alpha"* ]]; then
+          echo "::set-output name=prerelease::true"
+        else
+          echo "::set-output name=prerelease::false"
+        fi
+
+    - name: Create release
       uses: softprops/action-gh-release@v1
       with:
-        files: ./book.pdf
+        name: ${{ env.BOOK_VERSION }}
+        tag_name: ${{ env.BOOK_VERSION }}
+        files: |
+          ./book.pdf
+        prerelease: ${{ steps.get-version.outputs.prerelease }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
