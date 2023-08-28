@@ -1252,12 +1252,12 @@ Plusieurs méthodes ont émergé au cours du temps[^TrunkBaseDevHistory] mais il
 
     ![Exemple de flow GitLab. Source : gitlab.com.\label{fig:gitlab-flow}](./images/gitlab-flow.png)
 
-- **_Trunk-based_** : Cette méthode favorise le déploiement en continu d'un logiciel (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)"). 
+- **_Trunk-based_** : Cette méthode favorise le déploiement en continu d'un logiciel (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)").
 
     Contrairement au _GitHub flow_, il n'y a ici qu'une seule branche. Chaque développeur pousse son code directement dans la branche principale (le _trunk_, fig. <spanc/>\ref{fig:trunkgit}). Cela incite à réaliser de petites contributions facilement annulables en cas de bug, tout en réduisant le temps passé sur les conflits. En effet, les développeurs synchronisent plus régulièrement leur code.
-    
+
     Cette méthode s'appuie fortement sur les mécanismes de CI/CD car chaque contribution est contrôlée (CI). Si les contrôles sont validés, le logiciel peut être automatiquement mis à jour (CD) en créant une _release_. Vous vous assurez ainsi que les mécanismes de mise en production (CD) fonctionnent à tout moment.
-    
+
     A l'échelle, il est néanmoins conseillé de créer des branches de très courte durée pour notamment profiter des revues de code (maximum 1 jour).
 
     ![Exemple de workflow git _trunk-based_.\label{fig:trunkgit}](./images/trunk_git.jpg)
