@@ -86,7 +86,7 @@ clean:
 
 epub:	$(BUILD)/epub/$(OUTPUT_FILENAME).epub
 
-html:	$(BUILD)/html/$(OUTPUT_FILENAME).html
+html:	$(BUILD)/html/index.html
 
 pdf:	$(BUILD)/pdf/$(OUTPUT_FILENAME).pdf
 
