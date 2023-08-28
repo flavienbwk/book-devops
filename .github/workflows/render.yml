@@ -11,7 +11,7 @@ on:
       - develop
       - staging
   release:
-    types: [created]
+    types: [created, published]
 
 jobs:
 
@@ -139,7 +139,7 @@ jobs:
         fi
 
   deploy_to_gh_pages:
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release'
+    if: github.ref == 'refs/heads/main'
     needs: check_picture_references
     runs-on: ubuntu-22.04
     name: Deploy to GitHub Pages
@@ -176,11 +176,11 @@ jobs:
         publish_dir: output/
         full_commit_message: Publishing version ${{ env.BOOK_VERSION }} - ${{ github.event.head_commit.message }}
 
-  attach_release:
+  attach_file_to_release:
     if: github.event_name == 'release'
     needs: check_picture_references
     runs-on: ubuntu-22.04
-    name: Deploy to GitHub Pages
+    name: Generate book files for release
 
     steps:
     - name: Checkout repository
