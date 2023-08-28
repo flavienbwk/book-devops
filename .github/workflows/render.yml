@@ -11,7 +11,7 @@ on:
       - develop
       - staging
   release:
-    types: [created, published]
+    types: [published]
 
 jobs:
 
