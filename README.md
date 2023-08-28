@@ -41,7 +41,7 @@ This repo uses a [trunk-based git workflow](./fra/README.md#workflows-git) with 
 
 ## Publishing
 
-This book has a double life. Let's make sure it reflects DevOps' state of the art practices at all times with your contributions.
+This book has numerous lives. Let's make sure it reflects DevOps' state of the art practices at all times with your contributions.
 
 - "Source edition" : the original book, unique, exclusively written by the author
 - "Community edition(s)" : annual versions of the book including community contributions to improve it
