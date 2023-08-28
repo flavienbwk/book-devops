@@ -1,4 +1,4 @@
-name: Render PDF book
+name: Render book
 
 on:
   push:
@@ -14,7 +14,7 @@ on:
 jobs:
 
   render-book:
-    name: Render FR PDF book
+    name: Render FR book
     runs-on: ubuntu-20.04
     steps:
       - name: Extract branch name
@@ -82,7 +82,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: book-html-${{ env.BOOK_VERSION }}
-          path: ./fra/build/pdf/book.pdf
+          path: ./fra/build/html/
 
 
   # Pictures in the book may be referenced at some place in the text.
