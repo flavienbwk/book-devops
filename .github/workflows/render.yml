@@ -1,4 +1,4 @@
-name: Render PDF book
+name: Render book
 
 on:
   push:
@@ -12,8 +12,8 @@ on:
 
 jobs:
 
-  render-pdf-fr:
-    name: Render FR PDF book
+  render-book:
+    name: Render FR book
     runs-on: ubuntu-20.04
     steps:
       - name: Extract branch name
@@ -52,11 +52,10 @@ jobs:
         run: |
           wget https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-1-amd64.deb
           sudo dpkg -i pandoc-2.9.2.1-1-amd64.deb
-          sudo apt-get update && sudo apt-get install -y make texlive texlive-xetex texlive-latex-extra texlive-fonts-recommended
+          sudo apt-get update && sudo apt-get install -y make texlive texlive-xetex texlive-latex-extra texlive-fonts-recommended pdftk
 
-      - name: Install pdftk
+      - name: Configure pdftk
         run: |
-          sudo apt-get update && sudo apt-get install -y pdftk
           sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
 
       - name: Install mainfont
@@ -69,10 +68,21 @@ jobs:
           sed -i -E "s/date: .+/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
           cd ./fra && make pdf
 
+      - name: Render HTML
+        run: |
+          cd ./fra && make html
+
       - uses: actions/upload-artifact@v3
         with:
-          name: book-${{ env.BOOK_VERSION }}
+          name: book-pdf-${{ env.BOOK_VERSION }}
           path: ./fra/build/pdf/book.pdf
+          retention-days: 1
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: book-html-${{ env.BOOK_VERSION }}
+          path: ./fra/build/html/
+          retention-days: 1
 
 
   # Pictures in the book may be referenced at some place in the text.
@@ -81,7 +91,7 @@ jobs:
   # When badly referenced, pandoc generates a double questionmarks ("??") in the place
   # of the latex tags. This Action checks if there are no "??" in the generated PDF.
   check_picture_references:
-    needs: render-pdf-fr
+    needs: render-book
     name: Check valid latex references for pictures
     runs-on: ubuntu-22.04
     steps:
@@ -110,7 +120,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-${{ env.BOOK_VERSION }}
+        name: book-pdf-${{ env.BOOK_VERSION }}
         path: ./
 
     - name: Get text from book
@@ -124,3 +134,41 @@ jobs:
         else
           echo "The file does not contain the string '??'"
         fi
+
+  deploy-to-gh-pages:
+    if: github.ref == 'refs/heads/main'
+    needs: render-book
+    runs-on: ubuntu-22.04
+    name: Deploy to GitHub Pages
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Get version
+      run: |
+        version=$(cat ./VERSION)
+        version=${version##+( )} # Trim left whitespaces
+        version=${version%%+( )} # Trim right whitespaces
+        echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+        echo "version : $version"
+    - name: Checking version format
+      run: |
+        if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+        then
+          echo "Invalid version format. Check your ./VERSION file."
+          exit 1
+        fi
+
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: book-html-${{ env.BOOK_VERSION }}
+        path: output/
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: output/
+        full_commit_message: Publishing version ${{ env.BOOK_VERSION }} - ${{ github.event.head_commit.message }}
