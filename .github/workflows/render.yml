@@ -139,10 +139,26 @@ jobs:
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/f/gh-pages'
     needs: render-book
     runs-on: ubuntu-22.04
+    name: Deploy to GitHub Pages
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
+    - name: Get version
+      run: |
+        version=$(cat ./VERSION)
+        version=${version##+( )} # Trim left whitespaces
+        version=${version%%+( )} # Trim right whitespaces
+        echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+        echo "version : $version"
+    - name: Checking version format
+      run: |
+        if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+        then
+          echo "Invalid version format. Check your ./VERSION file."
+          exit 1
+        fi
 
     - name: Download artifact
       uses: actions/download-artifact@v3
