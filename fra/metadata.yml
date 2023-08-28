@@ -5,7 +5,7 @@ author: Flavien BERWICK
 date: Prototype final
 documentclass: extreport
 fontsize: 9pt
-mainfont: Roboto Serif # Kreon
+mainfont: Roboto Serif
 geometry: [bmargin=1cm,footnotesep=1cm,margin=0.65in]
 papersize: a5
 colorlinks: true
