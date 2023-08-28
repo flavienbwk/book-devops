@@ -53,11 +53,10 @@ jobs:
         run: |
           wget https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-1-amd64.deb
           sudo dpkg -i pandoc-2.9.2.1-1-amd64.deb
-          sudo apt-get update && sudo apt-get install -y make texlive texlive-xetex texlive-latex-extra texlive-fonts-recommended
+          sudo apt-get update && sudo apt-get install -y make texlive texlive-xetex texlive-latex-extra texlive-fonts-recommended pdftk
 
-      - name: Install pdftk
+      - name: Configure pdftk
         run: |
-          sudo apt-get update && sudo apt-get install -y pdftk
           sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
 
       - name: Install mainfont
