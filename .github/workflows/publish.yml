@@ -1,15 +1,14 @@
 name: Publish or update published version of the book
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [created]
 
 jobs:
 
   publish-update:
     name: Update the book on Amazon
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
 

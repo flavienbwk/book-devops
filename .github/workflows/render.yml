@@ -5,10 +5,13 @@ on:
     branches:
       - main
       - develop
+      - release
   pull_request:
     branches:
       - develop
       - staging
+  release:
+    types: [created]
 
 jobs:
 
@@ -135,9 +138,9 @@ jobs:
           echo "The file does not contain the string '??'"
         fi
 
-  deploy-to-gh-pages:
-    if: github.ref == 'refs/heads/main'
-    needs: render-book
+  deploy_to_gh_pages:
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release'
+    needs: check_picture_references
     runs-on: ubuntu-22.04
     name: Deploy to GitHub Pages
 
@@ -172,3 +175,41 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: output/
         full_commit_message: Publishing version ${{ env.BOOK_VERSION }} - ${{ github.event.head_commit.message }}
+
+  attach_release:
+    if: github.event_name == 'release'
+    needs: check_picture_references
+    runs-on: ubuntu-22.04
+    name: Deploy to GitHub Pages
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Get version
+      run: |
+        version=$(cat ./VERSION)
+        version=${version##+( )} # Trim left whitespaces
+        version=${version%%+( )} # Trim right whitespaces
+        echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+        echo "version : $version"
+    - name: Checking version format
+      run: |
+        if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+        then
+          echo "Invalid version format. Check your ./VERSION file."
+          exit 1
+        fi
+
+    - name: Download PDF artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: book-pdf-${{ env.BOOK_VERSION }}
+        path: ./
+
+    - name: Attach artifact to release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ./book.pdf
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
