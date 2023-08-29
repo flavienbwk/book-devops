@@ -1,7 +1,3 @@
-# Illustration
-
-![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureaux modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover_min.png)
-
 # Avertissements
 
 Ce livre inclut de nombreuses références et de nombreux liens Internet vers des personnes, produits, entreprises et organisations. Les opinions exprimées dans ce livre sont celles de l'auteur et ne reflètent en aucun cas les opinions des entités mentionnées.
@@ -9,6 +5,12 @@ Ce livre inclut de nombreuses références et de nombreux liens Internet vers de
 L'auteur n'a aucune affiliation avec les entreprises mentionnées dans ce livre, que ce soit sous forme de partenariat, de parrainage ou de tout autre arrangement. Toute mention d'une entreprise ou d'un produit est strictement informative et ne doit être en aucun cas interprétée comme de la promotion.
 
 _La transparence me semble essentielle dans tout travail de recherche et d'écriture, et je souhaite que mes lecteurs soient informés de mon absence d'affiliation avec les organisations citées dans mon ouvrage._
+
+\newpage
+
+![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureaux modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover_min.png)
+
+\newpage
 
 # Introduction
 
