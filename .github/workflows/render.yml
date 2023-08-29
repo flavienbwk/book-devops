@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-      - develop
   pull_request:
     branches:
-      - develop
-      - staging
+      - main
 
 jobs:
 
@@ -166,6 +164,11 @@ jobs:
       with:
         name: book-html-${{ env.BOOK_VERSION }}
         path: output/
+
+    - name: Optimize images
+      run: |
+        sudo apt-get install -y jpegoptim optipng
+        find ./output/ -iname '*.jpg' -exec jpegoptim {} \; -o -iname '*.png' -exec optipng {} \;
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3

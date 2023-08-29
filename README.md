@@ -50,7 +50,7 @@ This book has numerous lives. Let's make sure it reflects DevOps' state of the a
 
 - ⭐ Star and share this repo
 - 📓 Buy the hardcover book (soon)
-- ☕ Sponsor / Tip the author (soon)
+- ☕ Sponsor
 
 ## Book generation
 
