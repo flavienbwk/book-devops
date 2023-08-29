@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - enh/#24-compress-html-image
   pull_request:
     branches:
       - main
@@ -70,11 +69,6 @@ jobs:
       - name: Render HTML
         run: |
           cd ./fra && make html
-
-      - name: Optimize images
-        run: |
-          sudo apt-get install -y jpegoptim optipng
-          find ./fra/build/html/ -iname '*.jpg' -exec jpegoptim {} \; -o -iname '*.png' -exec optipng {} \;
 
       - uses: actions/upload-artifact@v3
         with:
@@ -170,6 +164,11 @@ jobs:
       with:
         name: book-html-${{ env.BOOK_VERSION }}
         path: output/
+
+    - name: Optimize images
+      run: |
+        sudo apt-get install -y jpegoptim optipng
+        find ./output/ -iname '*.jpg' -exec jpegoptim {} \; -o -iname '*.png' -exec optipng -o7 {} \;
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
