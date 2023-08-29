@@ -206,7 +206,7 @@ jobs:
 
 
   release:
-    if: needs.check_version_change.outputs.version_changed == '0' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
+    if: needs.check_version_change.outputs.version_changed == 'true' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
     needs: check_version_change
     runs-on: ubuntu-22.04
     name: Generate book files for release
