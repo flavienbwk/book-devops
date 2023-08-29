@@ -4,11 +4,10 @@ on:
   push:
     branches:
       - main
-      - develop
+      - enh/#24-compress-html-image
   pull_request:
     branches:
-      - develop
-      - staging
+      - main
 
 jobs:
 
