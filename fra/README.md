@@ -1,8 +1,4 @@
-# Préface
-
-Partie réservée à la préface.
-
-\newpage
+# Illustration
 
 ![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureaux modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover.png)
 

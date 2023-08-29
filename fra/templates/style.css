@@ -126,9 +126,8 @@ hr {
     display: block;
     height: 2px;
     border: 0;
-    border-top: 1px solid #aaa;
     border-bottom: 1px solid #eee;
-    margin: 1em 0;
+    margin: 2em 0;
     padding: 0;
 }
 
@@ -284,8 +283,8 @@ table td {
 }
 
 #title-block-header {
-    padding-top: 6em;
-    padding-bottom: 3em;
+    padding-top: 8em;
+    padding-bottom: 4em;
 }
 
 @media only screen and (min-width: 480px) {
