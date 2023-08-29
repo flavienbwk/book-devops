@@ -18,13 +18,14 @@
 <h3 align="center"><a href="./fra/README.md" alt="Accéder au livre en version française">Le DevOps pour transformer les institutions</a></h3>
 <p align="center"><i>Le guide des décideurs pragmatiques pour comprendre et agir.</i></p>
 
-<br/>
-
 <h4 align="center">:uk:</h4>
 <h3 align="center">Scaling Institutions with DevOps<sup><a href="#footnote-1">[1]</a></sup></h3>
 <p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
 
 <br/>
+<p align="center">
+· · ─────── · ─────── · ·
+</p>
 <br/>
 
 This repo hosts a book written by an SRE/DevOps engineer, [me](https://berwick.fr). So I had to make it GitOps-compliant. I hope it will be community-driven over time to fill it with good resources or enhance some parts.
