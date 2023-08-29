@@ -138,7 +138,7 @@ jobs:
 
 
   deploy_to_gh_pages:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release'
     needs: check_picture_references
     runs-on: ubuntu-22.04
     name: Deploy to GitHub Pages
