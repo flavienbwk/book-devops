@@ -1,18 +1,26 @@
-# Scaling Institutions with DevOps - The book
+# Scaling Institutions with DevOps - The Book
 
 <p align="center">
     <img src="./fra/images/cover_a5_source.png" width="128px"/>
     <img src="./fra/images/fourthcover_a5_source.png" width="128px"/>
 </p>
 
+<h4 align="center">:fr:</h4>
+<h3 align="center">Scaling Institutions with DevOps</h3>
+<p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
+
+<br/>
+
+<h4 align="center">:us:</h4>
+<h3 align="center">Scaling Institutions with DevOps[^1]</h3>
+<p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
+
+<br/>
+<br/>
+
 This repo hosts a book written by an SRE/DevOps engineer, [me](https://berwick.fr). So I had to make it GitOps-compliant. I hope it will be community-driven over time to fill it with good resources or enhance some parts.
 
 While you will be able to order the physical version soon, this is the digital and interactive copy.
-
-## Languages
-
-- French :fr: [Le DevOps pour transformer les institutions](fra/README.md)
-- English :us: [Scaling Institutions with DevOps](eng/README.md) [^1]
 
 ## Summary
 
