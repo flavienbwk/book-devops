@@ -72,6 +72,11 @@ jobs:
         run: |
           cd ./fra && make html
 
+      - name: Optimize images
+        run: |
+          sudo apt-get install -y jpegoptim optipng
+          find ./fra/build/html/ -iname '*.jpg' -exec jpegoptim {} \; -o -iname '*.png' -exec optipng {} \;
+
       - uses: actions/upload-artifact@v3
         with:
           name: book-pdf-${{ env.BOOK_VERSION }}
