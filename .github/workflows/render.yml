@@ -1,0 +1,259 @@
+name: Render book
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - develop
+      - staging
+
+jobs:
+
+  render-book:
+    name: Render FR book
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Extract branch name
+        if: github.event_name != 'pull_request'
+        shell: bash
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
+        id: extract_branch
+
+      - name: Extract branch name on pull request
+        if: github.event_name == 'pull_request'
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF})" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Get version
+        run: |
+          version=$(cat ./VERSION)
+          version=${version##+( )} # Trim left whitespaces
+          version=${version%%+( )} # Trim right whitespaces
+          echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+          echo "version : $version"
+      - name: Checking version format
+        run: |
+          if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+          then
+            echo "Invalid version format. Check your ./VERSION file."
+            exit 1
+          fi
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%B %Y')"
+
+      - name: Install pandoc
+        run: |
+          wget https://github.com/jgm/pandoc/releases/download/2.9.2.1/pandoc-2.9.2.1-1-amd64.deb
+          sudo dpkg -i pandoc-2.9.2.1-1-amd64.deb
+          sudo apt-get update && sudo apt-get install -y make texlive texlive-xetex texlive-latex-extra texlive-fonts-recommended pdftk
+
+      - name: Configure pdftk
+        run: |
+          sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
+
+      - name: Install mainfont
+        run: |
+          mkdir -p "$HOME/.local/share/fonts"
+          cp ./fra/templates/fonts/* "$HOME/.local/share/fonts"
+
+      - name: Render PDF
+        run: |
+          sed -i -E "s/date: .+/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
+          cd ./fra && make pdf
+
+      - name: Render HTML
+        run: |
+          cd ./fra && make html
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: book-pdf-${{ env.BOOK_VERSION }}
+          path: ./fra/build/pdf/book.pdf
+          retention-days: 1
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: book-html-${{ env.BOOK_VERSION }}
+          path: ./fra/build/html/
+          retention-days: 1
+
+
+  # Pictures in the book may be referenced at some place in the text.
+  # Ex: \ref{fig:name} in the text to reference the \label{fig:name} illustration.
+  #
+  # When badly referenced, pandoc generates a double questionmarks ("??") in the place
+  # of the latex tags. This Action checks if there are no "??" in the generated PDF.
+  check_latex_references:
+    needs: render-book
+    name: Check valid latex references
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+
+    - name: Install poppler-utils
+      run: |
+        sudo apt-get update && sudo apt-get install -y poppler-utils
+
+    - name: Get version
+      run: |
+        version=$(cat ./VERSION)
+        version=${version##+( )} # Trim left whitespaces
+        version=${version%%+( )} # Trim right whitespaces
+        echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+        echo "version : $version"
+    - name: Checking version format
+      run: |
+        if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+        then
+          echo "Invalid version format. Check your ./VERSION file."
+          exit 1
+        fi
+
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: book-pdf-${{ env.BOOK_VERSION }}
+        path: ./
+
+    - name: Get text from book
+      run: |
+        pdftotext ./book.pdf
+
+    - name: Get text from book
+      run: |
+        if grep -q "??" ./book.pdf; then
+          echo "The file contains the string '??'"
+        else
+          echo "The file does not contain the string '??'"
+        fi
+
+
+  deploy_to_gh_pages:
+    if: github.ref == 'refs/heads/main'
+    needs: check_latex_references
+    runs-on: ubuntu-22.04
+    name: Deploy to GitHub Pages
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Get version
+      run: |
+        version=$(cat ./VERSION)
+        version=${version##+( )} # Trim left whitespaces
+        version=${version%%+( )} # Trim right whitespaces
+        echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+        echo "version : $version"
+    - name: Checking version format
+      run: |
+        if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+        then
+          echo "Invalid version format. Check your ./VERSION file."
+          exit 1
+        fi
+
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: book-html-${{ env.BOOK_VERSION }}
+        path: output/
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: output/
+        full_commit_message: Publishing version ${{ env.BOOK_VERSION }} - ${{ github.event.head_commit.message }}
+        cname: book-devops.berwick.fr
+
+
+  check_version_change:
+    name: "Check version change"
+    runs-on: ubuntu-22.04
+    needs: check_latex_references
+    outputs:
+      version_changed: ${{ steps.check.outputs.version_changed }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+
+      - name: Get Previous Commit
+        id: prev_commit
+        run: echo "::set-output name=sha::$(git log --skip=1 -n 1 --pretty=format:'%H')"
+
+      - name: Check VERSION file change
+        id: check
+        run: |
+          if git diff --name-only ${{ steps.prev_commit.outputs.sha }} ${{ github.sha }} | grep '^VERSION$'; then
+            echo "VERSION file was modified."
+            echo "::set-output name=version_changed::true"
+          else
+            echo "VERSION file was not modified."
+            echo "::set-output name=version_changed::false"
+          fi
+
+
+  release:
+    if: needs.check_version_change.outputs.version_changed == 'true' && (github.ref == 'refs/heads/main')
+    needs: check_version_change
+    runs-on: ubuntu-22.04
+    name: Generate book files for release
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Get version
+      run: |
+        version=$(cat ./VERSION)
+        version=${version##+( )} # Trim left whitespaces
+        version=${version%%+( )} # Trim right whitespaces
+        echo "BOOK_VERSION=$version" >> $GITHUB_ENV
+        echo "version : $version"
+    - name: Checking version format
+      run: |
+        if ! [[ $BOOK_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-(alpha|beta|rc)(-[0-9]+)?)?$ ]]
+        then
+          echo "Invalid version format. Check your ./VERSION file."
+          exit 1
+        fi
+
+    - name: Download PDF artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: book-pdf-${{ env.BOOK_VERSION }}
+        path: ./
+
+    - name: Get version
+      id: get-version
+      run: |
+        VERSION_CONTENT=$(cat VERSION)
+        echo "::set-output name=version::$VERSION_CONTENT"
+        if [[ $VERSION_CONTENT == *"-alpha"* ]]; then
+          echo "::set-output name=prerelease::true"
+        else
+          echo "::set-output name=prerelease::false"
+        fi
+
+    - name: Create release
+      uses: softprops/action-gh-release@v1
+      with:
+        name: ${{ env.BOOK_VERSION }}
+        tag_name: ${{ env.BOOK_VERSION }}
+        files: |
+          ./book.pdf
+        prerelease: ${{ steps.get-version.outputs.prerelease }}
+      env:
+        GITHUB_TOKEN: ${{ github.token }}

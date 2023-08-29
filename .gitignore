@@ -1,0 +1,8 @@
+.vscode
+./html/*
+!./html/.gitkeep
+
+*.$*
+git-story_media/
+
+fra/images/cover_a5_source_preface*

@@ -1,0 +1,34 @@
+---
+title: Le DevOps pour transformer les institutions
+subtitle: Le guide des décideurs pragmatiques pour comprendre et agir.
+author: Flavien BERWICK
+date: Prototype final
+documentclass: extreport
+fontsize: 9pt
+mainfont: Roboto Serif
+geometry: [bmargin=1cm,footnotesep=1cm,margin=0.65in]
+papersize: a5
+colorlinks: true
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyfoot[CO,CE]{ }
+  \fancyhead[LE]{\slshape \rightmark}
+  \fancyhead[RE]{\thepage}
+  \fancyhead[RO]{\slshape \leftmark}
+  \fancyhead[LO]{\thepage}
+rights: Copyright
+lang: fr-FR
+mainlang: french
+otherlang: french
+tags: [devops, transformation, sre, security, management]
+abstract: |
+  Si de nombreuses organisations ont entamé leur transformation numérique, elles peinent encore à établir une stratégie claire ou efficace.
+
+  Devant l'impérieuse nécessité de se transformer pour maintenir le rythme opérationnel, un sentiment de fatalisme s'installe. Certains décideurs se tournent alors vers des experts et des cabinets d'audit, dans l'espoir de réussir à trouver le bon modèle d'organisation.
+
+  Le DevOps, un mouvement organisationnel prenant ses racines chez quelques-unes des plus grandes et plus prospères organisations du monde, tente d'apporter des réponses à ces questionnements.
+
+  Accessible, pratique et illustré, ce livre a pour objectif d'accompagner le décideur dans sa stratégie de transformation. Il lui permettra de découvrir l'étendue des possibilités qu'offrent les méthodologies et technologies DevOps à l'état de l'art, de connaître les prérequis organisationnels qu'elles nécessitent et la manière de les mettre en place. Le tout, à sa propre échelle.
+linkReferences: true
+---
