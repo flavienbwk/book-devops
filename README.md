@@ -70,7 +70,7 @@ This book has numerous lives. Let's make sure it reflects DevOps' state of the a
 
 ## Book generation
 
-This repository has [automatic](.github/workflows/render_pdf.yml) PDF, HTML and EPUB generation thanks to Pandoc.
+This repository has [automatic](.github/workflows/render.yml) PDF, HTML and EPUB generation thanks to Pandoc.
 
 ```bash
 cd ./fra && make pdf && cd -
