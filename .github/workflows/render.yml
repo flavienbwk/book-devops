@@ -193,9 +193,8 @@ jobs:
       - name: Check VERSION file change
         id: check
         run: |
-          PREV_COMMIT=$(git log --pretty=format:'%H' -n 2 | tail -n 1)
-          git diff --name-only $PREV_COMMIT ${{ github.sha }} | grep '^VERSION$'
-          echo "::set-output name=version_changed::$?"
+          git log --pretty=format:'%H' -n 5
+
 
 
   release:
