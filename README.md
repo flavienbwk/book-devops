@@ -23,12 +23,10 @@
 <p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
 
 <br/>
-<p align="center">
-· · ─────── · ─────── · ·
-</p>
-<br/>
 
-This repo hosts a book written by an SRE/DevOps engineer, [me](https://berwick.fr). So I had to make it GitOps-compliant. I hope it will be community-driven over time to fill it with good resources or enhance some parts.
+## What is it ?
+
+This repo hosts a book about how to implement DevOps in large (and mainly public) organizations, written by an SRE/DevOps engineer : [me](https://berwick.fr). So I had to make it GitOps-compliant. I hope it will be community-driven over time to fill it with good resources or enhance some parts.
 
 While you will be able to order the physical version soon, this is the digital and interactive copy.
 
@@ -72,7 +70,7 @@ This book has numerous lives. Let's make sure it reflects DevOps' state of the a
 
 ## Book generation
 
-This repository has [automatic](.github/workflows/render_pdf.yml) PDF generation thanks to Pandoc.
+This repository has [automatic](.github/workflows/render_pdf.yml) PDF, HTML and EPUB generation thanks to Pandoc.
 
 ```bash
 cd ./fra && make pdf && cd -
