@@ -12,7 +12,7 @@ Ce livre inclut de nombreuses références et de nombreux liens Internet vers de
 
 L'auteur n'a aucune affiliation avec les entreprises mentionnées dans ce livre, que ce soit sous forme de partenariat, de parrainage ou de tout autre arrangement. Toute mention d'une entreprise ou d'un produit est strictement informative et ne doit être en aucun cas interprétée comme de la promotion.
 
-_Je crois que la transparence est essentielle dans tout travail de recherche et d'écriture, et je souhaite que mes lecteurs soient informés de mon absence d'affiliation avec les organisations cités dans mon ouvrage._
+_La transparence me semble essentielle dans tout travail de recherche et d'écriture, et je souhaite que mes lecteurs soient informés de mon absence d'affiliation avec les organisations citées dans mon ouvrage._
 
 # Introduction
 
