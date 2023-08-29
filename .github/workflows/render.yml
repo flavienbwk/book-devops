@@ -168,7 +168,7 @@ jobs:
     - name: Optimize images
       run: |
         sudo apt-get install -y jpegoptim optipng
-        find ./output/ -iname '*.jpg' -exec jpegoptim {} \; -o -iname '*.png' -exec optipng -o7 {} \;
+        find ./output/ -iname '*.jpg' -exec jpegoptim {} \; -o -iname '*.png' -exec optipng {} \;
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
