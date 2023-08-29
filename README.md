@@ -1,18 +1,27 @@
 # Scaling Institutions with DevOps - The Book
 
 <p align="center">
+    <a href="https://github.com/flavienbwk/book-devops/actions/workflows/render.yml">
+        <img src="https://github.com/flavienbwk/book-devops/actions/workflows/render.yml/badge.svg?branch=main" alt="Build" />
+    </a>
+    <a href="https://github.com/flavienbwk/book-devops/actions/workflows/markdownlint.yml">
+        <img src="https://github.com/flavienbwk/book-devops/actions/workflows/markdownlint.yml/badge.svg?branch=main" alt="Markdownlint" />
+    </a>
+</p>
+
+<p align="center">
     <img src="./fra/images/cover_a5_source.png" width="128px"/>
     <img src="./fra/images/fourthcover_a5_source.png" width="128px"/>
 </p>
 
 <h4 align="center">:fr:</h4>
-<h3 align="center">Scaling Institutions with DevOps</h3>
-<p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
+<h3 align="center"><a href="./fra/README.md" alt="Accéder au livre en version française">Le DevOps pour transformer les institutions</a></h3>
+<p align="center"><i>Le guide des décideurs pragmatiques pour comprendre et agir.</i></p>
 
 <br/>
 
-<h4 align="center">:us:</h4>
-<h3 align="center">Scaling Institutions with DevOps[^1]</h3>
+<h4 align="center">:uk:</h4>
+<h3 align="center">Scaling Institutions with DevOps<sup><a href="#footnote-1">[1]</a></sup></h3>
 <p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
 
 <br/>
@@ -81,4 +90,4 @@ Copyright © 2023 Flavien BERWICK
 - [TODO Highlight](https://github.com/wayou/vscode-todo-highlight)
 - [Markdown Footnote](https://github.com/houkanshan/vscode-markdown-footnote)
 
-[^1]: To be translated (not planned at the moment)
+<p id="footnote-1">[1] To be translated (not planned at the moment)</p>
