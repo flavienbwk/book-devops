@@ -196,8 +196,13 @@ jobs:
       - name: Check VERSION file change
         id: check
         run: |
-          git diff --name-only ${{ steps.prev_commit.outputs.sha }} ${{ github.sha }} | grep '^VERSION$'
-          echo "::set-output name=version_changed::$?"
+          if git diff --name-only ${{ steps.prev_commit.outputs.sha }} ${{ github.sha }} | grep '^VERSION$'; then
+            echo "VERSION file was modified."
+            echo "::set-output name=version_changed::true"
+          else
+            echo "VERSION file was not modified."
+            echo "::set-output name=version_changed::false"
+          fi
 
 
   release:
