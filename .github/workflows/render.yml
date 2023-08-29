@@ -179,7 +179,6 @@ jobs:
 
   check_version_change:
     name: "Check version change"
-    needs: check_picture_references
     runs-on: ubuntu-22.04
     outputs:
       version_changed: ${{ steps.check.outputs.version_changed }}
