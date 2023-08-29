@@ -16,9 +16,9 @@ _La transparence me semble essentielle dans tout travail de recherche et d'écri
 
 # Introduction
 
-L'incessante évolution des usages du numérique impose aux organisations de se réinventer. Elles se retrouvent contraintes de répondre toujours plus vite - et souvent sans augmentation de moyens - à leurs exigences opérationnelles. Les stratèges se mobilisent pour trouver comment conserver une longueur d'avance, face à une concurrence toujours plus féroce.
+L'incessante évolution des usages du numérique impose aux organisations de se réinventer. Elles se retrouvent contraintes de répondre toujours plus vite - et souvent sans augmentation de moyens - à leurs exigences opérationnelles. Les stratèges se mobilisent pour conserver une longueur d'avance, face à une concurrence toujours plus féroce.
 
-Un grand nombre d'organisations ont déjà entamé leur transformation numérique pour maîtriser la complexité de systèmes d'information interdépendants et fractionnés. Le DevOps constitue l'une des approches permettant d'atteindre cet objectif et de travailler plus efficacement.
+De nombreuses organisations ont déjà entamé leur transformation numérique pour maîtriser la complexité de systèmes d'information interdépendants et fractionnés. Le DevOps constitue l'une des approches permettant d'atteindre cet objectif et de travailler plus efficacement.
 
 Apparu en 2007, ce mouvement culturel et organisationnel permet aux parties prenantes d'une organisation de travailler plus efficacement pour atteindre plus rapidement ses objectifs.
 

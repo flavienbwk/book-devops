@@ -188,13 +188,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      
+
       - name: Check VERSION file change
         id: check
         run: |
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '^VERSION$'
+          PREV_COMMIT=$(git rev-parse HEAD^)
+          git diff --name-only $PREV_COMMIT ${{ github.sha }} | grep '^VERSION$'
           echo "::set-output name=version_changed::$?"
-
 
   release:
     if: needs.check_version_change.outputs.version_changed == '0' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging')
