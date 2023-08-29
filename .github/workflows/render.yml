@@ -189,11 +189,15 @@ jobs:
           ref: ${{ github.sha }}
           fetch-depth: 2
 
+      - name: Get Previous Commit
+        id: prev_commit
+        run: echo "::set-output name=sha::$(git log --skip=1 -n 1 --pretty=format:'%H')"
+
       - name: Check VERSION file change
         id: check
         run: |
-          git log --pretty=format:'%H' -n 5
-
+          git diff --name-only ${{ steps.prev_commit.outputs.sha }} ${{ github.sha }} | grep '^VERSION$'
+          echo "::set-output name=version_changed::$?"
 
 
   release:
