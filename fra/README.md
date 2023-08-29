@@ -12,13 +12,13 @@ Ce livre inclut de nombreuses références et de nombreux liens Internet vers de
 
 L'auteur n'a aucune affiliation avec les entreprises mentionnées dans ce livre, que ce soit sous forme de partenariat, de parrainage ou de tout autre arrangement. Toute mention d'une entreprise ou d'un produit est strictement informative et ne doit être en aucun cas interprétée comme de la promotion.
 
-_Je crois que la transparence est essentielle dans tout travail de recherche et d'écriture, et je souhaite que mes lecteurs soient informés de mon absence d'affiliation avec les organisations cités dans mon ouvrage._
+_La transparence me semble essentielle dans tout travail de recherche et d'écriture, et je souhaite que mes lecteurs soient informés de mon absence d'affiliation avec les organisations citées dans mon ouvrage._
 
 # Introduction
 
-L'incessante évolution des usages du numérique impose aux organisations de se réinventer. Elles se retrouvent contraintes de répondre toujours plus vite - et souvent sans augmentation de moyens - à leurs exigences opérationnelles. Les stratèges se mobilisent pour trouver comment conserver une longueur d'avance, face à une concurrence toujours plus féroce.
+L'incessante évolution des usages du numérique impose aux organisations de se réinventer. Elles se retrouvent contraintes de répondre toujours plus vite - et souvent sans augmentation de moyens - à leurs exigences opérationnelles. Les stratèges se mobilisent pour conserver une longueur d'avance, face à une concurrence toujours plus féroce.
 
-Un grand nombre d'organisations ont déjà entamé leur transformation numérique pour maîtriser la complexité de systèmes d'information interdépendants et fractionnés. Le DevOps constitue l'une des approches permettant d'atteindre cet objectif et de travailler plus efficacement.
+De nombreuses organisations ont déjà entamé leur transformation numérique pour maîtriser la complexité de systèmes d'information interdépendants et fractionnés. Le DevOps constitue l'une des approches permettant d'atteindre cet objectif et de travailler plus efficacement.
 
 Apparu en 2007, ce mouvement culturel et organisationnel permet aux parties prenantes d'une organisation de travailler plus efficacement pour atteindre plus rapidement ses objectifs.
 
@@ -1236,22 +1236,37 @@ Il y a trois questions à se poser pour déterminer un "bon" _workflow git_ :
 
 Plusieurs méthodes ont émergé au cours du temps[^TrunkBaseDevHistory] mais il en existe 4 principales :
 
-- **_Release Branching_** : Orientée vers la publication (_release_) périodique d'un logiciel, cette méthode consiste à créer une nouvelle branche à partir de la branche principale, puis à la stabiliser avec des corrections de bugs et d'autres changements avant publication. Ici, une _release_ correspond à une branche qui évolue longtemps en parallèle de la branche principale, puis devient éventuellement dépréciée au bout d'un moment. Elle permet à des "groupes de développeurs" de travailler ensemble sur une _release_ en particulier ou une version personnalisée du logiciel pour un client. Cela limite les conflits mais complexifie l'unification des contributions entre versions.
+- **_Release Branching_** : Adaptée au déploiement périodique d'un logiciel (_release_), cette méthode consiste à créer une nouvelle branche à partir de la branche principale, puis à la stabiliser avec des corrections de bugs et d'autres changements avant publication.
+
+    Ici, une _release_ correspond à une branche qui évolue longtemps en parallèle de la branche principale, puis devient éventuellement dépréciée au bout d'un moment.
+
+    Elle permet à des groupes de développeurs de travailler ensemble sur une _release_ en particulier ou une version personnalisée du logiciel pour un client. Cela limite les conflits mais complexifie l'unification des contributions entre versions.
+
 - **_Gitflow_** : Extension de la méthode _Release Branching_, celle-ci utilise 6 branches[^gitflowgithub] vivant en parallèle et adressant des besoins précis (_release_, _hotfix_, _feature_, _support_, _bugfix_ en plus de la branche principale _master_ ou _main_). Elle est historiquement utilisée pour gérer de très grands projets (fig. <spanc/>\ref{fig:gitflow}).
 
     ![Exemple de Gitflow. Source : fpy.cz (Filip PYTLOUN).\label{fig:gitflow}](./images/gitflow.png)
 
-- **_GitHub flow_ / _GitLab flow_** : Cette méthode élimine la complexité apportée par le _Gitflow_ en supprimant ses 5 branches parallèles à la branche principale (fig. <spanc/>\ref{fig:gitlab-flow}). Un développeur doit créer une branche par nouvelle fonctionnalité, à partir de la branche principale. Une _release_ peut être créée à n'importe quel moment à partir de la branche principale. Au delà de sa simplicité, l'intérêt est d'avoir une branche qui contient un code fonctionnel en permanence et de savoir qu'il est à jour à tout moment.
+- **_GitHub flow_ / _GitLab flow_** : Cette méthode élimine la complexité apportée par le _Gitflow_ en supprimant ses 5 branches parallèles à la branche principale (fig. <spanc/>\ref{fig:gitlab-flow}).
+  
+    Un développeur doit créer une branche par nouvelle fonctionnalité, à partir de la branche principale. Une _release_ peut être créée à n'importe quel moment à partir de la branche principale. Au delà de sa simplicité, l'intérêt est d'avoir une branche qui contient un code fonctionnel en permanence et de savoir qu'il est à jour à tout moment.
 
     ![Exemple de flow GitLab. Source : gitlab.com.\label{fig:gitlab-flow}](./images/gitlab-flow.png)
 
-- **_Trunk-based_** : Cette méthode est orientée vers la publication en continu d'un logiciel (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)"). Contrairement au _GitHub flow_, il n'y qu'une seule branche avec cette méthode. Chacun pousse son code directement dans la branche principale (le _trunk_, fig. <spanc/>\ref{fig:trunkgit}). Elle incite à réaliser de petites contributions qui sont facilement annulables en cas de bug. Elle réduit le temps passé sur les conflits car le développeur synchronise plus régulièrement son code avec le reste des contributions. Cette méthode s'appuie fortement sur les mécanismes de CI/CD : chaque contribution est évaluée (CI). Si elle passe, le logiciel peut être automatiquement mis à jour (CD) en créant une _release_. Cela permet également de s'assurer que les mécanismes de mise en production (CD) fonctionnent à tout moment. Plusieurs sources défendent néanmoins une approche alternative du _trunk-based development_, en rendant possible la création de branches de très courte durée (maximum 1 jour).
+- **_Trunk-based_** : Cette méthode favorise le déploiement en continu d'un logiciel (cf. chapitre "[Déploiement continu](#déploiement-continu-cd)").
+
+    Contrairement au _GitHub flow_, il n'y a ici qu'une seule branche. Chaque développeur pousse son code directement dans la branche principale (le _trunk_, fig. <spanc/>\ref{fig:trunkgit}). Cela incite à réaliser de petites contributions facilement annulables en cas de bug, tout en réduisant le temps passé sur les conflits. En effet, les développeurs synchronisent plus régulièrement leur code.
+
+    Cette méthode s'appuie fortement sur les mécanismes de CI/CD car chaque contribution est contrôlée (CI). Si les contrôles sont validés, le logiciel peut être automatiquement mis à jour (CD) en créant une _release_. Vous vous assurez ainsi que les mécanismes de mise en production (CD) fonctionnent à tout moment.
+
+    A l'échelle, il est néanmoins conseillé de créer des branches de très courte durée pour notamment profiter des revues de code (maximum 1 jour).
 
     ![Exemple de workflow git _trunk-based_.\label{fig:trunkgit}](./images/trunk_git.jpg)
 
 Selon Atlassian, le _workflow git_ à l'état de l'art est aujourd'hui le _trunk-based development_[^AtlassianGitflow]. La base de code de Google est un bon exemple : malgré des dizaines de milliers de contributions quotidiennes, c'est cette méthode qu'elle a choisie[^GoogleSingleRepository].
 
-Néanmoins, vous n'avez peut-être pas les équipes d'ingénieurs de Google. Le _trunk-based development_ implique une rigueur particulière que seule une équipe technique éxpérimentée peut assumer. Cette méthode nécessite des chaînes d'intégration continue qui vous assurent que le code poussé est valide (au risque de publier une version du logiciel qui ne fonctionne pas). Elle implique aussi la création de chaînes de déploiement continu optimisées (car régulières). Écrire ces chaînes prend du temps et requiert de l'expérience. Si vous n'avez pas une équipe dimensionnée en conséquence, il est recommandé de rester sur du _GitHub flow_[^WhyTrunkIsNotForEveryone].
+Néanmoins, vous n'avez peut-être pas les équipes d'ingénieurs de Google. Le _trunk-based development_ implique une rigueur particulière que seule une équipe technique éxpérimentée peut assumer. Cette méthode nécessite des chaînes d'intégration continue qui vous assurent que le code poussé est valide (au risque de publier une version du logiciel qui ne fonctionne pas). Elle implique aussi la création de chaînes de déploiement continu optimisées (car régulières). Écrire ces chaînes prend du temps et requiert de l'expérience.
+
+Si vous ne disposez pas d'une équipe outillée en conséquence, il est recommandé de rester sur du _GitHub flow_[^WhyTrunkIsNotForEveryone].
 
 Mais respecter une méthodologie commune de contribution (branches, _commits_) n'est pas suffisant. Vous pouvez désormais plus facilement collaborer mais n'êtes pas en mesure de bien comprendre où en est chacun. Dans le chapitre suivant, nous allons découvrir une méthode d'organisation prenant en compte la gestion de projet.
 
