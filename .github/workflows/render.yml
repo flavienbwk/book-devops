@@ -174,6 +174,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: output/
         full_commit_message: Publishing version ${{ env.BOOK_VERSION }} - ${{ github.event.head_commit.message }}
+        cname: book-devops.berwick.fr
 
 
   check_version_change:
@@ -185,6 +186,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       
       - name: Check VERSION file change
         id: check
