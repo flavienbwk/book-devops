@@ -91,9 +91,9 @@ jobs:
   #
   # When badly referenced, pandoc generates a double questionmarks ("??") in the place
   # of the latex tags. This Action checks if there are no "??" in the generated PDF.
-  check_picture_references:
+  check_latex_references:
     needs: render-book
-    name: Check valid latex references for pictures
+    name: Check valid latex references
     runs-on: ubuntu-22.04
     steps:
     - name: Check out code
@@ -139,7 +139,7 @@ jobs:
 
   deploy_to_gh_pages:
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/release'
-    needs: check_picture_references
+    needs: check_latex_references
     runs-on: ubuntu-22.04
     name: Deploy to GitHub Pages
 
@@ -180,7 +180,7 @@ jobs:
   check_version_change:
     name: "Check version change"
     runs-on: ubuntu-22.04
-    needs: check_picture_references
+    needs: check_latex_references
     outputs:
       version_changed: ${{ steps.check.outputs.version_changed }}
     steps:
