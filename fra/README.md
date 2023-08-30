@@ -145,7 +145,7 @@ En terme organisationnel, cette méthode implique les équipes SSI au cœur des 
 
 Dès la phase de conception, les équipes SSI DevSecOps définissent et fournissent les outils contrôlant l'existence des fonctionnalités de confidentialité et de sécurité dans les logiciels. Par exemple, elles vérifieront l'existence des fonctionnalités RGPD[^RGPD] dans un logiciel, ou le bon fonctionnement du mécanisme de "besoin d'en connaître" pour l'accès aux données. Cela peut aussi inclure la mise en place de [détecteurs automatiques de vulnérabilités](#intégration-continue-ci) dans le code.
 
-Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'_United States Air Force_ (USAF) [le définit](https://podcast.ausha.co/postmortem/19)[^DevSecOpsUSAirForce] de manière plus générale avec les termes suivants :
+Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'_United States Air Force_ (USAF) [le définit](https://podcasters.spotify.com/pod/show/podcastmortem/episodes/19-Le-DevSecOps--lUS-Air-Force-e1mqvem)[^DevSecOpsUSAirForce] de manière plus générale avec les termes suivants :
 
 > « Le DevSecOps est l'évolution de l'ingénierie logicielle. C'est l'équilibre entre la vélocité de développement et le temps alloué aux considérations de sécurité. On veut que la sécurité soit intégrée pour être sûr qu'elle ne soit pas oubliée mais ajoutée au cycle de développement logiciel. C'est utiliser les procédés de cybersécurité modernes pour être sûr que le logiciel est à la fois performant et construit d'une manière sécurisée pour être sûr qu'il n'ait pas de problème au fil du temps. C'est ce qui va permettre aux sociétés et organisations de rester concurrentielles et d'avancer à l'avenir à la vitesse nécessaire face à leurs concurrents. »
 
@@ -3014,7 +3014,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^RGPD]: [RGPD : Règlement Général sur la Protection des Données](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
 
-[^DevSecOpsUSAirForce]: PAUPIER, François; CHAILLAN, Nicolas. [Postmortem #19 : Le DevSecOps à l'US Air Force](https://podcast.ausha.co/postmortem/19). 2022.
+[^DevSecOpsUSAirForce]: PAUPIER, François; CHAILLAN, Nicolas. [Postmortem #19 : Le DevSecOps à l'US Air Force](https://podcasters.spotify.com/pod/show/podcastmortem/episodes/19-Le-DevSecOps--lUS-Air-Force-e1mqvem). 2022.
 
 [^AtlassianHistoryOfDevops]: [Buchanan, Ian. atlassian.com: _History of DevOps_](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
 
