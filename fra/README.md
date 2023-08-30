@@ -1014,7 +1014,7 @@ Voici plusieurs situations complémentaires où les VMs restent utiles :
 - Vous n'avez pas de machine dédiée où déployer votre infrastructure. La VM sera alors utile pour isoler les nouveaux logiciels des installations existantes. De la même manière, si vous n'avez pas beaucoup de ressources, la VM peut être utile pour isoler les charges de travail que vont apporter votre chaîne logicielle DevOps.
 - Tant que vos équipes ne sont pas prêtes à passer au 100% cloud, le processus de sauvegarde/restauration d'une VM peut être plus simple à gérer.
 
-Néanmoins, gardez en tête que maintenir cette couche d'abstraction (les VMs) pour n'administrer que Kubernetes dessus ajoute de la complexité à votre infrastructure. Si les pratiques évoluent dans votre organisations, envisagez de supprimer ces couches. Mais conservez la flexibilité de pouvoir en instancier au besoin.
+Néanmoins, gardez en tête que maintenir cette couche d'abstraction (les VMs) pour n'administrer que Kubernetes dessus ajoute de la complexité à votre infrastructure. Si les pratiques évoluent dans votre organisation, envisagez de supprimer ces couches. Mais conservez la flexibilité de pouvoir en instancier au besoin.
 
 Au sein d'une infrastructure Cloud DevOps, il est possible d'utiliser des outils comme _KubeVirt_ ou _Virtlet_ pour instancier des VMs dans son cluster Kubernetes. Cela peut permettre de migrer en douceur vos applicatifs historiques, tout en faisant manipuler à vos équipes les technologies Cloud. Des outils plus visuels comme _OpenStack_ peuvent aussi aider à faire la transition vers cet écosystème, plus simplement que par les traditionnelles lignes de commande dans un terminal.
 
