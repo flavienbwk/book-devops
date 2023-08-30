@@ -136,7 +136,7 @@ jobs:
 
   deploy_to_gh_pages:
     if: github.ref == 'refs/heads/main'
-    needs: check_latex_references
+    needs: check_version_change
     runs-on: ubuntu-22.04
     name: Deploy to GitHub Pages
 
