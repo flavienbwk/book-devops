@@ -2819,7 +2819,7 @@ Vous devez faire l'effort de définir le périmètre du poste que vous rédigez 
 
 Les exemples de fiches de poste ci-dessous sont indicatives et doivent être adaptées à votre situation (maturité et taille des équipes, de l'organisation). Modifiez le contexte et les missions que vous souhaitez confier à votre futur ingénieur DevOps ou SRE. Modifiez également les compétences que vous souhaitez mettre en avant selon votre projet du moment.
 
-Les niveaux d'exigence des postes sont décrits selon la maturité de l'entreprise (débutante, intermédiaire, avancée) et le niveau d'expérience attendu par le candidat (débutant, medium ou senior).
+Les niveaux d'exigence des postes sont décrits selon la maturité de l'entreprise (débutante, intermédiaire, avancée) et le niveau d'expérience attendu par le candidat (débutant, intermédiaire ou senior).
 
 Une section "Formation" est également disponible, pour vous donner une idée des cursus que le candidat peut avoir suivi pour prétendre au poste. Néanmoins, considérez dans l'informatique que le diplôme n'est plus d'aucune importance après 5 ans d'expérience professionnelle. C'est cette dernière et les projets que le candidat réalise qui définissent son niveau d'expertise.
 
@@ -2829,7 +2829,7 @@ Une section "Formation" est également disponible, pour vous donner une idée de
 
 |                                                 |                                                                                            |
 | ----------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| **Niveau du poste**                             | Medium ou Senior[^DORAProfileExperience] (selon les responsabilités à confier au candidat) |
+| **Niveau du poste**                             | Intermédiaire ou Senior[^DORAProfileExperience] (selon les responsabilités à confier au candidat) |
 | **Maturité de l'organisation**                  | Débutante à intermédiaire                                                                  |
 | **Rémunération approximative** (septembre 2023) | >51k€/an                                                                                   |
 
@@ -2878,7 +2878,7 @@ Ce poste peut mener au poste d'Ingénieur Systèmes, de SRE ou d'Ingénieur SSI 
 
 |                                                 |                                                                    |
 | ----------------------------------------------- | :----------------------------------------------------------------- |
-| **Niveau du poste**                             | Medium ou Senior (selon les responsabilités à confier au candidat) |
+| **Niveau du poste**                             | Intermédiaire ou Senior (selon les responsabilités à confier au candidat) |
 | **Maturité de l'organisation**                  | Intermédiaire à avancée                                            |
 | **Rémunération approximative** (septembre 2023) | >52k€/an                                                           |
 
@@ -2926,9 +2926,9 @@ Ce poste peut mener au poste d'Ingénieur Systèmes ou de SRE.
 
 |                                                 |                                                                                                                                                                  |
 | ----------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Niveau du poste**                             | Medium ou Senior (selon les responsabilités à confier au candidat). Apprentissage ou débutant possible si un personnel expérimenté est disponible. Pas de stage. |
+| **Niveau du poste**                             | Intermédiaire ou Senior (selon les responsabilités à confier au candidat). Apprentissage ou débutant possible si un personnel expérimenté est disponible. Pas de stage. |
 | **Maturité de l'organisation**                  | Débutante à intermédiaire                                                                                                                                        |
-| **Rémunération approximative** (septembre 2023) | >54k€/an (medium), >72k€/an (débutant)                                                                                                                           |
+| **Rémunération approximative** (septembre 2023) | >54k€/an (débutant), >72k€/an (intermédiaire)                                                                                                                           |
 
 Aux fondements du bon fonctionnement de notre organisation, vous aurez la charge de garantir la disponibilité, la fiabilité et la résilience de nos systèmes d'information. Vous veillerez à pérenniser les infrastructures.
 
@@ -2973,7 +2973,7 @@ Ce poste peut mener au poste de Responsable de l'Infrastructure, d'Ingénieur SS
 | ----------------------------------------------- | :------------------------------------- |
 | **Niveau du poste**                             | Débutant à Senior                      |
 | **Maturité de l'organisation**                  | Avancée                                |
-| **Rémunération approximative** (septembre 2023) | >48k€/an (medium), >44k€/an (débutant) |
+| **Rémunération approximative** (septembre 2023) | >48k€/an (intermédiaire), >44k€/an (débutant) |
 
 De formation ingénieur logiciel ou administrateur système avec des compétences avérées en ingénierie logicielle, vous serez responsable du développement et de la maintenance des outils qui améliorent au quotidien le cycle de développement de nos logiciels.
 
