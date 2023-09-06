@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this book, please cite it as below."
 authors:
-- family-names: "Berwick"
+- family-names: "BERWICK"
   given-names: "Flavien"
   orcid: "https://orcid.org/0009-0002-4542-0925"
 title: "Le DevOps pour transformer les institutions"
