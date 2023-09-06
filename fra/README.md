@@ -708,8 +708,6 @@ Il s'agit en quelque sorte d'un test d'intrusion automatisé en mode _black box_
 
 L'un des intérêts du DAST est qu'il ne nécessite pas d'accéder au code source de l'application. Utilisé en complément du SAST, il offre une couverture de sécurité plus complète. En effet, le DAST peut détecter des vulnérabilités qui seraient passées inaperçues lors d'une analyse statique, et vice versa.
 
-Voici une liste d'outils DAST accompagnés de leur description pour bien comprendre leur variété :
-
 De nombreux produits dont les fonctionnalités se recoupent existent. Ils permettent généralement de scanner des vulnérabilités de manière automatisé comprenant : du _fuzzing_ (entrées aléatoires), de l'analyse de traffic entre navigateur et API, de l'attaque par force brute ou encore de l'analyse de vulnérabilités dans le code Javascript. L'outil de DAST incontournable est [_OWASP ZAP_](https://github.com/zaproxy/zaproxy) (fig. <spanc/>\ref{fig:2023_owasp_zap_juice_shop}), mais d'autres existent comme [_Burp Suite_](https://portswigger.net/burp), [_W3af_](https://github.com/andresriancho/w3af), [_SQLMap_](https://github.com/sqlmapproject/sqlmap), [_Arachni_](https://github.com/Arachni/arachni), [_Nikto_](https://github.com/sullo/nikto) et [_Nessus_](https://www.tenable.com/products/nessus).
 
 ![Capture d'écran de l'interface OWASP ZAP montrant une liste de vulnérabilités détectées sur [Juice Shop](https://hub.docker.com/r/bkimminich/juice-shop).\label{fig:2023_owasp_zap_juice_shop}](./images/2023_owasp_zap_juice_shop.png)
