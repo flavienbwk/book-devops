@@ -32,11 +32,13 @@ While you will be able to order the physical version soon, this is the digital a
 
 ## Summary
 
-Many organizations have begun their digital transformation but are struggling to establish a clear or effective strategy. They then call on many experts in the hope of success. What they have been looking for for so many years and what they did not know the name of is described in this book : DevOps.
+Numerous organizations have embarked on their journey towards digital transformation, yet find themselves grappling to carve out a coherent and potent strategy. In this quest for advancement, they often turn to a plethora of experts, harboring hopes of achieving success.
 
-This book aims to introduce you to this movement rooted in the largest and most successful organizations in the world.
+Confronted with the imperative necessity to evolve and sustain their operational momentum, a pervasive sense of fatalism begins to take hold. In this milieu, the DevOps movement emerges as a beacon of hope. Rooted in the principles that govern the world's most successful and expansive organizations, DevOps seeks to provide viable solutions to these pressing challenges.
 
-Accessible, this practical and illustrated guide will allow you to discover the range of possibilities offered by state-of-the-art DevOps technologies, what organizational prerequisites they ask and how to implement them at your scale.
+This book is designed to be your gateway to understanding this transformative movement, which has found its stronghold in the largest and most prosperous organizations of the world.
+
+Designed to be both accessible and insightful, this hands-on guide, enriched with illustrations, unfolds the opportunities that state-of-the-art DevOps technologies and methodologies have to offer. It demystifies the prerequisites for organizational adaptation and guides you on embarking on your own DevOps transformation, at any scale.
 
 ## Purpose
 
