@@ -6,6 +6,16 @@ L'auteur n'a aucune affiliation avec les entreprises mentionnées dans ce livre,
 
 _La transparence me semble essentielle dans tout travail de recherche et d'écriture, et je souhaite que mes lecteurs soient informés de mon absence d'affiliation avec les organisations citées dans mon ouvrage._
 
+# Remerciements
+
+Chers collègues, chers amis,
+
+Il est de ces aventures qui ne sauraient aboutir sans la rigueur et le dévouement de quelques-uns. Vous avez été ces quelques-uns. En acceptant de lire et de relire ce manuscrit, en partageant vos critiques constructives, vos suggestions éclairées et au cours de nos échanges enrichissants, vous avez largement contribué à sa réussite.
+
+À travers vos yeux experts, j'ai pu aiguiser chaque ligne, polir chaque mot. Votre soutien a été un pilier, une force silencieuse et indéfectible. Un grand merci pour votre temps, votre expertise et votre franche camaraderie.
+
+C'est parce-que cet écrit est aussi en partie le votre que je souhaitais le marquer du nom des contributeurs les plus acharnés. Toutefois, dans le but de préserver votre anonymat, j'ai choisi de n'inscrire que vos initiales. Merci BA, FT, MR, FC, FP, AC, AB, PB, NP, NM, CH, EL et TF.
+
 \newpage
 
 ![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureaux modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover_min.png)
