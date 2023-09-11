@@ -145,7 +145,7 @@ En résumé, l'ingénieur DevOps est responsable de la mise en place de l'ensemb
 
 ## DevSecOps
 
-Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant dès la phase de conception du logiciel, puis tout au long de son cycle de vie, les équipes de Sécurité des Systèmes d'Information (SSI). Plus pragmatiquement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, par des règles automatisées qui vérifient la conformité des logiciels développés.
+Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant les équipes de Sécurité des Systèmes d'Information (SSI) dès la phase de conception du logiciel et tout au long de son cycle de vie. Plus concrètement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, au moyen de règles automatisées qui vérifient la conformité des logiciels développés.
 
 Peut-être avez-vous déjà entendu parler de "_shift left security_" ? Cette expression évoque le fait d'intégrer au plus tôt les travaux de sécurité dans le projet logiciel (bonnes pratiques, analyses de vulnérabilités, audits).
 
