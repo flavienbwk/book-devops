@@ -6,6 +6,16 @@ L'auteur n'a aucune affiliation avec les entreprises mentionnées dans ce livre,
 
 _La transparence me semble essentielle dans tout travail de recherche et d'écriture, et je souhaite que mes lecteurs soient informés de mon absence d'affiliation avec les organisations citées dans mon ouvrage._
 
+# Remerciements
+
+Chers collègues, chers amis,
+
+Il est de ces aventures qui ne sauraient aboutir sans la rigueur et le dévouement de quelques-uns. Vous avez été ces quelques-uns. En acceptant de lire et de relire ce manuscrit, en partageant vos critiques constructives, vos suggestions éclairées et au cours de nos échanges enrichissants, vous avez largement contribué à sa réussite.
+
+À travers vos yeux experts, j'ai pu aiguiser chaque ligne, polir chaque mot. Votre soutien a été un pilier, une force silencieuse et indéfectible. Un grand merci pour votre temps, votre expertise et votre franche camaraderie.
+
+C'est parce-que cet écrit est aussi en partie le votre que je souhaitais le marquer du nom des contributeurs les plus acharnés. Toutefois, dans le but de préserver votre anonymat, j'ai choisi de n'inscrire que vos initiales. Merci BA, FT, MR, FC, FP, AC, AB, PB, NP, NM, CH, EL et TF.
+
 \newpage
 
 ![Couverture du livre, illustrant le lien rétabli entre "dev" et "ops" par un pont entre deux tours de bureaux modernes. La table au premier plan illustre une discussion apaisée entre des partenaires de travail.](./images/cover_min.png)
@@ -135,7 +145,7 @@ En résumé, l'ingénieur DevOps est responsable de la mise en place de l'ensemb
 
 ## DevSecOps
 
-Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant dès la phase de conception du logiciel, puis tout au long de son cycle de vie, les équipes de Sécurité des Systèmes d'Information (SSI). Plus pragmatiquement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, par des règles automatisées qui vérifient la conformité des logiciels développés.
+Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant les équipes de Sécurité des Systèmes d'Information (SSI) dès la phase de conception du logiciel et tout au long de son cycle de vie. Plus concrètement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, au moyen de règles automatisées qui vérifient la conformité des logiciels développés.
 
 Peut-être avez-vous déjà entendu parler de "_shift left security_" ? Cette expression évoque le fait d'intégrer au plus tôt les travaux de sécurité dans le projet logiciel (bonnes pratiques, analyses de vulnérabilités, audits).
 
