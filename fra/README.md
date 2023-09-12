@@ -14,7 +14,7 @@ Il est de ces aventures qui ne sauraient aboutir sans la rigueur et le dévoueme
 
 À travers vos yeux experts, j'ai pu aiguiser chaque ligne, polir chaque mot. Votre soutien a été un pilier, une force silencieuse et indéfectible. Un grand merci pour votre temps, votre expertise et votre franche camaraderie.
 
-C'est parce-que cet écrit est aussi en partie le votre que je souhaitais le marquer du nom des contributeurs les plus acharnés. Toutefois, dans le but de préserver votre anonymat, j'ai choisi de n'inscrire que vos initiales. Merci BA, FT, MR, FC, FP, AC, AB, PB, NP, NM, CH, EL et TF.
+C'est parce-que cet écrit est aussi en partie le votre que je souhaitais le marquer du nom des contributeurs les plus acharnés. Toutefois, dans le but de préserver votre anonymat, j'ai choisi de n'inscrire que vos initiales. Merci BA, FT, MR, FC, FP, NK, AB, PB, AC, NP, NM, CH, EL et TF.
 
 \newpage
 
