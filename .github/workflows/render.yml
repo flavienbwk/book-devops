@@ -134,8 +134,37 @@ jobs:
         fi
 
 
+  check_version_change:
+    name: "Check version change"
+    runs-on: ubuntu-22.04
+    needs: check_latex_references
+    outputs:
+      version_changed: ${{ steps.check.outputs.version_changed }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+
+      - name: Get Previous Commit
+        id: prev_commit
+        run: echo "::set-output name=sha::$(git log --skip=1 -n 1 --pretty=format:'%H')"
+
+      - name: Check VERSION file change
+        id: check
+        run: |
+          if git diff --name-only ${{ steps.prev_commit.outputs.sha }} ${{ github.sha }} | grep '^VERSION$'; then
+            echo "VERSION file was modified."
+            echo "::set-output name=version_changed::true"
+          else
+            echo "VERSION file was not modified."
+            echo "::set-output name=version_changed::false"
+          fi
+
+
   deploy_to_gh_pages:
-    if: github.ref == 'refs/heads/main'
+    if: needs.check_version_change.outputs.version_changed == 'true' && (github.ref == 'refs/heads/main')
     needs: check_version_change
     runs-on: ubuntu-22.04
     name: Deploy to GitHub Pages
@@ -177,35 +206,6 @@ jobs:
         publish_dir: output/
         full_commit_message: Publishing version ${{ env.BOOK_VERSION }} - ${{ github.event.head_commit.message }}
         cname: book-devops.berwick.fr
-
-
-  check_version_change:
-    name: "Check version change"
-    runs-on: ubuntu-22.04
-    needs: check_latex_references
-    outputs:
-      version_changed: ${{ steps.check.outputs.version_changed }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.sha }}
-          fetch-depth: 2
-
-      - name: Get Previous Commit
-        id: prev_commit
-        run: echo "::set-output name=sha::$(git log --skip=1 -n 1 --pretty=format:'%H')"
-
-      - name: Check VERSION file change
-        id: check
-        run: |
-          if git diff --name-only ${{ steps.prev_commit.outputs.sha }} ${{ github.sha }} | grep '^VERSION$'; then
-            echo "VERSION file was modified."
-            echo "::set-output name=version_changed::true"
-          else
-            echo "VERSION file was not modified."
-            echo "::set-output name=version_changed::false"
-          fi
 
 
   release:
