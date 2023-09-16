@@ -1,0 +1,4 @@
+.env
+*.csv
+*results.md
+*results.txt
