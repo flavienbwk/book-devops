@@ -89,7 +89,7 @@ La communauté mettait un mot sur un vrai phénomène qui entrave la communicati
 Google définit les cinq piliers du DevOps suivants :
 
 1. [**Réduire les silos organisationnels**](#réduire-les-silos-organisationnels)
-   - En cultivant l'engagement, le sentiment du partage de responsabilité des succès et des échecs entre les parties prenantes (ingénieurs, responsables projet, utilisateurs/métiers). Chacun est davantage impliqué et se sent légitime à son niveau.
+   - En cultivant l'engagement, en partageant le sentiment de responsabilité entre les parties prenantes dans les succès comme dans les échecs (ingénieurs, responsables projet, utilisateurs/métiers). Chacun doit se sentir impliqué et légitime à son niveau.
 2. [**Accepter l'échec**](#accepter-léchec)
    - En partant du principe que l'échec est une conséquence du manque de procédures et de méthodes de la part de l'organisation.
 3. [**Réduire le coût du changement**](#réduire-le-coût-du-changement)
@@ -107,13 +107,25 @@ Pour bien comprendre en quoi le DevOps peut aider votre organisation, commençon
 
 C'est le lien qui unit le monde du développement et de la production.
 
-« Dev » signifie « développement » quand « Ops » désigne l'exploitation des systèmes informatiques en production.
+« Dev » signifie « développement » quand « Ops » désigne l'administration des systèmes informatiques en production.
 
-On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement logiciel, pour les déployer plus rapidement et améliorer leur fiabilité en production. Il atteint cet objectif en facilitant la communication, la collaboration et l'intégration des parties prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Le tout au travers de techniques et d'outils informatiques, aujourd'hui majoritairement orientés vers l'emploi des technologies _Cloud_.
+On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement et de déploiement logiciel.
 
-L'ingénieur « DevOps » est celui en charge de définir et de mettre en place ces techniques au sein de votre organisation. En équipe, il garantit la cohérence des développements avec les exigences du déploiement. Il le fait le plus en amont possible, souvent avec des [scripts automatisés](#intégration-continue-ci) au sein d'une [usine logicielle](#usine-logicielle). Ses clients sont les équipes techniques internes : il fait en sorte que tout le monde puisse travailler ensemble de la manière la plus efficace possible.
+Pour atteindre cet objectif, les ingénieurs pratiquant le DevOps ont pour mission de faciliter la communication et la collaboration entre les parties prenantes (développeurs, administrateurs système, équipes de sécurité, responsables projet et utilisateurs).
 
-Ce poste impliquant de mettre d'accord toutes les parties prenantes sur une méthode de travail commune, il est exigé de disposer d'excellentes compétences en communication et en pédagogie.
+Ils définissent les pratiques informatiques les plus pertinentes pour une organisation et étudient leur mise en place. En équipe, ils garantissent la cohérence des développements avec les exigences du déploiement. Aujourd'hui, ces profils s'orientent principalement vers l'emploi des technologies _Cloud_.
+
+Les pratiques DevOps s'inscrivent dans l'ensemble du panorama de la chaîne technique, en privilégiant des mécanismes automatisés pour le développement (intégration continue), le déploiement (déploiement continu) et la maintenance (supervision). Les bénéficiaires sont à la fois les équipes internes et les clients. Les premiers collaborent plus efficacement et de manière sécurisée, quand les seconds obtiennent plus rapidement un logiciel de meilleur qualité.
+
+Ce poste implique la responsabilité d'accorder toutes les parties prenantes sur une méthode de travail commune. Il est donc important de disposer d'excellentes compétences en communication et en pédagogie, en particulier dans les organisations en transformation.
+
+L'ingénierie DevOps a pour rôle de sensibiliser l'ensemble des équipes de l'organisation aux problématiques de fiabilités des systèmes. Les ingénieurs les plus expérimentés arrivent à mettre en place les pratiques qui remplissent les exigences de résilience sans impacter la vélocité des développement.
+
+Le "tout" est de trouver l'équilibre entre la complexité induite par les exigences de fiabilité/sécurité et le besoin de développer des nouvelles fonctionnalités.
+
+Dans la suite de cet ouvrage, nous verrons que la mise en place du DevOps est propre à chaque organisation. Les méthodes et les outils pour parvenir à ses objectifs s'adaptent en fonction du niveau de maturité technique de l'organisation. Il n'y a donc pas de "recette unique" mais des "bonnes pratiques" à connaître et suivre.
+
+Tout comme il n'y a pas de recette unique, il n'y a pas de métier unique "d'ingénieur DevOps". Nous le verrons dans le chapitre ["Entre SRE et DevOps"](#entre-sre-et-devops).
 
 Si le terme DevOps devient de plus en plus populaire et commence à devenir courant dans les offres d'emploi, celui de _Site Reliability Engineering_ (SRE) est moins connu, en particulier en France.
 
@@ -123,29 +135,47 @@ Si le terme DevOps devient de plus en plus populaire et commence à devenir cour
 
 ## Site Reliability Engineering (SRE)
 
-L'ingénierie de la résilience des systèmes (_Site Reliability Engineering_ ou SRE) est une discipline plus ancienne que le DevOps. Elle remonte à 2003 quand Ben TREYNOR SLOSS, alors ingénieur chez Google, fondait une équipe portant ce nom. Il sera le père fondateur de la SRE et des premières pratiques considérées "DevOps".
+L'ingénierie de la fiabilité des systèmes (_Site Reliability Engineering_ ou SRE) est une discipline plus ancienne que le DevOps. Elle remonte à 2003 quand Ben TREYNOR SLOSS, alors ingénieur chez Google, fondait une équipe portant ce nom. Il sera le père fondateur de la SRE et des premières pratiques considérées "DevOps".
 
-Le _Site Reliability Engineer_ ou "Ingénieur de la Résilience des Systèmes" a la charge de concevoir, déployer et maintenir l'infrastructure qui met à disposition les services de l'entreprise. Il s'assure du bon fonctionnement du socle technique sur lequel sont déployés les logiciels, assure leur sécurité et garantit leur disponibilité.
+Le _Site Reliability Engineer_ ou "Ingénieur de la Fiabilité des Systèmes" a la charge de concevoir, déployer et maintenir l'infrastructure qui met à disposition les services de l'entreprise. Il s'assure du bon fonctionnement du socle technique sur lequel sont déployés les logiciels, assure leur sécurité et garantit leur disponibilité auprès des clients.
 
-L'équipe SRE a donc la responsabilité de votre infrastructure informatique, souvent composée de plusieurs environnements : développement, test, pré-production (ou _staging_) et production.
+L'équipe SRE a donc la responsabilité de votre infrastructure informatique, souvent composée de plusieurs environnements : développement, qualification, pré-production (ou _staging_) et production. Elle tente de répondre à la question "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?".
 
-L'entreprise l'emploie principalement pour honorer son contrat de service (_Service Level Agreement_, cf. chapitre "[Indicateurs de résilience](#indicateurs-de-résilience)") vis-à-vis de ses clients. Dans le privé, si la disponibilité du service tombe sous la valeur indiquée dans le contrat, l'entreprise se doit de s'acquitter de pénalités.
+Les SRE utilisent les pratiques du monde de l'ingénierie logicielle pour administrer leurs infrastructures. Ils développent et déploient l'outillage permettant d'atteindre un objectif de résilience. En ce sens, la SRE intègre de nombreux aspects du DevOps (cf. chapitre ["Les 5 piliers du DevOps"](#les-cinq-piliers-du-devops)) mais se concentre sur l'automatisation de l'administration, ainsi que sur la mesure de la fiabilité des systèmes.
 
-## Collaboration entre DevOps et SRE
+L'entreprise les emploient principalement pour honorer son contrat de service (_Service Level Agreement_, cf. chapitre "[Indicateurs de résilience](#indicateurs-de-résilience)"). Dans le secteur privé, si la disponibilité du service tombe sous la valeur stipulée dans le contrat, l'entreprise est tenue de régler des pénalités.
 
-De manière simplifiée, l'entreprise donne pour mission au SRE de rendre son infrastructure plus résiliente. C'est à dire plus disponible, plus stable. Le SRE tente de répondre à la question "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?", en se basant sur des mesures qui lui sont rapportées par les outils qu'il aura mis en place.
+De manière simplifiée, l'entreprise donne pour mission au SRE de rendre son infrastructure plus résiliente. C'est à dire toujours plus disponible, plus stable. Le SRE tente de répondre à la question "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?". Les pratiques DevOps sont un excellent moyen d'atteindre cet objectif.
 
-Des sujets comme l'usage de techniques pour standardiser les développements, les déploiements ou encore instaurer des mécanismes d'observabilité se posent alors. Une fois ces outils en place, le SRE instruit aux équipes techniques d'employer des méthodologies et techniques communes à l'organisation, pour atteindre un objectif de résilience précis.
+## Entre SRE et DevOps
 
-L'ingénieur DevOps intervient à ce moment alors qu'aux yeux des équipes de développement, la volonté est plutôt de sortir la dernière fonctionnalité le plus rapidement possible. Passer du temps à formatter ses journaux d'activités (_logs_) ou gérer des rapports d'erreur - ce que demande le SRE - est beaucoup plus ennuyant que de passer du temps à développer une innovation.
+Les définitions diffèrent selon les interlocuteurs. Alors que certains leaders comme Google et AWS définissent officiellement le DevOps comme une "méthodologie" et le métier de SRE comme sa "mise en œuvre"[^WhatIsSREForAWS], la majorité des offres d'emploi du marché restent souvent titrées "Ingénieur DevOps" : un titre incomplet au sens propre de la définition historique.
 
-L'ingénieur DevOps a pour rôle de sensibiliser l'ensemble des équipes de l'organisation aux problématiques de résilience. Les plus expérimentés arrivent à instruire les procédures et les outils qui rempliront les exigences de résilience, sans impacter la vélocité des développement. Ces ingénieurs doivent donc trouver l'équilibre entre la complexité induite par les exigences SRE et le temps que les développeurs passent à produire de nouvelles fonctionnalités.
+Le fait est que les deux disciplines ont évolué et se chevauchent aujourd'hui sur de nombreux aspects : elles partagent l'objectif de déployer rapidement des logiciels fiables et efficaces.
 
-En résumé, l'ingénieur DevOps est responsable de la mise en place de l'ensemble des prérequis nécessaires à la mise en production rapide d'un logiciel, selon les standards de qualité des équipes SRE. Le SRE est lui responsable de la mise en production effective des logiciels et garantit leur disponibilité.
+Cependant elles ne se concentrent pas historiquement sur les mêmes choses. Tandis que le DevOps est davantage axé vers l'efficacité du développement et la rapidité du déploiement (cf. CI/CD, tests automatisés, expérience développeur, collaboration interéquipes...), la SRE se concentre sur la fiabilité des systèmes en employant une approche plus méthodique (cf. SLI/SLO/SLA, budget d'erreur, déploiements _blue/green_, postmortems...).
+
+Aujourd'hui, vous pouvez donc retrouver des "Ingénieurs DevOps" qui ne font pas de SRE mais l'inverse reste rare. Le DevOps étant une philosophie, ce terme est à employer comme un adjectif. Par exemple : "Ingénieur logiciel DevOps" ou "Administrateur système DevOps".
+
+Regardons néanmoins ce qu'en dit le marché. En observant les offres d'emploi dans le domaine[^DevOpsDefinitionStudy], on remarque que celles titrées "Ingénieur DevOps" contiennent des missions très variées. Elles peuvent être :
+
+- Orientées vers le développement : ingénierie logicielle, ingénierie système, ingénierie en assurance qualité[^QualityAssuranceBasics].
+- Orientées vers les opérations : administration système, ingénierie Cloud, ingénieur réseaux.
+- Orientées vers les deux : SRE, ingénierie en automatisation, ingénierie plateforme; tous les métiers de la chaîne logicielle (cf. chapitre "[Sécuriser sa chaîne logicielle](#sécuriser-sa-chaîne-logicielle)").
+
+En réalité, tous ces rôles permettent de mettre en pratique le DevOps. Mais chaque niveau dépend de la maturité et des moyens de l'organisation (fig. <spanc/>\ref{fig:devopsjobsevolution}).
+
+![Schéma simplifié de l'évolution des métiers traditionnels vers un mode d'organisation DevOps.\label{fig:devopsjobsevolution}](images/devops_jobs.jpg)
+
+En résumé, on dit que la SRE utilise les méthodes DevOps[^HowSRERelatesToDevOps]. Le DevOps et la SRE ne sont donc ni deux méthodes qui s'opposent, ni deux méthodes identiques, mais deux disciplines qui vous aideront à faire tomber les barrières entre vos équipes, pour déployer plus rapidement des services de meilleure qualité et de manière plus sécurisée.
+
+Vous découvrirez dans ce livre les meilleures pratiques de ces deux disciplines, unifiées et décrites de manière adaptée aux institutions.
 
 ## DevSecOps
 
-Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant les équipes de Sécurité des Systèmes d'Information (SSI) dès la phase de conception du logiciel et tout au long de son cycle de vie. Plus concrètement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, au moyen de règles automatisées qui vérifient la conformité des logiciels développés.
+Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant les équipes de Sécurité des Systèmes d'Information (SSI) dès la phase de conception du logiciel et tout au long de son cycle de vie.
+
+Plus concrètement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, au moyen de règles automatisées qui vérifient la conformité des logiciels développés.
 
 Peut-être avez-vous déjà entendu parler de "_shift left security_" ? Cette expression évoque le fait d'intégrer au plus tôt les travaux de sécurité dans le projet logiciel (bonnes pratiques, analyses de vulnérabilités, audits).
 
@@ -161,15 +191,15 @@ Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'_Uni
 
 Aujourd'hui, le terme "DevSecOps" est régulièrement favorisé dans le seul objectif de rendre plus attrayant la discipline. Cependant, il peut permettre de mieux faire comprendre aux équipes de Sécurité des Systèmes d'Information (SSI) et leurs responsables qu'elles ont un [rôle concret](#ingénieur-ssi-devops) à jouer dans ce type d'organisation. Il s'agit du "Sec" au centre du terme "DevSecOps".
 
-Je considère la sécurité comme inhérente à tout système d'information, bien avant que le terme DevSecOps ait été employé. Voilà pourquoi nous n'emploierons que rarement ce terme au cours de cet ouvrage.
+> Mot de l'auteur : je considère la sécurité comme inhérente à tout système d'information et je vois donc le "Sec" de "DevSecOps" comme implicite. Voilà pourquoi je n'emploierai que rarement ce terme au cours de cet ouvrage.
 
-Le paradigme et les techniques de sécurité dans un modèle d'organisation DevOps, seront abordés dans le chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)".
+Nous aborderons le paradigme de ce mode d'organisation et ses techniques de sécurité dans le chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)". Mais avant cela, apprenons-en plus sur les enjeux organisationnels du DevOps.
 
 # Le DevOps par la pratique
 
 Une initiative DevOps est une transformation importante à l'échelle d'une organisation. Si cette dernière n'est pas encore passée au [mode agile](#être-au-plus-proche-du-métier), elle implique toutes les strates de l'entreprise afin de fédérer des synergies communes.
 
-Le DevOps ne rapproche pas que les "Dev" (ingénieurs-développeurs) et les "Ops" (administrateurs systèmes), mais avant tout le _management_. Ce dernier doit être aidé pour saisir les perspectives qu'offrent un changement souvent vécu comme difficile, car inconnu. Dans la plupart des cas, cette transformation nécessite une évolution significative des systèmes informatiques de l'organisation à terme, car elle implique l'usage de nouveaux outils.
+Le DevOps ne rapproche pas que les "Dev" (ingénieurs-développeurs) et les "Ops" (administrateurs système), mais avant tout le _management_ des équipes techniques. Ce dernier doit être aidé pour saisir les perspectives qu'offrent un changement souvent vécu comme difficile, car inconnu. Dans la plupart des cas, cette transformation nécessite une évolution significative des systèmes informatiques de l'organisation à terme, car elle implique l'usage de nouveaux outils.
 
 L'empathie est l'aptitude clé pour réussir une transformation. Pour certains, ces nouvelles méthodes de travail et ces outils constituent un modèle opposé à leurs pratiques traditionnelles.
 
@@ -185,7 +215,7 @@ Selon eux, pratiquer la SRE n'affecte pas la résilience de l'entreprise avant d
 
 ![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE.\label{fig:adoption-of-sre-practices}](./images/adoption-of-sre-practices.png)
 
-Le rapport DORA 2022 fait le constat qu'il est nécessaire d'adopter une quantité substantielle de pratiques SRE, avant d'en récolter des bénéfices significatifs en terme de résilience[^DORAReportSREPRacticesFigures]. Ce phénomène peut être un frein pour les décideurs, à l'idée de se transformer en mode DevOps.
+Le rapport DORA 2022 fait constat du besoin d'adopter une quantité substantielle de pratiques SRE avant d'en récolter des bénéfices "significatifs" en terme de résilience[^DORAReportSREPRacticesFigures]. Ce phénomène peut être un frein pour les décideurs, à l'idée de se transformer en mode DevOps.
 
 Là où l'intérêt se confirme, c'est que les bénéfices engendrés par le DevOps dépassent les coûts engendrés une fois les investissements initiaux conscentis.
 
@@ -787,7 +817,7 @@ Les spécifications du _Software Supply Chain Security Paper_ (SSCSP ou SSCP) de
 
 Bien que le SLSA propose une documentation plus interactive, bien illustrée (avec des exemples d'outils à utiliser ou de menaces pour chaque règle) et presque gamifiée grâce à ses "badges de niveau de sécurité", les spécifications SSCSP semblent permettre - au moment de l'écriture de ce livre - de donner une vision plus haut-niveau sur les menaces au sein d'une chaîne logicielle.
 
-Plus concises pour débuter, je recommande de démarrer son projet de sécurisation d'usine logicielle avec le SSCSP, puis de progresser avec le SLSA.
+> Mot de l'auteur : Plus concises pour débuter, je recommande de démarrer son projet de sécurisation d'usine logicielle avec le SSCSP, puis de progresser avec le SLSA.
 
 Ce document de référence est également contributif[^CNCFSSCSPGithub] et fait plus largement partie des standards[^CNCFTAGGithub] adoptés par l'équipe des conseillers techniques en sécurité (TAG) de la CNCF. Ces derniers rédigent différents documents de référence ayant vocation à améliorer la sécurité de l'écosystème cloud[^CNCFTAGAnnouncement].
 
@@ -851,7 +881,7 @@ Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ dif
 
 L'humain est le premier vecteur de risques de sécurité[^HumanErrors]. Pour éviter au maximum l'erreur ou la compromission volontaire d'un système, les infrastructures modernes sont déployées sous forme de "code".
 
-C'est à dire que pour opérer l'infrastructure au quotidien (en dehors d'un cas d'urgence), toute action d'administration est codée, publiée et vérifiée dans l'usine logicielle avant d'être déployée. Cela permet de pouvoir standardiser, documenter, rejouer et optimiser au cours du temps les actions d'administration.
+C'est à dire que pour opérer l'infrastructure au quotidien (en dehors d'un cas d'urgence), toute action d'administration est codée, publiée et vérifiée dans l'usine logicielle avant d'être déployée. Cela permet de pouvoir normaliser ("standardiser"), documenter, rejouer et optimiser les actions d'administration au cours du temps.
 
 Le domaine englobant les techniques de gestion de la production en code est communément appelé _Infrastructure as Code_ (IaC). Cette notion et sa pertinence sont décrites dans le chapitre "[Infrastructure as Code](#infrastructure-as-code-iac)".
 
@@ -890,7 +920,7 @@ Les CASB sont intégrés aux technologies dites "_Zero Trust Network Access_" (Z
 
 En raison du nombre d'outils à configurer, le modèle _zero trust_ est moins simple à mettre en place qu'une sécurité périmétrique, mais il permet de surpasser ses limites[^ANSSIZeroTrust].
 
-Au delà d'un besoin impératif de mieux sécuriser l'accès aux ressources, l'architecture _zero trust_ apporte la sérénité d'une infrastructure sécurisée. Elle permet tout autant de simplifier l'administration des postes d'exploitation et des matériels réseau (administration centrale des flux réseau et des accès, plutôt qu'une configuration de chaque poste), de réduire les coûts (temps de maintenance, machines mutualisées) et de standardiser les interfaces de gestion d'identité et de droits utilisateur.
+Au delà d'un besoin impératif de mieux sécuriser l'accès aux ressources, l'architecture _zero trust_ apporte la sérénité d'une infrastructure sécurisée. Elle permet tout autant de simplifier l'administration des postes d'exploitation et des matériels réseau (administration centrale des flux réseau et des accès, plutôt qu'une configuration de chaque poste), de réduire les coûts (temps de maintenance, machines mutualisées) et de normaliser les interfaces de gestion d'identité et de droits utilisateur.
 
 L'innovation technologique implique de s'adapter rapidement. Le _zero trust_ permet aux organisations de s'adapter rapidement et en toute sécurité aux changements de leur environnement, sans avoir à revoir leur posture de sécurité.
 
@@ -1348,7 +1378,7 @@ Autres recommandations :
 4. Chaque contribution doit être validée par une chaîne d'intégration continue (CI)
 5. Si votre équipe gagne en maturité, vous pouvez ajouter une chaîne de déploiement continu à chaque contribution qui passe la CI sur la _trunk branch_
 
-Cette méthode a démontré son efficacité au cours du temps pour les projets auxquels j'ai contribués. Simple de prise en main même pour les débutants, je l'ai affinée au cours du temps pour qu'elle soit moins lourde à utiliser, tout en permettant de répondre aux problématiques de dette technique des logiciels et de _turn-over_ des équipes.
+> Mot de l'auteur : Cette méthode a démontré son efficacité au cours du temps pour les projets auxquels j'ai contribués. Simple de prise en main même pour les débutants, je l'ai affinée au cours du temps pour qu'elle soit moins lourde à utiliser, tout en permettant de répondre aux problématiques de dette technique des logiciels et de _turn-over_ des équipes.
 
 Pour présenter cette méthodologie à vos équipes et retrouver facilement les références, accédez à son [illustration en pleine résolution](https://links.berwick.fr/flexible-flow)[^FlexibleFlowCheatsheet].
 
@@ -1381,7 +1411,7 @@ Bien qu'elles soient aujourd'hui des pratiques standard dans l'industrie, il peu
 
 Une manière simple mais particulièrement efficace pour rapprocher les silos, est d'instaurer une messagerie instantanée commune. Les collaborateurs peuvent par ce biais échanger rapidement au lieu de surcharger leur boite mail, faire des discussions de groupe sur la prochaine fonctionnalité à développer, s'échanger des bouts de code ou des documents facilement, favoriser la cohésion en partageant des memes, faire des annonces générales ou encore réaliser des sondages pour trancher sur une liste de choix. Au delà de fluidifier la collaboration, la messagerie rend possible le travail en mobilité ou avec des équipes décentralisées (dans d'autres villes ou pays).
 
-Dans le cadre de l'amélioration de la résilience des systèmes, la messagerie est l'endroit parfait pour centraliser les alertes de la production à l'attention des équipes SRE. Les outils de surveillance des systèmes peuvent être configurés pour lever des alertes à un endroit unique. Les SRE sont immédiatements notifiés lorsqu'une alerte est émise. Bien configurées, ces alertes contient toutes les informations pour que le SRE puisse corriger au plus vite le problème. Les équipes de production peuvent également communiquer facilement avec leurs utilisateurs les actions qu'ils effectuent sur la production.
+Dans le cadre de l'amélioration de la fiabilité des systèmes, la messagerie est l'endroit parfait pour centraliser les alertes de la production à l'attention des équipes SRE. Les outils de surveillance des systèmes peuvent être configurés pour lever des alertes à un endroit unique. Les SRE sont immédiatements notifiés lorsqu'une alerte est émise. Bien configurées, ces alertes contient toutes les informations pour que le SRE puisse corriger au plus vite le problème. Les équipes de production peuvent également communiquer facilement avec leurs utilisateurs les actions qu'ils effectuent sur la production.
 
 Les messageries telles que _Mattermost_, _Element_, _Zulip_ ou _Slack_ intègrent par défaut la _VoIP_ (appels) et la visioconférence. La plupart intègrent aussi nativement la connexion à des logiciels utilisés par la production (ex: notification automatique à chaque _release_ GitLab, incident report in chats, mises à jour sur la _status page_, chronologie du postmortem; cf. [Rootly](https://rootly.com)).
 
@@ -1830,13 +1860,15 @@ Définissez un tableau avec quatre colonnes et autant de lignes que souhaitées 
 
 Si votre équipe ou vos projets commencent à s'agrandir, il pourrait être nécessaire de structurer plus formellement vos postmortems. Le modèle de postmortem proposé par Atlassian est un bon exemple[^AtlassianPostmortem].
 
-Pour les incidents mineurs ou les bugs que vous rencontrez au quotidien, installez un service de question/réponse (Q&A) comme [_Scoold_](https://scoold.com/) ou [_question2answer_](https://github.com/q2a/question2answer). Il peut référencer des problèmes techniques (ex: "Comment résoudre un conflit de dépendances") ou des questions plus générales (ex: Q: "Je n'arrive pas à me connecter au service X". A: "Avez-vous pensé à vous inscrire à cette URL ?"). Grâce à lui, vos SRE auront une liste de problèmes mineurs à résoudre à l'avenir. Alternative à _StackOverflow_, ce type de service permet aussi à vos développeurs de poser des questions aux autres collaborateurs de l'entreprise, en toute confidentialité.
+Pour les incidents mineurs ou les bugs que vous rencontrez au quotidien, utilisez un service de question/réponse (Q&A) comme [_Scoold_](https://scoold.com/) ou [_question2answer_](https://github.com/q2a/question2answer). Il peut référencer des problèmes techniques (ex: "Comment résoudre un conflit de dépendances") ou des questions plus générales (ex: Q: "Je n'arrive pas à me connecter au service X". A: "Avez-vous pensé à vous inscrire à cette URL ?").
+
+Grâce ce type de logiciel, vos SREs disposeront d'une liste de problèmes facilement résolvable à l'avenir. Alternative privée à _StackOverflow_, il permet aussi à vos développeurs de poser des questions aux autres collaborateurs de l'entreprise, en toute confidentialité.
 
 #### Le postmortem pour fidéliser et attirer
 
 Comme évoqué dans le chapitre "[Investiguer les incidents](#investiguer-les-incidents)", publier ses travaux publiquement permet de voir son travail reconnu par la communauté. Cette pratique améliore aussi la fidélisation en faisant permettant au collaborateur de développer sa notoriété.
 
-> Le vidéaste Bastien MARÉCAUX (connu sous le pseudo _Basti UI_) introduit la notion de "télétralive", mix de "télétravail" et de "live". Il diffuse publiquement des sessions de travail en direct sur la plateforme Twitch, pour ses clients l'ayant accepté[^Teletralive]. Cela démontre l'importance de la reconnaissance que peut apporter le fait de publier son travail. Une tendance qui pourrait prendre de l'ampleur à l'avenir.
+> Le vidéaste Bastien MARÉCAUX (connu sous le pseudo _Basti UI_) introduit la notion de "télétralive", mix de "télétravail" et de "live". Il diffuse publiquement des sessions de travail en direct sur la plateforme Twitch, pour ses clients l'ayant accepté[^Teletralive]. Cela démontre l'importance que peut apporter le fait de publier son travail. Une tendance qui pourrait prendre de l'ampleur à l'avenir.
 
 Au delà de la perception personnelle, [diffuser son travail](https://github.com/danluu/post-mortems) à un public averti incite la personne derrière le nom publié à fournir un travail de qualité[^TransparencyPerformance]. Il s'agit dans un premier temps de le publier uniquement en interne aux collaborateurs de l'entreprise. Un simple message mentionnant l'existence du postmortem dans la messagerie de l'entreprise peut suffire.
 
@@ -2110,7 +2142,7 @@ Des exemples courants de technologies permettant de réaliser ces actions sont 
 
 Chacun a ses avantages, ses inconvénients, sa communauté. D'autres sont complémentaires. Le tout est d'adopter un format standardisé (pas forcément en n'utilisant qu'une seule technologie) pour que vos équipes SRE s'y retrouvent. Un nouvel arrivant sera grandement aidé par ces pratiques et vos ingénieurs les plus confirmés pourront améliorer incrémentalement ces algorithmes.
 
-Vous pouvez tout d'abord commencer à automatiser vos infrastructures à l'aide de scripts classiques (bash, Powershell) puis passer sur une technologie plus avancée comme Ansible qui standardisera vos configurations.
+Vous pouvez tout d'abord commencer à automatiser vos infrastructures à l'aide de scripts classiques (bash, Powershell) puis passer sur une technologie plus avancée comme Ansible qui normalisera vos configurations.
 
 Reportez-vous au [projet GitHub « ToDevOps »](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) [^ToDevOps] pour voir cette technologie en pratique.
 
@@ -2242,7 +2274,7 @@ Avoir confiance dans ses décisions, en se basant sur ses propres données, est 
 
 Les journaux d'activité (_logs_), les métriques (_metrics_) et les traces (_traces_) sont considérés comme les trois piliers de l'observabilité. Ces trois type de données peuvent être générés par les logiciels, pour identifier et résoudre les problèmes susceptibles de survenir une fois déployés.
 
-L'observabilité est un sujet très vaste dans le domaine de la résilience des systèmes[^DistributedSystemsObservabilityBook]. Nous ne survolerons que les essentiels dans ce chapitre.
+L'observabilité est un sujet très vaste dans le domaine de la fiabilité des systèmes[^DistributedSystemsObservabilityBook]. Nous ne survolerons que les essentiels dans ce chapitre.
 
 Le domaine de l'observabilité peut être résumé comme l'ensemble des outils et des pratiques permettant aux ingénieurs de détecter, diagnostiquer et résoudre les problèmes d'un système (bugs, lenteurs, disponibilité), le plus rapidement possible. Au delà du besoin de résilience, la récolte de certaines de ces données est parfoise requise par la loi[^ANSSIGuideJournalisation].
 
@@ -2802,62 +2834,67 @@ Maintenant que vous comprenez la variété des enjeux du DevOps, il est intéres
 
 Vous avez probablement déjà entendu une multitude de termes suffixé par "Ops" : dans les propositions industrielles, les offres d'emploi ou les services en ligne. Tous ces termes décrivent des spécialités de l'exploitation des systèmes informatiques au travers de différentes techniques et de méthodologies. Définissons en quelques-uns :
 
-- **DevOps** (Development and Operations) : méthodologie visant le rapprochement entre les développeurs et les ingénieurs s'occupant de la production pour accélérer la mise en production et la résilience des systèmes.
-- **DevSecOps** (Development, Security and Operations) : partie du DevOps visant à intégrer les notions de sécurité dès la phase de conception d'un nouveau logiciel ou d'une nouvelle infrastructure. Il s'agit d'organiser l'entreprise de telle sorte à ce que les équipes de Sécurité des Systèmes d'Information (SSI) soient associées à l'ensemble des réflexions au cœur des projets de vos équipes de développement. (cf. [Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops))
-- **ITOps** (IT Operations) : Ensemble des pratiques se concentrant sur la maintenance et la gestion des systèmes informatiques. À distinguer subtilement du DevOps qui se concentre davantage sur l'amélioration du processus de développement et de déploiement des logiciels. Synonyme d'administrateur système (sysadmin) ou [SRE](#site-reliability-engineering-sre).
+- **DevOps** (Development and Operations) : méthodologie visant le rapprochement entre les développeurs et les ingénieurs s'occupant de la production pour accélérer la mise en production et la résilience des logiciels.
+- **DevSecOps** (Development, Security and Operations) : partie du DevOps visant à intégrer les notions de sécurité dès la phase de conception d'un nouveau logiciel ou d'une nouvelle infrastructure. Il s'agit d'organiser l'entreprise de telle sorte à ce que les équipes de Sécurité des Systèmes d'Information (SSI) soient associées à l'ensemble des réflexions au cœur des projets de vos équipes de développement (cf. [Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)).
+- **ITOps** (IT Operations) : Ensemble des pratiques se concentrant sur la maintenance et la gestion des systèmes informatiques. À distinguer subtilement du DevOps qui se concentre davantage sur l'amélioration du processus de développement et de déploiement des logiciels. Synonyme d'administrateur système (sysadmin).
 - **FinOps** (Financial Operations) : ensemble de pratiques pour mieux comprendre et gérer les coûts financiers d'une infrastructure cloud. Cela comprend le suivi et l'optimisation des dépenses, ainsi que la gestion de la facturation et des paiements. Par exemple à l'aide de tableaux de bord ou d'algorithmes automatisés.
-- **MLOps** (Machine Learning Operations) : ensemble de pratiques pour la collaboration et la communication entre les équipes de _datascience_ et de production pour le développement et le déploiement efficace de modèles de _machine learning_ (ML). L'objectif est d'améliorer la rapidité, la qualité et la résilience des modèles de ML en automatisant et standardisant. (cf. _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
-- **GitOps** (Git Operations) : ensemble de règles visant à utiliser _git_[^git] comme unique source de vérité pour standardiser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#intégration-continue-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
-- **EmpOps** (Employees Operations) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs).
-- **DataOps** (Data Operations) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
-- **DevDataOps** (Development and Data operations) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
-- **EdgeOps** (Edge computing Operations) : Le _edge computing_ (ou "traitement en périphérie") est un modèle d'architecture décentralisé de son SI où la gestion/transformation des données se passe à côté de l'endroit où elles sont collectées/générées. Cela s'oppose au modèle traditionnel où les données sont traitées uniquement sur un serveur distant, et permet d'optimiser la bande passante sur le réseau. Le EdgeOps intègre quelques principes du DevOps dans ce type d'infrastructure (ex: zero trust, monitoring air-gapped).
-- **ChatOps** (Chat Operations) : Domaine plebiscitant l'usage des messageries instantanées comme outil pour faciliter le développement et la maintenance en production de logiciels. L'idée est de pouvoir rapidement et facilement discuter avec ses pairs (ex: messagerie simple d'accès, possibilité d'importer des fichiers ou images, visibilité des flux horaires...).
-- **LiveOps** (Live Game Operations) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'engouement autour d'un jeu vidéo. De manière plus familière, c'est "maintenir la hype" autour du jeu. Ces activités incluent : le suivi du nombre de joueurs, du temps de jeu ou encore des avis, le développement de l'engagement client, l'organisation de tournois et l'assistance faite aux joueurs.
+- **MLOps** (_Machine Learning Operations_) : ensemble de pratiques pour la collaboration et la communication entre les équipes de _datascience_ et de production pour le développement et le déploiement efficace de modèles de _machine learning_ (ML). L'objectif est d'améliorer la rapidité, la qualité et la résilience des modèles de ML en automatisant et standardisant. (cf. _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
+- **GitOps** (_Git Operations_) : ensemble de règles visant à utiliser _git_[^git] comme unique source de vérité pour normaliser les pratiques de développement, de mise en production et rendre le département informatique d'une entreprise plus résiliente ([IaC](#infrastructure-as-code-iac), [CI/CD](#intégration-continue-ci), cf. [Le cycle de vie d'un logiciel moderne](#le-cycle-de-vie-dun-logiciel-moderne))
+- **EmpOps** (_Employees Operations_) : outils qui permettent de gérer une entreprise et ses employés (projets, vacances, entretiens 1:1, base de connaissance) sur une plateforme unifiée (i.e: CRMs).
+- **DataOps** (_Data Operations_) : Ensemble de pratiques[^DataOpsManifesto] aidant à gérer les données et la considérant comme un actif stratégique. Elles mettent l'accent sur la collaboration entre les équipes "data" et les autres équipes informatiques, l'automatisation des processus de gestion des données (ETL) et les retours réguliers pour garantir que les données répondent aux besoins de l'entreprise.
+- **DevDataOps** (_Development and Data operations_) : Variante du DataOps adaptée pour les organisations qui suivent une approche DevOps pour leurs développements logiciel. Dans une approche DevDataOps, les pratiques de gestion des données sont intégrées au cycle de vie du développement logiciel, permettant de gérer les données et le code de manière plus coordonnée et efficace. (cf. _From DevOps to DevDataOps_ [^DataOpsPaper])
+- **EdgeOps** (_Edge Computing Operations_) : Le _edge computing_ (ou "traitement en périphérie") est un modèle d'architecture décentralisé de son SI où la gestion/transformation des données se passe à côté de l'endroit où elles sont collectées/générées. Cela s'oppose au modèle traditionnel où les données sont traitées uniquement sur un serveur distant, et permet d'optimiser la bande passante sur le réseau. Le EdgeOps intègre quelques principes du DevOps dans ce type d'infrastructure (ex: zero trust, monitoring air-gapped).
+- **ChatOps** (_Chat Operations_) : Domaine plebiscitant l'usage des messageries instantanées comme outil pour faciliter le développement et la maintenance en production de logiciels. L'idée est de pouvoir rapidement et facilement discuter avec ses pairs (ex: messagerie simple d'accès, possibilité d'importer des fichiers ou images, visibilité des flux horaires...).
+- **LiveOps** (_Live Game Operations_) : domaine faisant référence à toute les activités permettant le bon fonctionnement et le maintien de l'engouement autour d'un jeu vidéo. De manière plus familière, c'est "maintenir la hype" autour du jeu. Ces activités incluent : le suivi du nombre de joueurs, du temps de jeu ou encore des avis, le développement de l'engagement client, l'organisation de tournois et l'assistance faite aux joueurs.
 
 L'émergence de ces termes qualifiant des spécialités ou des pratiques de l'administration d'infrastructures informatiques, est probablement liée à la maturité qu'a gagnée l'industrie grâce aux services Cloud. Ces derniers ont fortement simplifié l'administration des infrastructures, permettant de mener des réflexions plus avancées pour les optimiser.
 
 Chacune de ces spécialités est un moyen d'optimiser vos pratiques DevOps et doit s'adapter à la maturité de l'entreprise. Ne vous mettez pas en tête de toutes les mettre en place avant d'avoir bien appréhendé et mis en pratique le DevOps dans votre organisation.
 
-# Fiches de poste (exemples)
+# Fiches de poste
 
-Pour éviter de perdre de temps et limiter les mauvais recrutements, le pré-requis à votre fiche de poste est votre besoin qui doit être clairement défini.
+Ce chapitre répertorie des exemples de fiches de postes dans le domaine du DevOps.
 
-Si votre besoin n'est pas bien défini, la fiche de poste risque d'être un fourre-tout de tâches techniques qui pourraient occuper une équipe d'ingénieurs complète plutôt qu'un seul poste. Vous risquez alors de passer pour une organisation peu mature sur le sujet et de repousser par conséquent les meilleurs candidats.
+Pour éviter de perdre de temps et limiter les mauvais recrutements, votre objectif organisationnel doit être clairement défini.
 
-Vous devez faire l'effort de définir le périmètre du poste que vous rédigez ou bien assumer le fait que votre environnement est si singulier qu'il nécessite une réadaptation très régulière (ou "tactique"). Hormis dans les secteurs de la sécurité et de la défense, vous ne devriez pas considérer votre activité comme telle.
+S'il n'est pas bien défini, la fiche de poste risque de devenir un fourre-tout de tâches techniques qui pourraient occuper une équipe d'ingénieurs complète. Vous risquez alors de passer pour une organisation peu mature et risquez de repousser les meilleurs candidats.
 
-Les exemples de fiches de poste ci-dessous sont indicatives et doivent être adaptées à votre situation (maturité et taille des équipes, de l'organisation). Modifiez le contexte et les missions que vous souhaitez confier à votre futur ingénieur DevOps ou SRE. Modifiez également les compétences que vous souhaitez mettre en avant selon votre projet du moment.
+Vous devez faire l'effort de définir le périmètre du poste que vous rechercher, ou bien assumer le fait que votre environnement est si singulier qu'il nécessite une réadaptation très régulière (voire "tactique"). Hormis dans les secteurs de la sécurité et de la défense, vous ne devriez pas considérer votre activité comme telle.
 
-Les niveaux d'exigence des postes sont décrits selon la maturité de l'entreprise (débutante, intermédiaire, avancée) et le niveau d'expérience attendu par le candidat (débutant, intermédiaire ou senior).
+Les exemples de fiches de poste ci-dessous sont indicatives et doivent être adaptées à votre situation (maturité et taille des équipes, de l'organisation). Modifiez le contexte et les missions que vous souhaitez confier à votre futur ingénieur. Éditez également les compétences que vous souhaitez mettre en avant selon votre projet du moment.
 
-Une section "Formation" est également disponible, pour vous donner une idée des cursus que le candidat peut avoir suivi pour prétendre au poste. Néanmoins, considérez dans l'informatique que le diplôme n'est plus d'aucune importance après 5 ans d'expérience professionnelle. C'est cette dernière et les projets que le candidat réalise qui définissent son niveau d'expertise.
+Les niveaux d'exigence des postes sont décrits selon la maturité technique de l'entreprise (débutante, intermédiaire, avancée) et le niveau d'expérience attendu par le candidat (junior, intermédiaire ou senior).
+
+Une section "Formation ou expérience" est également disponible, pour vous donner une idée des cursus que le candidat peut avoir suivi pour prétendre au poste. Néanmoins, considérez dans l'informatique que le diplôme n'est plus d'aucune importance après 5 ans d'expérience professionnelle. C'est cette dernière et les projets que le candidat réalise qui définissent son niveau d'expertise.
+
+<!-- Source des salaires (France, Paris) : Glassdoor.com ou Payscale.com -->
 
 \newpage
 
-## Ingénieur DevOps
+## Administrateur système DevOps ou Ingénieur Cloud DevOps ou "Ingénieur DevOps"
 
 |                                                 |                                                                                            |
 | ----------------------------------------------- | :----------------------------------------------------------------------------------------- |
-| **Niveau du poste**                             | Intermédiaire ou Senior[^DORAProfileExperience] (selon les responsabilités à confier au candidat) |
+| **Niveau du poste**                             | Intermédiaire à senior[^DORAProfileExperience] (selon responsabilités à confier au candidat). _Apprentissage ou junior possible si personnel expérimenté dans l'équipe_. |
 | **Maturité de l'organisation**                  | Débutante à intermédiaire                                                                  |
-| **Rémunération approximative** (septembre 2023) | >51k€/an                                                                                   |
+| **Rémunération approximative** (septembre 2023) | >42k€/an (débutant), >60k€/an (senior)                                                                                   |
 
-Dans le cadre de la transformation numérique de notre organisation, appuyé(e) par la hiérarchie, vous définirez les nouveaux processus de développement, mettrez en place les outils et accompagnerez les équipes internes dans leur réorganisation pour employer ces nouvelles techniques.
+Dans le cadre de la transformation numérique de notre organisation et appuyé(e) par notre hiérarchie, vous aiderez à définir les nouveaux processus de développement, de déploiement et d'administration de notre organisation.
+
+Vous mettrez en place les outils et pratiques au profit de la productivité de nos développeurs et accompagnerez les équipes internes dans l'adoption des pratiques DevOps.
 
 À partir des technologies actuellement utilisées dans nos équipes, vous participerez aux réflexions stratégiques et aux technologies à adopter pour le futur de notre organisation.
 
-Avec les équipes d'ingénieurs au contact régulier des métiers vous exposant leurs activités opérationnelles, vous devrez être en mesure d'adapter la vélocité de la stratégie de transformation de notre organisation en fonction des interlocuteurs que vous rencontrerez.
-
 À l'interface entre nos équipes de développement et au sein notre équipe SRE de X personnes, vous aurez la charge de :
 
+- Développer et maintenir des outils d'automatisation du cycle de vie de logiciels (GitLab, chaînes de CI/CD)
+- Définir les bonnes pratiques GitOps et assurer la cohérence des développements (_workflow git_, gestion de projet kanban, chaînes de CI/CD, standardisation des déploiements avec Docker et Kubernetes...)
+- Automatiser l'administration des systèmes en IaC (Terraform, Ansible)
+- Développer des modèles (_template_) de projets applicatifs pour encourager les bonnes pratiques (CI/CD, supervision OpenTelemetry)
+- Accompagner les différentes équipes techniques dans la conteneurisation de leurs applicatifs historiques
 - Participer aux réflexions sur la transformation numérique de notre institution
 - Acculturer et conseiller les décideurs sur les nouvelles pratiques
 - Aider les équipes RH à identifier les candidats pertinents
-- Développer et maintenir des outils d'automatisation du cycle de vie de logiciels (GitLab, chaînes de CI/CD)
-- Définir les bonnes pratiques GitOps et assurer la cohérence des développements (_workflow git_, gestion de projet kanban, chaînes de CI/CD, standardisation des déploiements avec Docker et Kubernetes...)
-- Développer des modèles (_template_) de projets applicatifs pour encourager les bonnes pratiques
-- Accompagner les différentes équipes techniques dans la conteneurisation de leurs applicatifs historiques
 
 Compétences :
 
@@ -2868,12 +2905,12 @@ Compétences :
 - Connaissance avancée en scripting Bash, Ansible, Saltstack et/ou Terraform
 - Connaissance d'au moins un langage de programmation (Java, C++, Python ou Go)
 - Bases de données orientées colonne, objet ou graphe
-- Connaissance d'un ou plusieurs services Cloud (AWS, GCP, Azure, Alicloud, Scaleway)
+- Connaissance d'un ou plusieurs services Cloud (AWS, GCP, Azure, Scaleway)
 - Culture DevOps
 - Culture de la transformation (numérique et métier)
 - Réseaux TCP/IP
 
-Formation :
+Formation ou expérience :
 
 _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions et ne tenons pas compte de votre diplôme._
 
@@ -2884,11 +2921,56 @@ Ce poste peut mener au poste d'Ingénieur Systèmes, de SRE ou d'Ingénieur SSI 
 
 \newpage
 
+## Ingénieur fiabilité des systèmes (SRE)
+
+|                                                 |                                                                                                                                                                  |
+| ----------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Niveau du poste**                             | Intermédiaire ou senior (selon responsabilités à confier au candidat). _Apprentissage ou junior possible si personnel expérimenté dans l'équipe. Pas de stage (trop court)._ |
+| **Maturité de l'organisation**                  | Intermédiaire à avancée                                                                                                                                        |
+| **Rémunération approximative** (septembre 2023) | >54k€/an (intermédiaire), >72k€/an (senior)                                                                                                                           |
+
+Aux fondements du bon fonctionnement de notre organisation, vous aurez la charge de garantir la disponibilité, la fiabilité et la résilience de nos systèmes d'information. Vous veillerez à pérenniser les infrastructures en assurant un équilibre entre la vélocité des développements et la stabilité des systèmes.
+
+Au sein de notre équipe SRE de _X_ personnes, vous aurez la charge de :
+
+- Administrer nos environnements de développement, pré-production et production (Docker, Kubernetes^)
+- Administrer les systèmes de supervision (ex: définir les [indicateurs de résilience](#indicateurs-de-résilience) (SLIs, SLOs), maintenir les tableaux de bords d'indicateurs et les systèmes d'alerte)
+- Automatiser le cycle de vie de l'infrastructure et des logiciels (CI/CD, IaC)
+- Participer à l'automatisation de l'intégration et l'installation de serveurs physiques
+- Préparer et pratiquer les procédures de gestion d'incident selon les 3Cs[^GoogleWorkbookIncidentResponse] (entraînement annuel DiRT[^DiRTTraining], documentations, outils)
+- Diagnostiquer les incidents et rédiger des postmortems clairs et illustrés pour alimenter notre base de connaissance
+- Sensibiliser les ingénieurs aux bonnes pratiques de mise en production
+- Conseiller et collaborer avec les architectes applicatifs et les autres architectes de l'infrastructure
+
+Compétences :
+
+- Communication, autonomie et capacité d'adaptation
+- Connaissance avancée d'une ou plusieurs distributions Linux
+- Connaissances en réseaux TCP/IP
+- Connaissance d'Ansible, Saltstack et/ou Terraform
+- Connaissance avancée en scripting Bash
+- Maîtrise des principes d'architecture en micro-services
+- Connaissance d'une technologie d'orchestration Cloud (Kubernetes ou Openstack)
+- Connaissance d'au moins un langage de programmation (Java, C++, Python ou Go)
+- Connaissance d'au moins un services Cloud (AWS, GCP, Azure, Scaleway)
+
+Formation ou expérience :
+
+_Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions et ne tenons pas compte de votre diplôme._
+
+- Licence/bachelor ou master en ingénierie logicielle avec connaissances en administration systèmes (Linux, réseaux, technologies Cloud)
+- Licence/bachelor ou master en ingénierie réseaux et systèmes
+- Expérience professionnelle significative dans le domaine
+
+Ce poste peut mener au poste de Responsable de l'Infrastructure, d'Ingénieur SSI DevOps ou d'Ingénieur Systèmes.
+
+\newpage
+
 ## Ingénieur SSI DevOps
 
 |                                                 |                                                                    |
 | ----------------------------------------------- | :----------------------------------------------------------------- |
-| **Niveau du poste**                             | Intermédiaire ou Senior (selon les responsabilités à confier au candidat) |
+| **Niveau du poste**                             | Junior à senior (selon responsabilités à confier au candidat) |
 | **Maturité de l'organisation**                  | Intermédiaire à avancée                                            |
 | **Rémunération approximative** (septembre 2023) | >52k€/an                                                           |
 
@@ -2917,9 +2999,9 @@ Compétences :
 - Connaissances au moins théorique des bases de données (orientées colonne, objet ou graphe)
 - Culture DevOps
 - Culture de la transformation (numérique et métier)
-- Idéalement, connaissance d'un ou plusieurs services Cloud (AWS, GCP, Azure, Alicloud, Scaleway)
+- Idéalement, connaissance d'un ou plusieurs services Cloud (AWS, GCP, Azure, Scaleway)
 
-Formation :
+Formation ou expérience :
 
 _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions et ne tenons pas compte de votre diplôme._
 
@@ -2932,60 +3014,15 @@ Ce poste peut mener au poste d'Ingénieur Systèmes ou de SRE.
 
 \newpage
 
-## Ingénieur Résilience des Systèmes (SRE)
-
-|                                                 |                                                                                                                                                                  |
-| ----------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Niveau du poste**                             | Intermédiaire ou Senior (selon les responsabilités à confier au candidat). Apprentissage ou débutant possible si un personnel expérimenté est disponible. Pas de stage. |
-| **Maturité de l'organisation**                  | Débutante à intermédiaire                                                                                                                                        |
-| **Rémunération approximative** (septembre 2023) | >54k€/an (débutant), >72k€/an (intermédiaire)                                                                                                                           |
-
-Aux fondements du bon fonctionnement de notre organisation, vous aurez la charge de garantir la disponibilité, la fiabilité et la résilience de nos systèmes d'information. Vous veillerez à pérenniser les infrastructures.
-
-Au sein de notre équipe SRE de _X_ personnes, vous aurez la charge de :
-
-- Administrer nos réseaux de développement, pré-production et production
-- Développer des scripts d'automatisation gérant le cycle de vie de l'infrastructure et des logiciels (scripts Ansible, pipelines CI/CD)
-- Contribuer aux systèmes de supervision (ex: définir les [indicateurs de résilience](#indicateurs-de-résilience) (SLIs, SLOs), maintenir les tableaux de bords d'indicateurs et les systèmes d'alerte)
-- Participer à l'automatisation de l'intégration et l'installation de serveurs physiques
-- Préparer et pratiquer les procédures de gestion d'incident selon les 3Cs[^GoogleWorkbookIncidentResponse] (entraînement annuel DiRT[^DiRTTraining], documentations, outils)
-- Rédiger des postmortems clairs et illustrés pour alimenter notre base de connaissance
-- Sensibiliser les ingénieurs aux bonnes pratiques de mise en production
-- Conseiller et collaborer avec les architectes applicatifs et les autres architectes de l'infrastructure
-
-Compétences :
-
-- Communication, autonomie et capacité d'adaptation
-- Connaissance avancée d'une ou plusieurs distributions Linux
-- Connaissances en réseaux TCP/IP
-- Connaissance d'Ansible, Saltstack et/ou Terraform
-- Connaissance avancée en scripting Bash
-- Connaissance des principes d'architecture en micro-services
-- Connaissance d'une technologie d'orchestration Cloud (Kubernetes ou Openstack)
-- Connaissance d'au moins un langage de programmation (Java, C++, Python ou Go)
-- Connaissance d'au moins un services Cloud (AWS, GCP, Azure, Alicloud, Scaleway)
-
-Formation :
-
-_Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions et ne tenons pas compte de votre diplôme._
-
-- Licence/bachelor ou master en ingénierie logicielle avec connaissances en administration systèmes (Linux, réseaux, technologies Cloud)
-- Licence/bachelor ou master en ingénierie réseaux et systèmes
-- Expérience professionnelle significative dans le domaine
-
-Ce poste peut mener au poste de Responsable de l'Infrastructure, d'Ingénieur SSI DevOps ou d'Ingénieur Systèmes.
-
-\newpage
-
-## Ingénieur Systèmes ou Ingénieur Plateforme
+## Ingénieur plateforme
 
 |                                                 |                                        |
 | ----------------------------------------------- | :------------------------------------- |
-| **Niveau du poste**                             | Débutant à Senior                      |
+| **Niveau du poste**                             | Intermédiaire à senior                      |
 | **Maturité de l'organisation**                  | Avancée                                |
-| **Rémunération approximative** (septembre 2023) | >48k€/an (intermédiaire), >44k€/an (débutant) |
+| **Rémunération approximative** (septembre 2023) | >44k€/an (débutant), >48k€/an (intermédiaire) |
 
-De formation ingénieur logiciel ou administrateur système avec des compétences avérées en ingénierie logicielle, vous serez responsable du développement et de la maintenance des outils qui améliorent au quotidien le cycle de développement de nos logiciels.
+De formation ingénieur logiciel ou administrateur système avec des compétences avérées en ingénierie logicielle, vous serez responsable du développement et de la maintenance des outils qui améliorent au quotidien le cycle de développement et de déploiement de nos logiciels.
 
 Au sein de l'équipe SRE, vous développerez les outils d'administration ou en intégrerez pour faciliter la vie de nos développeurs et de nos SRE.
 
@@ -3000,7 +3037,7 @@ Compétences :
 - Connaissance d'une technologie d'orchestration Cloud (Kubernetes ou Openstack)
 - Réseaux TCP/IP
 
-Formation :
+Formation ou expérience :
 
 _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions et ne tenons pas compte de votre diplôme._
 
@@ -3529,3 +3566,11 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^SujetSupposeSavoir]: Phénomène du _sujet supposé savoir_, selon lequel un individu va donner du crédit à un expert externe par le simple fait qu'il le pense plus légitime que lui-même ou que l'expert interne, pourtant les seuls à connaître les besoins réels de l'organisation. Théorie de [Jacques LACAN. « Séminaire Les quatre concepts fondamentaux de la psychanalyse. Les fondements de la psychanalyse »](https://www.cairn.info/revue-essaim-2006-2-page-65.htm#no1).
 
 [^HumanErrors]: SANS. _[SANS 2022 Security Awareness Report: "Human Risk Remains the Biggest Threat to Your Organization’s Cybersecurity"](https://www.sans.org/press/announcements/sans-2022-security-awareness-report-human-risk-remains-biggest-threat-organizations-cybersecurity/)_. 2022.
+
+[^WhatIsSREForAWS]: "_SRE is the practical implementation of DevOps._" (chapter "_SRE compared to DevOps_"). [_aws.amazon.com/what-is/sre_](aws.amazon.com/what-is/sre).
+
+[^DevOpsDefinitionStudy]: Voir la micro-étude "Définitions DevOps et SRE" de ce projet : [_github.com/flavienbwk/book-devops/studies/devops-sre_](github.com/flavienbwk/book-devops/studies/devops-sre).
+
+[^QualityAssuranceBasics]: BERWICK, Flavien. Les bases de la QA : article Medium ["_Keep your code and documentation fresh_"](https://medium.com/@flavienb/keeping-your-code-and-documentation-fresh-f102e4e85839). 2023.
+
+[^HowSRERelatesToDevOps]: Google. Chapitre "[_How SRE Relates to DevOps_](https://sre.google/workbook/how-sre-relates/#id-gm1cntzuncd)", _SRE Book_. _sre.google_.
