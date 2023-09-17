@@ -149,7 +149,7 @@ De manière simplifiée, l'entreprise donne pour mission au SRE de rendre son in
 
 ## Entre SRE et DevOps
 
-Les définitions diffèrent selon les interlocuteurs. Alors que certains leaders comme Google et AWS définissent officiellement le DevOps comme une "méthodologie" et le métier de SRE comme sa "mise en œuvre"[^WhatIsSREForAWS], la majorité des offres d'emploi du marché restent souvent titrées "Ingénieur DevOps" : un titre incomplet au sens propre de la définition historique. 
+Les définitions diffèrent selon les interlocuteurs. Alors que certains leaders comme Google et AWS définissent officiellement le DevOps comme une "méthodologie" et le métier de SRE comme sa "mise en œuvre"[^WhatIsSREForAWS], la majorité des offres d'emploi du marché restent souvent titrées "Ingénieur DevOps" : un titre incomplet au sens propre de la définition historique.
 
 Le fait est que les deux disciplines ont évolué et se chevauchent aujourd'hui sur de nombreux aspects : elles partagent l'objectif de déployer rapidement des logiciels fiables et efficaces.
 
@@ -173,7 +173,7 @@ Vous découvrirez dans ce livre les meilleures pratiques de ces deux disciplines
 
 ## DevSecOps
 
-Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant les équipes de Sécurité des Systèmes d'Information (SSI) dès la phase de conception du logiciel et tout au long de son cycle de vie. 
+Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant les équipes de Sécurité des Systèmes d'Information (SSI) dès la phase de conception du logiciel et tout au long de son cycle de vie.
 
 Plus concrètement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, au moyen de règles automatisées qui vérifient la conformité des logiciels développés.
 
