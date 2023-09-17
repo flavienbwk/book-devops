@@ -4,8 +4,8 @@
     <a href="https://github.com/flavienbwk/book-devops/actions/workflows/render.yml">
         <img src="https://github.com/flavienbwk/book-devops/actions/workflows/render.yml/badge.svg?branch=main" alt="Build" />
     </a>
-    <a href="https://github.com/flavienbwk/book-devops/actions/workflows/markdownlint.yml">
-        <img src="https://github.com/flavienbwk/book-devops/actions/workflows/markdownlint.yml/badge.svg?branch=main" alt="Markdownlint" />
+    <a href="https://github.com/flavienbwk/book-devops/actions/workflows/markdownchecks.yml">
+        <img src="https://github.com/flavienbwk/book-devops/actions/workflows/markdownchecks.yml/badge.svg?branch=main" alt="Markdownlint" />
     </a>
 </p>
 
