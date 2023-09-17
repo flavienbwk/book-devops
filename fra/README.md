@@ -107,23 +107,25 @@ Pour bien comprendre en quoi le DevOps peut aider votre organisation, commençon
 
 C'est le lien qui unit le monde du développement et de la production.
 
-« Dev » signifie « développement » quand « Ops » désigne l'exploitation des systèmes informatiques en production.
+« Dev » signifie « développement » quand « Ops » désigne l'administration des systèmes informatiques en production.
 
 On qualifie de « DevOps » (_Development and Operations_) le mouvement organisationnel et culturel qui a pour but de fluidifier le cycle de développement et de déploiement logiciel.
 
-Pour atteindre cet objectif, les ingénieurs pratiquant le DevOps ont pour mission de faciliter la communication et la collaboration entre les parties prenantes (développeurs, ingénieurs d'exploitation, équipes de sécurité, responsables projet et utilisateurs). Ils définissent les techniques les plus pertinentes pour une organisation et étudient leur mise en place.
+Pour atteindre cet objectif, les ingénieurs pratiquant le DevOps ont pour mission de faciliter la communication et la collaboration entre les parties prenantes (développeurs, administrateurs système, équipes de sécurité, responsables projet et utilisateurs).
 
-En équipe, ils garantissent la cohérence des développements avec les exigences du déploiement. Aujourd'hui, ces profils s'orientent principalement vers l'emploi des technologies _Cloud_.
+Ils définissent les pratiques informatiques les plus pertinentes pour une organisation et étudient leur mise en place. En équipe, ils garantissent la cohérence des développements avec les exigences du déploiement. Aujourd'hui, ces profils s'orientent principalement vers l'emploi des technologies _Cloud_.
 
-Les pratiques DevOps s'inscrivent dans tout le panorama de la chaîne technique, en privilégiant des mécanismes automatisés pour le développement (intégration continue), le déploiement (déploiement continu) et la maintenance (supervision). Les bénéficiaires sont à la fois les équipes internes et les clients. Les premiers collaborent plus efficacement quand les seconds obtiennent plus rapidement un logiciel de meilleur qualité.
+Les pratiques DevOps s'inscrivent dans l'ensemble du panorama de la chaîne technique, en privilégiant des mécanismes automatisés pour le développement (intégration continue), le déploiement (déploiement continu) et la maintenance (supervision). Les bénéficiaires sont à la fois les équipes internes et les clients. Les premiers collaborent plus efficacement et de manière sécurisée, quand les seconds obtiennent plus rapidement un logiciel de meilleur qualité.
 
-Ce poste implique la tâche d'accorder toutes les parties prenantes sur une méthode de travail commune. Il est donc important de disposer d'excellentes compétences en communication et en pédagogie, en particulier dans les organisations en transformation.
+Ce poste implique la responsabilité d'accorder toutes les parties prenantes sur une méthode de travail commune. Il est donc important de disposer d'excellentes compétences en communication et en pédagogie, en particulier dans les organisations en transformation.
 
 L'ingénierie DevOps a pour rôle de sensibiliser l'ensemble des équipes de l'organisation aux problématiques de fiabilités des systèmes. Les ingénieurs les plus expérimentés arrivent à mettre en place les pratiques qui remplissent les exigences de résilience sans impacter la vélocité des développement.
 
-Le "tout" est de trouver l'équilibre entre la complexité induite par les exigences de fiabilité/sécurité et le besoin de produire des nouvelles fonctionnalités.
+Le "tout" est de trouver l'équilibre entre la complexité induite par les exigences de fiabilité/sécurité et le besoin de développer des nouvelles fonctionnalités.
 
-Dans la suite de cet ouvrage, nous verrons que la mise en place du DevOps est propre à chaque organisation. Le moyen de le {} en fonction du niveau de maturité technique de l'organisation. Il n'y a donc pas de "recette miracle"
+Dans la suite de cet ouvrage, nous verrons que la mise en place du DevOps est propre à chaque organisation. Les méthodes et les outils pour parvenir à ses objectifs s'adaptent en fonction du niveau de maturité technique de l'organisation. Il n'y a donc pas de "recette unique" mais des "bonnes pratiques" à connaître et suivre.
+
+Tout comme il n'y a pas de recette unique, il n'y a pas de métier unique "d'ingénieur DevOps". Nous le verrons dans le chapitre ["Entre SRE et DevOps"](#entre-sre-et-devops).
 
 Si le terme DevOps devient de plus en plus populaire et commence à devenir courant dans les offres d'emploi, celui de _Site Reliability Engineering_ (SRE) est moins connu, en particulier en France.
 
@@ -151,27 +153,29 @@ Les définitions diffèrent selon les interlocuteurs. Alors que certains leaders
 
 Le fait est que les deux disciplines ont évolué et se chevauchent aujourd'hui sur de nombreux aspects : elles partagent l'objectif de déployer rapidement des logiciels fiables et efficaces.
 
-Cependant elles ne se concentrent pas historiquement sur les mêmes choses. Tandis que le DevOps est davantage axé vers l'efficacité du développement et la rapidité du déploiement (cf. CI/CD, tests automatisés, expérience développeur, collaboration interéquipes...), la SRE se concentre sur le maintien de la fiabilité des systèmes et décrit une approche plus méthodique (cf. SLI/SLO/SLA, budget d'erreur, déploiements _blue/green_, postmortems...).
+Cependant elles ne se concentrent pas historiquement sur les mêmes choses. Tandis que le DevOps est davantage axé vers l'efficacité du développement et la rapidité du déploiement (cf. CI/CD, tests automatisés, expérience développeur, collaboration interéquipes...), la SRE se concentre sur la fiabilité des systèmes en employant une approche plus méthodique (cf. SLI/SLO/SLA, budget d'erreur, déploiements _blue/green_, postmortems...).
 
-Aujourd'hui, vous pouvez donc retrouver des "Ingénieurs DevOps" qui ne font pas de SRE mais l'inverse reste rare. Le DevOps étant une philosophie, ce terme peut être employé comme un adjectif. Par exemple : "Ingénieur logiciel DevOps" ou "Administrateur système DevOps".
+Aujourd'hui, vous pouvez donc retrouver des "Ingénieurs DevOps" qui ne font pas de SRE mais l'inverse reste rare. Le DevOps étant une philosophie, ce terme est à employer comme un adjectif. Par exemple : "Ingénieur logiciel DevOps" ou "Administrateur système DevOps".
 
-Regardons néanmoins ce qu'en dit le marché. En observant individuellement les offres d'emploi[^DevOpsDefinitionStudy], on remarque que les offres titrées "Ingénieur DevOps" sont très variées en terme de missions. Elles peuvent être :
+Regardons néanmoins ce qu'en dit le marché. En observant les offres d'emploi dans le domaine[^DevOpsDefinitionStudy], on remarque que celles titrées "Ingénieur DevOps" contiennent des missions très variées. Elles peuvent être :
 
-- Orientées vers le développement : ingénierie logicielle, ingénierie en assurance qualité[^QualityAssuranceBasics].
+- Orientées vers le développement : ingénierie logicielle, ingénierie système, ingénierie en assurance qualité[^QualityAssuranceBasics].
 - Orientées vers les opérations : administration système, ingénierie Cloud, ingénieur réseaux.
-- Orientées vers les deux : SRE, ingénierie en automatisation, ingénierie plateforme.
+- Orientées vers les deux : SRE, ingénierie en automatisation, ingénierie plateforme; tous les métiers de la chaîne logicielle (cf. chapitre "[Sécuriser sa chaîne logicielle](#sécuriser-sa-chaîne-logicielle)").
 
-En réalité, tous ces rôles permettent de mettre en pratique le DevOps. Mais chacun dépend de la maturité et des moyens de l'organisation pour mettre en place ce mode d'organisation (fig. <spanc/>\ref{fig:devopsjobsevolution}).
+En réalité, tous ces rôles permettent de mettre en pratique le DevOps. Mais chaque niveau dépend de la maturité et des moyens de l'organisation (fig. <spanc/>\ref{fig:devopsjobsevolution}).
 
-![Schéma simplifié de l'évolution des métiers traditionnels vers le domaine du DevOps.\label{fig:devopsjobsevolution}](images/devops_jobs.jpg)
+![Schéma simplifié de l'évolution des métiers traditionnels vers un mode d'organisation DevOps.\label{fig:devopsjobsevolution}](images/devops_jobs.jpg)
 
-En résumé, on dit que la SRE utilise les méthodes DevOps. Le DevOps et la SRE ne sont donc ni deux méthodes qui s'opposent, ni deux méthodes identiques, mais deux disciplines qui vous aideront à faire tomber les barrières entre vos équipes, pour déployer plus rapidement des services de meilleure qualité.
+En résumé, on dit que la SRE utilise les méthodes DevOps[^HowSRERelatesToDevOps]. Le DevOps et la SRE ne sont donc ni deux méthodes qui s'opposent, ni deux méthodes identiques, mais deux disciplines qui vous aideront à faire tomber les barrières entre vos équipes, pour déployer plus rapidement des services de meilleure qualité et de manière plus sécurisée.
 
-Ce livre décrit le condensé des meilleures pratiques
+Vous découvrirez dans ce livre les meilleures pratiques de ces deux disciplines, unifiées et décrites de manière adaptée aux institutions.
 
 ## DevSecOps
 
-Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant les équipes de Sécurité des Systèmes d'Information (SSI) dès la phase de conception du logiciel et tout au long de son cycle de vie. Plus concrètement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, au moyen de règles automatisées qui vérifient la conformité des logiciels développés.
+Le terme DevSecOps gagne en popularité. Il qualifie un mode d'organisation DevOps intégrant les équipes de Sécurité des Systèmes d'Information (SSI) dès la phase de conception du logiciel et tout au long de son cycle de vie. 
+
+Plus concrètement, il s'agit de garantir le respect des standards de sécurité imposés par l'organisation, au moyen de règles automatisées qui vérifient la conformité des logiciels développés.
 
 Peut-être avez-vous déjà entendu parler de "_shift left security_" ? Cette expression évoque le fait d'intégrer au plus tôt les travaux de sécurité dans le projet logiciel (bonnes pratiques, analyses de vulnérabilités, audits).
 
@@ -187,15 +191,15 @@ Nicolas CHAILLAN, ancien Directeur de l'Ingénierie Logicielle au sein de l'_Uni
 
 Aujourd'hui, le terme "DevSecOps" est régulièrement favorisé dans le seul objectif de rendre plus attrayant la discipline. Cependant, il peut permettre de mieux faire comprendre aux équipes de Sécurité des Systèmes d'Information (SSI) et leurs responsables qu'elles ont un [rôle concret](#ingénieur-ssi-devops) à jouer dans ce type d'organisation. Il s'agit du "Sec" au centre du terme "DevSecOps".
 
-Je considère la sécurité comme inhérente à tout système d'information, bien avant que le terme DevSecOps ait été employé. Voilà pourquoi nous n'emploierons que rarement ce terme au cours de cet ouvrage.
+> Mot de l'auteur : je considère la sécurité comme inhérente à tout système d'information et je vois donc le "Sec" de "DevSecOps" comme implicite. Voilà pourquoi je n'emploierai que rarement ce terme au cours de cet ouvrage.
 
-Le paradigme et les techniques de sécurité dans un modèle d'organisation DevOps, seront abordés dans le chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)".
+Nous aborderons le paradigme de ce mode d'organisation et ses techniques de sécurité dans le chapitre "[Sécurité : un nouveau paradigme avec l'approche DevOps](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)". Mais avant cela, apprenons-en plus sur les enjeux organisationnels du DevOps.
 
 # Le DevOps par la pratique
 
 Une initiative DevOps est une transformation importante à l'échelle d'une organisation. Si cette dernière n'est pas encore passée au [mode agile](#être-au-plus-proche-du-métier), elle implique toutes les strates de l'entreprise afin de fédérer des synergies communes.
 
-Le DevOps ne rapproche pas que les "Dev" (ingénieurs-développeurs) et les "Ops" (administrateurs systèmes), mais avant tout le _management_. Ce dernier doit être aidé pour saisir les perspectives qu'offrent un changement souvent vécu comme difficile, car inconnu. Dans la plupart des cas, cette transformation nécessite une évolution significative des systèmes informatiques de l'organisation à terme, car elle implique l'usage de nouveaux outils.
+Le DevOps ne rapproche pas que les "Dev" (ingénieurs-développeurs) et les "Ops" (administrateurs système), mais avant tout le _management_ des équipes techniques. Ce dernier doit être aidé pour saisir les perspectives qu'offrent un changement souvent vécu comme difficile, car inconnu. Dans la plupart des cas, cette transformation nécessite une évolution significative des systèmes informatiques de l'organisation à terme, car elle implique l'usage de nouveaux outils.
 
 L'empathie est l'aptitude clé pour réussir une transformation. Pour certains, ces nouvelles méthodes de travail et ces outils constituent un modèle opposé à leurs pratiques traditionnelles.
 
@@ -211,7 +215,7 @@ Selon eux, pratiquer la SRE n'affecte pas la résilience de l'entreprise avant d
 
 ![Ratio des bénéfices de résilience pour l'organisation par rapport aux efforts d'adoption des pratiques SRE.\label{fig:adoption-of-sre-practices}](./images/adoption-of-sre-practices.png)
 
-Le rapport DORA 2022 fait le constat qu'il est nécessaire d'adopter une quantité substantielle de pratiques SRE, avant d'en récolter des bénéfices significatifs en terme de résilience[^DORAReportSREPRacticesFigures]. Ce phénomène peut être un frein pour les décideurs, à l'idée de se transformer en mode DevOps.
+Le rapport DORA 2022 fait constat du besoin d'adopter une quantité substantielle de pratiques SRE avant d'en récolter des bénéfices "significatifs" en terme de résilience[^DORAReportSREPRacticesFigures]. Ce phénomène peut être un frein pour les décideurs, à l'idée de se transformer en mode DevOps.
 
 Là où l'intérêt se confirme, c'est que les bénéfices engendrés par le DevOps dépassent les coûts engendrés une fois les investissements initiaux conscentis.
 
@@ -813,7 +817,7 @@ Les spécifications du _Software Supply Chain Security Paper_ (SSCSP ou SSCP) de
 
 Bien que le SLSA propose une documentation plus interactive, bien illustrée (avec des exemples d'outils à utiliser ou de menaces pour chaque règle) et presque gamifiée grâce à ses "badges de niveau de sécurité", les spécifications SSCSP semblent permettre - au moment de l'écriture de ce livre - de donner une vision plus haut-niveau sur les menaces au sein d'une chaîne logicielle.
 
-Plus concises pour débuter, je recommande de démarrer son projet de sécurisation d'usine logicielle avec le SSCSP, puis de progresser avec le SLSA.
+> Mot de l'auteur : Plus concises pour débuter, je recommande de démarrer son projet de sécurisation d'usine logicielle avec le SSCSP, puis de progresser avec le SLSA.
 
 Ce document de référence est également contributif[^CNCFSSCSPGithub] et fait plus largement partie des standards[^CNCFTAGGithub] adoptés par l'équipe des conseillers techniques en sécurité (TAG) de la CNCF. Ces derniers rédigent différents documents de référence ayant vocation à améliorer la sécurité de l'écosystème cloud[^CNCFTAGAnnouncement].
 
@@ -1374,7 +1378,7 @@ Autres recommandations :
 4. Chaque contribution doit être validée par une chaîne d'intégration continue (CI)
 5. Si votre équipe gagne en maturité, vous pouvez ajouter une chaîne de déploiement continu à chaque contribution qui passe la CI sur la _trunk branch_
 
-Cette méthode a démontré son efficacité au cours du temps pour les projets auxquels j'ai contribués. Simple de prise en main même pour les débutants, je l'ai affinée au cours du temps pour qu'elle soit moins lourde à utiliser, tout en permettant de répondre aux problématiques de dette technique des logiciels et de _turn-over_ des équipes.
+> Mot de l'auteur : Cette méthode a démontré son efficacité au cours du temps pour les projets auxquels j'ai contribués. Simple de prise en main même pour les débutants, je l'ai affinée au cours du temps pour qu'elle soit moins lourde à utiliser, tout en permettant de répondre aux problématiques de dette technique des logiciels et de _turn-over_ des équipes.
 
 Pour présenter cette méthodologie à vos équipes et retrouver facilement les références, accédez à son [illustration en pleine résolution](https://links.berwick.fr/flexible-flow)[^FlexibleFlowCheatsheet].
 
@@ -1856,13 +1860,15 @@ Définissez un tableau avec quatre colonnes et autant de lignes que souhaitées 
 
 Si votre équipe ou vos projets commencent à s'agrandir, il pourrait être nécessaire de structurer plus formellement vos postmortems. Le modèle de postmortem proposé par Atlassian est un bon exemple[^AtlassianPostmortem].
 
-Pour les incidents mineurs ou les bugs que vous rencontrez au quotidien, installez un service de question/réponse (Q&A) comme [_Scoold_](https://scoold.com/) ou [_question2answer_](https://github.com/q2a/question2answer). Il peut référencer des problèmes techniques (ex: "Comment résoudre un conflit de dépendances") ou des questions plus générales (ex: Q: "Je n'arrive pas à me connecter au service X". A: "Avez-vous pensé à vous inscrire à cette URL ?"). Grâce à lui, vos SRE auront une liste de problèmes mineurs à résoudre à l'avenir. Alternative à _StackOverflow_, ce type de service permet aussi à vos développeurs de poser des questions aux autres collaborateurs de l'entreprise, en toute confidentialité.
+Pour les incidents mineurs ou les bugs que vous rencontrez au quotidien, utilisez un service de question/réponse (Q&A) comme [_Scoold_](https://scoold.com/) ou [_question2answer_](https://github.com/q2a/question2answer). Il peut référencer des problèmes techniques (ex: "Comment résoudre un conflit de dépendances") ou des questions plus générales (ex: Q: "Je n'arrive pas à me connecter au service X". A: "Avez-vous pensé à vous inscrire à cette URL ?").
+
+Grâce ce type de logiciel, vos SREs disposeront d'une liste de problèmes facilement résolvable à l'avenir. Alternative privée à _StackOverflow_, il permet aussi à vos développeurs de poser des questions aux autres collaborateurs de l'entreprise, en toute confidentialité.
 
 #### Le postmortem pour fidéliser et attirer
 
 Comme évoqué dans le chapitre "[Investiguer les incidents](#investiguer-les-incidents)", publier ses travaux publiquement permet de voir son travail reconnu par la communauté. Cette pratique améliore aussi la fidélisation en faisant permettant au collaborateur de développer sa notoriété.
 
-> Le vidéaste Bastien MARÉCAUX (connu sous le pseudo _Basti UI_) introduit la notion de "télétralive", mix de "télétravail" et de "live". Il diffuse publiquement des sessions de travail en direct sur la plateforme Twitch, pour ses clients l'ayant accepté[^Teletralive]. Cela démontre l'importance de la reconnaissance que peut apporter le fait de publier son travail. Une tendance qui pourrait prendre de l'ampleur à l'avenir.
+> Le vidéaste Bastien MARÉCAUX (connu sous le pseudo _Basti UI_) introduit la notion de "télétralive", mix de "télétravail" et de "live". Il diffuse publiquement des sessions de travail en direct sur la plateforme Twitch, pour ses clients l'ayant accepté[^Teletralive]. Cela démontre l'importance que peut apporter le fait de publier son travail. Une tendance qui pourrait prendre de l'ampleur à l'avenir.
 
 Au delà de la perception personnelle, [diffuser son travail](https://github.com/danluu/post-mortems) à un public averti incite la personne derrière le nom publié à fournir un travail de qualité[^TransparencyPerformance]. Il s'agit dans un premier temps de le publier uniquement en interne aux collaborateurs de l'entreprise. Un simple message mentionnant l'existence du postmortem dans la messagerie de l'entreprise peut suffire.
 
@@ -3566,3 +3572,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^DevOpsDefinitionStudy]: Voir la micro-étude "Définitions DevOps et SRE" de ce projet : [_github.com/flavienbwk/book-devops/studies/devops-sre_](github.com/flavienbwk/book-devops/studies/devops-sre).
 
 [^QualityAssuranceBasics]: BERWICK, Flavien. Les bases de la QA : article Medium ["_Keep your code and documentation fresh_"](https://medium.com/@flavienb/keeping-your-code-and-documentation-fresh-f102e4e85839). 2023.
+
+[^HowSRERelatesToDevOps]: Google. Chapitre "[_How SRE Relates to DevOps_](https://sre.google/workbook/how-sre-relates/#id-gm1cntzuncd)", _SRE Book_. _sre.google_.

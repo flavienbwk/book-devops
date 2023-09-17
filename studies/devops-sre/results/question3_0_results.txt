@@ -1,0 +1,7 @@
+Question : Regarding jobs descriptions you've seen and focusing on jobs missions and requirements, what is DevOps, does it differ from SRE, and how ?
+
+DevOps is a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the systems development life cycle and provide continuous delivery with high software quality. Its primary focus is on automation, continuous integration, and continuous delivery, promoting closer collaboration between development, operations, and testing teams.
+
+SRE, or Site Reliability Engineering, emerged from Google's specific approach to running large-scale reliable services. SRE implements aspects of software engineering into IT operations to create a balance between reliability, availability, and high performance. It typically incorporates aspects of DevOps but emphasizes on automating operations work and measuring reliability through Service Level Objectives (SLOs) and Service Level Indicators (SLIs).
+
+Both roles intersect in many aspects, sharing the goal of delivering reliable and efficient software quickly. However, SRE often involves a more systematic approach to maintaining service reliability, while DevOps focuses more on the integration and automation of development and operations processes.
