@@ -1,4 +1,4 @@
-name: Markdownlint
+name: Markdown checks
 
 on:
   push:
@@ -18,12 +18,9 @@ jobs:
   markdownlint:
     name: Markdownlint
     runs-on: ubuntu-22.04
-    needs: check-404-links
-
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-
     - name: Lint all MD files
       uses: docker://avtodev/markdown-lint:v1 # fastest way
       with:

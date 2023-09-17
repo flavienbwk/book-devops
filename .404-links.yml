@@ -1,0 +1,17 @@
+folder: fra/ # The folder that required to be parsed
+httpsOnly: false # If you want enforce only HTTPS links
+pullRequestReview: false # If you want a nice review in your pull requests
+ignore: 
+  urls: # Array of url to ignore
+    - https://berwick.fr/
+    - https://links.berwick.fr/*
+    - https://dl.acm.org/*
+    - https://doi.org/*
+    - https://www.cairn.info/*
+    - https://rootly.com/
+    - https://www.sciencedirect.com/topics/neuroscience/root-cause-analysis
+    - https://www.ssi.gouv.fr/*
+    - https://www.researchgate.net/publication/266394032_A_Theory_of_Blame
+delay:
+  'https://gitlab.com': 500 # Perform a pause of 500ms at each call matching the url
+  'https://gitlab.biterg.io': 1000

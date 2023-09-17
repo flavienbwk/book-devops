@@ -3365,7 +3365,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^EUOSSReport]: OpenForum Europe; Fraunhofer ISI. "[_Study on the impact of Open Source for the European Commission_](https://openforumeurope.org/open-source-impact-study/)". 2021.
 
-[^SoOSS2022]: Open Source Initiative; Perforce. "[_State of Open Source survey_](https://opensource.org/ten-takeaways-from-the-2022-state-of-open-source-survey)". 2022.
+[^SoOSS2022]: Open Source Initiative; Perforce. "[_State of Open Source survey_](https://blog.opensource.org/ten-takeaways-from-the-2022-state-of-open-source-survey-2/)". 2022.
 
 [^DependencyConfusion]: BIRSAN, Alex. "[_Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies_](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610)". 2021.
 
@@ -3513,7 +3513,7 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^DatadogMarch2023PM]: Datadog. [_2023-03-08 Incident: A deep dive into our incident response_](https://www.datadoghq.com/blog/engineering/2023-03-08-deep-dive-into-incident-response/#the-communication-clock-is-inexorably-ticking). 2023.
 
-[^MassInArmedConflicts]: Revue Défense Nationale. ["Les défis de la « haute intensité » : enjeu stratégique ou capacitaire ?"](https://www.defnat.com/pdf/cahiers/CAH081/3.%20Pesqueur_Tenenbaum%20(AdT%202020).pdf). 2020.
+[^MassInArmedConflicts]: Revue Défense Nationale. ["Les défis de la « haute intensité » : enjeu stratégique ou capacitaire ?"](https://www.defnat.com/pdf/cahiers/CAH081/3.%20Pesqueur_Tenenbaum%20%28AdT%202020%29.pdf). 2020.
 
 [^AWSCodePipeline]: AWS CodePipeline. _aws.amazon.com/codepipeline_.
 
