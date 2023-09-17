@@ -6,8 +6,10 @@ on:
 
 jobs:
 
+  # Only on main or PR to main
   check-404-links:
     name: Check for dead links
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.head_ref == 'refs/heads/main')
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
