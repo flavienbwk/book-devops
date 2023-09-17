@@ -13,7 +13,7 @@ An analytical study powered by ChatGPT to understand what's the common definitio
 
 ## Datasets
 
-- https://github.com/Mlawrence95/LinkedIn-Tech-Job-Data (jobs.csv)
+- [Mlawrence95/LinkedIn-Tech-Job-Data](https://github.com/Mlawrence95/LinkedIn-Tech-Job-Data) (jobs.csv)
 
 ## Run analysis with ChatGPT
 
