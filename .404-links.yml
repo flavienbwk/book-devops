@@ -20,11 +20,11 @@ ignore:
     - https://www.sec.gov/Archives/edgar/data/80424/000008042421000100/pg-20210630.htm # 403
     - https://ntia.gov/page/software-bill-materials # 403
     - https://openforumeurope.org/open-source-impact-study/ # Timeout (temporary ?)
-    - https://docs-ironbank.dso.mil/* # Timeout
-    - https://repo1.dso.mil/* # Timeout
-    - https://p1.dso.mil/* # Timeout
-    - https://software.af.mil/team/platformone/ # Timeout
-delay:
-  'https://gitlab.com': 500 # Perform a pause of 500ms at each call matching the url
+    - https://docs-ironbank.dso.mil/* # Timeout (protection)
+    - https://repo1.dso.mil/* # Timeout (protection)
+    - https://p1.dso.mil/* # Timeout (protection)
+    - https://software.af.mil/team/platformone/ # Timeout (protection)
+    - https://www.nirs.go.kr/eng/about/about_02.jsp # Timeout (time)
+delay:  # Perform a pause of X ms at each call matching the url
+  'https://gitlab.com': 500
   'https://gitlab.biterg.io': 1000
-  'https://docs-ironbank.dso.mil': 1000
