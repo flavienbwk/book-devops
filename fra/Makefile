@@ -101,15 +101,13 @@ $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
 	$(ECHO_BUILDING)
 	$(MKDIR_CMD) $(BUILD)/pdf
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(PDF_ARGS) -o $@
+	convert ./images/fourthcover_a5_source.png ./images/fourthcover_a5_source.pdf;
+	convert ./images/cover_a5_source.png ./images/cover_a5_source.pdf;
 	if [ -f ./images/cover_a5_source_preface.png ]; then \
 		convert ./images/cover_a5_source_preface.png ./images/cover_a5_source_preface.pdf; \
-		convert ./images/fourthcover_a5_source.png ./images/fourthcover_a5_source.pdf; \
 		pdftk ./images/cover_a5_source_preface.pdf $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf ./images/fourthcover_a5_source.pdf cat output $(BUILD)/pdf/book_covered_preface.pdf; \
-	else \
-		convert ./images/cover_a5_source.png ./images/cover_a5_source.pdf; \
-		convert ./images/fourthcover_a5_source.png ./images/fourthcover_a5_source.pdf; \
-		pdftk ./images/cover_a5_source.pdf $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf ./images/fourthcover_a5_source.pdf cat output $(BUILD)/pdf/book_covered.pdf; \
 	fi;
+	pdftk ./images/cover_a5_source.pdf $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf ./images/fourthcover_a5_source.pdf cat output $(BUILD)/pdf/book_covered.pdf;
 	$(ECHO_BUILT)
 
 $(BUILD)/docx/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)
