@@ -14,7 +14,7 @@ Il est de ces aventures qui ne sauraient aboutir sans la rigueur et le dévoueme
 
 À travers vos yeux experts, j'ai pu aiguiser chaque ligne, polir chaque mot. Votre soutien a été un pilier, une force silencieuse et indéfectible. Un grand merci pour votre temps, votre expertise et votre franche camaraderie.
 
-C'est parce-que cet écrit est aussi en partie le votre que je souhaitais le marquer du nom des contributeurs les plus acharnés. Toutefois, dans le but de préserver votre anonymat, j'ai choisi de n'inscrire que vos initiales. Merci BA, FT, MR, FC, FP, NK, AB, PB, AC, NP, NM, CH, EL et TF.
+C'est parce-que cet écrit est aussi en partie le votre que je souhaitais le marquer du nom des contributeurs les plus acharnés. Toutefois, dans le but de préserver votre anonymat, j'ai choisi de n'inscrire que vos initiales. Merci BA, FT, MR, FC, FP, NK, AB, AC, NP, NM, CH, EL, PB, AN et TF.
 
 \newpage
 
@@ -82,7 +82,7 @@ Initialement, le DevOps se concentrait sur la manière d'améliorer l'efficacit�
 
 Bien répandue aujourd'hui, des organisations de toute taille utilisent la méthodologie DevOps partout dans le monde et dans tout type de secteur[^GoogleCloudDevopsLeaders] (santé, finances, transports, gouvernements, industries lourdes...).
 
-Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant en 2007 pour le gouvernement belge, il lui avait été confié la migration d'un centre de données. Ayant passé un temps considérable à discuter avec les développeurs et les administrateurs systèmes, il aura fait le constat de ce que les réputés ingénieurs Andrew CLAY SHAFER et Lee THOMPSON thoériseront deux années plus tard comme le "mur de la confusion"[^WallofConfusion]. Une métaphore pouvant se résumer par des parties prenantes qui ne se comprennent pas.
+Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant en 2007 pour le gouvernement belge, il lui avait été confié la migration d'un centre de données. Ayant passé un temps considérable à discuter avec les développeurs et les administrateurs système, il aura fait le constat de ce que les réputés ingénieurs Andrew CLAY SHAFER et Lee THOMPSON thoériseront deux années plus tard comme le "mur de la confusion"[^WallofConfusion]. Une métaphore pouvant se résumer par des parties prenantes qui ne se comprennent pas.
 
 La communauté mettait un mot sur un vrai phénomène qui entrave la communication et la collaboration entre les équipes, entraînant un manque d'efficacité et des retards. En suivra la rédaction de son livre en 2015 « Le manuel du DevOps : comment créer des organisations technologiques agiles, fiables et sécurisées »[^TheDevopsHandbook]. DEBOIS y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser leurs objectifs grâce aux pratiques DevOps.
 
@@ -113,19 +113,19 @@ On qualifie de « DevOps » (_Development and Operations_) le mouvement organi
 
 Pour atteindre cet objectif, les ingénieurs pratiquant le DevOps ont pour mission de faciliter la communication et la collaboration entre les parties prenantes (développeurs, administrateurs système, équipes de sécurité, responsables projet et utilisateurs).
 
-Ils définissent les pratiques informatiques les plus pertinentes pour une organisation et étudient leur mise en place. En équipe, ils garantissent la cohérence des développements avec les exigences du déploiement. Aujourd'hui, ces profils s'orientent principalement vers l'emploi des technologies _Cloud_.
+Ils définissent les pratiques et outils informatiques les plus pertinents pour une organisation et étudient leur mise en place. En équipe, ils garantissent la cohérence des développements avec les exigences du déploiement. Aujourd'hui, ces profils s'orientent principalement vers l'emploi des technologies _Cloud_.
 
-Les pratiques DevOps s'inscrivent dans l'ensemble du panorama de la chaîne technique, en privilégiant des mécanismes automatisés pour le développement (intégration continue), le déploiement (déploiement continu) et la maintenance (supervision). Les bénéficiaires sont à la fois les équipes internes et les clients. Les premiers collaborent plus efficacement et de manière sécurisée, quand les seconds obtiennent plus rapidement un logiciel de meilleur qualité.
+Les pratiques DevOps s'inscrivent dans l'ensemble du panorama de la chaîne technique, en privilégiant l'usage de mécanismes automatisés pour le développement (cf. intégration continue), le déploiement (cf. déploiement continu) et la maintenance (cf. supervision). Les bénéficiaires sont à la fois les équipes internes et les clients. Les premiers collaborent plus efficacement et de manière sécurisée, tandis que les seconds obtiennent plus rapidement un logiciel de meilleure qualité.
 
 Ce poste implique la responsabilité d'accorder toutes les parties prenantes sur une méthode de travail commune. Il est donc important de disposer d'excellentes compétences en communication et en pédagogie, en particulier dans les organisations en transformation.
 
-L'ingénierie DevOps a pour rôle de sensibiliser l'ensemble des équipes de l'organisation aux problématiques de fiabilités des systèmes. Les ingénieurs les plus expérimentés arrivent à mettre en place les pratiques qui remplissent les exigences de résilience sans impacter la vélocité des développement.
+L'ingénierie DevOps a pour rôle de sensibiliser l'ensemble de l'organisation aux problématiques de fiabilités des systèmes. Les ingénieurs les plus expérimentés arrivent à mettre en place les pratiques qui remplissent les exigences de résilience sans impacter la vélocité des développements.
 
-Le "tout" est de trouver l'équilibre entre la complexité induite par les exigences de fiabilité/sécurité et le besoin de développer des nouvelles fonctionnalités.
+L'enjeu principal réside dans la capacité à trouver un équilibre entre la complexité induite par les exigences de fiabilité et de sécurité, et le besoin de développer des nouvelles fonctionnalités.
 
-Dans la suite de cet ouvrage, nous verrons que la mise en place du DevOps est propre à chaque organisation. Les méthodes et les outils pour parvenir à ses objectifs s'adaptent en fonction du niveau de maturité technique de l'organisation. Il n'y a donc pas de "recette unique" mais des "bonnes pratiques" à connaître et suivre.
+Dans la suite de cet ouvrage, nous verrons que la mise en place du DevOps est propre à chaque organisation. Pour parvenir à ces objectifs, les méthodes et les outils s'adaptent en fonction du niveau de maturité technique de l'organisation. Il n'y a donc pas de "recette unique" mais des "bonnes pratiques" à connaître et suivre.
 
-Tout comme il n'y a pas de recette unique, il n'y a pas de métier unique "d'ingénieur DevOps". Nous le verrons dans le chapitre ["Entre SRE et DevOps"](#entre-sre-et-devops).
+Tout comme il n'existe pas de recette unique, il n'existe pas de métier unique "d'ingénieur DevOps". Nous évoquerons ce sujet dans le chapitre ["Entre SRE et DevOps"](#entre-sre-et-devops).
 
 Si le terme DevOps devient de plus en plus populaire et commence à devenir courant dans les offres d'emploi, celui de _Site Reliability Engineering_ (SRE) est moins connu, en particulier en France.
 
@@ -137,15 +137,17 @@ Si le terme DevOps devient de plus en plus populaire et commence à devenir cour
 
 L'ingénierie de la fiabilité des systèmes (_Site Reliability Engineering_ ou SRE) est une discipline plus ancienne que le DevOps. Elle remonte à 2003 quand Ben TREYNOR SLOSS, alors ingénieur chez Google, fondait une équipe portant ce nom. Il sera le père fondateur de la SRE et des premières pratiques considérées "DevOps".
 
-Le _Site Reliability Engineer_ ou "Ingénieur de la Fiabilité des Systèmes" a la charge de concevoir, déployer et maintenir l'infrastructure qui met à disposition les services de l'entreprise. Il s'assure du bon fonctionnement du socle technique sur lequel sont déployés les logiciels, assure leur sécurité et garantit leur disponibilité auprès des clients.
+Le _Site Reliability Engineer_ ou "Ingénieur de la Fiabilité des Systèmes" a la charge de concevoir, déployer et maintenir l'infrastructure qui met à disposition les services de l'entreprise. Il s'assure du bon fonctionnement du socle technique sur lequel sont déployés les logiciels. Il en assure leur sécurité et garantit leur disponibilité auprès des clients.
 
 L'équipe SRE a donc la responsabilité de votre infrastructure informatique, souvent composée de plusieurs environnements : développement, qualification, pré-production (ou _staging_) et production. Elle tente de répondre à la question "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?".
 
 Les SRE utilisent les pratiques du monde de l'ingénierie logicielle pour administrer leurs infrastructures. Ils développent et déploient l'outillage permettant d'atteindre un objectif de résilience. En ce sens, la SRE intègre de nombreux aspects du DevOps (cf. chapitre ["Les 5 piliers du DevOps"](#les-cinq-piliers-du-devops)) mais se concentre sur l'automatisation de l'administration, ainsi que sur la mesure de la fiabilité des systèmes.
 
-L'entreprise les emploient principalement pour honorer son contrat de service (_Service Level Agreement_, cf. chapitre "[Indicateurs de résilience](#indicateurs-de-résilience)"). Dans le secteur privé, si la disponibilité du service tombe sous la valeur stipulée dans le contrat, l'entreprise est tenue de régler des pénalités.
+L'entreprise les emploient principalement pour honorer son contrat de service (_Service Level Agreement_, cf. chapitre "[Indicateurs de résilience](#indicateurs-de-résilience)"). Dans le secteur privé, si la disponibilité du service tombe sous la valeur stipulée dans le contrat (ex: sous les 99% de disponibilité mensuelle), l'entreprise est tenue de régler des pénalités.
 
-De manière simplifiée, l'entreprise donne pour mission au SRE de rendre son infrastructure plus résiliente. C'est à dire toujours plus disponible, plus stable. Le SRE tente de répondre à la question "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?". Les pratiques DevOps sont un excellent moyen d'atteindre cet objectif.
+De manière simplifiée, l'entreprise donne pour mission au SRE de rendre son infrastructure plus résiliente. C'est à dire toujours plus disponible, plus stable. Le SRE tente de répondre à la question suivante : "quelles sont les choses (outils, procédures, machines) que nous n'avons pas, et dont nous avons besoin pour atteindre notre objectif de résilience ?".
+
+Les pratiques DevOps sont un excellent moyen d'atteindre cet objectif. Voilà pourquoi les SREs les utilisent souvent au quotidien.
 
 ## Entre SRE et DevOps
 
@@ -153,23 +155,23 @@ Les définitions diffèrent selon les interlocuteurs. Alors que certains leaders
 
 Le fait est que les deux disciplines ont évolué et se chevauchent aujourd'hui sur de nombreux aspects : elles partagent l'objectif de déployer rapidement des logiciels fiables et efficaces.
 
-Cependant elles ne se concentrent pas historiquement sur les mêmes choses. Tandis que le DevOps est davantage axé vers l'efficacité du développement et la rapidité du déploiement (cf. CI/CD, tests automatisés, expérience développeur, collaboration interéquipes...), la SRE se concentre sur la fiabilité des systèmes en employant une approche plus méthodique (cf. SLI/SLO/SLA, budget d'erreur, déploiements _blue/green_, postmortems...).
+Cependant elles ne se concentrent pas totalement sur les mêmes choses. Tandis que le DevOps est davantage axé vers l'efficacité du développement et la rapidité du déploiement (cf. CI/CD, tests automatisés, expérience développeur, collaboration interéquipes...), la SRE se concentre sur la fiabilité des systèmes en employant une approche plus méthodique (cf. SLI/SLO/SLA, budget d'erreur, déploiements _blue/green_, postmortems...).
 
-Aujourd'hui, vous pouvez donc retrouver des "Ingénieurs DevOps" qui ne font pas de SRE mais l'inverse reste rare. Le DevOps étant une philosophie, ce terme est à employer comme un adjectif. Par exemple : "Ingénieur logiciel DevOps" ou "Administrateur système DevOps".
+Aujourd'hui, vous pouvez donc trouver des "Ingénieurs DevOps" qui ne font pas de SRE mais l'inverse reste rare. Le DevOps étant une philosophie, ce terme est à employer comme un adjectif. Par exemple : "Ingénieur logiciel DevOps" ou "Administrateur système DevOps".
 
-Regardons néanmoins ce qu'en dit le marché. En observant les offres d'emploi dans le domaine[^DevOpsDefinitionStudy], on remarque que celles titrées "Ingénieur DevOps" contiennent des missions très variées. Elles peuvent être :
+Regardons néanmoins ce qu'en dit le marché. En observant les offres d'emploi dans le domaine[^DevOpsDefinitionStudy], on remarque que celles titrées "Ingénieur DevOps" comportent des missions très variées. Elles peuvent être :
 
 - Orientées vers le développement : ingénierie logicielle, ingénierie système, ingénierie en assurance qualité[^QualityAssuranceBasics].
 - Orientées vers les opérations : administration système, ingénierie Cloud, ingénieur réseaux.
 - Orientées vers les deux : SRE, ingénierie en automatisation, ingénierie plateforme; tous les métiers de la chaîne logicielle (cf. chapitre "[Sécuriser sa chaîne logicielle](#sécuriser-sa-chaîne-logicielle)").
 
-En réalité, tous ces rôles permettent de mettre en pratique le DevOps. Mais chaque niveau dépend de la maturité et des moyens de l'organisation (fig. <spanc/>\ref{fig:devopsjobsevolution}).
+En réalité, tous ces rôles permettent de mettre en pratique le DevOps. Mais l'existence de chacun au sein d'une structure dépend de sa maturité et de ses moyens (fig. <spanc/>\ref{fig:devopsjobsevolution}).
 
 ![Schéma simplifié de l'évolution des métiers traditionnels vers un mode d'organisation DevOps.\label{fig:devopsjobsevolution}](images/devops_jobs.jpg)
 
-En résumé, on dit que la SRE utilise les méthodes DevOps[^HowSRERelatesToDevOps]. Le DevOps et la SRE ne sont donc ni deux méthodes qui s'opposent, ni deux méthodes identiques, mais deux disciplines qui vous aideront à faire tomber les barrières entre vos équipes, pour déployer plus rapidement des services de meilleure qualité et de manière plus sécurisée.
+En résumé, on dit que la SRE utilise les méthodes DevOps[^HowSRERelatesToDevOps]. Le DevOps et la SRE ne sont donc ni deux méthodes qui s'opposent, ni deux méthodes identiques, mais deux disciplines qui vous aideront à faire tomber les barrières entre vos équipes. Vous pourrez ainsi déployer plus rapidement et de manière plus sécurisée des services de meilleure qualité.
 
-Vous découvrirez dans ce livre les meilleures pratiques de ces deux disciplines, unifiées et décrites de manière adaptée aux institutions.
+Vous découvrirez dans ce livre les meilleures pratiques de ces deux disciplines unifiées, décrites de manière adaptée aux institutions.
 
 ## DevSecOps
 
