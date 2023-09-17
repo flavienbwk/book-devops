@@ -17,6 +17,7 @@
 <h4 align="center">:fr:</h4>
 <h3 align="center"><a href="./fra/README.md" alt="Accéder au livre en version française">Le DevOps pour transformer les institutions</a></h3>
 <p align="center"><i>Le guide des décideurs pragmatiques pour comprendre et agir.</i></p>
+<p align="center" style="color: gray; font-size: 0.9em;">Livre broché et ebook préfacés</p>
 
 <h4 align="center">:uk:</h4>
 <h3 align="center">Scaling Institutions with DevOps<sup><a href="#footnote-1">[1]</a></sup></h3>
@@ -26,9 +27,18 @@
 
 ## What is it ?
 
-This repo hosts a book about how to implement DevOps in large (and mainly public) organizations, written by an SRE/DevOps engineer : [me](https://berwick.fr). So I had to make it GitOps-compliant. I hope it will be community-driven over time to fill it with good resources or enhance some parts.
+This repository hosts a comprehensive guide to implementing DevOps in large organizations, addressing the challenges from fostering cultural shifts to navigating technical and HR transformations.
 
-While you will be able to order the physical version soon, this is the digital and interactive copy.
+_Scaling Institutions with DevOps_ was written from [my](https://berwick.fr) SRE/DevOps experience to benefit enthusiasts, mainly from the public sector, to overcome these technical and transformational challenges.
+
+As a DevOps advocate, I had to make this book GitOps-compliant, this is why it is hosted here. I hope it will be **community-driven** to fill it with good resources and make improvements as practices evolve. Please contribute through _Pull Requests_ and _Discussions_.
+
+Here are the different ways to access this writing :
+
+- [Markdown version (FR)](./fra/README.md)
+- [HTML version (FR)](https://book-devops.berwick.fr)
+- Ebook version (FR) (soon)
+- Hardcover book (FR) (soon)
 
 ## Summary
 
@@ -57,30 +67,46 @@ It automatically :
 
 This repo uses a [trunk-based git workflow](./fra/README.md#workflows-git) with releases automatically triggering optional actions.
 
-## Publishing
-
-This book has numerous lives. Let's make sure it reflects DevOps' state of the art practices at all times with your contributions.
-
-- "Source edition" : the original book, unique, exclusively written by the author
-- "Community edition(s)" : annual versions of the book including community contributions to improve it
-
 ## Supporting the author
 
 - ⭐ Star and share this repo
-- 📓 Buy the hardcover book (soon)
-- ☕ Sponsor
+- 📓 Buy the hardcover (including foreword) (soon)
+- 📘 Buy the digital (including foreword) (soon)
+- ❤️ Sponsor me
+
+## Contributions and publishing process
+
+This book has numerous lives. Let's make sure it reflects DevOps' state of the art practices at all times with **your** contributions.
+
+- **Source edition** (1.x.x) : the original book, unique, exclusively written by the author.
+- **Community edition(s)** (>1.x.x) : annual versions of the book including community contributions to improve it.
+
+## Licenses
+
+- **Source edition** : Copyright © 2023 Flavien BERWICK
+- **Community edition(s)** : GNU General Public License v3.0 + Commons Clause License
+
+    <details>
+    <summary>Details about the community license.</summary>
+
+    After the initial source edition' hard cover book gets publicated and as soon as there are accepted contributions to this repo's writing (`fra/README.md` or `eng/README.md`) through a pull request, the license will be updated to [GNU General Public License v3.0](https://choosealicense.com/licenses/gpl-3.0/) + [Commons Clause License](https://commonsclause.com/).
+
+    The Commons Clause License was added so any book version officially published totally reflects community's contributions, with no parts adapted or removed by someone trying to partially publish it.
+
+    What this means is that you can use this project (blogs, podcasts, presentations), while citing its source, but not sell it as-is in a (e)book.
+
+    The name in the GitHub profile of contributors will be published if granted. To grant authorization to include your name, please include the following sentence in the description of your _Pull Request_ : "I hereby declare allowing the original author of the book publishing the following edition of this book with my contribution and name.". If you want to be published with another name that your GitHub's one, please specify it at the same place.
+    </details>
 
 ## Book generation
 
-This repository has [automatic](.github/workflows/render.yml) PDF, HTML and EPUB generation thanks to Pandoc.
+This repository has [automatic](.github/workflows/render.yml) PDF and HTML generation from Markdown files thanks to Pandoc.
 
 ```bash
 cd ./fra && make pdf && cd -
 ```
 
-## License
-
-Copyright © 2023 Flavien BERWICK
+- Other formats available : EPUB (requires you to clone this repo or buy the digital version to support the author).
 
 ## Useful VSCode extensions when writing
 
