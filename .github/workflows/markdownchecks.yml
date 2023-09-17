@@ -7,7 +7,7 @@ on:
 jobs:
 
   check-404-links:
-    name: Check for 404 links
+    name: Check for dead links
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
