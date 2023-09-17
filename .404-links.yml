@@ -1,0 +1,30 @@
+folder: fra/ # The folder that required to be parsed
+httpsOnly: false # If you want enforce only HTTPS links
+pullRequestReview: false # If you want a nice review in your pull requests
+ignore: 
+  urls: # Array of url to ignore
+    - https://berwick.fr/ # 403
+    - https://links.berwick.fr/* # 403
+    - https://dl.acm.org/* # 403
+    - https://doi.org/* # 403
+    - https://www.cairn.info/* # 403
+    - https://rootly.com/ # 403
+    - https://www.sciencedirect.com/topics/neuroscience/root-cause-analysis # 403
+    - https://www.ssi.gouv.fr/* # 403
+    - https://www.researchgate.net/publication/266394032_A_Theory_of_Blame # 403
+    - https://www.cloudflare.com/learning/access-management/castle-and-moat-network-security/ # 403
+    - https://www.ncia.nato.int/about-us/newsroom/the-nci-agencye28099s-software-factory-a-new-way-to-collaborate-with-industry.html # 403
+    - https://gitlab.com/gitlab-org/gitlab/-/value_stream_analytics # Replaced by new concept https://docs.gitlab.com/ee/user/analytics/value_streams_dashboard.html
+    - https://gitlab.biterg.io/app/kibana#/dashboard/3e297c20-622c-11e9-8638-c11f0f1aa3fa # 403
+    - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7959608/ # 403
+    - https://www.sec.gov/Archives/edgar/data/80424/000008042421000100/pg-20210630.htm # 403
+    - https://ntia.gov/page/software-bill-materials # 403
+    - https://openforumeurope.org/open-source-impact-study/ # Timeout (temporary ?)
+    - https://docs-ironbank.dso.mil/* # Timeout (protection)
+    - https://repo1.dso.mil/* # Timeout (protection)
+    - https://p1.dso.mil/* # Timeout (protection)
+    - https://software.af.mil/team/platformone/ # Timeout (protection)
+    - https://www.nirs.go.kr/eng/about/about_02.jsp # Timeout (time)
+delay:  # Perform a pause of X ms at each call matching the url
+  'https://gitlab.com': 500
+  'https://gitlab.biterg.io': 1000

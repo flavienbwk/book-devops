@@ -1,14 +1,14 @@
-####################################################################################################
-# Configuration
-####################################################################################################
-
 # Build configuration
 
 BUILD = build
 MAKEFILE = Makefile
 OUTPUT_FILENAME = book
 METADATA = metadata.yml
-CHAPTERS = ./README.md # was ./*.md
+ifneq ($(wildcard ./PREFACE.md),)
+    CHAPTERS = ./PREFACE.md ./README.md
+else
+    CHAPTERS = ./README.md
+endif
 TOC = --toc --toc-depth 2
 METADATA_ARGS = --metadata-file $(METADATA)
 IMAGES = $(shell find images -type f)
@@ -67,10 +67,6 @@ RMDIR_CMD = rm -r
 ECHO_BUILDING = @echo "building $@..."
 ECHO_BUILT = @echo "$@ was built\n"
 
-####################################################################################################
-# Basic actions
-####################################################################################################
-
 .PHONY: all book clean epub html pdf docx
 
 all:	book
@@ -79,10 +75,6 @@ book:	epub html pdf docx
 
 clean:
 	$(RMDIR_CMD) $(BUILD)
-
-####################################################################################################
-# File builders
-####################################################################################################
 
 epub:	$(BUILD)/epub/$(OUTPUT_FILENAME).epub
 
@@ -109,9 +101,13 @@ $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
 	$(ECHO_BUILDING)
 	$(MKDIR_CMD) $(BUILD)/pdf
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(PDF_ARGS) -o $@
-	convert ./images/cover_a5_source.png ./images/cover_a5_source.pdf
-	convert ./images/fourthcover_a5_source.png ./images/fourthcover_a5_source.pdf
-	pdftk ./images/cover_a5_source.pdf $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf ./images/fourthcover_a5_source.pdf cat output $(BUILD)/pdf/book_covered.pdf
+	convert ./images/fourthcover_a5_source.png ./images/fourthcover_a5_source.pdf;
+	convert ./images/cover_a5_source.png ./images/cover_a5_source.pdf;
+	if [ -f ./images/cover_a5_source_preface.png ]; then \
+		convert ./images/cover_a5_source_preface.png ./images/cover_a5_source_preface.pdf; \
+		pdftk ./images/cover_a5_source_preface.pdf $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf ./images/fourthcover_a5_source.pdf cat output $(BUILD)/pdf/book_covered_preface.pdf; \
+	fi;
+	pdftk ./images/cover_a5_source.pdf $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf ./images/fourthcover_a5_source.pdf cat output $(BUILD)/pdf/book_covered.pdf;
 	$(ECHO_BUILT)
 
 $(BUILD)/docx/$(OUTPUT_FILENAME).docx:	$(DOCX_DEPENDENCIES)
