@@ -24,7 +24,9 @@ _La transparence me semble essentielle dans tout travail de recherche et d'écri
 
 \newpage
 
+<!-- markdownlint-disable MD045 -->
 ![](./images/blank.png)
+<!-- markdownlint-enable MD045 -->
 
 \newpage
 
