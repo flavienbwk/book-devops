@@ -38,6 +38,7 @@ Here are the different ways to access this writing :
 - [Markdown version (FR)](./fra/README.md)
 - [HTML version (FR)](https://book-devops.berwick.fr)
 - Ebook version (FR) (soon)
+- Paperback book (FR) (soon)
 - Hardcover book (FR) (soon)
 
 ## Summary
@@ -70,8 +71,8 @@ This repo uses a [trunk-based git workflow](./fra/README.md#workflows-git) with 
 ## Supporting the author
 
 - ⭐ Star and share this repo
-- 📓 Buy the hardcover (including foreword) (soon)
-- 📘 Buy the digital (including foreword) (soon)
+- 📓 Buy the paperback or hardcover book (including foreword) (soon)
+- 📘 Buy the ebook (including foreword) (soon)
 - ❤️ Sponsor me
 
 ## Contributions and publishing process
