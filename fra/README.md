@@ -2865,7 +2865,7 @@ Chacune de ces spécialités est un moyen d'optimiser vos pratiques DevOps et do
 
 Ce chapitre répertorie des exemples de fiches de postes dans le domaine du DevOps.
 
-Pour éviter de perdre de temps et limiter les mauvais recrutements, votre objectif organisationnel doit être clairement défini.
+Pour éviter de perdre du temps et limiter les mauvais recrutements, votre objectif organisationnel doit être clairement défini.
 
 S'il n'est pas bien défini, la fiche de poste risque de devenir un fourre-tout de tâches techniques qui pourraient occuper une équipe d'ingénieurs complète. Vous risquez alors de passer pour une organisation peu mature et risquez de repousser les meilleurs candidats.
 
