@@ -25,6 +25,9 @@ ignore:
     - https://p1.dso.mil/* # Timeout (protection)
     - https://software.af.mil/team/platformone/ # Timeout (protection)
     - https://www.nirs.go.kr/eng/about/about_02.jsp # Timeout (time)
+    - https://publications.gc.ca/site/eng/9.843397/publication.html # Timeout (time)
+    - https://dodcio.defense.gov/library/ # Timeout
+    - https://www.nic.in/servicecontents/national-cloud # 503
 delay:  # Perform a pause of X ms at each call matching the url
   'https://gitlab.com': 500
   'https://gitlab.biterg.io': 1000
