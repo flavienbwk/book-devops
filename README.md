@@ -37,9 +37,9 @@ Here are the different ways to access this writing :
 
 - [Markdown version (FR)](./fra/README.md)
 - [HTML version (FR)](https://book-devops.berwick.fr)
-- Ebook version (FR) (soon)
-- Paperback book (FR) (soon)
-- Hardcover book (FR) (soon)
+- [Ebook version](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques-ebook/dp/B0CKHV5QB7) (FR)
+- [Paperback book](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques/dp/B0CKJ6SLV3) (FR)
+- [Hardcover book](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques/dp/B0CKJ651K9) (FR)
 
 ## Summary
 
@@ -71,8 +71,8 @@ This repo uses a [trunk-based git workflow](./fra/README.md#workflows-git) with 
 ## Supporting the author
 
 - ⭐ Star and share this repo
-- 📓 Buy the paperback or hardcover book (including foreword) (soon)
-- 📘 Buy the ebook (including foreword) (soon)
+- 📓 Buy the [paperback](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques/dp/B0CKJ6SLV3) or [hardcover](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques/dp/B0CKJ651K9) book (including foreword)
+- 📘 Buy the [ebook](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques-ebook/dp/B0CKHV5QB7) (including foreword)
 - ❤️ Sponsor me
 
 ## Contributions and publishing process
