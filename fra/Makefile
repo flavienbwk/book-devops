@@ -63,7 +63,7 @@ OS = $(shell sh -c 'uname -s 2>/dev/null || echo Unknown')
 ifeq ($(OS),Darwin) # Mac OS X
 	COPY_CMD = cp -P
 else # Linux
-	COPY_CMD = cp --parent
+	COPY_CMD = rsync -vrP --exclude "*.psd" --exclude "*.pdf" --exclude "*.bkp" --exclude "*.dtmp" --exclude "*.drawio" --ignore-missing-args
 endif
 
 MKDIR_CMD = mkdir -p
@@ -96,9 +96,9 @@ $(BUILD)/epub/$(OUTPUT_FILENAME).epub:	$(EPUB_DEPENDENCIES)
 
 $(BUILD)/html/index.html:	$(HTML_DEPENDENCIES)
 	$(ECHO_BUILDING)
-	$(MKDIR_CMD) $(BUILD)/html
+	$(MKDIR_CMD) $(BUILD)/html/images
 	$(CONTENT) | $(CONTENT_FILTERS) | $(PANDOC_COMMAND) $(ARGS) $(HTML_ARGS) -o $@
-	$(COPY_CMD) $(IMAGES) $(BUILD)/html/
+	$(COPY_CMD) $(IMAGES) $(BUILD)/html/images/
 	$(ECHO_BUILT)
 
 $(BUILD)/pdf/$(OUTPUT_FILENAME).pdf:	$(PDF_DEPENDENCIES)
