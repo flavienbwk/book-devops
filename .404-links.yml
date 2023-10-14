@@ -28,6 +28,8 @@ ignore:
     - https://publications.gc.ca/site/eng/9.843397/publication.html # Timeout (time)
     - https://dodcio.defense.gov/library/ # Timeout
     - https://www.nic.in/servicecontents/national-cloud # 503
+    - https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy # Timeout
+    - https://www.defense.gouv.fr/ema/actualites/voeux-du-chef-detat-major-armees # Timeout
 delay:  # Perform a pause of X ms at each call matching the url
   'https://gitlab.com': 500
   'https://gitlab.biterg.io': 1000
