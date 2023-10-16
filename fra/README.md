@@ -313,7 +313,7 @@ Ceci dit, Google a perçu les écueils d'une absence de prise de risque et trava
 - **Encourager la prise de risque et l'expérimentation** : encourager ses équipes à proposer de nouvelles idées et à tester des projets pour explorer de nouvelles technologies. Récompenser la prise de risque.
 - **Investir dans l'innovation** : allouer des ressources suffisantes pour la recherche et développement (R&D). Par exemple, accorder 1 jour de télétravail par semaine à ses experts, pour qu'ils explorent une technologie innovante. Accorder des financements à ses équipes pour acheter le matériel leur permettant d'expérimenter, ou bien leur donner accès à un hébergeur Cloud (cf. chapitre "[Former de manière continue](#former-de-manière-continue)").
 
-Plus pragmatiquement, si vous décidez de monter votre propre équipe, il se peut que certains membres quittent votre structure à tout instant. Au vu de la maturité des réflexions qu'ils entreprenaient, ils risquent alors de laisser derrière eux un travail fastidieux à reprendre. Voilà pourquoi beaucoup d'organisations préfèrent faire appel à un tiers-partie, avec un cahier des charges bien définit pour que le décideur soit certain d'obtenir un résultat (au travers de l'obligation contractuelle du tiers-partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique peut avoir des conséquences néfastes à long terme pour l'organisation.
+Plus pragmatiquement, si vous décidez de monter votre propre équipe, il se peut que certains membres quittent votre structure à tout instant. Au vu de la maturité des réflexions qu'ils entreprenaient, ils risquent alors de laisser derrière eux un travail fastidieux à reprendre. Voilà pourquoi beaucoup d'organisations préfèrent faire appel à une tierce partie, avec un cahier des charges bien définit pour que le décideur soit certain d'obtenir un résultat (au travers de l'obligation contractuelle de la tierce partie). Nous verrons dans le chapitre "[Être au plus proche du métier](#être-au-plus-proche-du-métier)" que cette pratique peut avoir des conséquences néfastes à long terme pour l'organisation.
 
 Les évolutions organisationnelles impliquent toujours un changement culturel qu'il faut savoir appréhender. Ce fossé culturel est parfois trop difficile à surmonter pour l'organisation toute entière et cela indique qu'il est probablement encore trop tôt pour exposer votre plan. Acculturez-la au moyen de présentations et d'exemples de réussites. Le décideur doit comprendre clairement l'impact que peut avoir cette transformation et les risques associés : rupture de service, changement de stratégie RH, formation du personnel ou encore achat de matériel. Aidez vos responsables à se projeter pendant que vous travaillez à construire vos preuves.
 
@@ -708,7 +708,7 @@ Dans un premier temps, nous découvrirons les techniques et outils utilisés pou
 
 #### SCA
 
-Les pratiques SSI au sein des grandes organisation requièrent souvent que tout logiciel déployé soit homologué. Le document d'homologation doit lister les dépendances utilisées dans le logiciel : les librairies tiers-partie sur lesquelles il se base. Cette liste se nomme le _Software Bill of Materials_ (SBOM[^SBOM]) ou "Nomenclature du logiciel" en français.
+Les pratiques SSI au sein des grandes organisation requièrent souvent que tout logiciel déployé soit homologué. Le document d'homologation doit lister les dépendances utilisées dans le logiciel : les librairies tierce partie sur lesquelles il se base. Cette liste se nomme le _Software Bill of Materials_ (SBOM[^SBOM]) ou "Nomenclature du logiciel" en français.
 
 Le SBOM permet de rapidement répondre à des questions comme "Sommes-nous affecté ?" ou "Où est utilisée cette librairie dans nos logiciels ?", lorsqu'une nouvelle faille est découverte. Dans une approche DevOps, les librairies utilisées dans un logiciel changent au cours du temps. Une librairie ou une technologie utilisée un jour sera peut-être remplacée demain. Vous ne pouvez donc pas demander aux développeurs de lister manuellement ces centaines (voire milliers) de dépendances utilisées dans leurs logiciels.
 
@@ -853,7 +853,7 @@ L'objectif de GitHub est de faire en sorte que protéger son code ne nécessite 
 
 L'entreprise a opéré un virage stratégique en faisant l'acquisition en 2019 de _Semmle_, un outil d'analyse des vulnérabilités dans le code. Depuis, elle propose plusieurs moyens de sécuriser sa base de code :
 
-- **SCA et SAST** : outils d'analyse automatisée de vulnérabilités dans le code source et ses dépendances (ex: injections SQL, faille XSS, erreurs de configuration et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tiers-parties. Vous pouvez ajouter vos propres règles en écrivant des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _GitHub Code Scanning_ (fig. <spanc/>\ref{fig:code-scanning-github}), _Klocwork_ ou encore _Checkov_.
+- **SCA et SAST** : outils d'analyse automatisée de vulnérabilités dans le code source et ses dépendances (ex: injections SQL, faille XSS, erreurs de configuration et autres vulnérabilités communes). GitHub inclut également une _marketplace_ permettant d'ajouter des analyseurs de code provenant de tierces-parties. Vous pouvez ajouter vos propres règles en écrivant des fichiers _CodeQL_. Vous pouvez mettre en place ces outils sur votre infrastructure, par exemple avec _GitHub Code Scanning_ (fig. <spanc/>\ref{fig:code-scanning-github}), _Klocwork_ ou encore _Checkov_.
 
     ![Exemple de vulnérabilité détectée par Code Scanning sur un projet GitHub.\label{fig:code-scanning-github}](./images/2020_code-scanning-github.png)
 
@@ -976,7 +976,7 @@ Il existe plusieurs moyens d'adresser la problématique des environnements de d�
 3. Machines entièrement contrôlées avec environnement de développement cloud éphémère type CodeSpace[^CodeSpace], Coder[^CoderCloud] ou Eclipse Che[^EclipseChe].
    - Cas : vous fournissez et configurez des postes de travail connectés en réseau
 4. Machines entièrement contrôlées avec VM de développement distante (ex: Shadow[^Shadow], Azure VM)
-   - Cas : vous avez accès à une infrastructure cloud gérable à distance par un tiers-partie de confiance.
+   - Cas : vous avez accès à une infrastructure cloud gérable à distance par une tierce partie de confiance.
    - Exemple : En 2014, Sogeti annonça la création de OneShare : une plateforme DevOps permettant à ses ingénieurs de créer des environnements de développement et de test, sur des VMs basées sur des _templates_ (incluant l'outillage de développement)[^SogetiDevOpsMicrosoft].
    - Remarque : Ces VMs doivent dans l'idéal inclure de l'outillage de développement. Ce moyen peut suffire si vos VMs ont accès à Internet pour faire des transferts de données et si vos postes sont reliés à la fibre. Sinon, cet environnement est absolument déconseillé.
 5. Machines entièrement contrôlées avec VM de développement locale
@@ -1076,7 +1076,7 @@ Par exemple le navigateur _Firefox_, le langage de programmation _Python_ ou le 
 
 Néanmoins, là où l'usage de l'open-source dans le privé est une évidence, les équipes techniques au sein de grandes organisations se confrontent parfois à la réticence de responsables de projet méfiants. Ces équipes sont mises au défi vis-à-vis de leur utilisation des technologies open-source sur base de préoccupations de sécurité.
 
-Cette mise en doute n'est pas dénuée de sens. L'idée d'importer la librairie d'un tiers-partie au sein de son système d'information et sans même regarder ce qu'il contient peut sembler risqué. Les risques peuvent être les suivants :
+Cette mise en doute n'est pas dénuée de sens. L'idée d'importer la librairie d'une tierce partie au sein de son système d'information et sans même regarder ce qu'elle contient peut sembler risqué. Les risques peuvent être les suivants :
 
 - Une librairie supprimant arbitrairement des données
 - Une librairie transmettant des données à un serveur distant (données logicielles, télémétrie)
@@ -1293,7 +1293,7 @@ Plusieurs méthodes ont émergé au cours du temps[^TrunkBaseDevHistory] mais il
     ![Exemple de Gitflow. Source : fpy.cz (Filip PYTLOUN).\label{fig:gitflow}](./images/gitflow.png)
 
 - **_GitHub flow_ / _GitLab flow_** : Cette méthode élimine la complexité apportée par le _Gitflow_ en supprimant ses 5 branches parallèles à la branche principale (fig. <spanc/>\ref{fig:gitlab-flow}).
-  
+
     Un développeur doit créer une branche par nouvelle fonctionnalité, à partir de la branche principale. Une _release_ peut être créée à n'importe quel moment à partir de la branche principale. Au delà de sa simplicité, l'intérêt est d'avoir une branche qui contient un code fonctionnel en permanence et de savoir qu'il est à jour à tout moment.
 
     ![Exemple de flow GitLab. Source : gitlab.com.\label{fig:gitlab-flow}](./images/gitlab-flow.png)
@@ -2092,7 +2092,7 @@ Il n'est pas obligatoire de créer le logiciel de A à Z avant de le confronter 
 
 Une bonne culture s'entretient par la connaissance des techniques à l'état de l'art. Les compétences techniques de vos équipes constituent le terreau de votre organisation et forgent leur confiance à l'égard de votre résilience.
 
-La formation continue est un moyen simple d'éviter à votre organisation de perdre des millions d'euros chaque année. En effet, si votre personnel reste formé à l'état de l'art des technologies, ils sera moins susceptibles de se faire duper par des tiers-parties. Ces derniers arrivent souvent promettre "la solution idéale" au travers de présentations flatteuses et particulièrement ambitieuses. Des présentations qui ne manquent pas de cacher, la plupart du temps, un service non abouti ou complètement déficient. En restant à jour, vos collaborateurs prendront de meilleures décisions pour votre porte monnaie et le futur de votre organisation.
+La formation continue est un moyen simple d'éviter à votre organisation de perdre des millions d'euros chaque année. En effet, si votre personnel reste formé à l'état de l'art des technologies, ils sera moins susceptibles de se faire duper par des tierces parties. Ces dernières arrivent souvent à promettre "la solution idéale" au travers de présentations flatteuses et particulièrement ambitieuses. Des présentations qui ne manquent pas de cacher, la plupart du temps, un service non abouti ou complètement déficient. En restant à jour, vos collaborateurs prendront de meilleures décisions pour votre porte monnaie et le futur de votre organisation.
 
 Mais garder le rythme n'est pas simple, surtout à la vitesse à laquelle les technologies évoluent. Raison de plus pour mettre en place de bonnes pratiques de formation dès l'arrivée de vos collaborateurs.
 
@@ -2102,7 +2102,7 @@ L'_United States Air Force_ (USAF) s'est mise depuis 2019 en ordre de bataille e
 
 > « C'est _(la formation est)_ un investissement pour l'entreprise et pour eux-mêmes. Les gens qui ne veulent pas apprendre d'eux-même n'ont pas beaucoup de chance de réussir en informatique. De toute façon, l'industrie bouge tellement vite qu'ils n'ont pas le choix. » - Nicolas CHAILLAN
 
-À l'instar de l'USAF, la solution suivante avait bien fonctionné dans l'une de mes dernières expériences : nous avions réussi à obtenir un jour de télétravail par semaine. Le faire accepter à nos responsables n'était pas simple, mais ils ont fini par l'accorder après un temps certain à leur en faire comprendre le bien-fondé. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillé et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière permettait à notre hiérarchie de visualiser les statistiques sur le temps passé à se former et les cours achevés. Le coût de ces deux services était minime par rapport à toutes les connaissances qu'ils nous conféraient.
+À l'instar de l'USAF, la solution suivante avait bien fonctionné dans l'une de mes dernières expériences : nous avions réussi à obtenir un jour de télétravail par semaine. Le faire accepter à nos responsables n'était pas simple, mais ils ont fini par l'accorder après un temps certain à leur en faire comprendre le bien-fondé. Ce jour était dédié à notre formation continue en tant qu'expert en IA, data et DevOps. Mais nous étions outillés et nos progrès pouvaient être mesurés : un accès quasi-illimité à un service Cloud et à une plateforme de _e-learning_. Cette dernière permettait à notre hiérarchie de visualiser les statistiques sur le temps passé à se former et les cours achevés. Le coût de ces deux services était minime par rapport à toutes les connaissances qu'ils nous conféraient.
 
 Si vous avez déjà des équipes techniques à votre main, donnez leur la possibilité d'expérimenter, de pratiquer. C'est ce que j'ai observé de plus efficace (donc rentable) pour l'organisation : investissez du temps dans la formation de votre personnel. Par exemple, donnez-leur accès à des machines ou des hébergeurs Cloud pour expérimenter les dernières innovations du privé ou issues de l'open-source. Vos équipes seront ravies d'avoir accès à ces services, pendant que la direction sera assurée d'être conseillée au mieux, grâce à des collaborateurs à jour.
 
@@ -2145,8 +2145,8 @@ Cette pratique comporte plusieurs avantages :
 
 - **Documentation** : les scripts d'IaC sont écrits dans des langages de programmation ou à l'aide de fichiers de configuration standardisés. L'ingénieur consultant le projet peut directement voire comment se comporte la configuration et comment il peut l'utiliser ou la modifier.
 - **Fiabilité** : les scripts d'IaC peuvent être lancés par des machines ou des humains, selon l'environnement souhaité (développement, staging, production) en suivant des règles algorithmiques. Il n'y a rien de plus fiable qu'un code exécuté par une machine plutôt qu'un humain. Il est également possible d'appliquer un contrôle de sécurité selon l'utilisateur qui lance ces scripts.
-- **Rejeux** : tout script d'IaC se doit d'être idempotent, c'est-à-dire que lancer un ou plusieurs fois le même script doit produire le même effet sur l'infrastructure. Il est donc plus rapide de développer et modifier ce genre de scripts vis-à-vis de scripts traditionnels.
-- **Versionnage** : les scripts d'IaC – comme tout autre algorithme – peuvent être versionnés. Cela permet de traquer leurs modifications au cours du temps et d'être critiqués par l'ensemble des équipes techniques au cours du temps.
+- **Rejeux** : tout script d'IaC se doit d'être idempotent, c'est-à-dire que lancer une ou plusieurs fois le même script doit produire le même effet sur l'infrastructure. Il est donc plus rapide de développer et modifier ce genre de scripts vis-à-vis de scripts traditionnels.
+- **Versionnage** : les scripts d'IaC – comme tout autre algorithme – peuvent être versionnés. Cela permet de traquer leurs modifications et d'être critiqués par l'ensemble des équipes techniques au cours du temps.
 
 Des exemples courants de technologies permettant de réaliser ces actions sont : Ansible, Terraform, Puppet ou encore SaltStack.
 
@@ -2164,7 +2164,7 @@ Gardez en tête que maintenir une infrastructure est une tâche complexe, donc _
 
 ### Développement piloté par tests
 
-Le développement piloté par tests (ou _test-driven development_ (TDD) en anglais) est une pratique de développement logiciel qui remonte [au début des années 2000](https://en.wikipedia.org/wiki/Test-driven_development). L'objectif est de maîtriser l'érosion d'un logiciel[^SoftwareErosion]. C'est à dire éviter la régression du logiciel et maîtriser sa dette technique au cours du temps. Ou dit plus simplement : éviter les bugs à mesure que les contributions s'accumulent.
+Le développement piloté par tests (ou _test-driven development_ (TDD) en anglais) est une pratique de développement logiciel qui remonte [au début des années 2000](https://en.wikipedia.org/wiki/Test-driven_development). L'objectif est de maîtriser l'érosion d'un logiciel[^SoftwareErosion], c'est à dire éviter sa régression et maîtriser sa dette technique au cours du temps. Ou dit plus simplement : éviter les bugs à mesure que les contributions s'accumulent.
 
 L'idée est de coder les tests avant de développer sa fonctionnalité. Le cycle de développement en TDD est le suivant[^BeckKentTDDBook] :
 
@@ -2286,7 +2286,7 @@ Les journaux d'activité (_logs_), les métriques (_metrics_) et les traces (_tr
 
 L'observabilité est un sujet très vaste dans le domaine de la fiabilité des systèmes[^DistributedSystemsObservabilityBook]. Nous ne survolerons que les essentiels dans ce chapitre.
 
-Le domaine de l'observabilité peut être résumé comme l'ensemble des outils et des pratiques permettant aux ingénieurs de détecter, diagnostiquer et résoudre les problèmes d'un système (bugs, lenteurs, disponibilité), le plus rapidement possible. Au delà du besoin de résilience, la récolte de certaines de ces données est parfoise requise par la loi[^ANSSIGuideJournalisation].
+Le domaine de l'observabilité peut être résumé comme l'ensemble des outils et des pratiques permettant aux ingénieurs de détecter, diagnostiquer et résoudre les problèmes d'un système (bugs, lenteurs, disponibilité), le plus rapidement possible. Au delà du besoin de résilience, la récolte de certaines de ces données est parfois requise par la loi[^ANSSIGuideJournalisation].
 
 Examinons de plus près ce que chacune de ces données peut nous apprendre :
 
@@ -2323,7 +2323,7 @@ Pour mieux se représenter la temporalité de la requête, les _logs_ d'une _tra
 
 ![Exemple de trace traitée par Jaeger pour un appel API entre un client et un serveur. Les espacements entre les spans bleues et orange sont dus au temps que prend la communication HTTP entre les deux services. Il n'y a pas de log émis à ce moment.\label{fig:2022_jaeger_trace}](./images/2022_jaeger_trace.png)
 
-Les traces sont indépendamment remontées par des librairies comme le SDK d'OpenTelemetry. Ces dernières les envoit à un collecteur de traces comme Jaeger, Tempo ou Zipkin pour qu'elles soient validées, nettoyées et/ou enrichies. Elles sont ensuite stockées dans des serveurs de logs centralisés, comme Prometheus ou Elasticsearch. L'identifiant de la trace nous permet de retrouver la chronologie des opérations par lesquelles elle est passé.
+Les traces sont indépendamment remontées par des librairies comme le SDK d'OpenTelemetry. Ces dernières les envoit à un collecteur de traces comme Jaeger, Tempo ou Zipkin pour qu'elles soient validées, nettoyées et/ou enrichies. Elles sont ensuite stockées dans des serveurs de logs centralisés, comme Prometheus ou Elasticsearch. L'identifiant de la trace nous permet de retrouver la chronologie des opérations par lesquelles elle est passée.
 
 Le plus grand défi du traçage est son intégration au sein d'une infrastructure existante. En effet, pour que les traces soient pleinement utiles, il faut que chaque composant par lequel passe la requête émette un log et propage les informations de traçage à son tour. Moins précis que s'il était directement intégré à un logiciel, le traçage via _service mesh_ peut être un moyen rapide de disposer des fonctionnalités de traçage sans avoir à modifier le code de ses logiciels[^ServiceMeshTraces]. Nous verrons ce qu'est un _service mesh_ et comment cette technologie fonctionnent dans le chapitre "[Service mesh](#service-mesh)".
 
@@ -2335,7 +2335,7 @@ En mettant en place des mécanismes d'observabilité, vous pourrez répondre plu
 
 ### Savoir quand innover et quand s'arrêter
 
-A première vue, il n'est pas évident de savoir où mettre le curseur entre les travaux de résilience et d'innovation. L'idée est donc de mesurer l'état des services pour savoir quand on s'autorise à innover.
+À première vue, il n'est pas évident de savoir où mettre le curseur entre les travaux de résilience et d'innovation. L'idée est donc de mesurer l'état des services pour savoir quand on s'autorise à innover.
 
 Mesurer est une chose, mais encore faut-il mesurer les bonnes choses, au bon niveau. Dans une infrastructure distribuée, l'un des serveurs peut tomber en panne sans nécessairement impacter la disponibilité d'un logiciel pour vos clients. Mesurer la disponibilité d'un serveur est peut-être intéressant pour vos techniciens, mais peut-être n'est-elle pas la bonne mesure pour connaître l'impact du dysfonctionnement sur l'utilisateur. C'est cela que votre organisation doit définir :
 
@@ -2591,7 +2591,7 @@ Grâce aux CRDs[^CRD] ou en déployant les configurations Helm[^Helm] d'outils _
 
     ![Interface web de Hashicorp Vault permettant de manipuler les secrets utilisés au sein d'une infrastructure.\label{fig:hashicorp_vault_ui}](./images/hashicorp_vault_ui.png)
 
-7. Sauvegarde automatique des volumes persistants (cf. [Valero](https://velero.io/docs/v1.10/))
+7. Sauvegarde automatique des volumes persistants (cf. [Velero](https://velero.io/docs/v1.10/))
 
 8. Chiffrement des flux réseau entre les conteneurs (cf. chapitre "[Service mesh](#service-mesh)", fig. <spanc/>\ref{fig:istio_kiali_tls_communication})
 
