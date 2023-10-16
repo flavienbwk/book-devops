@@ -2449,7 +2449,7 @@ L'accord de niveau de service (_Service Level Agreement_ ou SLA) est un contrat 
 - En dessous de 99.5% de disponibilité, AWS commence à rembourser ses clients [d'instances _EC2_](https://aws.amazon.com/compute/sla). Entre 99.9% et 99% de disponibilité, le client est remboursé à hauteur de 10% des dépenses. En dessous de 95%, il est remboursé à 100%.
 - En dessous de 99.9% de disponibilité, Microsoft commence à rembourser ses [clients _Teams_](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=13). En dessous de 99.9%, le client obtient un avoir à hauteur de 25% de ses dépenses. En dessous de 95%, il obtient un avoir pour 100% de ses dépenses.
 
-Les SLAs ne sont pas rendus obligatoires en France par la loi. Néanmoins ils peuvent faire partie de votre contrat de service, pour clarifier vos engagements et éviter les litiges. En effet, il est toujours préférable de lister des conditions claires pour lesquelles vous et votre client vous êtes engagés. Les SLAs sont également un avantage concurrentiel : votre entreprise s'engage à fournir une certaine qualité de service, là où vos concurrents ne s'en donnent pas nécessairement la peine. Instaurer un SLA dans votre méthode de gouvernance responsabilise les parties prenantes (développeurs, SRE, décideurs) et partage les attendus. L'entreprise s'oriente désormais grâce aux mesures qu'elle récolte, puisqu'elle interprête sous forme de SLO. On dit qu'elle est _data-driven_.
+Les SLAs ne sont pas rendus obligatoires en France par la loi. Néanmoins ils peuvent faire partie de votre contrat de service, pour clarifier vos engagements et éviter les litiges. En effet, il est toujours préférable de lister des conditions claires pour lesquelles vous et votre client vous êtes engagés. Les SLAs sont également un avantage concurrentiel : votre entreprise s'engage à fournir une certaine qualité de service, là où vos concurrents ne s'en donnent pas nécessairement la peine. Instaurer un SLA dans votre méthode de gouvernance responsabilise les parties prenantes (développeurs, SRE, décideurs) et partage les attendus. L'entreprise s'oriente désormais grâce aux mesures qu'elle récolte, puis qu'elle interprête sous forme de SLO. On dit qu'elle est _data-driven_.
 
 Au sein d'une institution, vous pouvez utiliser un SLO/SLA comme un moyen de gagner en crédibilité auprès de votre hiérarchie ou de certaines équipes. Un SLA remplit peut justifier l'embauche de personnels nécessaires pour maintenir un certain niveau de service. Ou bien justifier une augmentation de budget pour développer l'activité de l'équipe. Inversement, la hiérarchie peut exiger de vos équipes un certain niveau de qualité de service, reporté sur les objectifs annuels des personnels. Dans le cadre d'une expérimentation, établir des SLOs suffit. Constituer des SLOs fiables est déjà un enjeu de taille. Maintenir les objectifs en est un autre.
 
@@ -3036,7 +3036,7 @@ De formation ingénieur logiciel ou administrateur système avec des compétence
 
 Au sein de l'équipe SRE, vous développerez les outils d'administration ou en intégrerez pour faciliter la vie de nos développeurs et de nos SRE.
 
-Vous participerez à la mise en place d'un data-lake dans le cadre de l'initiative _Y_.
+Vous participerez à la mise en place d'un data-lake dans le cadre de l'initiative gouvernementale _data.gouv.fr_.
 
 Compétences :
 
