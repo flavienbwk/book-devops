@@ -1,0 +1,34 @@
+---
+title: Scaling institutions with DevOps
+subtitle: The pragmatic decision-maker's guide to understand and act
+author: Flavien BERWICK
+date: Original version
+documentclass: extreport
+fontsize: 9pt
+mainfont: Roboto Serif
+geometry: [bmargin=1cm,footnotesep=1cm,margin=0.65in]
+papersize: a5
+colorlinks: true
+header-includes: |
+  \usepackage{fancyhdr}
+  \pagestyle{fancy}
+  \fancyfoot[CO,CE]{ }
+  \fancyhead[LE]{\slshape \rightmark}
+  \fancyhead[RE]{\thepage}
+  \fancyhead[RO]{\slshape \leftmark}
+  \fancyhead[LO]{\thepage}
+rights: Copyright
+lang: en-US
+mainlang: english
+otherlang: english
+tags: [devops, transformation, sre, security, management]
+abstract: |
+  Numerous organizations have embarked on their journey towards digital transformation, yet find themselves grappling to carve out a coherent and potent strategy. In this quest for advancement, they often turn to a plethora of experts, harboring hopes of achieving success.
+
+  Confronted with the imperative necessity to evolve and sustain their operational momentum, a pervasive sense of fatalism begins to take hold. In this milieu, the DevOps movement emerges as a beacon of hope. Rooted in the principles that govern the world's most successful and expansive organizations, DevOps seeks to provide viable solutions to these pressing challenges.
+
+  This book is designed to be your gateway to understanding this transformative movement, which has found its stronghold in the largest and most prosperous organizations of the world.
+
+  Designed to be both accessible and insightful, this hands-on guide, enriched with illustrations, unfolds the opportunities that state-of-the-art DevOps technologies and methodologies have to offer. It demystifies the prerequisites for organizational adaptation and guides you on embarking on your own DevOps transformation, at any scale.
+linkReferences: true
+---
