@@ -52,17 +52,17 @@ In a desire to regain sovereignty, other governments are displaying a clear desi
 
 For example, Canada published its "Goal 2020"[^CanadaGoal2020] report in 2013 to modernize the way public services work. He will subsequently publish the "_Cloud Adoption Strategy_"[^CanadaCAS] in 2018.
 
-In the United Kingdom, the Ministry of Defense announced in 2022 that it wanted to become an "AI-ready" organization, in its "Artificial Defense Intelligence Strategy"[^UKDefenceAIStrategy]. In the expression she makes of her transformation, she perfectly summarizes the goals of DevOps.
+In the United Kingdom, the Ministry of Defence announced in 2022 that it wanted to become an "AI-ready" organization, in its "Artificial Defense Intelligence Strategy"[^UKDefenceAIStrategy]. In the expression she makes of her transformation, she perfectly summarizes the goals of DevOps.
 
-> « We must transform ourselves into a strongly software-oriented organization, organized and motivated to value and exploit data, ready to tolerate increased risks, learn by doing and quickly reorient to find successes and gains. 'efficiency. We must be able to develop, test and deploy new algorithms faster than our adversaries. We need to be agile and integrated (unified), [...] » - UK Ministry of Defence, chapter "Culture, Skills and Policies", page 17.
+> « We must change into a software-intensive enterprise, organised and motivated to value and harness data, prepared to tolerate increased risk, learn by doing and rapidly reorient to pursue successes and efficiencies. We must be able to develop, test and deploy new algorithms faster than our adversaries. We must be agile and integrated, [...] » - UK Ministry of Defence, chapter "Culture, Skills and Policies", page 17.
 
-In 2018, the British Ministry of Defense launched the NELSON[^NELSON] program to equip itself with a [big-data platform](https://joinup.ec.europa.eu/collection/open-source-observatory -osor/news/open-source-royal-navy) for the benefit of the _Royal Navy_. This technical environment based on Cloud technologies once again includes DevOps practices.
+In 2018, the British Ministry of Defence launched the NELSON[^NELSON] program to equip itself with a [big-data platform](https://joinup.ec.europa.eu/collection/open-source-observatory -osor/news/open-source-royal-navy) for the benefit of the _Royal Navy_. This technical environment based on Cloud technologies once again includes DevOps practices.
 
 Across the Atlantic, the United States already considered in 2011 the need to control information in a unified and agile way, accessible via a single access point (see chapter "[Zero trust](#development-based-on- le-zero-trust)"). The _Department of Defense_ (DoD) describes this vision in its "DoD Industrialized IT Systems Strategy and Roadmap"[^DoDITEnterpriseStrategyRoadmap].
 
-> « 21st century military operations require an agile information environment to achieve strategic advantage for mission personnel and partners. [...] To address this challenge, DoD is undertaking a coordinated effort to unify its networks into a single IT environment that will improve both operational efficiency and security posture with respect to information systems. »
+> « Twenty-first century military operations require an agile information environment to achieve an information advantage for personnel and mission partners. [...] To meet this challenge, DoD is undertaking a concerted effort to unify its networks into a single information environment that will improve both operational effectiveness and information security posture. »
 >
-> - United States Department of the Armed Forces, chapter "Vision for more efficient and secure industrial information systems in the DoD", page 13.
+> - United States Department of Defense, chapter "Vision for a more Effective, Efficient and Secure DoD Information Enterprise", page 4.
 
 In 2019, it will publish its first reference guide for the industrialization of DevSecOps practices[^DoDEnterpriseDevSecOpsReferenceDesign]: a methodology emphasizing security (see chapter "[DevSecOps](#devsecops)"). Intended for suppliers, purchasers and managers of modern information systems, this institutional guide describes good practices for the implementation and maintenance of this type of system. The stated objective is to deploy software at "operations speed". In the economic world, the parallel is that of the "speed of the stock markets".
 
@@ -357,7 +357,7 @@ While at first the dysfunction is considered unacceptable, over time it becomes 
 
 But you also need to know _when_ to reveal your innovations. Preston DUNLAP, the USAF's first chief technical officer (CTO), describes in his public letter _Defying Gravity_ how "bureaucratic forces" can harm innovation if introduced too early.
 
-> « Some have asked me what my recipe for success has been over the last 3 years. I didn't talk about it much because I knew that if I revealed things too far in advance, the natural forces of bureaucracy would come back with a vengeance, rejecting the full potential of innovation at every opportunity. » - Preston DUNLAP, Defying Gravity
+> « Some have asked what my playbook for success has been over these last 3 years. I’ve been a bit coy on that because I knew that if I revealed the plays ahead of time, the bureaucratic forces of nature would be energized to reject the potential of innovation at every turn. » - Preston DUNLAP, Defying Gravity[^DefyingGravity]
 
 To avoid technological lag, the leaders of an organization can adopt several practices:
 
@@ -732,7 +732,7 @@ Software like [_Renovate_](https://github.com/renovatebot/renovate) or [_GitHub 
 
 While SCA tools will allow you to analyze what your project is made of (its dependencies and software used), SAST tools are intended to analyze the code of the software you are developing. However, SAST tools also support SCA functionality. Both come together in the area of ​​_Source code analysis_ or "Source code analysis".
 
-_Static Application Security Testing_ (SAST) or "Static Application Security Testing" in French, concentrates the techniques and tools intended to find vulnerabilities in your source code before it is launched. They are a form of white box testing. For example, SAST tools will identify insecure configurations, risks of SQL injection, memory leaks, risks of [path traversal](https://owasp.org/www-community/attacks/Path_Traversal) or [race conditions](https://stackoverflow.com/a/34550/4958081).
+_Static Application Security Testing_ (SAST), concentrates the techniques and tools intended to find vulnerabilities in your source code before it is launched. They are a form of white box testing. For example, SAST tools will identify insecure configurations, risks of SQL injection, memory leaks, risks of [path traversal](https://owasp.org/www-community/attacks/Path_Traversal) or [race conditions](https://stackoverflow.com/a/34550/4958081).
 
 Here is a list of SAST tools along with their description to understand their variety:
 
@@ -770,7 +770,7 @@ However, DAST is not a silver bullet: tests can sometimes produce false positive
 
 #### IAST
 
-_Interactive Application Security Testing_ (IAST) or "Interactive Application Security Testing" in French, brings together tools that identify and diagnose security problems in applications, whether they are running or during the development phase .
+_Interactive Application Security Testing_ (IAST), brings together tools that identify and diagnose security problems in applications, whether they are running or during the development phase .
 
 According to OWASP[^IASTOWASP], IAST tools today are primarily designed to analyze web applications and web APIs. But some IAST products can also scan non-web software.
 
@@ -1068,7 +1068,7 @@ Within a Cloud DevOps infrastructure, it is possible to use tools like _KubeVirt
 
 ## Open-source: risks and strategic advantage
 
-Open-source technologies (in French: "technologies libre") represent 77% of the libraries used in proprietary software (or "_closed-source_")[^SoOSS2022]. Among the 100,000 most popular websites, Linux - an open-source operating system - is used in almost 50% of cases.
+Open-source technologies represent 77% of the libraries used in proprietary software (or "_closed-source_")[^SoOSS2022]. Among the 100,000 most popular websites, Linux - an open-source operating system - is used in almost 50% of cases.
 
 A report from the European Union[^EUOSSReport] indicates that in 2018, European contributions to GitHub - the largest open-source contribution platform in the world - represented the equivalent of 16,000 full-time equivalents. That is almost a billion euros for companies on the old continent. These contributions carry a cost/benefit ratio of 1 to 4, allowing companies to stay state-of-the-art, develop quality code or even reduce maintenance efforts.
 
@@ -1085,7 +1085,7 @@ This doubt is not without meaning. The idea of ​​importing a third party's l
 
 It is therefore a question of finding the balance between the productivity provided by open-source libraries/software and the trust placed in them (security).
 
-However, let's avoid the trap of letting ourselves believe that buying the software from a company will make it secure[^DependencyConfusion]. Although responsibility is delegated, the damage - if it occurs - will be done. Google engineering leaders believe that by 2025, 80% of companies will use open-source technologies maintained by people paid to do so[^CuratedOpenSource] (see _[GitHub Sponsors](https:// github.com/sponsors)_).
+However, let's avoid the trap of letting ourselves believe that buying the software from a company will make it secure[^DependencyConfusion]. Although responsibility is delegated, the damage - if it occurs - will be done. Google engineering leaders believe that by 2025, 80% of companies will use open-source technologies maintained by people paid to do so[^CuratedOpenSource] (see _[GitHub Sponsors](https://github.com/sponsors)_).
 
 Until now, the official policy for approving the use of certain libraries went through an approval cycle. The latter aims to map the risks brought by the use of a technology, to know whether we accept it or not. The choice can be supported by a code audit.
 
@@ -1604,7 +1604,7 @@ This chapter aims to put a traditional responsibility model into perspective wit
 
 #### The RACI model
 
-One of the models for sharing responsibilities is the "RACI", for _Responsible_ (Executor), _Accountable_ (Responsible), _Consulted_ (Consulted) and _Informed_ (Informed). It helps ensure that all stakeholders are aware of their roles and responsibilities in a project.
+One of the models for sharing responsibilities is the "RACI", for _Responsible_, _Accountable_, _Consulted_ and _Informed_. It helps ensure that all stakeholders are aware of their roles and responsibilities in a project.
 
 In the following table, we have five stakeholders for the development of a new website. A manager, an executor (person in charge of carrying out), those consulted and those informed are designated for each activity.
 
@@ -1615,12 +1615,12 @@ In the following table, we have five stakeholders for the development of a new w
 | Design of models | C | A | R | I | I |
 | Code structure (template) | A | I | C | R | C |
 
-- **R** (Performer): person who does the work to complete a deliverable
-- **A** (Responsible): person who delegates the work and carries out the inspection of the finished work
+- **R** (Responsible): person who does the work to complete a deliverable
+- **A** (Accountable): person who delegates the work and carries out the inspection of the finished work
 - **C** (Consulted): person who contributes to a deliverable based on their area of ​​expertise or the tasks for which they are responsible
 - **I** (Informed): person who must be kept in the loop regarding the progress of the project
 
-An extension of the RACI is the RACI-VS[^RACI-VS] which includes a validator (the person in charge of the final validation of the deliverable, an authority) and a signatory (person in charge of the official approval of the deliverable and who commits his signature, a high authority).
+An extension of the RACI is RACI-VS[^RACI-VS] which includes a validator (an authority in charge of the final validation of the deliverable) and a signatory (a high authority in charge of the official approval of the deliverable and who commits his signature).
 
 The RACI model is based on a clear separation of roles and responsibilities. This can be counterproductive in a DevOps initiative, which seeks to promote collaboration between teams. Additionally, RACI does not take into account the dynamic and ever-changing nature of project development.
 
@@ -1667,13 +1667,13 @@ Once the options are grouped, the approvers make the decision and the authority 
 Example of DACI, listing the options considered for decision-making on the issue "How should we finalize the specifications of our product?" :
 
 | **Criteria** | **Option 1:** Focus Groups / Paid Target Persona Focus Groups | **Option 2:** Internet Reviews / In-house team of content experts | **Option 3:** Do not finalize / Do nothing to address the problem at this time |
-| -------------------------------------------------- - | -------------------------------------------------- ----------------------------------- | -------------------------------------------------- -------------------------------------------------- ---- | -------------------------------------------------- --------------------------------------- |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | Strategically reliable / _high priority_ | (+) Targets anchored in the strategy = returns anchored in the strategy | (+) 2 new team members match the persona = some feedback anchored in the strategy | (-) Risk of significant or costly error, (-) Risk of delays or confusion |
 | User-centric / _high priority_ | (+) Accurate customer feedback | (-) Expert bias | (-) Navigate blindly |
 | Cost / _medium priority_ | (-) More expensive in the short term, (-) Time-consuming | (+) No additional cost, (+) Relatively quick to set up, (-) Takes the team time | (+) No additional cost, (+) Fastest option |
 | Opportunity to learn more / _low priority_ | (+) Opportunity to learn more about our targets | (+) Opportunity to learn from feedback from our cross-team experts | |
 
-> Example of using the DACI model to sort advantages & disadvantages and make a decision (in this case option 1). Translated from English. Source: _atlassian.com_
+> Example of using the DACI model to sort advantages & disadvantages and make a decision (in this case option 1). Source: _atlassian.com_
 
 Once you have made your decision, it is time to communicate it so that everyone is on the page. Send the document to the people who need to read it and then archive it.
 
@@ -2116,7 +2116,7 @@ In all cases, present your transformation as an opportunity for career developme
 
 Within increasingly complex information systems, it becomes fundamental to automate recurring tasks. Humans represent the main factor in errors within an information system[^HumanErrorIS]. Any experienced engineer will be able to confirm this for you. This is why Google teams try to minimize the interactions of their operators to administer their systems as much as possible[^GoogleWorkbookEliminatingToil].
 
-> « If a human operator has to touch your system during normal day-to-day operation, you have a bug. The definition of "normal" changes as your systems grow. » - Carla GEISSER, SRE at Google
+> « If a human operator needs to touch your system during normal operations, you have a bug. The definition of normal changes as your systems grow. » - Carla GEISSER, SRE at Google
 
 If you want to make your IT system an integrated tool within your company, you must first automate repetitive and time-consuming actions: manual actions (or toil).
 
@@ -3489,7 +3489,7 @@ _Do you have at least 5 years of professional experience? We favor it and do not
 
 [^ANSSIGuideJournalisation]: ANSSI. ["Security recommendations for the architecture of a logging system"](https://www.ssi.gouv.fr/uploads/2022/01/anssi-guide-recommandations_securite_architecture_systeme_journalisation.pdf) version 2, Appendix D: legal and regulatory aspects. 2022.
 
-[^RELP]: RELP (_Reliable Event Logging Protocol_ or reliable event logging protocol in French) is a protocol developed to ensure that an emitted log has arrived at its destination. Source: [_connect.ed-diamond.com_](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmfhs-042/rsyslog-et-picviz-supervision-de-logs-a-grande- ladder).
+[^RELP]: RELP (_Reliable Event Logging Protocol_) is a protocol developed to ensure that an emitted log has arrived at its destination. Source: [_connect.ed-diamond.com_](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmfhs-042/rsyslog-et-picviz-supervision-de-logs-a-grande- ladder).
 
 [^DistributedSystemsObservabilityBook]: SRIDHARAN, Cindy. "[_Distributed Systems Observability_](https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/)". 2018.
 
