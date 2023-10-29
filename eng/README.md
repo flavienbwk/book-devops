@@ -46,7 +46,7 @@ Several initiatives to create sovereign _Cloud_ platforms are taking shape aroun
 
 More widely used in the private sector, the major cloud providers (_Amazon Web Services_, _Google Cloud Platform_, _Microsoft Azure_, _Alibaba Cloud_) internally practice this organizational, promote it, and provide the technologies to adopt it.
 
-South Korea has [historically favored the use of private cloud technologies](https://news.bloomberglaw.com/privacy-and-data-security/south-koreas-new-cloud-computing-act-and-new- rules-on-outsourcing-of-data-processing-by-financial-institutions), especially since its 2015 law that facilitated outsourcing[^SouthKorea2015CloudLaw]. Owing to multiple overlapping investments, outdated information systems, and a shortage of cybersecurity experts within the country, South Korea established national data centers in 2007. These centers now accommodate the information systems of 45 government agencies[^GIDCKorea]. In the wake of the COVID-19 crisis, in 2021, the country announced an ambitious digital transformation plan for its administration: the Digital Government Master Plan 2021-2025[^SouthKoreaMasterPlan2021]. This strategic plan introduces a technical framework named [_eGovFrame_](https://www.worldbank.org/en/events/2022/02/09/digital-the-door-to-a-better-world-digital-government-strategy-and-cases-in-korea) designed for the development and management of government information systems. One of its primary objectives is to enhance their interoperability, and it intrinsically incorporates DevOps principles.
+South Korea has historically [favored the use of private cloud technologies](https://news.bloomberglaw.com/privacy-and-data-security/south-koreas-new-cloud-computing-act-and-new-rules-on-outsourcing-of-data-processing-by-financial-institutions), especially since its 2015 law that facilitated outsourcing[^SouthKorea2015CloudLaw]. Owing to multiple overlapping investments, outdated information systems, and a shortage of cybersecurity experts within the country, South Korea established national data centers in 2007. These centers now accommodate the information systems of 45 government agencies[^GIDCKorea]. In the wake of the COVID-19 crisis, in 2021, the country announced an ambitious digital transformation plan for its administration: the Digital Government Master Plan 2021-2025[^SouthKoreaMasterPlan2021]. This strategic plan introduces a technical framework named [_eGovFrame_](https://www.worldbank.org/en/events/2022/02/09/digital-the-door-to-a-better-world-digital-government-strategy-and-cases-in-korea) designed for the development and management of government information systems. One of its primary objectives is to enhance their interoperability, and it intrinsically incorporates DevOps principles.
 
 In an effort to regain sovereignty, other governments display a clear desire to adopt these technologies and practices, without necessarily describing their initiatives in public. These desires take shape within documents mentioning the Cloud, AI, or data strategy of the countries.
 
@@ -196,7 +196,7 @@ Organizationally speaking, this method places the ISS teams at the heart of the 
 
 From the design phase, the DevSecOps ISS teams define and provide tools that monitor the presence of privacy and security features in the software. For example, they will check for GDPR[^RGPD] functionalities in a software or the proper functioning of the "need-to-know" mechanism for data access. This can also include the implementation of [automatic vulnerability detectors](#continuous-integration-ci) in the code.
 
-Nicolas CHAILLAN, former Director of Software Engineering at the _United States Air Force_ (USAF) [defines it](https://podcasters.spotify.com/pod/show/podcastmortem/episodes/19-The-DevSecOps--lUS-Air-Force-e1mqvem)[^DevSecOpsUSAirForce] more broadly as:
+Nicolas CHAILLAN, former Director of Software Engineering at the _United States Air Force_ (USAF) [defines it](https://podcasters.spotify.com/pod/show/podcastmortem/episodes/19-The-DevSecOps--lUS-Air-Force-e1mqvem)[^DevSecOpsUSAirForce] this way :
 
 > "DevSecOps is the evolution of software engineering. It's the balance between development velocity and the time allocated to security considerations. We want security to be integrated to ensure it's not overlooked but added to the software development cycle. It's about using modern cybersecurity processes to ensure the software is both efficient and built securely, ensuring it remains problem-free over time. This is what will allow companies and organizations to remain competitive and move forward at the necessary speed against their competitors."
 
@@ -3126,7 +3126,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^SoftwareErosion]: WIGGINS, Adam. [_The New Heroku (Part 4 of 4): Erosion-resistance & Explicit Contracts_](https://blog.heroku.com/the_new_heroku_4_erosion_resistance_explicit_contracts). 2011.
 
-[^NatoSoftwareFactory]: NATO. [_The NCI Agency's Software Factory: a new way to collaborate with industry_](https://www.ncia.nato.int/about-us/newsroom/the-nci-agencye28099s-software-factory-a-new-way- to-collaborate-with-industry.html). 2019.
+[^NatoSoftwareFactory]: NATO. [_The NCI Agency's Software Factory: a new way to collaborate with industry_](https://www.ncia.nato.int/about-us/newsroom/the-nci-agencye28099s-software-factory-a-new-way-to-collaborate-with-industry.html). 2019.
 
 [^RonWestrumTypologyOfOrganizationCulture]: WESTRUM, Ron. ["A typology of organizational culture", doi:10.1136/qshc.2003.009522](http://dx.doi.org/10.1136/qshc.2003.009522). 2004.
 
@@ -3194,7 +3194,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^DORAIndustry]: DevOps Institute. _Global Upskilling IT report_, chapter "_Industry_" (page 162). 2022.
 
-[^GartnerCloud2025]: Gartner. [_Gartner Says Cloud Will Be the Centerpiece of New Digital Experiences_](https://www.gartner.com/en/newsroom/press-releases/2021-11-10-gartner-says-cloud-will-be-the- centerpiece-of-new-digital-experiences). 2021.
+[^GartnerCloud2025]: Gartner. [_Gartner Says Cloud Will Be the Centerpiece of New Digital Experiences_](https://www.gartner.com/en/newsroom/press-releases/2021-11-10-gartner-says-cloud-will-be-the-centerpiece-of-new-digital-experiences). 2021.
 
 [^AtlassianDevopsStudy]: Atlassian; CITE Research. "_2020 DevOps Trends Survey_". 2020.
 
@@ -3212,7 +3212,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^ZTNA]: _Zero Trust Network Access_ (ZTNA) is a category of technologies that provides secure remote access to applications and services based on defined access control policies. [Definition by paloaltonetworks.com](https://www.paloaltonetworks.com/cyberpedia/what-is-zero-trust-network-access-ztna).
 
-[^NSM2022]: BIDEN Administration. [_National Security Memorandum_](https://www.whitehouse.gov/briefing-room/statements-releases/2022/01/19/fact-sheet-president-biden-signs-national-security-memorandum-to-improve- the-cybersecurity-of-national-security-department-of-defense-and-intelligence-community-systems). 2022.
+[^NSM2022]: BIDEN Administration. [_National Security Memorandum_](https://www.whitehouse.gov/briefing-room/statements-releases/2022/01/19/fact-sheet-president-biden-signs-national-security-memorandum-to-improve-the-cybersecurity-of-national-security-department-of-defense-and-intelligence-community-systems). 2022.
 
 [^USAExecOrderImproveCybersec]: BIDEN Administration. [_Executive Order on Improving the Nation's Cybersecurity_](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/). 2021.
 
@@ -3326,7 +3326,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^AWSSLA]: AWS instance-level SLA. The first reimbursements start at 99.5% availability. _aws.amazon.com/compute/sla_.
 
-[^GoogleSingleRepository]: POTVIN, Rachel. "[_Why Google stores billions of lines of code in a single repository_](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code- in-a-single-repository/fulltext)". 2016.
+[^GoogleSingleRepository]: POTVIN, Rachel. "[_Why Google stores billions of lines of code in a single repository_](https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext)". 2016.
 
 [^AtlassianGitflow]: _"Gitflow has fallen in popularity in favor of trunk-based workflows, which are now considered best practices for modern continuous software development and DevOps practices."_ - [Atlassian Tutorials (atlassian.com)](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
@@ -3346,7 +3346,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^UKDefenceAIStrategy]: _Ministry of Defence_ (United Kingdom). "[_Defense AI strategy_](https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy)". 2022.
 
-[^CanadaCAS]: Government of Canada. "[_Government of Canada Cloud Adoption Strategy_](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy. html)". 2018.
+[^CanadaCAS]: Government of Canada. "[_Government of Canada Cloud Adoption Strategy_](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy.html)". 2018.
 
 [^SouthKorea2015CloudLaw]: _National Assembly Law Information_ (South Korea). "[_Cloud Computing Act_](https://likms.assembly.go.kr/law/lawsLawtInqyDetl1010.do)". 2015.
 
@@ -3392,7 +3392,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^SRETrainingsGoogle]: CLIMENT, Jesus (systems engineer at Google Cloud). [_Shrinking the time to mitigate production incidents_](https://cloud.google.com/blog/products/management-tools/shrinking-the-time-to-mitigate-production-incidents). 2019.
 
-[^pratiswomgithub]: "A role-playing game for incident management training": github.com/dastergon/wheel-of-misfortune
+[^pratiswomgithub]: "A role-playing game for incident management training": _github.com/dastergon/wheel-of-misfortune_
 
 [^AWSGameday]: "[_Fun, gamified, hands-on learning: AWS Gameday_](https://aws.amazon.com/gameday/)". _aws.amazon.com/gameday_.
 
@@ -3450,7 +3450,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^Bard]: PICHAI, Sundar. "[_An important next step on our AI journey_](https://blog.google/technology/ai/bard-google-ai-search-updates/)". 2023.
 
-[^BardFails]: Reuters. "[_Alphabet shares dive after Google AI chatbot Bard flubs response in ad_](https://www.reuters.com/technology/google-ai-chatbot-bard-offers-inaccurate-information-company-ad-2023-02- 08/)". 2023.
+[^BardFails]: Reuters. "[_Alphabet shares dive after Google AI chatbot Bard flubs response in ad_](https://www.reuters.com/technology/google-ai-chatbot-bard-offers-inaccurate-information-company-ad-2023-02-08/)". 2023.
 
 [^MarketShareSearchEngines]: Sources _statista.com_: _fr.statista.com/statistiques/559394_
 
@@ -3516,7 +3516,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^DefCarrier]: The "carrier" describes the structure, machinery and heavy equipment of a boat.
 
-[^DatadogMarch2023PM]: Datadog. [_2023-03-08 Incident: A deep dive into our incident response_](https://www.datadoghq.com/blog/engineering/2023-03-08-deep-dive-into-incident-response/#the- communication-clock-is-inexorably-ticking). 2023.
+[^DatadogMarch2023PM]: Datadog. [_2023-03-08 Incident: A deep dive into our incident response_](https://www.datadoghq.com/blog/engineering/2023-03-08-deep-dive-into-incident-response/#the-communication-clock-is-inexorably-ticking). 2023.
 
 [^MassInArmedConflicts]: Revue Défense Nationale. ["The challenges of "high intensity": strategic or capability issue?"](https://www.defnat.com/pdf/cahiers/CAH081/3.%20Pesqueur_Tenenbaum%20%28AdT%202020%29.pdf) . 2020.
 
@@ -3566,13 +3566,13 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^ZDBreakMonolith]: DEHGHANI, Zhamak. [_How to break a Monolith into Microservices_](https://martinfowler.com/articles/break-monolith-into-microservices.html). 2018.
 
-[^AmazonPrimeVideoMonoliths]: Amazon Prime Video. [_Scaling up the Prime Video audio/video monitoring service and reducing costs by 90%_](https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring- service-and-reducing-costs-by-90). 2023.
+[^AmazonPrimeVideoMonoliths]: Amazon Prime Video. [_Scaling up the Prime Video audio/video monitoring service and reducing costs by 90%_](https://www.primevideotech.com/video-streaming/scaling-up-the-prime-video-audio-video-monitoring-service-and-reducing-costs-by-90). 2023.
 
 [^AR15]: The AR-15 is a lightweight semi-automatic rifle produced by the American company ArmaLite.
 
 [^SujetSupposeSavoir]: Phenomenon of the _subject supposed to know_, according to which an individual will give credit to an external expert by the simple fact that he thinks him more legitimate than himself or than the internal expert, yet the only ones to know the real needs of the organization. Theory of [Jacques LACAN. "Seminar The four fundamental concepts of psychoanalysis. The foundations of psychoanalysis"](https://www.cairn.info/revue-ssaism-2006-2-page-65.htm#no1).
 
-[^HumanErrors]: WITHOUT. _[SANS 2022 Security Awareness Report: "Human Risk Remains the Biggest Threat to Your Organization's Cybersecurity"](https://www.sans.org/press/announcements/sans-2022-security-awareness-report-human-risk- remains-biggest-threat-organizations-cybersecurity/)_. 2022.
+[^HumanErrors]: WITHOUT. _[SANS 2022 Security Awareness Report: "Human Risk Remains the Biggest Threat to Your Organization's Cybersecurity"](https://www.sans.org/press/announcements/sans-2022-security-awareness-report-human-risk-remains-biggest-threat-organizations-cybersecurity/)_. 2022.
 
 [^WhatIsSREForAWS]: "_SRE is the practical implementation of DevOps._" (chapter "_SRE compared to DevOps_"). [_aws.amazon.com/what-is/sre_](aws.amazon.com/what-is/sre).
 
