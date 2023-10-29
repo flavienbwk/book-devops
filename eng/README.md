@@ -3249,7 +3249,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^CNCFTAGAnnouncement]: CNCF. [_Announcing the Refreshed Cloud Native Security Whitepaper_](https://www.cncf.io/blog/2022/05/18/announcing-the-refreshed-cloud-native-security-whitepaper/). 2022.
 
-[^CNCFSSCSPGithub]: SSCSP GitHub Project: [_github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper_](https://github.com/cncf/ tag-security/blob/main/supply-chain-security/supply-chain-security-paper)
+[^CNCFSSCSPGithub]: SSCSP GitHub Project: [_github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper_](https://github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper)
 
 [^CNCFTAGGithub]: GitHub project of the CNCF _security technical advisory group_: [_github.com/cncf/tag-security_](https://github.com/cncf/tag-security)
 
