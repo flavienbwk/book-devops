@@ -3175,7 +3175,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^IronBankPresentation]: _[Iron Bank](https://docs-ironbank.dso.mil/) [presentation](https://repo1.dso.mil/platform-one/bullhorn-delivery-static-assets/-/raw/master/p1/docs/Iron%20Bank%20Onboarding%20Presentation.pdf?inline=false) from Platform One's Big Bang. US department of defense._
 
-[^PlatformOnePresentationWebsite]: Website of the [_Platform One_] project (https://p1.dso.mil/resources). _p1.dso.mil_.
+[^PlatformOnePresentationWebsite]: Website of the [_Platform One_ project](https://p1.dso.mil/resources). _p1.dso.mil_.
 
 [^IronBankHardeningOverview]: [Iron Bank Hardening guide overview](https://docs-ironbank.dso.mil/hardening/overview/). _docs-ironbank.dso.mil_.
 
