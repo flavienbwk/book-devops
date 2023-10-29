@@ -68,7 +68,7 @@ He will publish in 2019 his first reference guide for the industrialization of D
 
 In the private sector, Microsoft historically launched its new products every 3 to 4 years (e.g., Windows, Office). As early as 2014, its CEO Satya NADELLA warned his teams about the risk posed by the long duration of this development cycle. By continuing with the same organization mode, Microsoft would become obsolete. The teams responsible for developing each product worked independently from one another, with their own organizational methods and their own tools. NADELLA reorganized the company based on the DevOps methodology. He would unify the tools and practices of the teams, so they would interact with each other[^MicrosoftDevOpsAbelWang].
 
-Faced with increasingly aggressive economic[^AUKUS] or military[^InfluenceRussie] competitors, transformation is an imperative necessity to stay in the race and prevail in the next confrontations. For institutions, it is no longer a question of "if" but "when" they will need to embark on a transformation journey, or risk being left behind.
+Faced with increasingly aggressive economic[^AUKUS] or military[^InfluenceRussia] competitors, transformation is an imperative necessity to stay in the race and prevail in the next confrontations. For institutions, it is no longer a question of "if" but "when" they will need to embark on a transformation journey, or risk being left behind.
 
 However, the majority of organizations still struggle to pragmatically implement these new practices. The main obstacle is finding the talents capable of implementing the techniques and tools suitable for DevOps operation.
 
@@ -193,7 +193,7 @@ Perhaps you've heard of "_shift left security_"? This term emphasizes the import
 
 Organizationally speaking, this method places the ISS teams at the heart of the exchanges between developers and production teams. These teams will support the developers to integrate the organization's security requirements into their software as seamlessly as possible.
 
-From the design phase, the DevSecOps ISS teams define and provide tools that monitor the presence of privacy and security features in the software. For example, they will check for GDPR[^RGPD] functionalities in a software or the proper functioning of the "need-to-know" mechanism for data access. This can also include the implementation of [automatic vulnerability detectors](#continuous-integration-ci) in the code.
+From the design phase, the DevSecOps ISS teams define and provide tools that monitor the presence of privacy and security features in the software. For example, they will check for GDPR[^GDPR] functionalities in a software or the proper functioning of the "need-to-know" mechanism for data access. This can also include the implementation of [automatic vulnerability detectors](#continuous-integration-ci) in the code.
 
 Nicolas CHAILLAN, former Director of Software Engineering at the _United States Air Force_ (USAF) [defines it](https://podcasters.spotify.com/pod/show/podcastmortem/episodes/19-The-DevSecOps--lUS-Air-Force-e1mqvem)[^DevSecOpsUSAirForce] this way :
 
@@ -569,7 +569,7 @@ However, in software, a more agile approach is feasible. Software behavior can b
 
 ![Diagram of the various "V-cycle" stages: all needs are described before project kickoff, minimizing risk but also flexibility. The final product may not or no longer meet company needs.\label{fig:cycle_v}](./images/cycle_v.jpg)
 
-Within an armament program, the onboard computer systems of a ship (e.g., sensors, information systems) can follow agile methodology, while the carrier's production[^DefPorteur] can be governed by the "V" methodology. While the hull may undergo few changes, the software can be updated as rapidly as operations require[^VoeuxCEMA].
+Within an armament program, the onboard computer systems of a ship (e.g., sensors, information systems) can follow agile methodology, while the carrier's production[^DefCarrier] can be governed by the "V" methodology. While the hull may undergo few changes, the software can be updated as rapidly as operations require[^WishesCEMA].
 
 Beyond the technical solutions you offer, your business teams will notice that your more agile organizational mode is efficient for them. Consequently, they will support your initiative. As a team leader, your goal should be to have representatives from business teams that you've aided with your tools testify during crucial presentations. Such representations will bolster your credibility and prevent your teams from merely being seen as "technical development providers."
 
@@ -905,7 +905,7 @@ The _zero trust_ concept can be summarized in one phrase: "Never trust, always v
 
 Traditionally, network security was based on defining a "trusted perimeter" drawn around an organization's software and data. Various tools and technologies were then implemented to protect them. This network architecture, also known as "_castle-and-moat_"[^CloudflareCastleAndMoat] or "perimeter-based," assumed that any activity inside the perimeter was trustworthy and by reciprocity, any activity outside it was not (e.g., network access via a VPN or based on a machine's MAC address).
 
-_Zero trust_ assumes that no user is "trusted" by default, whether inside or outside the perimeter. Users must be authenticated and authorized to access data and software. Their activity should be monitored and recorded. This approach is more effective at defending information systems against sophisticated attacks, as it doesn't assume that all activities inside the perimeter are trustworthy. This network security model has especially evolved due to the massive shift to remote work[^BCPANDRHStudyTeletravail].
+_Zero trust_ assumes that no user is "trusted" by default, whether inside or outside the perimeter. Users must be authenticated and authorized to access data and software. Their activity should be monitored and recorded. This approach is more effective at defending information systems against sophisticated attacks, as it doesn't assume that all activities inside the perimeter are trustworthy. This network security model has especially evolved due to the massive shift to remote work[^BCPANDRHStudyTeleworking].
 
 Consider an example: Sophie is a colleague you've known for 3 years. She badges in every day and settles at her workstation. Days later, you learn Sophie was terminated a month ago. She might have accessed strategic company information, which she could use at her new job in a competitor company. Merely being "used to" seeing an employee allowed the company's precious information to be stolen. With _zero trust_ technologies providing centralized access management, Sophie couldn't have logged in.
 
@@ -1025,7 +1025,7 @@ This type of foundation is effective with a reasonable number of deployed servic
 
 ![Illustration of services in a Cloud foundation (like Kubernetes baremetal).\label{fig:illustration_socle_kubernetes}](./images/illustration_socle_kubernetes.jpg)
 
-In a Cloud foundation (fig. <spanc/>\ref{fig:illustration_socle_kubernetes}), the interaction between deployed software and the foundation is inherently stronger. Standardized container interfaces allow foundation services of an orchestrator (e.g., Kubernetes) to "connect" to it, while still maintaining logical resource isolation[^ANSSIContainerRecommandation].
+In a Cloud foundation (fig. <spanc/>\ref{fig:illustration_socle_kubernetes}), the interaction between deployed software and the foundation is inherently stronger. Standardized container interfaces allow foundation services of an orchestrator (e.g., Kubernetes) to "connect" to it, while still maintaining logical resource isolation[^ANSSIContainerRecommendation].
 
 For instance, application logs or performance metrics can be automatically retrieved and stored in a centralized tool, then set up with alerts. An antivirus that continuously checks for threats in a container can be installed. Kubernetes' _sidecars_[^sidecars] mechanism makes these capabilities possible.
 
@@ -1564,7 +1564,7 @@ Instilling this mindset is a cultural shift that an organization must implement 
 
 > "Psychological safety is the shared belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes." - Amy C. EDMONDSON, Professor of Leadership and Management at _Harvard Business School_.
 
-An organization's culture is foundational to its potential. A positive culture promotes team collaboration and communication, essential for the successful implementation of a DevOps initiative. This idea isn't new and was theorized in 2004 by sociologist Ron WESTRUM in his article "_A Typology of Organizational Cultures_"[^RonWestrumTypologyOfOrganisationCulture].
+An organization's culture is foundational to its potential. A positive culture promotes team collaboration and communication, essential for the successful implementation of a DevOps initiative. This idea isn't new and was theorized in 2004 by sociologist Ron WESTRUM in his article "_A Typology of Organizational Cultures_"[^RonWestrumTypologyOfOrganizationCulture].
 
 By ensuring your employees' psychological safety, you encourage shared responsibility for successes and failures. Shared outcomes rather than attributing them to specific teams or individuals.
 
