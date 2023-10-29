@@ -82,7 +82,6 @@ We will explore the reasons for the emergence of this methodology, its content, 
 
 The experience of pioneering companies now ensures that efforts invested in DevOps will make your organization more efficient, agile, and sustainable.
 
-
 # The five pillars of DevOps
 
 According to the renowned American company [Atlassian](https://www.atlassian.com/devops/what-is-devops/history-of-devops)[^AtlassianHistoryOfDevops], the DevOps movement was born between 2007 and 2008. It was a time when software development professionals (those who develop) and system administrators (those who deploy) were each concerned about their poor ability to collaborate. They viewed this situation as a critical dysfunction, stemming from their lack of closeness.
@@ -3082,7 +3081,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^GoogleWorkbookEliminatingToil]: [_Google SRE workbook (sre.google): Eliminating toil_](https://sre.google/sre-book/eliminating-toil)
 
-[^ToDevOps]: [GitHub project](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) available at [links.berwick.fr/todevops-2](https://links. berwick.fr/todevops-2)
+[^ToDevOps]: [GitHub project](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) available at [links.berwick.fr/todevops-2](https://links.berwick.fr/todevops-2)
 
 [^GoogleWorkspaceSLA]: Google begins to reimburse its [_Google Workspace_](https://workspace.google.com/terms/sla.html) customers below 99.9% availability. _workspace.google.com/terms/sla.html_.
 
@@ -3162,7 +3161,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^GitLabCustomTemplate]: [_GitLab's custom instance-level projects templates_](https://docs.gitlab.com/ee/user/admin_area/custom_project_templates.html)
 
-[^DORAsFourKeyMetrics]: [_Google Cloud DORA's 4 key metrics for measuring DevOps performance_](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your- devops-performance).
+[^DORAsFourKeyMetrics]: [_Google Cloud DORA's 4 key metrics for measuring DevOps performance_](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance).
 
 [^DORACDLooselyCoupledArchitecture]: Google Cloud. [DORA 2022 report](https://cloud.google.com/blog/products/devops-sre/dora-2022-accelerate-state-of-devops-report-now-out), chapter "Technical practices and CD" , page 33. 2022.
 

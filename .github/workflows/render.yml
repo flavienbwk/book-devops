@@ -10,8 +10,8 @@ on:
 
 jobs:
 
-  render-book:
-    name: Render FR book
+  render-books:
+    name: Render books
     runs-on: ubuntu-20.04
     steps:
       - name: Extract branch name
@@ -60,26 +60,41 @@ jobs:
         run: |
           mkdir -p "$HOME/.local/share/fonts"
           cp ./fra/templates/fonts/* "$HOME/.local/share/fonts"
+          cp ./eng/templates/fonts/* "$HOME/.local/share/fonts"
 
       - name: Render PDF
         run: |
           sed -i -E "s/date: .+/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
-          cd ./fra && make pdf
+          cd ./fra && make pdf && cd -
+          cd ./eng && make pdf && cd -
 
       - name: Render HTML
         run: |
-          cd ./fra && make html
+          cd ./fra && make html && cd -
+          cd ./eng && make html && cd -
 
       - uses: actions/upload-artifact@v3
         with:
-          name: book-pdf-${{ env.BOOK_VERSION }}
+          name: book-fr-pdf-${{ env.BOOK_VERSION }}
           path: ./fra/build/pdf/book.pdf
           retention-days: 1
 
       - uses: actions/upload-artifact@v3
         with:
-          name: book-html-${{ env.BOOK_VERSION }}
+          name: book-fr-html-${{ env.BOOK_VERSION }}
           path: ./fra/build/html/
+          retention-days: 1
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: book-en-pdf-${{ env.BOOK_VERSION }}
+          path: ./eng/build/pdf/book.pdf
+          retention-days: 1
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: book-en-html-${{ env.BOOK_VERSION }}
+          path: ./eng/build/html/
           retention-days: 1
 
 
@@ -88,8 +103,8 @@ jobs:
   #
   # When badly referenced, pandoc generates a double questionmarks ("??") in the place
   # of the latex tags. This Action checks if there are no "??" in the generated PDF.
-  check_latex_references:
-    needs: render-book
+  check-latex-references:
+    needs: render-books
     name: Check valid latex references
     runs-on: ubuntu-22.04
     steps:
@@ -115,17 +130,35 @@ jobs:
           exit 1
         fi
 
-    - name: Download artifact
+    - name: Download FR artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-pdf-${{ env.BOOK_VERSION }}
+        name: book-fr-pdf-${{ env.BOOK_VERSION }}
         path: ./
 
-    - name: Get text from book
+    - name: Get FR text from book
       run: |
         pdftotext ./book.pdf
 
-    - name: Get text from book
+    - name: Get FR text from book
+      run: |
+        if grep -q "??" ./book.pdf; then
+          echo "The file contains the string '??'"
+        else
+          echo "The file does not contain the string '??'"
+        fi
+
+    - name: Download EN artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: book-en-pdf-${{ env.BOOK_VERSION }}
+        path: ./
+
+    - name: Get EN text from book
+      run: |
+        pdftotext ./book.pdf
+
+    - name: Get EN text from book
       run: |
         if grep -q "??" ./book.pdf; then
           echo "The file contains the string '??'"
@@ -134,10 +167,10 @@ jobs:
         fi
 
 
-  check_version_change:
+  check-version-change:
     name: "Check version change"
     runs-on: ubuntu-22.04
-    needs: check_latex_references
+    needs: check-latex-references
     outputs:
       version_changed: ${{ steps.check.outputs.version_changed }}
     steps:
@@ -163,9 +196,9 @@ jobs:
           fi
 
 
-  deploy_to_gh_pages:
-    if: needs.check_version_change.outputs.version_changed == 'true' && (github.ref == 'refs/heads/main')
-    needs: check_version_change
+  deploy-to-gh-pages:
+    if: needs.check-version-change.outputs.version_changed == 'true' && (github.ref == 'refs/heads/main')
+    needs: check-version-change
     runs-on: ubuntu-22.04
     name: Deploy to GitHub Pages
 
@@ -191,8 +224,14 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-html-${{ env.BOOK_VERSION }}
-        path: output/
+        name: book-fr-html-${{ env.BOOK_VERSION }}
+        path: output/fr/
+
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: book-en-html-${{ env.BOOK_VERSION }}
+        path: output/en/
 
     - name: Optimize images
       run: |
@@ -209,8 +248,8 @@ jobs:
 
 
   release:
-    if: needs.check_version_change.outputs.version_changed == 'true' && (github.ref == 'refs/heads/main')
-    needs: check_version_change
+    if: needs.check-version-change.outputs.version_changed == 'true' && (github.ref == 'refs/heads/main')
+    needs: check-version-change
     runs-on: ubuntu-22.04
     name: Generate book files for release
 
@@ -233,10 +272,16 @@ jobs:
           exit 1
         fi
 
-    - name: Download PDF artifact
+    - name: Download FR PDF artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-pdf-${{ env.BOOK_VERSION }}
+        name: book-fr-pdf-${{ env.BOOK_VERSION }}
+        path: ./
+
+    - name: Download EN PDF artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: book-en-pdf-${{ env.BOOK_VERSION }}
         path: ./
 
     - name: Get version
