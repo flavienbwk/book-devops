@@ -94,7 +94,7 @@ Le terme DevOps est attribué à l'ingénieur belge Patrick DEBOIS. Consultant e
 
 La communauté mettait un mot sur un vrai phénomène qui entrave la communication et la collaboration entre les équipes, entraînant un manque d'efficacité et des retards. En suivra la rédaction de son livre en 2015 « Le manuel du DevOps : comment créer des organisations technologiques agiles, fiables et sécurisées »[^TheDevopsHandbook]. DEBOIS y décrit la manière dont les organisations peuvent augmenter leur rentabilité, améliorer leur culture d'entreprise et dépasser leurs objectifs grâce aux pratiques DevOps.
 
-Google définit les cinq piliers du DevOps suivants :
+Google théorise cinq piliers du DevOps :
 
 1. [**Réduire les silos organisationnels**](#réduire-les-silos-organisationnels)
    - En cultivant l'engagement, en partageant le sentiment de responsabilité entre les parties prenantes dans les succès comme dans les échecs (ingénieurs, responsables projet, utilisateurs/métiers). Chacun doit se sentir impliqué et légitime à son niveau.
