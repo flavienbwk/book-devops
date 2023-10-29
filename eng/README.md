@@ -3259,7 +3259,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^CodeSpace]: _Codespaces_ is a GitHub product allowing you to launch an ephemeral development environment directly in GitHub: [_github.com/features/codespaces_](https://github.com/features/codespaces).
 
-[^CoderCloud]: _Coder_ is a tool similar to _Codespaces_ for _on-premise_, allowing you to instantiate a development environment running on a remote machine: [_github.com/coder/coder_](https://github.com /code/code).
+[^CoderCloud]: _Coder_ is a tool similar to _Codespaces_ for _on-premise_, allowing you to instantiate a development environment running on a remote machine: [_github.com/coder/coder_](https://github.com/code/code).
 
 [^SogetiDevOpsMicrosoft]: Microsoft; Sogeti. [_Securing Enterprise DevOps Environments_](https://azure.microsoft.com/mediahandler/files/resourcefiles/securing-enterprise-devops-environments/Secure%20DevOps%20Environments%20FINAL.pdf), chapter "_Control the developer environment with a cloud environment_" page 9. 2022.
 
@@ -3271,7 +3271,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^Shadow]: OVH Shadow is a Cloud service allowing remote access to machines via the Internet. _shadow.tech_.
 
-[^PKI]: The [_Public Key Infrastructure_](https://www.digicert.com/fr/what-is-pki) (PKI) or [Key Management Infrastructure](https://www.ssi. gouv.fr/uploads/2014/11/RGS_v-2-0_B2.pdf) (IGC) are technologies (software and/or hardware) making it possible to manage the life cycle (creation/revocation) of security certificates of a infrastructure. Non-exhaustive uses: electronic signature, data encryption, "HTTPS" certificates.
+[^PKI]: The [_Public Key Infrastructure_](https://www.digicert.com/fr/what-is-pki) (PKI) or [Key Management Infrastructure](https://www.ssi.gouv.fr/uploads/2014/11/RGS_v-2-0_B2.pdf) (IGC) are technologies (software and/or hardware) making it possible to manage the life cycle (creation/revocation) of security certificates of a infrastructure. Non-exhaustive uses: electronic signature, data encryption, "HTTPS" certificates.
 
 [^ActiveDirectory]: _Active Directory_ (AD) is a directory service in which system administrators can manage access controls to different infrastructure resources. It runs on _Microsoft Windows Server_.
 
@@ -3495,13 +3495,13 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^ANSSIGuideJournalisation]: ANSSI. ["Security recommendations for the architecture of a logging system"](https://www.ssi.gouv.fr/uploads/2022/01/anssi-guide-recommandations_securite_architecture_systeme_journalisation.pdf) version 2, Appendix D: legal and regulatory aspects. 2022.
 
-[^RELP]: RELP (_Reliable Event Logging Protocol_) is a protocol developed to ensure that an emitted log has arrived at its destination. Source: [_connect.ed-diamond.com_](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmfhs-042/rsyslog-et-picviz-supervision-de-logs-a-grande- ladder).
+[^RELP]: RELP (_Reliable Event Logging Protocol_) is a protocol developed to ensure that an emitted log has arrived at its destination. Source: [_connect.ed-diamond.com_](https://connect.ed-diamond.com/GNU-Linux-Magazine/glmfhs-042/rsyslog-et-picviz-supervision-de-logs-a-grande-ladder).
 
 [^DistributedSystemsObservabilityBook]: SRIDHARAN, Cindy. "[_Distributed Systems Observability_](https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/)". 2018.
 
 [^OTSemanticConventions]: "_OpenTelemetry defines semantic conventions [...] that specify common names for different types of operations and data._". Source: [_opentelemetry.io_](https://opentelemetry.io/docs/concepts/semantic-conventions/).
 
-[^ServiceMeshTraces]: Thanks to its _service mesh_, [Lyft has rewritten the headers of requests that pass through its network to add or propagate tracing information](https://eng.lyft.com/scaling-productivity-on- microservices-at-lyft-part-3-extending-our-envoy-mesh-with-staging-fdaafafca82f).
+[^ServiceMeshTraces]: Thanks to its _service mesh_, [Lyft has rewritten the headers of requests that pass through its network to add or propagate tracing information](https://eng.lyft.com/scaling-productivity-on-microservices-at-lyft-part-3-extending-our-envoy-mesh-with-staging-fdaafafca82f).
 
 [^GregDeArmentInterviewApollo]: Video from the Platform Engineering channel on YouTube. [_Palantir's GitOps Journey with Apollo_](https://youtu.be/T2gF8KJDy3w?t=128), with Greg DeArment. 2022.
 
