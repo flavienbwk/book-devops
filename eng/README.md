@@ -750,7 +750,7 @@ While SAST significantly improves software supply chain security, it doesn't rep
 
 #### DAST
 
-_Dynamic Application Security Testing_ (DAST), or "Dynamic Security Testing of Applications" in French, is an analysis technique that focuses on detecting vulnerabilities in a running application.
+_Dynamic Application Security Testing_ (DAST), is an analysis technique that focuses on detecting vulnerabilities in a running application.
 
 Essentially, it's an automated _black box_ intrusion test that identifies potential vulnerabilities attackers might exploit once the software is in production. These vulnerabilities can be SQL injections, _Cross-Site Scripting_ (XSS) attacks, or issues with authentication mechanisms.
 
@@ -768,7 +768,7 @@ However, DAST isn't a magic solution: tests can sometimes produce false positive
 
 #### IAST
 
-_Interactive Application Security Testing_ (IAST), or "Interactive Security Testing of Applications" in French, encompasses tools that identify and diagnose security issues in applications, whether they're running or during the development phase.
+_Interactive Application Security Testing_ (IAST), encompasses tools that identify and diagnose security issues in applications, whether they're running or during the development phase.
 
 According to OWASP[^IASTOWASP], IAST tools are mainly designed for analyzing web applications and web APIs. However, some IAST products can also analyze non-web software.
 
@@ -2213,7 +2213,7 @@ Here are some examples of algorithms that can be executed to automatically check
 
 All these tasks contribute to reducing the technical debt of your codebase and facilitate the deployment of your projects, ensuring the effectiveness of the standards defined by your DevOps teams.
 
-It's common to hear about a continuous integration _pipeline_ (in French "chaîne d'intégration continue"), which accompanies other terms in the CI/CD tech universe. Let's define the most common ones:
+It's common to hear about a so-called continuous integration "pipeline", which accompanies other terms in the CI/CD tech universe. Let's define the most common ones:
 
 - **Job**: a task/script triggered automatically upon an event
 - **Pipeline**: a sequence of _jobs_
