@@ -42,7 +42,7 @@ Thanks to several theorized methods, DevOps constitutes a means of responding to
 
 According to the consulting and research company Gartner, more than 85% of organizations will adopt a _Cloud_ strategy by 2025[^GartnerCloud2025]. Atlassian's survey revealed that 99% of companies believe DevOps positively impacts their organization[^AtlassianDevopsStudy].
 
-Several initiatives to create sovereign _Cloud_ platforms are taking shape around the world. This is for example the case of [_MeghRaj_](https://www.nic.in/servicecontents/national-cloud) in India (2014), _Bundescloud_ in Germany (2015), _JEDI_ in the United States (2017) , _Nimbus_ in Israel (2020), _GAIA-X_ in Europe (2020), the _Riigipilv_ in Estonia (2020), _Outscale_, _Athea_, and _S3NS_ in France (2010, 2017 and 2021), the [_Government Cloud_](https:/ /www.nippon.com/en/in-depth/a07707) in Japan (2021), the _National Strategic Hub_ in Italy (2022). At the heart of these infrastructures, there is unanimous agreement on an organizational structure to unify practices and orchestrate these technologies: DevOps.
+Several initiatives to create sovereign _Cloud_ platforms are taking shape around the world. This is for example the case of [_MeghRaj_](https://www.nic.in/servicecontents/national-cloud) in India (2014), _Bundescloud_ in Germany (2015), _JEDI_ in the United States (2017) , _Nimbus_ in Israel (2020), _GAIA-X_ in Europe (2020), the _Riigipilv_ in Estonia (2020), _Outscale_, _Athea_, and _S3NS_ in France (2010, 2017 and 2021), the [_Government Cloud_](https://www.nippon.com/en/in-depth/a07707) in Japan (2021), the _National Strategic Hub_ in Italy (2022). At the heart of these infrastructures, there is unanimous agreement on an organizational structure to unify practices and orchestrate these technologies: DevOps.
 
 More widely used in the private sector, the major cloud providers (_Amazon Web Services_, _Google Cloud Platform_, _Microsoft Azure_, _Alibaba Cloud_) internally practice this organizational, promote it, and provide the technologies to adopt it.
 
@@ -58,7 +58,7 @@ In the UK, the Ministry of Defence announced in 2022 its intention to become an 
 
 As early as 2018, the UK Ministry of Defence launched the NELSON[^NELSON] program to equip themselves with a [big-data platform](https://joinup.ec.europa.eu/collection/open-source-observatory-osor/news/open-source-royal-navy) for the benefit of the _Royal Navy_. This technical environment, based on Cloud technologies, also incorporates DevOps practices.
 
-Across the Atlantic, the United States had already recognized the need in 2011 to manage information in a unified and agile manner, accessible via a single access point (see chapter "[Zero trust](#development-based-on-zero-trust)"). The _Department of Defense_ (DoD) outlines this vision in its "DoD IT Industrialized Systems Strategy and Roadmap"[^DoDITEnterpriseStrategyRoadmap].
+Across the Atlantic, the United States had already recognized the need in 2011 to manage information in a unified and agile manner, accessible via a single access point (see chapter "[Zero trust](#zero-trust-based-development)"). The _Department of Defense_ (DoD) outlines this vision in its "DoD IT Enterprise Strategy and Roadmap"[^DoDITEnterpriseStrategyRoadmap].
 
 > « Twenty-first century military operations require an agile information environment to achieve an information advantage for personnel and mission partners. [...] To meet this challenge, DoD is undertaking a concerted effort to unify its networks into a single information environment that will improve both operational effectiveness and information security posture. »
 >
@@ -86,7 +86,7 @@ The experience of pioneering companies now ensures that efforts invested in DevO
 
 According to the renowned American company [Atlassian](https://www.atlassian.com/devops/what-is-devops/history-of-devops)[^AtlassianHistoryOfDevops], the DevOps movement was born between 2007 and 2008. It was a time when software development professionals (those who develop) and system administrators (those who deploy) were each concerned about their poor ability to collaborate. They viewed this situation as a critical dysfunction, stemming from their lack of closeness.
 
-Initially, DevOps focused on how to improve the efficiency of software development and deployment. More than a decade later, this methodology has evolved to address other areas such as security, Cloud infrastructures, and corporate culture. Around 2015, the DevOps methodology was primarily employed by major American tech companies (GAFAM[^GAFAM] and NATU[^NATU]) or businesses that were already using the [agile methodology](#being-closer-to-business-needs).
+Initially, DevOps focused on how to improve the efficiency of software development and deployment. More than a decade later, this methodology has evolved to address other areas such as security, Cloud infrastructures, and corporate culture. Around 2015, the DevOps methodology was primarily employed by major American tech companies (GAFAM[^GAFAM] and NATU[^NATU]) or businesses that were already using the [agile methodology](#staying-close-to-business-needs).
 
 Now widespread, organizations of all sizes use the DevOps methodology worldwide and across various sectors[^GoogleCloudDevopsLeaders] (healthcare, finance, transportation, government, heavy industry...).
 
@@ -96,15 +96,15 @@ The community coined a term for a real phenomenon that hinders communication and
 
 Google theorizes five pillars of DevOps:
 
-1. [**Reduce Organizational Silos**](#reduce-organizational-silos)
+1. [**Reduce organizational silos**](#breaking-down-organizational-silos)
    - By fostering engagement and sharing the sense of responsibility among stakeholders in both successes and failures (engineers, project managers, users/business teams). Everyone should feel involved and validated at their level.
-2. [**Embrace Failure**](#embrace-failure)
+2. [**Embracing failure**](#embracing-failure)
    - With the understanding that failure is a result of the organization's lack of procedures and methods.
-3. [**Lower the Cost of Change**](#lower-the-cost-of-change)
+3. [**Reducing the cost of change**](#reducing-the-cost-of-change)
    - Implement changes incrementally, deploy quickly, fail quickly to iterate.
-4. [**Leverage Automation**](#leverage-automation)
+4. [**Leveraging automation**](#leverage-automation)
    - Automate to save time and improve the maintainability of the infrastructure.
-5. [**Measure Everything**](#measure-everything)
+5. [**Measuring everything**](#measuring-everything)
    - By establishing performance indicators, system reliability metrics, to better understand the behavior of deployed services, respond more quickly, or even predict.
 
 # DevOps vs Site Reliability Engineering
@@ -149,9 +149,9 @@ The Site Reliability Engineer is responsible for designing, deploying and mainta
 
 The SRE team, therefore, is responsible for your IT infrastructure, typically comprising several environments: development, testing, pre-production (or _staging_), and production. They aim to answer the question, "what are the things (tools, procedures, machines) that we don't have, but need to achieve our resilience goal?"
 
-SREs employ software engineering practices to manage their infrastructures. They develop and deploy tools aimed at achieving a resilience objective. In this regard, SRE encompasses many facets of DevOps (see chapter ["The 5 Pillars of DevOps"](#the-five-pillars-of-devops)), but focuses on the automation of administration, as well as the measurement of system reliability.
+SREs employ software engineering practices to manage their infrastructures. They develop and deploy tools aimed at achieving a resilience objective. In this regard, SRE encompasses many facets of DevOps (see chapter ["The 5 pillars of DevOps"](#the-five-pillars-of-devops)), but focuses on the automation of administration, as well as the measurement of system reliability.
 
-Companies primarily hire them to honor their service contract (_Service Level Agreement_, see chapter "[Resilience Indicators](#resilience-indicators)"). In the private sector, if service availability drops below the value stipulated in the contract (e.g., below 99% monthly availability), the company is obligated to pay penalties.
+Companies primarily hire them to honor their service contract (_Service Level Agreement_, see chapter "[Resilience indicators](#resilience-indicators)"). In the private sector, if service availability drops below the value stipulated in the contract (e.g., below 99% monthly availability), the company is obligated to pay penalties.
 
 In simpler terms, companies task SREs with making their infrastructure more resilient, meaning ever more available and stable. SREs seek to answer the following question: "what are the things (tools, procedures, machines) that we don't have, but need to achieve our resilience goal?"
 
@@ -171,7 +171,7 @@ However, let's see what the market has to say. By observing job listings in the 
 
 - Development-oriented: software engineering, system engineering, quality assurance engineering[^QualityAssuranceBasics].
 - Operations-oriented: system administration, Cloud engineering, network engineering.
-- Oriented towards both: SRE, automation engineering, platform engineering; all roles in the software supply chain (see chapter "[Securing your software supply chain](#securing-your-software-chain)").
+- Oriented towards both: SRE, automation engineering, platform engineering; all roles in the software supply chain (see chapter "[Securing your software supply chain](#securing-your-software-supply-chain)").
 
 In reality, all these roles enable the practice of DevOps. However, the presence of each within an organization depends on its maturity and resources (fig. <spanc/>\ref{fig:devopsjobsevolution}).
 
@@ -199,11 +199,11 @@ Nicolas CHAILLAN, former Director of Software Engineering at the _United States 
 
 > "DevSecOps is the evolution of software engineering. It's the balance between development velocity and the time allocated to security considerations. We want security to be integrated to ensure it's not overlooked but added to the software development cycle. It's about using modern cybersecurity processes to ensure the software is both efficient and built securely, ensuring it remains problem-free over time. This is what will allow companies and organizations to remain competitive and move forward at the necessary speed against their competitors."
 
-Today, the term "DevSecOps" is often favored with the sole aim of making the discipline more attractive. However, it can help Information Systems Security (ISS) teams and their managers understand they have a [concrete role](#security-engineer-devops) to play in this type of organization. It's the "Sec" in the middle of "DevSecOps".
+Today, the term "DevSecOps" is often favored with the sole aim of making the discipline more attractive. However, it can help Information Systems Security (ISS) teams and their managers understand they have a [concrete role](#devops-security-engineer) to play in this type of organization. It's the "Sec" in the middle of "DevSecOps".
 
 > Author's Note: I consider security to be inherent to any information system, so I see the "Sec" in "DevSecOps" as implied. That's why I will rarely use this term throughout this book.
 
-We will discuss the paradigm of this organizational structure and its security techniques in the chapter "[Security: a new paradigm with the DevOps approach](#security--a-new-paradigm-with-the-devops-approach)". But before that, let's learn more about the organizational challenges of DevOps.
+We will discuss the paradigm of this organizational structure and its security techniques in the chapter "[Security: a new paradigm with the DevOps approach](#security-a-new-paradigm-with-the-devops-approach)". But before that, let's learn more about the organizational challenges of DevOps.
 
 # DevOps in Practice
 
@@ -270,7 +270,7 @@ The debate often circles back to "quality or quantity?". History of global armed
 
 > For instance, Google, with tens of thousands of engineers, maintains its SRE-to-developer ratio at about 10%[^GoogleWorkBookEngagementModel]. This SRE/developer ratio and associated costs are initially high at the outset of your initiative but tend to level off as the number of deployed services grows. This is due to the strong infrastructure needs at the start of your initiative, which decrease as administrative tasks become automated.
 
-It's proven that transitioning a traditional structure to DevOps demands significant investment. Establishing the foundation to reap its benefits also takes time. However, remember that the essence of DevOps practices is to manage exponential growth with logarithmically trending costs (see chapter "[Why DevOps?](#why-devops-)").
+It's proven that transitioning a traditional structure to DevOps demands significant investment. Establishing the foundation to reap its benefits also takes time. However, remember that the essence of DevOps practices is to manage exponential growth with logarithmically trending costs (see chapter "[Why DevOps?](#why-devops)").
 
 ## Too big, too soon
 
@@ -311,9 +311,9 @@ That said, Google saw the pitfalls of not taking risks and has been working on a
 - **Stay informed**: Keep an eye on emerging trends and new customer needs by organizing partner visits, attending trade shows, or consulting experts to stay updated on market developments. For instance, you can ask your experts to draft a quarterly newsletter for management, highlighting current technological trends.
 - **Regularly re-evaluate its strategy** (its _business model_): Using this knowledge, seek new growth opportunities by addressing new use cases. Propose new products and employ new technologies. In an institution, insights are also internal: it's essential to connect with different departments to understand their daily challenges and align innovations to address them.
 - **Encourage risk-taking and experimentation**: Motivate teams to propose new ideas and pilot projects to explore new technologies. Reward risk-taking.
-- **Invest in innovation**: Allocate sufficient resources for research and development (R&D). For instance, grant one day of remote work per week to your experts to explore innovative technology. Provide funding for teams to purchase equipment for experimentation or grant access to a cloud hosting provider (see chapter "[Continuous Training](#continuous-training)").
+- **Invest in innovation**: Allocate sufficient resources for research and development (R&D). For instance, grant one day of remote work per week to your experts to explore innovative technology. Provide funding for teams to purchase equipment for experimentation or grant access to a cloud hosting provider (see chapter "[Continuous training](#continuous-training)").
 
-More practically, if you decide to form your own team, members might leave your organization at any time. Given the depth of the discussions they were involved in, they might leave behind work that is challenging to pick up. That's why many organizations prefer to engage a third party, with a clearly defined scope, ensuring the leader gets a result (through the third party's contractual obligation). We will explore in the chapter "[Staying Close to the Business](#staying-close-to-the-business)" how this approach can have long-term negative consequences for the organization.
+More practically, if you decide to form your own team, members might leave your organization at any time. Given the depth of the discussions they were involved in, they might leave behind work that is challenging to pick up. That's why many organizations prefer to engage a third party, with a clearly defined scope, ensuring the leader gets a result (through the third party's contractual obligation). We will explore in the chapter "[Staying close to business needs](#staying-close-to-business-needs)" how this approach can have long-term negative consequences for the organization.
 
 Organizational changes always entail a cultural shift that must be managed. This cultural gap can sometimes be too challenging to bridge for the entire organization, indicating it might be too early to introduce your plan. Cultivate awareness through presentations and success stories. Leaders must clearly understand the transformation's impact and associated risks: service disruption, HR strategy changes, staff training, or equipment purchases. Support your leaders in visualizing the transformation as you work on building your evidence.
 
@@ -337,9 +337,9 @@ If you believe you don't have the necessary internal resources, don't hesitate t
 
 Be more nuanced than announcing a "major transformation plan." Such practices invariably frustrate many team members, fail to gain the support of all your teams, and risk undermining your credibility. They can also make you a hostage to your predecessor by associating you with past failed transformations.
 
-As discussed in the chapter "[Too big, too soon](#too-big-too-soon)," adopt a step-by-step strategy and gradually develop your intuition about who needs to be reorganized. Gain team buy-in by showcasing the realm of possibilities to inspire them. Then let them convince their peers on your behalf. We will delve deeper into these strategies in the chapter "[How to Convince and Keep the Faith](#how-to-convince-and-keep-the-faith)".
+As discussed in the chapter "[Too big, too soon](#too-big-too-soon)," adopt a step-by-step strategy and gradually develop your intuition about who needs to be reorganized. Gain team buy-in by showcasing the realm of possibilities to inspire them. Then let them convince their peers on your behalf. We will delve deeper into these strategies in the chapter "[How to convince and keep the faith](#how-to-convince-and-keep-the-faith)".
 
-## Resisting technological lag
+## Refusing technological lag
 
 > "It's normal, we'll always be behind here."
 
@@ -362,13 +362,13 @@ However, it's essential to know _when_ to unveil innovations. Preston DUNLAP, th
 To prevent technological lag, organization leaders can adopt several practices:
 
 - Continuously train staff, including decision-makers (see chapter "[Continuous Training](#continuous-training)").
-- Maintain an internal innovation capability to stay critical (see chapter "[Internal Team Model](#internal-team-model)").
-- Accept controlled risk-taking and promote open communication (see chapter "[Accepting Failure](#accepting-failure)").
-- Measure and implement indicators to avoid complacency (see chapter "[Measure Everything](#measure-everything)").
+- Maintain an internal innovation capability to stay critical (see chapter "[Internal team model](#internal-team-model)").
+- Accept controlled risk-taking and promote open communication (see chapter "[Accepting failure](#accepting-failure)").
+- Measure and implement indicators to avoid complacency (see chapter "[Measuring everything](#measuring-everything)").
 
 # Prerequisites
 
-Designing the best service (a method, software, or tool) won't let you shine unless you provide easy access, uninterrupted service, and support. DevOps will enable you to structure and maintain this source of value.
+Designing the best service (a method, software, or tool) won't let you be helpful to your organization unless you provide easy access, uninterrupted service, and support. DevOps will enable you to structure and maintain this source of value.
 
 This book doesn't even require your team to be especially large, nor does it require your leaders to already be convinced. However, it does require your team to be convinced that they can drive the project forward. Of course, over time, support from other teams in your organization will become a valuable argument to showcase the success of your initiative.
 
@@ -388,7 +388,7 @@ Starting your DevOps initiative requires envisioning the recruitment of several 
 
 Whether you're a senior manager or a mission officer aiming to enhance the services your organization offers, you will need to justify your initiative to your superiors and the rest of your organization. It's therefore essential to understand how to communicate effectively so everyone buys into your project. Let's explore some strategies for doing this in the next chapter.
 
-# How to Persuade and Maintain Faith
+# How to convince and keep faith
 
 First and foremost, it's not about convincing. You can't just walk up to someone and say, "you're wrong, I'm right." Instead, you need to inspire your audience to align with your vision or project. In this way, they'll be convinced on their own.
 
@@ -436,7 +436,7 @@ And thus, your initiative gets caught in a vicious cycle (fig. <spanc/>\ref{fig:
 
 \newpage
 
-The problem is primarily cultural: the organization isn't trained to support innovation, making it challenging to innovate. Innovators must then find indirect ways to make a difference. On the flip side, innovators are often not well-versed in the structures where they are asked to innovate. This highlights the need to train these profiles so they better understand how the organization operates. By implementing the 5 pillars of DevOps, you will help your organization transform its culture and promote innovation (refer to chapter "[The Five Pillars of DevOps](#the-five-pillars-of-devops)")
+The problem is primarily cultural: the organization isn't trained to support innovation, making it challenging to innovate. Innovators must then find indirect ways to make a difference. On the flip side, innovators are often not well-versed in the structures where they are asked to innovate. This highlights the need to train these profiles so they better understand how the organization operates. By implementing the 5 pillars of DevOps, you will help your organization transform its culture and promote innovation (refer to chapter "[The five pillars of devops](#the-five-pillars-of-devops)")
 
 Therefore, make sure you fully grasp the political dynamics between the leadership team and your initial experimenters before acting covertly, or you risk complicating your progress.
 
@@ -452,7 +452,7 @@ Furthermore, don't be disheartened by the first person who resists. Every innova
 - Henry FORD had a vision that every American should own an affordable car. Back then, cars were seen as a luxury item for the wealthy: "it's not clear what it's for, but it looks nice." He created the first moving assembly line in 1913[^FordIndustryChain], and _Ford_ is still an industry leader today.
 - Elon MUSK believed in creating reusable rocket launchers. Initially mocked[^ElonMuskBiography] or highly doubted[^MuskImpossibleQuote] by the Russian and American space industries, he's now respected by the latter and seen as a [threat](https://www.ft.com/content/24cca993-b249-45a5-8c42-b39c0ec30c5b) by the [European space industry](https://www.latribune.fr/entreprises-finance/industrie/aeronautique-defense/satellites-europeens-lances-par-spacex-la-terrible-defaite-de-l-europe-spatiale-937632.html).
 
-If you face direct opposition, you may need to rethink your communication strategy (refer to the following chapter "[Adapting Your Message](#adapting-your-message)"). Start with understanding opposing viewpoints. If you feel that some are deliberately trying to end discussions, consider the following tactics:
+If you face direct opposition, you may need to rethink your communication strategy (refer to the following chapter "[Tailoring your message](#tailoring-your-message)"). Start with understanding opposing viewpoints. If you feel that some are deliberately trying to end discussions, consider the following tactics:
 
 - **Invoke shared values**: Even if you and your counterpart have different beliefs, you might still have common values. Show how your initiative aligns with them.
   - If both of you value innovation, explain how your approach promotes it and the new opportunities it offers.
@@ -507,17 +507,17 @@ Lastly, you cannot completely rule out the possibility that your counterpart mig
 
 More often than not, lackluster communication results from misunderstandings rather than malintent. Unless you're sure, always assume the issue isn't with the person in front of you.
 
-# Internal Team Model
+# Internal team model
 
 By understanding the techniques to address common resistance to change situations, we can move forward with greater confidence. Let's now explore how to structure our approach and strengthen our arguments for effectively launching our initiative.
 
 ## In-house development as a real alternative
 
-In the chapter "[Refusing Technological Lag](#refuser-le-retard-technologique)", I discuss internal innovation as a means to prevent an organization's decline. However, it's crucial to clarify how in-house development, beyond being effective, becomes essential if a company wants to remain competitive.
+In the chapter "[Refusing technological lag](#refusing-technological-lag)", I discuss internal innovation as a means to prevent an organization's decline. However, it's crucial to clarify how in-house development, beyond being effective, becomes essential if a company wants to remain competitive.
 
 Which company responsible for a major IT project would claim, "We don't need an IT expert"? Due to a lack of technical acculturation or previously mentioned psychological phenomena, decision-makers sometimes chronically turn to consulting firms.
 
-Much like global organizations such as the World Health Organization (WHO) or the United Nations (UN), national entities like the National Center for Scientific Research (CNRS), the National Education, and the Public Health France agency have an internal scientific council[^ConseilScientifiqueSPF]. This ensures they stay updated on the latest scientific knowledge, enabling decision-makers to make informed choices. In the private sector, this role is filled by the Chief Technical Officer (CTO) and their senior managers (VPs in English).
+Much like global organizations such as the World Health Organization (WHO) or the United Nations (UN), national entities like the National Center for Scientific Research (CNRS), the National Education, and the Public Health France agency have an internal scientific council[^ScientificCouncilSPF]. This ensures they stay updated on the latest scientific knowledge, enabling decision-makers to make informed choices. In the private sector, this role is filled by the Chief Technical Officer (CTO) and their senior managers (VPs).
 
 While a scientific council can help an organization remain at the forefront of scientific knowledge, it isn't enough to make it innovative. Especially if its members aren't periodically refreshed. To innovate, practice is key.
 
@@ -531,13 +531,13 @@ One of the primary strengths of an internal team lies in data security, with dat
 
 Furthermore, an internal team has a unique ability to quickly and relevantly evaluate technological innovations, placing them in the organization's business challenges context. They are also positioned to promote the assimilation of these new technologies within the organization through presentations suitable for all levels.
 
-Relying solely on an external resource for your IT projects will inevitably lead to prohibitive costs. Without internal expertise, you're at the mercy of talented sales teams from companies eager to sell you services your organization will never use - even if they manage to convince you otherwise.
+Relying solely on an external resource for your IT projects will inevitably lead to prohibitive costs. Without internal expertise, you're at the mercy of talented sales teams from companies eager to sell you services your organization will never use.
 
 The main reason decision-makers are cautious about in-house developments is maintenance. They're right: paying a service provider can be expensive, but they're contractually bound to deliver. This contract often comes with a maintenance provision. A single internal developer - poorly equipped due to limited support - might fail at the same task, ultimately calling the decision-maker's responsibility into question.
 
 Therefore, hiring two or three engineers won't be enough to sustain your developments. To successfully offer a useful solution, which can be a viable, maintainable alternative and credible to your superiors, you'll need to assemble a much larger team.
 
-By equipping this team with a proper development environment (see "[Software Factory](#usine-logicielle)") and incorporating best DevOps practices, they'll have time to focus on the quality of your software. While this requires a time investment and might be a challenging step with your superiors, they haven't yet realized how invaluable this advancement will be in the future! Stay the course.
+By equipping this team with a proper development environment (see "[Software factory](#software-factory)") and incorporating best DevOps practices, they'll have time to focus on the quality of your software. While this requires a time investment and might be a challenging step with your superiors, they haven't yet realized how invaluable this advancement will be in the future! Stay the course.
 
 At one of the companies I worked for, the in-house development of software by an engineer saved several million euros. Equivalent industrial programs were stagnating, and the business units remained helpless. It took just one engineer - albeit a brilliant one - to solve a problem that had persisted for over 6 years.
 
@@ -555,7 +555,7 @@ The problem isn't with the data scientists but rather with decision-makers who, 
 
 A typical data science example concerning DevOps is the need for computational power, storage capacity, and services to develop and monitor the training of models. Yet, most data scientists aren't equipped to set up their machine, their GPU drivers[^DriversGPU], and their Jupyter Notebook environment[^JupyterNotebook], especially within the complex environments characteristic of large organizations (regulatory constraints).
 
-## Being Closer to the Business
+## Staying close to business needs
 
 What will set your team apart is the support you provide to your operators. Compared to traditional development teams or external service providers, your advantage is the potential to have close interactions with your organization's business operations.
 
@@ -573,7 +573,7 @@ Within an armament program, the onboard computer systems of a ship (e.g., sensor
 
 Beyond the technical solutions you offer, your business teams will notice that your more agile organizational mode is efficient for them. Consequently, they will support your initiative. As a team leader, your goal should be to have representatives from business teams that you've aided with your tools testify during crucial presentations. Such representations will bolster your credibility and prevent your teams from merely being seen as "technical development providers."
 
-![Comparison between traditional methodology and agile methodology: while the V methodology establishes need specifications, the agile methodology adapts to user needs over time.\label{fig:cycle_v_vs_agile}](./images/cycle_v_vs_agile.png)
+![Comparison between traditional methodology and agile methodology: while the V methodology establishes need specifications, the agile methodology adapts to user needs over time.\label{fig:cycle_v_vs_agile}](./images/cycle_v_vs_agile.jpg)
 
 This proximity to business operations will enable your teams to feel more involved in your organization's missions. It's a win-win dynamic for both your engineers and clients. Both parties benefit from each other's expertise: the engineer gains a deeper understanding of the issue, and the operator specifies their need as precisely as possible.
 
@@ -599,15 +599,15 @@ When the legal framework allows, forego "anonymized samples". Engineers need a p
 
 Otherwise, you can be sure a bug will occur as soon as an "unknown" data passes through the software (see _edge cases_). Provide your teams with production data intended to be used in the tools: you'll spend less time on bug fixes and improve the quality of service provided by your software.
 
-If you don't have the necessary permissions, perhaps hiring in-house isn't essential. A service provider can just as effectively build the software from open-source data. However, consider the risks of proceeding this way (see [Staying Close to the Business](#staying-close-to-the-business)).
+If you don't have the necessary permissions, perhaps hiring in-house isn't essential. A service provider can just as effectively build the software from open-source data. However, consider the risks of proceeding this way (see [Staying close to the business needs](#staying-close-to-business-needs)).
 
-# Security: A New Paradigm with the DevOps Approach
+# Security: a new paradigm with the DevOps approach
 
 The idea that DevOps bridges different professions for collaboration is not easy to implement. Traditional roles in Information System Security (ISS) found themselves confronted with practices they weren't used to and sometimes didn't have the time to grasp.
 
 In large organizations, company rules or even the law itself require specific versions of a software to be defined for it to be qualified[^ANSSIQualifiedSoftware] or approved. Imagine having the responsibility to enforce these conditions when DevOps methods involve dozens of software updates daily: it's quite daunting! Therefore, understanding the makeup of a cloud infrastructure to correctly define its "security" is essential.
 
-Security affects all [pillars of DevOps](#the-practical-pillars-of-devops). This chapter focuses on a high-level description of security concepts within a DevOps approach.
+Security affects all [pillars of DevOps](#the-pillars-of-devops-in-practice). This chapter focuses on a high-level description of security concepts within a DevOps approach.
 
 In this organizational mode, security practices are automated to be systematically verified. The aim is to minimize so-called "documentary" security in favor of programmed rules. Indeed, using standardized technologies (e.g., containers, Kubernetes) facilitates implementing security rules, ensuring they are applied.
 
@@ -617,11 +617,11 @@ The DORA report[^DORAWebsite] "_State of DevOps 2022_"[^DORAStateOfDevops2022Ann
 
 Security has always been a matter of culture. However, the DevOps methodology introduces all the techniques that will allow an organization not to overlook good practices, previously neglected or lost in voluminous and cumbersome archives.
 
-The key is to understand that in DevOps mode, we operate on a principle of [iterative improvement cycles](#staying-close-to-the-business). Projects are never set in terms of technology used, and deployments are continuous without human interaction. This ensures that innovation remains agile and always addresses the client's needs most accurately.
+The key is to understand that in DevOps mode, we operate on a principle of [iterative improvement cycles](#staying-close-to-business-needs). Projects are never set in terms of technology used, and deployments are continuous without human interaction. This ensures that innovation remains agile and always addresses the client's needs most accurately.
 
 But it's not a free-for-all: there are technological standards and procedures that control what's deployed, according to the security standards your organization demands.
 
-We'll delve deeper into the cultural aspects of the DevOps methodology in the chapter "[Embracing Failure](#embracing-failure)".
+We'll delve deeper into the cultural aspects of the DevOps methodology in the chapter "[Embracing failure](#embracing-failure)".
 
 ## Qualification, Certification, and Approval
 
@@ -630,7 +630,7 @@ There are three ways to manage risk when making a technical choice concerning th
 - Qualification: It is the recommendation by the French state for proven and approved cybersecurity products or services[^QualificationANSSI]. It attests to their compliance with regulatory, technical, and security requirements promoted by ANSSI, providing a guarantee of product robustness. It allows the product to access regulated markets.
 - Certification: It is an attestation of a product's robustness, based on a compliance analysis and penetration tests performed by a third-party evaluator[^PASSI] under the authority of ANSSI[^CertificationANSSI]. It allows access to regulated markets and ensures a level of trust for users wishing to adopt it. The process takes between 2 months (first level security certification) and 18 months (common criteria certification).
 
-Certification/qualification concerns a product. Approval concerns the deployment of this product in an environment (an information system). While certification is not a legal requirement, approval can be, depending on your SSI rules or the law (e.g., if you are an OIV[^OIV]). It represents the acceptance of risk versus the benefits the installation brings. In this sense, it can be validated by an SSI authority regardless of a product's certification/qualification.
+Certification/qualification concerns a product. Approval concerns the deployment of this product in an environment (an information system). While certification is not a legal requirement, approval can be, depending on your IT security rules or the law (e.g., if you are an OIV[^OIV]). It represents the acceptance of risk versus the benefits the installation brings. In this sense, it can be validated by an IT security authority regardless of a product's certification/qualification.
 
 Qualifications, certifications, and approvals are currently not well-suited to continuous deployment practices, as they freeze risk at a specific moment. Yet, threats emerge daily: a vulnerability in a library, for example, could be detected a day after approval is granted. Even though the approval is temporary, the vulnerability might persist during this time, with a risk of exploitation. It remains to be detected, and for someone who has undergone the administrative ordeal of approval, to consider repeating the experience.
 
@@ -696,7 +696,7 @@ Tools like [_ReviewDog_](https://github.com/reviewdog/reviewdog), [_Hound_](http
 
 ## Securing your software supply chain
 
-In May 2021, the White House released a decree describing new strategies for "improving the country's cybersecurity". Among the 7 described priorities[^FactSheetUSASecurity], enhancing the security of the software supply chain is mentioned. It states there's an "urgent need to implement stricter techniques, allowing for quicker anticipation, to ensure products (software purchased by governments) operate securely and as intended"[^USAExecOrderImproveCybersec]. This commitment was renewed in January 2022 with Joe BIDEN's signing of the USA National Security Memorandum[^NSM2022].
+In May 2021, the White House released a decree describing new strategies for "improving the country's cybersecurity". Among the 7 described priorities[^FactSheetUSASecurity], enhancing the security of the software supply chain is mentioned. It states there's an "urgent need to implement stricter techniques, allowing for quicker anticipation, to ensure products (software purchased by governments) operate securely and as intended"[^USAExecOrderImproveCybersec]. This commitment was renewed in January 2022 with Joe BIDEN's signing of the U.S. National Security Memorandum[^NSM2022].
 
 DevSecOps Maturity Models (_DevSecOps * Models_) like those from OWASP[^DSOMM], DataDog[^DSOMMDatadog], AWS[^DSOMMAWS], or GitLab[^DSOMMGitLab] offer general techniques to enhance DevSecOps practices. They help in breaking down an organization's maturity progression into more accessible steps, aiming to achieve better security practices.
 
@@ -704,9 +704,9 @@ First, we'll explore the techniques and tools used to secure the software supply
 
 ### Techniques and Tools
 
-#### SCA
+#### Software Component Analysis (SCA)
 
-Information Security practices within large organizations often require that any deployed software be accredited. The accreditation document must list the dependencies used in the software: the third-party libraries it relies on. This list is called the _Software Bill of Materials_ (SBOM[^SBOM]) or "Nomenclature of Software" in English.
+Information Security practices within large organizations often require that any deployed software be accredited. The accreditation document must list the dependencies used in the software: the third-party libraries it relies on. This list is called the _Software Bill of Materials_ (SBOM[^SBOM]).
 
 The SBOM allows for quick answers to questions like "Are we affected?" or "Where is this library used in our software?", when a new vulnerability is discovered. In a DevOps approach, the libraries used in software change over time. A library or technology used today might be replaced tomorrow. Hence, developers cannot be asked to manually list these hundreds (or even thousands) of dependencies used in their software.
 
@@ -726,11 +726,11 @@ Softwares like [_Renovate_](https://github.com/renovatebot/renovate) or [_GitHub
 
 > In summary: Instead of just listing dependencies, the aim is to set up continuous detection of used libraries for all projects. It's essential to alert about threats as early as possible and refuse contributions that could bring risks before they are deployed in production.
 
-#### SAST
+#### Static Application Security Testing (SAST)
 
-While SCA tools allow you to analyze the composition of your project (its dependencies and software used), SAST tools aim to analyze the software code you develop. However, SAST tools also cover SCA features. Both fall under the domain of _Source code analysis_ or "Source code analysis" in English.
+While SCA tools allow you to analyze the composition of your project (its dependencies and software used), SAST tools aim to analyze the software code you develop. However, SAST tools also cover SCA features. Both fall under the domain of _Source code analysis_.
 
-_Static Application Security Testing_ (SAST), or "Static Security Testing of Applications" in English, focuses on techniques and tools intended to find vulnerabilities in your source code before it's run. They represent a form of white box testing. For instance, SAST tools will identify insecure configurations, SQL injection risks, memory leaks, [path traversal risks](https://owasp.org/www-community/attacks/Path_Traversal), and [race conditions](https://stackoverflow.com/a/34550/4958081).
+_Static Application Security Testing_ (SAST), focuses on techniques and tools intended to find vulnerabilities in your source code before it's run. They represent a form of white box testing. For instance, SAST tools will identify insecure configurations, SQL injection risks, memory leaks, [path traversal risks](https://owasp.org/www-community/attacks/Path_Traversal), and [race conditions](https://stackoverflow.com/a/34550/4958081).
 
 Here's a list of SAST tools with their descriptions to understand their variety:
 
@@ -748,9 +748,9 @@ While SAST significantly improves software supply chain security, it doesn't rep
 
 > In summary: SAST is a so-called "proactive" security approach, allowing for the identification and rectification of vulnerabilities before they can be exploited. Integrated within the development process, it reduces security risks and ensures better code quality. The aim is to keep a keen eye on the security of the source code throughout its lifecycle, avoiding errors that could be exploited in production by malicious actors.
 
-#### DAST
+#### Dynamic Application Security Testing (DAST)
 
-_Dynamic Application Security Testing_ (DAST), or "Dynamic Security Testing of Applications" in French, is an analysis technique that focuses on detecting vulnerabilities in a running application.
+_Dynamic Application Security Testing_ (DAST), is an analysis technique that focuses on detecting vulnerabilities in a running application.
 
 Essentially, it's an automated _black box_ intrusion test that identifies potential vulnerabilities attackers might exploit once the software is in production. These vulnerabilities can be SQL injections, _Cross-Site Scripting_ (XSS) attacks, or issues with authentication mechanisms.
 
@@ -766,9 +766,9 @@ However, DAST isn't a magic solution: tests can sometimes produce false positive
 
 > In summary: DAST encompasses tools that analyze applications in real-time to detect potential vulnerabilities. It complements static analysis (SAST). By integrating DAST into one's software pipeline, it's possible to ensure the security of applications throughout the software lifecycle: in development and in production.
 
-#### IAST
+#### Interactive Application Security Testing (IAST)
 
-_Interactive Application Security Testing_ (IAST), or "Interactive Security Testing of Applications" in French, encompasses tools that identify and diagnose security issues in applications, whether they're running or during the development phase.
+_Interactive Application Security Testing_ (IAST), encompasses tools that identify and diagnose security issues in applications, whether they're running or during the development phase.
 
 According to OWASP[^IASTOWASP], IAST tools are mainly designed for analyzing web applications and web APIs. However, some IAST products can also analyze non-web software.
 
@@ -792,13 +792,13 @@ Today, standards describe how one can properly secure their software pipeline. T
 
 Each of the _frameworks_ presented in this chapter (SLSA, SSCSP, SSDF) contains a list of recommendations on security techniques to implement in one's software pipeline. They advocate for the use of SCA, SAST, IAST, and DAST techniques.
 
-#### SLSA
+#### Supply-chain Levels for Software Artifacts (SLSA)
 
 The _Supply-chain Levels for Software Artifacts_ framework (SLSA[^SLSA], pronounced "salsa") focuses on the integrity of data and artifacts throughout the software development and deployment cycle.
 
 SLSA originated from Google's internal practices. The company developed techniques to ensure that employees, acting individually, cannot directly or indirectly access or manipulate user data in any way without appropriate authorization and justification[^BinaryAuthorizationForBorg].
 
-In software development, you use and produce artifacts (referred to as _artifacts_ in English). These can represent a development library used in your code, a machine learning binary, or the product of compiling your software (a `.bin`, `.exe`, `.whl`, etc.). SLSA operates on the principle that each stage of software creation involves a different vulnerability and that these artifacts are a prime vector of threats (fig. <spanc/>\ref{fig:slsa-supply-chain-threats}).
+In software development, you use and produce artifacts. These can represent a development library used in your code, a machine learning binary, or the product of compiling your software (a `.bin`, `.exe`, `.whl`, etc.). SLSA operates on the principle that each stage of software creation involves a different vulnerability and that these artifacts are a prime vector of threats (fig. <spanc/>\ref{fig:slsa-supply-chain-threats}).
 
 ![Software creation steps and hypothetical associated vulnerabilities within the software chain. Source: slsa.dev (The Linux Foundation).\label{fig:slsa-supply-chain-threats}](./images/slsa-supply-chain-threats.jpg)
 
@@ -819,7 +819,7 @@ The FRSCA project[^FRSCAGithub] is a pragmatic example of a software factory imp
 
 SLSA documentation is regularly updated by the community[^GitHubSLSA] and available on its [official website](https://slsa.dev).
 
-#### SSCSP
+#### Software Supply Chain Security Paper (SSCSP)
 
 The _Software Supply Chain Security Paper_ specifications (SSCSP or SSCP) from the renowned _Cloud Native Computing Foundation_ (CNCF) complement the SLSA. Historically, they cover a broader range of topics, but many recommendations overlap today.
 
@@ -827,9 +827,9 @@ Although SLSA offers more interactive, well-illustrated documentation (with exam
 
 > Author's note: For beginners, I recommend starting your software factory security project with SSCSP, then advancing with SLSA.
 
-This reference document is also collaborative[^CNCFSSCSPGithub] and broadly belongs to the standards[^CNCFTAGGithub] adopted by the CNCF's Technical Advisory Group (TAG). The TAG writes various reference documents aimed at enhancing the security of the cloud ecosystem[^CNCFTAGAnnouncement].
+This document is also collaborative[^CNCFSSCSPGithub] and broadly belongs to the standards[^CNCFTAGGithub] adopted by the CNCF's Technical Advisory Group (TAG). The TAG writes various reference documents aimed at enhancing the security of the cloud ecosystem[^CNCFTAGAnnouncement].
 
-#### SSDF
+#### Secure Software Development Framework (SSDF)
 
 The _Secure Software Development Framework_ (SSDF[^SSDF]) is a document drafted by the _National Institute of Standards and Technology_ (NIST) of the _US Department of Commerce_ for all software publishers and buyers, regardless of their affiliation with a government entity.
 
@@ -945,10 +945,10 @@ However, as mentioned earlier, the third rule of a _zero trust_ architecture is 
 ![Components of an Enterprise Infrastructure.\label{fig:security_parts_software_delivery}](./images/security_parts_software_delivery.jpg)
 
 <!-- markdownlint-disable MD037 -->
-Development workstations (fig. <spanc/>\ref{fig:security_parts_software_delivery}) are a unique component of our _zero trust_ infrastructure. They entail integrating external resources into the company's infrastructure. Conversely, the software factory's source code or the company's data is copied onto these machines. With libraries downloaded carelessly or code editors with unchecked extensions, there's an added risk of data leakage outside.
+Development workstations (fig. <spanc/>\ref{fig:security_parts_software_delivery}) are a unique component of our _zero trust_ infrastructure. They entail integrating external resources into the company's infrastructure. At the same time, the software factory's source code or the company's data is copied onto these machines. With libraries downloaded carelessly or code editors with unchecked extensions, there's an added risk of data leakage outside.
 <!-- markdownlint-enable MD037 -->
 
-We have a dilemma here. Either we allow our developers full rights, risking them disabling our security measures, or we restrict these rights, significantly hindering development velocity and innovation, and accept spending more time training personnel on their unique work environment.
+We are faced with a dilemma here. We can choose to grant our developers full permissions, but risk them disabling our security measures. Alternatively, we can limit these permissions, potentially slowing down their development velocity and ability to innovate, while also needing to invest more time in training them for an unconventional work environment (since it's controlled).
 
 Several factors should be considered:
 
@@ -1003,7 +1003,7 @@ You can manage your passwords in them and share them granularly with other users
 
 Working on a network allows you to use these tools. Here are some collaborative password management services: Vaultwarden, Bitwarden, Lastpass.
 
-## A Foundation for Your Resilience
+## A foundation for your resilience
 
 The foundation of an IT infrastructure comprises the set of technologies that allow software to be deployed on it. Typically associated with it are core services essential for the proper functioning of the infrastructure: a PKI[^PKI], a centralized authentication server (e.g., LDAP), an NTP time server, or an _Active Directory_[^ActiveDirectory].
 
@@ -1033,15 +1033,15 @@ Data flows between containers can be encrypted by default (use case: two service
 
 The benefit of this kind of foundation is that it integrates all these services automatically, without ever touching the application code, nor even requiring the integrator to know about your infrastructure. Thus, you are guaranteed that all deployed software conforms to your monitoring and security requirements. It's the foundation that adapts to the deployed software.
 
-Installation mechanisms standardized by Kubernetes (e.g., Kubernetes manifests, Helm[^Helm]) require just a few commands for software deployment. Kubernetes will automatically instantiate new containers or nodes if user load is too high. We will discuss the technical aspects of these technologies in the chapter "[Extensions to Simplify Infrastructure](#des-extensions-pour-simplifier-linfrastructure)".
+Installation mechanisms standardized by Kubernetes (e.g., Kubernetes manifests, Helm[^Helm]) require just a few commands for software deployment. Kubernetes will automatically instantiate new containers or nodes if user load is too high. We will discuss the technical aspects of these technologies in the chapter "[Extensions to simplify infrastructure](#extensions-to-simplify-infrastructure)".
 
 If your organization consists of staff already trained in ESXi technologies, or if your organization's SSI rules are not ready for a Cloud foundation, it's still possible to set up a Kubernetes cluster on your traditional ESXi infrastructure. This could be considered in a transformation plan, at the cost of temporarily increased technical debt while your historic teams get trained in Cloud technologies.
 
 In terms of security, containerized technology interfaces are standardized. It's no longer about checking the container's contents since the infrastructure takes care of it. It's about ensuring the security of containerization technology (e.g., Docker, CRI-O), as well as orchestration technologies (e.g., Kubernetes, Rancher, OpenShift).
 
-For example, have you ensured that _Microsoft Word_ is secure through [certification](#qualification-certification-et-homologation)? However, every _Word_ file doesn't need to be certified separately. It's the same for a containerized application: whether coded in Python, Go, PHP, or embedding the latest libraries, it's the container running it that needs certification.
+For example, have you ensured that _Microsoft Word_ is secure through [certification](#qualification-certification-and-approval)? However, every _Word_ file doesn't need to be certified separately. It's the same for a containerized application: whether coded in Python, Go, PHP, or embedding the latest libraries, it's the container running it that needs certification.
 
-In conclusion, treat your foundation as a product serving your engineers. The more you centralize and automate the use of this foundation's services, the less technical debt you'll have to maintain (see chapter "[Leveraging Automation](#tirer-parti-de-lautomatisation)"). Ultimately, this effort results in better service availability for your customers.
+In conclusion, treat your foundation as a product serving your engineers. The more you centralize and automate the use of this foundation's services, the less technical debt you'll have to maintain (see chapter "[Leveraging automation](#leveraging-automation)"). Ultimately, this effort results in better service availability for your customers.
 
 ## Abandoning VMs?
 
@@ -1049,7 +1049,7 @@ With microservices at the heart of Cloud DevOps infrastructures, containers seem
 
 There are rare cases where you can overnight shift from your existing production infrastructure to a cloud setup. If your teams are accustomed to managing VMs, they need time to familiarize themselves with these new technologies. Similarly, applications require time to migrate to a compatible format.
 
-To progress, set a goal to reduce VM usage. For example: "In 1 year, at least 80% of our software should run in containers." Or: "Any new software must be containerized for deployment."
+To progress, set a goal to reduce VM usage. For example: "In 1 year, at least 80% of our software should run in containers" Or: "Any new software must be containerized for deployment". This involves setting up the prerequisites mentioned in the "[Prerequisites](#prerequisites)" chapter, as well as implementing DevOps tools: a software factory, container image registries, and a containerized deployment environment.
 
 Here are several complementary situations where VMs remain valuable:
 
@@ -1070,7 +1070,7 @@ Open-source technologies represent 77% of the libraries used in proprietary (or 
 
 A European Union report[^EUOSSReport] states that in 2018, contributions from Europeans to GitHub - the world's largest open-source contribution platform - equated to 16,000 full-time positions. That's close to a billion euros for companies in Europe. These contributions offer a cost/benefit ratio of 1 to 4, allowing businesses to remain cutting-edge, develop quality code, and reduce maintenance efforts.
 
-For instance, software like the _Firefox_ browser, the _Python_ programming language, or the _Android_ operating system wouldn't exist without open-source. Even the proprietary software icon, Microsoft, began its open-source contributions to the Linux kernel in 2009. In 2014, its new CEO, Satya Nadella, proclaimed, "Microsoft loves Linux"[^MicrosoftLovesLinux]. Despite criticism[^GithubMsftAcquisitionCritics], the company even acquired _GitHub_ in 2018 and seems to continue delivering satisfaction[^GithubFollowingMsftAcquisition]. They continue contributing to numerous open-source projects listed on _opensource.microsoft.com_.
+For instance, software like the _Firefox_ browser, the _Python_ programming language, or the _Android_ operating system wouldn't exist without open-source. Even the proprietary software icon, Microsoft, began its open-source contributions to the Linux kernel in 2009. In 2014, its new CEO, Satya Nadella, proclaimed, "Microsoft loves Linux"[^MicrosoftLovesLinux]. Despite criticism[^GithubMsftAcquisitionCritics], the company even acquired _GitHub_ in 2018 and seems to continue delivering satisfaction to the community[^GithubFollowingMsftAcquisition]. They continue contributing to numerous open-source projects listed on _opensource.microsoft.com_.
 
 However, where the use of open-source in the private sector is a no-brainer, technical teams in large organizations sometimes face skepticism from wary project managers. These teams are challenged regarding their use of open-source technologies based on security concerns.
 
@@ -1087,7 +1087,7 @@ Yet, it's a mistake to believe that simply buying software will ensure its secur
 
 Historically, the official policy for approving certain libraries went through a certification cycle, aimed at mapping the risks associated with using a technology to decide whether to accept it. This decision could be supported by a code audit.
 
-For proper protection, maintain an active and systematic watch for security threats introduced into the code. In DevOps mode, your software factory is equipped with tools to detect dependencies or malicious code. You minimize risks by securing your software chain (see chapter "[Securing Your Software Chain](#securing-your-software-chain)" and job sheet "[IT Security Engineer](#it-security-engineer-devops)").
+For proper protection, maintain an active and systematic watch for security threats introduced into the code. In DevOps mode, your software factory is equipped with tools to detect dependencies or malicious code. You minimize risks by securing your software chain (see chapter "[Securing Your Software Chain](#securing-your-software-chain)" and job sheet "[IT Security Engineer](#devops-security-engineer)").
 
 For example, if you can't set up a secure software forge yourself, you can use _GitHub_ features (see chapter "[Example on GitHub](#example-on-github)"). More broadly, security practices at GitLab[^SecurityPracticesGitLab] are a great starting point.
 
@@ -1097,7 +1097,7 @@ Finally, major tech companies often release new software as open-source. These q
 
 Far from benefiting only these companies, this practice benefits the entire sector, which now has a pool of candidates familiar with the same tools and practices.
 
-## Assessing Security and Practicing
+## Assessing security and training
 
 To excel in system resilience, as in any field, training is necessary. That's why one of the recommended practices in SRE (Site Reliability Engineering) is to train to handle incidents. The objectives are as follows:
 
@@ -1105,7 +1105,7 @@ To excel in system resilience, as in any field, training is necessary. That's wh
 2. Evaluate the resilience of the infrastructure (automatic infrastructure mechanisms to resolve production outages).
 3. Train engineers to better understand their infrastructure and the tools at their disposal to respond to incidents.
 
-To ensure that its teams are well organized in case of an incident, Google has designed two types of training[^SRETrainingsGoogle]. The goal is to reduce the _Mean Time To Mitigation_ (the average time to resolve an incident, cf. chapter "[Measuring the success of its transformation](#measuring-success-transformation)"), which would impact the company's service contracts.
+To ensure that its teams are well organized in case of an incident, Google has designed two types of training[^SRETrainingsGoogle]. The goal is to reduce the _Mean Time To Mitigation_ (the average time to resolve an incident, cf. chapter "[Measuring the success of your transformation](#measuring-the-success-of-your-transformation)"), which would impact the company's service contracts.
 
 1. DiRT (_Disaster Recovery Testing_): a group of engineers plans and causes an actual failure over a defined period to test the effectiveness of its incident response. It is recommended to perform these trainings at least once a year on your critical services.
 2. The Wheel of Misfortune: a fictional scenario drawn at random, in the form of a role-playing game similar to _Dungeons and Dragons_, where a team of engineers faces an operational emergency. They interact with a "game master" who invents consequences for the actions that the engineers announce they will take. Engineers take this opportunity to review their incident investigation procedures. This practice is particularly useful for newcomers but requires that the game master be particularly experienced (cf. Pavlos RATIS's GitHub project "[wheel of misfortune](https://dastergon.gr/wheel-of-misfortune)"[^pratiswomgithub]).
@@ -1148,16 +1148,16 @@ To prevent the decline of a silo that would spread company-wide (fig. <spanc/>\r
 
 The DevOps movement believes in using common methodologies and tools to facilitate these exchanges. This chapter outlines the methodologies to adopt to achieve this objective.
 
-### Mapping the Current State
+### Mapping the existing
 
 To achieve a successful transformation, one must have a comprehensive view of the starting environment. Mapping it is a vital step that lets you understand the reality you're operating within and gauge the investments required.
 
 Your environment's map should answer the following questions:
 
 - **What are the company's mission(s)?**: This might seem basic, but not all organizations clearly define this goal. Ensure you understand the company's objectives, i.e., the problems it addresses. Clearly grasp its _business model_ to better formulate your transformation plan.
-- **Is there an existing strategy?**: What directions were given during the last transformation, and what can you learn from them? You might need to adjust your plan according to an already-implemented strategy or start afresh or in isolation (see chapter "[How to Convince and Keep Faith](#how-to-convince-and-keep-faith)").
+- **Is there an existing strategy?**: What directions were given during the last transformation, and what can you learn from them? You might need to adjust your plan according to an already-implemented strategy or start afresh or in isolation (see chapter "[How to convince and keep faith](#how-to-convince-and-keep-faith)").
 - **Which teams are working on which mission?**: List the existing teams in the organization and their contacts: whom do they serve? Who do they need? Perhaps some teams aren't collaborating with those they should be or can't communicate effectively.
-- **What kind of profiles exist in the teams?**: List the number of employees and their expertise. Maybe there's a _data scientist_ in one team who'd be more valuable elsewhere (but be careful with such moves, see chapter "[Chronic Reorganizations](#chronic-reorganizations)"). Perhaps there are too many project managers and not enough software engineers. Maybe the company doesn't yet have the profile you need.
+- **What kind of profiles exist in the teams?**: List the number of employees and their expertise. Maybe there's a _data scientist_ in one team who'd be more valuable elsewhere (but be careful with such moves, see chapter "[Chronic reorganizations](#chronic-reorganizations)"). Perhaps there are too many project managers and not enough software engineers. Maybe the company doesn't yet have the profile you need.
 - **How do teams exchange information?**: List their communication tools. Some employees might be using the new internal cloud service implemented recently, while others might still rely on email.
 - **Which teams have access to which data?**: List team data access. Are there silos where teams hoard information? Is there an inadequately monitored database risking data leaks? Is a data source especially used or strategic?
 
@@ -1175,15 +1175,15 @@ Engineers can share technical environments instead of redeploying infrastructure
 
 In many large organizations, the main obstacle to adopting internally developed software is the network they're deployed on. Teams are forced to deploy on a different network from the departments due to information systems security concerns.
 
-To make their software accessible on the departmental network, validation is often required. For any developed software, this process can take several months to a year. If these teams deploy dozens of updates every day, enduring such delays is impractical (see chapter "[Security: A New Paradigm with the DevOps Approach](#sécurité--un-nouveau-paradigme-avec-lapproche-devops)"). In the end, the users you have the least time to assist will abandon your tools because the time irritant will become too significant for them.
+To make their software accessible on the departmental network, validation is often required. For any developed software, this process can take several months to a year. If these teams deploy dozens of updates every day, enduring such delays is impractical (see chapter "[Security: a new paradigm with the DevOps approach](#security-a-new-paradigm-with-the-devops-approach)"). In the end, the users you have the least time to assist will abandon your tools because the time irritant will become too significant for them.
 
 Using a unified network is key in adopting your new tools. It allows your organization to save money, and your collaborators to be less frustrated by delays.
 
 In the next chapter, we will see how a software factory is organized and how, thanks to a unified network, it greatly increases the productivity of the organization.
 
-### The Lifecycle of Modern Software
+### The lifecycle of modern software
 
-#### Software Factory
+#### Software factory
 
 The software factory is at the heart of your DevOps infrastructure. This is where your engineers will spend most of their time: if they're not coding in their IDE[^IDE], they will be managing their projects in the software factory.
 
@@ -1205,12 +1205,12 @@ Today, development, sysadmin, InfoSec, and _management_ teams collaboratively wo
 - Software source code
 - Infrastructure documentation
 - Infrastructure administration scripts
-- Security rules (see chapter "[Continuous Integration and Security](#intégration-continue-et-sécurité)")
+- Security rules (see chapter "[Continuous integration and security](#continuous-integration-and-security)")
 - Software quality rules
 
 ![GitLab and GitHub interfaces for (from left to right): project management, documentation visualization, code capitalization.\label{fig:gitlab_github_illustrations_screenshots}](./images/gitlab_github_illustrations_screenshots.png)
 
-The goal is to store as much knowledge as possible in one place, ensuring the most up-to-date documentation is always consulted (fig. <spanc/>\ref{fig:gitlab_github_illustrations_screenshots}]).
+The goal is to store as much knowledge as possible in one place, ensuring the most up-to-date documentation is always consulted (fig. <spanc/>\ref{fig:gitlab_github_illustrations_screenshots}).
 
 _git_ is a means to consider for capitalizing on guides, tutorials, and even administrative procedures for my teams. If someone spots an error or outdated information in documentation, they can directly suggest the modification in _git_ to keep the document current.
 
@@ -1224,27 +1224,27 @@ Conversely, _git_ is not designed to store large files. One should avoid storing
 
 However, the software factory is not just about capitalizing knowledge. It also serves as a control point for all contributions. An initial level of control is established by adding users to projects they have permission to contribute to.
 
-But a second level of control can be set up: through continuous integration mechanisms (see chapter "[Continuous Integration](#intégration-continue-ci)"), automated scripts can validate a contribution based on rules defined by your organization (software quality, SSI compliance). If the contribution doesn't meet your standards, it's rejected. The contributor sees it instantly, knows why, and can suggest a correction within minutes.
+But a second level of control can be set up: through continuous integration mechanisms (see chapter "[Continuous Integration](#continuous-integration-ci)"), automated scripts can validate a contribution based on rules defined by your organization (software quality, SSI compliance). If the contribution doesn't meet your standards, it's rejected. The contributor sees it instantly, knows why, and can suggest a correction within minutes.
 
-Since software factories can manage access to resources based on a user's profile, it's entirely possible to open yours to external partners (e.g., contractors). They can then add their software following the rules established by your organization and will immediately know how to comply. These rules are defined by internal [SSI engineers](#ingénieur-ssi-devops).
+Since software factories can manage access to resources based on a user's profile, it's entirely possible to open yours to external partners (e.g., contractors). They can then add their software following the rules established by your organization and will immediately know how to comply. These rules are defined internally by [security engineers](#devops-security-engineer).
 
 This is already the case with _Platform One_[^PlatformOne], which opens its software factory to manufacturers contracting with the _U.S. Department of Defense_. Similarly, the [_NATO Software Factory_](https://nsf.dev.nato.int/) is NATO's software factory[^NatoSoftwareFactory].
 
-However, transformation offers an opportunity to develop internal expertise before being able to define rules for others. You must master the technologies discussed in this chapter to ensure your platform's security. So, work first on your internal projects before overseeing external ones. Each organization is unique but should have [its internal experts to provide the best advice](#le-développement-interne-comme-véritable-alternative).
+However, transformation offers an opportunity to develop internal expertise before being able to define rules for others. You must master the technologies discussed in this chapter to ensure your platform's security. So, work first on your internal projects before overseeing external ones. Each organization is unique but should have [its internal experts to provide the best advice](#in-house-development-as-a-real-alternative).
 
-As described in the chapter "[Code Reviews](#revues-de-code)", these reviews offer an opportunity to provide feedback on a contribution before it's deployed. It's possible to set rules so that specific teams (e.g., SSI team) must approve the contribution before it can be accepted. This mechanism can be seen as a "seal of approval". Software factories contain all these contribution validation features to best ensure the software supply chain's security.
+As described in the chapter "[Code Reviews](#code-reviews)", these reviews offer an opportunity to provide feedback on a contribution before it's deployed. It's possible to set rules so that specific teams (e.g., SSI team) must approve the contribution before it can be accepted. This mechanism can be seen as a "seal of approval". Software factories contain all these contribution validation features to best ensure the software supply chain's security.
 
-Lastly, the software factory is where software developed by your teams will be built (compiled, formatted for deployment) and then deployed on your infrastructure. Analogous to the [continuous integration](#intégration-continue-ci) principle, continuous deployment chains are responsible for deploying software according to rules defined in code (see chapter "[Continuous Deployment (CD)](#déploiement-continu-cd)").
+Lastly, the software factory is where software developed by your teams will be built (compiled, formatted for deployment) and then deployed on your infrastructure. Analogous to the [continuous integration](#continuous-integration-ci) principle, continuous deployment chains are responsible for deploying software according to rules defined in code (see chapter "[Continuous Deployment (CD)](#continuous-deployment-cd)").
 
 Caution: under no circumstances does a software factory allow your teams to develop software per se. The software factory provides resources for engineers to develop their software (dependencies, packages, binaries) but doesn't allow for code writing or execution within it.
 
-The software factory to a developer is what a brush set is to an artist: the set contains all the tools to paint, but the artist spends their time working on their easel. The developer's easel is their IDE[^IDE] on their computer: they code and run their code to test it as they write it. Options for setting up development environments are described in the chapter "[Zero Trust-Based Development](#développement-basé-sur-le-zero-trust)".
+The software factory to a developer is what a brush set is to an artist: the set contains all the tools to paint, but the artist spends their time working on their easel. The developer's easel is their IDE[^IDE] on their computer: they code and run their code to test it as they write it. Options for setting up development environments are described in the chapter "[Zero Trust-Based Development](#zero-trust-based-development)".
 
 All these technologies help to bring teams closer together and unify practices within the organization. In the next chapter, we will explore how technical teams can organize themselves to collaborate effectively within a software factory.
 
 #### GitOps
 
-GitOps is a methodology for Cloud applications based on continuous deployment (see [Continuous Deployment](#déploiement-continu-cd)). It uses _git_ projects as a "single source of truth" for infrastructure and application configurations. Once capitalized in this way, the configuration is termed "declarative". In other words, you "code" configuration files to define how to deploy your infrastructure.
+GitOps is a methodology for Cloud applications based on continuous deployment (see [Continuous Deployment](#continuous-deployment-cd)). It uses _git_ projects as a "single source of truth" for infrastructure and application configurations. Once capitalized in this way, the configuration is termed "declarative". In other words, you "code" configuration files to define how to deploy your infrastructure.
 
 The idea behind GitOps is to rely on code to determine the system's desired state.
 
@@ -1252,7 +1252,7 @@ Synchronizing the desired state is achieved through specific technologies (e.g.,
 
 Example: if you need to create a backup mechanism, you can code an Ansible playbook (see chapter "[Infrastructure as Code (IaC)](#infrastructure-as-code-iac)"), push it to a _git_ project, and a continuous deployment chain will deploy the change. The target end state is described by code.
 
-You can start by writing manually launchable IaC scripts and then choose an automated solution after maturing on the topic (e.g., an Ansible script automated by a continuous integration (CI) chain with deployment handled by ArgoCD, see chapter "[Continuous Deployment](#déploiement-continu-cd)").
+You can start by writing manually launchable IaC scripts and then choose an automated solution after maturing on the topic (e.g., an Ansible script automated by a continuous integration (CI) chain with deployment handled by ArgoCD, see chapter "[Continuous Deployment](#continuous-deployment-cd)").
 
 #### Git Workflows
 
@@ -1296,7 +1296,7 @@ Several methods have emerged over time[^TrunkBaseDevHistory], but there are 4 ma
 
     ![Example of GitLab flow. Source: gitlab.com.\label{fig:gitlab-flow}](./images/gitlab-flow.png)
 
-- **_Trunk-based_**: This method promotes continuous deployment of software (see the chapter "[Continuous Deployment](#déploiement-continu-cd)").
+- **_Trunk-based_**: This method promotes continuous deployment of software (see the chapter "[Continuous Deployment](#continuous-deployment-cd)").
 
     Unlike _github flow_, there's only one branch here. Each developer pushes their code directly to the main branch (the _trunk_, fig. <spanc/>\ref{fig:trunkgit}). This encourages making small, easily reversible contributions in case of bugs, while reducing time spent on conflicts. Indeed, developers sync their code more frequently.
 
@@ -1390,7 +1390,7 @@ Other Recommendations:
 
 To introduce this methodology to your teams and easily access references, view its [full-resolution illustration](https://links.berwick.fr/flexible-flow)[^FlexibleFlowCheatsheet].
 
-### 12-Factor Methodology
+### 12-Factor methodology
 
 Cloud technologies offer undeniable flexibility and allow for serving an increasing number of clients compared to traditional technologies. However, transitioning from a monolithic software to a scalable application requires adhering to certain design principles.
 
@@ -1408,14 +1408,14 @@ The website _12factor.net_, created by Adam WIGGINS, lists and details these pri
 8. **Concurrency**: Allowing application concurrency means having the ability to instantiate multiple clones without the need for coordination or shared state among them. This concept aligns with point 6, implying that various application instances rely on third-party services (like databases) to manage data. This facilitates scaling individual components of the application (microservices) independently based on user load (e.g., the _Unix Process Model_[^UnixProcessModel], _Horizontal Pod Autoscaling_ in Kubernetes).
 9. **Disposability and Restart Control**: An unexpected application shutdown shouldn't impact its restart; it should continue to operate as before, adapting to the current infrastructure state. The application startup should be quick (within a few seconds). The software shutdown should be controlled upon receiving a `SIGTERM` signal (_graceful exit_).
 10. **Environment Parity**: Different environments (development, pre-production, production) should be as similar as possible. Using platform services (e.g., databases, caching services) with different versions can lead to incompatibilities and errors once the software is in production.
-11. **Treat Application Logs as Streams**: An application should never handle redirection or storage of activity logs (_logs_). It shouldn't attempt to write or manage log files. Instead, it should write logs to the standard output (`stdout`) as promptly as possible (without buffering). This enables the Cloud platform to easily process logs from deployed applications (see the chapter "[A Foundation for Your Resilience](#a-foundation-for-your-resilience)").
+11. **Treat Application Logs as Streams**: An application should never handle redirection or storage of activity logs (_logs_). It shouldn't attempt to write or manage log files. Instead, it should write logs to the standard output (`stdout`) as promptly as possible (without buffering). This enables the Cloud platform to easily process logs from deployed applications (see the chapter "[A foundation for your resilience](#a-foundation-for-your-resilience)").
 12. **Execute Administrative Tasks with One-off Commands**: Applications should include scripts or tools for executing administrative actions. For instance, initiating a database migration with a Python script, accessing a console to investigate a production database with `psql`, or triggering a backup with a command. The idea is to facilitate script execution in the same environment where the software is deployed.
 
 Implementing these criteria - particularly breaking software into microservices - combined with [continuous deployment pipelines](#continuous-deployment-cd), increases the chances of anticipating software incidents by 43% according to research[^DORACDLooselyCoupledArchitecture] (e.g., failures, vulnerabilities, or degraded service performance). Containerization is especially suited to these practices. Concepts of isolation are recurrent, and technology like Docker aptly addresses them.
 
 Even though these are now standard practices in the industry, it might be beneficial to include them in a guide for newcomers.
 
-### Instant Messaging
+### Instant messaging
 
 A simple yet especially effective way to bridge the gaps between silos is to implement a shared instant messaging system. Through this medium, team members can quickly communicate without overloading their email inboxes, engage in group discussions about the next feature to develop, share snippets of code or documents effortlessly, foster cohesion by sharing memes, make general announcements, or even conduct polls to decide on a list of options. Beyond facilitating collaboration, messaging enables remote work or collaboration with decentralized teams (in other cities or countries).
 
@@ -1425,7 +1425,7 @@ Messaging platforms like _Mattermost_, _Element_, _Zulip_, and _Slack_ come with
 
 Several companies, like _Scaleway_, open their corporate messaging to their customers. This forms a community of mutual assistance and a knowledge base for new users. It fosters engagement and reassures potential users, knowing there will be someone to answer in case of problems. Users facing issues can ask their questions, to which another user or a company expert can respond. At _Canonical_ and _Prefect_, there are even "Community Engineers" whose specific role is to help the community with issues they may encounter[^PrefectCommunityEngineers]. Some companies opt to charge entirely for this user support.
 
-#### Remote Work
+#### Remote work
 
 Large organizations are often hesitant about offering remote work to their employees. They fear that employees might not focus on company tasks.
 
@@ -1435,7 +1435,7 @@ Research[^DORAFlexibleWork] has shown that a flexible work environment is linked
 
 \newpage
 
-### Software Architectures and Agility
+### Software architectures and agility
 
 Understanding different software architectures will help you grasp how software is deployed in cloud architectures.
 
@@ -1443,7 +1443,7 @@ Depending on your organizational maturity and team sizes, certain architectures 
 
 This chapter introduces three renowned architectures and describes their pros and cons. Finally, we will explore how to progressively transition your legacy software into microservices.
 
-#### Monolithic Architecture and Microservices
+#### Monolithic architecture and microservices
 
 A monolithic application (designed as a monolith) is developed as a single, indivisible entity where every function or module is interconnected. The software components depend on each other.
 
@@ -1465,9 +1465,9 @@ But one of the major benefits of microservices is the ability to scale easily: t
 
 However, this architecture requires advanced tools to maintain hundreds of intercommunicating microservices. DevOps teams facilitate the implementation of such architectures. For instance, they provide developers with application templates (_boilerplates_) containing everything needed to kick-start a microservices application on its own infrastructure.
 
-#### Serverless Architectures and Functions as a Service
+#### Serverless architectures and functions as a service
 
-To enable fine scaling on isolated functionalities, so-called "serverless" architectures (or _serverless_ in English) have emerged. The advantage of a _serverless_ architecture over traditional micro-services approaches is multifaceted:
+To enable fine scaling on isolated functionalities, so-called "serverless" architectures have emerged. The advantage of a _serverless_ architecture over traditional micro-services approaches is multifaceted:
 
 - No longer having to manage the underlying infrastructure
 - Only pay when the service is used
@@ -1494,7 +1494,7 @@ Let's summarize some advantages and disadvantages of each approach:
 | **Micro-services** | • Scalable on-demand<br>• Quick deployments<br>• Isolated bugs and crashes<br>• Language-agnostic                | • Specific skills needed to manage<br>• Data format consistency to maintain (API)<br>• More difficult to debug                        |
 | **FaaS**           | • No infrastructure management<br>• Targeted scalability<br>• Cost-effective for sporadic traffic                 | • Vendor lock-in<br>• Less control over the execution environment<br>• Start-up time if unused (_cold start_)<br>• Limited run duration |
 
-#### From Monolithic to Microservices
+#### From monolithic to microservices
 
 The leap to switch from monolithic software to a microservices architecture is often significant. However, this approach provides unprecedented flexibility in development and makes scaling drastically more efficient. But how do you make this transition without disrupting your entire operation?
 
@@ -1502,7 +1502,7 @@ Deciding to switch to microservices is tempting but involves compromises. Britis
 
 - Ability to quickly provision machines (see chapter "[A foundation for your resilience](#a-foundation-for-your-resilience)")
 - Ability to deploy quickly (see chapter "[Leveraging automation](#leveraging-automation)")
-- Have the tools to monitor your services (see chapter "[Measure everything](#measure-everything)")
+- Have the tools to monitor your services (see chapter "[Measure everything](#measuring-everything)")
 
 In essence, we're talking about Cloud technologies and DevOps techniques. At this point, you just want to validate the development process of a microservice and deploy it automatically.
 
@@ -1552,7 +1552,7 @@ Lastly, consider rewriting a part of the code completely. Sometimes, legacy code
 
 These insights and tips will allow you to confidently approach the task of rewriting your software to better integrate it into a Cloud infrastructure, taking advantage of the agility it offers your organization.
 
-## Embracing Failure
+## Embracing failure
 
 You should be prepared to see failure as an opportunity to correct your course toward a better direction. If you face significant failure, it indicates a lack of elements to control the situation.
 
@@ -1560,7 +1560,7 @@ Using indispensable tools and methodologies in the field, this chapter aims to m
 
 Instilling this mindset is a cultural shift that an organization must implement at all hierarchical levels.
 
-### Psychological Safety
+### Psychological safety
 
 > "Psychological safety is the shared belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes." - Amy C. EDMONDSON, Professor of Leadership and Management at _Harvard Business School_.
 
@@ -1594,13 +1594,13 @@ Innovation requires risk-taking. No product or strategy comes with a 100% guaran
 
 There are numerous other decision-making models[^DecisionMakingMindtools] and project management methods[^ProjectManagementMindtools] available. Don't hesitate to explore and adopt them.
 
-### Responsibilities in a DevOps Model
+### Responsibilities in a DevOps model
 
 When discovering the plethora of experimental technologies to implement for operating in a DevOps mode, you might be intimidated by the idea of becoming responsible for this vast, new system.
 
 This chapter aims to juxtapose a traditional responsibility model with the DevOps model. It also offers a tool to guide decision-makers, the DACI. It's up to you to pick and choose methodologies from each that seem most appropriate for your organization. However, be bold enough and try to avoid reverting to a traditional model, which would only give you the illusion of transformation.
 
-#### The RACI Model
+#### The RACI model
 
 One of the responsibility-sharing models is "RACI", which stands for _Responsible_ (Executor), _Accountable_ (Owner), _Consulted_ (Consulted), and _Informed_ (Informed). It ensures all stakeholders are aware of their roles and responsibilities in a project.
 
@@ -1632,7 +1632,7 @@ To mitigate this, while still reassuring your managers, RACI's deliverables can 
 
 As a leader of an initiative involving new technologies and practices, your superiors will ask you to take on many of the roles in the table above. Take on this responsibility to reassure your authorities[^RadioDevOps12]. There's no need to fear since you know the methodology you want to implement is collective and iterative.
 
-#### The DevOps Model
+#### The DevOps model
 
 Most of the time, it's not advisable to immediately abandon a RACI-like model. It's a matter of evolving culture and implementing tools. But that's the goal: a cultural shift in your organization so that authorities overcome their fears.
 
@@ -1645,7 +1645,7 @@ As you've realized, DevOps encourages not blaming stakeholders. It might seem lo
 
 That's why you should start with available resources, but have the boldness to start small in your transformation journey. Your company should gradually implement procedures (in our case, IT system control technologies) based on available human and financial resources. Once these techniques have been tested, iterate on a larger scale.
 
-#### The DACI Model
+#### The DACI model
 
 DACI is not a means to define responsibilities for a project. Instead, it's a document and method to organize occasionally, aiming to make a group decision when faced with multiple options. It's typically used to ensure a decision is made by the end of a meeting. Consider it a tool that supports the approach of shared responsibilities in DevOps mode.
 
@@ -1677,7 +1677,7 @@ Once your decision is made, it's time to communicate it so everyone is on the sa
 
 Once archived, it will help new stakeholders understand why specific decisions were made. By conducting this collective reflection, individual cognitive biases are also avoided.
 
-### Investigating Incidents
+### Investigating incidents
 
 You receive an alert message from customer support on Slack. They inform you that your file-sharing platform is down.
 
@@ -1701,11 +1701,11 @@ Here are the 5 steps of _Root Cause Analysis_:
 - Resolve the issue permanently
 - Validate the fix and ensure the incident does not happen again
 
-1. **Identify the Problem**
+1. **Identify the problem**
 
     Analyze the situation to ensure that it's indeed an incident and not just a harmless alert. The company should set a threshold to classify an event as an incident, such as an anomaly lasting more than 1 minute. If the event threatens the stability of your [resilience indicators](#resilience-indicators), treat it as an incident.
 
-    When in doubt, the best practice is to report incidents early and often. It's better to report an incident, quickly find a fix, and then close it, rather than allowing it to persist and worsen. If a major incident arises, you'll likely need to handle it as a team (see chapter "[Organizing Your Incident Response](#organizing-your-incident-response)"). You can distinguish a major incident from a minor one if you answer "yes" to any of these questions:
+    When in doubt, the best practice is to report incidents early and often. It's better to report an incident, quickly find a fix, and then close it, rather than allowing it to persist and worsen. If a major incident arises, you'll likely need to handle it as a team (see chapter "[Structuring your incident response](#structuring-incident-responses)"). You can distinguish a major incident from a minor one if you answer "yes" to any of these questions:
 
     - Do you need to call in a second team to solve the problem?
     - Is the outage visible to customers?
@@ -1731,7 +1731,7 @@ Here are the 5 steps of _Root Cause Analysis_:
 
     At this stage, you only recognize the symptoms of the problem, not its severity.
 
-2. **Contain and Analyze the Problem**
+2. **Contain and analyze the problem**
 
     Always start by resolving the problem. Restore service as soon as possible to prevent further escalation, even if the solution is temporary or not deemed "clean."
 
@@ -1749,13 +1749,13 @@ Here are the 5 steps of _Root Cause Analysis_:
 
     To analyze the issue in more detail and locate the source of the malfunction, use your observability tools (activity logs, metrics).
 
-    > The [_Beats_ suite from Elastic](https://www.elastic.co/fr/beats/) is an example of a tool that monitors infrastructure. We will explore these technologies further in the chapter "[Measure Everything](#measure-everything)".
+    > The [_Beats_ suite from Elastic](https://www.elastic.co/fr/beats/) is an example of a tool that monitors infrastructure. We will explore these technologies further in the chapter "[Measure Everything](#measuring-everything)".
 
     At this stage, you must find an immediate action. For instance, a manufacturer could decide to re-inspect ready-to-ship parts, rework them, or issue a recall. For software, the idea is to find a way to restore service, often by pushing a quick fix (known as a "hotfix").
 
     Your SRE team must ensure deployed fixes work. They can do this by running pilot tests[^PilotTests] prepared in advance.
 
-3. **Determine the Cause of the Problem**
+3. **Determine the cause of the problem**
 
     With the incident's impact now managed, it's time to investigate the root cause.
 
@@ -1777,7 +1777,7 @@ Here are the 5 steps of _Root Cause Analysis_:
     | Why?     | Because they weren't aware that their program could have a memory leak                                   |
     | Why?     | Because there was no continuous integration chain checking for it                                        |
 
-4. **Address the Problem in a Sustainable Manner**
+4. **Address the problem in a sustainable manner**
 
     After identifying the root cause of the issue, it's time to design a solution to address it.
 
@@ -1787,7 +1787,7 @@ Here are the 5 steps of _Root Cause Analysis_:
 
     Determine how the solution's effectiveness will be measured, such as through telephone surveys, online polls, automated feedback, manual measurements, etc. Set a timeframe for monitoring the action, then implement the fix.
 
-5. **Validate the Fix and Ensure the Incident Doesn't Recur**
+5. **Validate the fix and ensure the incident doesn't recur**
 
     Using the measures set in step 4, ensure that the actions taken have had the desired effect.
 
@@ -1797,13 +1797,13 @@ Here are the 5 steps of _Root Cause Analysis_:
 
     Publish and share this document internally or publicly. This keeps customers informed and satisfied, and recognizes the hard work of the operations teams.
 
-Just as airplane pilots train for emergency scenarios, your SRE teams should practice to save time when an incident occurs (refer to the chapter "[Evaluate Security and Practice](#évaluer-sa-sécurité-et-sentraîner)").
+Just as airplane pilots train for emergency scenarios, your SRE teams should practice to save time when an incident occurs (refer to the chapter "[Assessing security and training](#assessing-security-and-training)").
 
 Your incident response procedure should be easily accessible and written for all audiences. It should provide guidance not just for SRE teams but also for non-SREs who might encounter an incident. Regardless of your organization's size, you need an incident response procedure.
 
 ### Postmortems
 
-A postmortem is an incident investigation technique. Its purpose is to determine corrective actions to prevent recurrences. Your SRE team should draft this document based on information gathered during the [_root cause analysis_](#investiguer-les-incidents) (see chapter "[Investigating Incidents](#investiguer-les-incidents)").
+A postmortem is an incident investigation technique. Its purpose is to determine corrective actions to prevent recurrences. Your SRE team should draft this document based on information gathered during the [_root cause analysis_](#investigating-incidents) (see chapter "[Investigating Incidents](#investigating-incidents)").
 
 It's recommended to store these documents in a _git_ project to track changes over time (refer to the chapter ["GitOps"](#gitops)). My personal recommendation is to draft them in Markdown format.
 
@@ -1845,7 +1845,7 @@ For the first part, set the following headings:
   - How was the incident detected? (observability tools, service status page, customer call, company colleague, online news?)
 - **Problem Source(s)**
   - This is where you include elements from your _root cause analysis_ detailing how the issue occurred. Add the time for each step of the investigation. Include screenshots as evidence and to better understand the situation.
-  - Reminder: mistakes are never solely one person's fault but arise from poorly defined procedures or poorly designed infrastructures (see chapter "[Embracing Failure](#embracing-failure)").
+  - Reminder: mistakes are never solely one person's fault but arise from poorly defined procedures or poorly designed infrastructures (see chapter "[Embracing failure](#embracing-failure)").
 - **Triggering Event**
   - Describe the action that led to the incident
   - Ex: "An administrator mistakenly ran a command that deleted a critical file"
@@ -1864,7 +1864,7 @@ Define a table with four columns and as many rows as desired:
 - The **person responsible** for the action
 - The **action(s)** to be taken
 - The **priority** of this action
-- The [_issue_](#flexible-flow--a-balanced-git-workflow) or associated **ticket**
+- The [_issue_](#flexible-flow-a-balanced-git-workflow) or associated **ticket**
 
 As your team or projects grow, a more formal structure for your postmortems might be needed. The postmortem model proposed by Atlassian is a good example[^AtlassianPostmortem].
 
@@ -1872,9 +1872,9 @@ For minor incidents or daily bugs, use a Q&A service like [_Scoold_](https://sco
 
 With such software, your SREs will have a list of problems that are easily solvable in the future. A private alternative to _StackOverflow_, it also allows your developers to ask questions to other company colleagues confidentially.
 
-#### Postmortem for Retention and Attraction
+#### Postmortem for retention and attraction
 
-As discussed in the chapter "[Investigating Incidents](#investigating-incidents)", publicly sharing one's work allows it to be recognized by the community. This practice also enhances retention by enabling collaborators to build their reputation.
+As discussed in the chapter "[Investigating incidents](#investigating-incidents)", publicly sharing one's work allows it to be recognized by the community. This practice also enhances retention by enabling collaborators to build their reputation.
 
 > Video creator Bastien MARÉCAUX (known by the pseudonym _Basti UI_) introduced the concept of "teletralive", a blend of "telework" and "live streaming". He broadcasts live work sessions on the Twitch platform, with permission from his clients[^Teletralive]. This underscores the significance of publicizing one's work—a trend that might gain traction in the future.
 
@@ -1914,9 +1914,9 @@ To manage, designate 3 individuals for the following roles:
 
 In smaller teams, the IC often assumes all three roles. However, preparation for delegating these tasks during severe incidents is essential.
 
-Defining and organizing roles should be a part of your incident response procedure. Ensure clarity in your knowledge base so teams know how to act. Regularly train your teams for potential incidents (see chapter "[Evaluating Security and Training](#evaluating-security-and-training)"). Setting a low alert threshold can help expose teams to your incident response procedures more frequently.
+Defining and organizing roles should be a part of your incident response procedure. Ensure clarity in your knowledge base so teams know how to act. Regularly train your teams for potential incidents (see chapter "[Assessing security and training](#assessing-security-and-training)"). Setting a low alert threshold can help expose teams to your incident response procedures more frequently.
 
-### The Importance of Communication
+### The importance of communication
 
 Communication is vital, whether with customers or internal teams. During a significant incident, Datadog emphasized in its postmortem[^DatadogMarch2023PM] the need for early communication about outages to both customers and internal teams. Here are some insights:
 
@@ -1926,7 +1926,7 @@ During major incidents, many customers might open tickets. Assigned "support" en
 
 More broadly, the company learned over time that updating clients every 30 minutes was optimal. This frequency allows technical teams to focus on problem resolution without being interrupted too often for updates.
 
-### Anticipating Incidents
+### Anticipating incidents
 
 In this chapter, we will explore two techniques to proactively anticipate potential incidents: the premortem and the cause-and-effect analysis.
 
@@ -1975,7 +1975,7 @@ Here's a more technical example: "Our team deploys its software using Docker Com
 6. Create your **action plan**
     - E.g., prepare a training plan (to present in 1 week), contract with Company X for specialized cloud support (to finalize within 15 days).
 
-#### Cause and Effect Analysis
+#### Cause and effect analysis
 
 While the [RCA](#investigating-incidents) is a "reactive" method employed after an issue has occurred, the failure modes and effects analysis (FMEA) is a "proactive" method to attempt to anticipate failures before they occur. Introduced by the U.S. military in 1949[^FMEAHistory] and later adopted by the automotive industry, it lists out product or software error states, prioritized by risk. Based on the potential consequences of a risk, design teams prioritize the development of mechanisms to prevent its occurrence.
 
@@ -2013,15 +2013,15 @@ From this table, prioritize tasks for your teams to work on anticipating the mos
 
 For infrastructure maintenance, a best practice is to create "incident sheets". Each includes a breakdown scenario, coupled with potential solutions. Typical breakdowns include running out of disk space, a poorly migrated database, or a failed backup export. Catalog them in your knowledge base (e.g., GitLab, Confluence).
 
-### Structuring Incident Responses
+### Structuring incident responses
 
 If you are a small organization, start by formalizing your procedures to conduct an RCA and write postmortems. Then, gradually establish FMEAs and try to start your projects with premortems. Periodically, conduct FMEAs.
 
 The decision to invest time in conducting premortems, FMEAs, or postmortems is governed by your priorities in terms of resilience. [Research](https://devops.com/real-cost-downtime/) shows that service downtime [can be costly](https://www.gremlin.com/ecommerce-cost-of-downtime/) for large organizations, averaging $500,000 to $1,000,000 per hour of unavailability[^CostDowntimeStudy].
 
-## Reducing the Cost of Change
+## Reducing the cost of dhange
 
-### Don't Disrupt
+### Don't disrupt
 
 DevOps is often portrayed as a disruptive organizational approach, meaning a paradigm shift in technologies and practices. To avoid intimidating the stakeholders of your transformation, instead present DevOps as an evolution of traditional technologies.
 
@@ -2031,18 +2031,18 @@ Here are some parallels concerning the Cloud:
 
 - A container is just a more flexible tiny VM. It is managed with different commands, the nomenclature is different, but the concepts remain the same: an OS (image) from which the container is created, a configurable network, and the ability to add storage.
 - An orchestrator is just a hypervisor managed with different commands. But its components remain the same: configurable network policies between containers/VMs, storage management with VMWare's _datastores_ in place of Kubernetes' _PersistentVolumes_, or VMWare's _NSX Controller_ in place of Kubernetes' _Ingress Controller_.
-- However, there are particular evolutions that one should merely accept (as with mathematical theorems): see the chapter "[A Foundation Serving Your Resilience](#a-foundation-serving-your-resilience)".
+- However, there are particular evolutions that one should merely accept (as with mathematical theorems): see the chapter "[A foundation for your resilience](#a-foundation-for-your-resilience)".
 - Micro-services are merely a division of traditional software into multiple independent blocks. Each block can be scaled according to user load.
 
-Traditional VMs also have their place in a Cloud DevOps infrastructure; they can be part of it (see chapter "[Abandon VMs?](#abandon-vms)").
+Traditional VMs also have their place in a Cloud DevOps infrastructure; they can be part of it (see chapter "[Abandoning VMs?](#abandoning-vms)").
 
 Along with these technological evolutions come methodologies to manage technical debt, accelerate deployments, and maintain a high level of resilience: a software forge, gitops, continuous integration, continuous deployment, postmortems... That's DevOps.
 
 By implementing the methodologies covered in this book and using standardized administration technologies (e.g., Kubernetes), you will ultimately reduce administrative costs.
 
-### Avoiding Design Mistakes
+### Avoiding design mistakes
 
-As discussed in the chapter "[Staying Close to Business Needs](#staying-close-to-business-needs)", it's common to not meet the initially expressed need using traditional methods. Setting the requirement at a fixed point is not a reliable way to deliver the expected product. Needs continually evolve, and clients often can't articulate exactly what they need.
+As discussed in the chapter "[Staying close to business needs](#staying-close-to-business-needs)", it's common to not meet the initially expressed need using traditional methods. Setting the requirement at a fixed point is not a reliable way to deliver the expected product. Needs continually evolve, and clients often can't articulate exactly what they need.
 
 Agile methodology aims to reduce this risk by offering several short delivery cycles (_sprints_). After each cycle, the client provides feedback. This loop continues until the project suits the client or the contract ends. DevOps provides the tools for a company to streamline these interactions. In the most efficient companies, _sprints_ are merely a contractual detail to discuss progress: the software is already in production and ready to use.
 
@@ -2052,7 +2052,7 @@ If software is meant to deeply change its recipient's habits, delivering it earl
 
 Avoiding this approach, especially with a very demanding client, can in extreme cases lead to projects that drag on for years. Or even worse, to abandoned projects. This will inevitably cause mutual frustrations among the team leader, the development team, and the client.
 
-### Avoiding Development Errors
+### Avoiding development errors
 
 Human error is the primary cause of mistakes. That's why automation is a fundamental component of a DevOps mode organization. Continuous integration and deployment chains are particularly effective in streamlining the software delivery cycle.
 
@@ -2060,7 +2060,7 @@ If you currently feel friction in your production cycle, you likely need to inve
 
 These tools generally speed up the development process and expedite code reviews to get the software into production as quickly as possible. These methods are especially effective when you regularly onboard new staff unfamiliar with your development practices. Inexperienced newcomers, without explicit and restrictive rules (like CI/CD pipelines), can quickly impact the quality of your codebase. A slight oversight, and a bug can quickly emerge.
 
-Deployment techniques like _blue/green_ also reduce the risk of software regressions (see chapter "[Continuous Deployment](#continuous-deployment-cd)").
+Deployment techniques like _blue/green_ also reduce the risk of software regressions (see chapter "[Continuous deployment](#continuous-deployment-cd)").
 
 ### Design Thinking
 
@@ -2084,7 +2084,7 @@ This prototype-driven culture is vital because a company that doesn't prototype 
 
 You don't have to build the software from scratch before presenting it to the customer. You can create a mockup on Figma or Penpot, use a _low-code/no-code_ solution[^lownocode], or find someone to play the customer role.
 
-### Continuous Training
+### Continuous training
 
 A good culture is nurtured by knowledge of cutting-edge techniques. The technical skills of your teams are the foundation of your organization and bolster their confidence in your resilience.
 
@@ -2108,13 +2108,13 @@ In any case, present your transformation as a career growth opportunity. And be 
 
 \newpage
 
-## Leveraging Automation
+## Leveraging automation
 
 In increasingly complex information systems, it is essential to automate recurring tasks. Humans are the primary source of errors within an information system[^HumanErrorIS]. Any seasoned engineer will confirm this. That's why Google teams try to minimize operator interactions when managing their systems[^GoogleWorkbookEliminatingToil].
 
 > « If a human operator needs to touch your system during normal operations, you have a bug. The definition of normal changes as your systems grow. » - Carla GEISSER, SRE at Google
 
-If you want to make your IT system an integral tool within your company, you must first automate repetitive and time-consuming actions: manual tasks (or _toil_ in English).
+If you want to make your IT system an integral tool within your company, you must first automate repetitive and time-consuming actions: manual tasks (or _toil_).
 
 This notion of toil describes all manual, repetitive, and automatable tasks. Essentially, these are all the intellectually uninteresting tasks that a robot would be far better suited to do than your brilliant engineers.
 
@@ -2150,7 +2150,7 @@ Each has its pros, cons, and community. Some complement each other. The key is t
 
 You can start by automating your infrastructures with basic scripts (bash, Powershell) and then move on to more advanced technologies like Ansible that will standardize your configurations.
 
-Refer to the [GitHub project "ToDevOps"](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services) [^ToDevOps] to see this technology in action.
+Refer to the [GitHub project "ToDevOps"](https://github.com/flavienbwk/ToDevOps#2-deploying-infrastructure-services)[^ToDevOps] to see this technology in action.
 
 For supervising and automating these admin tasks, advanced tools like _Ansible AWX_, _Ansible Tower_ (fig. <spanc/>\ref{fig:2020ansibletowerinterface}), _RedHat Satellite_, _Alcali_, _Uyuni_, or _Palantir Apollo_ might be worth considering, depending on your organization's maturity level.
 
@@ -2158,9 +2158,9 @@ For supervising and automating these admin tasks, advanced tools like _Ansible A
 
 Remember that maintaining infrastructure is complex, so _keep it simple_! Don't rush to adopt the latest technology just because it's "sexy": the more technologies and abstraction layers you add, the larger and more experienced your team needs to be to maintain and fix it (see chapter "[Too big, too soon](#too-big-too-soon)").
 
-### Test-Driven Development
+### Test-driven development
 
-Test-Driven Development (or _TDD_ for short) is a software development practice that dates back [to the early 2000s](https://en.wikipedia.org/wiki/Test-driven_development). The objective is to control software erosion[^SoftwareErosion], which means preventing regressions and managing technical debt over time. Put simply: it's about avoiding bugs as contributions accumulate.
+Test-driven development (or _TDD_ for short) is a software development practice that dates back [to the early 2000s](https://en.wikipedia.org/wiki/Test-driven_development). The objective is to control software erosion[^SoftwareErosion], which means preventing regressions and managing technical debt over time. Put simply: it's about avoiding bugs as contributions accumulate.
 
 The idea is to write tests before developing the actual functionality. The TDD development cycle is as follows[^BeckKentTDDBook]:
 
@@ -2187,7 +2187,7 @@ All these tests can be automatically verified before any production release. Let
 
 ### Continuous Integration (CI)
 
-Continuous Integration (_Continuous Integration_ or _CI_ in English) is a development practice within the software factory. The idea is as follows: with every code change, automated scripts are triggered to check the conformity of the contribution (fig. <spanc/>\ref{fig:ci-pipeline-gitlab}). This conformity can relate to security standards, verify software quality, or check prerequisites for production deployment.
+Continuous Integration (CI) is a development practice within the software factory. The idea is as follows: with every code change, automated scripts are triggered to check the conformity of the contribution (fig. <spanc/>\ref{fig:ci-pipeline-gitlab}). This conformity can relate to security standards, verify software quality, or check prerequisites for production deployment.
 
 For instance, your security teams may not have the time to validate the conformity of every contribution. They can then delegate part of these checks to scripts that will automatically and consistently ensure the codebase meets your security standards. The benefits are threefold:
 
@@ -2197,7 +2197,7 @@ For instance, your security teams may not have the time to validate the conformi
 
 ![Illustration of a continuous integration pipeline in GitLab. Source: [gitlab.com](https://docs.gitlab.com/ee/ci/pipelines).\label{fig:ci-pipeline-gitlab}](./images/ci-pipeline-gitlab.png)
 
-Thus, in a DevOps approach, security managers are no longer individuals setting rules on paper but [engineers "coding" security rules](#security-engineer-devops) in the form of automated scripts, within the software forge (fig. <spanc/>\ref{fig:2023_gitlab_job_example}). This ensures these rules are respected by developers and production.
+Thus, in a DevOps approach, security managers are no longer individuals setting rules on paper but [engineers "coding" security rules](#devops-security-engineer) in the form of automated scripts, within the software forge (fig. <spanc/>\ref{fig:2023_gitlab_job_example}). This ensures these rules are respected by developers and production.
 
 ![Example of a GitLab job checking the documentation conformity of a project using the Markdownlint tool.\label{fig:2023_gitlab_job_example}](./images/2023_gitlab_job_example.png)
 
@@ -2213,7 +2213,7 @@ Here are some examples of algorithms that can be executed to automatically check
 
 All these tasks contribute to reducing the technical debt of your codebase and facilitate the deployment of your projects, ensuring the effectiveness of the standards defined by your DevOps teams.
 
-It's common to hear about a continuous integration _pipeline_ (in French "chaîne d'intégration continue"), which accompanies other terms in the CI/CD tech universe. Let's define the most common ones:
+It's common to hear about a so-called continuous integration "pipeline", which accompanies other terms in the CI/CD tech universe. Let's define the most common ones:
 
 - **Job**: a task/script triggered automatically upon an event
 - **Pipeline**: a sequence of _jobs_
@@ -2221,9 +2221,9 @@ It's common to hear about a continuous integration _pipeline_ (in French "chaîn
 - **Build**: stage containing _jobs_ ensuring the code compiles correctly, and the Docker image builds properly with the directory contents
 - **Test**: _jobs_ checking the code/contribution's conformity
   - Examples:
-    - Ensure code maintainability: using tools like [_SonarQube_](https://www.sonarsource.com/products/sonarqube) or _linters_[^linter] such as [_black_](https://github.com/psf/black) for Python or [_KubeLinter_](https://github.com/stackrox/kube-linter) for Kubernetes configurations (cf. [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/criteria/0), chapter ["Securing the software chain"](#securing-the-software-chain)).
+    - Ensure code maintainability: using tools like [_SonarQube_](https://www.sonarsource.com/products/sonarqube) or _linters_[^linter] such as [_black_](https://github.com/psf/black) for Python or [_KubeLinter_](https://github.com/stackrox/kube-linter) for Kubernetes configurations (cf. [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/criteria/0), chapter ["Securing your software supply chain"](#securing-your-software-supply-chain)).
     - Check the contribution doesn't introduce security vulnerabilities: with software like _Quay Clair_, _Jfrog X-Ray_, _ClamAV_, or the OpenSSF _Scorecards_.
-    - Ensure the code passes unit tests (cf. chapter ["Test-Driven Development"](#test-driven-development)).
+    - Ensure the code passes unit tests (cf. chapter ["Test-driven development"](#test-driven-development)).
     - Verify documentation conformity: As software evolves over time, code snippets in documentation might become outdated and dysfunctional. _Istio_ developed a tool[^IstioTestDocumentationTool] to automatically ensure these snippets are updated. It extracts them from the documentation's _Markdown_ files and converts them into testable executables.
     - Check the composition of a Docker container.
 - **Deploy**: _jobs_ executing actions impacting the infrastructure or production (cf. chapter ["Continuous Deployment](#continuous-deployment-cd)").
@@ -2236,15 +2236,15 @@ As mentioned earlier, the advantage of a continuous integration pipeline is also
 
 Within a software factory, technologies such as _GitLab Runners_, _GitHub Actions_, or services like [_Circle CI_](https://circleci.com) are used to execute continuous integration tasks.
 
-### Continuous Deployment (CD)
+### Continuous deployment (CD)
 
-Continuous deployment (_continuous deployment_ or _CD_ in English) is a DevOps practice that allows the triggering of administrative actions or the deployment and updating of software in production. The triggering is not necessarily automated, but the applied actions are coded. This means they are predictable, traceable, and replicable. This reduces the time to provide a new feature to its users, minimizing manual intervention and the risk of errors by administrators.
+Continuous deployment (CD) is a DevOps practice that allows the triggering of administrative actions or the deployment and updating of software in production. The triggering is not necessarily automated, but the applied actions are coded. This means they are predictable, traceable, and replicable. This reduces the time to provide a new feature to its users, minimizing manual intervention and the risk of errors by administrators.
 
-This practice aligns with the principle of "continuous delivery" (_continuous delivery_ in English), which encompasses steps prior to deployment. For instance, publishing the binaries or images of the software's latest version, or creating the latest _release_ of the project in the software factory.
+This practice aligns with the principle of "continuous delivery", which encompasses steps prior to deployment. For instance, publishing the binaries or images of the software's latest version, or creating the latest _release_ of the project in the software factory.
 
 Most of the time, continuous deployment pipelines are technically similar to continuous integration pipelines. For example, they replay tasks from continuous integration pipelines before deploying the software. However, they might require more specific parameters, such as environment variables or secrets (e.g., _Hashicorp Vault_, _Akeyless_, _Keywhiz_, _Conjur_). Indeed, deployed software often relies on environment variables to run correctly on a target infrastructure.
 
-It is common to encounter different qualification/pre-production (_staging_) and production environments. These validate the proper functioning of software before its production release. Continuous deployment pipelines automate all or part of this process, optionally adding _smoke tests_ or functional tests (see chapter "[Test-Driven Development](#test-driven-development)").
+It is common to encounter different qualification/pre-production (_staging_) and production environments. These validate the proper functioning of software before its production release. Continuous deployment pipelines automate all or part of this process, optionally adding _smoke tests_ or functional tests (see chapter "[Test-driven development](#test-driven-development)").
 
 Initially, the goal is to at least automate the update of your software in production. You can do this similarly to continuous integration pipelines, using _GitLab Runners_ or _GitHub Actions_.
 
@@ -2258,25 +2258,25 @@ Built on the same mechanics, it's possible to deploy multiple instances of softw
 
 Using these same tools, you can [adopt and automate a blue/green deployment strategy](https://dev.to/stack-labs/canary-deployment-with-argo-cd-and-istio-406d). This technique gradually shifts users to a new software version, ensuring it functions properly. The idea is to instantiate the new software version (green) alongside the current one (blue). The system then directs a limited proportion of users to the new software (e.g., 10%). This proportion is gradually increased over a set period, while measuring the error rate for each request. If the rate is the same or lower than the previous deployment, the software is rolled out to all users. Otherwise, deployment is canceled, and the old version remains in production.
 
-Even more advanced tools exist to address large-scale deployment challenges. We'll explore Palantir's Apollo as an example in the chapter "[Deploying in Parallel in Different Environments](#deploying-in-parallel-in-different-environments)".
+Even more advanced tools exist to address large-scale deployment challenges. We'll explore Palantir's Apollo as an example in the chapter "[Deploying simultaneously in different environments](#deploying-simultaneously-in-different-environments)".
 
-Moreover, continuous deployment pipelines are not limited to software deployment or administrative task launches. They can be the starting point for monitoring your software. For instance, a continuous deployment pipeline can set up a _Prometheus / Grafana_ instance and start sending its activity logs. Deploying your software doesn't mark the end of your infrastructure's resilience cycle: now you need to monitor it. We'll delve into these techniques in the chapter "[Measure Everything](#measure-everything)".
+Moreover, continuous deployment pipelines are not limited to software deployment or administrative task launches. They can be the starting point for monitoring your software. For instance, a continuous deployment pipeline can set up a _Prometheus / Grafana_ instance and start sending its activity logs. Deploying your software doesn't mark the end of your infrastructure's resilience cycle: now you need to monitor it. We'll delve into these techniques in the chapter "[Measure Everything](#measuring-everything)".
 
 \newpage
 
-## Measure Everything
+## Measuring everything
 
-In the previous chapter - "[Leveraging Automation](#leveraging-automation)" - we saw how automation greatly saves time in managing our infrastructure and enhances its security and resilience.
+In the previous chapter - "[Leveraging automation](#leveraging-automation)" - we saw how automation greatly saves time in managing our infrastructure and enhances its security and resilience.
 
 In this chapter, we'll discuss a significant dimension of automation: observability. It's through measurements that systems can be massively automated, and better decisions can be made organization-wide. Measuring everything achieves three objectives:
 
 1. Technical and commercial teams can know the state of a service at any time (operational, partially accessible, down).
-2. Technical teams can analyze data to pinpoint issues and attempt to resolve them (see chapter "[Organizing Incident Response](#organizing-incident-response)").
+2. Technical teams can analyze data to pinpoint issues and attempt to resolve them (see chapter "[Organizing incident response](#organizing-incident-response)").
 3. With these data insights, technical teams can assist commercial teams in making better decisions for the organization.
 
 Trusting decisions based on its own data marks the culmination of a successful DevOps transformation. The industry calls this "data-driven decision making."
 
-### The 3 Pillars of Observability
+### The 3 pillars of observability
 
 Activity logs (_logs_), metrics (_metrics_), and traces (_traces_) are regarded as the three pillars of observability. These three types of data can be generated by software to identify and address issues that might arise once deployed.
 
@@ -2352,9 +2352,9 @@ Be mindful of your error budget consumption peaks: if an engineer spends ten hou
 
 To answer the first question, let's look at the possible indicators to monitor in the next chapter.
 
-### Resilience Indicators
+### Resilience indicators
 
-#### The 4 Key Signals
+#### The 4 golden signals
 
 Monitoring distributed systems presents a real dilemma. SRE teams need to monitor them effortlessly - allowing quick interventions - even though their architecture is often complex. Indeed, various technologies make up these systems. The 4 key signals offer a unified method of characterizing the most vital phenomena to watch.
 
@@ -2375,7 +2375,7 @@ Within a Cloud infrastructure, a _service mesh_ automates the collection of thes
 
 #### SLI, SLO, and SLA
 
-The value of your error budget stems from your "Service Level Objectives" (_Service Level Objective_ or SLO in English).
+The value of your error budget stems from your _Service Level Objectives_ (SLO).
 
 An SLO defines a target resilience level for a system. It is represented as a ratio of "good" events to be honored, out of all monitored events, over a specific time period. For instance, your SRE team may set the following objective: "_99% of pages should load in under 200ms over 28 days_."
 
@@ -2445,11 +2445,11 @@ The Service Level Agreement (SLA) is a contract between your organization and a 
 - Below 99.5% availability, AWS begins refunding its [EC2 instance](https://aws.amazon.com/compute/sla) clients. Between 99.9% and 99% availability, the client is refunded 10% of their expenses. Below 95%, they're refunded in full (100%).
 - Below 99.9% availability, Microsoft starts refunding its [_Teams_ customers](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=13). Below 99.9%, the client receives a credit amounting to 25% of their expenses. Below 95%, they get a credit for 100% of their expenses.
 
-In France, SLAs are not mandated by law. However, they can be part of your service contract to clarify your commitments and avoid disputes. Indeed, it's always preferable to list clear terms both you and your client have agreed to. SLAs also serve as a competitive edge: your company commits to a certain quality of service, whereas your competitors might not. Implementing an SLA in your governance approach holds stakeholders (developers, SRE, decision-makers) accountable and shares expectations. The company now pivots based on the metrics it gathers and interprets as SLOs. This is referred to as being _data-driven_.
+SLAs are not mandated by law. However, they can be part of your service contract to clarify your commitments and avoid disputes. Indeed, it's always preferable to list clear terms both you and your client have agreed to. SLAs also serve as a competitive edge: your company commits to a certain quality of service, whereas your competitors might not. Implementing an SLA in your governance approach holds stakeholders (developers, SRE, decision-makers) accountable and shares expectations. The company now pivots based on the metrics it gathers and interprets as SLOs. This is referred to as being _data-driven_.
 
 Within an institution, you can use SLO/SLA as a means to gain credibility among your superiors or specific teams. An SLA might justify hiring necessary personnel to maintain a certain service level. Or it could warrant a budget increase to enhance the team's operations. Conversely, superiors might demand a certain service quality level from your teams, reflecting in the annual objectives of staff members. For pilot projects, establishing SLOs is sufficient. Setting reliable SLOs is a challenge in itself. Maintaining those objectives is another.
 
-#### Alerts and Percentile Aggregation
+#### Alerts and percentile aggregation
 
 Your alerting mechanisms must continuously monitor your SLIs to ensure they don't exceed your SLOs. And most importantly, that they don't surpass your SLAs! But how do you raise an alert before your SLOs/SLAs are breached?
 
@@ -2523,7 +2523,7 @@ Calculate your MTTx by averaging the differences between start and end dates for
 
 As you can see, most of the metrics can be derived from your postmortem. They are intrinsically linked to it and complement it. Ensure to keep your MTTx updated to quantify your resilience level and pinpoint critical areas affecting it.
 
-### Service Mesh
+### Service mesh
 
 Despite its very tangible and practical application, the _service mesh_ or "service grid of services" can seem complex at first glance.
 
@@ -2561,7 +2561,7 @@ However, a _service mesh_ is not lightweight technology: it requires internal ad
 
 Several _service meshes_ are available, each with its strengths and weaknesses. Take your time to compare them before selecting one. For instance, Linkerd[^Linkerd] is easier to deploy than Istio but offers fewer features. Consul[^Consul] is another alternative.
 
-### Extensions to Simplify Infrastructure
+### Extensions to simplify infrastructure
 
 As described in the chapter "[A Foundation for Your Resilience](#a-foundation-for-your-resilience)", Cloud platforms offer the advantage of including a variety of services that cater to common security and monitoring needs. These services automatically handle features that historically were tedious to develop individually for each software or for the infrastructure itself.
 
@@ -2601,9 +2601,9 @@ Integration and automation are the fundamental characteristics of a Cloud founda
 
 The technologies mentioned above automatically interface with the deployed software. In the Cloud, it's not the software's job to interface with the foundation's technologies, but rather the foundation interfaces with the software.
 
-# Leveraging Available Resources
+# Leveraging available resources
 
-## Finding Ambassadors for Your Project
+## Finding ambassadors for your project
 
 The project manager is responsible for doing everything necessary to ensure the project meets its objectives. They often play the role of a _product owner_ - a term defined in the Agile methodology - who acts as a liaison between technical and business teams. They are the one who "sells" your project to its users.
 
@@ -2619,17 +2619,17 @@ Getting clients to vouch for you is the best way to gain credibility. It proves 
 
 Try to establish a strong network of a few "ambassadors" (product advocates) within your organization to assert your legitimacy and support your initiative. Besides this support, the ambassador will help capture user feedback or provide it themselves to refine your value proposition.
 
-## Reservists or "20% Project"
+## Reservists or "20% project"
 
 In the private sector, especially among the GAFAM[^GAFAM], it's common for employees to get one day a week dedicated to participating in a different project within the company. One day out of five, they choose to work for another team. This option benefits both the employee and the company: the employee explores different technologies and practices, enhances skills in those areas, and then leverages this knowledge for other projects they handle.
 
-Another example is the ["10% Program"](https://www.10pourcent.etalab.gouv.fr/) by DINUM and INSEE. Based on volunteering, the aim is for public service agents to dedicate 10% of their working time to common interest projects[^Programme10p].
+Another example is the ["10% program"](https://www.10pourcent.etalab.gouv.fr/) by DINUM[^DINUM] and INSEE[^INSEE]. Based on volunteering, the aim is for public service agents to dedicate 10% of their working time to common interest projects[^Programme10p].
 
 Try to offer your hierarchy this possibility so that each employee can benefit from this program: this will encourage exchanges, bring the teams closer together and build loyalty among your employees by allowing them to discover and work on new subjects.
 
 To take advantage of all the resources at your disposal, consider employing reserve personnel within your team if your organization allows it. Even if they are only present a few days a year, they can support you on specific tasks. For example, an information systems security reservist will help you complete certification. A data scientist to evaluate an artificial intelligence solution or provide one-off support on a complex dataset to process.
 
-## Public/Private Synergy: A Winning Approach
+## Public/private synergy: a win-win approach
 
 Major organizations today primarily rely on services provided by industrial partners for their technical projects. This might be due to a lack of in-house experts, a lack of human resources, or both. It's a mistake to simply trust the industrial partner thinking, "they are the experts, everything will work, I just need to pay." Anyone who has led an industrial program has faced challenges with stakeholders understanding the business stakes (project managers vs. business vs. industrial partners) and has seen that a project never goes 100% according to the planned blueprint.
 
@@ -2641,7 +2641,7 @@ Every DevOps and SRE engineer knows: it's impossible for a system to function 10
 
 For reference, even Google [doesn't promise more than 99.9% availability](https://workspace.google.com/terms/sla.html) (SLA)[^GoogleWorkspaceSLA] with its capitalization of over 1.3 trillion dollars and its +150,000 rigorously selected employees. Amazon (AWS) with its nearly one trillion dollar capitalization only guarantees [no more than 99.5%](https://aws.amazon.com/compute/sla)[^AWSSLA].
 
-### Better Organization to Avoid Failure
+### Better organization to avoid failure
 
 The traditional approach of institutions working with industrial partners resembles "waterfall" developments: a major meeting is set up to gather requirements, a technical and functional specification document is drafted to structure the contract, developments are then undertaken, and the final product is delivered, concluding the contract.
 
@@ -2684,9 +2684,9 @@ For instance, the _ITZBund_ (German Federal Center for Information Technology, a
 
 This practice is a win-win for everyone: clients experience shorter delivery times, end-users get a tool that better fits their needs, the industrial partner sees the potential for renewed contracts with satisfied clients, and taxpayers get value for their money. Overall, everyone saves time, is pleased with the outcomes, and feels more engaged in every interaction.
 
-# Measuring the Success of Your Transformation
+# Measuring the success of your transformation
 
-It is crucial to measure the efforts you invest in your initiative. This allows for a factual assessment of the effectiveness of your decision-making. Of course, initially, it's not uncommon to witness a degradation in performance since you are altering routines, meaning the organization's equilibrium. If you notice a decline in the metrics over time, you know you need to adopt a different strategy to reverse the trend (see chapter "[Knowing When to Innovate and When to Stop](#knowing-when-to-innovate-and-when-to-stop)").
+It is crucial to measure the efforts you invest in your initiative. This allows for a factual assessment of the effectiveness of your decision-making. Of course, initially, it's not uncommon to witness a degradation in performance since you are altering routines, meaning the organization's equilibrium. If you notice a decline in the metrics over time, you know you need to adopt a different strategy to reverse the trend (see chapter "[Knowing when to innovate and when to stop](#knowing-when-to-innovate-and-when-to-stop)").
 
 According to research, an organization's technical maturity can quadruple its team's performance[^DORATechnicalCapabilities]. Let's explore some indicators used in the industry. These indicators are frequently debated but still seem to be the widely accepted reference.
 
@@ -2731,11 +2731,11 @@ For example, the GitLab project[^GitLabGitLab] - one of the largest collaborativ
 
 This index should be updated every quarter. This time interval can be shortened or extended depending on the maturity of your organization: the more confident you are in your ability to deploy regularly, the shorter your measurement interval can be. E.g., over a semester, a quarter, a month, or a week.
 
-Unlike the SRE, which relies on specific measurements (e.g., "[The 4 Key Signals](#the-4-key-signals)", "[Resilience Indicators](#resilience-indicators)"), the DevOps lead has some freedom to choose the measurements that seem most relevant to them. That is, those that best assess the service they provide to internal teams. However, the _modus vivendi_ between DevOps and SRE is the "deployment lead time": both strive to make this parameter as satisfactory as possible.
+Unlike the SRE, which relies on specific measurements (e.g., "[The 4 golden signals](#the-4-golden-signals)", "[Resilience indicators](#resilience-indicators)"), the DevOps lead has some freedom to choose the measurements that seem most relevant to them. That is, those that best assess the service they provide to internal teams. However, the _modus vivendi_ between DevOps and SRE is the "deployment lead time": both strive to make this parameter as satisfactory as possible.
 
-# Integrated DevOps Platform
+# Integrated DevOps platform
 
-## Deploying Simultaneously in Different Environments
+## Deploying simultaneously in different environments
 
 Your organization is sometimes tasked with deploying software in environments as diverse as they are unique. If you're lucky, these environments are few and connected. But things get complicated when the number starts to grow and they're isolated. It becomes essential to find a standardized way to deploy updates while minimizing delays.
 
@@ -2748,13 +2748,13 @@ The company operates under the belief that software engineers and SREs each have
 That's why Apollo's interface primarily showcases two menus: "Environments" (SRE-oriented) and "Products" (software engineer-oriented).
 
 - The "Environments" menu allows connection to different environments, defining deployment strategies across multiple environments (e.g., GCP, AWS, Azure, on-premise) and channels (see _release channels_), setting software quality and security criteria, and approving infrastructure changes.
-- The "Products" menu ensures that a software's new version is correctly deployed: Apollo automatically manages _blue/green_ deployments (see chapter "[Continuous Deployment](#continuous-deployment-cd)") and rollbacks. It enables the declaration of update strategies by specifying which service needs updating before another (see the following chapter "[Constraint-Based Deployment](#constraint-based-deployment)").
+- The "Products" menu ensures that a software's new version is correctly deployed: Apollo automatically manages _blue/green_ deployments (see chapter "[Continuous deployment](#continuous-deployment-cd)") and rollbacks. It enables the declaration of update strategies by specifying which service needs updating before another (see the following chapter "[Constraint-based deployment](#constraint-based-deployment)").
 
 Connected to _git_ repositories, it allows tracking and approving any code modifications before deployment.
 
 Lastly, Apollo offers centralized monitoring of the status of services deployed across all your environments from a single platform. Whether connected to your favorite observability service (e.g., _Datadog_, _Prometheus_, _Pagerduty_) or operating independently via the _Apollo Observability Platform_, it incorporates feedback of all sorts of measurements (_logs_, _metrics_, _traces_) to investigate incidents in detail.
 
-## Constraint-Based Deployment
+## Constraint-based deployment
 
 With Apollo, Palantir introduces the concept of constraint-based continuous deployment[^PalantirConstraintBasedCD]. Apollo deploys an agent in each environment, reporting the real-time status of that environment to determine how updates should be deployed. This means Apollo knows both the expected state of deployments on infrastructure and the real-time, up-to-date state of these deployments.
 
@@ -2764,7 +2764,7 @@ For instance, if application `foo` version `1.1.0` requires the service `bar` to
 
 Another example is database schema migration. By declaring a database schema version compatible with a specific application version, Apollo prevents deploying an app incompatible with a database yet to be updated. For instance, if `foo:1.1.0` only supports the `V2` schema of `bdd:V1`, `foo:1.1.0` will only be deployed once `bdd:V1` has migrated to `V2`. This way, Apollo knows which version of an application is eligible for deployment in which environment.
 
-# Distribution of Initiatives
+# Distribution of initiatives
 
 In surveys, 47% of organizations claimed to adopt a DevOps approach. This number rose to 74% in 2021[^RedGate2021Report].
 
@@ -2789,17 +2789,17 @@ This positions DevOps as a methodology primarily adopted by companies that have 
 
 Transforming an organization, regardless of its size, is a complex task involving significant political, technical, and human challenges. Should this transformation fail, the consequences can be severe. At the same time, it's crucial for your organization to consider the long-term implications of continuing with its current model. DevOps aims to minimize these risks through standardized methodologies and tools.
 
-Research and the experience of thousands of businesses today allow us to understand the challenges related to transitioning organizations to the Cloud. Having proven its effectiveness, institutions are gradually shifting their focus to DevOps, although few have fully embraced it yet (see chapter "[Distribution of Initiatives](#distribution-of-initiatives)"). One major hurdle remains in sourcing talent in this area, but the foremost challenge is to persuade the leadership.
+Research and the experience of thousands of businesses today allow us to understand the challenges related to transitioning organizations to the Cloud. Having proven its effectiveness, institutions are gradually shifting their focus to DevOps, although few have fully embraced it yet (see chapter "[Distribution of initiatives](#distribution-of-initiatives)"). One major hurdle remains in sourcing talent in this area, but the foremost challenge is to persuade the leadership.
 
-Several strategies can be adopted depending on your hierarchical and technical position. The most common is to start with a pilot project that addresses internal needs (e.g., deploying software co-developed with your business teams). This can attract initial internal partners (see chapter "[Internal Team Model](#internal-team-model)").
+Several strategies can be adopted depending on your hierarchical and technical position. The most common is to start with a pilot project that addresses internal needs (e.g., deploying software co-developed with your business teams). This can attract initial internal partners (see chapter "[Internal team model](#internal-team-model)").
 
-Provide services promptly to demonstrate the efficiency of your approach compared to traditional methods (e.g., software better suited to needs, streamlined deployment, quick response to incidents...). Once the early adopters are convinced, have them testify during your presentations to decision-makers. Business teams often agree to do this, feeling indebted for the services you've provided. With such a powerful impact, you can gradually rally a community to elevate your vision (see chapter "[How to Convince and Keep Faith](#how-to-convince-and-keep-faith)").
+Provide services promptly to demonstrate the efficiency of your approach compared to traditional methods (e.g., software better suited to needs, streamlined deployment, quick response to incidents...). Once the early adopters are convinced, have them testify during your presentations to decision-makers. Business teams often agree to do this, feeling indebted for the services you've provided. With such a powerful impact, you can gradually rally a community to elevate your vision (see chapter "[How to convince and keep faith](#how-to-convince-and-keep-faith)").
 
-Facilitating change is primarily about minimizing risks undertaken. Starting small and iterating is the best approach to success. Moreover, by understanding the psychological and technical realities behind a transformation project, you'll have all the tools and arguments for a quicker and less perilous transition (see chapter "[Initiatives in Organizations](#initiatives-in-organizations)"). Presenting Cloud technologies and DevOps as evolutionary rather than disruptive techniques is an effective way to persuade.
+Facilitating change is primarily about minimizing risks undertaken. Starting small and iterating is the best approach to success. Moreover, by understanding the psychological and technical realities behind a transformation project, you'll have all the tools and arguments for a quicker and less perilous transition (see chapter "[Initiatives within organizations](#initiatives-within-organizations)"). Presenting Cloud technologies and DevOps as evolutionary rather than disruptive techniques is an effective way to persuade.
 
 Like major corporations that constantly invest in new technologies, every organization must be willing to take risks to remain competitive. Your executive committee should remain open to surprising perspectives and encourage experimentation.
 
-For instance, it's vital not to underestimate the potential of employees deemed challenging to manage. Some might be the visionaries that will define your future. Seriously considering the impact of their ideas is essential, lest you miss critical opportunities for the organization's future (see chapter "[Reducing Organizational Silos](#reducing-organizational-silos)").
+For instance, it's vital not to underestimate the potential of employees deemed challenging to manage. Some might be the visionaries that will define your future. Seriously considering the impact of their ideas is essential, lest you miss critical opportunities for the organization's future (see chapter "[Breaking down organizational silos](#breaking-down-organizational-silos)").
 
 While business teams you assist see immediate benefits, this value is often more abstract for the leadership. As the instigator of a transformation, you need to invest time in familiarizing organizational decision-makers. Don't hesitate to start with basic Cloud concepts and gradually clarify the implications of DevOps for stakeholders. It's crucial to provide examples of how you've addressed internal dysfunctions with your approach.
 
@@ -2820,17 +2820,17 @@ With the leadership convinced and granting you both technical and political reso
 
 Your initiative will inevitably face challenges initially. Welcome feedback graciously and enhance your services. Once confident in the service reliability, expand its deployment and communicate extensively.
 
-You'll soon notice that operational or business priorities often sideline infrastructure work (Cloud/DevOps) in favor of product developments (software). Yet, research shows that structuring around these proven methods enhances long-term efficiency (see chapter "[Why DevOps?](#why-devops-)"). Ensure you allocate time for resilience work in your engineers' schedules.
+You'll soon notice that operational or business priorities often sideline infrastructure work (Cloud/DevOps) in favor of product developments (software). Yet, research shows that structuring around these proven methods enhances long-term efficiency (see chapter "[Why DevOps?](#why-devops)"). Ensure you allocate time for resilience work in your engineers' schedules.
 
-A DevOps infrastructure realizes its full potential once connected to your organization's main network. This is when it can deploy frequent updates, respond quickly to incidents, and consolidate your teams' work. If your project began on an isolated platform, focus now on connecting where your users are present (see chapter "[Pillars of DevOps in Practice](#pillars-of-devops-in-practice)").
+A DevOps infrastructure realizes its full potential once connected to your organization's main network. This is when it can deploy frequent updates, respond quickly to incidents, and consolidate your teams' work. If your project began on an isolated platform, focus now on connecting where your users are present (see chapter "[The pillars of devops in practice](#the-pillars-of-devops-in-practice)").
 
-Measuring the effectiveness of one's initiative over time is critical: both to ensure that one is moving in the right direction without dogmatism, and to provide quantifiable arguments to superiors or teams that still need convincing. Make sure to maintain a clear dashboard of these indicators (see chapter "[Measuring the Success of Your Transformation](#mesurer-le-succès-de-sa-transformation)").
+Measuring the effectiveness of one's initiative over time is critical: both to ensure that one is moving in the right direction without dogmatism, and to provide quantifiable arguments to superiors or teams that still need convincing. Make sure to maintain a clear dashboard of these indicators (see chapter "[Measuring the success of your transformation](#measuring-the-success-of-your-transformation)").
 
-Tools such as ChatGPT based on LLMs offer as many new opportunities (e.g., [GitLab Duo](https://about.gitlab.com/gitlab-duo/), [GitHub Copilot](https://github.com/features/copilot)) as they introduce new threats (internal skills, _deepfakes_). Concurrently, security standards will continue to evolve at a breakneck pace. This advocates for a transformation of organizations towards a more agile digital universe. The future is shaping today, and the companies that will succeed best are those that manage to leverage the latest technologies and integrate them into their software development cycle (see chapter "[Refusing Technological Lag](#refuser-le-retard-technologique)").
+Tools such as ChatGPT based on LLMs offer as many new opportunities (e.g., [GitLab Duo](https://about.gitlab.com/gitlab-duo/), [GitHub Copilot](https://github.com/features/copilot)) as they introduce new threats (internal skills, _deepfakes_). Concurrently, security standards will continue to evolve at a breakneck pace. This advocates for a transformation of organizations towards a more agile digital universe. The future is shaping today, and the companies that will succeed best are those that manage to leverage the latest technologies and integrate them into their software development cycle (see chapter "[Refusing the technological lag](#refusing-technological-lag)").
 
 Beyond the speed at which technology evolves and as with any area of expertise, this type of infrastructure requires the maintenance of the skills necessary to administer it.
 
-We can easily imagine that a fighter pilot maintains his or her flying skills. Why would it be any different for engineers who maintain critical software vital to the company's operation? You and your teams must continue to stay ahead by training regularly (see chapter "[Continuous Training](#former-de-manière-continue)").
+We can easily imagine that a fighter pilot maintains his or her flying skills. Why would it be any different for engineers who maintain critical software vital to the company's operation? You and your teams must continue to stay ahead by training regularly (see chapter "[Continuous training](#continuous-training)").
 
 In DevOps mode, organizations can afford to fail faster, with controlled risk, to innovate ahead of their competitors.
 
@@ -2841,7 +2841,7 @@ Now that you understand the array of challenges in DevOps, it's insightful to ex
 You've probably already heard numerous terms suffixed with "Ops": in industrial proposals, job offers, or online services. All these terms describe specialties in computer system operations using various techniques and methodologies. Let's define a few:
 
 - **DevOps** (Development and Operations): A methodology aiming to bridge the gap between developers and the engineers handling production to expedite software deployment and enhance its resilience.
-- **DevSecOps** (Development, Security, and Operations): A subset of DevOps focusing on integrating security principles from the onset of a new software or infrastructure design. The goal is to organize the company in such a way that the Security of Information Systems (SSI) teams are involved in all project discussions with your development teams (see [Security: A new paradigm with the DevOps approach](#security--a-new-paradigm-with-the-devops-approach)).
+- **DevSecOps** (Development, Security, and Operations): A subset of DevOps focusing on integrating security principles from the onset of a new software or infrastructure design. The goal is to organize the company in such a way that the Security of IT Systems teams are involved in all project discussions with your development teams (see [Security: a new paradigm with the DevOps approach](#security-a-new-paradigm-with-the-devops-approach)).
 - **ITOps** (IT Operations): A set of practices centered on the maintenance and management of IT systems. This is subtly distinct from DevOps, which concentrates more on improving the software development and deployment process. Synonymous with system administrator (sysadmin).
 - **FinOps** (Financial Operations): A collection of practices to better understand and manage the financial costs of a cloud infrastructure. This includes monitoring and optimizing expenses, as well as managing billing and payments, possibly using dashboards or automated algorithms.
 - **MLOps** (_Machine Learning Operations_): Practices for collaboration and communication between _datascience_ teams and production teams for effective development and deployment of _machine learning_ (ML) models. The aim is to enhance the speed, quality, and resilience of ML models by automating and standardizing. (See _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
@@ -2873,7 +2873,7 @@ The requirements for the positions are described based on the technical maturity
 
 A "Education or Experience" section is also provided to give you an idea of the courses the candidate might have taken to qualify for the position. However, consider in IT that a degree becomes irrelevant after 5 years of professional experience. It's the latter and the projects undertaken by the candidate that determine their expertise level.
 
-<!-- Salary sources (France, Paris): Glassdoor.com or Payscale.com -->
+<!-- Salary sources (Washington, DC, United-States): Glassdoor.com or Payscale.com -->
 
 \newpage
 
@@ -2883,7 +2883,7 @@ A "Education or Experience" section is also provided to give you an idea of the 
 | ----------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
 | **Job Level**                                   | Intermediate to senior[^DORAProfileExperience] (depending on responsibilities assigned to the candidate). _Apprentice or junior possible if experienced personnel in the team_. |
 | **Organizational Maturity**                     | Beginner to intermediate                                                                                           |
-| **Approximate Remuneration** (September 2023)   | >42k€/year (beginner), >60k€/year (senior)                                                                          |
+| **Approximate Remuneration** (October 2023)   | >90k$/year (beginner), >115k$/year (senior)                                                                          |
 
 As part of our organization's digital transformation and supported by our management, you will help define new development, deployment, and administration processes.
 
@@ -2933,7 +2933,7 @@ This position can lead to roles such as System Engineer, SRE, or DevOps Security
 | ------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Job Level**                              | Intermediate or Senior (depending on responsibilities to be assigned to the candidate). _Apprentice or Junior possible if there are experienced personnel on the team. Internship not considered (too short)._ |
 | **Organization Maturity**                  | Intermediate to Advanced                                                                                                                                                   |
-| **Approximate Compensation** (September 2023) | >54k€/year (Intermediate), >72k€/year (Senior)                                                                                                                              |
+| **Approximate Compensation** (October 2023) | >95k$/year (beginner), >120k$/year (senior)                                                                                                                              |
 
 At the core of our organization's smooth operation, you will be responsible for ensuring the availability, reliability, and resilience of our information systems. You will strive to sustain the infrastructures while balancing the velocity of developments and system stability.
 
@@ -2968,17 +2968,17 @@ _If you have at least 5 years of professional experience, we prioritize that and
 - Bachelor's or Master's in network and system engineering
 - Significant professional experience in the field
 
-This position can lead to roles such as Infrastructure Manager, SSI DevOps Engineer, or System Engineer.
+This position can lead to roles such as Infrastructure Manager, DevOps Security Engineer, or System Engineer.
 
 \newpage
 
-## SSI DevOps Engineer
+## DevOps Security Engineer
 
 |                                            |                                                                       |
 | ------------------------------------------ | :-------------------------------------------------------------------- |
 | **Job Level**                              | Junior to Senior (depending on responsibilities to be assigned to the candidate) |
 | **Organization Maturity**                  | Intermediate to Advanced                                               |
-| **Approximate Compensation** (September 2023) | >52k€/year                                                            |
+| **Approximate Compensation** (October 2023) | >95k$/year (beginner), >125k$ (senior)                                                            |
 
 As part of our organization's digital transformation and supported by management, you are the "Sec" in our "DevSecOps" mode. Your role is to ensure security best practices without hindering development velocity.
 
@@ -3026,13 +3026,13 @@ This position can lead to roles such as System Engineer or SRE.
 | ----------------------------------------------- | :------------------------------------- |
 | **Job Level**                                   | Intermediate to Senior                 |
 | **Organization Maturity**                       | Advanced                               |
-| **Approximate Compensation** (September 2023)   | >44k€/year (entry-level), >48k€/year (intermediate) |
+| **Approximate Compensation** (October 2023)   | >100k$/year (beginner), >130k$/year (senior) |
 
 With a background in software engineering or system administration and proven skills in software engineering, you will be responsible for the development and maintenance of tools that enhance our software development and deployment cycle on a daily basis.
 
 Within the SRE team, you will develop or integrate administrative tools to make the lives of our developers and SREs easier.
 
-You will participate in the establishment of a data-lake as part of the government initiative _data.gouv.fr_.
+You will participate in the establishment of a data-lake as part of the government initiative _data.gov_.
 
 Skills:
 
@@ -3063,9 +3063,9 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
     }
 </style>
 
-[^GDPR]: [GDPR: General Data Protection Regulation](https://www.cnil.fr/fr/reglement-europeen-protection-donnees)
+[^GDPR]: [GDPR: General Data Protection Regulation](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02016R0679-20160504&qid=1532348683434)
 
-[^DevSecOpsUSAirForce]: PAUPIER, François; CHAILLAN, Nicolas. [Postmortem #19: DevSecOps at the US Air Force](https://podcasters.spotify.com/pod/show/podcastmortem/episodes/19-Le-DevSecOps--lUS-Air-Force-e1mqvem). 2022.
+[^DevSecOpsUSAirForce]: PAUPIER, François; CHAILLAN, Nicolas. [Postmortem #19: DevSecOps at the U.S. Air Force](https://podcasters.spotify.com/pod/show/podcastmortem/episodes/19-Le-DevSecOps--lUS-Air-Force-e1mqvem). 2022.
 
 [^AtlassianHistoryOfDevops]: [Buchanan, Ian. atlassian.com: _History of DevOps_](https://www.atlassian.com/devops/what-is-devops/history-of-devops)
 
@@ -3117,7 +3117,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^IstioAccessLogs]: [Istio access logs documentation](https://istio.io/latest/docs/concepts/observability/#access-logs). _istio.io_.
 
-[^ANSSI]: [National Agency for Information Systems Security](https://www.ssi.gouv.fr/en/)
+[^ANSSI]: [French National Agency for Information Systems Security](https://www.ssi.gouv.fr/en/)
 
 [^NextcloudITZBund]: POORTVLIET, Jos. [_German Federal Administration relies on Nextcloud as a secure file exchange solution_](https://nextcloud.com/blog/german-federal-administration-relies-on-nextcloud-as-a-secure-file-exchange-solution/) . 2018.
 
@@ -3203,7 +3203,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^DiRTTraining]: _Disaster and Recovery Testing_ (DiRT) is a [training for infrastructure teams at Google](https://cloud.google.com/blog/products/management-tools/shrinking-the-time-to-mitigate-production-incidents), aimed at pushing production systems to their limit and inflicting real failures. The objective is to see how the teams react and if they are correctly equipped to respond to an incident.
 
-[^MasterSecNumANSSI]: [Presentation page of the ANSSI "Master digital security"](ssi.gouv.fr/particulier/formations/secnumedu/formations-labellisees-secnumedu/master-securite-numerique/). _ssi.gouv.fr_ ("Training" tab).
+[^MasterSecNumANSSI]: [Presentation page of ANSSI's "Master of digital security"](ssi.gouv.fr/particulier/formations/secnumedu/formations-labellisees-secnumedu/master-securite-numerique/). _ssi.gouv.fr_ ("Training" tab).
 
 [^SLSA]: _Supply chain Levels for Software Artifacts_ ([SLSA](https://slsa.dev), pronounced "salsa") is a set of security rules recommended to secure its software development and deployment chain.
 
@@ -3219,7 +3219,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^CloudflareCastleAndMoat]: [_What is the castle-and-moat network security model?_](https://www.cloudflare.com/learning/access-management/castle-and-moat-network-security/) _cloudflare. com_.
 
-[^ANSSIZeroTrust]: ANSSI. [The zero trust model](https://www.ssi.gouv.fr/agence/publication/le-modele-zero-trust/). 2021.
+[^ANSSIZeroTrust]: ANSSI. [The zero trust model](https://www.ssi.gouv.fr/en/publication/anssi-views-on-the-zero-trust-model). 2021.
 
 [^OKTAZeroTrustStudy]: OKTA. [_State of zero trust report_](https://www.okta.com/blog/2022/08/state-of-zero-trust-report-2022-takeaways/). 2022.
 
@@ -3349,7 +3349,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^SouthKorea2015CloudLaw]: _National Assembly Law Information_ (South Korea). "[_Cloud Computing Act_](https://likms.assembly.go.kr/law/lawsLawtInqyDetl1010.do)". 2015.
 
-[^SouthKoreaMasterPlan2021]: Downloadable document: links.berwick.fr/SPnDtI
+[^SouthKoreaMasterPlan2021]: Downloadable document: _links.berwick.fr/SPnDtI_
 
 [^GIDCKorea]: _National Information Resource Service_ (South Korea). "[_History (of NIRS)_](https://www.nirs.go.kr/eng/about/about_02.jsp)". _nirs.go.kr_.
 
@@ -3421,19 +3421,19 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^PASSI]: The third-party evaluator must be a PASSI (Information Systems Security Audit Service Providers).
 
-[^OIV]: OIV: Organization of Vital Importance
+[^OIV]: OIV: [_Operators of Vital Importance_](https://www.ssi.gouv.fr/en/cybersecurity-in-france/ciip-in-france/faq/) in France or [_Critical Infrastructures_](https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience) in the United-States [and Canada](https://www.publicsafety.gc.ca/cnt/rsrcs/pblctns/srtg-crtcl-nfrstrctr/index-en.aspx). Operators are defined as "operator[s] whose unavailability could strongly threaten the economical or military potential, the security or the resilience of the Nation".
 
 [^EclipseChe]: Development environment providing an IDE on a Kubernetes pod. _github.com/eclipse/che_.
 
 [^BeckKentTDDBook]: Based on the book by Kent BECK. _Test-Driven Development by Example_. 2002.
 
-[^TDDStudy]: _Dogša, T., Batič, D. "The effectiveness of test-driven development: an industrial case study". Software Qual J 19, 643–661_, [doi:10.1007/s11219-011-9130-2](https://doi.org/10.1007/s11219-011-9130-2). 2011.
+[^TDDStudy]: _Dogša, T., Batič, D. "The effectiveness of Test-driven development: an industrial case study". Software Qual J 19, 643–661_, [doi:10.1007/s11219-011-9130-2](https://doi.org/10.1007/s11219-011-9130-2). 2011.
 
 [^TDDoverTLD]: TDD reduces complexity by 31% and increases code quality by 21%, compared to TLD: KHANAM, Z; AHSAN, MN. _Evaluating the effectiveness of test driven development: Advantages and pitfalls_. _International Journal of Applied Engineering Research_. 2017.
 
 [^WhatIsCodeCoverage]: Atlassian. "[_What is code coverage?_](https://www.atlassian.com/continuous-delivery/software-testing/code-coverage)". _atlassian.com_.
 
-[^TDDBDDATTDComparativeStudy]: MOE, Myint Myint. "_Comparative Study of Test-Driven Development TDD, Behavior-Driven Development BDD and Acceptance Test–Driven Development ATDD_". _International Journal of Trend in Scientific Research and Development_. 2019.
+[^TDDBDDATTDComparativeStudy]: MOE, Myint Myint. "_Comparative Study of Test-driven development TDD, Behavior-Driven Development BDD and Acceptance Test–Driven Development ATDD_". _International Journal of Trend in Scientific Research and Development_. 2019.
 
 [^Ansible101]: CUNLIFFE, Stuart. Illustration of the article "[_Red Hat Ansible: A 101 guide_](https://www.ibm.com/blogs/systems/red-hat-ansible-a-101-guide/)", _ibm.com/blogs_ . 2020.
 
@@ -3509,7 +3509,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^PalantirApolloWhitepaper]: Palantir. [_Palantir Apollo Whitepaper_](https://www.palantir.com/assets/xrfr7uokpv1b/2MqgGhNYSZRmkYnnRAOi2E/0f8787169349fade4d6d9a9e5bb3c9fe/PalantirApolloWhitePaper.pdf). 2022.
 
-[^Scientific CouncilSPF]: "(The Scientific Council) assists Public Health France in its mission of contributing to the development and implementation of national and European public health policies.". _santepubliquefrance.fr_. 2022.
+[^ScientificCouncilSPF]: "(The Scientific Council) assists Public Health France in its mission of contributing to the development and implementation of national and European public health policies.". _santepubliquefrance.fr_. 2022.
 
 [^WishesCEMA]: Wishes from Army Chief of Staff Thierry BURKHARD. ["...leaders must adapt to the acceleration of our world if necessary by taking calculated risks."](https://www.defense.gouv.fr/ema/actualites/voeux-du-chef-army-staff). 2022.
 
@@ -3580,3 +3580,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 [^QualityAssuranceBasics]: BERWICK, Flavien. QA basics: Medium article ["_Keep your code and documentation fresh_"](https://medium.com/@flavienb/keeping-your-code-and-documentation-fresh-f102e4e85839). 2023.
 
 [^HowSRERelatesToDevOps]: Google. Chapter "[_How SRE Relates to DevOps_](https://sre.google/workbook/how-sre-relates/#id-gm1cntzuncd)", _SRE Book_. _sre.google_.
+
+[^DINUM]: French Interministerial Digital Department.
+
+[^INSEE]: French National Institute of Statistics and Economic Studies.
