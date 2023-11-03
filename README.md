@@ -9,7 +9,7 @@
     </a>
 </p>
 
-<h4 align="center">:us:</h4>
+<h4 align="center">:us: :uk:</h4>
 <h3 align="center"><a href="./eng/README.md" alt="Access the book in english version">Scaling Institutions with DevOps</a><sup></sup></h3>
 <p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
 <p align="center" style="color: gray; font-size: 0.9em;">Paperback and ebook with foreword</p>

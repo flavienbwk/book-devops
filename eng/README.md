@@ -517,7 +517,7 @@ In the chapter "[Refusing technological lag](#refusing-technological-lag)", I di
 
 Which company responsible for a major IT project would claim, "We don't need an IT expert"? Due to a lack of technical acculturation or previously mentioned psychological phenomena, decision-makers sometimes chronically turn to consulting firms.
 
-Much like global organizations such as the World Health Organization (WHO) or the United Nations (UN), national entities like the National Center for Scientific Research (CNRS), the National Education, and the Public Health France agency have an internal scientific council[^ScientificCouncilSPF]. This ensures they stay updated on the latest scientific knowledge, enabling decision-makers to make informed choices. In the private sector, this role is filled by the Chief Technical Officer (CTO) and their senior managers (VPs).
+Much like global organizations such as the World Health Organization (WHO) or the United Nations (UN), national entities like the National Center for Scientific Research (CNRS), the National Education, and the Public Health France agency have an internal scientific council[^ConseilScientifiqueSPF]. This ensures they stay updated on the latest scientific knowledge, enabling decision-makers to make informed choices. In the private sector, this role is filled by the Chief Technical Officer (CTO) and their senior managers (VPs in English).
 
 While a scientific council can help an organization remain at the forefront of scientific knowledge, it isn't enough to make it innovative. Especially if its members aren't periodically refreshed. To innovate, practice is key.
 
