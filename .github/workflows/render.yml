@@ -226,18 +226,23 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: book-fr-html-${{ env.BOOK_VERSION }}
-        path: output/fr/
+        path: output/fra/
 
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
         name: book-en-html-${{ env.BOOK_VERSION }}
-        path: output/en/
+        path: output/eng/
 
     - name: Optimize images
       run: |
         sudo apt-get install -y jpegoptim optipng
         find ./output/ -iname '*.jpg' -exec jpegoptim {} \; -o -iname '*.png' -exec optipng {} \;
+
+    - name: Copy default index files
+      run: |
+        cp ./index.html ./output/
+        cp -r ./images ./output/
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
