@@ -3097,7 +3097,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^MLOpsPaper]: KREUZBERGER, Dominik; KÜHL, Niklas; HIRSCHL, Sebastian. [_MLOps: Overview, Definition, and Architecture_](https://arxiv.org/abs/2205.02302). 2022.
 
-[^ArticlePSDuckSyndrome]: SILBERZAHN, Philippe. [_The duck syndrome: how declining organizations get used to mediocrity_](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organizations-en-declin-get-used-to-mediocrity/). 2022.
+[^ArticlePSDuckSyndrome]: SILBERZAHN, Philippe. [_The duck syndrome: how declining organizations get used to mediocrity_ (FR)](https://philippesilberzahn.com/2022/09/19/le-syndrome-du-canard-comment-les-organisations-en-declin-s-habituent-a-la-mediocrite). 2022.
 
 [^DefyingGravity]: DUNLAP, Preston. [_Defying gravity_](https://www.linkedin.com/posts/preston-dunlap_preston-dunlap-defying-gravity-activity-6921840269730443265-le7z/). 2022.
 
@@ -3229,7 +3229,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^Mental Models]: Reference to the Theory of Mental Models introduced by JOHNSON-LAIRD in 1983 (cf. THEVENOT C, PERRET P. [The development of reasoning in problem solving: the contribution of the theory of mental models]( https://www.cairn.info/load_pdf.php?ID_ARTICLE=DEVEL_002_0049&download=1&from-feuilleteur=1). Développements. 2009).
 
-[^SilberzhanModeleMental]: SILBERZAHN, Philippe. [Mental model strategy](https://philippesilberzahn.com/oeuvres/strategie-modele-mental/). 2022.
+[^SilberzhanModeleMental]: SILBERZAHN, Philippe. [Mental model strategy (FR)](https://philippesilberzahn.com/ouvrages/strategie-modele-mental/). 2022.
 
 [^InnovationPhases]: Popular theory on innovation, [inspired by the speech of Nicholas KLEIN](https://en.wikipedia.org/wiki/Nicholas_Klein), lawyer for the first American textile union (the Amalgamated Clothing Workers of America), in 1918.
 
