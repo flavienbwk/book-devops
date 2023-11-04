@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Read the Scaling Institutions with DevOps book to initiate or sustain your digital transformation. Available in English and French.">
+    <meta name="author" content="Flavien BERWICK" />
+    <title>Scaling Institutions with DevOps · The Book</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="./images/book.png" sizes="180x180">
+    <link rel="icon" href="./images/book.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="./images/book.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="./images/book.ico">
+    <meta name="theme-color" content="#7952b3">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .btn-read {
+            display: inline-block;
+            transition: all 0.2s ease-in;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            color: #5b5b5b;
+            padding: 0.5em 1.7em;
+            font-size: 18px;
+            border-radius: 0.5em;
+            background: #e8e8e8;
+            border: 1px solid #e8e8e8;
+            box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+        }
+
+        .btn-read:active {
+            color: #666;
+            box-shadow: inset 4px 4px 12px #c5c5c5,
+                inset -4px -4px 12px #ffffff;
+        }
+
+        .btn-read:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.25);
+            top: 100%;
+            width: 140%;
+            height: 180%;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+        }
+
+        .btn-read:after {
+            content: "";
+            position: absolute;
+            left: 55%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.45);
+            top: 180%;
+            width: 160%;
+            height: 190%;
+            background-color: #2a2828;
+            border-radius: 50%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+        }
+
+        .btn-read:hover {
+            color: #ffffff;
+            border: 1px solid #2a2828;
+        }
+
+        .btn-read:hover:before {
+            top: -35%;
+            background-color: #2a2828;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+        }
+
+        .btn-read:hover:after {
+            top: -45%;
+            background-color: #2a2828;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+        }
+
+        .btn-read>svg {
+            height: 30px;
+            margin-top: -4px;
+        }
+
+        .background {
+            background-image: url("fra/images/cover_min.png");
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .blur {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            color: color;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <div class="p-md-2 text-center bg-light background">
+            <div class="col-md-5 p-lg-5 mx-auto my-5 blur">
+                <h1 class="display-4 fw-normal">Scaling Institutions with DevOps</h1>
+                <p class="lead fw-normal">The pragmatic decision-makers' guide to understanding and acting.</p>
+                <a href="https://github.com/flavienbwk/book-devops" target="_blank" title="Contribute on GitHub"><img
+                        src="./images/github.png" height="48px" /></a>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="bg-light me-md-3 pt-3 px-3 pt-md-4 px-md-5 text-center overflow-hidden col-md">
+                    <div class="my-3 p-3">
+                        <h2 class="display-5">English Version 🇺🇸</h2>
+                        <p class="lead">Scaling Institutions with DevOps</p>
+                        <a class="btn btn-outline-secondary btn-read" target="_blank"
+                            href="https://book-devops.berwick.fr/eng/index.html">Read now</a>
+                        <span class="pr-2"></span>
+                    </div>
+                    <div class="my-3 py-5">
+                        <a target="_blank" href="https://book-devops.berwick.fr/fra/index.html">
+                            <img src="./eng/images/cover_a5_source.png" width="128px" />
+                            <img src="./eng/images/fourthcover_a5_source.png" width="128px" />
+                        </a>
+                    </div>
+                </div>
+                <div class="me-md-3 pt-3 px-3 pt-md-4 px-md-5 text-center overflow-hidden col-md">
+                    <div class="my-3 py-3">
+                        <h2 class="display-5">Version en français 🇫🇷</h2>
+                        <p class="lead">Le DevOps pour transformer les institutions</p>
+                        <a class="btn btn-outline-secondary btn-read" target="_blank"
+                            href="https://book-devops.berwick.fr/fra/index.html">Lire maintenant</a>
+                        <span class="pr-2"></span>
+                        <a href="https://www.amazon.fr/dp/B0CKHV5QB7" target="_blank"><img
+                                src="./images/amazon_fra_btn.png" height="48px" /></a>
+                        <a href="https://play.google.com/store/books/details?id=3u_bEAAAQBAJ" target="_blank" class="p-2"><img
+                                src="./images/play-books.png" height="48px" /></a>
+                    </div>
+                    <div class="my-3 py-5">
+                        <a target="_blank" href="https://book-devops.berwick.fr/fra/index.html">
+                            <img src="./fra/images/cover_a5_source.png" width="128px" />
+                            <img src="./fra/images/fourthcover_a5_source.png" width="128px" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
