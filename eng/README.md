@@ -32,7 +32,7 @@ _Transparency seems essential to me in any research and writing work, and I wish
 
 # Introduction
 
-The constant evolution of digital uses requires organizations to reinvent themselves. They are forced to respond ever more quickly - and often without increasing resources - to their operational requirements. Strategists are mobilizing to stay ahead of the curve in the face of ever-fiercer competition.
+The constant evolution of technology requires organizations to reinvent themselves. They are forced to respond ever more quickly - and often without increasing resources - to their operational requirements. Strategists are mobilizing to stay ahead of the curve in the face of ever-fiercer competition.
 
 Many organizations have already started their digital transformation to master the complexity of interdependent and fragmented information systems. DevOps is one of the approaches to achieving this goal and working more efficiently.
 

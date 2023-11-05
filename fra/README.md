@@ -885,7 +885,7 @@ Une méthode plus simple est de n'utiliser que la clé de hachage des fichiers. 
 
 > Exemple de _hash_ : _a21c218df41f6d7fd032535fe20394e2_.
 
-Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ différent de celui de référence (récupéré depuis Internet sur le site de l'éditeur), le lancement du logiciel est refusé. Ce mécanisme est déjà la plupart du temps implémenté par les gestionnaires de paquets des langages de programmation (ex: `package-lock.json` pour NPM, `poetry.lock` pour Python).
+Si lors de l'installation, la dépendance téléchargée dispose d'un _hash_ différent de celui de référence (récupéré depuis Internet sur le site de l'éditeur), le lancement du logiciel est refusé. Ce mécanisme est la plupart du temps déjà intégré aux gestionnaires de paquets des langages de programmation (ex: `package-lock.json` pour NPM, `poetry.lock` pour Python).
 
 ## Gérer son infrastructure avec du code
 
@@ -2984,9 +2984,9 @@ Ce poste peut mener au poste de Responsable de l'Infrastructure, d'Ingénieur SS
 | **Maturité de l'organisation**                  | Intermédiaire à avancée                                            |
 | **Rémunération approximative** (septembre 2023) | >52k€/an                                                           |
 
-Dans le cadre de la transformation numérique de notre organisation, appuyé(e) par la hiérarchie, vous êtes le "Sec" de notre organisation en mode "DevSecOps". Votre rôle est d'assurer les bonnes pratiques de sécurité sans impacter la vélocité des développements.
+Dans le cadre de la transformation numérique de notre organisation, appuyé(e) par la hiérarchie, vous êtes le "Sec" de notre organisation en mode "DevSecOps". Votre rôle est de garantir la mise en œuvre des bonnes pratiques de sécurité sans impacter la vélocité des développements.
 
-Intégré au sein de notre équipe SRE, vous aurez la responsabilité de sécuriser l'ensemble de la chaîne de développement et de déploiement logicielle. À partir des politiques de sécurité et des contraintes légales imposées à notre organisation, vous traduirez ces règles documentaires en code (dans des CI) ou au travers l'implémentation d'outils, pour garantir leur application. Vous définirez les pratiques de sécurité à adopter pour le présent et le futur de notre organisation.
+Intégré au sein de notre équipe SRE, vous aurez la responsabilité de sécuriser l'ensemble de la chaîne de développement et de déploiement logicielle. À partir des politiques de sécurité et des contraintes légales imposées à notre organisation, vous traduirez ces règles documentaires en code (dans des CI) ou au travers de la mise en place d'outils, pour garantir leur application. Vous définirez les pratiques de sécurité à adopter pour le présent et le futur de notre organisation.
 
 À l'interface entre nos équipes de développement et notre équipe SRE, vous aurez la charge :
 
@@ -3034,7 +3034,7 @@ Ce poste peut mener au poste d'Ingénieur Systèmes ou de SRE.
 
 De formation ingénieur logiciel ou administrateur système avec des compétences avérées en ingénierie logicielle, vous serez responsable du développement et de la maintenance des outils qui améliorent au quotidien le cycle de développement et de déploiement de nos logiciels.
 
-Au sein de l'équipe SRE, vous développerez les outils d'administration ou en intégrerez pour faciliter la vie de nos développeurs et de nos SRE.
+Au sein de l'équipe SRE, vous développerez les outils d'administration ou en intégrerez de nouveaux pour faciliter la vie de nos développeurs et de nos SRE.
 
 Vous participerez à la mise en place d'un data-lake dans le cadre de l'initiative gouvernementale _data.gouv.fr_.
 
