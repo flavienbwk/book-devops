@@ -839,7 +839,7 @@ More comprehensive than the previous two, SSDF acts as a directory consolidating
 
 The framework lists general concepts progressively associated with more concrete rules. Each theme encompasses broad practices to follow, which in turn include tasks with examples linked to the relevant _frameworks_.
 
-For example, under the "protect software" theme, the "protect all forms of code from unauthorized access and tampering" practice suggests using "commit signing", referencing the SSCSP in its "Secure Source Code" chapter.
+For example, under the "protect software" theme, the "protect all forms of code from unauthorized access and tampering" practice suggests using "commit signing"[^Commit], referencing the SSCSP in its "Secure Source Code" chapter.
 
 This document [can be found](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) on the NIST website. The online library of the Chief Information Officer[^CIOLibrary] (CIO) from the _US Department of Defense_ is also an excellent source of inspiration.
 
@@ -1664,7 +1664,7 @@ Once the options are consolidated, the approvers make the decision, and tasks ar
 
 Example of a DACI, listing options considered for making a decision on the issue "How should we finalize our product specifications?":
 
-| **Criteria**                                           | **Option 1:** Discussion Groups / Paid Target Persona Discussion Groups                | **Option 2:** Online Reviews / Internal Content Expert Team                                         | **Option 3:** Do not finalize / Take no action to address the issue at the moment         |
+| **Criteria**                                           | **Option 1:** Discussion Groups / Paid Target Persona[^Persona] Discussion Groups                | **Option 2:** Online Reviews / Internal Content Expert Team                                         | **Option 3:** Do not finalize / Take no action to address the issue at the moment         |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | Strategically reliable / _high priority_              | (+) Targets rooted in strategy = feedback rooted in strategy                          | (+) 2 new team members match the persona = some feedback rooted in strategy                        | (-) Risk of significant or costly mistake, (-) Risk of delays or confusion                |
 | User-centered / _high priority_                       | (+) Precise customer feedback                                                         | (-) Expert bias                                                                                     | (-) Navigating blindly                                                                  |
@@ -1941,6 +1941,8 @@ The cause-and-effect analysis (FMEA) focuses on technical considerations, taking
 
 Before the start of a project, project managers and engineers should gather to list out potential reasons for its failure.
 
+The premortem is also known as the "study of nonconforming cases". The military strategist Sun TZU already advocated in the year five before Christ for planning as many possible war scenarios as possible (or "nonconforming cases") before a battle, in his writing _The Art of War_.[^SunTzuArtOfWar].
+
 The premortem is a project management methodology that involves imagining that the project has failed even before it has started. The result is a document listing the incidents the team needs to prepare for to ensure project success.
 
 For example: "Our team currently manages its infrastructure using traditional methods. We want to establish a plan to work in a DevOps mode."
@@ -2031,7 +2033,7 @@ Here are some parallels concerning the Cloud:
 
 - A container is just a more flexible tiny VM. It is managed with different commands, the nomenclature is different, but the concepts remain the same: an OS (image) from which the container is created, a configurable network, and the ability to add storage.
 - An orchestrator is just a hypervisor managed with different commands. But its components remain the same: configurable network policies between containers/VMs, storage management with VMWare's _datastores_ in place of Kubernetes' _PersistentVolumes_, or VMWare's _NSX Controller_ in place of Kubernetes' _Ingress Controller_.
-- However, there are particular evolutions that one should merely accept (as with mathematical theorems): see the chapter "[A foundation for your resilience](#a-foundation-for-your-resilience)".
+- However, there are specific evolutions that one must simply accept (as with mathematical theorems). For instance, the use of good practices mentioned in the chapters "[A Foundation for Your Resilience](#a-foundation-for-your-resilience)" and "[12-Factor methodology](#12-factor-methodology)": favoring stateless services, using only micro-services, exposing one's activity logs differently...
 - Micro-services are merely a division of traditional software into multiple independent blocks. Each block can be scaled according to user load.
 
 Traditional VMs also have their place in a Cloud DevOps infrastructure; they can be part of it (see chapter "[Abandoning VMs?](#abandoning-vms)").
@@ -2086,7 +2088,7 @@ You don't have to build the software from scratch before presenting it to the cu
 
 ### Continuous training
 
-A good culture is nurtured by knowledge of cutting-edge techniques. The technical skills of your teams are the foundation of your organization and bolster their confidence in your resilience.
+A good culture is nurtured by knowledge of cutting-edge techniques. The technical skills of your teams are the foundation of your organization and bolster your reputation as a resilient structure.
 
 Continuous training is a straightforward way to prevent your organization from losing millions each year. Indeed, if your staff stays updated with the latest technologies, they're less likely to be deceived by third parties. These third parties often promise "the ideal solution" through impressive and ambitious presentations, which, more often than not, hide an underdeveloped or wholly deficient service. By staying updated, your team will make better decisions for your budget and the organization's future.
 
@@ -2369,8 +2371,6 @@ Let's explore the four metrics that will allow us to create our resilience indic
 4. Saturation: the extent to which your system's resources are used.
     - Resource utilization rate compared to the maximum load your system can handle. It helps answer questions like "_Can my server handle client requests if the traffic doubles?_" or "_When is my hard drive likely to be full?_". It's based on measurements of RAM, CPU, network, and I/O usage.
 
-These four metrics are an excellent starting point for monitoring your infrastructure. They are the primary metrics that will allow you to define your SLIs, SLOs, and SLAs.
-
 Within a Cloud infrastructure, a _service mesh_ automates the collection of these measurements. We'll explore this technology in the "[Service mesh](#service-mesh)" chapter. We'll also discuss tools available to gather and visualize these metrics. But before that, let's see how to create our resilience indicators in the next chapter.
 
 #### SLI, SLO, and SLA
@@ -2639,7 +2639,7 @@ This is why it's crucial to have in-house, within your own teams, experts who ar
 
 Every DevOps and SRE engineer knows: it's impossible for a system to function 100% of the time. That's why you cannot expect from a service provider, regardless of the price you pay, to deliver something 100% functional.
 
-For reference, even Google [doesn't promise more than 99.9% availability](https://workspace.google.com/terms/sla.html) (SLA)[^GoogleWorkspaceSLA] with its capitalization of over 1.3 trillion dollars and its +150,000 rigorously selected employees. Amazon (AWS) with its nearly one trillion dollar capitalization only guarantees [no more than 99.5%](https://aws.amazon.com/compute/sla)[^AWSSLA].
+For instance, even Google [does not promise more than 99.9% availability (SLA)](https://workspace.google.com/terms/sla.html)[^GoogleWorkspaceSLA] with its capitalization of over 1.6 trillion dollars and its approximately 150,000 rigorously selected employees. Amazon (AWS) with its capitalization of more than 1.4 trillion dollars does not guarantee [more than 99.5%](https://aws.amazon.com/compute/sla)[^AWSSLA].
 
 ### Better organization to avoid failure
 
@@ -2766,7 +2766,7 @@ Another example is database schema migration. By declaring a database schema ver
 
 # Distribution of initiatives
 
-In surveys, 47% of organizations claimed to adopt a DevOps approach. This number rose to 74% in 2021[^RedGate2021Report].
+In 2016 surveys, 47% of organizations claimed to adopt a DevOps approach. This number rose to 74% in 2021[^RedGate2021Report].
 
 From 2019 to 2022, the distribution of DevOps initiatives by industry remained roughly the same[^DORAIndustry]: primarily dominated by the tech sector (~40%), followed by the financial sector (~12%) and e-commerce (~8%). The institutional sector accounted for 2% to 4% of these initiatives, indicating ample room for innovation in this domain.
 
@@ -2779,7 +2779,7 @@ Here's a breakdown of companies practicing DevOps in 2022[^INSEECompanySizeDefin
 
 The 2019 crisis accelerated digital transformation initiatives, leading to a 23% growth in DevOps team sizes[^GlobalUpskillingWorldwideDevopsSize] during that period.
 
-The geographical distribution of organizations adopting DevOps practices is still challenging to pinpoint, but North America seems to be a major hub, accounting for about 33% of DevOps initiatives. Europe and Asia follow closely with approximately 33% each[^DORAGeoRepartition] (with India at 21%). In 2019, North America accounted for 50% of these initiatives, Europe 29%, and Asia 9%. This indicates a growing interest in the subject among Asian countries.
+In 2022, the geographical distribution of organizations adopting DevOps practices is still challenging to pinpoint. However, North America seems to be a major hub, accounting for about 33% of DevOps initiatives. Europe and Asia follow closely with approximately 33% each[^DORAGeoRepartition] (with India at 21%). In 2019, North America accounted for 50% of these initiatives, Europe 29%, and Asia 9%. This indicates a growing interest in the subject among Asian countries.
 
 The average size of DevOps teams remains small, averaging around 8 members[^DORATeamSize].
 
@@ -2830,7 +2830,7 @@ Tools such as ChatGPT based on LLMs offer as many new opportunities (e.g., [GitL
 
 Beyond the speed at which technology evolves and as with any area of expertise, this type of infrastructure requires the maintenance of the skills necessary to administer it.
 
-We can easily imagine that a fighter pilot maintains his or her flying skills. Why would it be any different for engineers who maintain critical software vital to the company's operation? You and your teams must continue to stay ahead by training regularly (see chapter "[Continuous training](#continuous-training)").
+We can easily imagine that a fighter pilot maintains his or her flying skills. Why would it be any different for engineers who maintain critical software vital to the institution's operation? You and your teams must continue to stay ahead by training regularly (see chapter "[Continuous training](#continuous-training)").
 
 In DevOps mode, organizations can afford to fail faster, with controlled risk, to innovate ahead of their competitors.
 
@@ -2844,7 +2844,7 @@ You've probably already heard numerous terms suffixed with "Ops": in industrial 
 - **DevSecOps** (Development, Security, and Operations): A subset of DevOps focusing on integrating security principles from the onset of a new software or infrastructure design. The goal is to organize the company in such a way that the Security of IT Systems teams are involved in all project discussions with your development teams (see [Security: a new paradigm with the DevOps approach](#security-a-new-paradigm-with-the-devops-approach)).
 - **ITOps** (IT Operations): A set of practices centered on the maintenance and management of IT systems. This is subtly distinct from DevOps, which concentrates more on improving the software development and deployment process. Synonymous with system administrator (sysadmin).
 - **FinOps** (Financial Operations): A collection of practices to better understand and manage the financial costs of a cloud infrastructure. This includes monitoring and optimizing expenses, as well as managing billing and payments, possibly using dashboards or automated algorithms.
-- **MLOps** (_Machine Learning Operations_): Practices for collaboration and communication between _datascience_ teams and production teams for effective development and deployment of _machine learning_ (ML) models. The aim is to enhance the speed, quality, and resilience of ML models by automating and standardizing. (See _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
+- **MLOps** (_Machine Learning Operations_): Practices for collaboration and communication between _datascience_ teams and production teams for effective development and deployment of _machine learning_ (ML) models. The aim is to enhance the speed, quality, and resilience of ML models by automating and standardizing used technologies. (See _MLOps: Overview, Definition, and Architecture_[^MLOpsPaper])
 - **GitOps** (_Git Operations_): A set of guidelines for using _git_[^git] as the single source of truth to standardize development practices, deployment, and to bolster a company's IT resilience ([IaC](#infrastructure-as-code-iac), [CI/CD](#continuous-integration-ci), see [The lifecycle of modern software](#the-lifecycle-of-modern-software))
 - **EmpOps** (_Employee Operations_): Tools to manage a company and its employees (projects, vacations, 1:1 interviews, knowledge base) on a unified platform (e.g., CRMs).
 - **DataOps** (_Data Operations_): Practices[^DataOpsManifesto] that assist in managing data, considering it a strategic asset. They emphasize collaboration between "data" teams and other IT teams, automating data management processes (ETL), and regular feedback to ensure data meets business needs.
@@ -3584,3 +3584,9 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 [^DINUM]: French Interministerial Digital Department.
 
 [^INSEE]: French National Institute of Statistics and Economic Studies.
+
+[^Commit]: A _commit_ is a change made to a file in a codebase. This can be documentation, computer code, or even a configuration file.
+
+[^Persona]: A "persona" is a fictional and detailed representation of a target user, created to help development and project management teams understand the needs, experiences, behaviors, and interests of potential customers.
+
+[^SunTzuArtOfWar]: Yann COUDERC. ["_Did Sun Tzu invented the nonconforming cases ?_ (FR)"](https://suntzufrance.fr/sun-tzu-a-t-il-invente-les-cas-non-conformes/). 2013.
