@@ -361,9 +361,9 @@ However, it's essential to know _when_ to unveil innovations. Preston DUNLAP, th
 
 To prevent technological lag, organization leaders can adopt several practices:
 
-- Continuously train staff, including decision-makers (see chapter "[Continuous Training](#continuous-training)").
-- Maintain an internal innovation capability to stay critical (see chapter "[Internal team model](#internal-team-model)").
-- Accept controlled risk-taking and promote open communication (see chapter "[Accepting failure](#accepting-failure)").
+- Continuously train staff, including decision-makers (see chapter "[Continuous Training](#continuous-training)") ;
+- Maintain an internal innovation capability to stay critical (see chapter "[Internal team model](#internal-team-model)") ;
+- Accept controlled risk-taking and promote open communication (see chapter "[Accepting failure](#accepting-failure)") ;
 - Measure and implement indicators to avoid complacency (see chapter "[Measuring everything](#measuring-everything)").
 
 # Prerequisites
@@ -394,9 +394,9 @@ First and foremost, it's not about convincing. You can't just walk up to someone
 
 Gaining the support of your superiors or colleagues for an initiative isn't always straightforward. William MORGAN - the leader of a renowned tech startup - recommends 4 rules to follow[^WilliamMorganKubecon2018]:
 
-1. Identify who is affected (the stakeholders).
-2. Determine what the new solution will bring them (the benefits).
-3. Understand what their concerns are (the worries).
+1. Identify who is affected (the stakeholders) ;
+2. Determine what the new solution will bring them (the benefits) ;
+3. Understand what their concerns are (the worries) ;
 4. Alleviate concerns, highlight the benefits, and communicate.
 
 According to William MORGAN, once you reach a certain level of technical engineering, the roles of "salesperson" and "engineer" become indistinguishable: "Advanced engineering work is indistinguishable from sales work."
@@ -455,14 +455,14 @@ Furthermore, don't be disheartened by the first person who resists. Every innova
 If you face direct opposition, you may need to rethink your communication strategy (refer to the following chapter "[Tailoring your message](#tailoring-your-message)"). Start with understanding opposing viewpoints. If you feel that some are deliberately trying to end discussions, consider the following tactics:
 
 - **Invoke shared values**: Even if you and your counterpart have different beliefs, you might still have common values. Show how your initiative aligns with them.
-  - If both of you value innovation, explain how your approach promotes it and the new opportunities it offers.
+  - If both of you value innovation, explain how your approach promotes it and the new opportunities it offers ;
   - If both are keen on enhancing the day-to-day experience for a certain profession or user, provide use cases on how your solution can assist.
 - **Put them in the spotlight**: Be it a decision-maker or a client, anyone will support your idea if it lets them shine. Identify how your project can help them achieve their goals and make this clear to them.
-  - A misplaced ego often arises from a disconnect between the project's stated objectives and the individual's personal goals.
+  - A misplaced ego often arises from a disconnect between the project's stated objectives and the individual's personal goals ;
   - If your counterpart seeks to stand out and gain influence in their organization, show them how your project could bolster their reputation as an innovative leader committed to improving the lives of their team.
 - **Build a coalition**: Gather people who share your transformation vision (earlier mentioned _early adopters_). These individuals often agree with you on the organization's inefficiencies.
-  - By creating a supporting community, you show stakeholders that your approach is legitimate and backed by many.
-  - Get official testimonials: a letter or email signed by a recognized leader from an entity you've worked with, vouching for your methods or services.
+  - By creating a supporting community, you show stakeholders that your approach is legitimate and backed by many ;
+  - Get official testimonials: a letter or email signed by a recognized leader from an entity you've worked with, vouching for your methods or services ;
   - Also, accept that you might not be a permanent fixture in the organization. If your initiative doesn't find its place there, it's the organization's loss! The same effort could have a different impact elsewhere. And only you set your own boundaries.
 
 ## Tailoring Your Message
@@ -682,11 +682,11 @@ Releasing a new version of software in production is the ideal time for security
 
 For security teams, the code review aims to ensure that the maximum security criteria are met, such as:
 
-- Presence of activity logs documenting user actions
-- Access to authorized data sources (see "[Service mesh](#service-mesh)" chapter to enforce these security policies)
-- No data being sent to an unauthorized service (see "[Service mesh](#service-mesh)" chapter to enforce these security policies)
-- Password/cookie storage techniques
-- GDPR functionality compliance
+- Presence of activity logs documenting user actions ;
+- Access to authorized data sources (see "[Service mesh](#service-mesh)" chapter to enforce these security policies) ;
+- No data being sent to an unauthorized service (see "[Service mesh](#service-mesh)" chapter to enforce these security policies) ;
+- Password/cookie storage techniques ;
+- GDPR functionality compliance.
 
 GitLab, for example, allows you to mandate the approval of a _merge request_ by specific teams[^GitLabRequiredApprovals] (e.g., the security team) before a contribution can be merged into the main branch (fig. <spanc/>\ref{fig:gitlab-review-approval}).
 
@@ -734,12 +734,12 @@ _Static Application Security Testing_ (SAST), focuses on techniques and tools in
 
 Here's a list of SAST tools with their descriptions to understand their variety:
 
-- [_Sonarqube_](https://github.com/SonarSource/sonarqube): Detects vulnerabilities and bad practices in +20 programming languages, assigns a technical debt score, and allows for code reviews in a dedicated interface.
-- [_HuskyCI_](https://github.com/globocom/huskyCI): Detects code vulnerabilities by launching multiple sub-tools of SAST and can integrate reports to SonarQube.
-- [_Horusec_](https://github.com/ZupIT/horusec): Similar to HuskyCI but also searches the complete git history, and has a dedicated web interface for centralizing and visualizing vulnerabilities. It can be [easily integrated](https://docs.horusec.io/docs/extensions/visual-studio-code/) into a developer's IDE.
-- [_Semgrep_](https://github.com/returntocorp/semgrep): Finds bugs, code bad practices, and detects vulnerabilities in dependencies. An interface is available with [their commercial offer](https://semgrep.dev/products/cloud-platform).
-- [_Dockle_](https://github.com/goodwithtech/dockle): Detects bad practices and vulnerabilities in containers following _CIS Benchmarks_ rules[^CISBenchmarks].
-- [_Trivy_](https://trivy.dev): Detects vulnerabilities, configuration errors, secrets, and SBOM in containers, Kubernetes, and codebases.
+- [_Sonarqube_](https://github.com/SonarSource/sonarqube): Detects vulnerabilities and bad practices in +20 programming languages, assigns a technical debt score, and allows for code reviews in a dedicated interface ;
+- [_HuskyCI_](https://github.com/globocom/huskyCI): Detects code vulnerabilities by launching multiple sub-tools of SAST and can integrate reports to SonarQube ;
+- [_Horusec_](https://github.com/ZupIT/horusec): Similar to HuskyCI but also searches the complete git history, and has a dedicated web interface for centralizing and visualizing vulnerabilities. It can be [easily integrated](https://docs.horusec.io/docs/extensions/visual-studio-code/) into a developer's IDE ;
+- [_Semgrep_](https://github.com/returntocorp/semgrep): Finds bugs, code bad practices, and detects vulnerabilities in dependencies. An interface is available with [their commercial offer](https://semgrep.dev/products/cloud-platform) ;
+- [_Dockle_](https://github.com/goodwithtech/dockle): Detects bad practices and vulnerabilities in containers following _CIS Benchmarks_ rules[^CISBenchmarks] ;
+- [_Trivy_](https://trivy.dev): Detects vulnerabilities, configuration errors, secrets, and SBOM in containers, Kubernetes, and codebases ;
 - [_Trufflehog_](https://github.com/trufflesecurity/trufflehog): Detects publicly exposed secrets in Git repositories.
 
 A comprehensive list of open-source and commercial code analysis tools is available on the OWASP foundation website[^SCAToolsOWASP].
@@ -778,8 +778,8 @@ IAST tools have access to the application's entire codebase - just like SAST too
 
 Of course not. Each has its pros and cons:
 
-- **SAST** tools are generally easier to set up than DAST and IAST. They're smaller, faster programs that are simpler to integrate into the development cycle. They quickly improve the security level of your software pipeline.
-- **DAST** tools operate in a black box mode, allowing them to analyze applications without source code access. They can also be run intermittently, without the integration cost that IAST tools require (to access source code). Moreover, your organization's security policies might prohibit tool access to software source code. DAST still allows you to evaluate the security of third-party software in such cases.
+- **SAST** tools are generally easier to set up than DAST and IAST. They're smaller, faster programs that are simpler to integrate into the development cycle. They quickly improve the security level of your software pipeline ;
+- **DAST** tools operate in a black box mode, allowing them to analyze applications without source code access. They can also be run intermittently, without the integration cost that IAST tools require (to access source code). Moreover, your organization's security policies might prohibit tool access to software source code. DAST still allows you to evaluate the security of third-party software in such cases ;
 - **IAST** tools connect to both the source code and the running application. They can combine SAST and DAST analyses but might be slower. Running an IAST tool isn't trivial; it impacts application performance in production. Some prefer these tests in an isolated environment. However, the tested software might not represent the version available to attackers (in production), potentially missing some vulnerabilities.
 
 Whether DAST or IAST, tools typically require a solid understanding of the application to perform and interpret tests effectively. This often relies on engineers with deep expertise in the software being tested and, more broadly, solid security knowledge. Lastly, open-source solutions are rare in this domain, inevitably incurring costs. Both tool types are valuable but demand investment in time, human resources, and money.
@@ -804,9 +804,9 @@ In software development, you use and produce artifacts. These can represent a de
 
 Its rules revolve around the automatic verification of the integrity of the handled data. Some examples of vulnerabilities addressed by SLSA include:
 
-- ensuring that the source code used in software compiling scripts (CI) has not been altered
-- verifying the origin of development dependencies
-- ensuring that the software factory has minimal network connectivity
+- ensuring that the source code used in software compiling scripts (CI) has not been altered ;
+- verifying the origin of development dependencies ;
+- ensuring that the software factory has minimal network connectivity.
 
 Based on a team's technical maturity, it's possible to apply SLSA rules across four levels of security and complexity. The idea is to progressively enhance the security of one's software chain over time.
 
@@ -1053,11 +1053,11 @@ To progress, set a goal to reduce VM usage. For example: "In 1 year, at least 80
 
 Here are several complementary situations where VMs remain valuable:
 
-- Legacy or critical software of your company cannot be deployed as containers.
-- The industry partners you work with aren't yet using containers.
-- Your IT security rules force you to use a specific operating system[^OS]. To save time on making your installation compatible with this OS, you might install virtualization software (e.g., KVM) to use the OS of your choice and kickstart your DevOps infrastructure setup in a familiar environment.
-- Infrastructure installation scripts are intended to be shared with various entities. In some cases, these entities may have strict security rules demanding the use of VMs.
-- If you don't have a dedicated machine to deploy your infrastructure, VMs can be helpful to separate new software from existing installations. Similarly, if you have limited resources, VMs can isolate the workload brought by your DevOps software chain.
+- Legacy or critical software of your company cannot be deployed as containers ;
+- The industry partners you work with aren't yet using containers ;
+- Your IT security rules force you to use a specific operating system[^OS]. To save time on making your installation compatible with this OS, you might install virtualization software (e.g., KVM) to use the OS of your choice and kickstart your DevOps infrastructure setup in a familiar environment ;
+- Infrastructure installation scripts are intended to be shared with various entities. In some cases, these entities may have strict security rules demanding the use of VMs ;
+- If you don't have a dedicated machine to deploy your infrastructure, VMs can be helpful to separate new software from existing installations. Similarly, if you have limited resources, VMs can isolate the workload brought by your DevOps software chain ;
 - As long as your teams aren't ready for a 100% cloud shift, the backup/restore process for a VM might be simpler to handle.
 
 However, remember that maintaining this abstraction layer (VMs) to solely manage Kubernetes on top adds complexity to your infrastructure. As practices evolve in your organization, consider removing these layers. But maintain the flexibility to instantiate them when necessary.
@@ -1076,10 +1076,10 @@ However, where the use of open-source in the private sector is a no-brainer, tec
 
 Such skepticism isn't without merit. The idea of importing a third-party library into one's IT system without examining its contents can seem risky. Potential risks include:
 
-- A library that arbitrarily deletes data
-- A library transmitting data to a remote server (software data, telemetry)
-- An updated library that no longer works (due to bugs or deliberate sabotage: see _protestwares_[^Protestware])
-- Legally, the use of open-source tech might be governed by license terms (e.g., prohibiting selling software developed using the library)
+- A library that arbitrarily deletes data ;
+- A library transmitting data to a remote server (software data, telemetry) ;
+- An updated library that no longer works (due to bugs or deliberate sabotage: see _protestwares_[^Protestware]) ;
+- Legally, the use of open-source tech might be governed by license terms (e.g., prohibiting selling software developed using the library).
 
 So, it's about striking a balance between the productivity provided by open-source libraries/software and the trust we place in them (security).
 
@@ -1101,13 +1101,13 @@ Far from benefiting only these companies, this practice benefits the entire sect
 
 To excel in system resilience, as in any field, training is necessary. That's why one of the recommended practices in SRE (Site Reliability Engineering) is to train to handle incidents. The objectives are as follows:
 
-1. Assess the quality of incident response (speed, detection tools, clear and easily accessible resolution guides, functional production tools).
-2. Evaluate the resilience of the infrastructure (automatic infrastructure mechanisms to resolve production outages).
+1. Assess the quality of incident response (speed, detection tools, clear and easily accessible resolution guides, functional production tools) ;
+2. Evaluate the resilience of the infrastructure (automatic infrastructure mechanisms to resolve production outages) ;
 3. Train engineers to better understand their infrastructure and the tools at their disposal to respond to incidents.
 
 To ensure that its teams are well organized in case of an incident, Google has designed two types of training[^SRETrainingsGoogle]. The goal is to reduce the _Mean Time To Mitigation_ (the average time to resolve an incident, cf. chapter "[Measuring the success of your transformation](#measuring-the-success-of-your-transformation)"), which would impact the company's service contracts.
 
-1. DiRT (_Disaster Recovery Testing_): a group of engineers plans and causes an actual failure over a defined period to test the effectiveness of its incident response. It is recommended to perform these trainings at least once a year on your critical services.
+1. DiRT (_Disaster Recovery Testing_): a group of engineers plans and causes an actual failure over a defined period to test the effectiveness of its incident response. It is recommended to perform these trainings at least once a year on your critical services ;
 2. The Wheel of Misfortune: a fictional scenario drawn at random, in the form of a role-playing game similar to _Dungeons and Dragons_, where a team of engineers faces an operational emergency. They interact with a "game master" who invents consequences for the actions that the engineers announce they will take. Engineers take this opportunity to review their incident investigation procedures. This practice is particularly useful for newcomers but requires that the game master be particularly experienced (cf. Pavlos RATIS's GitHub project "[wheel of misfortune](https://dastergon.gr/wheel-of-misfortune)"[^pratiswomgithub]).
 
 Amazon Web Services (AWS) offers a similar approach named _Game days_[^AWSGameday] to Google's _Wheel of Misfortune_. The company lists its critical services and the threats that can be associated with them (e.g., data loss, overload, unavailability) to determine a "disaster" scenario. Subsequently, the idea is to provision an infrastructure identical to the production and cause the desired failure. It then observes how its teams and production tools react to the incident.
@@ -1199,14 +1199,14 @@ The most popular software forges rely on the _git_ technology[^git], allowing fo
 
 Today, development, sysadmin, InfoSec, and _management_ teams collaboratively work on such platforms, capitalizing on:
 
-- The list of features to develop for software (tasks, priorities, deadlines... see agile methodology)
-- Discussions on designing a feature (comments in tasks)
-- User and technical documentation for software
-- Software source code
-- Infrastructure documentation
-- Infrastructure administration scripts
-- Security rules (see chapter "[Continuous integration and security](#continuous-integration-and-security)")
-- Software quality rules
+- The list of features to develop for software (tasks, priorities, deadlines... see agile methodology) ;
+- Discussions on designing a feature (comments in tasks) ;
+- User and technical documentation for software ;
+- Software source code ;
+- Infrastructure documentation ;
+- Infrastructure administration scripts ;
+- Security rules (see chapter "[Continuous integration and security](#continuous-integration-and-security)") ;
+- Software quality rules.
 
 ![GitLab and GitHub interfaces for (from left to right): project management, documentation visualization, code capitalization.\label{fig:gitlab_github_illustrations_screenshots}](./images/gitlab_github_illustrations_screenshots.png)
 
@@ -1365,26 +1365,26 @@ Project Management:
 
 Contribution Management:
 
-1. _Trunk branch_: a singular `main`/`master` branch from which developers can branch off to add a contribution
-2. _Features branching_: code change = 1 branch = 1 _issue_
-    - Branch naming convention: `f/#65-add-users-profile-page` for _issue_ no. 65 of _feature_ type titled "_Add users profile page_"
-    - Facilitates change tracking (GitHub/GitLab _Changes_ tab)
-    - Do NOT address anything other than the _issue_'s topic in its branch
-3. Mention the _issue_ number in every _commit_
-    - Naming convention: _"#65 : Added page icon in sidebar"_
-4. Once the contribution is ready, create a _merge request_ to the _trunk branch_
-    - Use the _squash_ feature to keep the contribution history clean
-    - Naming convention: _"#65 : Add users profile page"_
-    - Allows for automatically referencing the merge request in the issue
-5. _Release_: update the software version (in files like `package.json`) and make a _release_ from the _trunk branch_
+1. _Trunk branch_: a singular `main`/`master` branch from which developers can branch off to add a contribution.
+2. _Features branching_: code change = 1 branch = 1 _issue_.
+    - Branch naming convention: `f/#65-add-users-profile-page` for _issue_ no. 65 of _feature_ type titled "_Add users profile page_" ;
+    - Facilitates change tracking (GitHub/GitLab _Changes_ tab) ;
+    - Do NOT address anything other than the _issue_'s topic in its branch.
+3. Mention the _issue_ number in every _commit_.
+    - Naming convention: _"#65 : Added page icon in sidebar"_.
+4. Once the contribution is ready, create a _merge request_ to the _trunk branch_.
+    - Use the _squash_ feature to keep the contribution history clean ;
+    - Naming convention: _"#65 : Add users profile page"_ ;
+    - Allows for automatically referencing the merge request in the issue.
+5. _Release_: update the software version (in files like `package.json`) and make a _release_ from the _trunk branch_.
 
 Other Recommendations:
 
-1. Do not make a _merge request_ from the _trunk branch_ to a _feature branch_
-2. Limit the size of contributions, preferring to create multiple smaller tasks
-3. Limit the time spent on a _review_ to avoid time-consuming conflicts (refer to code review best practices[^engpractices])
-4. Every contribution must pass a Continuous Integration (CI) pipeline
-5. As your team matures, consider adding a Continuous Deployment pipeline for every contribution that passes CI on the _trunk branch_
+1. Do not make a _merge request_ from the _trunk branch_ to a _feature branch_ ;
+2. Limit the size of contributions, preferring to create multiple smaller tasks ;
+3. Limit the time spent on a _review_ to avoid time-consuming conflicts (refer to code review best practices[^engpractices]) ;
+4. Every contribution must pass a Continuous Integration (CI) pipeline ;
+5. As your team matures, consider adding a Continuous Deployment pipeline for every contribution that passes CI on the _trunk branch_.
 
 > Author's Note: This method has proven effective over time in the projects I've contributed to. Easy to grasp even for beginners, I've refined it over time to be less cumbersome, yet addressing software technical debt issues and team turnover.
 
@@ -1469,10 +1469,10 @@ However, this architecture requires advanced tools to maintain hundreds of inter
 
 To enable fine scaling on isolated functionalities, so-called "serverless" architectures have emerged. The advantage of a _serverless_ architecture over traditional micro-services approaches is multifaceted:
 
-- No longer having to manage the underlying infrastructure
-- Only pay when the service is used
-- Automatically provision resources during high traffic
-- Automatically remove unused resources
+- No longer having to manage the underlying infrastructure ;
+- Only pay when the service is used ;
+- Automatically provision resources during high traffic ;
+- Automatically remove unused resources.
 
 Included in this are _Function as a Service_ or _FaaS_ technologies[^TechFaaS], _Container as a Service_ (CaaS), _serverless compute platforms_ or _SCP_[^TechSCP], self-managed storage services[^TechDBmanaged], and self-managed messaging services[^ManagedQueues].
 
@@ -1570,9 +1570,9 @@ By ensuring your employees' psychological safety, you encourage shared responsib
 
 In a work environment that overlooks psychological safety, collaborators:
 
-- Keep their concerns or ideas to themselves
-- Fear appearing incompetent or ignorant
-- Are scared of being ridiculed
+- Keep their concerns or ideas to themselves ;
+- Fear appearing incompetent or ignorant ;
+- Are scared of being ridiculed.
 
 As mentioned by Kiran VARMA in her course on SRE culture at Google[^CourseraSRECourse], research[^ATheoryOfBlameResearch] identified two primary drivers fueling the human tendency to blame others: hindsight bias and "discomfort discharge."
 
@@ -1584,9 +1584,9 @@ In organizations uncomfortable with failure, team members might hide information
 
 A psychologically safe organization believes:
 
-- Failure should be seen as an opportunity for growth
-- New ideas are welcomed and should be discussed
-- Failure results from lacking methods and procedures, not from individual fault
+- Failure should be seen as an opportunity for growth ;
+- New ideas are welcomed and should be discussed ;
+- Failure results from lacking methods and procedures, not from individual fault.
 
 This mindset fosters trust. Organizations should shift from asking "Who did this?" to "What happened?" Focus on methods and procedures rather than on individuals. It's best to assume employees act in good faith, making decisions based on the most relevant information available. Investigating the source of misinformation is more beneficial for the company than blaming someone.
 
@@ -1687,19 +1687,19 @@ In RCA, your primary goal is to restore the services. This is followed by a solu
 
 For instance, in the case of a faulty coffee maker:
 
-- the immediate action is to replace the broken part
-- the permanent solution is to redesign the coffee maker, accounting for manufacturing disparities
-- the preventive (or "systemic") action is to change the design process, integrating a study of manufacturing disparities among suppliers
+- the immediate action is to replace the broken part ;
+- the permanent solution is to redesign the coffee maker, accounting for manufacturing disparities ;
+- the preventive (or "systemic") action is to change the design process, integrating a study of manufacturing disparities among suppliers.
 
 To make upper management understand the value of this method, present it as an investment in saving time and money[^CloudRCA]. RCA reduces the risks of expensive software redesign and is time-efficient. Focus your RCA efforts on the incidents that cost your organization the most. Establishing procedures and preserving knowledge on incident resolution also improves team communication. Instead of merely applying patches, the idea is to find a lasting solution.
 
 Here are the 5 steps of _Root Cause Analysis_:
 
-- Identify the problem
-- Contain and analyze the issue
-- Determine the cause of the problem
-- Resolve the issue permanently
-- Validate the fix and ensure the incident does not happen again
+- Identify the problem ;
+- Contain and analyze the issue ;
+- Determine the cause of the problem ;
+- Resolve the issue permanently ;
+- Validate the fix and ensure the incident does not happen again.
 
 1. **Identify the problem**
 
@@ -1743,9 +1743,9 @@ Here are the 5 steps of _Root Cause Analysis_:
 
     With each update on the incident's status, communicate:
 
-    - The current situation and the measured impact
-    - What's known about the problem/what has changed
-    - Ongoing affected services
+    - The current situation and the measured impact ;
+    - What's known about the problem/what has changed ;
+    - Ongoing affected services.
 
     To analyze the issue in more detail and locate the source of the malfunction, use your observability tools (activity logs, metrics).
 
@@ -1821,22 +1821,22 @@ Create a new Markdown document and name it in the following way:
 For the first part, set the following headings:
 
 - **Title**
-  - Ex: "File Sharing Platform Unavailable for 2 days on June 4, 2023"
+  - Ex: "File Sharing Platform Unavailable for 2 days on June 4, 2023".
 - **Alert Date**
-  - Ex: "07/04/2023 16:55 UTC"
+  - Ex: "07/04/2023 16:55 UTC".
 - **Incident Start Date**
-  - Ex: "07/04/2023 16:48 UTC"
-  - May be unknown due to lack of information
+  - Ex: "07/04/2023 16:48 UTC" ;
+  - May be unknown due to lack of information.
 - **Incident End Date**
-  - Ex: "07/04/2023 17:26 UTC"
+  - Ex: "07/04/2023 17:26 UTC".
 - **Incident Duration**
-  - Ex: "00d00h38m - 07/04/2023 16:48 UTC - 07/04/2023 17:26 UTC"
-  - Use the alert date if the incident's start is undefined
+  - Ex: "00d00h38m - 07/04/2023 16:48 UTC - 07/04/2023 17:26 UTC" ;
+  - Use the alert date if the incident's start is undefined.
 - **Authors**
-  - Ex: "Elise DUPONT (@edupont) - Antoine MARTIN (@amartin)"
+  - Ex: "Elise DUPONT (@edupont) - Antoine MARTIN (@amartin)" ;
   - Postmortem authors. Ideally, include software forge username.
 - **Status**
-  - Possible values: in writing, under review, reviewed, published internally, published publicly
+  - Possible values: in writing, under review, reviewed, published internally, published publicly.
 - **Summary**
   - Summarize the incident, its duration, and its cause in no more than five sentences.
 - **Impact**
@@ -1847,24 +1847,24 @@ For the first part, set the following headings:
   - This is where you include elements from your _root cause analysis_ detailing how the issue occurred. Add the time for each step of the investigation. Include screenshots as evidence and to better understand the situation.
   - Reminder: mistakes are never solely one person's fault but arise from poorly defined procedures or poorly designed infrastructures (see chapter "[Embracing failure](#embracing-failure)").
 - **Triggering Event**
-  - Describe the action that led to the incident
-  - Ex: "An administrator mistakenly ran a command that deleted a critical file"
+  - Describe the action that led to the incident ;
+  - Ex: "An administrator mistakenly ran a command that deleted a critical file".
 - **Resolution**
   - List immediate actions taken for short-term problem mitigation. Then list long-term actions addressing the problem's root cause.
 - **Lessons Learned**
-  - Describe what went well and what didn't
+  - Describe what went well and what didn't.
     - Was the incident detected quickly or did it take a while for someone to notice? Was the team well-coordinated, or were there communication issues? Were procedures clear, or were engineers uncertain where to seek help?
-  - Describe where we got lucky / surprises
+  - Describe where we got lucky / surprises.
     - Sometimes, the incident doesn't turn out as bad as anticipated. And something might go right unexpectedly. Highlight it to establish new measures to not rely on "luck" in the future.
 
 The second part describes what your team might do differently next time. As a conclusion to your postmortem, it lists actions to prevent recurrence of the issues. Focus not only on bug fixes but also include necessary procedure changes to mitigate similar future incidents.
 
 Define a table with four columns and as many rows as desired:
 
-- The **person responsible** for the action
-- The **action(s)** to be taken
-- The **priority** of this action
-- The [_issue_](#flexible-flow-a-balanced-git-workflow) or associated **ticket**
+- The **person responsible** for the action ;
+- The **action(s)** to be taken ;
+- The **priority** of this action ;
+- The [_issue_](#flexible-flow-a-balanced-git-workflow) or associated **ticket**.
 
 As your team or projects grow, a more formal structure for your postmortems might be needed. The postmortem model proposed by Atlassian is a good example[^AtlassianPostmortem].
 
@@ -1899,17 +1899,17 @@ _Ouch! The server handling employee authentication for the intranet just crashed
 To manage, designate 3 individuals for the following roles:
 
 1. **Incident Commander (IC)**
-   - Coordinates tasks and delegates roles, including designating the OL and CL.
-   - Initially, the IC is the one discovering the incident. If someone more experienced arrives, the role can be passed on, allowing the initial IC to return to work or become the new CL.
+   - Coordinates tasks and delegates roles, including designating the OL and CL ;
+   - Initially, the IC is the one discovering the incident. If someone more experienced arrives, the role can be passed on, allowing the initial IC to return to work or become the new CL ;
    - If needed, the IC calls for backup and instructs the rest of the team on continuity.
 2. **Communications Lead (CL)**
-   - Manages the _status page_ and informs employees, customers, and management about the incident's progress.
-   - Creates a dedicated internal communication channel for the incident and invites stakeholders.
-   - Acts as the interface between the incident management team and external parties.
+   - Manages the _status page_ and informs employees, customers, and management about the incident's progress ;
+   - Creates a dedicated internal communication channel for the incident and invites stakeholders ;
+   - Acts as the interface between the incident management team and external parties ;
    - Shields the OL from external interruptions.
 3. **Operations Lead (OL)**
-   - Resolves the issue and drafts notes for the postmortem.
-   - Refers to the IC when needing additional help.
+   - Resolves the issue and drafts notes for the postmortem ;
+   - Refers to the IC when needing additional help ;
    - Updates the CL on the incident's progress.
 
 In smaller teams, the IC often assumes all three roles. However, preparation for delegating these tasks during severe incidents is essential.
@@ -1930,8 +1930,8 @@ More broadly, the company learned over time that updating clients every 30 minut
 
 In this chapter, we will explore two techniques to proactively anticipate potential incidents: the premortem and the cause-and-effect analysis.
 
-- The premortem answers the question: "What elements could cause this architecture/approach to fail?"
-- The cause-and-effect analysis answers the question: "What incidents could arise from this architecture/approach?"
+- The premortem answers the question: "What elements could cause this architecture/approach to fail?" ;
+- The cause-and-effect analysis answers the question: "What incidents could arise from this architecture/approach?".
 
 If multiple approaches are being considered, start with a DACI (refer to the chapter "[The DACI Model](#the-daci-model)"). Once a decision has been made, the team should have an intuition about which approach to pursue: this is the moment to test it with a premortem.
 
@@ -1949,15 +1949,15 @@ For example: "Our team currently manages its infrastructure using traditional me
 
 1. **Organize a meeting** with stakeholders. Ask them to imagine a year ahead and that the transformation plan failed.
 2. Create a **collaborative document** (e.g., Google Docs) with the following headings:
-    - Potential Failure Factors
-    - Solutions
-    - Most Dangerous Factors
-    - Action Plan
+    - Potential Failure Factors ;
+    - Solutions ;
+    - Most Dangerous Factors ;
+    - Action Plan.
 3. **Potential Failure Factors**
-    - Reasons that might lead to project failure.
+    - Reasons that might lead to project failure ;
     - E.g., lack of support from management, difficulty integrating DevOps practices with existing processes and systems, insufficient team training or expertise in Cloud technologies, resistance to change from certain members...
 4. **Solutions**
-    - For each failure factor, brainstorm solutions that could be implemented now to reduce the project's risk of failure.
+    - For each failure factor, brainstorm solutions that could be implemented now to reduce the project's risk of failure ;
     - E.g., conduct awareness presentations, start with a proof of concept for a specific use case, prepare a training plan, identify early adopters...
 5. **Most Dangerous Factors**
     - List out the riskiest factors that the team can still influence.
@@ -1992,23 +1992,23 @@ A chain of causes and effects can be established to better visualize the consequ
 You can do the same with malfunction scenarios of software or infrastructure. Set up a table with 7 columns. For each hypothesized incident, the author should determine:
 
 - **Error Situation**
-  - E.g., "The software update failed on one of the servers"
+  - E.g., "The software update failed on one of the servers".
 - The **effects**
-  - E.g., "Client requests reaching this server will fail. This represents 20% of our requests due to our load-balancing architecture."
+  - E.g., "Client requests reaching this server will fail. This represents 20% of our requests due to our load-balancing architecture".
 - **Probability**
-  - Rate from 1 to 10 the likelihood of the event happening.
-  - E.g., "3"
+  - Rate from 1 to 10 the likelihood of the event happening ;
+  - E.g., "3".
 - **Severity**
   - Rate from 1 to 10 the severity of the problem should the event occur.
   - E.g., "7"
 - **Detection Difficulty**
   - Rate from 1 to 10 the likelihood that the event won't be detected.
-  - E.g., "1"
+  - E.g., "1".
 - **Risk Level**
-  - Product of probability, severity, and detection difficulty.
-  - E.g., "(3\*7\*1) = 21"
+  - Product of probability, severity, and detection difficulty ;
+  - E.g., "(3\*7\*1) = 21".
 - **Countermeasures**
-  - Describe how to respond should the event happen.
+  - Describe how to respond should the event happen ;
   - E.g., "Configure the load-balancer to exclude the server where the update failed. Roll back the software version. Restore the load-balancer to its initial configuration."
 
 From this table, prioritize tasks for your teams to work on anticipating the most critical situations.
@@ -2031,9 +2031,9 @@ For instance, Windows 10 (released in 2015) is merely an [evolution of Windows N
 
 Here are some parallels concerning the Cloud:
 
-- A container is just a more flexible tiny VM. It is managed with different commands, the nomenclature is different, but the concepts remain the same: an OS (image) from which the container is created, a configurable network, and the ability to add storage.
-- An orchestrator is just a hypervisor managed with different commands. But its components remain the same: configurable network policies between containers/VMs, storage management with VMWare's _datastores_ in place of Kubernetes' _PersistentVolumes_, or VMWare's _NSX Controller_ in place of Kubernetes' _Ingress Controller_.
-- However, there are specific evolutions that one must simply accept (as with mathematical theorems). For instance, the use of good practices mentioned in the chapters "[A Foundation for Your Resilience](#a-foundation-for-your-resilience)" and "[12-Factor methodology](#12-factor-methodology)": favoring stateless services, using only micro-services, exposing one's activity logs differently...
+- A container is just a more flexible tiny VM. It is managed with different commands, the nomenclature is different, but the concepts remain the same: an OS (image) from which the container is created, a configurable network, and the ability to add storage ;
+- An orchestrator is just a hypervisor managed with different commands. But its components remain the same: configurable network policies between containers/VMs, storage management with VMWare's _datastores_ in place of Kubernetes' _PersistentVolumes_, or VMWare's _NSX Controller_ in place of Kubernetes' _Ingress Controller_ ;
+- However, there are specific evolutions that one must simply accept (as with mathematical theorems). For instance, the use of good practices mentioned in the chapters "[A Foundation for Your Resilience](#a-foundation-for-your-resilience)" and "[12-Factor methodology](#12-factor-methodology)": favoring stateless services, using only micro-services, exposing one's activity logs differently... ;
 - Micro-services are merely a division of traditional software into multiple independent blocks. Each block can be scaled according to user load.
 
 Traditional VMs also have their place in a Cloud DevOps infrastructure; they can be part of it (see chapter "[Abandoning VMs?](#abandoning-vms)").
@@ -2072,10 +2072,10 @@ To keep your employees motivated to achieve great things, it's crucial to avoid 
 
 _Design thinking_ is an innovation technique that merges creativity and method to try to solve complex problems. It comprises 5 phases:
 
-1. **Empathize**: Start by meeting the end-user and immerse yourself in their environment to understand their challenges. This helps to set aside any preconceptions and gain an authentic perspective.
-2. **Define the Problem**: Clearly outline the problem you're trying to solve. Express it from the user's viewpoint, rather than describing what you'd like to achieve.
-3. **Ideate**: Now that the problem is identified, you can start brainstorming solutions.
-4. **Prototype**: Bring your idea to life with a prototype. Spot the weak points and find solutions, or move to another idea if the one you're testing isn't viable (refer to chapter "[Premortems](#premortems)").
+1. **Empathize**: Start by meeting the end-user and immerse yourself in their environment to understand their challenges. This helps to set aside any preconceptions and gain an authentic perspective ;
+2. **Define the Problem**: Clearly outline the problem you're trying to solve. Express it from the user's viewpoint, rather than describing what you'd like to achieve ;
+3. **Ideate**: Now that the problem is identified, you can start brainstorming solutions ;
+4. **Prototype**: Bring your idea to life with a prototype. Spot the weak points and find solutions, or move to another idea if the one you're testing isn't viable (refer to chapter "[Premortems](#premortems)") ;
 5. **Test**: Evaluate your prototype in an environment that mirrors your target user's setting (refer to chapter "[Continuous Deployment](#continuous-deployment-cd)").
 
 In summary, you need to put yourself in the user's shoes, and techniques like continuous deployment help streamline this process. When faced with reality, innovation isn't stifled by the organization.
@@ -2132,10 +2132,10 @@ This popular term is easy to understand: it encompasses practices and technologi
 
 Here are some configuration examples:
 
-- Setting the new time server for all your machines
-- Updating software in production (see: chapter [continuous deployment](#continuous-deployment-cd))
-- Updating the wallpaper of all your machines
-- Adding a new domain name
+- Setting the new time server for all your machines ;
+- Updating software in production (see: chapter [continuous deployment](#continuous-deployment-cd)) ;
+- Updating the wallpaper of all your machines ;
+- Adding a new domain name.
 
 Of course, when I mention "all your machines", IaC scripts allow you to specify which machines exactly, so changes are applied only to specific groups of machines.
 
@@ -2217,11 +2217,11 @@ All these tasks contribute to reducing the technical debt of your codebase and f
 
 It's common to hear about a so-called continuous integration "pipeline", which accompanies other terms in the CI/CD tech universe. Let's define the most common ones:
 
-- **Job**: a task/script triggered automatically upon an event
-- **Pipeline**: a sequence of _jobs_
-- **Stages**: the three steps of a continuous integration _pipeline_ (_build_, _test_, _deploy_)
-- **Build**: stage containing _jobs_ ensuring the code compiles correctly, and the Docker image builds properly with the directory contents
-- **Test**: _jobs_ checking the code/contribution's conformity
+- **Job**: a task/script triggered automatically upon an event ;
+- **Pipeline**: a sequence of _jobs_ ;
+- **Stages**: the three steps of a continuous integration _pipeline_ (_build_, _test_, _deploy_) ;
+- **Build**: stage containing _jobs_ ensuring the code compiles correctly, and the Docker image builds properly with the directory contents ;
+- **Test**: _jobs_ checking the code/contribution's conformity ;
   - Examples:
     - Ensure code maintainability: using tools like [_SonarQube_](https://www.sonarsource.com/products/sonarqube) or _linters_[^linter] such as [_black_](https://github.com/psf/black) for Python or [_KubeLinter_](https://github.com/stackrox/kube-linter) for Kubernetes configurations (cf. [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/criteria/0), chapter ["Securing your software supply chain"](#securing-your-software-supply-chain)).
     - Check the contribution doesn't introduce security vulnerabilities: with software like _Quay Clair_, _Jfrog X-Ray_, _ClamAV_, or the OpenSSF _Scorecards_.
@@ -2230,8 +2230,8 @@ It's common to hear about a so-called continuous integration "pipeline", which a
     - Check the composition of a Docker container.
 - **Deploy**: _jobs_ executing actions impacting the infrastructure or production (cf. chapter ["Continuous Deployment](#continuous-deployment-cd)").
   - Examples:
-    - Deploy a software update.
-    - Add a compliant development dependency.
+    - Deploy a software update ;
+    - Add a compliant development dependency ;
     - Execute administrative actions.
 
 As mentioned earlier, the advantage of a continuous integration pipeline is also to test the pushed code across multiple environments automatically: your development and pre-production environments before deploying to production. However, these multi-environment pipelines introduce additional complexity, which requires a larger technical team to manage.
@@ -2272,8 +2272,8 @@ In the previous chapter - "[Leveraging automation](#leveraging-automation)" - we
 
 In this chapter, we'll discuss a significant dimension of automation: observability. It's through measurements that systems can be massively automated, and better decisions can be made organization-wide. Measuring everything achieves three objectives:
 
-1. Technical and commercial teams can know the state of a service at any time (operational, partially accessible, down).
-2. Technical teams can analyze data to pinpoint issues and attempt to resolve them (see chapter "[Organizing incident response](#organizing-incident-response)").
+1. Technical and commercial teams can know the state of a service at any time (operational, partially accessible, down) ;
+2. Technical teams can analyze data to pinpoint issues and attempt to resolve them (see chapter "[Organizing incident response](#organizing-incident-response)") ;
 3. With these data insights, technical teams can assist commercial teams in making better decisions for the organization.
 
 Trusting decisions based on its own data marks the culmination of a successful DevOps transformation. The industry calls this "data-driven decision making."
@@ -2288,8 +2288,8 @@ The field of observability can be summarized as the set of tools and practices t
 
 Let's delve deeper into what each of these data types can tell us:
 
-- _logs_: Immutable and timestamped records describing specific events over time. For instance, "_[MySoftware] jdupont accessed the URL /users/login at 18h55m14s_". The code generating a log entry is usually manually added by a developer within the software.
-- _metrics_: Numerical representations of phenomena measured over time, such as the number of requests, response times, or resource usage (RAM, CPU, disk, network).
+- _logs_: Immutable and timestamped records describing specific events over time. For instance, "_[MySoftware] jdupont accessed the URL /users/login at 18h55m14s_". The code generating a log entry is usually manually added by a developer within the software ;
+- _metrics_: Numerical representations of phenomena measured over time, such as the number of requests, response times, or resource usage (RAM, CPU, disk, network) ;
 - _traces_: A kind of _log_ that follows the path of an operation (e.g., a request). A trace is a set of _logs_ with additional information to trace an operation across the various services it traverses. Each stage and sub-operation traversed is termed a span (_span_). Logs for a trace are typically generated automatically.
 
 Let's focus on traces to better grasp their implications. Consider an application (a client) sending a request to a REST API (a server). A trace consists of _spans_ and metrics, associated with a unique identifier. This ID differentiates the path of our request as it moves through all the services it touches. Figure <spanc/>\ref{fig:2023_trace_basic_example} illustrates an example.
@@ -2388,36 +2388,36 @@ SLOs are built upon one or more "Service Level Indicators" (_Service Level Indic
 Here are some examples to clearly differentiate which SLI an SLO is based on, and which measurement(s) an SLI relies upon:
 
 - **Phenomenon: Page load time**
-  - SLO: 99% of pages should load in under 200ms over 28 days (objective)
-  - SLI: Rate of pages loaded in under 200ms over 28 days (percentage)
-    - Good event criterion: Any page loaded in under 200ms
-    - Event consideration criterion: Any page loaded after 0ms and not exceeding the timeout duration
-  - Measurement: Page load time for each request (in milliseconds)
+  - SLO: 99% of pages should load in under 200ms over 28 days (objective).
+  - SLI: Rate of pages loaded in under 200ms over 28 days (percentage).
+    - Good event criterion: Any page loaded in under 200ms ;
+    - Event consideration criterion: Any page loaded after 0ms and not exceeding the timeout duration.
+  - Measurement: Page load time for each request (in milliseconds).
 - **Phenomenon: Visitor conversion**
-  - SLO: 10% of unique visitors should click the registration button on the homepage each quarter (objective)
-  - SLI: Conversion rate of visitors out of all visitors over a quarter (percentage)
-    - Good event criterion: A unique visitor (IP) clicked the registration button
-    - Event consideration criterion: Unique visitors (IP) of the homepage
-  - Measurement: Visitor page visits and clicks
+  - SLO: 10% of unique visitors should click the registration button on the homepage each quarter (objective).
+  - SLI: Conversion rate of visitors out of all visitors over a quarter (percentage).
+    - Good event criterion: A unique visitor (IP) clicked the registration button ;
+    - Event consideration criterion: Unique visitors (IP) of the homepage.
+  - Measurement: Visitor page visits and clicks.
 - **Phenomenon: Valid HTTP responses**
-  - SLO: 99.9% of HTTP responses should have a code < 500 over 1 week (objective)
-  - SLI: Rate of HTTP responses with code < 500 out of all HTTP responses over 1 week (percentage)
-    - Good event criterion: Any HTTP response with a code < 500
-    - Event consideration criterion: Any HTTP response with a code not between 300 and 499
-  - Measurement: Count of HTTP responses < 500 every 5 minutes
+  - SLO: 99.9% of HTTP responses should have a code < 500 over 1 week (objective).
+  - SLI: Rate of HTTP responses with code < 500 out of all HTTP responses over 1 week (percentage).
+    - Good event criterion: Any HTTP response with a code < 500 ;
+    - Event consideration criterion: Any HTTP response with a code not between 300 and 499.
+  - Measurement: Count of HTTP responses < 500 every 5 minutes.
 - **Phenomenon: Server operational state**[^UptimeVsAvailability]
-  - SLO: 99.9% of ICMP requests should be < 100ms over 1 week (objective)
-  - SLI: Rate of responses < 100ms to ICMP requests over 1 week (percentage)
-    - Good event criterion: Any request completed in under 100ms
-    - Event consideration criterion: Any duration over 0ms and not exceeding the timeout duration
-  - Measurement: Response durations to ICMP requests (in milliseconds)
+  - SLO: 99.9% of ICMP requests should be < 100ms over 1 week (objective).
+  - SLI: Rate of responses < 100ms to ICMP requests over 1 week (percentage).
+    - Good event criterion: Any request completed in under 100ms ;
+    - Event consideration criterion: Any duration over 0ms and not exceeding the timeout duration.
+  - Measurement: Response durations to ICMP requests (in milliseconds).
 - **Phenomenon: File upload speed**
-  - SLO: 99% of files under 10Ko should be uploaded in under 100ms over 1 week (objective)
-  - SLI: Rate of files under 10Ko uploaded in under 100ms over 1 week
-    - Good event criterion: Any file under 10ko uploaded in under 100ms
-    - Event consideration criterion: Any uploaded file under 10ko that didn't fail
-  - Measurement 1: Uploaded file sizes (in Ko)
-  - Measurement 2: File upload durations (in milliseconds)
+  - SLO: 99% of files under 10Ko should be uploaded in under 100ms over 1 week (objective).
+  - SLI: Rate of files under 10Ko uploaded in under 100ms over 1 week.
+    - Good event criterion: Any file under 10ko uploaded in under 100ms ;
+    - Event consideration criterion: Any uploaded file under 10ko that didn't fail.
+  - Measurement 1: Uploaded file sizes (in Ko).
+  - Measurement 2: File upload durations (in milliseconds).
 
 An SLI can be composed of one or more measurements. However, avoid creating overly complex SLIs or SLOs, as they might represent vague or misleading phenomena.
 
@@ -2441,8 +2441,8 @@ SLOs should be defined in collaboration with decision-makers. Their involvement 
 
 The Service Level Agreement (SLA) is a contract between your organization and a client. If your service quality falls below what your SLAs dictate, your organization faces penalties. An SLA is built on one or more SLOs, setting intentionally lower resilience rates for safety. Here are some examples:
 
-- Below 99.9% availability, Google starts refunding its [_Google Workspace_](https://workspace.google.com/terms/sla.html) clients. Between 99.9% and 99% availability, 3 extra access days are added to the client's account. Below 95%, it's 15 days.
-- Below 99.5% availability, AWS begins refunding its [EC2 instance](https://aws.amazon.com/compute/sla) clients. Between 99.9% and 99% availability, the client is refunded 10% of their expenses. Below 95%, they're refunded in full (100%).
+- Below 99.9% availability, Google starts refunding its [_Google Workspace_](https://workspace.google.com/terms/sla.html) clients. Between 99.9% and 99% availability, 3 extra access days are added to the client's account. Below 95%, it's 15 days ;
+- Below 99.5% availability, AWS begins refunding its [EC2 instance](https://aws.amazon.com/compute/sla) clients. Between 99.9% and 99% availability, the client is refunded 10% of their expenses. Below 95%, they're refunded in full (100%) ;
 - Below 99.9% availability, Microsoft starts refunding its [_Teams_ customers](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=13). Below 99.9%, the client receives a credit amounting to 25% of their expenses. Below 95%, they get a credit for 100% of their expenses.
 
 SLAs are not mandated by law. However, they can be part of your service contract to clarify your commitments and avoid disputes. Indeed, it's always preferable to list clear terms both you and your client have agreed to. SLAs also serve as a competitive edge: your company commits to a certain quality of service, whereas your competitors might not. Implementing an SLA in your governance approach holds stakeholders (developers, SRE, decision-makers) accountable and shares expectations. The company now pivots based on the metrics it gathers and interprets as SLOs. This is referred to as being _data-driven_.
@@ -2470,11 +2470,11 @@ Now, let's focus on another phenomenon: on March 6th, shortly after midnight, th
 Given these insights, we can enhance one of the indicators from the previous chapter:
 
 - **Phenomenon: Page load duration**
-  - Measurement: Load duration of a page for each request (in milliseconds)
-  - Classic SLI: Percentage of pages loaded in under 200ms over 28 days
-  - Classic SLO: 99% of pages must load in under 200ms over 28 days
-  - Advanced SLI: Percentage of pages loaded in under 1000ms in the 95th percentile over 28 days
-  - Advanced SLO: 99% of pages in the 95th percentile must load in under 1000ms over 28 days
+  - Measurement: Load duration of a page for each request (in milliseconds) ;
+  - Classic SLI: Percentage of pages loaded in under 200ms over 28 days ;
+  - Classic SLO: 99% of pages must load in under 200ms over 28 days ;
+  - Advanced SLI: Percentage of pages loaded in under 1000ms in the 95th percentile over 28 days ;
+  - Advanced SLO: 99% of pages in the 95th percentile must load in under 1000ms over 28 days.
 
 To develop your intuition regarding these indicators, start with classic SLIs and SLOs. Once your infrastructure matures – especially in user count – you can shift to advanced SLIs and SLOs.
 
@@ -2514,9 +2514,9 @@ If you choose a spreadsheet, you can use the following structure:
 | ...    | ...                  | ...                  | ...                     |
 <!-- markdownlint-enable MD034 -->
 
-- The **metric** denotes the MTTx name.
-- The **start date** indicates when the event began.
-- The **end date** represents when the event ended.
+- The **metric** denotes the MTTx name ;
+- The **start date** indicates when the event began ;
+- The **end date** represents when the event ended ;
 - The **incident** column can reference an incident ID or link to the postmortem.
 
 Calculate your MTTx by averaging the differences between start and end dates for each incident. Sample over a calendar month period.
@@ -2529,21 +2529,21 @@ Despite its very tangible and practical application, the _service mesh_ or "serv
 
 Let's approach it through some challenges that illustrate its significance:
 
-- "Our software is written in 6 different languages, and we don't have a unified way to gather telemetry (application logs, error logs, metrics)." (topic: observability)
-- "We have 70 system administration teams, and getting them to implement TLS between all their services would be an organizational nightmare." (topic: security, encrypted flows)
-- "We have hundreds of containers running on multiple geographically distributed machines with no unified way to analyze network latencies." (topic: observability)
-- "We're experiencing slowness in our service usage and can't determine if it's a network or software issue." (topic: observability)
-- "We have no means of assessing if a newly deployed software version introduces slowdowns." (topic: observability, _canary_ or _blue/green_ deployments)
+- "Our software is written in 6 different languages, and we don't have a unified way to gather telemetry (application logs, error logs, metrics)." (topic: observability) ;
+- "We have 70 system administration teams, and getting them to implement TLS between all their services would be an organizational nightmare." (topic: security, encrypted flows) ;
+- "We have hundreds of containers running on multiple geographically distributed machines with no unified way to analyze network latencies." (topic: observability) ;
+- "We're experiencing slowness in our service usage and can't determine if it's a network or software issue." (topic: observability) ;
+- "We have no means of assessing if a newly deployed software version introduces slowdowns." (topic: observability, _canary_ or _blue/green_ deployments).
 
 Thanks to the standardized deployment mechanisms offered by container orchestration systems (e.g., Kubernetes), a _service mesh_ can address these challenges by "plugging into" your orchestration system. It can enhance the security, stability, and observability of your infrastructure by:
 
-- Managing security certificates in one place
-- Handling advanced authorizations in the administration of network flows
-- Controlling network flows with rules (_A/B testing_, _canary_ or _blue/green_ deployments, [request rate limits](https://istio.io/latest/docs/tasks/policy-enforcement/rate-limit/#rate-limits))
-- Distributing network load equally among services (_load balancing_)
-- Automatically gathering network metrics based on the "[4 golden signals](#the-4-golden-signals)" (latency, traffic, errors, and saturation), regardless of where the pods are deployed (see _Istio Dashboard_[^IstioDashboard])
-- Collecting application access logs (see _Istio access logs_[^IstioAccessLogs])
-- Providing details on the routing of requests across pods distributed over multiple nodes (see _Istio distributed traces_[^IstioDistributedTraces])
+- Managing security certificates in one place ;
+- Handling advanced authorizations in the administration of network flows ;
+- Controlling network flows with rules (_A/B testing_, _canary_ or _blue/green_ deployments, [request rate limits](https://istio.io/latest/docs/tasks/policy-enforcement/rate-limit/#rate-limits)) ;
+- Distributing network load equally among services (_load balancing_) ;
+- Automatically gathering network metrics based on the "[4 golden signals](#the-4-golden-signals)" (latency, traffic, errors, and saturation), regardless of where the pods are deployed (see _Istio Dashboard_[^IstioDashboard]) ;
+- Collecting application access logs (see _Istio access logs_[^IstioAccessLogs]) ;
+- Providing details on the routing of requests across pods distributed over multiple nodes (see _Istio distributed traces_[^IstioDistributedTraces]).
 
 As these metrics are standardized, most _service meshes_ allow for their use in setting up automatic rules based on the network activity of the infrastructure (fig. <spanc/>\ref{fig:figure-6}).
 
@@ -2649,13 +2649,13 @@ Given the intense dynamics of the digital realm, this method is suboptimal. The 
 
 Consider this scenario: you are tasked with equipping your organization with a new digital tool.
 
-- If you've reached the point of initiating this project, it's likely the need for this tool arose several months or even years ago.
-- You then gear up to compare existing solutions in the market and engage with an industrial partner, which can take between 1 to 3 months.
-- Once you've chosen your industrial partner, you arrange a meeting between stakeholders and the industry experts to help them understand the challenges and your expectations.
-- Drafting the specification takes an additional month. Some back-and-forths to refine it: +1 month.
-- You'll likely need to get approval for this new tool to comply with your organization's IT security policies: even if conducted concurrently, this will likely add another month.
-- Contract finalization also takes 1 month. Development lasts between 3 to 6 months (potentially more, depending on the specifications).
-- Presentations and operational verification: 1 month.
+- If you've reached the point of initiating this project, it's likely the need for this tool arose several months or even years ago ;
+- You then gear up to compare existing solutions in the market and engage with an industrial partner, which can take between 1 to 3 months ;
+- Once you've chosen your industrial partner, you arrange a meeting between stakeholders and the industry experts to help them understand the challenges and your expectations ;
+- Drafting the specification takes an additional month. Some back-and-forths to refine it: +1 month ;
+- You'll likely need to get approval for this new tool to comply with your organization's IT security policies: even if conducted concurrently, this will likely add another month ;
+- Contract finalization also takes 1 month. Development lasts between 3 to 6 months (potentially more, depending on the specifications) ;
+- Presentations and operational verification: 1 month ;
 - Deployment: an additional 2 weeks to 2 months, depending on your IT security policies and available networks.
 
 In the end, the entire process might take roughly a year, and you've yet to place the tool in the users' hands. At this point, you can't even be sure it meets the need, considering that the stated requirement often differs from the actual requirement.
@@ -2720,9 +2720,9 @@ If you have a relatively recent version of GitLab or have set up continuous inte
 
 Added to these measurements is one I call the "**resilient collaboration trend**" (_resilient collaboration trend_ or RCT). It captures the essence of a DevOps initiative in my view: succeeding in continuous innovation while maintaining low technical debt and providing the most available service possible. The following factors are multiplied to total the value of the **resilient collaboration index** (RCI):
 
-1. Number of days since the software's creation (number)
-2. Number of contributors to the software since its creation (number): These first two factors determine the company's ability to maintain software that is maintainable over time, easy to grasp and modify. That is, its ability to maintain low technical debt.
-3. Number of successful deployments in the quarter (number): This factor determines the company's ability to innovate regularly, from code writing to production.
+1. Number of days since the software's creation (number) ;
+2. Number of contributors to the software since its creation (number): These first two factors determine the company's ability to maintain software that is maintainable over time, easy to grasp and modify. That is, its ability to maintain low technical debt ;
+3. Number of successful deployments in the quarter (number): This factor determines the company's ability to innovate regularly, from code writing to production ;
 4. Quarterly software availability in production (%): This factor determines the company's ability to provide a stable service to its users.
 
 We then observe and compare the trend of this index over time. It is this trend that can be compared to other projects.
@@ -2747,7 +2747,7 @@ The company operates under the belief that software engineers and SREs each have
 
 That's why Apollo's interface primarily showcases two menus: "Environments" (SRE-oriented) and "Products" (software engineer-oriented).
 
-- The "Environments" menu allows connection to different environments, defining deployment strategies across multiple environments (e.g., GCP, AWS, Azure, on-premise) and channels (see _release channels_), setting software quality and security criteria, and approving infrastructure changes.
+- The "Environments" menu allows connection to different environments, defining deployment strategies across multiple environments (e.g., GCP, AWS, Azure, on-premise) and channels (see _release channels_), setting software quality and security criteria, and approving infrastructure changes ;
 - The "Products" menu ensures that a software's new version is correctly deployed: Apollo automatically manages _blue/green_ deployments (see chapter "[Continuous deployment](#continuous-deployment-cd)") and rollbacks. It enables the declaration of update strategies by specifying which service needs updating before another (see the following chapter "[Constraint-based deployment](#constraint-based-deployment)").
 
 Connected to _git_ repositories, it allows tracking and approving any code modifications before deployment.
@@ -2772,10 +2772,10 @@ From 2019 to 2022, the distribution of DevOps initiatives by industry remained r
 
 Here's a breakdown of companies practicing DevOps in 2022[^INSEECompanySizeDefinition]:
 
-- Large enterprises (>= 5000 employees): ~30%
-- Medium-sized enterprises (>= 250 and < 5000 employees): ~38%
-- Between 20 and 250 employees: ~26%
-- Less than 20 employees: ~6%
+- Large enterprises (>= 5000 employees): ~30% ;
+- Medium-sized enterprises (>= 250 and < 5000 employees): ~38% ;
+- Between 20 and 250 employees: ~26% ;
+- Less than 20 employees: ~6%.
 
 The 2019 crisis accelerated digital transformation initiatives, leading to a 23% growth in DevOps team sizes[^GlobalUpskillingWorldwideDevopsSize] during that period.
 
@@ -2893,35 +2893,35 @@ From the technologies currently in use by our teams, you will contribute to stra
 
 Acting as a bridge between our development teams and within our SRE team of X members, you will be responsible for:
 
-- Developing and maintaining software lifecycle automation tools (GitLab, CI/CD pipelines)
-- Defining GitOps best practices and ensuring development consistency (_git workflow_, kanban project management, CI/CD pipelines, deployment standardization with Docker and Kubernetes...)
-- Automating system administration through IaC (Terraform, Ansible)
-- Developing application project templates to promote best practices (CI/CD, OpenTelemetry monitoring)
-- Assisting various technical teams in containerizing their legacy applications
-- Participating in discussions about our institution's digital transformation
-- Educating and advising decision-makers on new practices
-- Helping the HR teams identify relevant candidates
+- Developing and maintaining software lifecycle automation tools (GitLab, CI/CD pipelines) ;
+- Defining GitOps best practices and ensuring development consistency (_git workflow_, kanban project management, CI/CD pipelines, deployment standardization with Docker and Kubernetes...) ;
+- Automating system administration through IaC (Terraform, Ansible) ;
+- Developing application project templates to promote best practices (CI/CD, OpenTelemetry monitoring) ;
+- Assisting various technical teams in containerizing their legacy applications ;
+- Participating in discussions about our institution's digital transformation ;
+- Educating and advising decision-makers on new practices ;
+- Helping the HR teams identify relevant candidates.
 
 Skills:
 
-- Communication and adaptability
-- Containerization (Docker, Kubernetes)
-- Knowledge of micro-service architectures
-- Technical administration of GitLab and GitLab Runners
-- Advanced scripting knowledge in Bash, Ansible, Saltstack, and/or Terraform
-- Proficiency in at least one programming language (Java, C++, Python, or Go)
-- Column-oriented, object, or graph databases
-- Knowledge of one or more Cloud services (AWS, GCP, Azure, Scaleway)
-- DevOps culture
-- Transformation culture (digital and business)
-- TCP/IP networking
+- Communication and adaptability ;
+- Containerization (Docker, Kubernetes) ;
+- Knowledge of micro-service architectures ;
+- Technical administration of GitLab and GitLab Runners ;
+- Advanced scripting knowledge in Bash, Ansible, Saltstack, and/or Terraform ;
+- Proficiency in at least one programming language (Java, C++, Python, or Go) ;
+- Column-oriented, object, or graph databases ;
+- Knowledge of one or more Cloud services (AWS, GCP, Azure, Scaleway) ;
+- DevOps culture ;
+- Transformation culture (digital and business) ;
+- TCP/IP networking.
 
 Education or Experience:
 
 _If you have at least 5 years of professional experience, we prioritize it and don't consider your degree._
 
-- Master's in Computer Engineering
-- Significant professional experience in the field
+- Master's in Computer Engineering ;
+- Significant professional experience in the field.
 
 This position can lead to roles such as System Engineer, SRE, or DevOps Security Engineer.
 
@@ -2939,34 +2939,34 @@ At the core of our organization's smooth operation, you will be responsible for 
 
 Within our SRE team of _X_ individuals, your responsibilities will include:
 
-- Administering our development, pre-production, and production environments (Docker, Kubernetes^)
-- Overseeing monitoring systems (e.g., defining [resilience indicators](#resilience-indicators) (SLIs, SLOs), maintaining dashboard indicators, and alert systems)
-- Automating the lifecycle of infrastructure and software (CI/CD, IaC)
-- Assisting in the automation of integrating and setting up physical servers
-- Preparing and practicing incident management procedures following the 3Cs[^GoogleWorkbookIncidentResponse] (annual DiRT training[^DiRTTraining], documentation, tools)
-- Diagnosing incidents and writing clear and illustrative postmortems to enrich our knowledge base
-- Educating engineers on best production practices
-- Advising and collaborating with application architects and other infrastructure architects
+- Administering our development, pre-production, and production environments (Docker, Kubernetes) ;
+- Overseeing monitoring systems (e.g., defining [resilience indicators](#resilience-indicators) (SLIs, SLOs), maintaining dashboard indicators, and alert systems) ;
+- Automating the lifecycle of infrastructure and software (CI/CD, IaC) ;
+- Assisting in the automation of integrating and setting up physical servers ;
+- Preparing and practicing incident management procedures following the 3Cs[^GoogleWorkbookIncidentResponse] (annual DiRT training[^DiRTTraining], documentation, tools) ;
+- Diagnosing incidents and writing clear and illustrative postmortems to enrich our knowledge base ;
+- Educating engineers on best production practices ;
+- Advising and collaborating with application architects and other infrastructure architects.
 
 Skills:
 
-- Communication, autonomy, and adaptability
-- Advanced knowledge of one or more Linux distributions
-- Knowledge of TCP/IP networks
-- Familiarity with Ansible, Saltstack, and/or Terraform
-- Advanced Bash scripting skills
-- Understanding of micro-service architecture principles
-- Knowledge of a Cloud orchestration technology (Kubernetes or Openstack)
-- Proficiency in at least one programming language (Java, C++, Python, or Go)
-- Familiarity with at least one Cloud service (AWS, GCP, Azure, Scaleway)
+- Communication, autonomy, and adaptability ;
+- Advanced knowledge of one or more Linux distributions ;
+- Knowledge of TCP/IP networks ;
+- Familiarity with Ansible, Saltstack, and/or Terraform ;
+- Advanced Bash scripting skills ;
+- Understanding of micro-service architecture principles ;
+- Knowledge of a Cloud orchestration technology (Kubernetes or Openstack) ;
+- Proficiency in at least one programming language (Java, C++, Python, or Go) ;
+- Familiarity with at least one Cloud service (AWS, GCP, Azure, Scaleway).
 
 Education or experience:
 
 _If you have at least 5 years of professional experience, we prioritize that and do not focus on your degree._
 
-- Bachelor's or Master's in software engineering with knowledge in system administration (Linux, networks, Cloud technologies)
-- Bachelor's or Master's in network and system engineering
-- Significant professional experience in the field
+- Bachelor's or Master's in software engineering with knowledge in system administration (Linux, networks, Cloud technologies) ;
+- Bachelor's or Master's in network and system engineering ;
+- Significant professional experience in the field.
 
 This position can lead to roles such as Infrastructure Manager, DevOps Security Engineer, or System Engineer.
 
@@ -2986,35 +2986,35 @@ Integrated within our SRE team, you will be responsible for securing the entire 
 
 Acting as the interface between our development teams and our SRE team, your tasks will be:
 
-- Contributing to discussions on our institution's digital transformation
-- Creating and maintaining continuous integration chains following our rules and legal constraints
-- Participating in defining new security rules and practices for the organization
-- Guiding various technical teams in securing their applications
-- Implementing and maintaining practices of the SLSA framework[^SLSA]
-- Staying updated on the latest threats and implementing countermeasures
-- Organizing _blue team_ / _red team_ type exercises
+- Contributing to discussions on our institution's digital transformation ;
+- Creating and maintaining continuous integration chains following our rules and legal constraints ;
+- Participating in defining new security rules and practices for the organization ;
+- Guiding various technical teams in securing their applications ;
+- Implementing and maintaining practices of the SLSA framework[^SLSA] ;
+- Staying updated on the latest threats and implementing countermeasures ;
+- Organizing _blue team_ / _red team_ type exercises.
 
 Skills:
 
-- Communication and adaptability
-- Understanding of containerization principles (Docker, Kubernetes)
-- Knowledge of micro-service architecture principles
-- Technical administration of GitLab
-- Advanced Bash scripting knowledge
-- Proficiency in at least one programming language (Java, C++, Python, or Go)
-- At least theoretical knowledge of databases (column-oriented, object, or graph)
-- DevOps culture
-- Digital and business transformation culture
-- Ideally, familiarity with one or more Cloud services (AWS, GCP, Azure, Scaleway)
+- Communication and adaptability ;
+- Understanding of containerization principles (Docker, Kubernetes) ;
+- Knowledge of micro-service architecture principles ;
+- Technical administration of GitLab ;
+- Advanced Bash scripting knowledge ;
+- Proficiency in at least one programming language (Java, C++, Python, or Go) ;
+- At least theoretical knowledge of databases (column-oriented, object, or graph) ;
+- DevOps culture ;
+- Digital and business transformation culture ;
+- Ideally, familiarity with one or more Cloud services (AWS, GCP, Azure, Scaleway).
 
 Education or experience:
 
 _If you have at least 5 years of professional experience, we prioritize that and do not focus on your degree._
 
-- Bachelor's or Master's in software engineering with knowledge in system administration (Linux, networks, Cloud technologies)
-- Bachelor's or Master's in network and system engineering
-- Master's in cybersecurity (e.g., ANSSI's Master in Digital Security[^MasterSecNumANSSI])
-- Significant professional experience in the field
+- Bachelor's or Master's in software engineering with knowledge in system administration (Linux, networks, Cloud technologies) ;
+- Bachelor's or Master's in network and system engineering ;
+- Master's in cybersecurity (e.g., ANSSI's Master in Digital Security[^MasterSecNumANSSI]) ;
+- Significant professional experience in the field.
 
 This position can lead to roles such as System Engineer or SRE.
 
@@ -3036,20 +3036,20 @@ You will participate in the establishment of a data-lake as part of the governme
 
 Skills:
 
-- Autonomy and adaptability
-- Advanced knowledge of at least one programming language (Java, C++, Python, or Go)
-- Advanced knowledge of column-oriented, object, and/or graph databases
-- Familiarity with Ansible, Saltstack, and/or Terraform
-- Knowledge of a Cloud orchestration technology (Kubernetes or Openstack)
-- TCP/IP networks
+- Autonomy and adaptability ;
+- Advanced knowledge of at least one programming language (Java, C++, Python, or Go) ;
+- Advanced knowledge of column-oriented, object, and/or graph databases ;
+- Familiarity with Ansible, Saltstack, and/or Terraform ;
+- Knowledge of a Cloud orchestration technology (Kubernetes or Openstack) ;
+- TCP/IP networks.
 
 Education or Experience:
 
 _Have at least 5 years of professional experience? We prioritize it and don't consider your degree._
 
-- Bachelor's or master's degree in software engineering
-- Bachelor's or master's degree in network and systems engineering with strong experience in software engineering
-- Significant professional experience in the field
+- Bachelor's or master's degree in software engineering ;
+- Bachelor's or master's degree in network and systems engineering with strong experience in software engineering ;
+- Significant professional experience in the field.
 
 <style>
     /*Inserting figure numbers to identify them better*/
