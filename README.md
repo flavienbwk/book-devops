@@ -9,7 +9,7 @@
     </a>
 </p>
 
-<h4 align="center">:us: :uk:</h4>
+<h4 align="center">:us:</h4>
 <h3 align="center"><a href="./eng/README.md" alt="Access the book in english version">Scaling Institutions with DevOps</a><sup></sup></h3>
 <p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
 <p align="center" style="color: gray; font-size: 0.9em;">Paperback and ebook with foreword</p>
@@ -36,15 +36,15 @@ As a DevOps advocate, I had to make this book GitOps-compliant, this is why it i
 
 Here are the different ways to access this writing :
 
-| Type             | French                                                                                                                                                                | English                                 |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| Web version      | [✅](https://book-devops.berwick.fr/fr)                                                                                                                               | [✅](https://book-devops.berwick.fr/en) |
-| Markdown version | [✅](./fra/README.md)                                                                                                                                                 | [✅](./fra/README.md)                   |
-| Ebook version    | [✅](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques-ebook/dp/B0CKHV5QB7) / [✅](https://play.google.com/store/books/details?id=3u_bEAAAQBAJ) | ❌                                      |
-| Paperback book   | [✅](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques/dp/B0CKJ6SLV3)                                                                           | ❌                                      |
-| Hardcover book   | [✅](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques/dp/B0CKJ651K9)                                                                           | ❌                                      |
+| Type             | French                                                                                                                      | English                                       |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| Web version      | [Lire maintenant](https://book-devops.berwick.fr/fr)                                                                        | [Read now](https://book-devops.berwick.fr/en) |
+| Markdown version | [Lire maintenant](./fra/README.md)                                                                                          | [Read now](./fra/README.md)                   |
+| Ebook version    | [Amazon](https://www.amazon.fr/dp/B0CKHV5QB7) / [Google Books](https://play.google.com/store/books/details?id=3u_bEAAAQBAJ) | _Soon_                                        |
+| Paperback book   | [Amazon](https://www.amazon.fr/dp/B0CKJ6SLV3)                                                                               | _Soon_                                        |
+| Hardcover book   | [Amazon](https://www.amazon.fr/dp/B0CKJ651K9)                                                                               | _Soon_                                        |
 
-> The original book was written in French with France-related examples and use cases. The English version was reworked to include United States-related examples and use cases.
+> The original book was written in French. The English version was reworked to include america-related examples and use cases.
 
 ## Summary
 
