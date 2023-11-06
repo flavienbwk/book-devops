@@ -1805,6 +1805,8 @@ Your incident response procedure should be easily accessible and written for all
 
 A postmortem is an incident investigation technique. Its purpose is to determine corrective actions to prevent recurrences. Your SRE team should draft this document based on information gathered during the [_root cause analysis_](#investigating-incidents) (see chapter "[Investigating Incidents](#investigating-incidents)").
 
+In the military and aerospace fields, the AAR (After Action Review) or _debrief_ is systematically practiced following an event to learn from it. The postmortem, on the other hand, is only initiated when an incident or failure has occurred. That is what distinguishes them.
+
 It's recommended to store these documents in a _git_ project to track changes over time (refer to the chapter ["GitOps"](#gitops)). My personal recommendation is to draft them in Markdown format.
 
 Historically, the Latin term "_post mortem_" means "after death" and refers to investigations carried out by law enforcement to understand how a crime occurred. They analyze evidence, identify the cause of death (e.g., through an autopsy), then attempt to apprehend the perpetrator or amend the law to prevent future occurrences. The concept is similar for IT incidents.

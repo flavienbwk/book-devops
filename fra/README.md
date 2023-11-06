@@ -1807,6 +1807,8 @@ Leur procédure de réponse à incident doit être simple à trouver et être r�
 
 Le postmortem est une technique d'investigation des incidents. Elle permet de tirer des conclusions sur les actions à prendre pour qu'ils ne se reproduisent pas. Le postmortem se traduit par un document formalisé par votre équipe SRE, qui le rédige à partir des informations récoltées pendant la [_root cause analysis_](#investiguer-les-incidents) (cf. chapitre "[Investiguer les incidents](#investiguer-les-incidents)").
 
+Dans le milieu militaire et en aéronautique, le RETEX (retour d'expérience) est systématiquement pratiqué à la suite d'un évènement pour en tirer des enseignements. Le postmortem est quant à lui seulement déclenché lorsqu'un incident ou un échec s'est produit. Voilà donc ce qui les distingue.
+
 Il est recommandé de stocker ces documents dans un projet _git_ pour être en mesure de les éditer et de visualiser leurs modifications au cours du temps (cf. chapitre ["GitOps"](#gitops)). Ma recommandation personnelle est de les rédiger au format Markdown.
 
 Historiquement, le terme latin "_post mortem_" signifie "après la mort" et définit le processus d'investigation réalisé par les forces de l'ordre pour comprendre en quoi un crime a pu se produire. Pour cela : elles analysent les preuves, identifient la cause du décès (ex: via une autopsie), puis tentent d'emprisonner le coupable ou d'adapter la loi pour que le problème ne se reproduise plus. L'idée est similaire pour les incidents informatique.
