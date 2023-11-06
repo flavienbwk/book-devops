@@ -483,6 +483,8 @@ Le décideur attend des arguments qu'il pourra utiliser pour convaincre à son t
 
 Tout comme vous, le décideur qui découvre un sujet ne peut retenir que quelques informations clés. Veillez donc à limiter à 2 ou 3 maximum le nombre d'idées que vous souhaitez lui faire passer. Terminez la présentation par un appel à l'action. Il devra lui permettre de comprendre comment il peut vous aider à réaliser ce projet.
 
+\newpage
+
 Résumons les intérêts respectifs de nos deux profils :
 
 | Objet                      | Métiers                                      | Décideurs                                                                                                              |
@@ -1488,6 +1490,8 @@ Prenons un cas précis : vous décidez de démarrer une campagne marketing d'ema
 
 Néanmoins, les architecture _serverless_ demandent des compétences spécifiques pour les maintenir. Elles peuvent aussi vous lier aux technologies propriétaires d'un fournisseur Cloud (cf. enfermement propriétaire ou _vendor lock-in_[^VendorLockin]) ou faire exploser les coûts si le cas d'usage n'est pas approprié[^AmazonPrimeVideoMonoliths].
 
+\newpage
+
 Récapitulons quelques avantages et inconvénients de chaque approche :
 
 | Archi-tecture      | Avantages                                                                                                                            | Inconvénients                                                                                                                                                         |
@@ -1663,6 +1667,8 @@ Ensuite, l'objectif est de discuter ensemble pour lister en quelques mots les op
 Dans les 5 minutes restantes, définissez la date à laquelle la décision doit être prise (si ce n'est pas tout de suite). Fort de ces ébauches d'options, s'il en reste à étayer, distribuez la tâche à celui en charge de la réaliser.
 
 Une fois les options regroupées, les approbateurs prennent la décision et l'autorité distribue les tâches à l'issue.
+
+\newpage
 
 Exemple de DACI, listant les options considérées pour une prise de décision sur la problématique "Comment devrions-nous finaliser les spécifications de notre produit ?" :
 
@@ -2427,6 +2433,8 @@ Voici quelques exemples pour bien distinguer sur quelle SLI se base un SLO, puis
 
 Un SLI peut se composer d'une ou plusieurs mesures. Néanmoins, évitez de construire des SLIs ou des SLOs trop complexes au risque de représenter des phénomènes vagues ou fallacieux.
 
+\newpage
+
 Un SLO fixe une qualité de service à maintenir, c'est à dire une certaine valeur pour un SLI. Un SLO adopte un format de ce type : "_Le SLI X doit être maintenue Y% du temps sur Z jours/mois/année_". Voici un tableau faisant correspondre taux de résilience et durées maximales de panne autorisée (partie "Z jours/mois/année" de l'exemple précédent) :
 
 | Taux de résilience | Par année  | Par trimestre | Par mois (28 jours) |
@@ -2489,6 +2497,8 @@ Pour développer votre intuition sur ces indicateurs, commencez par des SLIs et 
 Les MTTx sont des mesures qualifiant le temps moyen pour qu'un évènement se produise ou prenne fin. Le "x" de l'acronyme MTTx qualifie la pluralité de cette catégorie de mesures. Par exemple, le MTTR (_mean time to recovery_ ou temps moyen pour le rétablissement) est utilisé pour suivre le temps que prend une équipe avant de rétablir l'état d'un système défaillant.
 
 Suivre ces mesures au cours du temps vous permet d'évaluer l'efficacité de vos travaux de résilience. Cela vous permet aussi de jauger l'efficacité de vos équipes pour répondre aux incidents. Si les mesures se dégradent, vous devrez étudier pourquoi et éventuellement réorganiser vos priorités afin de ne pas menacer vos SLOs. L'avantage est que vous saurez sur quoi vous concentrer.
+
+\newpage
 
 Les MTTx sont nombreuses dans la littérature, avec chacune leurs spécificités et leurs nuances (fig. <spanc/>\ref{fig:2023_MTTx_timeline}). Voyons les MTTx les plus populaires :
 
@@ -2708,6 +2718,8 @@ Toutes ces mesures sont basées sur la disponibilité de l'infrastructure plutô
 - **Performance opérationnelle** ou Résilience (_operational performance_ ou _reliability_) : évaluation de la capacité à atteindre ou dépasser ses objectifs de résilience. Voici les réponses attendues concernant les objectifs de résilience pour cette mesure : "les atteint souvent", "les atteint la plupart du temps", "les surpasse toujours". Cela peut se mesurer entre-autres grâce aux SLO (cf. chapitre "[Indicateurs de résilience](#indicateurs-de-résilience)") ou à un taux de satisfaction utilisateur.
 
 Si vous construisez de zéro votre initiative, se comparer aux performance de l'industrie a peu d'intérêt. Gardez-les en tête pour savoir quel objectif viser mais n'estimez pas votre succès en fonction d'eux. Estimez-le selon la progression de vos propres mesures dans le temps. Tout le monde part d'une situation initiale dont l'objectif est de l'améliorer.
+
+\newpage
 
 Le rapport DORA 2022 a classé les organisations sondées en trois catégories de performance (bas, moyen et haut) pour ses quatre mesures clé :
 
