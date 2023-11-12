@@ -15,8 +15,8 @@
 <p align="center" style="color: gray; font-size: 0.9em;">Paperback and ebook with foreword</p>
 
 <p align="center">
-    <img src="./eng/images/cover_a5_source.png" width="128px"/>
-    <img src="./eng/images/fourthcover_a5_source.png" width="128px"/>
+    <img src="./eng/images/cover_a5_source_thumb.png" width="128px"/>
+    <img src="./eng/images/fourthcover_a5_source_thumb.png" width="128px"/>
 </p>
 
 <h4 align="center">:fr:</h4>
@@ -25,8 +25,8 @@
 <p align="center" style="color: gray; font-size: 0.9em;">Livre broché et ebook préfacés</p>
 
 <p align="center">
-    <img src="./fra/images/cover_a5_source.png" width="128px"/>
-    <img src="./fra/images/fourthcover_a5_source.png" width="128px"/>
+    <img src="./fra/images/cover_a5_source_thumb.png" width="128px"/>
+    <img src="./fra/images/fourthcover_a5_source_thumb.png" width="128px"/>
 </p>
 
 <br/>
