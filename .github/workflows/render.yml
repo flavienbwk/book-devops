@@ -67,7 +67,9 @@ jobs:
           sed -i -E "s/date: .+/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
           sed -i -E "s/date: .+/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./eng/metadata.yml
           cd ./fra && make pdf && cd -
+          mv ./fra/build/pdf/book.pdf ./fra/build/pdf/book-fra.pdf
           cd ./eng && make pdf && cd -
+          mv ./eng/build/pdf/book.pdf ./eng/build/pdf/book-eng.pdf
 
       - name: Render HTML
         run: |
@@ -76,25 +78,25 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: book-fr-pdf-${{ env.BOOK_VERSION }}
-          path: ./fra/build/pdf/book.pdf
+          name: book-fra-pdf-${{ env.BOOK_VERSION }}
+          path: ./fra/build/pdf/book-fra.pdf
           retention-days: 1
 
       - uses: actions/upload-artifact@v3
         with:
-          name: book-fr-html-${{ env.BOOK_VERSION }}
+          name: book-fra-html-${{ env.BOOK_VERSION }}
           path: ./fra/build/html/
           retention-days: 1
 
       - uses: actions/upload-artifact@v3
         with:
-          name: book-en-pdf-${{ env.BOOK_VERSION }}
-          path: ./eng/build/pdf/book.pdf
+          name: book-eng-pdf-${{ env.BOOK_VERSION }}
+          path: ./eng/build/pdf/book-eng.pdf
           retention-days: 1
 
       - uses: actions/upload-artifact@v3
         with:
-          name: book-en-html-${{ env.BOOK_VERSION }}
+          name: book-eng-html-${{ env.BOOK_VERSION }}
           path: ./eng/build/html/
           retention-days: 1
 
@@ -134,13 +136,12 @@ jobs:
     - name: Download FR artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-fr-pdf-${{ env.BOOK_VERSION }}
+        name: book-fra-pdf-${{ env.BOOK_VERSION }}
         path: ./
 
     - name: Get FR text from book
       run: |
         pdftotext ./book.pdf
-        mv ./book.pdf ./book-fra.pdf
 
     - name: Get FR text from book
       run: |
@@ -153,13 +154,12 @@ jobs:
     - name: Download EN artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-en-pdf-${{ env.BOOK_VERSION }}
+        name: book-eng-pdf-${{ env.BOOK_VERSION }}
         path: ./
 
     - name: Get EN text from book
       run: |
         pdftotext ./book.pdf
-        mv ./book.pdf ./book-eng.pdf
 
     - name: Get EN text from book
       run: |
@@ -227,13 +227,13 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-fr-html-${{ env.BOOK_VERSION }}
+        name: book-fra-html-${{ env.BOOK_VERSION }}
         path: output/fra/
 
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-en-html-${{ env.BOOK_VERSION }}
+        name: book-eng-html-${{ env.BOOK_VERSION }}
         path: output/eng/
 
     - name: Optimize images
@@ -283,13 +283,13 @@ jobs:
     - name: Download FR PDF artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-fr-pdf-${{ env.BOOK_VERSION }}
+        name: book-fra-pdf-${{ env.BOOK_VERSION }}
         path: ./
 
     - name: Download EN PDF artifact
       uses: actions/download-artifact@v3
       with:
-        name: book-en-pdf-${{ env.BOOK_VERSION }}
+        name: book-eng-pdf-${{ env.BOOK_VERSION }}
         path: ./
 
     - name: Get version

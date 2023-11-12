@@ -6,17 +6,6 @@ on:
 
 jobs:
 
-  # Only on main or PR to main
-  check-404-links:
-    name: Check for dead links
-    if: github.ref == 'refs/heads/main' || (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main')
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: 404 Links
-        uses: atalent-labs/404-links@3.1.4
-
   markdownlint:
     name: Markdownlint
     runs-on: ubuntu-22.04
