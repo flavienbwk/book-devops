@@ -1721,6 +1721,8 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
 
     Dès que l'incident débute, commencez à prendre des notes sur ce que vous allez observer et les actions que vous allez entreprendre. Cela sera utile pour votre postmortem. Vous pouvez ensuite qualifier le problème en utilisant la méthode "5W2H" (5 quoi/_what_, 2 comment/_how_) :
 
+    \newpage
+
     | Interrogation | Description                                                                                         |
     | --------------------------- | --------------------------------------------------------------------------------------------------- |
     | Qui ?         | Personnes ou clients affectés par le problème                                                       |
@@ -1774,6 +1776,8 @@ Voici les 5 étapes de la _Root Cause Analysis_ :
     Choisir par un vote à majorité les causes qui vous semblent les plus susceptibles de se reproduire. Selon la loi de Pareto, 80% des effets sont produits par 20% des problèmes. Vous avez désormais identifié un axe de réflexion.
 
     Utiliser la méthode des "5 Pourquoi" (_5 Why's_). L'idée est d'identifier plusieurs symptômes en cascade, jusqu'à trouver la cause racine d'un problème. "5" est une valeur arbitraire, elle peut être réduite ou agrandie selon le cas.
+
+    \newpage
 
     Voici un exemple pour le problème identifié "Notre logiciel plante fréquemment" :
 
