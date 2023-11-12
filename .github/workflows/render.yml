@@ -140,10 +140,11 @@ jobs:
     - name: Get FR text from book
       run: |
         pdftotext ./book.pdf
+        mv ./book.pdf ./book-fra.pdf
 
     - name: Get FR text from book
       run: |
-        if grep -q "??" ./book.pdf; then
+        if grep -q "??" ./book-fra.pdf; then
           echo "The file contains the string '??'"
         else
           echo "The file does not contain the string '??'"
@@ -158,10 +159,11 @@ jobs:
     - name: Get EN text from book
       run: |
         pdftotext ./book.pdf
+        mv ./book.pdf ./book-eng.pdf
 
     - name: Get EN text from book
       run: |
-        if grep -q "??" ./book.pdf; then
+        if grep -q "??" ./book-eng.pdf; then
           echo "The file contains the string '??'"
         else
           echo "The file does not contain the string '??'"
@@ -307,7 +309,8 @@ jobs:
         name: ${{ env.BOOK_VERSION }}
         tag_name: ${{ env.BOOK_VERSION }}
         files: |
-          ./book.pdf
+          ./book-fra.pdf
+          ./book-eng.pdf
         prerelease: ${{ steps.get-version.outputs.prerelease }}
       env:
         GITHUB_TOKEN: ${{ github.token }}
