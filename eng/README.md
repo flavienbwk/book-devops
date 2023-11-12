@@ -2885,7 +2885,7 @@ A "Education or Experience" section is also provided to give you an idea of the 
 | ----------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
 | **Job Level**                                   | Intermediate to senior[^DORAProfileExperience] (depending on responsibilities assigned to the candidate). _Apprentice or junior possible if experienced personnel in the team_. |
 | **Organizational Maturity**                     | Beginner to intermediate                                                                                           |
-| **Approximate Remuneration** (October 2023)   | >90k$/year (beginner), >115k$/year (senior)                                                                          |
+| **Approximate Remuneration** (October 2023)   | >90k\$/year (beginner), >115k\$/year (senior)                                                                          |
 
 As part of our organization's digital transformation and supported by our management, you will help define new development, deployment, and administration processes.
 
@@ -2935,7 +2935,7 @@ This position can lead to roles such as System Engineer, SRE, or DevOps Security
 | ------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Job Level**                              | Intermediate or Senior (depending on responsibilities to be assigned to the candidate). _Apprentice or Junior possible if there are experienced personnel on the team. Internship not considered (too short)._ |
 | **Organization Maturity**                  | Intermediate to Advanced                                                                                                                                                   |
-| **Approximate Compensation** (October 2023) | >95k$/year (beginner), >120k$/year (senior)                                                                                                                              |
+| **Approximate Compensation** (October 2023) | >95k\$/year (beginner), >120k\$/year (senior)                                                                                                                              |
 
 At the core of our organization's smooth operation, you will be responsible for ensuring the availability, reliability, and resilience of our information systems. You will strive to sustain the infrastructures while balancing the velocity of developments and system stability.
 
@@ -2980,7 +2980,7 @@ This position can lead to roles such as Infrastructure Manager, DevOps Security 
 | ------------------------------------------ | :-------------------------------------------------------------------- |
 | **Job Level**                              | Junior to Senior (depending on responsibilities to be assigned to the candidate) |
 | **Organization Maturity**                  | Intermediate to Advanced                                               |
-| **Approximate Compensation** (October 2023) | >95k$/year (beginner), >125k$ (senior)                                                            |
+| **Approximate Compensation** (October 2023) | >95k\$/year (beginner), >125k\$ (senior)                                                            |
 
 As part of our organization's digital transformation and supported by management, you are the "Sec" in our "DevSecOps" mode. Your role is to ensure security best practices without hindering development velocity.
 
@@ -3028,7 +3028,7 @@ This position can lead to roles such as System Engineer or SRE.
 | ----------------------------------------------- | :------------------------------------- |
 | **Job Level**                                   | Intermediate to Senior                 |
 | **Organization Maturity**                       | Advanced                               |
-| **Approximate Compensation** (October 2023)   | >100k$/year (beginner), >130k$/year (senior) |
+| **Approximate Compensation** (October 2023)   | >100k\$/year (beginner), >130k\$/year (senior) |
 
 With a background in software engineering or system administration and proven skills in software engineering, you will be responsible for the development and maintenance of tools that enhance our software development and deployment cycle on a daily basis.
 
