@@ -31,7 +31,7 @@ ignore:
     - https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy # Timeout
     - https://www.defense.gouv.fr/ema/actualites/voeux-du-chef-detat-major-armees # Timeout
     - https://nsf.dev.nato.int/ # Timeout
+    - https://www.latribune.fr/entreprises-finance/industrie/aeronautique-defense/satellites-europeens-lances-par-spacex-la-terrible-defaite-de-l-europe-spatiale-937632.html # Timeout (protection)
 delay:  # Perform a pause of X ms at each call matching the url
   'https://gitlab.com': 500
   'https://gitlab.biterg.io': 1000
-  'https://www.latribune.fr': 2000
