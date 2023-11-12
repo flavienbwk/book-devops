@@ -141,7 +141,7 @@ jobs:
 
     - name: Get FR text from book
       run: |
-        pdftotext ./book.pdf
+        pdftotext ./book-fra.pdf
 
     - name: Get FR text from book
       run: |
@@ -159,7 +159,7 @@ jobs:
 
     - name: Get EN text from book
       run: |
-        pdftotext ./book.pdf
+        pdftotext ./book-eng.pdf
 
     - name: Get EN text from book
       run: |
