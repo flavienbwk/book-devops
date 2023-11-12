@@ -15,14 +15,19 @@
 <p align="center" style="color: gray; font-size: 0.9em;">Paperback and ebook with foreword</p>
 
 <p align="center">
-    <img src="./fra/images/cover_a5_source.png" width="128px"/>
-    <img src="./fra/images/fourthcover_a5_source.png" width="128px"/>
+    <img src="./eng/images/cover_a5_source.png" width="128px"/>
+    <img src="./eng/images/fourthcover_a5_source.png" width="128px"/>
 </p>
 
 <h4 align="center">:fr:</h4>
 <h3 align="center"><a href="./fra/README.md" alt="Accéder au livre en version française">Le DevOps pour transformer les institutions</a></h3>
 <p align="center"><i>Le guide des décideurs pragmatiques pour comprendre et agir.</i></p>
 <p align="center" style="color: gray; font-size: 0.9em;">Livre broché et ebook préfacés</p>
+
+<p align="center">
+    <img src="./fra/images/cover_a5_source.png" width="128px"/>
+    <img src="./fra/images/fourthcover_a5_source.png" width="128px"/>
+</p>
 
 <br/>
 

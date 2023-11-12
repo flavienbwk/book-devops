@@ -65,6 +65,7 @@ jobs:
       - name: Render PDF
         run: |
           sed -i -E "s/date: .+/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./fra/metadata.yml
+          sed -i -E "s/date: .+/date: ${{ steps.date.outputs.date }} - ${{ env.BOOK_VERSION }}/g" ./eng/metadata.yml
           cd ./fra && make pdf && cd -
           cd ./eng && make pdf && cd -
 
