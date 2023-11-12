@@ -102,7 +102,7 @@ Google theorizes five pillars of DevOps:
    - With the understanding that failure is a result of the organization's lack of procedures and methods.
 3. [**Reducing the cost of change**](#reducing-the-cost-of-change)
    - Implement changes incrementally, deploy quickly, fail quickly to iterate.
-4. [**Leveraging automation**](#leverage-automation)
+4. [**Leveraging automation**](#leveraging-automation)
    - Automate to save time and improve the maintainability of the infrastructure.
 5. [**Measuring everything**](#measuring-everything)
    - By establishing performance indicators, system reliability metrics, to better understand the behavior of deployed services, respond more quickly, or even predict.
@@ -239,7 +239,7 @@ DevOps to traditional infrastructures is what assembly line construction is to c
 
 While historic practices deserve credit for running information systems for years, more agile methods exist today[^RedGate2021Report]. To militarize the argument: bows and arrows served their purpose, but since then, armies have invented the AR-15[^AR15].
 
-The challenge of transformation is to get your hierarchy to buy into this initial (significant but necessary) investment, even when the benefits might initially be hard to see. This is a common challenge that we will address in the chapter ["How to convince and keep the faith"](#how-to-convince-and-keep-the-faith).
+The challenge of transformation is to get your hierarchy to buy into this initial (significant but necessary) investment, even when the benefits might initially be hard to see. This is a common challenge that we will address in the chapter ["How to convince and keep the faith"](#how-to-convince-and-keep-faith).
 
 ## Skeptics and over-optimists
 
@@ -278,7 +278,7 @@ The failure of a project is often due to a poorly defined scope, with overly amb
 
 A DevOps initiative is built upon what already exists within your institution: the key is to start small to accurately understand the needs of the business and to bring the entire organization on board. This approach is the _Kaizen_ method, originated in Japan during the 1950s within Toyota factories. In France, it's known as the "strategy of small steps".
 
-Dare to start small and iterate as both you and your institution become more familiar with the challenges and nuances of these new technologies. Ensure that each team becomes an advocate for your initiative. We will discuss the theories behind this recommendation in the chapter "[How to persuade and keep the faith](#comment-convaincre-et-garder-la-foi)".
+Dare to start small and iterate as both you and your institution become more familiar with the challenges and nuances of these new technologies. Ensure that each team becomes an advocate for your initiative. We will discuss the theories behind this recommendation in the chapter "[How to persuade and keep the faith](#how-to-convince-and-keep-faith)".
 
 Changing the culture of an organization takes time, but taking shortcuts may offend, demotivate your teams, and _ultimately_, cause your project to fail. Since DevOps is based on the principle of successive iterations, you'll be taking fewer risks.
 
@@ -337,7 +337,7 @@ If you believe you don't have the necessary internal resources, don't hesitate t
 
 Be more nuanced than announcing a "major transformation plan." Such practices invariably frustrate many team members, fail to gain the support of all your teams, and risk undermining your credibility. They can also make you a hostage to your predecessor by associating you with past failed transformations.
 
-As discussed in the chapter "[Too big, too soon](#too-big-too-soon)," adopt a step-by-step strategy and gradually develop your intuition about who needs to be reorganized. Gain team buy-in by showcasing the realm of possibilities to inspire them. Then let them convince their peers on your behalf. We will delve deeper into these strategies in the chapter "[How to convince and keep the faith](#how-to-convince-and-keep-the-faith)".
+As discussed in the chapter "[Too big, too soon](#too-big-too-soon)," adopt a step-by-step strategy and gradually develop your intuition about who needs to be reorganized. Gain team buy-in by showcasing the realm of possibilities to inspire them. Then let them convince their peers on your behalf. We will delve deeper into these strategies in the chapter "[How to convince and keep the faith](#how-to-convince-and-keep-faith)".
 
 ## Refusing technological lag
 
@@ -363,7 +363,7 @@ To prevent technological lag, organization leaders can adopt several practices:
 
 - Continuously train staff, including decision-makers (see chapter "[Continuous Training](#continuous-training)") ;
 - Maintain an internal innovation capability to stay critical (see chapter "[Internal team model](#internal-team-model)") ;
-- Accept controlled risk-taking and promote open communication (see chapter "[Accepting failure](#accepting-failure)") ;
+- Accept controlled risk-taking and promote open communication (see chapter "[Embracing failure](#embracing-failure)") ;
 - Measure and implement indicators to avoid complacency (see chapter "[Measuring everything](#measuring-everything)").
 
 # Prerequisites
@@ -668,7 +668,7 @@ In an ideal world, all verification is automated. However, it's sometimes challe
 
 In DevOps, the [GitOps](#gitops) methodology is practiced: everything is based on code (software, infrastructure, architecture diagrams, presentations, etc.).
 
-Each developer works on their own branch and develops their feature. They test if everything works as expected, then creates a "merge request" (commonly known as _merge request_ or _pull request_) into the main branch. This process is detailed in the "[Git Workflows](#workflows-git)" chapter.
+Each developer works on their own branch and develops their feature. They test if everything works as expected, then creates a "merge request" (commonly known as _merge request_ or _pull request_) into the main branch. This process is detailed in the "[Git Workflows](#git-workflows)" chapter.
 
 Code review takes place at this juncture. It's an opportunity for engineers to approve others' changes, providing an external perspective before it gets merged into the main branch. This is the time when various stakeholders involved in reviewing the quality of a contribution can write their comments (fig. <spanc/>\ref{fig:gitlab-review-comment}).
 
@@ -843,7 +843,7 @@ For example, under the "protect software" theme, the "protect all forms of code 
 
 This document [can be found](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) on the NIST website. The online library of the Chief Information Officer[^CIOLibrary] (CIO) from the _US Department of Defense_ is also an excellent source of inspiration.
 
-#### The Example on GitHub
+#### GitHub's example
 
 GitHub is the most popular code-sharing platform on the Internet. It hosts over 100 million projects with more than 40 million developers contributing to it. As a pillar in the open-source field, it offers security tools natively integrated into its platform.
 
@@ -1087,9 +1087,9 @@ Yet, it's a mistake to believe that simply buying software will ensure its secur
 
 Historically, the official policy for approving certain libraries went through a certification cycle, aimed at mapping the risks associated with using a technology to decide whether to accept it. This decision could be supported by a code audit.
 
-For proper protection, maintain an active and systematic watch for security threats introduced into the code. In DevOps mode, your software factory is equipped with tools to detect dependencies or malicious code. You minimize risks by securing your software chain (see chapter "[Securing Your Software Chain](#securing-your-software-chain)" and job sheet "[IT Security Engineer](#devops-security-engineer)").
+For proper protection, maintain an active and systematic watch for security threats introduced into the code. In DevOps mode, your software factory is equipped with tools to detect dependencies or malicious code. You minimize risks by securing your software chain (see chapter "[Securing Your Software Supply Chain](#securing-your-software-supply-chain)" and job sheet "[IT Security Engineer](#devops-security-engineer)").
 
-For example, if you can't set up a secure software forge yourself, you can use _GitHub_ features (see chapter "[Example on GitHub](#example-on-github)"). More broadly, security practices at GitLab[^SecurityPracticesGitLab] are a great starting point.
+For example, if you can't set up a secure software forge yourself, you can use _GitHub_ features (see chapter "[GitHub's Example](#githubs-example)"). More broadly, security practices at GitLab[^SecurityPracticesGitLab] are a great starting point.
 
 Joining a _bug bounty_ platform is common among large enterprises, both to analyze their websites or the open-source software they use[^BugBountyLinuxKnl]. A _bug bounty_ system rewards individuals for identifying vulnerabilities, aiming to detect and fix vulnerabilities before they're exploited by malicious hackers. Popular platforms in this area include _Hackerone_, _Bugcrowd_, _Synack_, and _Open Bug Bounty_.
 
@@ -2023,7 +2023,7 @@ If you are a small organization, start by formalizing your procedures to conduct
 
 The decision to invest time in conducting premortems, FMEAs, or postmortems is governed by your priorities in terms of resilience. [Research](https://devops.com/real-cost-downtime/) shows that service downtime [can be costly](https://www.gremlin.com/ecommerce-cost-of-downtime/) for large organizations, averaging $500,000 to $1,000,000 per hour of unavailability[^CostDowntimeStudy].
 
-## Reducing the cost of dhange
+## Reducing the cost of change
 
 ### Don't disrupt
 
