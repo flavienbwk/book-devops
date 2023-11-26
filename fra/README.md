@@ -634,7 +634,7 @@ Il existe trois manières de gérer le risque lorsque l'on doit faire un choix t
 
 La certification/qualification concerne un produit. L'homologation concerne le déploiement de ce produit dans un environnement (un système d'information). Alors que la certification n'est pas une obligation légale, l'homologation peut l'être selon que vos règles SSI ou la loi l'imposent (ex: si vous êtes un OIV[^OIV]). Elle représente l'acceptation du risque face aux bénéfices que l'installation apporte. En ce sens, elle peut être validée par une autorité SSI indépendamment de la certification/qualification d'un produit.
 
-Les qualifications, certifications et homologations sont en l'état assez peu adaptées aux pratiques de déploiement continu, car elles figent le risque à l'instant T. Or les menaces s'imposent au jour le jour : une faille dans une librairie peut par exemple être détectée un jour après l'approbation d'une homologation. Bien que l'homologation soit temporaire, la faille va quand même persister pendant ce temps, au risque d'être exploitée. Faut-il encore qu'elle soit détectée et que la personne ayant subit l'aventure administrative que représente l'homologation ai envie de réitérer l'expérience.
+Les qualifications, certifications et homologations sont en l'état assez peu adaptées aux pratiques de déploiement continu, car elles figent le risque à l'instant T. Or les menaces s'imposent au jour le jour : une faille dans une librairie peut par exemple être détectée un jour après l'approbation d'une homologation. Bien que l'homologation soit temporaire, la faille va quand même persister pendant ce temps, au risque d'être exploitée. Faut-il encore qu'elle soit détectée et que la personne ayant subit l'aventure administrative que représente l'homologation ait envie de réitérer l'expérience.
 
 La sécurisation d'un système d'information est meilleure si l'on part du principe qu'une faille de sécurité risque à tout moment de survenir ou d'être déployée, mais que les procédés mis en place permettent de réagir rapidement à cette menace pour l'inhiber. Pour ce faire, il est recommandé de mettre en place des techniques d'intégration continue.
 
@@ -1096,6 +1096,8 @@ Pour se protéger correctement, il faut assurer une veille active et systématiq
 Par exemple, si vous n'êtes pas en mesure d'installer par vous-même une forge logicielle sécurisée, vous pouvez bénéficier des fonctionnalités de _GitHub_ (cf. chapitre "[L'exemple sur GitHub](#lexemple-sur-github)"). Plus généralement, les pratiques de sécurité chez GitLab[^SecurityPracticesGitLab] sont un excellent point de départ pour vous organiser.
 
 Adhérer à une plateforme de _bug bounty_ est une pratique commune chez les grandes entreprises. Ils le font à la fois pour analyser leurs sites web ou des logiciels libres qu'ils utilisent[^BugBountyLinuxKnl]. Un _bug bounty_ est un système visant à récompenser les individus trouvant des vulnérabilités. L'objectif est d'identifier et de corriger les vulnérabilités avant qu'elles ne puissent être exploitées par des hackers malveillants. Les plateformes les plus populaires dans ce domaine sont _Hackerone_, _Bugcrowd_, _Synack_ ou encore _Open Bug Bounty_.
+
+Dans une organisation assez mature, vous pourriez même ouvrir un _Open Source Program Office_[^OSPO] ou "Bureau de l'open-source", en charge de définir et de mettre en place les stratégies autour de l'utilisation et de la sécurisation des technologies open-source employées dans votre organisation.
 
 Enfin, les très grandes entreprises technologiques publient souvent de nouveaux logiciels en open-source. Ces logiciels deviennent rapidement des standards et sont utilisés par des dizaines de milliers de développeurs dans le monde. Cela permet d'acculturer facilement des ingénieurs à leurs propres technologies sans avoir à financer la démarche. Les entreprises se retrouvent ainsi avec des candidats maîtrisant déjà leurs propres technologies.
 
@@ -3437,9 +3439,9 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 
 [^Longhorn]: Stockage _Cloud-native_ distribué de type "block" pour Kubernetes. _longhorn.io_.
 
-[^QualificationANSSI]: Source : _ssi.gouv.fr/administration/qualifications_
+[^QualificationANSSI]: Source: _cyber.gouv.fr/comprendre-la-qualification_
 
-[^CertificationANSSI]: Source : _ssi.gouv.fr/administration/produits-certifies_
+[^CertificationANSSI]: Source: _cyber.gouv.fr/comprendre-la-certification_
 
 [^PASSI]: L'évaluateur tiers doit être un PASSI (Prestataires d'Audit de la Sécurité des Systèmes d'Information).
 
@@ -3610,3 +3612,5 @@ _Vous avez au moins 5 ans d'expérience professionnelle ? Nous la privilégions 
 [^SunTzuArtOfWar]: Yann COUDERC. ["_Sun Tzu a-t-il inventé les cas non conformes ?_"](https://suntzufrance.fr/sun-tzu-a-t-il-invente-les-cas-non-conformes/). 2013.
 
 [^WarningDiplomaPublicSector]: Dans l'administration, en 2023, le niveau de diplôme définit encore aujourd'hui la catégorie, le grade et le niveau de rémunération.
+
+[^OSPO]: Le guide de création d'un _Open Source Program Office_ est disponible sur GitHub.  _github.com/todogroup/ospodefinition.org_.

@@ -623,18 +623,17 @@ But it's not a free-for-all: there are technological standards and procedures th
 
 We'll delve deeper into the cultural aspects of the DevOps methodology in the chapter "[Embracing failure](#embracing-failure)".
 
-## Qualification, Certification, and Approval
+## Qualification, Certification, and Accreditation
 
-There are three ways to manage risk when making a technical choice concerning the security features of a technology. In France, ANSSI defines the following terms in this way:
+Governments are hungry for new innovative technologies. However, they need to strike a balance between the risks they may entail and the benefits they may get. This is why they create frameworks to manage this risk.
 
-- Qualification: It is the recommendation by the French state for proven and approved cybersecurity products or services[^QualificationANSSI]. It attests to their compliance with regulatory, technical, and security requirements promoted by ANSSI, providing a guarantee of product robustness. It allows the product to access regulated markets.
-- Certification: It is an attestation of a product's robustness, based on a compliance analysis and penetration tests performed by a third-party evaluator[^PASSI] under the authority of ANSSI[^CertificationANSSI]. It allows access to regulated markets and ensures a level of trust for users wishing to adopt it. The process takes between 2 months (first level security certification) and 18 months (common criteria certification).
+France's cybersecurity agency[^ANSSI] defines three ways to assess risk of using a technology : qualification[^QualificationANSSI], certification[^CertificationANSSI] and accreditation. Most western countries adopt similar processes and signed an agreement making the trade of secure IT solutions between members easier : the [_Common Criteria Recognition Arrangement_ (CCRA)](https://www.commoncriteriaportal.org/ccra/index.cfm)[^CCRA].
 
-Certification/qualification concerns a product. Approval concerns the deployment of this product in an environment (an information system). While certification is not a legal requirement, approval can be, depending on your IT security rules or the law (e.g., if you are an OIV[^OIV]). It represents the acceptance of risk versus the benefits the installation brings. In this sense, it can be validated by an IT security authority regardless of a product's certification/qualification.
+As a declarative approach to managing security risks, traditional approval processes are not well-suited for continuous deployment practices. They freeze risk for a specific moment or architecture. Yet, threats emerge daily: a vulnerability in a library, for example, could be detected a day after approval is granted. Even though the approval is temporary and a periodic assessment might be required, the vulnerability might persist during this time, leading to a risk of exploitation.
 
-Qualifications, certifications, and approvals are currently not well-suited to continuous deployment practices, as they freeze risk at a specific moment. Yet, threats emerge daily: a vulnerability in a library, for example, could be detected a day after approval is granted. Even though the approval is temporary, the vulnerability might persist during this time, with a risk of exploitation. It remains to be detected, and for someone who has undergone the administrative ordeal of approval, to consider repeating the experience.
+For Cloud service providers (CSPs), the United States established the _Federal Risk and Authorization Management Program_ ([FedRAMP](https://www.fedramp.gov/))[^fedrampsimilars]. It adds a new layer of security compared to tradtional approaches by enforcing a [demanding continuous monitoring](https://www.fedramp.gov/assets/resources/documents/CSP_Continuous_Monitoring_Strategy_Guide.pdf) process.
 
-Securing an information system is better if one assumes that a security flaw might emerge or be deployed at any moment, but that implemented procedures can quickly respond to this threat. For this, it's recommended to adopt continuous integration techniques.
+Assuming security flaws might emerge at any moment must be part of your cybersecurity posture. You must have actionable tools to quickly respond to threats and preserve your ATOs[^ATO]. To address this challenge, it's recommended to adopt continuous integration techniques.
 
 ## Continuous Integration and Security
 
@@ -875,7 +874,7 @@ This is exemplified by the _Iron Bank_[^IronBankPresentation] service set up by 
 
 ![Continuous accreditation process of Iron Bank images.\label{fig:continuous-accreditation-approved-images}](./images/continuous-accreditation-approved-images.png)
 
-In organizations dealing with highly sensitive data (i.e., data that can jeopardize a country's security or credibility if disclosed), the default policy is to authorize only the use of pre-approved libraries and images (_hardened images_). However, consider the impact of such a choice on development velocity. Ensure your security and SRE teams can keep up with the provision of libraries.
+In organizations dealing with highly sensitive data (i.e., data that can jeopardize a country's security or credibility if disclosed), the default policy is to authorize only the use of pre-approved libraries and images (_hardened images_). However, consider the impact of such a choice on development velocity. Ensure your security and SRE teams can keep up with provisioning libraries.
 
 Since it's nearly impossible to manually analyze each development library to ensure it's flawless, software factories can rely on file signatures. Trusted editors sign each of their libraries[^GitlabSigningProcess], so continuous integration pipelines or system administrators can verify it hasn't been altered during transfer. Each trusted editor issues a certificate that the SRE team can integrate into its continuous integration pipelines to ensure downloaded packages haven't been tampered with.
 
@@ -1092,6 +1091,8 @@ For proper protection, maintain an active and systematic watch for security thre
 For example, if you can't set up a secure software forge yourself, you can use _GitHub_ features (see chapter "[GitHub's Example](#githubs-example)"). More broadly, security practices at GitLab[^SecurityPracticesGitLab] are a great starting point.
 
 Joining a _bug bounty_ platform is common among large enterprises, both to analyze their websites or the open-source software they use[^BugBountyLinuxKnl]. A _bug bounty_ system rewards individuals for identifying vulnerabilities, aiming to detect and fix vulnerabilities before they're exploited by malicious hackers. Popular platforms in this area include _Hackerone_, _Bugcrowd_, _Synack_, and _Open Bug Bounty_.
+
+In a mature organization, you could even open an _Open Source Program Office_ (OSPO)[^OSPO], responsible for defining and implementing strategies around the use of and securing open-source technologies employed in your organization.
 
 Finally, major tech companies often release new software as open-source. These quickly become standards used by tens of thousands of developers worldwide. This facilitates the onboarding of engineers to their technologies without incurring training costs. These companies thus find themselves with candidates already proficient in their technologies.
 
@@ -3417,11 +3418,9 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^Longhorn]: Distributed _Cloud-native_ block storage for Kubernetes. _longhorn.io_.
 
-[^QualificationANSSI]: Source: _ssi.gouv.fr/administration/qualifications_
+[^QualificationANSSI]: Qualification: It is [the recommendation](https://cyber.gouv.fr/comprendre-la-qualification) by a State of a proven and approved cybersecurity product or service. It attests to their compliance with regulatory, technical, and security requirements promoted by a State's cyberdefense agency (e.g., ANSSI in France, CISA in the U.S.), providing a guarantee of the product's robustness. It enables the product to access regulated markets.
 
-[^CertificationANSSI]: Source: _ssi.gouv.fr/administration/produits-certifies_
-
-[^PASSI]: The third-party evaluator must be a PASSI (Information Systems Security Audit Service Providers).
+[^CertificationANSSI]: It is [the attestation](https://cyber.gouv.fr/comprendre-la-certification) of a product's robustness, based on a compliance analysis and penetration tests conducted by a third-party evaluator under the authority of the State's cyberdefense agency. It allows access to regulated markets and ensures a certain level of trust. The process lasts between 6 and 24 months.
 
 [^OIV]: OIV: [_Operators of Vital Importance_](https://www.ssi.gouv.fr/en/cybersecurity-in-france/ciip-in-france/faq/) in France or [_Critical Infrastructures_](https://www.cisa.gov/topics/critical-infrastructure-security-and-resilience) in the United-States [and Canada](https://www.publicsafety.gc.ca/cnt/rsrcs/pblctns/srtg-crtcl-nfrstrctr/index-en.aspx). Operators are defined as "operator[s] whose unavailability could strongly threaten the economical or military potential, the security or the resilience of the Nation".
 
@@ -3592,3 +3591,11 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 [^Persona]: A "persona" is a fictional and detailed representation of a target user, created to help development and project management teams understand the needs, experiences, behaviors, and interests of potential customers.
 
 [^SunTzuArtOfWar]: Yann COUDERC. ["_Did Sun Tzu invented the nonconforming cases ?_ (FR)"](https://suntzufrance.fr/sun-tzu-a-t-il-invente-les-cas-non-conformes/). 2013.
+
+[^CCRA]: Agreement for the mutual recognition of IT certifications between members. More at _commoncriteriaportal.org/ccra/index.cfm_
+
+[^OSPO]: The definition and guide of the Open Source Program Office is available on GitHub. _github.com/todogroup/ospodefinition.org_.
+
+[^fedrampsimilars]: Similar programs to FedRAMP can be found. For instance: [SecNumCloud](https://cyber.gouv.fr/secnumcloud-pour-les-fournisseurs-de-services-cloud) in France, [G-Cloud](https://www.gov.uk/guidance/g-cloud-suppliers-guide) in the UK, [GC-CSRMAP](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/cloud-security-risk-management-approach-procedures.html) in Canada, [C5](https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Cloud-Computing/Kriterienkatalog-C5/C5_Einfuehrung/C5_Einfuehrung_node.html) in Germany or [ENS](https://administracionelectronica.gob.es/pae_Home/pae_Estrategias/pae_Seguridad_Inicio/pae_Esquema_Nacional_de_Seguridad.html) in Spain.
+
+[^ATO]: ATO: Authority to Operate. Authorization granted through FedRAMP to provide government agences with Cloud services.
