@@ -9,9 +9,14 @@
     </a>
 </p>
 
+<h4 align="center">:us:</h4>
+<h3 align="center"><a href="./eng/README.md" alt="Access the book in english version">Scaling Institutions with DevOps</a><sup></sup></h3>
+<p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
+<p align="center" style="color: gray; font-size: 0.9em;">Paperback and ebook with foreword</p>
+
 <p align="center">
-    <img src="./fra/images/cover_a5_source.png" width="128px"/>
-    <img src="./fra/images/fourthcover_a5_source.png" width="128px"/>
+    <img src="./eng/images/cover_a5_source_thumb.png" width="128px"/>
+    <img src="./eng/images/fourthcover_a5_source_thumb.png" width="128px"/>
 </p>
 
 <h4 align="center">:fr:</h4>
@@ -19,9 +24,10 @@
 <p align="center"><i>Le guide des décideurs pragmatiques pour comprendre et agir.</i></p>
 <p align="center" style="color: gray; font-size: 0.9em;">Livre broché et ebook préfacés</p>
 
-<h4 align="center">:uk:</h4>
-<h3 align="center">Scaling Institutions with DevOps<sup><a href="#footnote-1">[1]</a></sup></h3>
-<p align="center"><i>The pragmatic decision-makers' guide to understanding and acting.</i></p>
+<p align="center">
+    <img src="./fra/images/cover_a5_source_thumb.png" width="128px"/>
+    <img src="./fra/images/fourthcover_a5_source_thumb.png" width="128px"/>
+</p>
 
 <br/>
 
@@ -35,11 +41,15 @@ As a DevOps advocate, I had to make this book GitOps-compliant, this is why it i
 
 Here are the different ways to access this writing :
 
-- [Markdown version (FR)](./fra/README.md)
-- [HTML version (FR)](https://book-devops.berwick.fr)
-- [Ebook version](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques-ebook/dp/B0CKHV5QB7) (FR)
-- [Paperback book](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques/dp/B0CKJ6SLV3) (FR)
-- [Hardcover book](https://www.amazon.fr/DevOps-pour-transformer-institutions-pragmatiques/dp/B0CKJ651K9) (FR)
+| Type             | French                                                                                                                      | English                                                   |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Web version      | [Lire maintenant](https://book-devops.berwick.fr/fra/index.html)                                                            | [Read now](https://book-devops.berwick.fr/eng/index.html) |
+| Markdown version | [Lire maintenant](./fra/README.md)                                                                                          | [Read now](./fra/README.md)                               |
+| Ebook version    | [Amazon](https://www.amazon.fr/dp/B0CKHV5QB7) / [Google Books](https://play.google.com/store/books/details?id=3u_bEAAAQBAJ) | _Soon_                                                    |
+| Paperback book   | [Amazon](https://www.amazon.fr/dp/B0CKJ6SLV3)                                                                               | _Soon_                                                    |
+| Hardcover book   | [Amazon](https://www.amazon.fr/dp/B0CKJ651K9)                                                                               | _Soon_                                                    |
+
+> The original book was written in French. The English version was reworked to include america-related examples and use cases.
 
 ## Summary
 
@@ -62,6 +72,7 @@ _That said, this way of writing is very convenient for not being annoyed by comp
 It automatically :
 
 <!-- - [Checks spells](https://github.com/check-spelling/check-spelling/blob/main/.github/workflows/spelling.yml) of english-written texts -->
+
 - [Validates Markdown](https://github.com/marketplace/actions/markdown-linting-action) format
 - Renders a PDF version on _develop_ and _main_
 - [Updates](./.github/workflows/publish.yml) the Amazon physical version book through their API

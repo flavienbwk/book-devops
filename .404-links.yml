@@ -30,6 +30,9 @@ ignore:
     - https://www.nic.in/servicecontents/national-cloud # 503
     - https://www.gov.uk/government/publications/defence-artificial-intelligence-strategy # Timeout
     - https://www.defense.gouv.fr/ema/actualites/voeux-du-chef-detat-major-armees # Timeout
+    - https://nsf.dev.nato.int/ # Timeout
+    - https://www.latribune.fr/entreprises-finance/industrie/aeronautique-defense/satellites-europeens-lances-par-spacex-la-terrible-defaite-de-l-europe-spatiale-937632.html # Timeout (protection)
+    - https://suntzufrance.fr/sun-tzu-a-t-il-invente-les-cas-non-conformes/ # Timeout (protection)
 delay:  # Perform a pause of X ms at each call matching the url
   'https://gitlab.com': 500
   'https://gitlab.biterg.io': 1000

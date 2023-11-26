@@ -12,7 +12,7 @@ jobs:
 
     steps:
 
-      - name: That's funny
+      - name: That's a prank
         shell: bash
         run: |
           echo "Updating a published book is not currently natively possible through Amazon APIs :)"
