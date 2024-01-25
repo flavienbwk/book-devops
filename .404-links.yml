@@ -33,6 +33,8 @@ ignore:
     - https://nsf.dev.nato.int/ # Timeout
     - https://www.latribune.fr/entreprises-finance/industrie/aeronautique-defense/satellites-europeens-lances-par-spacex-la-terrible-defaite-de-l-europe-spatiale-937632.html # Timeout (protection)
     - https://suntzufrance.fr/sun-tzu-a-t-il-invente-les-cas-non-conformes/ # Timeout (protection)
+    - https://www.reuters.com/technology/google-ai-chatbot-bard-offers-inaccurate-information-company-ad-2023-02-08/ # 401 (protection)
+    - https://www.securityweek.com/google-boosts-bug-bounty-rewards-linux-kernel-vulnerabilities # 403
 delay:  # Perform a pause of X ms at each call matching the url
   'https://gitlab.com': 500
   'https://gitlab.biterg.io': 1000
