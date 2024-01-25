@@ -45,9 +45,9 @@ Here are the different ways to access this writing :
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
 | Web version      | [Lire maintenant](https://book-devops.berwick.fr/fra/index.html)                                                            | [Read now](https://book-devops.berwick.fr/eng/index.html) |
 | Markdown version | [Lire maintenant](./fra/README.md)                                                                                          | [Read now](./fra/README.md)                               |
-| Ebook version    | [Amazon](https://www.amazon.fr/dp/B0CKHV5QB7) / [Google Books](https://play.google.com/store/books/details?id=3u_bEAAAQBAJ) | _Soon_                                                    |
-| Paperback book   | [Amazon](https://www.amazon.fr/dp/B0CKJ6SLV3)                                                                               | _Soon_                                                    |
-| Hardcover book   | [Amazon](https://www.amazon.fr/dp/B0CKJ651K9)                                                                               | _Soon_                                                    |
+| Ebook version    | [Amazon](https://www.amazon.fr/dp/B0CKHV5QB7) / [Google Books](https://play.google.com/store/books/details?id=3u_bEAAAQBAJ) | [Amazon](https://www.amazon.com/dp/B0CT8RY844)            |
+| Paperback book   | [Amazon](https://www.amazon.fr/dp/B0CKJ6SLV3)                                                                               | [Amazon](https://www.amazon.com/dp/B0CT6ZF5GZ)            |
+| Hardcover book   | [Amazon](https://www.amazon.fr/dp/B0CKJ651K9)                                                                               | N/A                                                       |
 
 > The original book was written in French. The English version was reworked to include america-related examples and use cases.
 

@@ -406,7 +406,7 @@ Here's how these rules could be applied to security and _management_ teams:
 - For security teams, the proposed technology might [automatically manage and audit the encryption of flows between services](#service-mesh). Their primary concerns could be: "Will this technology make my infrastructure more secure?" or "What new attack vectors could this technology introduce?"
 - For _management_ teams, the proposed technology might speed up the development pace and reduce service interruptions. Their main concern would be understanding the hardware or human resources the company would rely upon after implementing this new technology.
 
-The theory of mental models[^ModelesMentaux] helps us better understand the decision-making process (e.g., whether someone supports an initiative). Everyone's perception (i.e., a mental model) varies by individual. Transformation, then, is about collectively agreeing on an alternative mental model[^SilberzhanModeleMental].
+The theory of mental models[^MentalModels] helps us better understand the decision-making process (e.g., whether someone supports an initiative). Everyone's perception (i.e., a mental model) varies by individual. Transformation, then, is about collectively agreeing on an alternative mental model[^SilberzhanModeleMental].
 
 Even though DevOps might be backed by studies and is evident in the private sector, institutional initiatives are still not widespread enough[^DORAIndustry]. Therefore, you find yourself in a position where you're certain about the direction to take, but you're not fully able to justify it with data or examples. Presented with your forward-thinking transformation proposal, the decision-maker thus faces a risk. And as a matter of survival:
 
@@ -587,8 +587,6 @@ By automating tedious processes, DevOps techniques will free up time, allowing y
 
 Bringing technical profiles and business teams together adds value by promptly and accurately addressing internal challenges. This is also a key to staff retention. Remember: your teams seek purpose. They don't merely come to work to follow orders but to employ their expertise to devise the best technical solution for a business problem. An engineer's work culmination is witnessing the business use the solution they've crafted.
 
-\newpage
-
 ## Unleashing Communication and Breaking Down Data Silos
 
 One of the cornerstones of DevOps is to break down silos, including access to data.
@@ -631,7 +629,7 @@ France's cybersecurity agency[^ANSSI] defines three ways to assess risk of using
 
 As a declarative approach to managing security risks, traditional approval processes are not well-suited for continuous deployment practices. They freeze risk for a specific moment or architecture. Yet, threats emerge daily: a vulnerability in a library, for example, could be detected a day after approval is granted. Even though the approval is temporary and a periodic assessment might be required, the vulnerability might persist during this time, leading to a risk of exploitation.
 
-For Cloud service providers (CSPs), the United States established the _Federal Risk and Authorization Management Program_ ([FedRAMP](https://www.fedramp.gov/))[^fedrampsimilars]. It adds a new layer of security compared to tradtional approaches by enforcing a [demanding continuous monitoring](https://www.fedramp.gov/assets/resources/documents/CSP_Continuous_Monitoring_Strategy_Guide.pdf) process.
+For Cloud service providers (CSPs), the United States established the _Federal Risk and Authorization Management Program_ ([FedRAMP](https://www.fedramp.gov/))[^fedrampsimilars]. It adds a new layer of security compared to traditional approaches by enforcing a [demanding continuous monitoring](https://www.fedramp.gov/assets/resources/documents/CSP_Continuous_Monitoring_Strategy_Guide.pdf) process.
 
 Assuming security flaws might emerge at any moment must be part of your cybersecurity posture. You must have actionable tools to quickly respond to threats and preserve your ATOs[^ATO]. To address this challenge, it's recommended to adopt continuous integration techniques.
 
@@ -2507,14 +2505,14 @@ You can begin tracking your MTTx using collaborative spreadsheets (e.g., _Basero
 If you choose a spreadsheet, you can use the following structure:
 
 <!-- markdownlint-disable MD034 -->
-| Metric | Start Date          | End Date            | Incident                |
-| ------ | -------------------- | -------------------- | ----------------------- |
-| TTD    | 04/07/2024 16h45 UTC | 04/07/2024 16h50 UTC | abcd.com/C4D5E6         |
-| TTA    | 04/07/2024 16h50 UTC | 04/07/2024 17h00 UTC | abcd.com/C4D5E6         |
-| TTI    | 04/07/2024 17h00 UTC | 04/07/2024 17h20 UTC | abcd.com/C4D5E6         |
-| TTR    | 04/07/2024 17h00 UTC | 04/07/2024 18h30 UTC | abcd.com/C4D5E6         |
-| TTD    | 02/06/2024 13h30 UTC | 02/06/2024 13h34 UTC | abcd.com/A1B2C3         |
-| ...    | ...                  | ...                  | ...                     |
+| Metric | Start Date          | End Date            | Incident              |
+| ------ | -------------------- | -------------------- | ------------------- |
+| TTD    | 04/07/24 16h45 UTC | 04/07/24 16h50 UTC | xyz.com/C4D5E6          |
+| TTA    | 04/07/24 16h50 UTC | 04/07/24 17h00 UTC | xyz.com/C4D5E6          |
+| TTI    | 04/07/24 17h00 UTC | 04/07/24 17h20 UTC | xyz.com/C4D5E6          |
+| TTR    | 04/07/24 17h00 UTC | 04/07/24 18h30 UTC | xyz.com/C4D5E6          |
+| TTD    | 02/06/24 13h30 UTC | 02/06/24 13h34 UTC | xyz.com/A1B2C3          |
+| ...    | ...                  | ...                  | ...                 |
 <!-- markdownlint-enable MD034 -->
 
 - The **metric** denotes the MTTx name ;
@@ -3230,7 +3228,7 @@ _Have at least 5 years of professional experience? We prioritize it and don't co
 
 [^SASE]: SASE / [Secure Access Service Edge](https://blogs.gartner.com/andrew-lerner/2019/12/23/say-hello-sase-secure-access-service-edge/): combination of multiple network security features to enable dynamic access to an organization's resources
 
-[^Mental Models]: Reference to the Theory of Mental Models introduced by JOHNSON-LAIRD in 1983 (cf. THEVENOT C, PERRET P. [The development of reasoning in problem solving: the contribution of the theory of mental models]( https://www.cairn.info/load_pdf.php?ID_ARTICLE=DEVEL_002_0049&download=1&from-feuilleteur=1). Développements. 2009).
+[^MentalModels]: Reference to the Theory of Mental Models introduced by JOHNSON-LAIRD in 1983 (cf. THEVENOT C, PERRET P. [The development of reasoning in problem solving: the contribution of the theory of mental models]( https://www.cairn.info/load_pdf.php?ID_ARTICLE=DEVEL_002_0049&download=1&from-feuilleteur=1). Développements. 2009).
 
 [^SilberzhanModeleMental]: SILBERZAHN, Philippe. [Mental model strategy (FR)](https://philippesilberzahn.com/ouvrages/strategie-modele-mental/). 2022.
 
