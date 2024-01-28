@@ -996,7 +996,7 @@ The desire to eliminate silos within an organization is a common mistake. Let's 
 
 It's fortunate that your organization has silos. For instance, they might consist of experts in organic chemistry, experts on the political science of a specific world region, or masters of a particular technology.
 
-The creation of a silo is often essential to cater to an expertise requirement. This silo becomes necessary because this specialized expertise requires a structure tailored to its tasks (specialized tools and practices, advanced machinery, specific standard rooms). The key is to have tools and practices to let this silo communicate with the rest of your organization.
+The creation of a silo is often essential to cater to an expertise requirement. This silo becomes necessary because this specialized expertise requires a structure tailored to its tasks. The key is to have tools and practices to let this silo communicate with the rest of your organization.
 
 Undesirable silos emerge when the company doesn't provide teams with the tools they need to work effectively. Individuals then take initiatives to find more efficient alternatives. This is a predictable "immune" response when employees face deteriorating work conditions.
 
@@ -1004,9 +1004,7 @@ For instance, your expertise center is aging and doesn't renew its tools. Faced 
 
 Due to the management's failure to anticipate decline or heed internal feedback, they initiate a transformation project. Concurrently, the isolated initiative, undertaken without informing management, leads to scope conflicts and unclear objectives. Management becomes increasingly disconnected from their teams, unaware that they've adopted new practices. The lack of communication with other employees and duplicated efforts become noticeable. This is the result of a lack of overall coherence—a fertile ground for resistance to change in the face of the leadership's belated reaction.
 
-!Timeline of the declining silo.\label{fig:2023cyclesilotage}
-
-To prevent the decline of a silo that would spread company-wide (fig. <spanc/>\ref{fig:2023cyclesilotage}), there needs to be effective communication among these silos (the Executive Committee, expertise centers, teams, etc.). Management must provide tools to ensure the entire company speaks the same language. They should also instill a shared vision, allowing teams to collaborate towards a unified goal.
+To prevent the decline of a silo that would spread company-wide, there needs to be effective communication among these silos. Silos can include the Executive Committee, expertise centers or teams. Management must provide tools to ensure the entire company speaks the same language. They should also instill a shared vision, allowing teams to collaborate towards a unified goal.
 
 The DevOps movement believes in using common methodologies and tools to facilitate these exchanges. This chapter outlines the methodologies to adopt to achieve this objective.
 
@@ -1017,9 +1015,9 @@ To achieve a successful transformation, one must have a comprehensive view of th
 Your environment's map should answer the following questions:
 
 - What are the company's mission(s)?: This might seem basic, but not all organizations clearly define this goal. Ensure you understand the company's objectives, i.e., the problems it addresses. Clearly grasp its business model to better formulate your transformation plan.
-- Is there an existing strategy?: What directions were given during the last transformation, and what can you learn from them? You might need to adjust your plan according to an already-implemented strategy or start afresh or in isolation (see chapter "How to convince and keep faith").
+- Is there an existing strategy?: What directions were given during the last transformation, and what can you learn from them? You might need to adjust your plan according to an already-implemented strategy or start afresh or in isolation.
 - Which teams are working on which mission?: List the existing teams in the organization and their contacts: whom do they serve? Who do they need? Perhaps some teams aren't collaborating with those they should be or can't communicate effectively.
-- What kind of profiles exist in the teams?: List the number of employees and their expertise. Maybe there's a data scientist in one team who'd be more valuable elsewhere (but be careful with such moves, see chapter "Chronic reorganizations"). Perhaps there are too many project managers and not enough software engineers. Maybe the company doesn't yet have the profile you need.
+- What kind of profiles exist in the teams?: List the number of employees and their expertise. Maybe there's a data scientist in one team who'd be more valuable elsewhere. Perhaps there are too many project managers and not enough software engineers. Maybe the company doesn't yet have the profile you need.
 - How do teams exchange information?: List their communication tools. Some employees might be using the new internal cloud service implemented recently, while others might still rely on email.
 - Which teams have access to which data?: List team data access. Are there silos where teams hoard information? Is there an inadequately monitored database risking data leaks? Is a data source especially used or strategic?
 
@@ -1049,7 +1047,7 @@ In the next chapter, we will see how a software factory is organized and how, th
 
 The software factory is at the heart of your DevOps infrastructure. This is where your engineers will spend most of their time: if they're not coding in their IDE, they will be managing their projects in the software factory.
 
-A software factory consists of a software forge and services allowing your engineers to develop and deploy software on your infrastructure: container image registries, dependency mirrors, artifact/binary repositories (see Nexus, Artifactory, Distribution). Nowadays, most of these features are directly available within software forges.
+A software factory consists of a software forge and services allowing your engineers to develop and deploy software on your infrastructure: container image registries, dependency mirrors, artifact/binary repositories. Nowadays, most of these features are directly available within software forges.
 
 The most popular software forges are GitLab and GitHub. GitLab is more commonly found in large organizations since it is simply and freely deployable on isolated networks. Other platforms like Froggit, Gitea, and Bitbucket also exist.
 
@@ -1061,32 +1059,28 @@ The most popular software forges rely on the git technology, allowing for tracki
 
 Today, development, sysadmin, InfoSec, and management teams collaboratively work on such platforms, capitalizing on:
 
-- The list of features to develop for software (tasks, priorities, deadlines... see agile methodology) ;
-- Discussions on designing a feature (comments in tasks) ;
+- The list of features to develop for software ;
+- Discussions on designing a feature;
 - User and technical documentation for software ;
 - Software source code ;
 - Infrastructure documentation ;
 - Infrastructure administration scripts ;
-- Security rules (see chapter "Continuous integration and security") ;
+- Security rules ;
 - Software quality rules.
 
-!GitLab and GitHub interfaces for (from left to right): project management, documentation visualization, code capitalization.\label{fig:gitlabgithubillustrationsscreenshots}
+The goal is to store as much knowledge as possible in one place, ensuring the most up-to-date documentation is always consulted.
 
-The goal is to store as much knowledge as possible in one place, ensuring the most up-to-date documentation is always consulted (fig. <spanc/>\ref{fig:gitlabgithubillustrationsscreenshots}).
+Consider git for capitalizing on guides, tutorials, and even administrative procedures for your teams. If someone spots an error or outdated information in documentation, they can directly suggest the modification in git to keep the document current.
 
-git is a means to consider for capitalizing on guides, tutorials, and even administrative procedures for my teams. If someone spots an error or outdated information in documentation, they can directly suggest the modification in git to keep the document current.
+Teams adopting DevOps are replacing traditional Word or Excel with Markdown. This format, designed to be intuitive for both humans and machines, is independent of any proprietary technology (e.g., Microsoft Word).
 
-Teams adopting DevOps are replacing traditional Word or Excel with Markdown (the format for documentation in git projects). This format, designed to be intuitive for both humans and machines, is independent of any proprietary technology (e.g., Microsoft Word).
+It's even possible to create presentations in code form with tools such as Markdown-Slides or reavel.js. They then can be viewed in a simple browser.
 
-It's even possible to create presentations in code form. These can be viewed in a simple browser (e.g., Markdown-Slides (fig. <spanc/>\ref{fig:markdown-slides-browser}), Slides, Remark, reveal.js).
-
-!Example of a presentation created with Markdown and viewable in a browser with Markdown-Slides. Source: github.com/dadoomer/markdown-slides.\label{fig:markdown-slides-browser}
-
-Conversely, git is not designed to store large files. One should avoid storing large images, videos, binaries, or archives in it. Other technologies can store these types of files (see Amazon S3, Minio S3, HDFS, CephFS, Longhorn) with or without a reference to a git project (e.g., DVC).
+Conversely, git is not designed to store large files. One should avoid storing large images, videos, binaries, or archives in it. Other technologies can store these types of files (such as Amazon S3, Minio S3, HDFS or CephFS) with or without a reference to a git project (e.g., DVC).
 
 However, the software factory is not just about capitalizing knowledge. It also serves as a control point for all contributions. An initial level of control is established by adding users to projects they have permission to contribute to.
 
-But a second level of control can be set up: through continuous integration mechanisms (see chapter "Continuous Integration"), automated scripts can validate a contribution based on rules defined by your organization (software quality, SSI compliance). If the contribution doesn't meet your standards, it's rejected. The contributor sees it instantly, knows why, and can suggest a correction within minutes.
+But a second level of control can be set up: through continuous integration mechanisms, automated scripts can validate a contribution based on rules defined by your organization (they can include rules for software quality or SSI compliance). If the contribution doesn't meet your standards, it's rejected. The contributor sees it instantly, knows why, and can suggest a correction within minutes.
 
 Since software factories can manage access to resources based on a user's profile, it's entirely possible to open yours to external partners (e.g., contractors). They can then add their software following the rules established by your organization and will immediately know how to comply. These rules are defined internally by security engineers.
 
@@ -1094,9 +1088,9 @@ This is already the case with Platform One, which opens its software factory to 
 
 However, transformation offers an opportunity to develop internal expertise before being able to define rules for others. You must master the technologies discussed in this chapter to ensure your platform's security. So, work first on your internal projects before overseeing external ones. Each organization is unique but should have its internal experts to provide the best advice.
 
-As described in the chapter "Code Reviews", these reviews offer an opportunity to provide feedback on a contribution before it's deployed. It's possible to set rules so that specific teams (e.g., SSI team) must approve the contribution before it can be accepted. This mechanism can be seen as a "seal of approval". Software factories contain all these contribution validation features to best ensure the software supply chain's security.
+As described in the chapter "Code Reviews", these reviews offer an opportunity to provide feedback on a contribution before it's deployed. It's possible to set rules so that specific teams (e.g., security team) must approve the contribution before it can be accepted. This mechanism can be seen as a "seal of approval". Software factories contain all these contribution validation features to best ensure the software supply chain's security.
 
-Lastly, the software factory is where software developed by your teams will be built (compiled, formatted for deployment) and then deployed on your infrastructure. Analogous to the continuous integration principle, continuous deployment chains are responsible for deploying software according to rules defined in code (see chapter "Continuous Deployment (CD)").
+Lastly, the software factory is where software developed by your teams will be built and then deployed on your infrastructure. Analogous to the continuous integration principle, continuous deployment chains are responsible for deploying software according to rules defined in code.
 
 Caution: under no circumstances does a software factory allow your teams to develop software per se. The software factory provides resources for engineers to develop their software (dependencies, packages, binaries) but doesn't allow for code writing or execution within it.
 
@@ -1106,15 +1100,15 @@ All these technologies help to bring teams closer together and unify practices w
 
 #### GitOps
 
-GitOps is a methodology for Cloud applications based on continuous deployment (see Continuous Deployment). It uses git projects as a "single source of truth" for infrastructure and application configurations. Once capitalized in this way, the configuration is termed "declarative". In other words, you "code" configuration files to define how to deploy your infrastructure.
+GitOps is a methodology for Cloud applications based on continuous deployment. It uses git projects as a "single source of truth" for infrastructure and application configurations. Once capitalized in this way, the configuration is termed "declarative". In other words, you "code" configuration files to define how to deploy your infrastructure.
 
 The idea behind GitOps is to rely on code to determine the system's desired state.
 
-Synchronizing the desired state is achieved through specific technologies (e.g., ArgoCD, FluxCD). This approach provides a single source of truth for the entire system, facilitating change tracking, configuration auditing, and ensuring the infrastructure meets the company's requirements.
+Synchronizing the desired state is achieved through specific technologies (e.g., ArgoCD or FluxCD). This approach provides a single source of truth for the entire system, facilitating change tracking, configuration auditing, and ensuring the infrastructure meets the company's requirements.
 
-Example: if you need to create a backup mechanism, you can code an Ansible playbook (see chapter "Infrastructure as Code (IaC)"), push it to a git project, and a continuous deployment chain will deploy the change. The target end state is described by code.
+Example: if you need to create a backup mechanism, you can code an Ansible playbook, push it to a git project, and a continuous deployment chain will deploy the change. The target end state is described by code.
 
-You can start by writing manually launchable IaC scripts and then choose an automated solution after maturing on the topic (e.g., an Ansible script automated by a continuous integration (CI) chain with deployment handled by ArgoCD, see chapter "Continuous Deployment").
+You can start by writing manually launchable IaC scripts and then choose an automated solution after maturing on the topic (e.g., an Ansible script automated by a continuous integration (CI) chain with deployment handled by ArgoCD).
 
 #### Git Workflows
 
@@ -1130,11 +1124,9 @@ It's the same with software. Working in the same place at the same time leads to
 
 git operates on a branching principle. By default, only the main branch, `main` or `master`, exists. It's considered "stable". If an integrator has to deploy software in production, they will choose the code from this branch.
 
-A developer wanting to design a new feature will create a new branch from the main branch. This results in a copy of the code where changes (commits) are at their discretion, without disturbing others. Once the feature is finalized, the developer can make a "merge request" towards the main branch. Figure <spanc/>\ref{fig:classicgitmerge} illustrates the simplest possible git workflow.
+A developer wanting to design a new feature will create a new branch from the main branch. This results in a copy of the code where changes (commits) are at their discretion, without disturbing others. Once the feature is finalized, the developer can make a "merge request" towards the main branch.
 
-!Basic organizational method in a git project: one branch per developed feature.\label{fig:classicgitmerge}
-
-There are three questions to ask when determining a "good" git workflow:
+There are three questions to answer when determining a "good" git workflow:
 
 1. Will this method adapt to the size of my team?
 2. Does this method easily allow for reverting to a previous version of the code in case of an error?
@@ -1142,110 +1134,60 @@ There are three questions to ask when determining a "good" git workflow:
 
 Several methods have emerged over time, but there are 4 main ones:
 
-- Release Branching: Suited for periodic software deployment (release), this method involves creating a new branch from the main branch and then stabilizing it with bug fixes and other changes before publishing.
-
-    Here, a release refers to a branch that evolves alongside the main branch for an extended period, eventually becoming obsolete.
-
-    It allows groups of developers to collaborate on a particular release or a customized version of the software for a client. This limits conflicts but complicates merging contributions between versions.
-
-- Gitflow: An extension of the Release Branching method, this uses 6 parallel branches addressing specific needs (release, hotfix, feature, support, bugfix, in addition to the main master or main branch). It's historically used for managing very large projects (fig. <spanc/>\ref{fig:gitflow}).
-
-    !Example of Gitflow. Source: fpy.cz (Filip PYTLOUN).\label{fig:gitflow}
-
-- GitHub flow / GitLab flow: This method reduces the complexity brought by Gitflow by eliminating its 5 parallel branches to the main one (fig. <spanc/>\ref{fig:gitlab-flow}).
-
-    A developer should create a branch for each new feature from the main branch. A release can be created at any time from the main branch. Beyond its simplicity, the benefit is having a branch that always contains functional code and knowing it's up-to-date at all times.
-
-    !Example of GitLab flow. Source: gitlab.com.\label{fig:gitlab-flow}
-
-- Trunk-based: This method promotes continuous deployment of software (see the chapter "Continuous Deployment").
-
-    Unlike github flow, there's only one branch here. Each developer pushes their code directly to the main branch (the trunk, fig. <spanc/>\ref{fig:trunkgit}). This encourages making small, easily reversible contributions in case of bugs, while reducing time spent on conflicts. Indeed, developers sync their code more frequently.
-
-    This method heavily relies on CI/CD mechanisms because every contribution is checked (CI). If checks pass, the software can be automatically updated (CD) by creating a release. This ensures that the deployment mechanisms (CD) work at all times.
-
-    At scale, it's advised to create very short-lived branches to benefit from code reviews (maximum 1 day).
-
-    !Example of trunk-based git workflow.\label{fig:trunkgit}
+1. Release Branching. Suited for periodic software deployment or release, this method involves creating a new branch from the main branch and then stabilizing it with bug fixes and other changes before publishing.
+2. Gitflow. It is extension of the Release Branching method, this uses 6 parallel branches addressing specific needs : release, hotfix, feature, support, bugfix, in addition to the main branch. This method is historically used for managing very large projects.
+3. GitHub or GitLab flow. This method reduces the complexity brought by Gitflow by eliminating its 5 parallel branches to the main one. A developer should create a branch for each new feature from the main branch. A release can be created at any time from the main branch. Beyond its simplicity, the benefit is having a branch that always contains functional code and knowing it's up-to-date at all times.
+4. Trunk-based. This method promotes continuous deployment of software. Unlike github flow, there's only one branch here. Each developer pushes their code directly to the main branch (the trunk). This encourages making small, easily reversible contributions in case of bugs, while reducing time spent on conflicts. Indeed, developers sync their code more frequently.
 
 According to Atlassian, the state-of-the-art git workflow today is trunk-based development. Google's codebase is a good example: despite tens of thousands of daily contributions, they chose this method.
 
-However, you may not have Google's engineering teams. Trunk-based development requires a specific rigor that only a seasoned technical team can handle. This method needs continuous integration chains that ensure the pushed code is valid (risking releasing a non-functional software version). It also involves creating optimized continuous deployment chains (as they're frequent). Writing these chains takes time and requires experience.
+However, you may not have Google's engineering teams. Trunk-based development requires a specific rigor that only a seasoned technical team can handle. This method needs continuous integration chains that ensure the pushed code is valid. It also involves creating optimized continuous deployment chains. Writing these chains takes time and requires experience.
 
-If you don't have a properly equipped team, it's recommended to stick to github flow.
+If you don't have a properly equipped team, it's recommended to stick to the GitHub flow.
 
-But adhering to a common contribution methodology (branches, commits) isn't enough. While collaboration might now be easier, you're not equipped to understand everyone's status. In the next chapter, we'll explore a project management method.
+But adhering to a common contribution methodology isn't enough. While collaboration might now be easier, you're not equipped to understand everyone's status. In the next chapter, we'll explore a project management method.
 
 #### Flexible flow: a balanced git workflow
 
 You might not have a large team at hand but want to benefit from best organizational practices on your git project. This chapter provides insights into a method suitable for most development teams. It's the one I use for the vast majority of my projects, whether professional or personal.
 
-Drawing from the best of various Agile methodologies (Scrum, Extreme Programming, Kanban), it borrows their pragmatism without their organizational overhead. This methodology will be more suitable for a transforming hierarchy compared to the more demanding trunk-based development. I-T managers also prefer it because it establishes software versions and facilitates long-term project maintenance. Finally, it allows both project managers and developers to easily track developments.
+Drawing from the best of various Agile methodologies, it borrows their pragmatism without their organizational overhead. This methodology will be more suitable for a transforming hierarchy compared to the more demanding trunk-based development. I-T managers also prefer it because it establishes software versions and facilitates long-term project maintenance. Finally, it allows both project managers and developers to easily track developments.
 
-Named "Flexible flow" (fig. <spanc/>\ref{fig:flexibleflowgit}), it's based on GitHub flow but adds a link between project management teams and technical teams.
+Named "Flexible flow", it is based on GitHub flow but adds a link between project management teams and technical teams.
 
-!Branch management example using the Flexible flow method.\label{fig:flexibleflowgit}
+To bridge project management and technical contributions, GitLab or GitHub projects use issues. These are tasks assignable to a collaborator, describing which feature to develop or which bug to fix.
 
-To bridge project management and technical contributions, GitLab or GitHub projects use issues. These are tasks assignable to a collaborator, describing which feature to develop or which bug to fix (fig. <spanc/>\ref{fig:figure3}).
+With the Flexible flow, every contribution must refer to an issue that describes the task's genesis, how it can be resolved, and centralizes stakeholders' thoughts. Anyone can create these tasks : project managers, developers or users. The project manager then prioritizes them. Any newly assigned developer should know: what to do, where to start, and why by consulting the issue. Each is automatically numbered by the software forge.
 
-!Example of Kanban view in GitLab.\label{fig:figure3}.")
+For Project Management:
 
-With the Flexible flow, every contribution must refer to an issue that describes the task's genesis, how it can be resolved, and centralizes stakeholders' thoughts. Anyone can create these tasks (project manager, developer, user). The project manager then prioritizes them. Any newly assigned developer should know: what to do, where to start, and why by consulting the issue. Each is automatically numbered by the software forge.
-
-Project Management:
-
-1. Use the Kanban view of your software forge
-2. Create four columns: Open, To do, Doing, Done
-3. Create and document the issues (tasks) in the Open column
-4. Create contribution type labels: `type/bug`, `type/feature`, `type/iteration`, `type/refactor`, `type/documentation`, `type/discussion`
-
-    > Helps teams understand the nature of the contribution to be made.
-
-5. Create contribution domain labels: `area/backend`, `area/frontend`, `area/documentation`, `area/cloud` (Docker, Kubernetes, CI/CD), `area/infrastructure` (Ansible, Terraform, AWS/GCP/Azure configuration)
-
-    > Allows specialized teams to know which task to handle. For instance, on GitLab, any team concerned by a label can "subscribe" to it to know when a new task is added.
-
-6. Create commercial value labels: `business-value/p1`, `business-value/p2`, `business-value/p3`, `business-value/p4`
-
-    > Enables prioritizing tasks based on the commercial value the task realization brings: `p1` indicates high commercial priority. `p4` denotes low commercial priority.
-
-7. Create complexity labels: `complexity/1`, `complexity/2`, `complexity/3`, `complexity/4`
-
-    > Allows for prioritizing tasks based on complexity and the time the task demands: `1` is for a simple task, while `4` is for a highly complex or lengthy task.
-
-8. Create priority labels: `priority/low`, `priority/medium`, `priority/high`, `priority/critical`
-
-    > Helps prioritize tasks based on the current project development context (political or client priorities).
-
-9. For each issue, assign a label from each category (domain, type, commercial value, complexity, priority)
-10. Order the issues by priority: the higher an issue is in the Open column, the more important it is
-11. Assign an issue to a team member and move it to To do
-
-    > Limit assignments to 1 issue per available team member: this helps focus efforts.
-
+1. Use the Kanban view of your software forge (e.g, GitLab).
+2. Create four columns: Open, To do, Doing, Done.
+3. Create and document the issues in the Open column.
+4. Create contribution type labels. They help teams understand the nature of the contribution to be made.
+5. Create contribution domain labels. They allow specialized teams to know which task to handle. For instance, on GitLab, any team concerned by a label can "subscribe" to it to know when a new task is added.
+6. Create commercial value labels. They able prioritizing tasks based on the commercial value the task realization brings: `p1` indicates high commercial priority. `p4` denotes low commercial priority.
+7. Create complexity labels. They allow prioritizing tasks based on complexity and the time the task demands: `1` is for a simple task, while `4` is for a highly complex or lengthy task.
+8. Create priority labels. They help prioritize tasks based on the current project development context (political or client priorities).
+9. For each issue, assign a label from each category (e.g., domain, type, commercial value, complexity and priority).
+10. Order the issues by priority: the higher an issue is in the Open column, the more important it is.
+11. Assign an issue to a team member and move it to "To do".
 12. Optionally, create a milestone to group issues meant for a specific software version. A milestone is often tied to a software release date (deadline).
 
 Contribution Management:
 
-1. Trunk branch: a singular `main`/`master` branch from which developers can branch off to add a contribution.
+1. Trunk branch: a singular "main" branch from which developers can branch off to add a contribution.
 2. Features branching: code change = 1 branch = 1 issue.
-    - Branch naming convention: `f/#65-add-users-profile-page` for issue no. 65 of feature type titled "Add users profile page" ;
-    - Facilitates change tracking (GitHub/GitLab Changes tab) ;
-    - Do NOT address anything other than the issue's topic in its branch.
 3. Mention the issue number in every commit.
-    - Naming convention: "#65 : Added page icon in sidebar".
 4. Once the contribution is ready, create a merge request to the trunk branch.
-    - Use the squash feature to keep the contribution history clean ;
-    - Naming convention: "#65 : Add users profile page" ;
-    - Allows for automatically referencing the merge request in the issue.
 5. Release: update the software version (in files like `package.json`) and make a release from the trunk branch.
 
 Other Recommendations:
 
 1. Do not make a merge request from the trunk branch to a feature branch ;
 2. Limit the size of contributions, preferring to create multiple smaller tasks ;
-3. Limit the time spent on a review to avoid time-consuming conflicts (refer to code review best practices) ;
-4. Every contribution must pass a Continuous Integration (CI) pipeline ;
+3. Limit the time spent on a review to avoid time-consuming conflicts;
+4. Every contribution must pass a CI pipeline ;
 5. As your team matures, consider adding a Continuous Deployment pipeline for every contribution that passes CI on the trunk branch.
 
 Author's Note: This method has proven effective over time in the projects I've contributed to. Easy to grasp even for beginners, I've refined it over time to be less cumbersome, yet addressing software technical debt issues and team turnover.
@@ -1260,30 +1202,30 @@ The 12-factor methodology (Twelve-Factor Methodology) encompasses a list of best
 
 The website 12factor.net, created by Adam WIGGINS, lists and details these principles:
 
-1. Single Codebase: Centralize the code in one place (e.g., git / GitLab / GitHub) and assign a unique directory/project for each software. It should be adaptable to different environments (development, pre-production, production). For instance, avoid creating separate "production" and "development" projects for the same software.
-2. Declared and Isolated Dependencies: All dependencies should be declared in a file - not implicitly loaded based on their presence or absence in a machine's folder. For example, using `package.json` for NPM (Javascript) and `requirements.txt` for PIP (Python). They should be isolated during execution to ensure no dependencies are pre-installed on the machine. This can be achieved using Python's virtualenv, Ruby's bundle exec, or Docker for any language.
-3. Environment-based Configuration: The software should adapt to the deployment environment, not the other way around. Utilize environment variables and avoid constants in your applications to tailor your software's behavior to its deployment setting.
-4. Access Third-party Services via Connection Credentials in Variables: Databases, queue systems, SMTP-type emailing services, caching, or other APIs used by the application should be interchangeable based on the deployment environment. The software relies on URLs or credentials set as environment variables. For instance, the software should be able to connect to both `mysql://auth@host/db` and `mysql://auth@rds.amazonaws.com/db` without any code changes, as long as the technologies are the same.
-5. Distinct Build and Run Stages: Freeze the code at runtime, making alterations impossible. Assign a unique identifier for each software release (e.g., a timestamp like `2022-05-07-21:33:18`) and make the code immutable for that version. Any code change necessitates a new release.
-6. Create Stateless Applications: Every application should be self-sufficient and connect to an external service when it needs to interact with data (e.g., the databases mentioned in point 4). For example, each request to an API route shouldn't include a caching mechanism for a user session (refer to sticky sessions). The API should solely rely on parameters present in the request to respond. This also encompasses the concept of "microservices." The goal is to separate software functionalities into independent modules, each scalable on its own. This is referred to as horizontal scaling (horizontal scaling). This contrasts with "monolithic" architectures.
-7. Access Services through Port Binding: An application shouldn't require adding a web server to operate. Each application should come with a means to serve its content and expose its port. It should be possible to assign a port for one specific environment and a different one in another environment.
-8. Concurrency: Allowing application concurrency means having the ability to instantiate multiple clones without the need for coordination or shared state among them. This concept aligns with point 6, implying that various application instances rely on third-party services (like databases) to manage data. This facilitates scaling individual components of the application (microservices) independently based on user load (e.g., the Unix Process Model, Horizontal Pod Autoscaling in Kubernetes).
-9. Disposability and Restart Control: An unexpected application shutdown shouldn't impact its restart; it should continue to operate as before, adapting to the current infrastructure state. The application startup should be quick (within a few seconds). The software shutdown should be controlled upon receiving a `SIGTERM` signal (graceful exit).
-10. Environment Parity: Different environments (development, pre-production, production) should be as similar as possible. Using platform services (e.g., databases, caching services) with different versions can lead to incompatibilities and errors once the software is in production.
-11. Treat Application Logs as Streams: An application should never handle redirection or storage of activity logs (logs). It shouldn't attempt to write or manage log files. Instead, it should write logs to the standard output (`stdout`) as promptly as possible (without buffering). This enables the Cloud platform to easily process logs from deployed applications (see the chapter "A foundation for your resilience").
-12. Execute Administrative Tasks with One-off Commands: Applications should include scripts or tools for executing administrative actions. For instance, initiating a database migration with a Python script, accessing a console to investigate a production database with `psql`, or triggering a backup with a command. The idea is to facilitate script execution in the same environment where the software is deployed.
+1. Single Codebase. Centralize the code in one place (e.g., GitHub or GitLab) and assign a unique directory/project for each software. It should be adaptable to different environments. For instance, avoid creating separate "production" and "development" projects for the same software.
+2. Declared and Isolated Dependencies. All dependencies should be declared in a file - not implicitly loaded based on their presence or absence in a machine's folder. For example, using `package.json` for NPM and `requirements.txt` for Python. They should be isolated during execution to ensure no dependencies are pre-installed on the machine. This can be achieved using Python's virtualenv, Ruby's bundle exec, or Docker for any language.
+3. Environment-based Configuration. The software should adapt to the deployment environment, not the other way around. Utilize environment variables and avoid constants in your applications to tailor your software's behavior to its deployment setting.
+4. Access Third-party Services via Connection Credentials in Variables: Databases, queue systems, SMTP-type emailing services, caching, or other APIs used by the application should be interchangeable based on the deployment environment. The software relies on URLs or credentials set as environment variables. For instance, the software should be able to connect to databases from two different Cloud providers without any code changes, as long as the technologies are the same.
+5. Distinct Build and Run Stages. Freeze the code at runtime, making alterations impossible. Assign a unique identifier for each software release (e.g., a timestamp) and make the code immutable for that version. Any code change necessitates a new release.
+6. Create Stateless Applications. Every application should be self-sufficient and connect to an external service when it needs to interact with data (e.g., the databases mentioned in point 4). For example, each request to an API route shouldn't include a caching mechanism for a user session. The API should solely rely on parameters present in the request to respond. This also encompasses the concept of "microservices." The goal is to separate software functionalities into independent modules, each scalable on its own. This is referred to as horizontal scaling. This contrasts with "monolithic" architectures.
+7. Access Services through Port Binding. An application shouldn't require adding a web server to operate. Each application should come with a means to serve its content and expose its port. It should be possible to assign a port for one specific environment and a different one in another environment.
+8. Concurrency. Allowing application concurrency means having the ability to instantiate multiple clones without the need for coordination or shared state among them. This concept aligns with point 6, implying that various application instances rely on third-party services to manage data. This facilitates scaling individual components of the application (microservices) independently based on user load (e.g., the Unix Process Model, Horizontal Pod Autoscaling in Kubernetes).
+9. Disposability and Restart Control. An unexpected application shutdown shouldn't impact its restart; it should continue to operate as before, adapting to the current infrastructure state. The application startup should be quick (within a few seconds). The software shutdown should be controlled upon receiving a `SIGTERM` signal.
+10. Environment Parity. Different environments (e.g., development, pre-production and production) should be as similar as possible. Using platform services (e.g., databases, caching services) with different versions can lead to incompatibilities and errors once the software is in production.
+11. Treat Application Logs as Streams. An application should never handle redirection or storage of activity logs. It shouldn't attempt to write or manage log files. Instead, it should write logs to `stdout` as promptly as possible. This enables the Cloud platform to easily process logs from deployed applications.
+12. Execute Administrative Tasks with One-off Commands. Applications should include scripts or tools for executing administrative actions. For instance, initiating a database migration with a Python script, accessing a console to investigate a production database with the P-S-Q-L command line, or triggering a backup with a command. The idea is to facilitate script execution in the same environment where the software is deployed.
 
-Implementing these criteria - particularly breaking software into microservices - combined with continuous deployment pipelines, increases the chances of anticipating software incidents by 43% according to research (e.g., failures, vulnerabilities, or degraded service performance). Containerization is especially suited to these practices. Concepts of isolation are recurrent, and technology like Docker aptly addresses them.
+Implementing these criteria - particularly breaking software into microservices - combined with continuous deployment pipelines, increases the chances of anticipating software incidents by 43% according to research. Containerization is especially suited to these practices. Concepts of isolation are recurrent, and technology like Docker aptly addresses them.
 
 Even though these are now standard practices in the industry, it might be beneficial to include them in a guide for newcomers.
 
 ### Instant messaging
 
-A simple yet especially effective way to bridge the gaps between silos is to implement a shared instant messaging system. Through this medium, team members can quickly communicate without overloading their email inboxes, engage in group discussions about the next feature to develop, share snippets of code or documents effortlessly, foster cohesion by sharing memes, make general announcements, or even conduct polls to decide on a list of options. Beyond facilitating collaboration, messaging enables remote work or collaboration with decentralized teams (in other cities or countries).
+A simple yet especially effective way to bridge the gaps between silos is to implement a shared instant messaging system. Through this medium, team members can quickly communicate without overloading their email inboxes, engage in group discussions about the next feature to develop, share snippets of code or documents effortlessly, foster cohesion by sharing memes, make general announcements, or even conduct polls to decide on a list of options. Beyond facilitating collaboration, messaging enables remote work or collaboration with decentralized teams.
 
 In the context of system reliability improvement, messaging is the ideal location to centralize production alerts for SRE teams. System monitoring tools can be set up to raise alerts in a single location. SREs are immediately notified when an alert is issued. When set up properly, these alerts provide all the information the SRE needs to promptly address the issue. Production teams can also easily inform their users of actions they are taking on the production system.
 
-Messaging platforms like Mattermost, Element, Zulip, and Slack come with built-in VoIP (calling) and video conferencing capabilities. Most also natively support integration with tools used in production (e.g., automatic notifications for every GitLab release, incident reports in chats, updates on the status page, postmortem timelines; see Rootly).
+Messaging platforms like Mattermost, Element, Zulip, and Slack come with built-in VoIP and video conferencing capabilities. Most also natively support integration with tools used in production (e.g., automatic notifications for every GitLab release, incident reports in chats, updates on the status page or postmortem timelines).
 
 Several companies, like Scaleway, open their corporate messaging to their customers. This forms a community of mutual assistance and a knowledge base for new users. It fosters engagement and reassures potential users, knowing there will be someone to answer in case of problems. Users facing issues can ask their questions, to which another user or a company expert can respond. At Canonical and Prefect, there are even "Community Engineers" whose specific role is to help the community with issues they may encounter. Some companies opt to charge entirely for this user support.
 
@@ -1291,11 +1233,9 @@ Several companies, like Scaleway, open their corporate messaging to their custom
 
 Large organizations are often hesitant about offering remote work to their employees. They fear that employees might not focus on company tasks.
 
-If you need to convince your superiors, clearly list the objectives for the remote-working employee (with help from the previous chapter). If that doesn't suffice, you might suggest the employee submits a daily work summary. However, this approach essentially tells the employee, "I don't trust you to be diligent." Think twice before proposing it.
+If you need to convince your superiors, clearly list the objectives for the remote-working employee. If that doesn't suffice, you might suggest the employee submits a daily work summary. However, this approach essentially tells the employee, "I don't trust you to be diligent." Think twice before proposing it.
 
 Research has shown that a flexible work environment is linked to a reduction in burnout and an increased likelihood of an employee recommending their company.
-
-\newpage
 
 ### Software architectures and agility
 
@@ -1307,9 +1247,7 @@ This chapter introduces three renowned architectures and describes their pros an
 
 #### Monolithic architecture and microservices
 
-A monolithic application (designed as a monolith) is developed as a single, indivisible entity where every function or module is interconnected. The software components depend on each other.
-
-!Illustration of a monolithic architecture
+A monolithic application is developed as a single, indivisible entity where every function or module is interconnected. The software components depend on each other.
 
 While initially easier to develop and use, software designed as monoliths complicates the addition of new features as they grow.
 
@@ -1317,15 +1255,13 @@ Updates to one part of the system impact the entire application, necessitating e
 
 Many renowned software like Wordpress and Magento still employ a monolithic architecture today. However, the trend is shifting towards microservices architectures, which are more scalable and resilient.
 
-An application designed with microservices breaks down each software functionality into isolated services (e.g., email sending management, login management, order management). Each operates independently. Every microservice communicates with others using a predefined exchange format (an API). Updates can be deployed without disrupting the whole system.
-
-!Illustration of a microservices architecture
+An application designed with microservices breaks down each software functionality into isolated services (e.g., email sending management, login management, order management). Each operates independently. Every microservice communicates with others using a predefined exchange format (through an API). Updates can be deployed without disrupting the whole system.
 
 By splitting your software into microservices, you can parallelize team work on each part of your software. Each team develops and deploys independently.
 
 But one of the major benefits of microservices is the ability to scale easily: the most in-demand services can be instantiated multiple times simultaneously to distribute the load. Some service orchestrators, like Kubernetes, allow automating this behavior.
 
-However, this architecture requires advanced tools to maintain hundreds of intercommunicating microservices. DevOps teams facilitate the implementation of such architectures. For instance, they provide developers with application templates (boilerplates) containing everything needed to kick-start a microservices application on its own infrastructure.
+However, this architecture requires advanced tools to maintain hundreds of intercommunicating microservices. DevOps teams facilitate the implementation of such architectures. For instance, they provide developers with application templates (or boilerplates), containing everything needed to kick-start a microservices application on its own infrastructure.
 
 #### Serverless architectures and functions as a service
 
@@ -1336,7 +1272,7 @@ To enable fine scaling on isolated functionalities, so-called "serverless" archi
 - Automatically provision resources during high traffic ;
 - Automatically remove unused resources.
 
-Included in this are Function as a Service or FaaS technologies, Container as a Service (CaaS), serverless compute platforms or SCP, self-managed storage services, and self-managed messaging services.
+Included in this are Function as a Service or FaaS technologies, Container as a Service, serverless compute platforms or SCP, self-managed storage services, and self-managed messaging services.
 
 By only charging for resources when they are used, serverless represents a significant economic and ecological argument. These technologies can reduce your bill from tens of euros to a few cents every month.
 
@@ -1344,17 +1280,7 @@ For instance, Functions as a Service each represent an isolated feature of your 
 
 Consider a specific case: you decide to start an email marketing campaign. Precisely the email sending function will be highly solicited for a short moment. There's no need to scale the function that lists your products. The infrastructure will only provision instances for the email sending function.
 
-!Illustration of a serverless architecture in FaaS
-
-However, serverless architectures require specific skills to maintain. They might also tie you to a Cloud provider's proprietary technologies (see proprietary lockdown or vendor lock-in) or explode costs if the use case isn't suitable.
-
-Let's summarize some advantages and disadvantages of each approach:
-
-| Architecture       | Advantages                                                                                                      | Disadvantages                                                                                                                         |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Monolithic     | • Simplicity in development and deployment<br>• Centralized management<br>• Easy to test and debug               | • Difficult to scale<br>• An update affects the whole software<br>• Slower and less frequent deployments                              |
-| Micro-services | • Scalable on-demand<br>• Quick deployments<br>• Isolated bugs and crashes<br>• Language-agnostic                | • Specific skills needed to manage<br>• Data format consistency to maintain (API)<br>• More difficult to debug                        |
-| FaaS           | • No infrastructure management<br>• Targeted scalability<br>• Cost-effective for sporadic traffic                 | • Vendor lock-in<br>• Less control over the execution environment<br>• Start-up time if unused (cold start)<br>• Limited run duration |
+However, serverless architectures require specific skills to maintain. They might also tie you to a Cloud provider's proprietary technologies or explode costs if the use case isn't suitable.
 
 #### From monolithic to microservices
 
@@ -1362,55 +1288,19 @@ The leap to switch from monolithic software to a microservices architecture is o
 
 Deciding to switch to microservices is tempting but involves compromises. British software engineer and author Martin FOWLER enlightens us on the prerequisites your team must have before starting this journey:
 
-- Ability to quickly provision machines (see chapter "A foundation for your resilience")
-- Ability to deploy quickly (see chapter "Leveraging automation")
-- Have the tools to monitor your services (see chapter "Measure everything")
+- Ability to quickly provision machines
+- Ability to deploy quickly
+- Have the tools to monitor your services
 
 In essence, we're talking about Cloud technologies and DevOps techniques. At this point, you just want to validate the development process of a microservice and deploy it automatically.
 
 To practice creating microservices, decouple an initial feature that doesn't need to be modified throughout your software. For example, an app's authentication mechanism is often centralized in a class or function: create and interface this microservice.
 
-<!-- markdownlint-disable MD029 -->
 1. Set up a development environment with automated tests, continuous deployment, and supervision tools, to grasp a generalizable first microservice.
-<!-- markdownlint-enable MD029 -->
-
-The Battle of Alesia, fought during the Gallic War in 52 B.C., is often cited as an example of strategic military planning. Julius Caesar's Roman army faces off against Vercingetorix's Gallic army. Pushed back by the Germans - allies of the Romans - the Gallic military leader is forced to take refuge with 80,000 men in the oppidum of Alesia. Julius Caesar decides to build two fortified lines around the city to dislodge the Gallic army.
-
-This stratagem allowed Julius Caesar to control the entries and exits from the area, to manage the number of soldiers arriving from the oppidum on one hand, and from the outside where reinforcements were pouring in on the other.
-
-!Roman fortified lines around the oppidum of Alesia. Source: [Julien FABRE](./images/2023illustrationbataillealesia.jpg)
-
-Without considering ourselves as great military leaders, we can still use this strategy to control, on one hand, the user load, and on the other, the flows either towards the monolith or towards the microservices we'll progressively create.
-
-That's the second step in the journey: placing a proxy or a service mesh around our application (see chapter "Service mesh"). It will allow us to redirect each request either to the new microservices or to the monolith for functions that haven't been migrated yet. For example, if we choose to extract authentication functionalities to a microservice, we will redirect requests starting with `/auth` to the authentication microservice.
-
-<!-- markdownlint-disable MD029 -->
 2. Implement a proxy around our application to control the flow.
-<!-- markdownlint-enable MD029 -->
-
-A new rule should now be established alongside the transformation you're undergoing: every new feature should be developed as a microservice.
-
-Former Director of Emerging Technologies at Thoughtworks, engineer Zhamak DEHGHANI offers valuable insights in her article "How to Decompose a Monolith into Microservices". Let's review a few of them.
-
-One of her first pieces of advice is to avoid creating microservices that recall the monolith. Instead, prioritize calls from the monolith to the microservices.
-
-<!-- markdownlint-disable MD029 -->
 3. Minimize callbacks to the monolith.
-<!-- markdownlint-enable MD029 -->
-
-The goal is to prevent a vicious cycle of changes that only serve to enrich the monolith. That's why it's essential to tackle the software's core. Start by breaking down the most integrated functions that handle the main data of your project.
-
-Prioritize the segmentation of functions hard to decouple by logical domain (e.g., product management followed by order management). Then focus on the most frequently updated parts of the software.
-
-<!-- markdownlint-disable MD029 -->
 4. Segment the software by logical domain and prioritize the most complex functions at the beginning.
-<!-- markdownlint-enable MD029 -->
-
-Lastly, consider rewriting a part of the code completely. Sometimes, legacy code is too complex, slow, outdated, or different from the current tech stack and needs a serious update. It might be more advantageous to rewrite it, especially if it lacks clarity.
-
-<!-- markdownlint-disable MD029 -->
 5. Consider rewriting capabilities rather than extracting and reusing the code.
-<!-- markdownlint-enable MD029 -->
 
 These insights and tips will allow you to confidently approach the task of rewriting your software to better integrate it into a Cloud infrastructure, taking advantage of the agility it offers your organization.
 
@@ -1424,7 +1314,7 @@ Instilling this mindset is a cultural shift that an organization must implement 
 
 ### Psychological safety
 
-"Psychological safety is the shared belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes." - Amy C. EDMONDSON, Professor of Leadership and Management at Harvard Business School.
+Amy C. EDMONDSON, Professor of Leadership and Management at Harvard Business School says : "Psychological safety is the shared belief that one will not be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes."
 
 An organization's culture is foundational to its potential. A positive culture promotes team collaboration and communication, essential for the successful implementation of a DevOps initiative. This idea isn't new and was theorized in 2004 by sociologist Ron WESTRUM in his article "A Typology of Organizational Cultures".
 
@@ -1440,7 +1330,7 @@ As mentioned by Kiran VARMA in her course on SRE culture at Google, research ide
 
 Hindsight bias is when an individual overestimates their ability to have foreseen an event. People often struggle to grasp that something only seemed obvious after it happened. In a professional setting, this might lead to blaming a person responsible for a task, claiming they should've "seen the obvious thing" coming.
 
-The concept of "discomfort discharge" refers to the neurobiological phenomenon where we blame others to alleviate mental pain. Sociologist Brené BROWN suggests that humans do this involuntarily but blaming hampers our ability to learn from mistakeséBROWNVideoOnBlame.
+The concept of "discomfort discharge" refers to the neurobiological phenomenon where we blame others to alleviate mental pain. Sociologist Brené BROWN suggests that humans do this involuntarily but blaming hampers our ability to learn from mistakes.
 
 In organizations uncomfortable with failure, team members might hide information or not report incidents for fear of punishment. Similarly, out of fear of appearing foolish, they might hesitate to ask questions that could identify a problem's root cause. However, mistakes only become opportunities for improvement if their true causes are identified. This can only happen in a psychologically safe work environment.
 
@@ -1460,27 +1350,20 @@ There are numerous other decision-making models and project management methods a
 
 When discovering the plethora of experimental technologies to implement for operating in a DevOps mode, you might be intimidated by the idea of becoming responsible for this vast, new system.
 
-This chapter aims to juxtapose a traditional responsibility model with the DevOps model. It also offers a tool to guide decision-makers, the DACI. It's up to you to pick and choose methodologies from each that seem most appropriate for your organization. However, be bold enough and try to avoid reverting to a traditional model, which would only give you the illusion of transformation.
+This chapter aims to juxtapose a traditional responsibility model with the DevOps model. It also offers a tool to guide decision-makers, the DACI. It's up to you to pick and choose methodologies from each that seem most appropriate for your organization. However, be bold enough and avoid reverting to a traditional model, which would only give you the illusion of a transformation.
 
 #### The RACI model
 
 One of the responsibility-sharing models is "RACI", which stands for Responsible (Executor), Accountable (Owner), Consulted (Consulted), and Informed (Informed). It ensures all stakeholders are aware of their roles and responsibilities in a project.
 
-In the table below, we have five stakeholders for the development of a new website. A responsible, an executor, consultees, and informers are designated for each activity.
+Let's give an example for the creation of a new website. We have a responsible, an executor, consultees, and informers that are designated for each activity.
 
-| Project Deliverable (or activity) | Project Leader | Archi -tect | Design -er | Front-end Developer | Back-end Developer |
-| --------------------------------- | -------------- | ----------- | ---------- | ------------------- | ------------------ |
-| Site plan design                  | C              | R           | A          | I                   | I                  |
-| Artistic direction                | A              | C           | R          | C                   | I                  |
-| Mockup design                     | C              | A           | R          | I                   | I                  |
-| Code structure (template)         | A              | I           | C          | R                   | C                  |
+- R for the Executor, which is the person who does the work to complete a deliverable
+- A for the Owner, which is the person who delegates the work and inspects the finished tasks
+- C for the Consulted, which is the person who contributes to a deliverable based on their expertise or responsibilities
+- I for the Informed, which is the person who needs to be kept in the loop about the project's progress
 
-- R (Executor): person who does the work to complete a deliverable
-- A (Owner): person who delegates the work and inspects the finished tasks
-- C (Consulted): person who contributes to a deliverable based on their expertise or responsibilities
-- I (Informed): person who needs to be kept in the loop about the project's progress
-
-An extension of RACI is RACI-VS-VS, which includes a validator (the person in charge of the final deliverable validation, an authority) and a signer (the person in charge of the official approval of the deliverable, a higher authority).
+An extension of RACI is RACI-V-S, which includes a validator (who is an authority) and a signer (who is the person in charge of the official approval of the deliverable).
 
 The RACI model is built on a clear separation of roles and responsibilities. This can be counterproductive in a DevOps initiative, which seeks to foster collaboration among teams. Moreover, RACI doesn't consider the dynamic and ever-changing nature of project development.
 
@@ -1502,10 +1385,10 @@ However, by assuming shared responsibilities without placing blame, you focus on
 
 As you've realized, DevOps encourages not blaming stakeholders. It might seem logical to argue that if no one is personally accountable, teams might be less diligent in their daily duties. How can we imagine a production head deleting the entire client database without consequences? Leaders must realize their actions have repercussions. DevOps addresses this challenge in two ways:
 
-1. If your procedures are sound, there's no reason the engineer could've executed that command. If a mistake was made, it indicates that the rules governing the security of your production infrastructure weren't robust enough (manual access to production machines, lack of command checks/validation, no backups, poorly described procedures, communication gaps...). (See chapter "Leveraging Automation")
-2. You hired an employee because they know their job (you did interview them, after all). If you're worried they won't take responsibility, speak with them or consider letting them go and revising your hiring policy. Trust your experts. If you have doubts, ask them to strengthen control rules (see point 1) and reassure you with typical scenarios (see chapter "Postmortems").
+1. If your procedures are sound, there's no reason the engineer could've executed that command. If a mistake was made, it indicates that the rules governing the security of your production infrastructure weren't robust enough (manual access to production machines, lack of command checks/validation, no backups, poorly described procedures, communication gaps...).
+2. You hired an employee because they know their job (you did interview them, after all). If you're worried they won't take responsibility, speak with them or consider letting them go and revising your hiring policy. Trust your experts. If you have doubts, ask them to strengthen control rules and reassure you with typical scenarios.
 
-That's why you should start with available resources, but have the boldness to start small in your transformation journey. Your company should gradually implement procedures (in our case, I-T system control technologies) based on available human and financial resources. Once these techniques have been tested, iterate on a larger scale.
+That's why you should start with available resources, but have the boldness to start small in your transformation journey. Your company should gradually implement procedures based on available human and financial resources. Once these techniques have been tested, iterate on a larger scale.
 
 #### The DACI model
 
@@ -1513,10 +1396,10 @@ DACI is not a means to define responsibilities for a project. Instead, it's a do
 
 A meeting based on the DACI model involves defining four roles:
 
-1. The driver: the person guiding the committee towards a decision. They ensure that everyone is well-informed about the meeting's progress and answer questions. While they ensure a decision is made, they don't necessarily influence the process. Often a program manager.
-2. The approver: the individual with the final say during decision approval. Usually, a manager or a company executive with decision-making power. Consider inviting a stakeholder or a customer for whom the project was designed to take on this role.
-3. The contributors: those with the knowledge needed to shed light on the decision-making process. These are the experts and professionals.
-4. The informed stakeholders: individuals affected by the decision without being directly involved in making it. Those who might need to revise their work following the decision, like legal, sales, or logistics teams. Limit their number: perhaps just sending them a brief email at the end of the meeting with actions to take is sufficient.
+1. The driver. It is the person guiding the committee towards a decision. They ensure that everyone is well-informed about the meeting's progress and answer questions. While they ensure a decision is made, they don't necessarily influence the process. Often a program manager.
+2. The approver. It is the individual with the final say during decision approval. Usually, a manager or a company executive with decision-making power. Consider inviting a stakeholder or a customer for whom the project was designed to take on this role.
+3. The contributors. They are those with the knowledge needed to shed light on the decision-making process. These are the experts and professionals.
+4. The informed stakeholders. They are the individuals affected by the decision without being directly involved in making it. Those who might need to revise their work following the decision, like legal, sales, or logistics teams. Limit their number: perhaps just sending them a brief email at the end of the meeting with actions to take is sufficient.
 
 Next, the goal is to collaboratively list the considered options in a few words. For each, indicate its cost, time required, and other pros or cons.
 
@@ -1524,18 +1407,7 @@ In the remaining 5 minutes, set a date for when the decision should be made (if 
 
 Once the options are consolidated, the approvers make the decision, and tasks are delegated accordingly.
 
-Example of a DACI, listing options considered for making a decision on the issue "How should we finalize our product specifications?":
-
-| Criteria                                           | Option 1: Discussion Groups / Paid Target Persona Discussion Groups                | Option 2: Online Reviews / Internal Content Expert Team                                         | Option 3: Do not finalize / Take no action to address the issue at the moment         |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Strategically reliable / high priority              | (+) Targets rooted in strategy = feedback rooted in strategy                          | (+) 2 new team members match the persona = some feedback rooted in strategy                        | (-) Risk of significant or costly mistake, (-) Risk of delays or confusion                |
-| User-centered / high priority                       | (+) Precise customer feedback                                                         | (-) Expert bias                                                                                     | (-) Navigating blindly                                                                  |
-| Cost / medium priority                              | (-) More expensive short-term, (-) Time-consuming                                     | (+) No additional cost, (+) Relatively quick to implement, (-) Takes team's time                  | (+) No additional cost, (+) Quickest option                                              |
-| Opportunity to learn more / low priority            | (+) Chance to learn more about our targets                                            | (+) Opportunity to learn from feedback of our inter-team experts                                   |                                                                                        |
-
-An example of using the DACI model to weigh pros & cons and make a decision (in this case, option 1). Translated from English. Source: atlassian.com
-
-Once your decision is made, it's time to communicate it so everyone is on the same page. Send the document to those who need to be informed and then archive it.
+Once your decision on which option to choose is made, it's time to communicate it so everyone is on the same page. Send the document to those who need to be informed and then archive it.
 
 Once archived, it will help new stakeholders understand why specific decisions were made. By conducting this collective reflection, individual cognitive biases are also avoided.
 
@@ -1543,7 +1415,7 @@ Once archived, it will help new stakeholders understand why specific decisions w
 
 You receive an alert message from customer support on Slack. They inform you that your file-sharing platform is down.
 
-This marks the beginning of the problem investigation. The most common technique is root cause analysis (RCA), inspired by quality control techniques in manufacturing. It helps understand the factors behind the incident and determine its source. The goal then is to establish procedures to prevent the incident from happening again.
+This marks the beginning of the problem investigation. The most common technique is root cause analysis, inspired by quality control techniques in manufacturing. It helps understand the factors behind the incident and determine its source. The goal then is to establish procedures to prevent the incident from happening again.
 
 In RCA, your primary goal is to restore the services. This is followed by a solution to permanently resolve the issue. Lastly, preventative action is implemented to prevent future recurrence.
 
@@ -1563,7 +1435,7 @@ Here are the 5 steps of Root Cause Analysis:
 - Resolve the issue permanently ;
 - Validate the fix and ensure the incident does not happen again.
 
-1. Identify the problem
+1. Identify the problem.
 
     Analyze the situation to ensure that it's indeed an incident and not just a harmless alert. The company should set a threshold to classify an event as an incident, such as an anomaly lasting more than 1 minute. If the event threatens the stability of your resilience indicators, treat it as an incident.
 
@@ -1573,73 +1445,45 @@ Here are the 5 steps of Root Cause Analysis:
     - Is the outage visible to customers?
     - Does the problem still affect the system even after an hour of intense investigation?
 
-    As soon as the incident starts, begin taking notes on what you observe and the actions you plan to undertake. This will be helpful for your postmortem. Next, classify the problem using the "5W2H" method (5 whats, 2 hows):
-
-    | Question       | Description                                                                                           |
-    | -------------- | ----------------------------------------------------------------------------------------------------- |
-    | Who?           | People or customers affected by the issue                                                             |
-    | What?          | Description or definition of the issue                                                                |
-    | When?          | Date and time the issue was identified                                                                |
-    | Where?         | Location of complaints (area, equipment, or affected customers)                                       |
-    | Why?           | Any prior known explanations                                                                          |
-    | How?           | How the issue arose (root cause) and how it will be addressed (corrective action)                     |
-    | How much?      | Severity and frequency of the issue                                                                   |
+    As soon as the incident starts, begin taking notes on what you observe and the actions you plan to undertake. This will be helpful for your postmortem. Next, classify the problem using the "5W2H" method (5 whats, 2 hows).
 
     On mature infrastructures, problem identification is made easier by monitoring systems. They notify about detected anomalies. For example, these anomalies can be detected by tools like Statping, which trigger an alert when a service goes down. But they can also be detected by machine learning mechanisms, revealing unusual trends. The advantage is that alerts are not just triggered when a simple threshold is breached, but when something unusual occurs.
-
-    !Example of abnormal latency detected by DataDog. Source: datadoghq.com/solutions/machine-learning
 
     Tools like OpenRCA, OpenStack Vitrage, and Datadog can help identify the root cause of a problem by highlighting anomalies within your infrastructure.
 
     At this stage, you only recognize the symptoms of the problem, not its severity.
 
-2. Contain and analyze the problem
+2. Contain and analyze the problem.
 
     Always start by resolving the problem. Restore service as soon as possible to prevent further escalation, even if the solution is temporary or not deemed "clean."
 
     The trust your users place in your service is linked to your responsiveness during incidents. Users don't expect 100% uptime but do expect clear communication during outages. Transparency is vital.
 
-    A service status page is an excellent way to inform your users about an incident's progress (fig. <spanc/>\ref{fig:2023atlassianstatuspage}). You can also notify about upcoming maintenance.
-
-    !Example of Atlassian's status page with an incident, service status, and maintenance forecast. Source: atlassian.com/software/statuspage/feature.\label{fig:2023atlassianstatuspage}
+    A service status page is an excellent way to inform your users about an incident's progress. You can also notify about upcoming maintenance.
 
     With each update on the incident's status, communicate:
 
     - The current situation and the measured impact ;
-    - What's known about the problem/what has changed ;
+    - What's known about the problem and what has changed ;
     - Ongoing affected services.
 
-    To analyze the issue in more detail and locate the source of the malfunction, use your observability tools (activity logs, metrics).
-
-    > The Beats suite from Elastic is an example of a tool that monitors infrastructure. We will explore these technologies further in the chapter "Measure Everything".
+    To analyze the issue in more detail and locate the source of the malfunction, use your observability tools.
 
     At this stage, you must find an immediate action. For instance, a manufacturer could decide to re-inspect ready-to-ship parts, rework them, or issue a recall. For software, the idea is to find a way to restore service, often by pushing a quick fix (known as a "hotfix").
 
     Your SRE team must ensure deployed fixes work. They can do this by running pilot tests prepared in advance.
 
-3. Determine the cause of the problem
+3. Determine the cause of the problem.
 
     With the incident's impact now managed, it's time to investigate the root cause.
 
-    As a team, list likely factors contributing to the problem. Structure your hypotheses using a cause and effect diagram (or Ishikawa diagram, fig. <spanc/>\ref{fig:2023ishikawadiagramme}).
-
-    !Ishikawa diagram for a defective part.\label{fig:2023ishikawadiagramme}
+    As a team, list likely factors contributing to the problem. Structure your hypotheses using a cause and effect diagram.
 
     Choose by majority vote the causes that seem most likely to reoccur. According to Pareto's principle, 80% of effects come from 20% of the problems. You now have a focus for your investigation.
 
     Use the "5 Whys" method. The idea is to identify cascading symptoms until the root cause of a problem is found. "5" is an arbitrary number; it can be less or more, depending on the situation.
 
-    Here's an example for the identified problem "Our software crashes frequently":
-
-    | Question | Answer                                                                                                  |
-    | -------- | ------------------------------------------------------------------------------------------------------- |
-    | Why?     | Because memory usage increases over time                                                                |
-    | Why?     | Because there's a memory leak in the code                                                               |
-    | Why?     | Because developers didn't properly free memory after allocating it                                       |
-    | Why?     | Because they weren't aware that their program could have a memory leak                                   |
-    | Why?     | Because there was no continuous integration chain checking for it                                        |
-
-4. Address the problem in a sustainable manner
+4. Address the problem in a sustainable manner.
 
     After identifying the root cause of the issue, it's time to design a solution to address it.
 
@@ -1649,27 +1493,27 @@ Here are the 5 steps of Root Cause Analysis:
 
     Determine how the solution's effectiveness will be measured, such as through telephone surveys, online polls, automated feedback, manual measurements, etc. Set a timeframe for monitoring the action, then implement the fix.
 
-5. Validate the fix and ensure the incident doesn't recur
+5. Validate the fix and ensure the incident doesn't recur.
 
     Using the measures set in step 4, ensure that the actions taken have had the desired effect.
 
     The incident is now resolved and the cause understood. Now is the time to inform your users on the status page: "Root cause analysis complete, incident resolved, incident documented."
 
-    All that remains is to draft your post-mortem, noting what measures you've put in place to prevent a recurrence (see chapter "Postmortems"). Use the notes from previous steps to structure this document.
+    All that remains is to draft your post-mortem, noting what measures you've put in place to prevent a recurrence. Use the notes from previous steps to structure this document.
 
     Publish and share this document internally or publicly. This keeps customers informed and satisfied, and recognizes the hard work of the operations teams.
 
-Just as airplane pilots train for emergency scenarios, your SRE teams should practice to save time when an incident occurs (refer to the chapter "Assessing security and training").
+Just as airplane pilots train for emergency scenarios, your SRE teams should practice to save time when an incident occurs.
 
 Your incident response procedure should be easily accessible and written for all audiences. It should provide guidance not just for SRE teams but also for non-SREs who might encounter an incident. Regardless of your organization's size, you need an incident response procedure.
 
 ### Postmortems
 
-A postmortem is an incident investigation technique. Its purpose is to determine corrective actions to prevent recurrences. Your SRE team should draft this document based on information gathered during the root cause analysis (see chapter "Investigating Incidents").
+A postmortem is an incident investigation technique. Its purpose is to determine corrective actions to prevent recurrences. Your SRE team should draft this document based on information gathered during the root cause analysis.
 
-In the military and aerospace fields, the AAR (After Action Review) or debrief is systematically practiced following an event to learn from it. The postmortem, on the other hand, is only initiated when an incident or failure has occurred. That is what distinguishes them.
+In the military and aerospace fields, the After Action Review (abbreviated AAA) or "debrief" is systematically practiced following an event to learn from it. The postmortem, on the other hand, is only initiated when an incident or failure has occurred. That is what distinguishes them.
 
-It's recommended to store these documents in a git project to track changes over time (refer to the chapter "GitOps"). My personal recommendation is to draft them in Markdown format.
+It's recommended to store these documents in a git project to track changes over time. My personal recommendation is to draft them in Markdown format.
 
 Historically, the Latin term "post mortem" means "after death" and refers to investigations carried out by law enforcement to understand how a crime occurred. They analyze evidence, identify the cause of death (e.g., through an autopsy), then attempt to apprehend the perpetrator or amend the law to prevent future occurrences. The concept is similar for I-T incidents.
 
@@ -1677,62 +1521,37 @@ Historically, the Latin term "post mortem" means "after death" and refers to inv
 
 The structure recommended by Google serves as a good example. The document consists of two parts: one that describes what happened and another that details the steps to be taken following the incident.
 
-Create a new Markdown document and name it in the following way:
+Create a new Markdown document and prefix its name by the date, a short title and the duration of the event.
 
-- Format: `yyyymmddpostmortemsummary-incidentduration.md`
-- Example: `20230604postmortemfile-sharing-outage00d00h38m.md`
-
-For the first part, set the following headings:
+For the first part, set the following 14 headings:
 
 - Title
-  - Ex: "File Sharing Platform Unavailable for 2 days on June 4, 2023".
 - Alert Date
-  - Ex: "07/04/2023 16:55 UTC".
 - Incident Start Date
-  - Ex: "07/04/2023 16:48 UTC" ;
-  - May be unknown due to lack of information.
 - Incident End Date
-  - Ex: "07/04/2023 17:26 UTC".
 - Incident Duration
-  - Ex: "00d00h38m - 07/04/2023 16:48 UTC - 07/04/2023 17:26 UTC" ;
-  - Use the alert date if the incident's start is undefined.
 - Authors
-  - Ex: "Elise DUPONT (@edupont) - Antoine MARTIN (@amartin)" ;
-  - Postmortem authors. Ideally, include software forge username.
 - Status
-  - Possible values: in writing, under review, reviewed, published internally, published publicly.
 - Summary
-  - Summarize the incident, its duration, and its cause in no more than five sentences.
 - Impact
-  - Which users/clients were affected? To what extent? On which network (intranet or Internet)? Were there data losses, latency, an outage? Also, include revenue impact if relevant.
 - Detection
-  - How was the incident detected? (observability tools, service status page, customer call, company colleague, online news?)
-- Problem Source(s)
-  - This is where you include elements from your root cause analysis detailing how the issue occurred. Add the time for each step of the investigation. Include screenshots as evidence and to better understand the situation.
-  - Reminder: mistakes are never solely one person's fault but arise from poorly defined procedures or poorly designed infrastructures (see chapter "Embracing failure").
+- Problem Sources
 - Triggering Event
-  - Describe the action that led to the incident ;
-  - Ex: "An administrator mistakenly ran a command that deleted a critical file".
 - Resolution
-  - List immediate actions taken for short-term problem mitigation. Then list long-term actions addressing the problem's root cause.
 - Lessons Learned
-  - Describe what went well and what didn't.
-    - Was the incident detected quickly or did it take a while for someone to notice? Was the team well-coordinated, or were there communication issues? Were procedures clear, or were engineers uncertain where to seek help?
-  - Describe where we got lucky / surprises.
-    - Sometimes, the incident doesn't turn out as bad as anticipated. And something might go right unexpectedly. Highlight it to establish new measures to not rely on "luck" in the future.
 
 The second part describes what your team might do differently next time. As a conclusion to your postmortem, it lists actions to prevent recurrence of the issues. Focus not only on bug fixes but also include necessary procedure changes to mitigate similar future incidents.
 
 Define a table with four columns and as many rows as desired:
 
 - The person responsible for the action ;
-- The action(s) to be taken ;
+- The actions to be taken ;
 - The priority of this action ;
 - The issue or associated ticket.
 
 As your team or projects grow, a more formal structure for your postmortems might be needed. The postmortem model proposed by Atlassian is a good example.
 
-For minor incidents or daily bugs, use a Q&A service like Scoold or question2answer. This can address technical problems (e.g., "How to resolve a dependency conflict") or more general queries (e.g., Q: "I can't connect to service X". A: "Did you try registering at this URL?").
+For minor incidents or daily bugs, use a Q&A service like Scoold or question2answer. This can address technical problems (e.g., "How to resolve a dependency conflict") or more general queries (e.g., question: "I can't connect to service X" with answer "Did you try registering at this URL?").
 
 With such software, your SREs will have a list of problems that are easily solvable in the future. A private alternative to StackOverflow, it also allows your developers to ask questions to other company colleagues confidentially.
 
@@ -1740,7 +1559,7 @@ With such software, your SREs will have a list of problems that are easily solva
 
 As discussed in the chapter "Investigating incidents", publicly sharing one's work allows it to be recognized by the community. This practice also enhances retention by enabling collaborators to build their reputation.
 
-Video creator Bastien MARÉCAUX (known by the pseudonym Basti UI) introduced the concept of "teletralive", a blend of "telework" and "live streaming". He broadcasts live work sessions on the Twitch platform, with permission from his clients. This underscores the significance of publicizing one's work—a trend that might gain traction in the future.
+Video creator Bastien MARÉCAUX (known as "Basti UI") introduced the concept of "teletra-live", a blend of "telework" and "live streaming". He broadcasts live work sessions on the Twitch platform, with permission from his clients. This highlights the significance of publicizing one's work. This is a trend that might gain traction in the future.
 
 Beyond personal perception, showcasing one's work to an informed audience motivates the individual behind the published name to deliver quality work. Initially, it might just involve sharing internally with company colleagues. A mere notification about the postmortem in the company's messaging platform could suffice.
 
@@ -1754,7 +1573,7 @@ A public postmortem is typically less detailed than an internal one. The former 
 
 ### Organizing Incident Response
 
-For significant incidents, effective organization is crucial. A productive technique is the 3 Commanders system (3 Commanders or 3Cs). Initially theorized in 1968 by firefighters as the Incident Command System (ICS), it was later adapted for I-T incidents. Today, it's employed by Google's SRE teams.
+For significant incidents, effective organization is crucial. A productive technique is the 3 Commanders system (abbreviated 3Cs). Initially theorized in 1968 by firefighters as the Incident Command System, it was later adapted for I-T incidents. Today, it's employed by Google's SRE teams.
 
 When a major incident occurs, the immediate challenges are task coordination, incident resolution, and communication—all simultaneously. Imagine driving while navigating using a map.
 
@@ -1762,23 +1581,13 @@ Ouch! The server handling employee authentication for the intranet just crashed.
 
 To manage, designate 3 individuals for the following roles:
 
-1. Incident Commander (IC)
-   - Coordinates tasks and delegates roles, including designating the OL and CL ;
-   - Initially, the IC is the one discovering the incident. If someone more experienced arrives, the role can be passed on, allowing the initial IC to return to work or become the new CL ;
-   - If needed, the IC calls for backup and instructs the rest of the team on continuity.
-2. Communications Lead (CL)
-   - Manages the status page and informs employees, customers, and management about the incident's progress ;
-   - Creates a dedicated internal communication channel for the incident and invites stakeholders ;
-   - Acts as the interface between the incident management team and external parties ;
-   - Shields the OL from external interruptions.
-3. Operations Lead (OL)
-   - Resolves the issue and drafts notes for the postmortem ;
-   - Refers to the IC when needing additional help ;
-   - Updates the CL on the incident's progress.
+1. Incident Commander (IC). He coordinates tasks and delegates roles, including designating the OL and CL. Initially, the IC is the one discovering the incident. If someone more experienced arrives, the role can be passed on, allowing the initial IC to return to work or become the new CL. If needed, the IC calls for backup and instructs the rest of the team on continuity.
+2. Communications Lead (CL). He manages the status page and informs employees, customers, and management about the incident's progress. He also creates a dedicated internal communication channel for the incident and invites stakeholders, acts as the interface between the incident management team and external parties and shields the OL from external interruptions.
+3. Operations Lead (OL). He resolves the issue and drafts notes for the postmortem, refers to the IC when needing additional help and updates the CL on the incident's progress.
 
 In smaller teams, the IC often assumes all three roles. However, preparation for delegating these tasks during severe incidents is essential.
 
-Defining and organizing roles should be a part of your incident response procedure. Ensure clarity in your knowledge base so teams know how to act. Regularly train your teams for potential incidents (see chapter "Assessing security and training"). Setting a low alert threshold can help expose teams to your incident response procedures more frequently.
+Defining and organizing roles should be a part of your incident response procedure. Ensure clarity in your knowledge base so teams know how to act. Regularly train your teams for potential incidents. Setting a low alert threshold can help expose teams to your incident response procedures more frequently.
 
 ### The importance of communication
 
@@ -1797,83 +1606,51 @@ In this chapter, we will explore two techniques to proactively anticipate potent
 - The premortem answers the question: "What elements could cause this architecture/approach to fail?" ;
 - The cause-and-effect analysis answers the question: "What incidents could arise from this architecture/approach?".
 
-If multiple approaches are being considered, start with a DACI (refer to the chapter "The DACI Model"). Once a decision has been made, the team should have an intuition about which approach to pursue: this is the moment to test it with a premortem.
+If multiple approaches are being considered, start with a DACI. Once a decision has been made, the team should have an intuition about which approach to pursue: this is the moment to test it with a premortem.
 
-The cause-and-effect analysis (FMEA) focuses on technical considerations, taking place after the decision regarding which approach to use has been made.
+The cause-and-effect analysis (or FMEA) focuses on technical considerations taking place after the decision regarding which approach to use has been made.
 
 #### Premortems
 
 Before the start of a project, project managers and engineers should gather to list out potential reasons for its failure.
 
-The premortem is also known as the "study of nonconforming cases". The military strategist Sun TZU already advocated in the year five before Christ for planning as many possible war scenarios as possible (or "nonconforming cases") before a battle, in his writing The Art of War..
+The premortem is also known as the "study of nonconforming cases". The military strategist Sun Tzu already advocated in the year five before Christ for planning as many possible war scenarios as possible (or "nonconforming cases") before a battle, in his writing "The Art of War".
 
 The premortem is a project management methodology that involves imagining that the project has failed even before it has started. The result is a document listing the incidents the team needs to prepare for to ensure project success.
 
 For example: "Our team currently manages its infrastructure using traditional methods. We want to establish a plan to work in a DevOps mode."
 
 1. Organize a meeting with stakeholders. Ask them to imagine a year ahead and that the transformation plan failed.
-2. Create a collaborative document (e.g., Google Docs) with the following headings:
-    - Potential Failure Factors ;
-    - Solutions ;
-    - Most Dangerous Factors ;
-    - Action Plan.
-3. Potential Failure Factors
-    - Reasons that might lead to project failure ;
-    - E.g., lack of support from management, difficulty integrating DevOps practices with existing processes and systems, insufficient team training or expertise in Cloud technologies, resistance to change from certain members...
-4. Solutions
-    - For each failure factor, brainstorm solutions that could be implemented now to reduce the project's risk of failure ;
-    - E.g., conduct awareness presentations, start with a proof of concept for a specific use case, prepare a training plan, identify early adopters...
-5. Most Dangerous Factors
-    - List out the riskiest factors that the team can still influence.
-6. Action Plan
-    - List solutions to the most dangerous factors and turn them into an action plan. Each solution becomes a task assigned to a member with a deadline.
+2. Create a collaborative document (e.g., with Google Docs) with the following headings. Include potential Failure Factors, Solutions, Most Dangerous Factors and an Action Plan.
+3. Potential Failure Factors. Include reasons that might lead to project failure (e.g., lack of support from management, difficulty integrating DevOps practices with existing processes and systems, insufficient team training or expertise in Cloud technologies, resistance to change from certain members...).
+4. Solutions. For each failure factor, brainstorm solutions that could be implemented now to reduce the project's risk of failure (e.g., conduct awareness presentations, start with a proof of concept for a specific use case, prepare a training plan, identify early adopters...).
+5. Most Dangerous Factors. List out the riskiest factors that the team can still influence.
+6. Action Plan. List solutions to the most dangerous factors and turn them into an action plan. Each solution becomes a task assigned to a member with a deadline.
 
 Here's a more technical example: "Our team deploys its software using Docker Compose. They now want to deploy using Kubernetes."
 
 1. Organize a meeting with stakeholders. Ask them to imagine a few months ahead and that Kubernetes ends up requiring a lot of effort without offering significant benefits.
-2. Set up the collaborative document
-3. Note down the potential failure factors
-    - E.g., team's insufficient knowledge or expertise in Kubernetes, online documentation not sufficient for our use cases, complexity of integration into our development environment, security vulnerabilities due to maintenance complexity, increased HR costs during the transition...
-4. List the solutions
-    - E.g., prepare a training plan, invest in cloud-specialized consultants, set up an automatic cluster update service, hire an intern to create the initial cluster version...
-5. Identify the most dangerous factors
-    - E.g., team's insufficient knowledge of Kubernetes, security vulnerabilities due to maintenance complexity.
-6. Create your action plan
-    - E.g., prepare a training plan (to present in 1 week), contract with Company X for specialized cloud support (to finalize within 15 days).
+2. Set up the collaborative document.
+3. Note down the potential failure factors (e.g., team's insufficient knowledge or expertise in Kubernetes, online documentation not sufficient for our use cases, complexity of integration into our development environment, security vulnerabilities due to maintenance complexity, increased HR costs during the transition...).
+4. List the solutions (e.g., prepare a training plan, invest in cloud-specialized consultants, set up an automatic cluster update service, hire an intern to create the initial cluster version...).
+5. Identify the most dangerous factors (e.g., team's insufficient knowledge of Kubernetes, security vulnerabilities due to maintenance complexity).
+6. Create your action plan (e.g., prepare a training plan, contract with Company X for specialized cloud support).
 
 #### Cause and effect analysis
 
-While the RCA is a "reactive" method employed after an issue has occurred, the failure modes and effects analysis (FMEA) is a "proactive" method to attempt to anticipate failures before they occur. Introduced by the U.S. military in 1949 and later adopted by the automotive industry, it lists out product or software error states, prioritized by risk. Based on the potential consequences of a risk, design teams prioritize the development of mechanisms to prevent its occurrence.
+While the RCA is a "reactive" method employed after an issue has occurred, the failure modes and effects analysis (abbreviated FMEA) is a "proactive" method to attempt to anticipate failures before they occur. Introduced by the U.S. military in 1949 and later adopted by the automotive industry, it lists out product or software error states, prioritized by risk. Based on the potential consequences of a risk, design teams prioritize the development of mechanisms to prevent its occurrence.
 
-In FMEA, one can visually represent a cause that might lead to an error situation (fig. <spanc/>\ref{fig:2023fmeasimple}).
-
-!Illustration of the cause-and-effect relationship principle.\label{fig:2023fmeasimple}
-
-A chain of causes and effects can be established to better visualize the consequences of a problem. For instance, consider the figure <spanc/>\ref{fig:2023fmeaprinterjam} depicting a malfunction scenario for an office printer.
-
-!Diagram of a cause-and-effect analysis (FMEA) for printer malfunction issues.\label{fig:2023fmeaprinterjam}
+In FMEA, one can visually represent a cause that might lead to an error situation. A chain of causes and effects can be established to better visualize the consequences of a problem.
 
 You can do the same with malfunction scenarios of software or infrastructure. Set up a table with 7 columns. For each hypothesized incident, the author should determine:
 
-- Error Situation
-  - E.g., "The software update failed on one of the servers".
-- The effects
-  - E.g., "Client requests reaching this server will fail. This represents 20% of our requests due to our load-balancing architecture".
-- Probability
-  - Rate from 1 to 10 the likelihood of the event happening ;
-  - E.g., "3".
-- Severity
-  - Rate from 1 to 10 the severity of the problem should the event occur.
-  - E.g., "7"
-- Detection Difficulty
-  - Rate from 1 to 10 the likelihood that the event won't be detected.
-  - E.g., "1".
-- Risk Level
-  - Product of probability, severity, and detection difficulty ;
-  - E.g., "(3\*7\*1) = 21".
-- Countermeasures
-  - Describe how to respond should the event happen ;
-  - E.g., "Configure the load-balancer to exclude the server where the update failed. Roll back the software version. Restore the load-balancer to its initial configuration."
+- Error Situation (e.g., "The software update failed on one of the servers")
+- The effects (e.g., "Client requests reaching this server will fail. This represents 20% of our requests due to our load-balancing architecture")
+- Probability. Rate from 1 to 10 the likelihood of the event happening.
+- Severity. Rate from 1 to 10 the severity of the problem should the event occur.
+- Detection Difficulty. Rate from 1 to 10 the likelihood that the event won't be detected.
+- Risk Level. Product of probability, severity, and detection difficulty.
+- Countermeasures. Describe how to respond should the event happen (e.g., "Configure the load-balancer to exclude the server where the update failed. Roll back the software version. Restore the load-balancer to its initial configuration")
 
 From this table, prioritize tasks for your teams to work on anticipating the most critical situations.
 
@@ -1895,12 +1672,12 @@ For instance, Windows 10 (released in 2015) is merely an evolution of Windows NT
 
 Here are some parallels concerning the Cloud:
 
-- A container is just a more flexible tiny VM. It is managed with different commands, the nomenclature is different, but the concepts remain the same: an OS (image) from which the container is created, a configurable network, and the ability to add storage ;
+- A container is just a more flexible tiny VM. It is managed with different commands, the nomenclature is different, but the concepts remain the same: an OS from which the container is created, a configurable network, and the ability to add storage ;
 - An orchestrator is just a hypervisor managed with different commands. But its components remain the same: configurable network policies between containers/VMs, storage management with VMWare's datastores in place of Kubernetes' PersistentVolumes, or VMWare's NSX Controller in place of Kubernetes' Ingress Controller ;
-- However, there are specific evolutions that one must simply accept (as with mathematical theorems). For instance, the use of good practices mentioned in the chapters "A Foundation for Your Resilience" and "12-Factor methodology": favoring stateless services, using only micro-services, exposing one's activity logs differently... ;
+- However, there are specific evolutions that one must simply accept. For instance, the use of good practices mentioned in the chapters "A Foundation for Your Resilience" and "12-Factor methodology": favoring stateless services, using only micro-services, exposing one's activity logs differently... ;
 - Micro-services are merely a division of traditional software into multiple independent blocks. Each block can be scaled according to user load.
 
-Traditional VMs also have their place in a Cloud DevOps infrastructure; they can be part of it (see chapter "Abandoning VMs?").
+Traditional VMs also have their place in a Cloud DevOps infrastructure; they can be part of it.
 
 Along with these technological evolutions come methodologies to manage technical debt, accelerate deployments, and maintain a high level of resilience: a software forge, gitops, continuous integration, continuous deployment, postmortems... That's DevOps.
 
@@ -1924,23 +1701,23 @@ Human error is the primary cause of mistakes. That's why automation is a fundame
 
 If you currently feel friction in your production cycle, you likely need to invest time in automation. In mature companies, teams dedicated to developing automation tools for development teams exist. Their mission is to listen to developers to enhance their development experience. For example, they might develop internal tools that analyze added code to suggest readability or security improvements. At Google, an internal platform handles this kind of suggestion: if the code doesn't conform, a click is enough to reformat it. If a library is considered vulnerable, an alternative is suggested.
 
-These tools generally speed up the development process and expedite code reviews to get the software into production as quickly as possible. These methods are especially effective when you regularly onboard new staff unfamiliar with your development practices. Inexperienced newcomers, without explicit and restrictive rules (like CI/CD pipelines), can quickly impact the quality of your codebase. A slight oversight, and a bug can quickly emerge.
+These tools generally speed up the development process and expedite code reviews to get the software into production as quickly as possible. These methods are especially effective when you regularly onboard new staff unfamiliar with your development practices. Inexperienced newcomers, without explicit and restrictive rules (such as CI/CD pipelines), can quickly impact the quality of your codebase. A slight oversight, and a bug can quickly emerge.
 
-Deployment techniques like blue/green also reduce the risk of software regressions (see chapter "Continuous deployment").
+Deployment techniques like blue/green also reduce the risk of software regressions.
 
 ### Design Thinking
 
-Companies with a strong SRE/DevOps culture encourage innovations put forward by their team members. Thanks to techniques discussed in the previous chapter (CI, CD, blue/green, premortems, FMEA), it's fortunately possible to control the risks brought by these innovations.
+Companies with a strong SRE/DevOps culture encourage innovations put forward by their team members. Thanks to techniques discussed in the previous chapter (CI/CD, blue/green, premortems, FMEA), it's fortunately possible to control the risks brought by these innovations.
 
 To keep your employees motivated to achieve great things, it's crucial to avoid limiting their creativity or ideas. That's why design thinking and the creation of prototypes are key techniques for an efficient organization.
 
 Design thinking is an innovation technique that merges creativity and method to try to solve complex problems. It comprises 5 phases:
 
-1. Empathize: Start by meeting the end-user and immerse yourself in their environment to understand their challenges. This helps to set aside any preconceptions and gain an authentic perspective ;
-2. Define the Problem: Clearly outline the problem you're trying to solve. Express it from the user's viewpoint, rather than describing what you'd like to achieve ;
-3. Ideate: Now that the problem is identified, you can start brainstorming solutions ;
-4. Prototype: Bring your idea to life with a prototype. Spot the weak points and find solutions, or move to another idea if the one you're testing isn't viable (refer to chapter "Premortems") ;
-5. Test: Evaluate your prototype in an environment that mirrors your target user's setting (refer to chapter "Continuous Deployment").
+1. Empathize. Start by meeting the end-user and immerse yourself in their environment to understand their challenges. This helps to set aside any preconceptions and gain an authentic perspective ;
+2. Define the Problem. Clearly outline the problem you're trying to solve. Express it from the user's viewpoint, rather than describing what you'd like to achieve ;
+3. Ideate. Now that the problem is identified, you can start brainstorming solutions ;
+4. Prototype. Bring your idea to life with a prototype. Spot the weak points and find solutions, or move to another idea if the one you're testing isn't viable ;
+5. Test. Evaluate your prototype in an environment that mirrors your target user's setting.
 
 In summary, you need to put yourself in the user's shoes, and techniques like continuous deployment help streamline this process. When faced with reality, innovation isn't stifled by the organization.
 
@@ -1962,29 +1739,27 @@ For instance, at Google, interns start with a full week dedicated to training. T
 
 The United States Air Force has, since 2019, invested heavily in self-learning solutions. In a podcast, its former Chief Software Officer, Nicolas CHAILLAN, explains how he deployed this system for over 100,000 developers. A web platform was launched with educational content specially selected or created by his teams. He added that an hour a day was allotted to employees to "catch up and stay updated on the latest technologies."
 
-"It (training) is an investment for the company and for themselves. People who don't want to learn by themselves don't have much chance of succeeding in I-T. Anyway, the industry moves so fast they don't have a choice." - Nicolas CHAILLAN
+Nicolas CHAILLAN says : "Training is an investment for the company and for themselves. People who don't want to learn by themselves don't have much chance of succeeding in I-T. Anyway, the industry moves so fast they don't have a choice."
 
 Following the USAF's footsteps, one successful approach I witnessed in one of my previous experiences was: we managed to get one day of remote work per week. It wasn't easy to get approval from our managers, but they finally granted it after understanding its benefits. This day was dedicated to our continuous training as AI, data, and DevOps experts. But we were equipped, and our progress was measurable: almost unlimited access to a Cloud service and an e-learning platform. The latter allowed our management to see statistics on our training time and completed courses. The cost of these services was negligible compared to the knowledge they imparted.
 
-If you already have technical teams, allow them to experiment and practice. From what I've observed, the most effective (hence profitable) approach for the organization is: invest time in training your staff. For instance, provide them access to machines or cloud hosting services to experiment with the latest innovations from the private sector or open-source projects. Your teams will be thrilled to have access to these services, while the management will be assured of receiving the best advice from updated employees.
+If you already have technical teams, allow them to experiment and practice. From what I've observed, the most effective approach for an organization is investing time in training its staff. For instance, provide them access to machines or cloud hosting services to experiment with the latest innovations from the private sector or open-source projects. Your teams will be thrilled to have access to these services, while the management will be assured of receiving the best advice from updated employees.
 
 It might be tempting to think that training staff in innovative technology - making them attractive to competitors - might encourage them to switch companies. Firstly, leaving just because of acquiring a new skill indicates limited prospects within their current company, reflecting already demotivated, thus less productive, personnel. Secondly, research suggests that staff training in their free time tend to look for other jobs more often. The opposite is true when the company provides the training.
 
 In any case, present your transformation as a career growth opportunity. And be honest with those who need to upscale: yes, it will require personal effort and time. But developing these new skills is worth it.
 
-\newpage
-
 ## Leveraging automation
 
 In increasingly complex information systems, it is essential to automate recurring tasks. Humans are the primary source of errors within an information system. Any seasoned engineer will confirm this. That's why Google teams try to minimize operator interactions when managing their systems.
 
-« If a human operator needs to touch your system during normal operations, you have a bug. The definition of normal changes as your systems grow. » - Carla GEISSER, SRE at Google
+Carla GEISSER, SRE at Google says : « If a human operator needs to touch your system during normal operations, you have a bug. The definition of normal changes as your systems grow. »
 
 If you want to make your I-T system an integral tool within your company, you must first automate repetitive and time-consuming actions: manual tasks (or toil).
 
 This notion of toil describes all manual, repetitive, and automatable tasks. Essentially, these are all the intellectually uninteresting tasks that a robot would be far better suited to do than your brilliant engineers.
 
-Google's SRE teams aim to keep operational work (manual admin tasks) below 50% of the time for each SRE. At least 50% of each SRE's time should be devoted to engineering projects that will reduce the future amount of manual tasks or add functionalities to the infrastructure.
+Google's SRE teams aim to keep operational work below 50% of the time for each SRE. At least 50% of each SRE's time should be devoted to engineering projects that will reduce the future amount of manual tasks or add functionalities to the infrastructure.
 
 This process can begin with small things within your existing infrastructure. In this chapter, we'll categorize them based on organizational maturity levels. It's up to you to determine which level of automation is most suitable for your organization, based on the technological acculturation of your engineering teams and the time you want to allocate to implementing these technologies.
 
@@ -1997,7 +1772,7 @@ This popular term is easy to understand: it encompasses practices and technologi
 Here are some configuration examples:
 
 - Setting the new time server for all your machines ;
-- Updating software in production (see: chapter continuous deployment) ;
+- Updating software in production;
 - Updating the wallpaper of all your machines ;
 - Adding a new domain name.
 
@@ -2005,24 +1780,20 @@ Of course, when I mention "all your machines", IaC scripts allow you to specify 
 
 This practice offers several benefits:
 
-- Documentation: IaC scripts are written in programming languages or using standardized configuration files. The engineer reviewing the project can directly see how the configuration works and how to use or modify it.
-- Reliability: IaC scripts can be executed by machines or humans, depending on the desired environment (development, staging, production) following algorithmic rules. There's nothing more reliable than code executed by a machine over a human. It's also possible to implement security checks depending on who runs these scripts.
-- Replayability: every IaC script should be idempotent, meaning running the same script one or more times should produce the same effect on the infrastructure. This makes it faster to develop and modify compared to traditional scripts.
-- Versioning: IaC scripts - like any other algorithm - can be versioned. This allows tracking their changes and being peer-reviewed by all technical teams over time.
+- Documentation. IaC scripts are written in programming languages or using standardized configuration files. The engineer reviewing the project can directly see how the configuration works and how to use or modify it.
+- Reliability. IaC scripts can be executed by machines or humans, depending on the desired environment following algorithmic rules. There's nothing more reliable than code executed by a machine over a human. It's also possible to implement security checks depending on who runs these scripts.
+- Replayability. every IaC script should be idempotent, meaning running the same script one or more times should produce the same effect on the infrastructure. This makes it faster to develop and modify compared to traditional scripts.
+- Versioning. IaC scripts - like any other algorithm - can be versioned. This allows tracking their changes and being peer-reviewed by all technical teams over time.
 
 Common technologies for these tasks include: Ansible, Terraform, Puppet, and SaltStack.
 
-Each has its pros, cons, and community. Some complement each other. The key is to adopt a standardized format (not necessarily using only one technology) so your SRE teams can navigate it. A newcomer will greatly benefit from these practices, and your most seasoned engineers can incrementally improve these algorithms.
+Each has its pros, cons, and community. Some complement each other. The key is to adopt a standardized format so your SRE teams can navigate it. A newcomer will greatly benefit from these practices, and your most seasoned engineers can incrementally improve these algorithms.
 
-You can start by automating your infrastructures with basic scripts (bash, Powershell) and then move on to more advanced technologies like Ansible that will standardize your configurations.
+You can start by automating your infrastructures with basic scripts (e.g., bash, Powershell) and then move on to more advanced technologies like Ansible that will standardize your configurations.
 
-Refer to the GitHub project "ToDevOps" to see this technology in action.
+For supervising and automating these admin tasks, advanced tools like Ansible AWX, Ansible Tower or Palantir Apollo might be worth considering, depending on your organization's maturity level.
 
-For supervising and automating these admin tasks, advanced tools like Ansible AWX, Ansible Tower (fig. <spanc/>\ref{fig:2020ansibletowerinterface}), RedHat Satellite, Alcali, Uyuni, or Palantir Apollo might be worth considering, depending on your organization's maturity level.
-
-!Interface displaying Ansible tasks launched in Ansible Tower. Extracted from the article by Stuart CUNLIFFE[ on IBM's blog.\label{fig:2020ansibletowerinterface}](./images/2020ansibletowerinterface.png)
-
-Remember that maintaining infrastructure is complex, so keep it simple! Don't rush to adopt the latest technology just because it's "sexy": the more technologies and abstraction layers you add, the larger and more experienced your team needs to be to maintain and fix it (see chapter "Too big, too soon").
+Remember that maintaining infrastructure is complex, so keep it simple! Don't rush to adopt the latest technology just because it's "sexy": the more technologies and abstraction layers you add, the larger and more experienced your team needs to be to maintain and fix it.
 
 ### Test-driven development
 
@@ -2030,42 +1801,39 @@ Test-driven development (or TDD for short) is a software development practice th
 
 The idea is to write tests before developing the actual functionality. The TDD development cycle is as follows:
 
-1. Add a test: Introducing a new feature begins with writing a test that passes if and only if the feature's specifications are met.
-    - My personal recommendation: Write at least one passing test and one test that is supposed to fail. This helps understand the bounds of the use-case a test should cover.
-2. Run all software tests: Your new test should fail at this point, since the responding function hasn’t been written yet.
+1. Add a test. Introducing a new feature begins with writing a test that passes if and only if the feature's specifications are met. By the way, my personal recommendation is to write at least one passing test and one test that is supposed to fail. This helps understand the bounds of the use-case a test should cover.
+2. Run all software tests. Your new test should fail at this point, since the responding function hasn’t been written yet.
 3. Develop an initial version of the function: Whether crude or hard-coded, the goal is to have a function that meets the test as simply as possible. It will be refined in step 5.
-4. Run all software tests: Every test, including yours, should pass at this point.
-5. Refactor the code if needed, using tests after each change to ensure the functionality remains intact: Now that you’re confident the initial code (from step 3) meets the requirements, you can enhance it (e.g., breaking up the function, removing duplicated code, improving naming conventions).
+4. Run all software tests. Every test, including yours, should pass at this point.
+5. Refactor the code if needed. Use tests after each change to ensure the functionality remains intact. Now that you’re confident the initial code meets the requirements, you can enhance it by breaking up functions, removing duplicated code or improving naming conventions.
 
-This approach is common in tech companies, especially within giants like GAFA (Google, Apple, Facebook, Amazon). They rely on it to manage their technical debt, despite having thousands of developers contributing in parallel to their software daily. Most of the time, software is developed with few or no tests. It can be challenging to justify to non-technical superiors the time spent on test development instead of focusing on new features. While working with TDD might impact productivity, it significantly enhances code quality.
+This approach is common in tech companies, especially within giants like Google, Apple, Meta or Amazon. They rely on it to manage their technical debt, despite having thousands of developers contributing in parallel to their software daily. Most of the time, software is developed with few or no tests. It can be challenging to justify to non-technical superiors the time spent on test development instead of focusing on new features. While working with TDD might impact productivity, it significantly enhances code quality.
 
 For legacy software, it's advisable to at least adopt the TLD (test-last development) approach, which means developing tests after the functionality has been created. Then, progressively transition to TDD to improve code quality and reduce complexity. For new projects, prioritize TDD.
 
-In all scenarios, the goal is to test your code to prevent unpleasant surprises in production. According to Atlassian, it's recommended to have 80% of your code covered by tests (referred to as code coverage).
+In all scenarios, the goal is to test your code to prevent unpleasant surprises in production. According to Atlassian, it's recommended to have 80% of your code covered by tests (known as "code coverage").
 
-TDD is recommended in certain scenarios but not all. For instance, if you operate in a regulated industry—like banking or healthcare—it’s imperative to test your code. Software malfunctions can impact your organization's legal liability. If your software is designed for long-term use and maintenance—as in defense—TDD is advised. However, if you're a start-up in the proof-of-concept phase, software malfunction consequences might be less severe, allowing you to prioritize productivity. As your organization grows and the number of contributors increases, testing becomes essential. For a new contributor, a test can serve as an example of how a function operates, aiding code understanding.
+TDD is recommended in certain scenarios but not all. For instance, if you operate in a regulated industry like banking or healthcare, it is imperative to test your code. Software malfunctions can impact your organization's legal liability. If your software is designed for long-term use and maintenance - such as in defense - TDD is advised. However, if you're a start-up in the proof-of-concept phase, software malfunction consequences might be less severe, allowing you to prioritize productivity. As your organization grows and the number of contributors increases, testing becomes essential. For a new contributor, a test can serve as an example of how a function operates, aiding code understanding.
 
 In essence, it's about striking a balance between productivity, functionality assurance, and technical debt control.
 
-This chapter serves as an introduction to the importance of testing your code. Many complementary approaches and best practices concern software engineering more generally (see YAGNI, KISS, DRY) rather than specifically DevOps. For instance, TDD can be supplemented with BDD (behavior-driven development) or ATTD (acceptance test-driven development) if your organization's maturity and team size allow.
+This chapter serves as an introduction to the importance of testing your code. Many complementary approaches and best practices concern software engineering more generally (such as YAGNI, KISS or DRY methods) rather than specifically DevOps. For instance, TDD can be supplemented with BDD (behavior-driven development) or ATTD (acceptance test-driven development), if your organization's maturity and team size allow.
 
 All these tests can be automatically verified before any production release. Let’s explore what this entails and how to implement it in the next chapter.
 
-### Continuous Integration (CI)
+### Continuous Integration
 
-Continuous Integration (CI) is a development practice within the software factory. The idea is as follows: with every code change, automated scripts are triggered to check the conformity of the contribution (fig. <spanc/>\ref{fig:ci-pipeline-gitlab}). This conformity can relate to security standards, verify software quality, or check prerequisites for production deployment.
+Continuous Integration (abbreviated CI) is a development practice within the software factory. The idea is as follows: with every code change, automated scripts are triggered to check the conformity of the contribution. This conformity can relate to security standards, verify software quality, or check prerequisites for production deployment.
 
 For instance, your security teams may not have the time to validate the conformity of every contribution. They can then delegate part of these checks to scripts that will automatically and consistently ensure the codebase meets your security standards. The benefits are threefold:
 
-- Your security engineers can work on higher value-added tasks
-- The compliance with your security rules is no longer "dictated" but guaranteed by "coded" checks
-- Developers see directly if their code is compliant and can immediately modify it if it's not
+1. Your security engineers can work on higher value-added tasks
+2. The compliance with your security rules is no longer "dictated" but guaranteed by "coded" checks
+3. Developers see directly if their code is compliant and can immediately modify it if isn't
 
-!Illustration of a continuous integration pipeline in GitLab. Source: [gitlab.com.\label{fig:ci-pipeline-gitlab}](./images/ci-pipeline-gitlab.png)
+Thus, in a DevOps approach, security managers are no longer individuals setting rules on paper but engineers "coding" security rules in the form of automated scripts, within the software forge. This ensures these rules are respected by developers and production.
 
-Thus, in a DevOps approach, security managers are no longer individuals setting rules on paper but engineers "coding" security rules in the form of automated scripts, within the software forge (fig. <spanc/>\ref{fig:2023gitlabjobexample}). This ensures these rules are respected by developers and production.
-
-!Example of a GitLab job checking the documentation conformity of a project using the Markdownlint tool.\label{fig:2023gitlabjobexample}
+!Example of a GitLab job checking the documentation conformity of a project using the Markdownlint tool.
 
 Here are some examples of algorithms that can be executed to automatically check rules or take actions upon a triggering event:
 
@@ -2081,54 +1849,40 @@ All these tasks contribute to reducing the technical debt of your codebase and f
 
 It's common to hear about a so-called continuous integration "pipeline", which accompanies other terms in the CI/CD tech universe. Let's define the most common ones:
 
-- Job: a task/script triggered automatically upon an event ;
-- Pipeline: a sequence of jobs ;
-- Stages: the three steps of a continuous integration pipeline (build, test, deploy) ;
-- Build: stage containing jobs ensuring the code compiles correctly, and the Docker image builds properly with the directory contents ;
-- Test: jobs checking the code/contribution's conformity ;
-  - Examples:
-    - Ensure code maintainability: using tools like SonarQube or linters such as black for Python or KubeLinter for Kubernetes configurations (cf. OpenSSF Best Practices, chapter "Securing your software supply chain").
-    - Check the contribution doesn't introduce security vulnerabilities: with software like Quay Clair, Jfrog X-Ray, ClamAV, or the OpenSSF Scorecards.
-    - Ensure the code passes unit tests (cf. chapter "Test-driven development").
-    - Verify documentation conformity: As software evolves over time, code snippets in documentation might become outdated and dysfunctional. Istio developed a tool to automatically ensure these snippets are updated. It extracts them from the documentation's Markdown files and converts them into testable executables.
-    - Check the composition of a Docker container.
-- Deploy: jobs executing actions impacting the infrastructure or production (cf. chapter "Continuous Deployment").
-  - Examples:
-    - Deploy a software update ;
-    - Add a compliant development dependency ;
-    - Execute administrative actions.
+- A Job is a task or script triggered automatically upon an event ;
+- A Pipeline is a sequence of jobs ;
+- Stages are generally the three steps of a continuous integration pipelines (build, test, deploy) ;
+- The "Build" stage includes jobs ensuring the code compiles correctly, and the Docker image builds properly with the directory contents ;
+- The "Test" stage includes jobs checking the code/contribution's conformity ;
+- The "Deploy" stage includes jobs executing actions impacting the infrastructure or production.
 
 As mentioned earlier, the advantage of a continuous integration pipeline is also to test the pushed code across multiple environments automatically: your development and pre-production environments before deploying to production. However, these multi-environment pipelines introduce additional complexity, which requires a larger technical team to manage.
 
 Within a software factory, technologies such as GitLab Runners, GitHub Actions, or services like Circle CI are used to execute continuous integration tasks.
 
-### Continuous deployment (CD)
+### Continuous deployment
 
-Continuous deployment (CD) is a DevOps practice that allows the triggering of administrative actions or the deployment and updating of software in production. The triggering is not necessarily automated, but the applied actions are coded. This means they are predictable, traceable, and replicable. This reduces the time to provide a new feature to its users, minimizing manual intervention and the risk of errors by administrators.
+Continuous deployment (abbreviated CD) is a DevOps practice that allows the triggering of administrative actions or the deployment and updating of software in production. The triggering is not necessarily automated, but the applied actions are coded. This means they are predictable, traceable, and replicable. This reduces the time to provide a new feature to its users, minimizing manual intervention and the risk of errors by administrators.
 
 This practice aligns with the principle of "continuous delivery", which encompasses steps prior to deployment. For instance, publishing the binaries or images of the software's latest version, or creating the latest release of the project in the software factory.
 
-Most of the time, continuous deployment pipelines are technically similar to continuous integration pipelines. For example, they replay tasks from continuous integration pipelines before deploying the software. However, they might require more specific parameters, such as environment variables or secrets (e.g., Hashicorp Vault, Akeyless, Keywhiz, Conjur). Indeed, deployed software often relies on environment variables to run correctly on a target infrastructure.
+Most of the time, continuous deployment pipelines are technically similar to continuous integration pipelines. For example, they replay tasks from continuous integration pipelines before deploying the software. However, they might require more specific parameters, such as environment variables or secrets (e.g., Hashicorp Vault or Conjur). Indeed, deployed software often relies on environment variables to run correctly on a target infrastructure.
 
-It is common to encounter different qualification/pre-production (staging) and production environments. These validate the proper functioning of software before its production release. Continuous deployment pipelines automate all or part of this process, optionally adding smoke tests or functional tests (see chapter "Test-driven development").
+It is common to encounter different staging and production environments. These validate the proper functioning of software before its production release. Continuous deployment pipelines automate all or part of this process, optionally adding smoke tests or functional tests.
 
 Initially, the goal is to at least automate the update of your software in production. You can do this similarly to continuous integration pipelines, using GitLab Runners or GitHub Actions.
 
-More advanced practices exist for seasoned users. As discussed in the "GitOps" chapter, our git repository is the "single source of truth" for software. Therefore, infrastructure should ideally rely on it to determine the expected state of software in production. For instance, ArgoCD continually checks for changes in a git repository on a specific branch (often main or master). When ArgoCD detects a change, it attempts to deploy the very latest version of the monitored software.
+More advanced practices exist for seasoned users. As discussed in the "GitOps" chapter, our git repository is the "single source of truth" for software. Therefore, infrastructure should ideally rely on it to determine the expected state of software in production. For instance, ArgoCD continually checks for changes in a git repository on a specific branch (often "main" or "master"). When ArgoCD detects a change, it attempts to deploy the very latest version of the monitored software.
 
-Tools like ArgoCD (fig. <spanc/>\ref{fig:2022argocdinterface}), Flux, Spinnaker, or Jenkins X allow visual tracking of software deployment status. They shine in a Cloud environment, observing the state of each micro-service.
+Tools like ArgoCD or Jenkins X allow visual tracking of software deployment status. They shine in a Cloud environment, observing the state of each micro-service.
 
-!ArgoCD interface for tracking software deployment.\label{fig:2022argocdinterface}
+Built on the same mechanics, it's possible to deploy multiple instances of software simultaneously. For instance, during a code review in a merge request, you can configure ArgoCD to temporarily and independently deploy this "under evaluation" version of the software. This technique allows engineers to quickly test software, rather than deploying it themselves. The URLs often look like `xyz.staging.myapp.com`.
 
-Built on the same mechanics, it's possible to deploy multiple instances of software simultaneously. For instance, during a code review in a merge request, you can configure ArgoCD to temporarily and independently deploy this "under evaluation" version of the software. This technique allows engineers to quickly test software, rather than deploying it themselves. The URLs often look like this: `wxyz.staging.myapp.com`.
-
-Using these same tools, you can adopt and automate a blue/green deployment strategy. This technique gradually shifts users to a new software version, ensuring it functions properly. The idea is to instantiate the new software version (green) alongside the current one (blue). The system then directs a limited proportion of users to the new software (e.g., 10%). This proportion is gradually increased over a set period, while measuring the error rate for each request. If the rate is the same or lower than the previous deployment, the software is rolled out to all users. Otherwise, deployment is canceled, and the old version remains in production.
+Using these same tools, you can adopt and automate a blue/green deployment strategy. This technique gradually shifts users to a new software version, ensuring it functions properly. The idea is to instantiate the new software version (the green one) alongside the current one (the blue one). The system then directs a limited proportion of users to the new software (e.g., 10%). This proportion is gradually increased over a set period, while measuring the error rate for each request. If the rate is the same or lower than the previous deployment, the software is rolled out to all users. Otherwise, deployment is canceled, and the old version remains in production.
 
 Even more advanced tools exist to address large-scale deployment challenges. We'll explore Palantir's Apollo as an example in the chapter "Deploying simultaneously in different environments".
 
 Moreover, continuous deployment pipelines are not limited to software deployment or administrative task launches. They can be the starting point for monitoring your software. For instance, a continuous deployment pipeline can set up a Prometheus / Grafana instance and start sending its activity logs. Deploying your software doesn't mark the end of your infrastructure's resilience cycle: now you need to monitor it. We'll delve into these techniques in the chapter "Measure Everything".
-
-\newpage
 
 ## Measuring everything
 
