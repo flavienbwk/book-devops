@@ -465,7 +465,7 @@ In the chapter "Refusing technological lag", I discuss internal innovation as a 
 
 Which company responsible for a major I-T project would claim, "We don't need an I-T expert"? Due to a lack of technical acculturation or previously mentioned psychological phenomena, decision-makers sometimes chronically turn to consulting firms.
 
-Much like global organizations such as the World Health Organization (WHO) or the United Nations (UN), national entities like the National Center for Scientific Research (CNRS), the National Education, and the Public Health France agency have an internal scientific council. This ensures they stay updated on the latest scientific knowledge, enabling decision-makers to make informed choices. In the private sector, this role is filled by the Chief Technical Officer (CTO) and their senior managers (VPs in English).
+Much like global organizations such as the World Health Organization or the United Nations, French national entities like the National Center for Scientific Research, the National Education, and the Public Health agency have an internal scientific council. This ensures they stay updated on the latest scientific knowledge, enabling decision-makers to make informed choices. In the private sector, this role is filled by the Chief Technical Officer and their senior managers (or VPs).
 
 While a scientific council can help an organization remain at the forefront of scientific knowledge, it isn't enough to make it innovative. Especially if its members aren't periodically refreshed. To innovate, practice is key.
 
@@ -485,7 +485,7 @@ The main reason decision-makers are cautious about in-house developments is main
 
 Therefore, hiring two or three engineers won't be enough to sustain your developments. To successfully offer a useful solution, which can be a viable, maintainable alternative and credible to your superiors, you'll need to assemble a much larger team.
 
-By equipping this team with a proper development environment (see "Software factory") and incorporating best DevOps practices, they'll have time to focus on the quality of your software. While this requires a time investment and might be a challenging step with your superiors, they haven't yet realized how invaluable this advancement will be in the future! Stay the course.
+By equipping this team with a proper development environment and incorporating best DevOps practices, they'll have time to focus on the quality of your software. While this requires a time investment and might be a challenging step with your superiors, they haven't yet realized how invaluable this advancement will be in the future! Stay the course.
 
 At one of the companies I worked for, the in-house development of software by an engineer saved several million euros. Equivalent industrial programs were stagnating, and the business units remained helpless. It took just one engineer - albeit a brilliant one - to solve a problem that had persisted for over 6 years.
 
@@ -499,39 +499,33 @@ Many organizations have sought to invigorate their structures by creating "innov
 
 Use cases often revolve around data and artificial intelligence. Buzzwords such as "data scientists", "deep learning", and "artificial intelligence" have led to numerous false hopes. Many organizations hired data science profiles only to find them unable to deploy their algorithms to interfaces designed for non-expert users.
 
-The problem isn't with the data scientists but rather with decision-makers who, until recently, didn't understand what responding to business needs entails: a reliable development foundation, clean data, massive data, model tracking (MLOps), and a deployment team. In essence, many thought (and continue to think) that "AI" could solve any problem with just a few lines of code. These individuals are unaware of the infrastructure and technical support required by these technologies.
+The problem isn't with the data scientists but rather with decision-makers who, until recently, didn't understand what responding to business needs entails: a reliable development foundation, clean data, massive data, model tracking, and a deployment team. In essence, many thought (and continue to think) that "AI" could solve any problem with just a few lines of code. These individuals are unaware of the infrastructure and technical support required by these technologies.
 
-A typical data science example concerning DevOps is the need for computational power, storage capacity, and services to develop and monitor the training of models. Yet, most data scientists aren't equipped to set up their machine, their GPU drivers, and their Jupyter Notebook environment, especially within the complex environments characteristic of large organizations (regulatory constraints).
+A typical data science example concerning DevOps is the need for computational power, storage capacity, and services to develop and monitor the training of models. Yet, most data scientists aren't equipped to set up their machine, their GPU drivers, and their Jupyter Notebook environment, especially within the complex environments characteristic of large organizations.
 
 ## Staying close to business needs
 
 What will set your team apart is the support you provide to your operators. Compared to traditional development teams or external service providers, your advantage is the potential to have close interactions with your organization's business operations.
 
-This is the renowned "agile" methodology, in contrast to the "V-cycle" (or waterfall methodology).
+This is the renowned "agile" methodology, in contrast to the "V-cycle" (another name for the waterfall methodology).
 
 In many organizations, the "V" approach is still employed: the service provider meets the business team with a requirement, produces a PowerPoint presentation a month later, and unveils the development outcome between 6 months and 6 years later. In software, the delivered product is already outdated, and the teams that made the request might have changed by then.
 
 In manufacturing—like designing a warship—it's legitimate to ensure that the vessel will float correctly and that its rudder will steer it properly before launching. The ship's features are often set: its range, missile capacity, service duration, etc. One wouldn't alter the hull composition at the last minute or adjust the shaft line bearing. The "V" cycle is appropriate here.
 
-However, in software, a more agile approach is feasible. Software behavior can be assessed and simulated in near real-time. This flexibility ensures the software can be adapted at any point, ensuring it meets set objectives (fig. <spanc/>\ref{fig:cyclev}).
+However, in software, a more agile approach is feasible. Software behavior can be assessed and simulated in near real-time. This flexibility ensures the software can be adapted at any point, ensuring it meets set objectives.
 
-!Diagram of the various "V-cycle" stages: all needs are described before project kickoff, minimizing risk but also flexibility. The final product may not or no longer meet company needs.\label{fig:cyclev}
-
-Within an armament program, the onboard computer systems of a ship (e.g., sensors, information systems) can follow agile methodology, while the carrier's production can be governed by the "V" methodology. While the hull may undergo few changes, the software can be updated as rapidly as operations require.
+Within an armament program, the onboard computer systems of a ship can follow agile methodology, while the carrier's production can be governed by the "V" methodology. While the hull may undergo few changes, the software can be updated as rapidly as operations require.
 
 Beyond the technical solutions you offer, your business teams will notice that your more agile organizational mode is efficient for them. Consequently, they will support your initiative. As a team leader, your goal should be to have representatives from business teams that you've aided with your tools testify during crucial presentations. Such representations will bolster your credibility and prevent your teams from merely being seen as "technical development providers."
 
-!Comparison between traditional methodology and agile methodology: while the V methodology establishes need specifications, the agile methodology adapts to user needs over time.\label{fig:cyclevvsagile}
-
 This proximity to business operations will enable your teams to feel more involved in your organization's missions. It's a win-win dynamic for both your engineers and clients. Both parties benefit from each other's expertise: the engineer gains a deeper understanding of the issue, and the operator specifies their need as precisely as possible.
 
-Henrik KNIBERG's illustration, an agile coach, effectively conveys the essence of the agile methodology: the preference is to deliver a functional (though incomplete) product at each stage, gather user feedback, and iterate (fig. <spanc/>\ref{fig:agileillustrationhenrikkniberg}).
+Agile coach Henrik KNIBERG's illustration effectively conveys the essence of the agile methodology: the preference is to deliver a functional product at each stage, gather user feedback, and iterate.
 
 Throughout your career, you've likely noticed: clients often struggle to articulate their exact needs. Agile and ultimately DevOps methodologies allow for adaptation to the ever-evolving business realities, ensuring a deep understanding and delivery of a product truly aligned with their requirements.
 
 By automating tedious processes, DevOps techniques will free up time, allowing you to spend more with your clients, understand their needs better, and effectively address their feedback and suggestions.
-
-!Illustration of the iteration process between traditional and agile methodologies by Henrik KNIBERG. An example of a project to produce a vehicle.\label{fig:agileillustrationhenrikkniberg}
 
 Bringing technical profiles and business teams together adds value by promptly and accurately addressing internal challenges. This is also a key to staff retention. Remember: your teams seek purpose. They don't merely come to work to follow orders but to employ their expertise to devise the best technical solution for a business problem. An engineer's work culmination is witnessing the business use the solution they've crafted.
 
@@ -543,13 +537,13 @@ If you want your technical teams to best respond to your needs, they require pri
 
 When the legal framework allows, forego "anonymized samples". Engineers need a precise understanding of the data they are supposed to process. Trying to develop a tool based on "anonymous" data is akin to developing a tool that only partially addresses a use case.
 
-Otherwise, you can be sure a bug will occur as soon as an "unknown" data passes through the software (see edge cases). Provide your teams with production data intended to be used in the tools: you'll spend less time on bug fixes and improve the quality of service provided by your software.
+Otherwise, you can be sure a bug will occur as soon as an "unknown" data passes through the software. Provide your teams with production data intended to be used in the tools: you'll spend less time on bug fixes and improve the quality of service provided by your software.
 
-If you don't have the necessary permissions, perhaps hiring in-house isn't essential. A service provider can just as effectively build the software from open-source data. However, consider the risks of proceeding this way (see Staying close to the business needs).
+If you don't have the necessary permissions, perhaps hiring in-house isn't essential. A service provider can just as effectively build the software from open-source data. However, consider the risks of proceeding this way.
 
 # Security: a new paradigm with the DevOps approach
 
-The idea that DevOps bridges different professions for collaboration is not easy to implement. Traditional roles in Information System Security (ISS) found themselves confronted with practices they weren't used to and sometimes didn't have the time to grasp.
+The idea that DevOps bridges different professions for collaboration is not easy to implement. Traditional roles in Information System Security found themselves confronted with practices they weren't used to and sometimes didn't have the time to grasp.
 
 In large organizations, company rules or even the law itself require specific versions of a software to be defined for it to be qualified or approved. Imagine having the responsibility to enforce these conditions when DevOps methods involve dozens of software updates daily: it's quite daunting! Therefore, understanding the makeup of a cloud infrastructure to correctly define its "security" is essential.
 
