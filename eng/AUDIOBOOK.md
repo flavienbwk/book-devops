@@ -347,7 +347,7 @@ To prevent technological lag, organization leaders can adopt several practices:
 
 # Prerequisites
 
-Designing the best service (a method, software, or tool) won't let you be helpful to your organization unless you provide easy access, uninterrupted service, and support. DevOps will enable you to structure and maintain this source of value.
+Designing the best service won't let you be helpful to your organization unless you provide easy access, uninterrupted service, and support. DevOps will enable you to structure and maintain this source of value.
 
 This book doesn't even require your team to be especially large, nor does it require your leaders to already be convinced. However, it does require your team to be convinced that they can drive the project forward. Of course, over time, support from other teams in your organization will become a valuable argument to showcase the success of your initiative.
 
@@ -355,15 +355,15 @@ A leader only asks to be convinced by an initiative from their subordinates. Hel
 
 This will require you to regularly present the progress of your project: both so they remember and so they understand. It's always risky to assume a project is understood after the first presentation, especially when introducing a new paradigm.
 
-Plan to set up an internal team: there will always be bugs to fix, configurations to adjust, and features to add. Whether developed internally or by a contractor, you'll face the phenomenon of software erosion. This refers to the issues software may face over time when left unattended (critical security updates, full disk space, processes that stop working...).
+Plan to set up an internal team : there will always be bugs to fix, configurations to adjust, and features to add. Whether developed internally or by a contractor, you'll face the phenomenon of software erosion. This refers to the issues software may face over time when left unattended. For instance there may be critical security updates, full disk space or processes that stop working...
 
 Don't think that a contractor can solve all your problems: you'll lose money and won't achieve your goals. The result of a contractor will only be the product of your ability to synthesize your challenges. Yet, during a transformation phase, you'll discover new issues every week. Unlike you and your team, the contractor probably won't be continuously present in your organization to capture all stakeholder challenges.
 
 Starting your DevOps initiative requires envisioning the recruitment of several profiles:
 
-- A team leader whose engineering skills are recognized and who has excellent communication abilities.
-- Software engineers who will develop solutions to business or user needs.
-- SRE/DevOps who will develop your foundation and manage the software development/deployment cycle.
+1. A team leader whose engineering skills are recognized and who has excellent communication abilities.
+2. Software engineers who will develop solutions to business or user needs.
+3. SRE/DevOps engineers who will develop your foundation and manage the software development/deployment cycle.
 
 Whether you're a senior manager or a mission officer aiming to enhance the services your organization offers, you will need to justify your initiative to your superiors and the rest of your organization. It's therefore essential to understand how to communicate effectively so everyone buys into your project. Let's explore some strategies for doing this in the next chapter.
 
@@ -373,114 +373,83 @@ First and foremost, it's not about convincing. You can't just walk up to someone
 
 Gaining the support of your superiors or colleagues for an initiative isn't always straightforward. William MORGAN - the leader of a renowned tech startup - recommends 4 rules to follow:
 
-1. Identify who is affected (the stakeholders) ;
-2. Determine what the new solution will bring them (the benefits) ;
-3. Understand what their concerns are (the worries) ;
+1. Identify who is affected (these are the stakeholders) ;
+2. Determine what the new solution will bring them (these are the benefits) ;
+3. Understand what their concerns are (these are the worries) ;
 4. Alleviate concerns, highlight the benefits, and communicate.
 
-According to William MORGAN, once you reach a certain level of technical engineering, the roles of "salesperson" and "engineer" become indistinguishable: "Advanced engineering work is indistinguishable from sales work."
+According to William MORGAN, once you reach a certain level of technical engineering, the roles of "salesperson" and "engineer" become indistinguishable. He says that "Advanced engineering work is indistinguishable from sales work."
 
 Here's how these rules could be applied to security and management teams:
 
 - For security teams, the proposed technology might automatically manage and audit the encryption of flows between services. Their primary concerns could be: "Will this technology make my infrastructure more secure?" or "What new attack vectors could this technology introduce?"
 - For management teams, the proposed technology might speed up the development pace and reduce service interruptions. Their main concern would be understanding the hardware or human resources the company would rely upon after implementing this new technology.
 
-The theory of mental models helps us better understand the decision-making process (e.g., whether someone supports an initiative). Everyone's perception (i.e., a mental model) varies by individual. Transformation, then, is about collectively agreeing on an alternative mental model.
+The theory of mental models helps us better understand the decision-making process. Everyone's perception varies by individual. Transformation, then, is about collectively agreeing on an alternative mental model.
 
 Even though DevOps might be backed by studies and is evident in the private sector, institutional initiatives are still not widespread enough. Therefore, you find yourself in a position where you're certain about the direction to take, but you're not fully able to justify it with data or examples. Presented with your forward-thinking transformation proposal, the decision-maker thus faces a risk. And as a matter of survival:
 
-"It's better to be wrong with the group than to be right against the group."
+- "It's better to be wrong with the group than to be right against the group."
 
 To assist the decision-maker in making their choice, you need to work on minimizing this risk. But how? The idea is to rally early adopters to your cause without announcing it to the collective.
 
-"The first one to step forward takes a massive risk. The 150th takes none."
+- "The first one to step forward takes a massive risk. The 150th takes none."
 
 Besides enhancing your value proposition, you'll have examples to reference and support: you won't be the "first" taking the risk, and neither will your organization.
 
 ## Act with finesse
 
-"Initiative is the most refined form of discipline." - General LAGARDE
+General LAGARDE once said : "Initiative is the most refined form of discipline."
 
-Operating behind the scenes (not announcing your project to the group) requires understanding its potential repercussions. Even though you may want to make improvements in good faith, you might misjudge the overall situation of your organization. Thus, your project could disrupt established power dynamics, making you undesirable in the eyes of some.
+Operating your project without telling anyone in your organization requires understanding the potential repercussions. Even though you may want to make improvements in good faith, you might misjudge the overall situation of your organization. Thus, your project could disrupt established power dynamics, making you undesirable in the eyes of some.
 
-For instance, a team lacking resources comes to you for help. Seeing their distress, you design a brand new tool for them quickly using your DevOps platform. You choose not to inform your superiors, fearing they might reject this innovation (refer to the previous chapter).
+For instance, a team lacking resources comes to you for help. Seeing their distress, you design a brand new tool for them quickly using your DevOps platform. You choose not to inform your superiors, fearing they might reject this innovation.
 
 What you don't realize is that the team you're supporting hasn't been doing the work required by management for several weeks. While the leaders are trying to balance the situation, a sudden player (your team) starts doing favors for the delinquent team.
 
-Upon hearing the news, the leaders find themselves in an awkward position: they appreciate the support you provide (it's virtuous in good faith) but resent you for meddling in their affairs.
+Upon hearing the news, the leaders find themselves in an awkward position: they appreciate the support you provide but resent you for meddling in their affairs.
 
-And thus, your initiative gets caught in a vicious cycle (fig. <spanc/>\ref{fig:powergames}). On one hand, your team sees no harm in helping and stops reporting to the management team. On the other hand, the leadership gives up on collaborating with you and trusting you.
+And thus, your initiative gets caught in a vicious cycle. On one hand, your team sees no harm in helping and stops reporting to the management team. On the other hand, the leadership gives up on collaborating with you and trusting you.
 
-!Interaction between weakly communicating actors during a transformation.\label{fig:powergames}
-
-\newpage
-
-The problem is primarily cultural: the organization isn't trained to support innovation, making it challenging to innovate. Innovators must then find indirect ways to make a difference. On the flip side, innovators are often not well-versed in the structures where they are asked to innovate. This highlights the need to train these profiles so they better understand how the organization operates. By implementing the 5 pillars of DevOps, you will help your organization transform its culture and promote innovation (refer to chapter "The five pillars of devops")
+The problem is primarily cultural: the organization isn't trained to support innovation, making it challenging to innovate. Innovators must then find indirect ways to make a difference. On the flip side, innovators are often not well-versed in the structures where they are asked to innovate. This highlights the need to train these profiles so they better understand how the organization operates. By implementing the 5 pillars of DevOps, you will help your organization transform its culture and promote innovation.
 
 Therefore, make sure you fully grasp the political dynamics between the leadership team and your initial experimenters before acting covertly, or you risk complicating your progress.
 
 ## Approaches in Facing Opposition
 
-Keep in mind that if things are the way they are today, there are valid reasons for it: you might not necessarily have a comprehensive understanding of these past reasons (time allocated to projects, HR/financial resources, power plays, etc.) and it's not your role to blame those involved.
+Keep in mind that if things are the way they are today, there are valid reasons for it: you might not necessarily have a comprehensive understanding of these past reasons and it's not your role to blame those involved. These reasons are for instance the time allocated to projects, HR/financial resources or power plays.
 
 Also, be aware that during a transformation, leaders must continue to deliver the same services as before. Decision-makers then have to manage the transforming environment parallel to the current environment, ensuring the former doesn't overshadow the latter.
 
-Furthermore, don't be disheartened by the first person who resists. Every innovation initially faces moral mockery and goes through three phases: ridicule, perceived as dangerous, and then seen as self-evident. Having experienced this firsthand, I can vouch for its accuracy, and there are historical examples:
+Furthermore, don't get demotivated by the first person who resists. Every innovation initially faces moral mockery and goes through three phases: ridicule, perceived as dangerous, and then seen as self-evident. Having experienced this firsthand, I can vouch for its accuracy, and there are historical examples:
 
-- Women's suffrage: initially deemed ridiculous, then seen as dangerous as some suffragettes lost their lives in the 1910s, and now it's a given in our contemporary societies.
+- Women's suffrage. Initially deemed ridiculous, then seen as dangerous as some suffragettes lost their lives in the 1910s, and now it's a given in our contemporary societies.
 - Henry FORD had a vision that every American should own an affordable car. Back then, cars were seen as a luxury item for the wealthy: "it's not clear what it's for, but it looks nice." He created the first moving assembly line in 1913, and Ford is still an industry leader today.
 - Elon MUSK believed in creating reusable rocket launchers. Initially mocked or highly doubted by the Russian and American space industries, he's now respected by the latter and seen as a threat by the European space industry.
 
-If you face direct opposition, you may need to rethink your communication strategy (refer to the following chapter "Tailoring your message"). Start with understanding opposing viewpoints. If you feel that some are deliberately trying to end discussions, consider the following tactics:
+If you face direct opposition, you may need to rethink your communication strategy by tailoring your speech. Start with understanding opposing viewpoints. If you feel that some are deliberately trying to end discussions, consider the following tactics:
 
-- Invoke shared values: Even if you and your counterpart have different beliefs, you might still have common values. Show how your initiative aligns with them.
-  - If both of you value innovation, explain how your approach promotes it and the new opportunities it offers ;
-  - If both are keen on enhancing the day-to-day experience for a certain profession or user, provide use cases on how your solution can assist.
-- Put them in the spotlight: Be it a decision-maker or a client, anyone will support your idea if it lets them shine. Identify how your project can help them achieve their goals and make this clear to them.
-  - A misplaced ego often arises from a disconnect between the project's stated objectives and the individual's personal goals ;
-  - If your counterpart seeks to stand out and gain influence in their organization, show them how your project could bolster their reputation as an innovative leader committed to improving the lives of their team.
-- Build a coalition: Gather people who share your transformation vision (earlier mentioned early adopters). These individuals often agree with you on the organization's inefficiencies.
-  - By creating a supporting community, you show stakeholders that your approach is legitimate and backed by many ;
-  - Get official testimonials: a letter or email signed by a recognized leader from an entity you've worked with, vouching for your methods or services ;
-  - Also, accept that you might not be a permanent fixture in the organization. If your initiative doesn't find its place there, it's the organization's loss! The same effort could have a different impact elsewhere. And only you set your own boundaries.
+- First, invoke shared values. Even if you and your counterpart have different beliefs, you might still have common values. Show how your initiative aligns with them. If both of you value innovation, explain how your approach promotes it and the new opportunities it offers. If both are keen on enhancing the day-to-day experience for a certain profession or user, provide use cases on how your solution can assist.
+- Second, put them in the spotlight. Be it a decision-maker or a client, anyone will support your idea if it lets them shine. Identify how your project can help them achieve their goals and make this clear to them. A misplaced ego often arises from a disconnect between the project's stated objectives and the individual's personal goals. If your counterpart seeks to stand out and gain influence in their organization, show them how your project could bolster their reputation as an innovative leader committed to improving the lives of their team.
+- Third, build a coalition. Gather people who share your transformation vision. These individuals often agree with you on the organization's inefficiencies. By creating a supporting community, you show stakeholders that your approach is legitimate and backed by many. Also get official testimonials: a letter or email signed by a recognized leader from an entity you've worked with, vouching for your methods or services. Finally, accept that you might not be a permanent fixture in the organization. If your initiative doesn't find its place there, it's the organization's loss! The same effort could have a different impact elsewhere. And only you set your own boundaries.
 
 ## Tailoring Your Message
 
 Successful transformation requires impeccable communication from its initiator. It's crucial to know how to present based on the target audience, all the while keeping in mind certain common organizational phenomena.
 
-"Why don't they seem convinced?"
+"Why don't they seem convinced?" you may tell yourself.
 
 Perhaps after one of your presentations, you've found yourself in this situation. Validated by many of your peers and seemingly well-suited after rehearsals, it still didn't achieve the desired impact. The person you addressed didn't ask the right questions or seemed bored, or even irritated.
 
-Presenting to different audiences requires tailoring your presentation style, examples, and arguments to their roles, constraints, and needs. Don't expect anyone to understand the so what of your presentation if you haven't first understood why it was beneficial for them to attend. Typically, two presentations suffice: one for professionals (or "clients") and another for senior officials (or "policy makers").
+Presenting to different audiences requires tailoring your presentation style, examples, and arguments to their roles, constraints, and needs. Don't expect anyone to understand the so what of your presentation if you haven't first understood why it was beneficial for them to attend. Typically, two presentations suffice: one for professionals (which are your "clients") and another for senior officials (which are the "policy makers").
 
-However, it's important to differentiate between senior officials (or executives) and immediate supervisors (or managers). The latter often have a stronger bond with their teams, making them more receptive to business-related arguments. Senior officials, on the other hand, operate at a strategic level, where they set the organization's vision and major directions. Operational, tactical, and technical considerations are delegated. As such, messages passed up the hierarchy might get distorted or altered.
+However, it's important to differentiate between senior officials (which are the executives) and managers. The latter often have a stronger bond with their teams, making them more receptive to business-related arguments. Senior officials, on the other hand, operate at a strategic level, where they set the organization's vision and major directions. Operational, tactical, and technical considerations are delegated. As such, messages passed up the hierarchy might get distorted or altered.
 
 That's why you shouldn't assume that the leaders are always aware of what you observe at your level. Don't hesitate to remind your audience about the effort required for even the most common tasks. For instance, emphasize that 80% of n individuals' work is dedicated to a certain task. With your approach, you could save x hours per day for each employee, equating to y euros in savings or z times increased productivity.
 
-Decision-makers seek arguments they can use to persuade others. Endeavor to grasp the mandates they must adhere to, providing them communication tools they can reuse. For instance, the CEO of a multinational might prioritize economic profitability, while a high-ranking politician might weigh social impact more heavily. However, both will be keen to align with their organization's strategy (corporate strategy or government/party priorities).
+Decision-makers seek arguments they can use to persuade others. Endeavor to grasp the mandates they must adhere to, providing them communication tools they can reuse. For instance, the CEO of a multinational might prioritize economic profitability, while a high-ranking politician might weigh social impact more heavily. However, both will be keen to align with their organization's strategy.
 
 Just like you, a decision-maker newly introduced to a topic can only retain a few key pieces of information. Ensure you focus on a maximum of 2 or 3 main ideas you want to convey. Conclude your presentation with a call to action, guiding them on how they can support your project's realization.
-
-Let's summarize the interests of our two profiles:
-
-| Subject                   | Professionals                            | Decision-makers                                                                                                      |
-| --------------------------| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| Detail Level          | Detailed practical information.          | Overview.                                                                                                            |
-| Terminology           | Industry jargon and specific tools.      | Strategy-focused, emphasizing value to the organization or broader community.                                        |
-| Data and Evidence     | Practical examples, case studies.        | Impact metrics in time, money, and influence.                                                                       |
-| Objective             | Educate, inform, gather feedback.        | Persuade, gain approval.                                                                                             |
-| Presentation Style    | Interactive, hands-on.                   | Formal, concise, direct. Aimed at the desired outcome.                                                              |
-
-Take, for instance, a company whose employees need a high-performing translation software. A solution provider pitches to the organization's director. Here are the arguments for each profile:
-
-| Subject                   | Employees                                                                                        | Director                                                                                                           |
-| --------------------------| ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| Detail Level          | How the tool eases work, its usage, and unique features.                                         | Why the organization needs this tool and its impact.                                                               |
-| Terminology           | Technical terms related to translation and tool operation.                                       | Focus on strategy, organizational efficiency, and performance improvement.                                         |
-| Data and Evidence     | Tool demonstration, before/after comparisons, case studies.                                      | Overview of features. Productivity boost statistics, ROI, internal usage feedback.                                |
-| Objective             | Discover the tool's value (speed & quality of translation). Usage instructions and limitations. | Understand the tool's positive impact on the organization and the investment required.                             |
-| Presentation Style    | Practical, interactive with demos and Q&A.                                                       | Concise, focusing on organizational benefits. End with a call to action and a summary sheet.                       |
 
 Lastly, you cannot completely rule out the possibility that your counterpart might have conflicts with other stakeholders in your organization. This could hinder them from making seemingly beneficial decisions, in a bid to maintain their status or protect their career. In such scenarios, try finding equally or higher-ranked influencers to champion your vision among decision-makers. Once multiple top executives back your message, it becomes challenging for anyone to reject what the rest of the organization sees as essential.
 
