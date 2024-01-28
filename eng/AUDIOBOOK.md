@@ -567,11 +567,11 @@ We'll delve deeper into the cultural aspects of the DevOps methodology in the ch
 
 Governments are hungry for new innovative technologies. However, they need to strike a balance between the risks they may entail and the benefits they may get. This is why they create frameworks to manage this risk.
 
-France's cybersecurity agency defines three ways to assess risk of using a technology : qualification, certification and accreditation. Most western countries adopt similar processes and signed an agreement making the trade of secure I-T solutions between members easier : the Common Criteria Recognition Arrangement (CCRA).
+France's cybersecurity agency defines three ways to assess risk of using a technology : qualification, certification and accreditation. Most western countries adopt similar processes and signed an agreement making the trade of secure I-T solutions between members easier : the Common Criteria Recognition Arrangement.
 
 As a declarative approach to managing security risks, traditional approval processes are not well-suited for continuous deployment practices. They freeze risk for a specific moment or architecture. Yet, threats emerge daily: a vulnerability in a library, for example, could be detected a day after approval is granted. Even though the approval is temporary and a periodic assessment might be required, the vulnerability might persist during this time, leading to a risk of exploitation.
 
-For Cloud service providers (CSPs), the United States established the Federal Risk and Authorization Management Program (FedRAMP). It adds a new layer of security compared to traditional approaches by enforcing a demanding continuous monitoring process.
+For Cloud service providers, the United States established the Federal Risk and Authorization Management Program (or FedRAMP). It adds a new layer of security compared to traditional approaches by enforcing a demanding continuous monitoring process.
 
 Assuming security flaws might emerge at any moment must be part of your cybersecurity posture. You must have actionable tools to quickly respond to threats and preserve your ATOs. To address this challenge, it's recommended to adopt continuous integration techniques.
 
@@ -587,17 +587,13 @@ These versioned rules in the form of code become automated tests. They can be up
 
 They might consist of antivirus checks, vulnerability scans in used Docker images, or ensuring that no passwords are inadvertently left in a public file.
 
-!Example of a 5-stage continuous integration chain in GitLab.\label{fig:ci-pipeline-gitlab-security}
-
-In the illustration above (fig. <spanc/>\ref{fig:ci-pipeline-gitlab-security}), you can observe a 5-stage continuous integration chain (build, test-code, test-lint, test-security, and deploy). The column of interest is test-security. It contains various security tests that are initiated. They can either pass (green checkmark), fail (red cross), or fail with a simple warning (yellow exclamation mark).
+In the illustration provided in the book, you can observe a 5-stage continuous integration chain (build, test-code, test-lint, test-security, and deploy). The column of interest is test-security. It contains various security tests that are initiated. They can either pass (with a green checkmark), fail (with a red cross), or fail with a simple warning (with a yellow exclamation mark).
 
 An exclamation point means the test did not pass but was not deemed critical (e.g., an outdated software dependency with no security flaws).
 
 For engineers, the ultimate goal is to see their project accompanied by a green checkmark, signifying all tests have been successfully passed.
 
-!Project accompanied by a green checkmark, illustrating the success of all continuous integration stages.
-
-In a DevOps approach, developers don't start from scratch. They begin with a template that they copy, which integrates - in addition to development files - all security rules. Ensure that security teams co-contribute to these templates so every new project incorporates your security standards (see chapter "Continuous Integration and Security") to save time for everyone.
+In a DevOps approach, developers don't start from scratch. They begin with a template that they copy, which integrates - in addition to development files - all security rules. Ensure that security teams co-contribute to these templates so every new project incorporates your security standards to save time for everyone.
 
 Continuous integration chains aren't limited to security tests. Consider them as scripts automatically triggered with each code modification. Although the traditional trigger is "code modification", cloud hosts like AWS might offer their triggers (e.g., adding a file to an S3 bucket). We'll delve deeper into the workings of continuous integration in the chapter "Continuous Integration (CI)".
 
@@ -607,37 +603,31 @@ In an ideal world, all verification is automated. However, it's sometimes challe
 
 In DevOps, the GitOps methodology is practiced: everything is based on code (software, infrastructure, architecture diagrams, presentations, etc.).
 
-Each developer works on their own branch and develops their feature. They test if everything works as expected, then creates a "merge request" (commonly known as merge request or pull request) into the main branch. This process is detailed in the "Git Workflows" chapter.
+Each developer works on their own branch and develops their feature. They test if everything works as expected, then creates a "merge request" into the main branch.
 
-Code review takes place at this juncture. It's an opportunity for engineers to approve others' changes, providing an external perspective before it gets merged into the main branch. This is the time when various stakeholders involved in reviewing the quality of a contribution can write their comments (fig. <spanc/>\ref{fig:gitlab-review-comment}).
-
-!Software factories like GitLab allow adding comments directly within a contribution proposal, on the exact line targeted by the comment. Source: about.gitlab.com\label{fig:gitlab-review-comment}
+Code review takes place at this juncture. It's an opportunity for engineers to approve others' changes, providing an external perspective before it gets merged into the main branch. This is the time when various stakeholders involved in reviewing the quality of a contribution can write their comments.
 
 The goal is to ensure the developer hasn't made significant errors in the code's functionality or is not adding technical debt. For instance, at Google, a merge request requires approval from at least two engineers before it can be validated.
-
-!Illustration of the GitOps methodology (simplified)
 
 Releasing a new version of software in production is the ideal time for security teams to audit the code. This practice is known as "security review". Every new software release is subject to previously mentioned continuous integration rules with additional automated security tests and optionally the validation from the security team.
 
 For security teams, the code review aims to ensure that the maximum security criteria are met, such as:
 
 - Presence of activity logs documenting user actions ;
-- Access to authorized data sources (see "Service mesh" chapter to enforce these security policies) ;
-- No data being sent to an unauthorized service (see "Service mesh" chapter to enforce these security policies) ;
+- Access to authorized data sources ;
+- No data being sent to an unauthorized service ;
 - Password/cookie storage techniques ;
 - GDPR functionality compliance.
 
-GitLab, for example, allows you to mandate the approval of a merge request by specific teams (e.g., the security team) before a contribution can be merged into the main branch (fig. <spanc/>\ref{fig:gitlab-review-approval}).
-
-!Overview of GitLab's interface for group contribution approval (they don't appear), by several organization teams (frontend, backend, quality (QA)). Source: about.gitlab.com\label{fig:gitlab-review-approval}
+GitLab, for example, allows you to mandate the approval of a merge request by specific teams (e.g., the security team) before a contribution can be merged into the main branch.
 
 Tools like ReviewDog, Hound, and Sider Scan assist engineers during code reviews. For instance, these tools run linters and automatically add comments on the relevant line.
 
 ## Securing your software supply chain
 
-In May 2021, the White House released a decree describing new strategies for "improving the country's cybersecurity". Among the 7 described priorities, enhancing the security of the software supply chain is mentioned. It states there's an "urgent need to implement stricter techniques, allowing for quicker anticipation, to ensure products (software purchased by governments) operate securely and as intended". This commitment was renewed in January 2022 with Joe BIDEN's signing of the U.S. National Security Memorandum.
+In May 2021, the White House released a decree describing new strategies for "improving the country's cybersecurity". Among the 7 described priorities, enhancing the security of the software supply chain is mentioned. It states there's an "urgent need to implement stricter techniques, allowing for quicker anticipation, to ensure software purchased by governments operate securely and as intended". This commitment was renewed in January 2022 with Joe BIDEN's signing of the U.S. National Security Memorandum.
 
-DevSecOps Maturity Models (DevSecOps * Models) like those from OWASP, DataDog, AWS, or GitLab offer general techniques to enhance DevSecOps practices. They help in breaking down an organization's maturity progression into more accessible steps, aiming to achieve better security practices.
+DevSecOps Maturity Models like those from OWASP, DataDog, AWS, or GitLab offer general techniques to enhance DevSecOps practices. They help in breaking down an organization's maturity progression into more accessible steps, aiming to achieve better security practices.
 
 First, we'll explore the techniques and tools used to secure the software supply chain. Then, we'll see how they're integrated through frameworks. The vast majority of tools mentioned in this chapter are run within continuous integration chains, serving to validate an organization's entire security rules with every code change.
 
@@ -645,11 +635,11 @@ First, we'll explore the techniques and tools used to secure the software supply
 
 #### Software Component Analysis (SCA)
 
-Information Security practices within large organizations often require that any deployed software be accredited. The accreditation document must list the dependencies used in the software: the third-party libraries it relies on. This list is called the Software Bill of Materials (SBOM).
+Information Security practices within large organizations often require that any deployed software be accredited. The accreditation document must list the dependencies used in the software: the third-party libraries it relies on. This list is called the Software Bill of Materials (or SBOM).
 
 The SBOM allows for quick answers to questions like "Are we affected?" or "Where is this library used in our software?", when a new vulnerability is discovered. In a DevOps approach, the libraries used in software change over time. A library or technology used today might be replaced tomorrow. Hence, developers cannot be asked to manually list these hundreds (or even thousands) of dependencies used in their software.
 
-SBOM is part of the techniques of Software Component Analysis (SCA) or "Analysis of software components". SCA encompasses techniques and tools to determine the components of third-party software of a software (e.g., the dependencies, their code, and their licenses) to ensure they do not introduce security risks or bugs.
+SBOM is part of the techniques of Software Component Analysis or "Analysis of software components". SCA encompasses techniques and tools to determine the components of third-party software of a software (e.g., the dependencies, their code, and their licenses) to ensure they do not introduce security risks or bugs.
 
 The advantage of the DevOps methodology is that all code is centralized within the software factory. This allows us to use tools to analyze the composition of each project and prevent security vulnerabilities.
 
@@ -657,29 +647,17 @@ It's possible to generate the SBOM of software using tools like Syft, Tern, or C
 
 The goal remains to determine if a used library is vulnerable, to update or replace it. Apart from meeting regulatory constraints, just leaving this file as a simple document isn't very useful. That's why it's now necessary to analyze the SBOM.
 
-A lightweight analysis tool like OSV-Scanner can be easily integrated into your continuous integration pipelines and provide a first level of protection. However, it won't provide an overview of all the affected software within your infrastructure. Tools like Dependency Track (fig. <spanc/>\ref{fig:2023dependencytrack}), Faraday, or Snyk Open Source are then required. They can ingest multiple SBOM files and display an overview of threats to alert engineers if necessary.
+A lightweight analysis tool like OSV-Scanner can be easily integrated into your continuous integration pipelines and provide a first level of protection. However, it won't provide an overview of all the affected software within your infrastructure. Tools like Dependency Track, Faraday, or Snyk Open Source are then required. They can ingest multiple SBOM files and display an overview of threats to alert engineers if necessary.
 
-!Dashboard of Dependency Track listing vulnerabilities found in a set of software.\label{fig:2023dependencytrack}
-
-Softwares like Renovate or GitHub Dependabot allow detecting dependencies with vulnerabilities and automatically propose an update in the software forge by opening a merge request (see chapter "Code Reviews").
+Softwares like Renovate or GitHub Dependabot allow detecting dependencies with vulnerabilities and automatically propose an update in the software forge by opening a merge request.
 
 In summary: Instead of just listing dependencies, the aim is to set up continuous detection of used libraries for all projects. It's essential to alert about threats as early as possible and refuse contributions that could bring risks before they are deployed in production.
 
 #### Static Application Security Testing (SAST)
 
-While SCA tools allow you to analyze the composition of your project (its dependencies and software used), SAST tools aim to analyze the software code you develop. However, SAST tools also cover SCA features. Both fall under the domain of Source code analysis.
+While SCA tools allow you to analyze the composition of your project, SAST tools aim to analyze the software code you develop. However, SAST tools also cover SCA features. Both fall under the domain of Source code analysis.
 
-Static Application Security Testing (SAST), focuses on techniques and tools intended to find vulnerabilities in your source code before it's run. They represent a form of white box testing. For instance, SAST tools will identify insecure configurations, SQL injection risks, memory leaks, path traversal risks, and race conditions.
-
-Here's a list of SAST tools with their descriptions to understand their variety:
-
-- Sonarqube: Detects vulnerabilities and bad practices in +20 programming languages, assigns a technical debt score, and allows for code reviews in a dedicated interface ;
-- HuskyCI: Detects code vulnerabilities by launching multiple sub-tools of SAST and can integrate reports to SonarQube ;
-- Horusec: Similar to HuskyCI but also searches the complete git history, and has a dedicated web interface for centralizing and visualizing vulnerabilities. It can be easily integrated into a developer's IDE ;
-- Semgrep: Finds bugs, code bad practices, and detects vulnerabilities in dependencies. An interface is available with their commercial offer ;
-- Dockle: Detects bad practices and vulnerabilities in containers following CIS Benchmarks rules ;
-- Trivy: Detects vulnerabilities, configuration errors, secrets, and SBOM in containers, Kubernetes, and codebases ;
-- Trufflehog: Detects publicly exposed secrets in Git repositories.
+Static Application Security Testing, focuses on techniques and tools intended to find vulnerabilities in your source code before it's run. They represent a form of white box testing. For instance, SAST tools will identify insecure configurations, SQL injection risks, memory leaks, path traversal risks, and race conditions.
 
 A comprehensive list of open-source and commercial code analysis tools is available on the OWASP foundation website.
 
@@ -691,13 +669,11 @@ In summary: SAST is a so-called "proactive" security approach, allowing for the 
 
 Dynamic Application Security Testing (DAST), is an analysis technique that focuses on detecting vulnerabilities in a running application.
 
-Essentially, it's an automated black box intrusion test that identifies potential vulnerabilities attackers might exploit once the software is in production. These vulnerabilities can be SQL injections, Cross-Site Scripting (XSS) attacks, or issues with authentication mechanisms.
+Essentially, it's an automated black box intrusion test that identifies potential vulnerabilities attackers might exploit once the software is in production. These vulnerabilities can be SQL injections, Cross-Site Scripting attacks, or issues with authentication mechanisms.
 
 One advantage of DAST is that it doesn't require access to the application's source code. When used in conjunction with SAST, it provides more comprehensive security coverage. Indeed, DAST can detect vulnerabilities that might go unnoticed in a static analysis and vice versa.
 
-Numerous products with overlapping features exist. They generally allow for automated vulnerability scanning that includes: fuzzing (random inputs), traffic analysis between a browser and API, brute force attacks, and vulnerability analysis in JavaScript code. The go-to DAST tool is OWASP ZAP (fig. <spanc/>\ref{fig:2023owaspzapjuiceshop}), but others include Burp Suite, W3af, SQLMap, Arachni, Nikto, and Nessus.
-
-!Screenshot of the OWASP ZAP interface showing a list of detected vulnerabilities on [Juice Shop.\label{fig:2023owaspzapjuiceshop}](./images/2023owaspzapjuiceshop.png)
+Numerous products with overlapping features exist. They generally allow for automated vulnerability scanning that includes: fuzzing (random inputs), traffic analysis between a browser and API, brute force attacks, and vulnerability analysis in JavaScript code. The go-to DAST tool is OWASP ZAP, but others include Burp Suite, W3af, SQLMap, Arachni, Nikto, and Nessus.
 
 An extensive list of open-source and commercial code analysis tools is available on the OWASP foundation website.
 
@@ -707,19 +683,19 @@ In summary: DAST encompasses tools that analyze applications in real-time to det
 
 #### Interactive Application Security Testing (IAST)
 
-Interactive Application Security Testing (IAST), encompasses tools that identify and diagnose security issues in applications, whether they're running or during the development phase.
+Interactive Application Security Testing (or IAST), encompasses tools that identify and diagnose security issues in applications, whether they're running or during the development phase.
 
 According to OWASP, IAST tools are mainly designed for analyzing web applications and web APIs. However, some IAST products can also analyze non-web software.
 
 IAST tools have access to the application's entire codebase - just like SAST tools - but can also monitor the application's behavior during execution - like DAST tools. This gives them a more comprehensive view of the application and its environment, allowing them to identify vulnerabilities that might be missed by SAST and DAST.
 
-"IAST tools are fantastic! Can I just throw away my SAST and DAST tools?"
+So should you claim "IAST tools are fantastic! Can I just throw away my SAST and DAST tools?"
 
 Of course not. Each has its pros and cons:
 
 - SAST tools are generally easier to set up than DAST and IAST. They're smaller, faster programs that are simpler to integrate into the development cycle. They quickly improve the security level of your software pipeline ;
-- DAST tools operate in a black box mode, allowing them to analyze applications without source code access. They can also be run intermittently, without the integration cost that IAST tools require (to access source code). Moreover, your organization's security policies might prohibit tool access to software source code. DAST still allows you to evaluate the security of third-party software in such cases ;
-- IAST tools connect to both the source code and the running application. They can combine SAST and DAST analyses but might be slower. Running an IAST tool isn't trivial; it impacts application performance in production. Some prefer these tests in an isolated environment. However, the tested software might not represent the version available to attackers (in production), potentially missing some vulnerabilities.
+- DAST tools operate in a black box mode, allowing them to analyze applications without source code access. They can also be run intermittently, without the integration cost that IAST tools require. Moreover, your organization's security policies might prohibit tool access to software source code. DAST still allows you to evaluate the security of third-party software in such cases ;
+- IAST tools connect to both the source code and the running application. They can combine SAST and DAST analyses but might be slower. Running an IAST tool isn't trivial; it impacts application performance in production. Some prefer these tests in an isolated environment. However, the tested software might not represent the version available to attackers, potentially missing some vulnerabilities.
 
 Whether DAST or IAST, tools typically require a solid understanding of the application to perform and interpret tests effectively. This often relies on engineers with deep expertise in the software being tested and, more broadly, solid security knowledge. Lastly, open-source solutions are rare in this domain, inevitably incurring costs. Both tool types are valuable but demand investment in time, human resources, and money.
 
@@ -737,13 +713,11 @@ The Supply-chain Levels for Software Artifacts framework (SLSA, pronounced "sals
 
 SLSA originated from Google's internal practices. The company developed techniques to ensure that employees, acting individually, cannot directly or indirectly access or manipulate user data in any way without appropriate authorization and justification.
 
-In software development, you use and produce artifacts. These can represent a development library used in your code, a machine learning binary, or the product of compiling your software (a `.bin`, `.exe`, `.whl`, etc.). SLSA operates on the principle that each stage of software creation involves a different vulnerability and that these artifacts are a prime vector of threats (fig. <spanc/>\ref{fig:slsa-supply-chain-threats}).
-
-!Software creation steps and hypothetical associated vulnerabilities within the software chain. Source: slsa.dev (The Linux Foundation).\label{fig:slsa-supply-chain-threats}
+In software development, you use and produce artifacts. These can represent a development library used in your code, a machine learning binary, or the product of compiling your software. SLSA operates on the principle that each stage of software creation involves a different vulnerability and that these artifacts are a prime vector of threats.
 
 Its rules revolve around the automatic verification of the integrity of the handled data. Some examples of vulnerabilities addressed by SLSA include:
 
-- ensuring that the source code used in software compiling scripts (CI) has not been altered ;
+- ensuring that the source code used in software compiling scripts has not been altered ;
 - verifying the origin of development dependencies ;
 - ensuring that the software factory has minimal network connectivity.
 
@@ -751,8 +725,8 @@ Based on a team's technical maturity, it's possible to apply SLSA rules across f
 
 SLSA consists of two parts:
 
-- requirements: a set of security rules, varying in complexity depending on the desired SLSA level (1 to 4) that an organization aims to achieve
-- threats and mitigations: detailing threat scenarios, known public examples, and ways to mitigate them
+1. requirements: a set of security rules, varying in complexity depending on the desired SLSA level (from 1 to 4) that an organization aims to achieve
+2. threats and mitigations: detailing threat scenarios, known public examples, and ways to mitigate them
 
 The FRSCA project is a pragmatic example of a software factory implementing SLSA prerequisites. Integrations within GitHub's continuous integration chains, like the "SLSA Build Provenance Action", are also available.
 
@@ -760,27 +734,27 @@ SLSA documentation is regularly updated by the community and available on its of
 
 #### Software Supply Chain Security Paper (SSCSP)
 
-The Software Supply Chain Security Paper specifications (SSCSP or SSCP) from the renowned Cloud Native Computing Foundation (CNCF) complement the SLSA. Historically, they cover a broader range of topics, but many recommendations overlap today.
+The Software Supply Chain Security Paper specifications from the renowned Cloud Native Computing Foundation complement the SLSA. Historically, they cover a broader range of topics, but many recommendations overlap today.
 
 Although SLSA offers more interactive, well-illustrated documentation (with examples of tools to use or threats for each rule) and is almost gamified with its "security level badges", SSCSP appears - at the time of this book's writing - to provide a more high-level view of threats within a software chain.
 
 Author's note: For beginners, I recommend starting your software factory security project with SSCSP, then advancing with SLSA.
 
-This document is also collaborative and broadly belongs to the standards adopted by the CNCF's Technical Advisory Group (TAG). The TAG writes various reference documents aimed at enhancing the security of the cloud ecosystem.
+This document is also collaborative and broadly belongs to the standards adopted by the CNCF's Technical Advisory Group (or TAG). The TAG writes various reference documents aimed at enhancing the security of the cloud ecosystem.
 
 #### Secure Software Development Framework (SSDF)
 
-The Secure Software Development Framework (SSDF) is a document drafted by the National Institute of Standards and Technology (NIST) of the US Department of Commerce for all software publishers and buyers, regardless of their affiliation with a government entity.
+The Secure Software Development Framework (or SSDF) is a document drafted by the National Institute of Standards and Technology (NIST) of the US Department of Commerce for all software publishers and buyers, regardless of their affiliation with a government entity.
 
 NIST deserves recognition for the variety and quality of their reports on cutting-edge technologies and techniques. Their works often result from collaboration with numerous institutions and private companies, such as Google, AWS, IBM, Microsoft, the Naval Sea Systems Command, and the Software Engineering Institute.
 
-More comprehensive than the previous two, SSDF acts as a directory consolidating recommendations from dozens of other frameworks (e.g., SSCSP, OWASP SAMM, MSSDL, BSIMM, PCI SSLC, OWASP SCVS). It categorizes them into four major themes: preparing the organization, protecting software, producing securely developed software, and addressing vulnerabilities.
+More comprehensive than the previous two, SSDF acts as a directory consolidating recommendations from dozens of other frameworks. It categorizes them into four major themes: preparing the organization, protecting software, producing securely developed software, and addressing vulnerabilities.
 
 The framework lists general concepts progressively associated with more concrete rules. Each theme encompasses broad practices to follow, which in turn include tasks with examples linked to the relevant frameworks.
 
 For example, under the "protect software" theme, the "protect all forms of code from unauthorized access and tampering" practice suggests using "commit signing", referencing the SSCSP in its "Secure Source Code" chapter.
 
-This document can be found on the NIST website. The online library of the Chief Information Officer (CIO) from the US Department of Defense is also an excellent source of inspiration.
+This document can be found on the NIST website. The online library of the Chief Information Officer from the US Department of Defense is also an excellent source of inspiration.
 
 #### GitHub's example
 
@@ -790,53 +764,37 @@ GitHub's aim is to ensure that securing one's code requires just a few clicks to
 
 The company made a strategic move by acquiring Semmle in 2019, a tool for analyzing vulnerabilities in code. Since then, it offers several means to secure its codebase:
 
-- SCA and SAST: Automated vulnerability analysis tools for the source code and its dependencies (e.g., SQL injections, XSS flaws, configuration errors, and other common vulnerabilities). GitHub also has a marketplace that allows adding code analyzers from third parties. You can add your custom rules by writing CodeQL files. You can deploy these tools on your infrastructure, for instance with GitHub Code Scanning (fig. <spanc/>\ref{fig:code-scanning-github}), Klocwork, or Checkov.
+- SCA and SAST are automated vulnerability analysis tools for the source code and its dependencies (e.g., SQL injections, XSS flaws, configuration errors, and other common vulnerabilities). GitHub also has a marketplace that allows adding code analyzers from third parties. You can add your custom rules by writing CodeQL files. You can deploy these tools on your infrastructure, for instance with GitHub Code Scanning, Klocwork, or Checkov.
+- The Secret Analyzer tool analyzes, detects, and alerts on potential passwords or tokens inadvertently left in the source code.
+- Dependabot is a dynamic analysis tool for risks associated with used dependencies. Dependabot automatically opens a code modification proposal (pull-request) on the project and suggests updating the dependency or an alternative.
 
-    !Vulnerability example detected by Code Scanning on a GitHub project.\label{fig:code-scanning-github}
+All security flaws related to a project are centralized in an overview, allowing threats to be easily detected and addressed.
 
-- Secret Analyzer: Analyzes, detects, and alerts on potential passwords or tokens inadvertently left in the source code. Open-source alternative: Gitleaks.
-
-- Dependabot: A dynamic analysis tool for risks associated with used dependencies (e.g., vulnerabilities, unmaintained libraries, legal risks). Dependabot automatically opens a code modification proposal (pull-request) on the project and suggests updating the dependency or an alternative (fig. <spanc/>\ref{fig:2020github-dependabot}).
-
-    !List of vulnerabilities found in a GitHub project by Dependabot. Source: github.com.\label{fig:2020github-dependabot}
-
-All security flaws related to a project are centralized in an overview, allowing threats to be easily detected and addressed (fig. <spanc/>\ref{fig:2021github-screenshot-of-security-overview}).
-
-!Security risks dashboard in a GitHub project. Source: github.com.\label{fig:2021github-screenshot-of-security-overview}
-
-GitHub relies on the international CVEs repository (Common Vulnerabilities and Exposures) to recognize vulnerabilities, a list of identified vulnerabilities in I-T systems described in a specific format. You can add additional verification mechanisms using GitHub Actions, GitHub's continuous integration mechanism.
+GitHub relies on the international Common Vulnerabilities and Exposures (CVEs) repository to recognize vulnerabilities. CVEs are a list of identified vulnerabilities in I-T systems described in a specific format. You can add additional verification mechanisms using GitHub Actions, GitHub's continuous integration mechanism.
 
 ## Pre-Approved Resources
 
 To mitigate risks, it is possible to base the software developed on pre-approved resources made available to developers. Every external component of the software is checked. This might include Python packages, NPM, Go, or even Docker images that have been analyzed, ensuring no vulnerabilities are present.
 
-This is exemplified by the Iron Bank service set up by the U.S. Department of Defense within Platform One. Docker images must undergo a rigorous validation process before approval. These steps combine manual checks with automated ones, but initially, only automated procedures may be employed. Manual actions are necessary to justify adding a new image. This is what Platform One teams call "continuous accreditation of approved images" (fig. <spanc/>\ref{fig:continuous-accreditation-approved-images}).
+This is exemplified by the Iron Bank service set up by the U.S. Department of Defense within Platform One. Docker images must undergo a rigorous validation process before approval. These steps combine manual checks with automated ones, but initially, only automated procedures may be employed. Manual actions are necessary to justify adding a new image. This is what Platform One teams call "continuous accreditation of approved images".
 
-!Continuous accreditation process of Iron Bank images.\label{fig:continuous-accreditation-approved-images}
-
-In organizations dealing with highly sensitive data (i.e., data that can jeopardize a country's security or credibility if disclosed), the default policy is to authorize only the use of pre-approved libraries and images (hardened images). However, consider the impact of such a choice on development velocity. Ensure your security and SRE teams can keep up with provisioning libraries.
+In organizations dealing with highly sensitive data (i.e., data that can jeopardize a country's security or credibility if disclosed), the default policy is to authorize only the use of pre-approved libraries and images (which are called "hardened images"). However, consider the impact of such a choice on development velocity. Ensure your security and SRE teams can keep up with provisioning libraries.
 
 Since it's nearly impossible to manually analyze each development library to ensure it's flawless, software factories can rely on file signatures. Trusted editors sign each of their libraries, so continuous integration pipelines or system administrators can verify it hasn't been altered during transfer. Each trusted editor issues a certificate that the SRE team can integrate into its continuous integration pipelines to ensure downloaded packages haven't been tampered with.
 
 A simpler method is to use only the hash key of files. Each file is identified by a character string called a hash, which the computer can easily compute.
 
-Example of a hash: a21c218df41f6d7fd032535fe20394e2.
-
-If, during installation, the downloaded dependency has a different hash from the reference one (obtained online from the publisher's website), the software launch is denied. This mechanism is mostly already implemented by programming language package managers (e.g., `package-lock.json` for NPM, `poetry.lock` for Python).
+During installation, if the downloaded dependency has a different hash from the one provided by the publisher, the software launch is denied. This mechanism is mostly already implemented by programming language package managers (e.g., `package-lock.json` for NPM or `poetry.lock` for Python).
 
 ## Managing Infrastructure through Code
 
 Humans are the primary vector for security risks. To minimize errors or deliberate system compromises, modern infrastructures are deployed as "code".
 
-This means that for everyday infrastructure operation (except in emergencies), every administrative action is coded, published, and verified in the software factory before deployment. This allows for standardizing, documenting, replaying, and optimizing administrative actions over time.
+This means that for everyday infrastructure operation, every administrative action is coded, published, and verified in the software factory before deployment. This allows for standardizing, documenting, replaying, and optimizing administrative actions over time.
 
-The field encompassing production management techniques through code is commonly called Infrastructure as Code (IaC). This concept and its relevance are described in the "Infrastructure as Code" chapter.
+The field encompassing production management techniques through code is commonly called Infrastructure as Code (or IaC). We will later detail this domain.
 
-Figure <spanc/>\ref{fig:ansible-iac-playbook-example} shows an example of a configuration in code form, which updates the time zone and time of machine `prod-fr-zone-c-server-18`.
-
-!Ansible configuration example illustrating the notion of Infrastructure as Code.\label{fig:ansible-iac-playbook-example}
-
-The above example is simple, but IaC can describe how machines can be instantiated and configured. An IaC setup can fully configure a machine from scratch (network settings, security certificates, adding users, printer drivers installation, browser favorites setup, etc.). The idea, once again, is to minimize human intervention to avoid mistakes.
+The above example is simple, but IaC can describe how machines can be instantiated and configured. An IaC setup can fully configure a machine from scratch. Once again, the idea is to minimize human intervention to avoid mistakes.
 
 ## Fundamentals of Zero Trust Network Architecture
 
@@ -850,16 +808,9 @@ Consider an example: Sophie is a colleague you've known for 3 years. She badges 
 
 Three pillars constitute a zero trust network architecture :
 
-1. Identity: Identify the user
-   - Identification: Who are you?
-   - Authentication: Are you who you claim to be? (e.g., two-factor authentication 2FA)
-   - Authorization: Are you allowed to access this resource?
-2. Context: How the user tries to access the resource
-   - Least Privilege Principle or need-to-know: Grant resource access only as necessary (e.g., hide inaccessible apps/data sources, set access expiration dates)
-3. Security: The hardware through which the user connects
-   - Machine Security: Ensure the connecting machine meets security requirements (e.g., an active antivirus or an updated OS)
-
-!Diagram of elements considered in a zero trust architecture. Source: [Microsoft Azure Documentation.\label{fig:zerotrustschemamsft}](./images/zerotrustschemamsft.jpg)
+1. Identify the user through identification (Who are you?), authentication (are you who you claim to be?) and authorization (are you allowed to access this resource?).
+2. Context: How the user tries to access the resource with Least Privilege Principle or need-to-know. We grant resource access only as necessary (e.g., hide inaccessible apps/data sources or setting access expiration dates).
+3. Security: The hardware through which the user connects. We ensure the connecting machine meets security requirements (e.g., an active antivirus or an updated OS).
 
 In zero trust, each request involves a fresh security check. The trust broker or CASB verifies these criteria (e.g., OpenID, Active Directory, PKI, SAML).
 
@@ -867,7 +818,7 @@ CASBs are integral to technologies known as "Zero Trust Network Access" (ZTNA) i
 
 Because of the many tools involved, setting up a zero trust model is less straightforward than perimeter-based security but overcomes its limitations.
 
-Beyond the pressing need to bolster resource access security, zero trust architecture offers peace of mind from a secured infrastructure. It simplifies device and network equipment administration (centralized management of network flows and access rather than configuring each device), reduces costs (maintenance time, shared machines), and standardizes identity and user rights management interfaces.
+Beyond the pressing need to bolster resource access security, zero trust architecture offers peace of mind from a secured infrastructure. It simplifies device and network equipment administration, reduces costs, and standardizes identity and user rights management interfaces.
 
 Technological innovation demands swift adaptation. Zero trust enables organizations to quickly and securely adapt to environmental changes without revisiting their security stance.
 
@@ -875,23 +826,19 @@ Reference documents such as Google's Beyondcorp research paper, NIST's publicati
 
 ## Zero Trust Based Development
 
-In the context of a Research & Development (R&D) environment, the topic becomes more intricate. To remain innovative, your teams require flexibility. They make use of cutting-edge libraries, install the latest GPU drivers for machine learning experiments, and even test the performance of their software, fully utilizing the resources of their machines.
+In the context of a Research & Development environment, the topic becomes more intricate. To remain innovative, your teams require flexibility. They make use of cutting-edge libraries, install the latest GPU drivers for machine learning experiments, and even test the performance of their software, fully utilizing the resources of their machines.
 
 In essence, your teams need complete access to their machine's configuration for effective development.
 
 However, as mentioned earlier, the third rule of a zero trust architecture is to ensure the user's machine is secure. If you grant a developer administrative rights, they might be tempted to disable their machine's security settings. So, what's the solution?
 
-!Components of an Enterprise Infrastructure.\label{fig:securitypartssoftwaredelivery}
+Development workstations are a unique component of our zero trust infrastructure. They entail integrating external resources into the company's infrastructure. At the same time, the software factory's source code or the company's data is copied onto these machines. With libraries downloaded carelessly or code editors with unchecked extensions, there's an added risk of data leakage outside.
 
-<!-- markdownlint-disable MD037 -->
-Development workstations (fig. <spanc/>\ref{fig:securitypartssoftwaredelivery}) are a unique component of our zero trust infrastructure. They entail integrating external resources into the company's infrastructure. At the same time, the software factory's source code or the company's data is copied onto these machines. With libraries downloaded carelessly or code editors with unchecked extensions, there's an added risk of data leakage outside.
-<!-- markdownlint-enable MD037 -->
-
-We are faced with a dilemma here. We can choose to grant our developers full permissions, but risk them disabling our security measures. Alternatively, we can limit these permissions, potentially slowing down their development velocity and ability to innovate, while also needing to invest more time in training them for an unconventional work environment (since it's controlled).
+We are faced with a dilemma here. We can choose to grant our developers full permissions, but risk them disabling our security measures. Alternatively, we can limit these permissions, potentially slowing down their development velocity and ability to innovate, while also needing to invest more time in training them for an unconventional work environment.
 
 Several factors should be considered:
 
-- Is the physical security of your installations guaranteed? (Are machines intended to leave your offices? Do outsiders have access to these machines?)
+- Is the physical security of your installations guaranteed?
 - Have your staff undergone a security clearance?
 - Is your infrastructure connected to the Internet?
 - Does your infrastructure have high bandwidth?
@@ -899,40 +846,18 @@ Several factors should be considered:
 - Is the data being handled massive in volume?
 - Could the data harm the organization if disclosed?
 - Can you provide machines for your employees?
-- Do you have teams capable of administering these machines? (Favor Cloud solutions over on-premise solutions)
+- Do you have teams capable of administering these machines?
 
 There are several ways to address development environment challenges. Here are 6, categorized by user flexibility, implementation complexity, and associated risk:
 
 1. BYOD: Bring Your Own Device. The user uses their computer and means for development. You have no control over the machine.
-   - Case 1: You hire a remote freelancer.
-   - Case 2: You lack the resources or time to manage a fleet of machines.
-   - Note: Only give the user the bare minimum access they need to work effectively (e.g., limited access to codebase, data).
 2. Semi-controlled machines. A specific user has administrative rights on their machine, while others don't.
-   - Case: You provide workstations, have taken initial security steps, but can't offer an alternative.
-   - Note: Preferably, always keep the machine within the company premises.
 3. Fully controlled machines with ephemeral cloud development environments like CodeSpace, Coder, or Eclipse Che.
-   - Case: You provide and configure network-connected workstations.
 4. Fully controlled machines with remote development VMs (e.g., Shadow, Azure VM).
-   - Case: You have access to a remotely manageable cloud infrastructure by a trusted third party.
-   - Example: In 2014, Sogeti announced the creation of OneShare: a DevOps platform allowing engineers to create development and testing environments on VMs based on templates (including development tools).
-   - Note: Ideally, these VMs should include development tools. This method is suitable if your VMs have internet access for data transfers and if your stations are fiber-connected. Otherwise, this setup is strongly discouraged.
 5. Fully controlled machines with local development VM.
-   - Case: Your activity requires engineers to have high autonomy (e.g., latest GPU libraries, IoT, R&D), but the company handles critical data with high-security needs.
-   - Note: Aim to create VM images pre-configured with development tools, preventing your team from wasting time on setup. Ensure a shared folder exists between the host and VM for faster data transfers.
 6. Fully controlled and equipped machines.
-   - Case: Your activity requires engineers to have high autonomy (e.g., latest GPU libraries, IoT, R&D), without being constrained by intermediary tech layers (VM), but the company deals with critical data and has high-security needs.
-   - Note: This practice is not recommended unless you have a dedicated, sizable team to maintain this infrastructure regularly (e.g., Google). In terms of security, consider, among other things, controlling the extensions used by your IDE.
 
-| Method                                                  | Flexibility  | Complexity                  | Risk        |
-| ------------------------------------------------------- | ------------ | --------------------------- | ----------- |
-| Bring Your Own Device                                 | Maximum      | None                        | High        |
-| Semi-controlled machines                                | Maximum      | Rather Low                  | Medium      |
-| Fully controlled machines with cloud dev. environment   | Medium       | Medium (Codespaces) to High (Coder) | Low        |
-| Fully controlled machines with remote dev. VM           | Medium       | Medium                      | Low         |
-| Fully controlled machines with local dev. VM            | Fairly High  | High                        | Very Low    |
-| Fully controlled and equipped machines                  | High         | Very High                   | Very Low    |
-
-The more you want to reduce risk while increasing flexibility (boosting security while promoting innovation), the more your infrastructure teams will have work or incur costs (e.g., outsourcing). Consider the factors inherent to your organization and its operating mode to choose the solution that best fits it.
+The more you want to reduce risk while increasing flexibility, the more your infrastructure teams will have work or incur costs (e.g., outsourcing). Consider the factors inherent to your organization and its operating mode to choose the solution that best fits it.
 
 ## Protecting Your Secrets
 
@@ -950,9 +875,7 @@ For engineers responsible for deploying software, the foundation provides common
 
 Let's compare a traditional foundation with a Cloud foundation to better understand the latter's added value.
 
-!Illustration of services in a traditional foundation (like ESXI).\label{fig:illustrationsocleesxi}
-
-In a traditional foundation (fig. <spanc/>\ref{fig:illustrationsocleesxi}), a virtual machine (VM) is assigned to each software to logically isolate it. Each software manages its own logs, certificates, secrets, and generates its own metrics. The foundation might host services centralizing this data, but the software developer would then have to modify their code to comply with the foundation's services.
+In a traditional foundation a virtual machine (VM) is assigned to each software to logically isolate it. Each software manages its own logs, certificates, secrets, and generates its own metrics. The foundation might host services centralizing this data, but the software developer would then have to modify their code to comply with the foundation's services.
 
 The robustness of this type of foundation is well-established and is still widely used today among major institutions. The isolation is highly effective.
 
@@ -962,13 +885,11 @@ In summary, here the deployed software is forced to adapt to the foundation. Thi
 
 This type of foundation is effective with a reasonable number of deployed services, but it doesn't scale easily without proportionally sized HR.
 
-!Illustration of services in a Cloud foundation (like Kubernetes baremetal).\label{fig:illustrationsoclekubernetes}
-
-In a Cloud foundation (fig. <spanc/>\ref{fig:illustrationsoclekubernetes}), the interaction between deployed software and the foundation is inherently stronger. Standardized container interfaces allow foundation services of an orchestrator (e.g., Kubernetes) to "connect" to it, while still maintaining logical resource isolation.
+In a Cloud foundation, the interaction between deployed software and the foundation is inherently stronger. Standardized container interfaces allow foundation services of an orchestrator (e.g., Kubernetes) to "connect" to it, while still maintaining logical resource isolation.
 
 For instance, application logs or performance metrics can be automatically retrieved and stored in a centralized tool, then set up with alerts. An antivirus that continuously checks for threats in a container can be installed. Kubernetes' sidecars mechanism makes these capabilities possible.
 
-Data flows between containers can be encrypted by default (use case: two services running on different servers). Secrets (passwords, tokens) can be supplied by the foundation without an administrator seeing them. Persistent data (volumes) are managed uniformly, and backups can be automated.
+Data flows between containers can be encrypted by default. Secrets (which are passwords or tokens) can be supplied by the foundation without an administrator seeing them. Persistent data are managed uniformly, and backups can be automated.
 
 The benefit of this kind of foundation is that it integrates all these services automatically, without ever touching the application code, nor even requiring the integrator to know about your infrastructure. Thus, you are guaranteed that all deployed software conforms to your monitoring and security requirements. It's the foundation that adapts to the deployed software.
 
@@ -980,7 +901,7 @@ In terms of security, containerized technology interfaces are standardized. It's
 
 For example, have you ensured that Microsoft Word is secure through certification? However, every Word file doesn't need to be certified separately. It's the same for a containerized application: whether coded in Python, Go, PHP, or embedding the latest libraries, it's the container running it that needs certification.
 
-In conclusion, treat your foundation as a product serving your engineers. The more you centralize and automate the use of this foundation's services, the less technical debt you'll have to maintain (see chapter "Leveraging automation"). Ultimately, this effort results in better service availability for your customers.
+In conclusion, treat your foundation as a product serving your engineers. The more you centralize and automate the use of this foundation's services, the less technical debt you'll have to maintain. Ultimately, this effort results in better service availability for your customers.
 
 ## Abandoning VMs?
 
@@ -1016,21 +937,21 @@ However, where the use of open-source in the private sector is a no-brainer, tec
 Such skepticism isn't without merit. The idea of importing a third-party library into one's I-T system without examining its contents can seem risky. Potential risks include:
 
 - A library that arbitrarily deletes data ;
-- A library transmitting data to a remote server (software data, telemetry) ;
-- An updated library that no longer works (due to bugs or deliberate sabotage: see protestwares) ;
+- A library transmitting data to a remote server (such as software data or telemetry) ;
+- An updated library that no longer works (due to bugs or deliberate sabotage with protestwares) ;
 - Legally, the use of open-source tech might be governed by license terms (e.g., prohibiting selling software developed using the library).
 
-So, it's about striking a balance between the productivity provided by open-source libraries/software and the trust we place in them (security).
+So, it's about striking a balance between the productivity provided by open-source libraries/software and the trust we place in them.
 
 Yet, it's a mistake to believe that simply buying software will ensure its security. Although responsibility is outsourced, the damage, if it occurs, is done. Google's engineering heads predict that by 2025, 80% of businesses will use open-source technologies maintained by salaried individuals (e.g., GitHub Sponsors).
 
 Historically, the official policy for approving certain libraries went through a certification cycle, aimed at mapping the risks associated with using a technology to decide whether to accept it. This decision could be supported by a code audit.
 
-For proper protection, maintain an active and systematic watch for security threats introduced into the code. In DevOps mode, your software factory is equipped with tools to detect dependencies or malicious code. You minimize risks by securing your software chain (see chapter "Securing Your Software Supply Chain" and job sheet "I-T Security Engineer").
+For proper protection, maintain an active and systematic watch for security threats introduced into the code. In DevOps mode, your software factory is equipped with tools to detect dependencies or malicious code. You minimize risks by securing your software chain.
 
-For example, if you can't set up a secure software forge yourself, you can use GitHub features (see chapter "GitHub's Example"). More broadly, security practices at GitLab are a great starting point.
+For example, if you can't set up a secure software forge yourself, you can use GitHub features. More broadly, security practices at GitLab are a great starting point.
 
-Joining a bug bounty platform is common among large enterprises, both to analyze their websites or the open-source software they use. A bug bounty system rewards individuals for identifying vulnerabilities, aiming to detect and fix vulnerabilities before they're exploited by malicious hackers. Popular platforms in this area include Hackerone, Bugcrowd, Synack, and Open Bug Bounty.
+Joining a bug bounty platform is common among large enterprises, both to analyze their websites or the open-source software they use. A bug bounty system rewards individuals for identifying vulnerabilities, aiming to detect and fix vulnerabilities before they're exploited by malicious hackers. Popular platforms in this area include HackerOne, BugCrowd or Open Bug Bounty.
 
 In a mature organization, you could even open an Open Source Program Office (OSPO), responsible for defining and implementing strategies around the use of and securing open-source technologies employed in your organization.
 
@@ -1040,26 +961,26 @@ Far from benefiting only these companies, this practice benefits the entire sect
 
 ## Assessing security and training
 
-To excel in system resilience, as in any field, training is necessary. That's why one of the recommended practices in SRE (Site Reliability Engineering) is to train to handle incidents. The objectives are as follows:
+To excel in system resilience, as in any field, training is necessary. That's why one of the recommended practices in Site Reliability Engineering is to train to handle incidents. The objectives are as follows:
 
-1. Assess the quality of incident response (speed, detection tools, clear and easily accessible resolution guides, functional production tools) ;
-2. Evaluate the resilience of the infrastructure (automatic infrastructure mechanisms to resolve production outages) ;
+1. Assess the quality of incident response ;
+2. Evaluate the resilience of the infrastructure ;
 3. Train engineers to better understand their infrastructure and the tools at their disposal to respond to incidents.
 
-To ensure that its teams are well organized in case of an incident, Google has designed two types of training. The goal is to reduce the Mean Time To Mitigation (the average time to resolve an incident, cf. chapter "Measuring the success of your transformation"), which would impact the company's service contracts.
+To ensure that its teams are well organized in case of an incident, Google has designed two types of training. The goal is to reduce the Mean Time To Mitigation (which is the average time to resolve an incident), which would impact the company's service contracts.
 
-1. DiRT (Disaster Recovery Testing): a group of engineers plans and causes an actual failure over a defined period to test the effectiveness of its incident response. It is recommended to perform these trainings at least once a year on your critical services ;
-2. The Wheel of Misfortune: a fictional scenario drawn at random, in the form of a role-playing game similar to Dungeons and Dragons, where a team of engineers faces an operational emergency. They interact with a "game master" who invents consequences for the actions that the engineers announce they will take. Engineers take this opportunity to review their incident investigation procedures. This practice is particularly useful for newcomers but requires that the game master be particularly experienced (cf. Pavlos RATIS's GitHub project "wheel of misfortune").
+1. Disaster Recovery Testing is an exercise in which a group of engineers plans and causes an actual failure over a defined period to test the effectiveness of its incident response. It is recommended to perform these trainings at least once a year on your critical services ;
+2. The Wheel of Misfortune is a fictional scenario drawn at random, in the form of a role-playing game similar to Dungeons and Dragons, where a team of engineers faces an operational emergency. They interact with a "game master" who invents consequences for the actions that the engineers announce they will take. Engineers take this opportunity to review their incident investigation procedures. This practice is particularly useful for newcomers but requires that the game master be particularly experienced.
 
-Amazon Web Services (AWS) offers a similar approach named Game days to Google's Wheel of Misfortune. The company lists its critical services and the threats that can be associated with them (e.g., data loss, overload, unavailability) to determine a "disaster" scenario. Subsequently, the idea is to provision an infrastructure identical to the production and cause the desired failure. It then observes how its teams and production tools react to the incident.
+Amazon Web Services offers a similar approach named Game days to Google's Wheel of Misfortune. The company lists its critical services and the threats that can be associated with them (e.g., data loss, overload, unavailability) to determine a "disaster" scenario. Subsequently, the idea is to provision an infrastructure identical to the production and cause the desired failure. It then observes how its teams and production tools react to the incident.
 
 These trainings are more commonly called fire drills. Again, their goal is to practice incident response in an urgent situation. During these trainings, someone should note any incomplete or missing elements in existing procedures or tools, with a view to improving them.
 
 Netflix goes even further with its tool Chaos Monkey which automatically, randomly, and at any time stops production services. The goal is to ensure that customers continue to have access to Netflix, even with one or more internal services down. Their tool Chaos Gorilla even goes as far as simulating the shutdown of a complete AWS region (e.g., a datacenter that would be taken out of service) to observe its consequences on the platform's availability. These practices are part of what is called chaos engineering.
 
-Finally, apart from audit software that can detect some vulnerabilities (e.g., Lynis, Kube Hunter), there are other exercises for your security and SRE teams to practice.
+Finally, apart from audit software that can detect some vulnerabilities (e.g., Lynis or Kube Hunter), there are other exercises for your security and SRE teams to practice.
 
-The most popular way to assess the security of your infrastructure is the "blue team / red team" exercise. Inspired by military training, it consists of a face-off between a team of cybersecurity experts trying to compromise an information system (the red team), and the incident response teams (the SREs, the blue team) who will identify, evaluate, and neutralize the threats. The idea is to avoid relying on the theoretical capabilities of your security systems, but to confront them with concrete threats to assess their usefulness and weaknesses. Variants exist with a purple team, a white team, or even a gold team. But start by setting up a simple scenario. For example: one of your developers who introduces a Docker image or tainted code.
+The most popular way to assess the security of your infrastructure is the "blue team / red team" exercise. Inspired by military training, it consists of a face-off between a team of cybersecurity experts trying to compromise an information system (represented by the red team), and the incident response teams (represented by SREs - the blue team) who will identify, evaluate, and neutralize the threats. The idea is to avoid relying on the theoretical capabilities of your security systems, but to confront them with concrete threats to assess their usefulness and weaknesses. Variants exist with a purple team, a white team, or even a gold team. But start by setting up a simple scenario. For example: one of your developers who introduces a Docker image or tainted code.
 
 This topic is vast and practices vary depending on the size of the organization you are employed in. This chapter gives you some references to start your training practices. Structure them subsequently according to your objectives and resources.
 
