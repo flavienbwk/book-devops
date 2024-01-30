@@ -2126,22 +2126,22 @@ For instance, even Google does not promise more than 99.9% availability with its
 
 The traditional approach of institutions working with industrial partners resembles "waterfall" developments: a major meeting is set up to gather requirements, a technical and functional specification document is drafted to structure the contract, developments are then undertaken, and the final product is delivered, concluding the contract.
 
-Given the intense dynamics of the digital realm, this method is suboptimal. The average lifespan of software doesn't exceed 3 to 5 years, even if periodic updates are provided.
+Given the intense dynamics of the digital realm, this method is suboptimal. According to Procter & Gamble, the average lifespan of software doesn't exceed 3 to 5 years, even if periodic updates are provided.
 
-Consider this scenario: you are tasked with equipping your organization with a new digital tool.
+Now consider this scenario: you are tasked with equipping your organization with a new digital tool.
 
-- If you've reached the point of initiating this project, it's likely the need for this tool arose several months or even years ago ;
-- You then gear up to compare existing solutions in the market and engage with an industrial partner, which can take between 1 to 3 months ;
+- If you've reached the point of initiating the project, it's likely that the need for this tool arose several months or even years ago ;
+- You then gear up to compare existing solutions and engage with an industrial partner. This takes between 1 to 3 months ;
 - Once you've chosen your industrial partner, you arrange a meeting between stakeholders and the industry experts to help them understand the challenges and your expectations ;
-- Drafting the specification takes an additional month. Some back-and-forths to refine it: 1+ month ;
+- Drafting the specification takes an additional month. Some back-and-forths to refine it and that's 1 month more ;
 - You'll likely need to get approval for this new tool to comply with your organization's I-T security policies: even if conducted concurrently, this will likely add another month ;
 - Contract finalization also takes 1 month. Development lasts between 3 to 6 months ;
 - Presentations and operational verification: 1 month ;
-- Deployment: an additional 2 weeks to 2 months, depending on your I-T security policies and available networks.
+- Deployment gets you an additional 2 weeks to 2 months, depending on your I-T security policies and available networks.
 
 In the end, the entire process might take roughly a year, and you've yet to place the tool in the users' hands. At this point, you can't even be sure it meets the need, considering that the stated requirement often differs from the actual requirement.
 
-Finally, when the users get their hands on the tool, unfortunately, it might not fully meet the needs, might be impractical, and your colleagues might prefer the old tools they are familiar with.
+Unfortunately, when the users get their hands on the tool, it might not fully meet the needs. The tool might be impractical, and your colleagues might prefer the old one they are familiar with.
 
 Such an approach is untenable today. One of the tenets of DevOps is the ability to "fail fast," iterate frequently, and swiftly arrive at a version that meets requirements. In this context, the DevOps methodology advises against rushing into a "fully fleshed out" specification. Start with an initial version, fail, iterate, and perfect the tool alongside your customer.
 
@@ -2163,52 +2163,43 @@ This practice is a win-win for everyone: clients experience shorter delivery tim
 
 # Measuring the success of your transformation
 
-It is crucial to measure the efforts you invest in your initiative. This allows for a factual assessment of the effectiveness of your decision-making. Of course, initially, it's not uncommon to witness a degradation in performance since you are altering routines, meaning the organization's equilibrium. If you notice a decline in the metrics over time, you know you need to adopt a different strategy to reverse the trend (see chapter "Knowing when to innovate and when to stop").
+It is crucial to measure the efforts you invest in your initiative. This allows for a factual assessment of the effectiveness of your decision-making. It's not initially uncommon to witness a degradation in performance since you are altering routines, your organization's equilibrium. If you notice a decline in the metrics over time, you know you need to adopt a different strategy to reverse the trend.
 
 According to research, an organization's technical maturity can quadruple its team's performance. Let's explore some indicators used in the industry. These indicators are frequently debated but still seem to be the widely accepted reference.
 
-The success of a DevOps initiative is measured using 4 theorized measures (4 key metrics). An additional fifth measure reflects the organization's operational performance. These metrics showcase results at the overall scale of your I-T systems and your organization rather than just software measures. The latter might stem from local improvements, compromising overall performance. Let's dive into them:
+The success of a DevOps initiative is measured using 4 theorized measures. An additional fifth measure reflects the organization's operational performance. These metrics showcase results at the overall scale of your I-T systems and your organization rather than just software measures. The latter might stem from local improvements, compromising overall performance. Let's dive into them:
 
-- Deployment Frequency (deployment frequency): For the primary software or service you are working on, how often does your organization deploy code to production or make it available to its users?
-- Lead Time for Changes (lead time for changes): For the primary software or service you're working on, how long does it take to get it into production (i.e., the time from validated code to functioning code in production)?
-- Time to Restore Service (time to restore service): For the primary software or service you are focusing on, how long does it typically take to restore the service when an incident or fault impacting users occurs (e.g., an unplanned outage or degraded service)?
-- Change Failure Rate (change failure rate): For the primary software or service you're working on, what percentage of production updates or new version releases lead to service degradation (e.g., deterioration or service interruption) and subsequently require fixes (e.g., a hotfix, a rollback, a fix delay, a patch)?
+- Deployment Frequency : For the primary software or service you are working on, how often does your organization deploy code to production or make it available to its users?
+- Lead Time for Changes : For the primary software or service you're working on, how long does it take to get it into production ? (i.e., the time from validated code to functioning code in production)
+- Time to Restore Service : For the primary software or service you are focusing on, how long does it typically take to restore the service when an incident or fault impacting users occurs ? (e.g., an unplanned outage or degraded service)
+- Change Failure Rate : For the primary software or service you're working on, what percentage of production updates or new version releases lead to service degradation (e.g., deterioration or service interruption) and subsequently require fixes (e.g., a hotfix, a rollback, a fix delay or a patch)?
 
 All these measures are based on the infrastructure's availability rather than its resilience. DORA report researchers subsequently posed a new question to organizations in 2021. This led to the introduction of a fifth metric:
 
-- Operational Performance or Resilience (operational performance or reliability): Evaluating the ability to meet or exceed resilience targets. The expected responses regarding resilience goals for this measure are: "often meets them", "meets them most of the time", "always exceeds them". This can be gauged, among other things, by SLOs (see chapter "Resilience Indicators") or a user satisfaction rate.
+- "Operational Performance" or "Resilience". This evaluates the ability to meet or exceed resilience targets. The expected responses regarding resilience goals for this measure are: "often meets them", "meets them most of the time", "always exceeds them". This can be gauged, among other things, by SLOs or a user satisfaction rate.
 
 If you are starting your initiative from scratch, comparing yourself to industry performance might not be relevant. Keep them in mind to know what goals to aim for but don't judge your success based on them. Gauge it based on the progression of your own measures over time. Everyone starts from an initial state with the aim to improve it.
 
-The DORA 2022 report classified the surveyed organizations into three performance categories (low, medium, and high) for its four key measures:
+The DORA 2022 report classified the surveyed organizations into three performance categories (low, medium, and high) for its four key measures.
 
-| Measure                          | Low                          | Medium               | High                              |
-| -------------------------------- | ---------------------------- | -------------------- | --------------------------------- |
-| Deployment Frequency             | Between 1 and 6 every 6 months | Between 1 and 4 per month | On-demand (multiple times a day) |
-| Lead Time for Changes            | < 6 months                   | < 1 month            | < 1 week                          |
-| Time to Restore Service          | < 1 month                    | < 1 week             | < 1 day                           |
-| Change Failure Rate              | 46% - 60%                    | 16% - 30%            | 0% - 15%                          |
+GitLab even allows for real-time visualization of these metrics starting from version 12.3.
 
-GitLab even allows for real-time visualization of these metrics starting from version 12.3 (fig. <spanc/>\ref{fig:2023gitlab-value-stream-analytics}).
+If you have a relatively recent version of GitLab or have set up continuous integration pipelines, you can measure most phenomena. Otherwise, ask your teams to record events on a collaborative interface (e.g., Google Sheets, Airtable or Atlassian Confluence).
 
-!Value Stream Analytics tab in the Analytics menu of the GitLab project on gitlab.com.\label{fig:2023gitlab-value-stream-analytics}
+Added to these measurements is one I call the "resilient collaboration trend". It captures the essence of a DevOps initiative in my view: succeeding in continuous innovation while maintaining low technical debt and providing the most available service possible. The following factors are multiplied to total the value of the resilient collaboration index (RCI):
 
-If you have a relatively recent version of GitLab or have set up continuous integration pipelines, you can measure most phenomena. Otherwise, ask your teams to record events on a collaborative interface (e.g., Google Sheets, Airtable, Atlassian Confluence, Baserow, NocoDB).
-
-Added to these measurements is one I call the "resilient collaboration trend" (resilient collaboration trend or RCT). It captures the essence of a DevOps initiative in my view: succeeding in continuous innovation while maintaining low technical debt and providing the most available service possible. The following factors are multiplied to total the value of the resilient collaboration index (RCI):
-
-1. Number of days since the software's creation (number) ;
-2. Number of contributors to the software since its creation (number): These first two factors determine the company's ability to maintain software that is maintainable over time, easy to grasp and modify. That is, its ability to maintain low technical debt ;
-3. Number of successful deployments in the quarter (number): This factor determines the company's ability to innovate regularly, from code writing to production ;
-4. Quarterly software availability in production (%): This factor determines the company's ability to provide a stable service to its users.
+1. Number of days since the software's creation ;
+2. Number of contributors to the software since its creation: These first two factors determine the company's ability to maintain software that is maintainable over time, easy to grasp and modify. That is, its ability to maintain low technical debt ;
+3. Number of successful deployments in the quarter: This factor determines the company's ability to innovate regularly, from code writing to production ;
+4. Quarterly software availability in production (in percent): This factor determines the company's ability to provide a stable service to its users.
 
 We then observe and compare the trend of this index over time. It is this trend that can be compared to other projects.
 
-For example, the GitLab project - one of the largest collaborative open-source projects - displayed a resilient collaboration index of `155 711 413` in Q2 2022, `188 809 628` (+17.5%) in Q3, and `202 865 477` (+7%) in Q4. The latter, with `4102` days since the creation of the git project (October 9, 2011 - January 1, 2023), `2474` contributors, `20` software releases, and an average availability of `99.95%`. The project was thus less agile in Q3 than in Q4 (-10.5%).
+For example, the GitLab project - one of the largest collaborative open-source projects - displayed a resilient collaboration index that is 10.5% lower in Q3 than in Q4.
 
-This index should be updated every quarter. This time interval can be shortened or extended depending on the maturity of your organization: the more confident you are in your ability to deploy regularly, the shorter your measurement interval can be. E.g., over a semester, a quarter, a month, or a week.
+This index should be updated every quarter. This time interval can be shortened or extended depending on the maturity of your organization: the more confident you are in your ability to deploy regularly, the shorter your measurement interval can be. First instance over a semester, a quarter, a month, or a week.
 
-Unlike the SRE, which relies on specific measurements (e.g., "The 4 golden signals", "Resilience indicators"), the DevOps lead has some freedom to choose the measurements that seem most relevant to them. That is, those that best assess the service they provide to internal teams. However, the modus vivendi between DevOps and SRE is the "deployment lead time": both strive to make this parameter as satisfactory as possible.
+Unlike the SRE, which relies on specific measurements (e.g., "The 4 golden signals" or "Resilience indicators"), the DevOps lead has some freedom to choose the measurements that seem most relevant to them. That is, those that best assess the service they provide to internal teams. However, the modus vivendi between DevOps and SRE is the "deployment lead time": both strive to make this parameter as satisfactory as possible.
 
 # Integrated DevOps platform
 
@@ -2216,20 +2207,20 @@ Unlike the SRE, which relies on specific measurements (e.g., "The 4 golden signa
 
 Your organization is sometimes tasked with deploying software in environments as diverse as they are unique. If you're lucky, these environments are few and connected. But things get complicated when the number starts to grow and they're isolated. It becomes essential to find a standardized way to deploy updates while minimizing delays.
 
-Built on Kubernetes, Apollo is the product used by Palantir to deploy and keep its services up to date across all its client bases. With hundreds of engineers, over 400 software products, and thousands of deployments every day, Palantir boasts deploying its services across a hundred different computing environments (AWS, GCP, Azure, classified private clouds disconnected from the internet, edge servers with intermittent connections...).
+Built on Kubernetes, Apollo is the product used by Palantir to deploy and keep its services up to date across all its client bases. With hundreds of engineers, over 400 software products, and thousands of deployments every day, Palantir boasts deploying its services across a hundred different computing environments (e.g., AWS, GCP, Azure, classified private clouds disconnected from the internet or edge servers with intermittent connections...).
 
-Driven by the constraint of regularly deploying on varied infrastructures, work on Apollo began in early 2015. It was progressively rolled out to its clients from 2017 and has been commercially available since the start of 2022, powering Palantir's internal infrastructure. The product's philosophy is to interface with your existing infrastructure and services (software forge, continuous integration engine, artifact registry...).
+Driven by the constraint of regularly deploying on varied infrastructures, work on Apollo began in early 2015. It was progressively rolled out to its clients from 2017 and has been commercially available since the start of 2022, powering Palantir's internal infrastructure. The product's philosophy is to interface with your existing infrastructure and services (e.g., your software forge, continuous integration engine or artifact registry...).
 
 The company operates under the belief that software engineers and SREs each have their areas of expertise. On one hand, software engineers have a better understanding of how and when the software they develop should be updated. On the other, SREs are more familiar with the specifics and constraints of the environments in which they deploy. Thus, software engineers develop the code, Apollo deploys it, and the SREs monitor to ensure everything went as planned.
 
-That's why Apollo's interface primarily showcases two menus: "Environments" (SRE-oriented) and "Products" (software engineer-oriented).
+That's why Apollo's interface primarily showcases two menus: "Environments" (which is SRE-oriented) and "Products" (which is developers-oriented).
 
-- The "Environments" menu allows connection to different environments, defining deployment strategies across multiple environments (e.g., GCP, AWS, Azure, on-premise) and channels (see release channels), setting software quality and security criteria, and approving infrastructure changes ;
-- The "Products" menu ensures that a software's new version is correctly deployed: Apollo automatically manages blue/green deployments (see chapter "Continuous deployment") and rollbacks. It enables the declaration of update strategies by specifying which service needs updating before another (see the following chapter "Constraint-based deployment").
+- The "Environments" menu allows connection to different environments, defining deployment strategies across multiple environments (e.g., AWS, Azure or on-premise) and channels, setting software quality and security criteria, and approving infrastructure changes ;
+- The "Products" menu ensures that a software's new version is correctly deployed: Apollo automatically manages blue/green deployments and rollbacks. It enables the declaration of update strategies by specifying which service needs updating before another.
 
 Connected to git repositories, it allows tracking and approving any code modifications before deployment.
 
-Lastly, Apollo offers centralized monitoring of the status of services deployed across all your environments from a single platform. Whether connected to your favorite observability service (e.g., Datadog, Prometheus, Pagerduty) or operating independently via the Apollo Observability Platform, it incorporates feedback of all sorts of measurements (logs, metrics, traces) to investigate incidents in detail.
+Lastly, Apollo offers centralized monitoring of the status of services deployed across all your environments from a single platform. Whether connected to your favorite observability service (e.g., Datadog, Prometheus or Pagerduty) or operating independently via the Apollo Observability Platform, it incorporates feedback of all sorts of measurements to investigate incidents in detail.
 
 ## Constraint-based deployment
 
@@ -2237,9 +2228,9 @@ With Apollo, Palantir introduces the concept of constraint-based continuous depl
 
 Considering modern applications often rely on external services, this mechanism helps avoid incompatibilities between different versions of an app deployed across varied environments.
 
-For instance, if application `foo` version `1.1.0` requires the service `bar` to be deployed at version `1.1.0`, Apollo won't update `foo:1.1.0` until `bar:1.1.0` is available and deployed. The deployment of a new version of an application, dependent on a specific version of another, is often manually managed, even if continuous deployment is in place. Teams first ensure the dependent service (`bar:1.1.0`) is available and deployed before deploying its new version (`foo:1.1.0`). These dependencies are recorded in a specific file within the same project as the application's source code.
+For instance, if application "foo" requires the service "bar" to be deployed, Apollo won't update "foo" until "bar" is available and deployed. The deployment of a new version of an application, dependent on a specific version of another, is often manually managed, even if continuous deployment is in place. Teams first ensure the dependent service "bar" is available and deployed before deploying its new version "foo". These dependencies are recorded in a specific file within the same project as the application's source code.
 
-Another example is database schema migration. By declaring a database schema version compatible with a specific application version, Apollo prevents deploying an app incompatible with a database yet to be updated. For instance, if `foo:1.1.0` only supports the `V2` schema of `bdd:V1`, `foo:1.1.0` will only be deployed once `bdd:V1` has migrated to `V2`. This way, Apollo knows which version of an application is eligible for deployment in which environment.
+Another example is database schema migration. By declaring a database schema version compatible with a specific application version, Apollo prevents deploying an app incompatible with a database yet to be updated.
 
 # Distribution of initiatives
 
@@ -2247,16 +2238,11 @@ In 2016 surveys, 47% of organizations claimed to adopt a DevOps approach. This n
 
 From 2019 to 2022, the distribution of DevOps initiatives by industry remained roughly the same: primarily dominated by the tech sector (~40%), followed by the financial sector (~12%) and e-commerce (~8%). The institutional sector accounted for 2% to 4% of these initiatives, indicating ample room for innovation in this domain.
 
-Here's a breakdown of companies practicing DevOps in 2022:
-
-- Large enterprises (>= 5000 employees): ~30% ;
-- Medium-sized enterprises (>= 250 and < 5000 employees): ~38% ;
-- Between 20 and 250 employees: ~26% ;
-- Less than 20 employees: ~6%.
+Here's a breakdown of companies practicing DevOps in 2022 : large companies are around 30%. Medium-sized companies are around 38%. Small companies are around 26% and very small ones are around 6%.
 
 The 2019 crisis accelerated digital transformation initiatives, leading to a 23% growth in DevOps team sizes during that period.
 
-In 2022, the geographical distribution of organizations adopting DevOps practices is still challenging to pinpoint. However, North America seems to be a major hub, accounting for about 33% of DevOps initiatives. Europe and Asia follow closely with approximately 33% each (with India at 21%). In 2019, North America accounted for 50% of these initiatives, Europe 29%, and Asia 9%. This indicates a growing interest in the subject among Asian countries.
+In 2022, the geographical distribution of organizations adopting DevOps practices is still challenging to pinpoint. However, North America seems to be a major hub, accounting for about 33% of DevOps initiatives. Europe and Asia follow closely with approximately 33% each (and India at 21%). In 2019, North America accounted for 50% of these initiatives, Europe 29%, and Asia 9%. This indicates a growing interest in the subject among Asian countries.
 
 The average size of DevOps teams remains small, averaging around 8 members.
 
@@ -2266,48 +2252,42 @@ This positions DevOps as a methodology primarily adopted by companies that have 
 
 Transforming an organization, regardless of its size, is a complex task involving significant political, technical, and human challenges. Should this transformation fail, the consequences can be severe. At the same time, it's crucial for your organization to consider the long-term implications of continuing with its current model. DevOps aims to minimize these risks through standardized methodologies and tools.
 
-Research and the experience of thousands of businesses today allow us to understand the challenges related to transitioning organizations to the Cloud. Having proven its effectiveness, institutions are gradually shifting their focus to DevOps, although few have fully embraced it yet (see chapter "Distribution of initiatives"). One major hurdle remains in sourcing talent in this area, but the foremost challenge is to persuade the leadership.
+Research and the experience of thousands of businesses today allow us to understand the challenges related to transitioning organizations to the Cloud. Having proven its effectiveness, institutions are gradually shifting their focus to DevOps, although few have fully embraced it yet. One major hurdle remains in sourcing talent in this area, but the foremost challenge is to persuade the leadership.
 
-Several strategies can be adopted depending on your hierarchical and technical position. The most common is to start with a pilot project that addresses internal needs (e.g., deploying software co-developed with your business teams). This can attract initial internal partners (see chapter "Internal team model").
+Several strategies can be adopted depending on your hierarchical and technical position. The most common is to start with a pilot project that addresses internal needs (e.g., deploying software co-developed with your business teams). This can attract initial internal partners.
 
-Provide services promptly to demonstrate the efficiency of your approach compared to traditional methods (e.g., software better suited to needs, streamlined deployment, quick response to incidents...). Once the early adopters are convinced, have them testify during your presentations to decision-makers. Business teams often agree to do this, feeling indebted for the services you've provided. With such a powerful impact, you can gradually rally a community to elevate your vision (see chapter "How to convince and keep faith").
+Provide services promptly to demonstrate the efficiency of your approach compared to traditional methods (e.g., software better suited to needs, streamlined deployment or quick response to incidents...). Once the early adopters are convinced, have them testify during your presentations to decision-makers. Business teams often agree to do this, feeling indebted for the services you've provided. With such a powerful impact, you can gradually rally a community to elevate your vision.
 
-Facilitating change is primarily about minimizing risks undertaken. Starting small and iterating is the best approach to success. Moreover, by understanding the psychological and technical realities behind a transformation project, you'll have all the tools and arguments for a quicker and less perilous transition (see chapter "Initiatives within organizations"). Presenting Cloud technologies and DevOps as evolutionary rather than disruptive techniques is an effective way to persuade.
+Facilitating change is primarily about minimizing risks undertaken. Starting small and iterating is the best approach to success. Moreover, by understanding the psychological and technical realities behind a transformation project, you'll have all the tools and arguments for a quicker and less perilous transition. Presenting Cloud technologies and DevOps as evolutionary rather than disruptive techniques is an effective way to persuade.
 
 Like major corporations that constantly invest in new technologies, every organization must be willing to take risks to remain competitive. Your executive committee should remain open to surprising perspectives and encourage experimentation.
 
-For instance, it's vital not to underestimate the potential of employees deemed challenging to manage. Some might be the visionaries that will define your future. Seriously considering the impact of their ideas is essential, lest you miss critical opportunities for the organization's future (see chapter "Breaking down organizational silos").
+For instance, it's vital not to underestimate the potential of employees deemed challenging to manage. Some might be the visionaries that will define your future. Seriously considering the impact of their ideas is essential, lest you miss critical opportunities for the organization's future.
 
 While business teams you assist see immediate benefits, this value is often more abstract for the leadership. As the instigator of a transformation, you need to invest time in familiarizing organizational decision-makers. Don't hesitate to start with basic Cloud concepts and gradually clarify the implications of DevOps for stakeholders. It's crucial to provide examples of how you've addressed internal dysfunctions with your approach.
 
 The initiator should always be prepared to answer the following questions:
 
-- Why do we need to change?
-  - Provide specific examples of dysfunctions within the organization.
-- What's the benefit of this approach for our organization and my mandate?
-  - Quantify the amount of time or money this approach could save.
-  - Explain how the image of the decision-maker could be enhanced by your project.
-- What will this transformation cost us (in terms of equipment, HR, time) and what is its ROI?
-  - Quantify the investment required for this transformation.
-  - Present your transformation plan: training schedule, contracting plan, equipment purchasing plan.
-- What does the rest of the organization think?
-  - List the strengths and weaknesses of the approach. This requires having consulted internal teams for their perspectives.
+1. Why do we need to change? Provide specific examples of dysfunctions within the organization.
+2. What's the benefit of this approach for our organization and my mandate? Quantify the amount of time or money this approach could save. Also explain how the image of the decision-maker could be enhanced by your project.
+3. What will this transformation cost us and what is its ROI? Quantify the investment required for this transformation Also present your transformation plan: training schedule, contracting plan, equipment purchasing plan.
+4. What does the rest of the organization think? List the strengths and weaknesses of the approach. This requires having consulted internal teams for their perspectives.
 
-With the leadership convinced and granting you both technical and political resources, the journey is only beginning! Don't advertise capabilities you don't yet master. Start by providing access only to a subset of willing users and establish your procedures (management, administration, incidents).
+With the leadership convinced and granting you both technical and political resources, the journey is only beginning! Don't advertise capabilities you don't yet master. Start by providing access only to a subset of willing users and establish your procedures.
 
 Your initiative will inevitably face challenges initially. Welcome feedback graciously and enhance your services. Once confident in the service reliability, expand its deployment and communicate extensively.
 
-You'll soon notice that operational or business priorities often sideline infrastructure work (Cloud/DevOps) in favor of product developments (software). Yet, research shows that structuring around these proven methods enhances long-term efficiency (see chapter "Why DevOps?"). Ensure you allocate time for resilience work in your engineers' schedules.
+You'll soon notice that operational or business priorities often sideline infrastructure work in favor of product developments. Yet, research shows that structuring around these proven methods enhances long-term efficiency. Ensure you allocate time for resilience work in your engineers' schedules.
 
-A DevOps infrastructure realizes its full potential once connected to your organization's main network. This is when it can deploy frequent updates, respond quickly to incidents, and consolidate your teams' work. If your project began on an isolated platform, focus now on connecting where your users are present (see chapter "The pillars of devops in practice").
+A DevOps infrastructure realizes its full potential once connected to your organization's main network. This is when it can deploy frequent updates, respond quickly to incidents, and consolidate your teams' work. If your project began on an isolated platform, focus now on connecting where your users are present.
 
-Measuring the effectiveness of one's initiative over time is critical: both to ensure that one is moving in the right direction without dogmatism, and to provide quantifiable arguments to superiors or teams that still need convincing. Make sure to maintain a clear dashboard of these indicators (see chapter "Measuring the success of your transformation").
+Measuring the effectiveness of one's initiative over time is critical: both to ensure that one is moving in the right direction without dogmatism, and to provide quantifiable arguments to superiors or teams that still need convincing. Make sure to maintain a clear dashboard of these indicators.
 
-Tools such as ChatGPT based on LLMs offer as many new opportunities (e.g., GitLab Duo, GitHub Copilot) as they introduce new threats (internal skills, deepfakes). Concurrently, security standards will continue to evolve at a breakneck pace. This advocates for a transformation of organizations towards a more agile digital universe. The future is shaping today, and the companies that will succeed best are those that manage to leverage the latest technologies and integrate them into their software development cycle (see chapter "Refusing the technological lag").
+Tools such as ChatGPT based on LLMs offer as many new opportunities (e.g., GitLab Duo or GitHub Copilot) as they introduce new threats. Concurrently, security standards will continue to evolve at a breakneck pace. This advocates for a transformation of organizations towards a more agile digital universe. The future is shaping today, and the companies that will succeed best are those that manage to leverage the latest technologies and integrate them into their software development cycle.
 
 Beyond the speed at which technology evolves and as with any area of expertise, this type of infrastructure requires the maintenance of the skills necessary to administer it.
 
-We can easily imagine that a fighter pilot maintains his or her flying skills. Why would it be any different for engineers who maintain critical software vital to the institution's operation? You and your teams must continue to stay ahead by training regularly (see chapter "Continuous training").
+We can easily imagine that a fighter pilot maintains his or her flying skills. Why would it be any different for engineers who maintain critical software vital to the institution's operation? You and your teams must continue to stay ahead by training regularly.
 
 In DevOps mode, organizations can afford to fail faster, with controlled risk, to innovate ahead of their competitors.
 
