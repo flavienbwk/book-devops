@@ -1035,7 +1035,7 @@ Engineers can share technical environments instead of redeploying infrastructure
 
 In many large organizations, the main obstacle to adopting internally developed software is the network they're deployed on. Teams are forced to deploy on a different network from the departments due to information systems security concerns.
 
-To make their software accessible on the departmental network, validation is often required. For any developed software, this process can take several months to a year. If these teams deploy dozens of updates every day, enduring such delays is impractical (see chapter "Security: a new paradigm with the DevOps approach"). In the end, the users you have the least time to assist will abandon your tools because the time irritant will become too significant for them.
+To make their software accessible on the departmental network, validation is often required. For any developed software, this process can take several months to a year. If these teams deploy dozens of updates every day, enduring such delays is impractical. In the end, the users you have the least time to assist will abandon your tools because the time irritant will become too significant for them.
 
 Using a unified network is key in adopting your new tools. It allows your organization to save money, and your collaborators to be less frustrated by delays.
 
@@ -1092,7 +1092,7 @@ As described in the chapter "Code Reviews", these reviews offer an opportunity t
 
 Lastly, the software factory is where software developed by your teams will be built and then deployed on your infrastructure. Analogous to the continuous integration principle, continuous deployment chains are responsible for deploying software according to rules defined in code.
 
-Caution: under no circumstances does a software factory allow your teams to develop software per se. The software factory provides resources for engineers to develop their software (dependencies, packages, binaries) but doesn't allow for code writing or execution within it.
+Caution: under no circumstances does a software factory allow your teams to develop software per se. The software factory provides resources for engineers to develop their software (such as dependencies, packages or binaries) but doesn't allow for code writing or execution within it.
 
 The software factory to a developer is what a brush set is to an artist: the set contains all the tools to paint, but the artist spends their time working on their easel. The developer's easel is their IDE on their computer: they code and run their code to test it as they write it. Options for setting up development environments are described in the chapter "Zero Trust-Based Development".
 
@@ -1354,14 +1354,14 @@ This chapter aims to juxtapose a traditional responsibility model with the DevOp
 
 #### The RACI model
 
-One of the responsibility-sharing models is "RACI", which stands for Responsible (Executor), Accountable (Owner), Consulted (Consulted), and Informed (Informed). It ensures all stakeholders are aware of their roles and responsibilities in a project.
+One of the responsibility-sharing models is "RACI", which stands for Responsible, Accountable (the Owner), Consulted, and Informed. It ensures all stakeholders are aware of their roles and responsibilities in a project.
 
 Let's give an example for the creation of a new website. We have a responsible, an executor, consultees, and informers that are designated for each activity.
 
-- R for the Executor, which is the person who does the work to complete a deliverable
-- A for the Owner, which is the person who delegates the work and inspects the finished tasks
-- C for the Consulted, which is the person who contributes to a deliverable based on their expertise or responsibilities
-- I for the Informed, which is the person who needs to be kept in the loop about the project's progress
+- "R" for the Executor, which is the person who does the work to complete a deliverable
+- "A" for the Owner, which is the person who delegates the work and inspects the finished tasks
+- "C" for the Consulted, which is the person who contributes to a deliverable based on their expertise or responsibilities
+- "I" for the Informed, which is the person who needs to be kept in the loop about the project's progress
 
 An extension of RACI is RACI-V-S, which includes a validator (who is an authority) and a signer (who is the person in charge of the official approval of the deliverable).
 
@@ -1385,7 +1385,7 @@ However, by assuming shared responsibilities without placing blame, you focus on
 
 As you've realized, DevOps encourages not blaming stakeholders. It might seem logical to argue that if no one is personally accountable, teams might be less diligent in their daily duties. How can we imagine a production head deleting the entire client database without consequences? Leaders must realize their actions have repercussions. DevOps addresses this challenge in two ways:
 
-1. If your procedures are sound, there's no reason the engineer could've executed that command. If a mistake was made, it indicates that the rules governing the security of your production infrastructure weren't robust enough (manual access to production machines, lack of command checks/validation, no backups, poorly described procedures, communication gaps...).
+1. If your procedures are sound, there's no reason the engineer could've executed that command. If a mistake was made, it indicates that the rules governing the security of your production infrastructure weren't robust enough (for example, due to manual access to production machines, lack of commands validation, no backups, poorly described procedures or communication gaps...).
 2. You hired an employee because they know their job (you did interview them, after all). If you're worried they won't take responsibility, speak with them or consider letting them go and revising your hiring policy. Trust your experts. If you have doubts, ask them to strengthen control rules and reassure you with typical scenarios.
 
 That's why you should start with available resources, but have the boldness to start small in your transformation journey. Your company should gradually implement procedures based on available human and financial resources. Once these techniques have been tested, iterate on a larger scale.
@@ -1439,7 +1439,7 @@ Here are the 5 steps of Root Cause Analysis:
 
     Analyze the situation to ensure that it's indeed an incident and not just a harmless alert. The company should set a threshold to classify an event as an incident, such as an anomaly lasting more than 1 minute. If the event threatens the stability of your resilience indicators, treat it as an incident.
 
-    When in doubt, the best practice is to report incidents early and often. It's better to report an incident, quickly find a fix, and then close it, rather than allowing it to persist and worsen. If a major incident arises, you'll likely need to handle it as a team (see chapter "Structuring your incident response"). You can distinguish a major incident from a minor one if you answer "yes" to any of these questions:
+    When in doubt, the best practice is to report incidents early and often. It's better to report an incident, quickly find a fix, and then close it, rather than allowing it to persist and worsen. If a major incident arises, you'll likely need to handle it as a team. You can distinguish a major incident from a minor one if you answer "yes" to any of these questions:
 
     - Do you need to call in a second team to solve the problem?
     - Is the outage visible to customers?
@@ -1622,8 +1622,8 @@ For example: "Our team currently manages its infrastructure using traditional me
 
 1. Organize a meeting with stakeholders. Ask them to imagine a year ahead and that the transformation plan failed.
 2. Create a collaborative document (e.g., with Google Docs) with the following headings. Include potential Failure Factors, Solutions, Most Dangerous Factors and an Action Plan.
-3. Potential Failure Factors. Include reasons that might lead to project failure (e.g., lack of support from management, difficulty integrating DevOps practices with existing processes and systems, insufficient team training or expertise in Cloud technologies, resistance to change from certain members...).
-4. Solutions. For each failure factor, brainstorm solutions that could be implemented now to reduce the project's risk of failure (e.g., conduct awareness presentations, start with a proof of concept for a specific use case, prepare a training plan, identify early adopters...).
+3. Potential Failure Factors. Include reasons that might lead to project failure (e.g., lack of support from management, difficulty integrating DevOps practices with existing processes and systems, insufficient team training or expertise in Cloud technologies and resistance to change from certain members...).
+4. Solutions. For each failure factor, brainstorm solutions that could be implemented now to reduce the project's risk of failure (e.g., conduct awareness presentations, start with a proof of concept for a specific use case, prepare a training plan and identify early adopters...).
 5. Most Dangerous Factors. List out the riskiest factors that the team can still influence.
 6. Action Plan. List solutions to the most dangerous factors and turn them into an action plan. Each solution becomes a task assigned to a member with a deadline.
 
@@ -1631,10 +1631,10 @@ Here's a more technical example: "Our team deploys its software using Docker Com
 
 1. Organize a meeting with stakeholders. Ask them to imagine a few months ahead and that Kubernetes ends up requiring a lot of effort without offering significant benefits.
 2. Set up the collaborative document.
-3. Note down the potential failure factors (e.g., team's insufficient knowledge or expertise in Kubernetes, online documentation not sufficient for our use cases, complexity of integration into our development environment, security vulnerabilities due to maintenance complexity, increased HR costs during the transition...).
-4. List the solutions (e.g., prepare a training plan, invest in cloud-specialized consultants, set up an automatic cluster update service, hire an intern to create the initial cluster version...).
-5. Identify the most dangerous factors (e.g., team's insufficient knowledge of Kubernetes, security vulnerabilities due to maintenance complexity).
-6. Create your action plan (e.g., prepare a training plan, contract with Company X for specialized cloud support).
+3. Note down the potential failure factors (e.g., team's insufficient knowledge or expertise in Kubernetes, online documentation not sufficient for our use cases, complexity of integration into our development environment, security vulnerabilities due to maintenance complexity or increased HR costs during the transition...).
+4. List the solutions (e.g., prepare a training plan, invest in cloud-specialized consultants, set up an automatic cluster update service or hire an intern to create the initial cluster version...).
+5. Identify the most dangerous factors (e.g., team's insufficient knowledge of Kubernetes or security vulnerabilities due to maintenance complexity).
+6. Create your action plan (e.g., prepare a training plan or contract with Company X for specialized cloud support).
 
 #### Cause and effect analysis
 
@@ -1832,8 +1832,6 @@ For instance, your security teams may not have the time to validate the conformi
 3. Developers see directly if their code is compliant and can immediately modify it if isn't
 
 Thus, in a DevOps approach, security managers are no longer individuals setting rules on paper but engineers "coding" security rules in the form of automated scripts, within the software forge. This ensures these rules are respected by developers and production.
-
-!Example of a GitLab job checking the documentation conformity of a project using the Markdownlint tool.
 
 Here are some examples of algorithms that can be executed to automatically check rules or take actions upon a triggering event:
 
@@ -2236,7 +2234,7 @@ Another example is database schema migration. By declaring a database schema ver
 
 In 2016 surveys, 47% of organizations claimed to adopt a DevOps approach. This number rose to 74% in 2021.
 
-From 2019 to 2022, the distribution of DevOps initiatives by industry remained roughly the same: primarily dominated by the tech sector (~40%), followed by the financial sector (~12%) and e-commerce (~8%). The institutional sector accounted for 2% to 4% of these initiatives, indicating ample room for innovation in this domain.
+From 2019 to 2022, the distribution of DevOps initiatives by industry remained roughly the same: primarily dominated by the tech sector (at around 40%), followed by the financial sector (at around 12%) and e-commerce (at around 8%). The institutional sector accounted for 2% to 4% of these initiatives, indicating ample room for innovation in this domain.
 
 Here's a breakdown of companies practicing DevOps in 2022 : large companies are around 30%. Medium-sized companies are around 38%. Small companies are around 26% and very small ones are around 6%.
 
@@ -2297,213 +2295,19 @@ Now that you understand the array of challenges in DevOps, it's insightful to ex
 
 You've probably already heard numerous terms suffixed with "Ops": in industrial proposals, job offers, or online services. All these terms describe specialties in computer system operations using various techniques and methodologies. Let's define a few:
 
-- DevOps (Development and Operations): A methodology aiming to bridge the gap between developers and the engineers handling production to expedite software deployment and enhance its resilience.
-- DevSecOps (Development, Security, and Operations): A subset of DevOps focusing on integrating security principles from the onset of a new software or infrastructure design. The goal is to organize the company in such a way that the Security of I-T Systems teams are involved in all project discussions with your development teams (see Security: a new paradigm with the DevOps approach).
-- I-TOps (I-T Operations): A set of practices centered on the maintenance and management of I-T systems. This is subtly distinct from DevOps, which concentrates more on improving the software development and deployment process. Synonymous with system administrator (sysadmin).
-- FinOps (Financial Operations): A collection of practices to better understand and manage the financial costs of a cloud infrastructure. This includes monitoring and optimizing expenses, as well as managing billing and payments, possibly using dashboards or automated algorithms.
-- MLOps (Machine Learning Operations): Practices for collaboration and communication between datascience teams and production teams for effective development and deployment of machine learning (ML) models. The aim is to enhance the speed, quality, and resilience of ML models by automating and standardizing used technologies. (See MLOps: Overview, Definition, and Architecture)
-- GitOps (Git Operations): A set of guidelines for using git as the single source of truth to standardize development practices, deployment, and to bolster a company's I-T resilience (IaC, CI/CD, see The lifecycle of modern software)
-- EmpOps (Employee Operations): Tools to manage a company and its employees (projects, vacations, 1:1 interviews, knowledge base) on a unified platform (e.g., CRMs).
-- DataOps (Data Operations): Practices that assist in managing data, considering it a strategic asset. They emphasize collaboration between "data" teams and other I-T teams, automating data management processes (ETL), and regular feedback to ensure data meets business needs.
-- DevDataOps (Development and Data operations): A variation of DataOps tailored for organizations adopting a DevOps approach for their software developments. In a DevDataOps approach, data management practices are integrated into the software development lifecycle, facilitating coordinated and efficient management of data and code. (See From DevOps to DevDataOps )
-- EdgeOps (Edge Computing Operations): Edge computing (or "edge processing") is a decentralized I-T architecture model where data management/transformation occurs close to where it's collected/generated. This contrasts with the traditional model where data is processed only on a remote server, optimizing network bandwidth. EdgeOps incorporates certain DevOps principles into this infrastructure (e.g., zero trust, air-gapped monitoring).
-- ChatOps (Chat Operations): A domain advocating for the use of instant messaging tools to facilitate software development and maintenance. The idea is to quickly and easily converse with peers (e.g., easy-access messaging, file or image import capabilities, visibility of time flows...).
-- LiveOps (Live Game Operations): Refers to all activities ensuring the smooth operation and maintaining excitement around a video game. Informally, it's about "keeping the hype" for the game. Activities include: monitoring player count, playtime or reviews, fostering customer engagement, organizing tournaments, and providing player support.
+- Dev-Ops (abbreviation for Development and Operations) is a methodology aimed at bringing developers and engineers managing production together to accelerate software release and resilience.
+- Dev-Sec-Ops (abbreviation for Development, Security, and Operations) is a subset of DevOps focusing on integrating security principles from the onset of a new software or infrastructure design. The goal is to organize the company in such a way that the Security of I-T Systems teams are involved in all project discussions with your development teams.
+- I-T-Ops is a set of practices centered on the maintenance and management of I-T systems. This is subtly distinct from DevOps, which concentrates more on improving the software development and deployment process. Synonymous with system administrator.
+- Fin-Ops (abbreviation for Financial Operations) is a collection of practices to better understand and manage the financial costs of a cloud infrastructure. This includes monitoring and optimizing expenses, as well as managing billing and payments, possibly using dashboards or automated algorithms.
+- ML-Ops (abbreviation for Machine Learning Operations) is a set of practices for collaboration and communication between datascience teams and production teams for effective development and deployment of machine learning models. The aim is to enhance the speed, quality, and resilience of ML models by automating and standardizing used technologies.
+- Git-Ops is a set of guidelines for using git as the single source of truth to standardize development practices, deployment, and to bolster a company's I-T resilience. That is to say IaC, CI/CD and all tools helping to maintain lifecycle of modern software.
+- Emp-Ops (abbreviation for Employee Operations) is a set of tools to manage a company and its employees (such as projects, vacations, one-to-one interviews or a knowledge base) on a unified platform (e.g., CRMs).
+- Data-Ops (abbreviation for Data Operations) is a set of ractices that assist in managing data, considering it a strategic asset. They emphasize collaboration between "data" teams and other I-T teams, automating data management processes, and regular feedback to ensure data meets business needs.
+- Dev-Data-Ops (abbreviation for Development and Data operations) is a variation of DataOps tailored for organizations adopting a DevOps approach for their software developments. In a DevDataOps approach, data management practices are integrated into the software development lifecycle, facilitating coordinated and efficient management of data and code.
+- Edge-Ops (abbreviation for Edge Computing Operations): Edge computing is a decentralized I-T architecture model where data management or transformation occurs close to where it's collected or generated. This contrasts with the traditional approach where data is processed only on a remote server, optimizing network bandwidth. Edge-Ops incorporates certain DevOps principles into this infrastructure (e.g., zero trust or air-gapped monitoring).
+- Chat-Ops (abbreviation for Chat Operations) is a domain advocating for the use of instant messaging tools to facilitate software development and maintenance. The idea is to quickly and easily converse with peers (e.g., easy-access messaging, file or image import capabilities or visibility of time flows...).
+- Live-Ops (abbreviation for Live Game Operations): Refers to all activities ensuring the smooth operation and maintaining excitement around a video game. Informally, it's about "keeping the hype" for the game. Activities include: monitoring player count, playtime or reviews, fostering customer engagement, organizing tournaments, and providing player support.
 
 The emergence of these terms denoting specialties or practices in I-T infrastructure administration is likely tied to the maturity the industry has achieved thanks to Cloud services. These services have greatly streamlined infrastructure administration, paving the way for advanced optimization discussions.
 
 Each of these specialties is a way to optimize your DevOps practices and should adapt to the maturity of the company. Don't rush to implement all of them before you've thoroughly understood and practiced DevOps in your organization.
-
-# Job Descriptions
-
-This chapter lists examples of job descriptions in the field of DevOps.
-
-To avoid wasting time and minimize poor hiring decisions, your organizational goal must be clearly defined.
-
-If it's not well-defined, the job description may become a catch-all for technical tasks that could occupy an entire team of engineers. You then run the risk of appearing as an immature organization and may deter top candidates.
-
-You need to make the effort to define the scope of the job you are looking to fill, or acknowledge the fact that your environment is so unique that it requires frequent (or even "tactical") adjustments. Except in the fields of security and defense, you should not consider your operation as such.
-
-The sample job descriptions below are indicative and should be adapted to your situation (team and organizational maturity and size). Adjust the context and tasks you wish to assign to your future engineer. Also, tailor the skills you wish to highlight according to your current project.
-
-The requirements for the positions are described based on the technical maturity of the company (beginner, intermediate, advanced) and the level of experience expected of the candidate (junior, intermediate, or senior).
-
-A "Education or Experience" section is also provided to give you an idea of the courses the candidate might have taken to qualify for the position. However, consider in I-T that a degree becomes irrelevant after 5 years of professional experience. It's the latter and the projects undertaken by the candidate that determine their expertise level.
-
-<!-- Salary sources (Washington, DC, United-States): Glassdoor.com or Payscale.com -->
-
-\newpage
-
-## System Administrator DevOps or Cloud DevOps Engineer or "DevOps Engineer"
-
-|                                                 |                                                                                                                    |
-| ----------------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
-| Job Level                                   | Intermediate to senior (depending on responsibilities assigned to the candidate). Apprentice or junior possible if experienced personnel in the team. |
-| Organizational Maturity                     | Beginner to intermediate                                                                                           |
-| Approximate Remuneration (October 2023)   | >90k\$/year (beginner), >115k\$/year (senior)                                                                          |
-
-As part of our organization's digital transformation and supported by our management, you will help define new development, deployment, and administration processes.
-
-You will implement tools and practices to benefit our developers' productivity and guide internal teams in adopting DevOps practices.
-
-From the technologies currently in use by our teams, you will contribute to strategic discussions and decisions regarding technologies to be adopted for our organization's future.
-
-Acting as a bridge between our development teams and within our SRE team of X members, you will be responsible for:
-
-- Developing and maintaining software lifecycle automation tools (GitLab, CI/CD pipelines) ;
-- Defining GitOps best practices and ensuring development consistency (git workflow, kanban project management, CI/CD pipelines, deployment standardization with Docker and Kubernetes...) ;
-- Automating system administration through IaC (Terraform, Ansible) ;
-- Developing application project templates to promote best practices (CI/CD, OpenTelemetry monitoring) ;
-- Assisting various technical teams in containerizing their legacy applications ;
-- Participating in discussions about our institution's digital transformation ;
-- Educating and advising decision-makers on new practices ;
-- Helping the HR teams identify relevant candidates.
-
-Skills:
-
-- Communication and adaptability ;
-- Containerization (Docker, Kubernetes) ;
-- Knowledge of micro-service architectures ;
-- Technical administration of GitLab and GitLab Runners ;
-- Advanced scripting knowledge in Bash, Ansible, Saltstack, and/or Terraform ;
-- Proficiency in at least one programming language (Java, C++, Python, or Go) ;
-- Column-oriented, object, or graph databases ;
-- Knowledge of one or more Cloud services (AWS, GCP, Azure, Scaleway) ;
-- DevOps culture ;
-- Transformation culture (digital and business) ;
-- TCP/IP networking.
-
-Education or Experience:
-
-If you have at least 5 years of professional experience, we prioritize it and don't consider your degree.
-
-- Master's in Computer Engineering ;
-- Significant professional experience in the field.
-
-This position can lead to roles such as System Engineer, SRE, or DevOps Security Engineer.
-
-\newpage
-
-## System Reliability Engineer (SRE)
-
-|                                            |                                                                                                                                                                             |
-| ------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Job Level                              | Intermediate or Senior (depending on responsibilities to be assigned to the candidate). Apprentice or Junior possible if there are experienced personnel on the team. Internship not considered (too short). |
-| Organization Maturity                  | Intermediate to Advanced                                                                                                                                                   |
-| Approximate Compensation (October 2023) | >95k\$/year (beginner), >120k\$/year (senior)                                                                                                                              |
-
-At the core of our organization's smooth operation, you will be responsible for ensuring the availability, reliability, and resilience of our information systems. You will strive to sustain the infrastructures while balancing the velocity of developments and system stability.
-
-Within our SRE team of X individuals, your responsibilities will include:
-
-- Administering our development, pre-production, and production environments (Docker, Kubernetes) ;
-- Overseeing monitoring systems (e.g., defining resilience indicators (SLIs, SLOs), maintaining dashboard indicators, and alert systems) ;
-- Automating the lifecycle of infrastructure and software (CI/CD, IaC) ;
-- Assisting in the automation of integrating and setting up physical servers ;
-- Preparing and practicing incident management procedures following the 3Cs (annual DiRT training, documentation, tools) ;
-- Diagnosing incidents and writing clear and illustrative postmortems to enrich our knowledge base ;
-- Educating engineers on best production practices ;
-- Advising and collaborating with application architects and other infrastructure architects.
-
-Skills:
-
-- Communication, autonomy, and adaptability ;
-- Advanced knowledge of one or more Linux distributions ;
-- Knowledge of TCP/IP networks ;
-- Familiarity with Ansible, Saltstack, and/or Terraform ;
-- Advanced Bash scripting skills ;
-- Understanding of micro-service architecture principles ;
-- Knowledge of a Cloud orchestration technology (Kubernetes or Openstack) ;
-- Proficiency in at least one programming language (Java, C++, Python, or Go) ;
-- Familiarity with at least one Cloud service (AWS, GCP, Azure, Scaleway).
-
-Education or experience:
-
-If you have at least 5 years of professional experience, we prioritize that and do not focus on your degree.
-
-- Bachelor's or Master's in software engineering with knowledge in system administration (Linux, networks, Cloud technologies) ;
-- Bachelor's or Master's in network and system engineering ;
-- Significant professional experience in the field.
-
-This position can lead to roles such as Infrastructure Manager, DevOps Security Engineer, or System Engineer.
-
-\newpage
-
-## DevOps Security Engineer
-
-|                                            |                                                                       |
-| ------------------------------------------ | :-------------------------------------------------------------------- |
-| Job Level                              | Junior to Senior (depending on responsibilities to be assigned to the candidate) |
-| Organization Maturity                  | Intermediate to Advanced                                               |
-| Approximate Compensation (October 2023) | >95k\$/year (beginner), >125k\$ (senior)                                                            |
-
-As part of our organization's digital transformation and supported by management, you are the "Sec" in our "DevSecOps" mode. Your role is to ensure security best practices without hindering development velocity.
-
-Integrated within our SRE team, you will be responsible for securing the entire software development and deployment chain. Based on our security policies and legal constraints, you will translate these documented rules into code (within CIs) or via tool implementation, ensuring their adherence. You will define security practices for the present and future of our organization.
-
-Acting as the interface between our development teams and our SRE team, your tasks will be:
-
-- Contributing to discussions on our institution's digital transformation ;
-- Creating and maintaining continuous integration chains following our rules and legal constraints ;
-- Participating in defining new security rules and practices for the organization ;
-- Guiding various technical teams in securing their applications ;
-- Implementing and maintaining practices of the SLSA framework ;
-- Staying updated on the latest threats and implementing countermeasures ;
-- Organizing blue team / red team type exercises.
-
-Skills:
-
-- Communication and adaptability ;
-- Understanding of containerization principles (Docker, Kubernetes) ;
-- Knowledge of micro-service architecture principles ;
-- Technical administration of GitLab ;
-- Advanced Bash scripting knowledge ;
-- Proficiency in at least one programming language (Java, C++, Python, or Go) ;
-- At least theoretical knowledge of databases (column-oriented, object, or graph) ;
-- DevOps culture ;
-- Digital and business transformation culture ;
-- Ideally, familiarity with one or more Cloud services (AWS, GCP, Azure, Scaleway).
-
-Education or experience:
-
-If you have at least 5 years of professional experience, we prioritize that and do not focus on your degree.
-
-- Bachelor's or Master's in software engineering with knowledge in system administration (Linux, networks, Cloud technologies) ;
-- Bachelor's or Master's in network and system engineering ;
-- Master's in cybersecurity (e.g., ANSSI's Master in Digital Security) ;
-- Significant professional experience in the field.
-
-This position can lead to roles such as System Engineer or SRE.
-
-\newpage
-
-## Platform Engineer
-
-|                                                 |                                        |
-| ----------------------------------------------- | :------------------------------------- |
-| Job Level                                   | Intermediate to Senior                 |
-| Organization Maturity                       | Advanced                               |
-| Approximate Compensation (October 2023)   | >100k\$/year (beginner), >130k\$/year (senior) |
-
-With a background in software engineering or system administration and proven skills in software engineering, you will be responsible for the development and maintenance of tools that enhance our software development and deployment cycle on a daily basis.
-
-Within the SRE team, you will develop or integrate administrative tools to make the lives of our developers and SREs easier.
-
-You will participate in the establishment of a data-lake as part of the government initiative data.gov.
-
-Skills:
-
-- Autonomy and adaptability ;
-- Advanced knowledge of at least one programming language (Java, C++, Python, or Go) ;
-- Advanced knowledge of column-oriented, object, and/or graph databases ;
-- Familiarity with Ansible, Saltstack, and/or Terraform ;
-- Knowledge of a Cloud orchestration technology (Kubernetes or Openstack) ;
-- TCP/IP networks.
-
-Education or Experience:
-
-Have at least 5 years of professional experience? We prioritize it and don't consider your degree.
-
-- Bachelor's or master's degree in software engineering ;
-- Bachelor's or master's degree in network and systems engineering with strong experience in software engineering ;
-- Significant professional experience in the field.
