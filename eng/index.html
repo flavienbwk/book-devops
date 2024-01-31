@@ -389,7 +389,7 @@
                         <p class="subtitle">The pragmatic decision-maker’s guide to understand and act</p>
                         <hr/>
                         <p class="author">Flavien BERWICK</p>
-                                    <p class="date">January 2024 - 1.1.2</p>
+                                    <p class="date">January 2024 - 1.1.4</p>
                     </header>
                         <nav id="TOC" role="doc-toc">
                 <ul>
@@ -513,7 +513,7 @@
                 <li>United States Department of Defense, chapter “Vision for a more Effective, Efficient and Secure DoD Information Enterprise”, page 4.</li>
                 </ul>
                 </blockquote>
-                <p>He will publish in 2019 his first reference guide for the industrialization of DevSecOps practices<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>: a methodology emphasizing security (see chapter “<a href="#devsecops">DevSecOps</a>”). Aimed at providers, buyers, and managers of modern information systems, this institutional guide describes best practices for the implementation and maintenance of such systems. The stated goal is to deploy software at the “speed of operations”. In the economic environment, the parallel is that of the “speed of stock markets”.</p>
+                <p>It will publish in 2019 his first reference guide for the industrialization of DevSecOps practices<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>: a methodology emphasizing security (see chapter “<a href="#devsecops">DevSecOps</a>”). Aimed at providers, buyers, and managers of modern information systems, this institutional guide describes best practices for the implementation and maintenance of such systems. The stated goal is to deploy software at the “speed of operations”. In the economic environment, the parallel is that of the “speed of stock markets”.</p>
                 <p>In the private sector, Microsoft historically launched its new products every 3 to 4 years (e.g., Windows, Office). As early as 2014, its CEO Satya NADELLA warned his teams about the risk posed by the long duration of this development cycle. By continuing with the same organization mode, Microsoft would become obsolete. The teams responsible for developing each product worked independently from one another, with their own organizational methods and their own tools. NADELLA reorganized the company based on the DevOps methodology. He would unify the tools and practices of the teams, so they would interact with each other<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>.</p>
                 <p>Faced with increasingly aggressive economic<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> or military<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a> competitors, transformation is an imperative necessity to stay in the race and prevail in the next confrontations. For institutions, it is no longer a question of “if” but “when” they will need to embark on a transformation journey, or risk being left behind.</p>
                 <p>However, the majority of organizations still struggle to pragmatically implement these new practices. The main obstacle is finding the talents capable of implementing the techniques and tools suitable for DevOps operation.</p>
@@ -813,9 +813,9 @@
                 <p>Let’s summarize the interests of our two profiles:</p>
                 <table>
                 <colgroup>
-                <col style="width: 14%" />
-                <col style="width: 21%" />
-                <col style="width: 63%" />
+                <col style="width: 18%" />
+                <col style="width: 23%" />
+                <col style="width: 58%" />
                 </colgroup>
                 <thead>
                 <tr class="header">
@@ -855,9 +855,9 @@
                 <p>Take, for instance, a company whose employees need a high-performing translation software. A solution provider pitches to the organization’s director. Here are the arguments for each profile:</p>
                 <table>
                 <colgroup>
-                <col style="width: 11%" />
+                <col style="width: 17%" />
                 <col style="width: 40%" />
-                <col style="width: 48%" />
+                <col style="width: 41%" />
                 </colgroup>
                 <thead>
                 <tr class="header">
@@ -1650,9 +1650,9 @@
                 <p>Let’s summarize some advantages and disadvantages of each approach:</p>
                 <table>
                 <colgroup>
-                <col style="width: 6%" />
-                <col style="width: 42%" />
-                <col style="width: 50%" />
+                <col style="width: 14%" />
+                <col style="width: 39%" />
+                <col style="width: 46%" />
                 </colgroup>
                 <thead>
                 <tr class="header">
@@ -2485,7 +2485,7 @@
                 </ol>
                 <p>Trusting decisions based on its own data marks the culmination of a successful DevOps transformation. The industry calls this “data-driven decision making.”</p>
                 <h3 id="the-3-pillars-of-observability">The 3 pillars of observability</h3>
-                <p>Activity logs (<em>logs</em>), metrics (<em>metrics</em>), and traces (<em>traces</em>) are regarded as the three pillars of observability. These three types of data can be generated by software to identify and address issues that might arise once deployed.</p>
+                <p>Activity logs, metrics, and traces are regarded as the three pillars of observability. These three types of data can be generated by software to identify and address issues that might arise once deployed.</p>
                 <p>Observability is a vast topic in the realm of system reliability<a href="#fn230" class="footnote-ref" id="fnref230" role="doc-noteref"><sup>230</sup></a>. In this chapter, we will only touch upon the essentials.</p>
                 <p>The field of observability can be summarized as the set of tools and practices that allow engineers to detect, diagnose, and resolve system issues (bugs, latencies, availability) as swiftly as possible. Beyond the need for resilience, the collection of some of this data is sometimes legally required<a href="#fn231" class="footnote-ref" id="fnref231" role="doc-noteref"><sup>231</sup></a>.</p>
                 <p>Let’s delve deeper into what each of these data types can tell us:</p>
@@ -2736,17 +2736,17 @@
                 <tbody>
                 <tr class="odd">
                 <td><strong>MTTD</strong></td>
-                <td><em>mean time to detect</em> or average detection time</td>
+                <td><em>mean time to detect</em></td>
                 <td>The average time between the onset of an incident and when your systems trigger the alert. Detecting an incident may take a few seconds when a significant issue arises. But it might take several weeks if it affects only a solitary user who does not report the problem… until they can’t manage it anymore.</td>
                 </tr>
                 <tr class="even">
                 <td><strong>MTTA</strong></td>
-                <td><em>mean time to acknowledge</em> or average time to acknowledge</td>
+                <td><em>mean time to acknowledge</em></td>
                 <td>The average time between an alert trigger and assigning personnel to address the incident.</td>
                 </tr>
                 <tr class="odd">
                 <td><strong>MTTI</strong></td>
-                <td><em>mean time to investigation</em> or average investigation time</td>
+                <td><em>mean time to investigation</em></td>
                 <td>Once the incident is acknowledged, the average time required for the designated person to genuinely understand the problem and how to fix it. A high MTTI suggests that your infrastructure or application is too complex, or your observability mechanisms are lacking. It might also indicate that your engineers are swamped, making it difficult for them to address an incident promptly.</td>
                 </tr>
                 <tr class="even">
@@ -2756,12 +2756,12 @@
                 </tr>
                 <tr class="odd">
                 <td><strong>MTTP</strong></td>
-                <td><em>mean time to production</em> or average time to production</td>
+                <td><em>mean time to production</em></td>
                 <td>The average time for the service affected by an incident to be operational and accessible to users in production. Unlike MTTR, which measures the repair time of a service, MTTP measures the service restoration time after its repair. For instance, during a breakdown, your website might display a “We are under maintenance” message even if you’ve just fixed the failing service.</td>
                 </tr>
                 <tr class="even">
                 <td><strong>MTBF</strong></td>
-                <td><em>mean time before failure</em> or average time between failures</td>
+                <td><em>mean time before failure</em></td>
                 <td>The average time between the last detected failure and the current one. This metric helps predict a service’s availability.</td>
                 </tr>
                 </tbody>
@@ -2908,7 +2908,7 @@
                 <p>Try to establish a strong network of a few “ambassadors” (product advocates) within your organization to assert your legitimacy and support your initiative. Besides this support, the ambassador will help capture user feedback or provide it themselves to refine your value proposition.</p>
                 <h2 id="reservists-or-20-project">Reservists or “20% project”</h2>
                 <p>In the private sector, especially among the GAFAM<a href="#fn248" class="footnote-ref" id="fnref248" role="doc-noteref"><sup>248</sup></a>, it’s common for employees to get one day a week dedicated to participating in a different project within the company. One day out of five, they choose to work for another team. This option benefits both the employee and the company: the employee explores different technologies and practices, enhances skills in those areas, and then leverages this knowledge for other projects they handle.</p>
-                <p>Another example is the <a href="https://www.10pourcent.etalab.gouv.fr/">“10% program”</a> by DINUM<a href="#fn249" class="footnote-ref" id="fnref249" role="doc-noteref"><sup>249</sup></a> and INSEE<a href="#fn250" class="footnote-ref" id="fnref250" role="doc-noteref"><sup>250</sup></a>. Based on volunteering, the aim is for public service agents to dedicate 10% of their working time to common interest projects<a href="#fn251" class="footnote-ref" id="fnref251" role="doc-noteref"><sup>251</sup></a>.</p>
+                <p>Another example is the <a href="https://www.10pourcent.etalab.gouv.fr/">“10% program”</a> by French governmental organisms DINUM<a href="#fn249" class="footnote-ref" id="fnref249" role="doc-noteref"><sup>249</sup></a> and INSEE<a href="#fn250" class="footnote-ref" id="fnref250" role="doc-noteref"><sup>250</sup></a>. Based on volunteering, the aim is for public service agents to dedicate 10% of their working time to common interest projects<a href="#fn251" class="footnote-ref" id="fnref251" role="doc-noteref"><sup>251</sup></a>.</p>
                 <p>Try to offer your hierarchy this possibility so that each employee can benefit from this program: this will encourage exchanges, bring the teams closer together and build loyalty among your employees by allowing them to discover and work on new subjects.</p>
                 <p>To take advantage of all the resources at your disposal, consider employing reserve personnel within your team if your organization allows it. Even if they are only present a few days a year, they can support you on specific tasks. For example, an information systems security reservist will help you complete certification. A data scientist to evaluate an artificial intelligence solution or provide one-off support on a complex dataset to process.</p>
                 <h2 id="publicprivate-synergy-a-win-win-approach">Public/private synergy: a win-win approach</h2>
@@ -2957,14 +2957,14 @@
                 <p>According to research, an organization’s technical maturity can quadruple its team’s performance<a href="#fn258" class="footnote-ref" id="fnref258" role="doc-noteref"><sup>258</sup></a>. Let’s explore some indicators used in the industry. These indicators are frequently debated but still seem to be the widely accepted reference.</p>
                 <p>The success of a DevOps initiative is measured using 4 theorized measures (<em>4 key metrics</em><a href="#fn259" class="footnote-ref" id="fnref259" role="doc-noteref"><sup>259</sup></a>). An additional fifth measure reflects the organization’s operational performance. These metrics showcase results at the overall scale of your IT systems and your organization rather than just software measures. The latter might stem from local improvements, compromising overall performance. Let’s dive into them:</p>
                 <ul>
-                <li><strong>Deployment Frequency</strong> (<em>deployment frequency</em>): For the primary software or service you are working on, how often does your organization deploy code to production or make it available to its users?</li>
-                <li><strong>Lead Time for Changes</strong> (<em>lead time for changes</em>): For the primary software or service you’re working on, how long does it take to get it into production (i.e., the time from validated code to functioning code in production)?</li>
-                <li><strong>Time to Restore Service</strong> (<em>time to restore service</em>): For the primary software or service you are focusing on, how long does it typically take to restore the service when an incident or fault impacting users occurs (e.g., an unplanned outage or degraded service)?</li>
-                <li><strong>Change Failure Rate</strong> (<em>change failure rate</em>): For the primary software or service you’re working on, what percentage of production updates or new version releases lead to service degradation (e.g., deterioration or service interruption) and subsequently require fixes (e.g., a <em>hotfix</em>, a <em>rollback</em>, a fix delay, a <em>patch</em>)?</li>
+                <li><strong>Deployment Frequency</strong> : For the primary software or service you are working on, how often does your organization deploy code to production or make it available to its users?</li>
+                <li><strong>Lead Time for Changes</strong> : For the primary software or service you’re working on, how long does it take to get it into production (i.e., the time from validated code to functioning code in production)?</li>
+                <li><strong>Time to Restore Service</strong> For the primary software or service you are focusing on, how long does it typically take to restore the service when an incident or fault impacting users occurs (e.g., an unplanned outage or degraded service)?</li>
+                <li><strong>Change Failure Rate</strong> : For the primary software or service you’re working on, what percentage of production updates or new version releases lead to service degradation (e.g., deterioration or service interruption) and subsequently require fixes (e.g., a <em>hotfix</em>, a <em>rollback</em>, a fix delay, a <em>patch</em>)?</li>
                 </ul>
                 <p>All these measures are based on the infrastructure’s availability rather than its resilience. DORA report researchers subsequently posed a new question to organizations in 2021<a href="#fn260" class="footnote-ref" id="fnref260" role="doc-noteref"><sup>260</sup></a>. This led to the introduction of a fifth metric:</p>
                 <ul>
-                <li><strong>Operational Performance</strong> or Resilience (<em>operational performance</em> or <em>reliability</em>): Evaluating the ability to meet or exceed resilience targets. The expected responses regarding resilience goals for this measure are: “often meets them”, “meets them most of the time”, “always exceeds them”. This can be gauged, among other things, by SLOs (see chapter “<a href="#resilience-indicators">Resilience Indicators</a>”) or a user satisfaction rate.</li>
+                <li><strong>Operational Performance</strong> or Resilience: Evaluating the ability to meet or exceed resilience targets. The expected responses regarding resilience goals for this measure are: “often meets them”, “meets them most of the time”, “always exceeds them”. This can be gauged, among other things, by SLOs (see chapter “<a href="#resilience-indicators">Resilience Indicators</a>”) or a user satisfaction rate.</li>
                 </ul>
                 <p>If you are starting your initiative from scratch, comparing yourself to industry performance might not be relevant. Keep them in mind to know what goals to aim for but don’t judge your success based on them. Gauge it based on the progression of your own measures over time. Everyone starts from an initial state with the aim to improve it.</p>
                 <p>The DORA 2022 report classified the surveyed organizations into three performance categories (low, medium, and high) for its four key measures:</p>
@@ -3055,8 +3055,7 @@
                 <li>Less than 20 employees: ~6%.</li>
                 </ul>
                 <p>The 2019 crisis accelerated digital transformation initiatives, leading to a 23% growth in DevOps team sizes<a href="#fn270" class="footnote-ref" id="fnref270" role="doc-noteref"><sup>270</sup></a> during that period.</p>
-                <p>In 2022, the geographical distribution of organizations adopting DevOps practices is still challenging to pinpoint. However, North America seems to be a major hub, accounting for about 33% of DevOps initiatives. Europe and Asia follow closely with approximately 33% each<a href="#fn271" class="footnote-ref" id="fnref271" role="doc-noteref"><sup>271</sup></a> (with India at 21%). In 2019, North America accounted for 50% of these initiatives, Europe 29%, and Asia 9%. This indicates a growing interest in the subject among Asian countries.</p>
-                <p>The average size of DevOps teams remains small, averaging around 8 members<a href="#fn272" class="footnote-ref" id="fnref272" role="doc-noteref"><sup>272</sup></a>.</p>
+                <p>In 2022, the geographical distribution of organizations adopting DevOps practices is still challenging to pinpoint. However, North America seems to be a major hub, accounting for about 33% of DevOps initiatives. Europe and Asia follow closely with approximately 33% each<a href="#fn271" class="footnote-ref" id="fnref271" role="doc-noteref"><sup>271</sup></a> (with India at 21%). In 2019, North America accounted for 50% of these initiatives, Europe 29%, and Asia 9%. This indicates a growing interest in the subject among Asian countries. The average size of DevOps teams remains small, averaging around 8 members<a href="#fn272" class="footnote-ref" id="fnref272" role="doc-noteref"><sup>272</sup></a>.</p>
                 <p>This positions DevOps as a methodology primarily adopted by companies that have reached a critical mass and is yet to gain traction in non-tech businesses.</p>
                 <h1 id="conclusion">Conclusion</h1>
                 <p>Transforming an organization, regardless of its size, is a complex task involving significant political, technical, and human challenges. Should this transformation fail, the consequences can be severe. At the same time, it’s crucial for your organization to consider the long-term implications of continuing with its current model. DevOps aims to minimize these risks through standardized methodologies and tools.</p>
@@ -3101,7 +3100,7 @@
                 <p>Now that you understand the array of challenges in DevOps, it’s insightful to explore some terms that one might come across in the field.</p>
                 <p>You’ve probably already heard numerous terms suffixed with “Ops”: in industrial proposals, job offers, or online services. All these terms describe specialties in computer system operations using various techniques and methodologies. Let’s define a few:</p>
                 <ul>
-                <li><strong>DevOps</strong> (Development and Operations): A methodology aiming to bridge the gap between developers and the engineers handling production to expedite software deployment and enhance its resilience.</li>
+                <li><strong>DevOps</strong> (Development and Operations): A methodology aimed at bringing developers and engineers managing production together to accelerate software release and resilience.</li>
                 <li><strong>DevSecOps</strong> (Development, Security, and Operations): A subset of DevOps focusing on integrating security principles from the onset of a new software or infrastructure design. The goal is to organize the company in such a way that the Security of IT Systems teams are involved in all project discussions with your development teams (see <a href="#security-a-new-paradigm-with-the-devops-approach">Security: a new paradigm with the DevOps approach</a>).</li>
                 <li><strong>ITOps</strong> (IT Operations): A set of practices centered on the maintenance and management of IT systems. This is subtly distinct from DevOps, which concentrates more on improving the software development and deployment process. Synonymous with system administrator (sysadmin).</li>
                 <li><strong>FinOps</strong> (Financial Operations): A collection of practices to better understand and manage the financial costs of a cloud infrastructure. This includes monitoring and optimizing expenses, as well as managing billing and payments, possibly using dashboards or automated algorithms.</li>
