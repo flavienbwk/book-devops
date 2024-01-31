@@ -64,7 +64,7 @@ Across the Atlantic, the United States had already recognized the need in 2011 t
 >
 > - United States Department of Defense, chapter "Vision for a more Effective, Efficient and Secure DoD Information Enterprise", page 4.
 
-He will publish in 2019 his first reference guide for the industrialization of DevSecOps practices[^DoDEnterpriseDevSecOpsReferenceDesign]: a methodology emphasizing security (see chapter "[DevSecOps](#devsecops)"). Aimed at providers, buyers, and managers of modern information systems, this institutional guide describes best practices for the implementation and maintenance of such systems. The stated goal is to deploy software at the "speed of operations". In the economic environment, the parallel is that of the "speed of stock markets".
+It will publish in 2019 his first reference guide for the industrialization of DevSecOps practices[^DoDEnterpriseDevSecOpsReferenceDesign]: a methodology emphasizing security (see chapter "[DevSecOps](#devsecops)"). Aimed at providers, buyers, and managers of modern information systems, this institutional guide describes best practices for the implementation and maintenance of such systems. The stated goal is to deploy software at the "speed of operations". In the economic environment, the parallel is that of the "speed of stock markets".
 
 In the private sector, Microsoft historically launched its new products every 3 to 4 years (e.g., Windows, Office). As early as 2014, its CEO Satya NADELLA warned his teams about the risk posed by the long duration of this development cycle. By continuing with the same organization mode, Microsoft would become obsolete. The teams responsible for developing each product worked independently from one another, with their own organizational methods and their own tools. NADELLA reorganized the company based on the DevOps methodology. He would unify the tools and practices of the teams, so they would interact with each other[^MicrosoftDevOpsAbelWang].
 
@@ -486,7 +486,7 @@ Just like you, a decision-maker newly introduced to a topic can only retain a fe
 Let's summarize the interests of our two profiles:
 
 | Subject                   | Professionals                            | Decision-makers                                                                                                      |
-| --------------------------| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| -------------------------------| ---------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | **Detail Level**          | Detailed practical information.          | Overview.                                                                                                            |
 | **Terminology**           | Industry jargon and specific tools.      | Strategy-focused, emphasizing value to the organization or broader community.                                        |
 | **Data and Evidence**     | Practical examples, case studies.        | Impact metrics in time, money, and influence.                                                                       |
@@ -496,7 +496,7 @@ Let's summarize the interests of our two profiles:
 Take, for instance, a company whose employees need a high-performing translation software. A solution provider pitches to the organization's director. Here are the arguments for each profile:
 
 | Subject                   | Employees                                                                                        | Director                                                                                                           |
-| --------------------------| ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------| ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
 | **Detail Level**          | How the tool eases work, its usage, and unique features.                                         | Why the organization needs this tool and its impact.                                                               |
 | **Terminology**           | Technical terms related to translation and tool operation.                                       | Focus on strategy, organizational efficiency, and performance improvement.                                         |
 | **Data and Evidence**     | Tool demonstration, before/after comparisons, case studies.                                      | Overview of features. Productivity boost statistics, ROI, internal usage feedback.                                |
@@ -1488,7 +1488,7 @@ However, _serverless_ architectures require specific skills to maintain. They mi
 Let's summarize some advantages and disadvantages of each approach:
 
 | Architecture       | Advantages                                                                                                      | Disadvantages                                                                                                                         |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | **Monolithic**     | • Simplicity in development and deployment<br>• Centralized management<br>• Easy to test and debug               | • Difficult to scale<br>• An update affects the whole software<br>• Slower and less frequent deployments                              |
 | **Micro-services** | • Scalable on-demand<br>• Quick deployments<br>• Isolated bugs and crashes<br>• Language-agnostic                | • Specific skills needed to manage<br>• Data format consistency to maintain (API)<br>• More difficult to debug                        |
 | **FaaS**           | • No infrastructure management<br>• Targeted scalability<br>• Cost-effective for sporadic traffic                 | • Vendor lock-in<br>• Less control over the execution environment<br>• Start-up time if unused (_cold start_)<br>• Limited run duration |
@@ -1660,6 +1660,8 @@ Next, the goal is to collaboratively list the considered options in a few words.
 In the remaining 5 minutes, set a date for when the decision should be made (if not immediately). Based on these preliminary options, if any need further details, assign the task to the person responsible for fleshing them out.
 
 Once the options are consolidated, the approvers make the decision, and tasks are delegated accordingly.
+
+\newpage
 
 Example of a DACI, listing options considered for making a decision on the issue "How should we finalize our product specifications?":
 
@@ -2281,7 +2283,7 @@ Trusting decisions based on its own data marks the culmination of a successful D
 
 ### The 3 pillars of observability
 
-Activity logs (_logs_), metrics (_metrics_), and traces (_traces_) are regarded as the three pillars of observability. These three types of data can be generated by software to identify and address issues that might arise once deployed.
+Activity logs, metrics, and traces are regarded as the three pillars of observability. These three types of data can be generated by software to identify and address issues that might arise once deployed.
 
 Observability is a vast topic in the realm of system reliability[^DistributedSystemsObservabilityBook]. In this chapter, we will only touch upon the essentials.
 
@@ -2489,12 +2491,12 @@ There are numerous MTTx in literature, each with their particularities and nuanc
 
 | Metric  | Full Name                                                            | Explanation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------ | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| **MTTD** | _mean time to detect_ or average detection time                     | The average time between the onset of an incident and when your systems trigger the alert. Detecting an incident may take a few seconds when a significant issue arises. But it might take several weeks if it affects only a solitary user who does not report the problem... until they can't manage it anymore.                                                                                                                          |
-| **MTTA** | _mean time to acknowledge_ or average time to acknowledge           | The average time between an alert trigger and assigning personnel to address the incident.                                                                                                                                                                                                                                                                                                                                                                          |
-| **MTTI** | _mean time to investigation_ or average investigation time          | Once the incident is acknowledged, the average time required for the designated person to genuinely understand the problem and how to fix it. A high MTTI suggests that your infrastructure or application is too complex, or your observability mechanisms are lacking. It might also indicate that your engineers are swamped, making it difficult for them to address an incident promptly.                                                                           |
+| **MTTD** | _mean time to detect_                     | The average time between the onset of an incident and when your systems trigger the alert. Detecting an incident may take a few seconds when a significant issue arises. But it might take several weeks if it affects only a solitary user who does not report the problem... until they can't manage it anymore.                                                                                                                          |
+| **MTTA** | _mean time to acknowledge_           | The average time between an alert trigger and assigning personnel to address the incident.                                                                                                                                                                                                                                                                                                                                                                          |
+| **MTTI** | _mean time to investigation_          | Once the incident is acknowledged, the average time required for the designated person to genuinely understand the problem and how to fix it. A high MTTI suggests that your infrastructure or application is too complex, or your observability mechanisms are lacking. It might also indicate that your engineers are swamped, making it difficult for them to address an incident promptly.                                                                           |
 | **MTTR** | _mean time to recovery_ or average recovery time                   | The average time between the alert and the problem resolution.                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **MTTP** | _mean time to production_ or average time to production            | The average time for the service affected by an incident to be operational and accessible to users in production. Unlike MTTR, which measures the repair time of a service, MTTP measures the service restoration time after its repair. For instance, during a breakdown, your website might display a "We are under maintenance" message even if you've just fixed the failing service.                                                           |
-| **MTBF** | _mean time before failure_ or average time between failures        | The average time between the last detected failure and the current one. This metric helps predict a service's availability.                                                                                                                                                                                                                                                                                                                                      |
+| **MTTP** | _mean time to production_            | The average time for the service affected by an incident to be operational and accessible to users in production. Unlike MTTR, which measures the repair time of a service, MTTP measures the service restoration time after its repair. For instance, during a breakdown, your website might display a "We are under maintenance" message even if you've just fixed the failing service.                                                           |
+| **MTBF** | _mean time before failure_        | The average time between the last detected failure and the current one. This metric helps predict a service's availability.                                                                                                                                                                                                                                                                                                                                      |
 
 ![MTTx measurement timeline during an incident.\label{fig:2023_MTTx_timeline}](./images/2023_MTTx_timeline.jpg)
 
@@ -2624,7 +2626,7 @@ Try to establish a strong network of a few "ambassadors" (product advocates) wit
 
 In the private sector, especially among the GAFAM[^GAFAM], it's common for employees to get one day a week dedicated to participating in a different project within the company. One day out of five, they choose to work for another team. This option benefits both the employee and the company: the employee explores different technologies and practices, enhances skills in those areas, and then leverages this knowledge for other projects they handle.
 
-Another example is the ["10% program"](https://www.10pourcent.etalab.gouv.fr/) by DINUM[^DINUM] and INSEE[^INSEE]. Based on volunteering, the aim is for public service agents to dedicate 10% of their working time to common interest projects[^Programme10p].
+Another example is the ["10% program"](https://www.10pourcent.etalab.gouv.fr/) by French governmental organisms DINUM[^DINUM] and INSEE[^INSEE]. Based on volunteering, the aim is for public service agents to dedicate 10% of their working time to common interest projects[^Programme10p].
 
 Try to offer your hierarchy this possibility so that each employee can benefit from this program: this will encourage exchanges, bring the teams closer together and build loyalty among your employees by allowing them to discover and work on new subjects.
 
@@ -2693,14 +2695,14 @@ According to research, an organization's technical maturity can quadruple its te
 
 The success of a DevOps initiative is measured using 4 theorized measures (_4 key metrics_[^DORAsFourKeyMetrics]). An additional fifth measure reflects the organization's operational performance. These metrics showcase results at the overall scale of your IT systems and your organization rather than just software measures. The latter might stem from local improvements, compromising overall performance. Let's dive into them:
 
-- **Deployment Frequency** (_deployment frequency_): For the primary software or service you are working on, how often does your organization deploy code to production or make it available to its users?
-- **Lead Time for Changes** (_lead time for changes_): For the primary software or service you're working on, how long does it take to get it into production (i.e., the time from validated code to functioning code in production)?
-- **Time to Restore Service** (_time to restore service_): For the primary software or service you are focusing on, how long does it typically take to restore the service when an incident or fault impacting users occurs (e.g., an unplanned outage or degraded service)?
-- **Change Failure Rate** (_change failure rate_): For the primary software or service you're working on, what percentage of production updates or new version releases lead to service degradation (e.g., deterioration or service interruption) and subsequently require fixes (e.g., a _hotfix_, a _rollback_, a fix delay, a _patch_)?
+- **Deployment Frequency** : For the primary software or service you are working on, how often does your organization deploy code to production or make it available to its users?
+- **Lead Time for Changes** : For the primary software or service you're working on, how long does it take to get it into production (i.e., the time from validated code to functioning code in production)?
+- **Time to Restore Service**  For the primary software or service you are focusing on, how long does it typically take to restore the service when an incident or fault impacting users occurs (e.g., an unplanned outage or degraded service)?
+- **Change Failure Rate** : For the primary software or service you're working on, what percentage of production updates or new version releases lead to service degradation (e.g., deterioration or service interruption) and subsequently require fixes (e.g., a _hotfix_, a _rollback_, a fix delay, a _patch_)?
 
 All these measures are based on the infrastructure's availability rather than its resilience. DORA report researchers subsequently posed a new question to organizations in 2021[^DORA2021Summary]. This led to the introduction of a fifth metric:
 
-- **Operational Performance** or Resilience (_operational performance_ or _reliability_): Evaluating the ability to meet or exceed resilience targets. The expected responses regarding resilience goals for this measure are: "often meets them", "meets them most of the time", "always exceeds them". This can be gauged, among other things, by SLOs (see chapter "[Resilience Indicators](#resilience-indicators)") or a user satisfaction rate.
+- **Operational Performance** or Resilience: Evaluating the ability to meet or exceed resilience targets. The expected responses regarding resilience goals for this measure are: "often meets them", "meets them most of the time", "always exceeds them". This can be gauged, among other things, by SLOs (see chapter "[Resilience Indicators](#resilience-indicators)") or a user satisfaction rate.
 
 If you are starting your initiative from scratch, comparing yourself to industry performance might not be relevant. Keep them in mind to know what goals to aim for but don't judge your success based on them. Gauge it based on the progression of your own measures over time. Everyone starts from an initial state with the aim to improve it.
 
@@ -2780,9 +2782,7 @@ Here's a breakdown of companies practicing DevOps in 2022[^INSEECompanySizeDefin
 
 The 2019 crisis accelerated digital transformation initiatives, leading to a 23% growth in DevOps team sizes[^GlobalUpskillingWorldwideDevopsSize] during that period.
 
-In 2022, the geographical distribution of organizations adopting DevOps practices is still challenging to pinpoint. However, North America seems to be a major hub, accounting for about 33% of DevOps initiatives. Europe and Asia follow closely with approximately 33% each[^DORAGeoRepartition] (with India at 21%). In 2019, North America accounted for 50% of these initiatives, Europe 29%, and Asia 9%. This indicates a growing interest in the subject among Asian countries.
-
-The average size of DevOps teams remains small, averaging around 8 members[^DORATeamSize].
+In 2022, the geographical distribution of organizations adopting DevOps practices is still challenging to pinpoint. However, North America seems to be a major hub, accounting for about 33% of DevOps initiatives. Europe and Asia follow closely with approximately 33% each[^DORAGeoRepartition] (with India at 21%). In 2019, North America accounted for 50% of these initiatives, Europe 29%, and Asia 9%. This indicates a growing interest in the subject among Asian countries. The average size of DevOps teams remains small, averaging around 8 members[^DORATeamSize].
 
 This positions DevOps as a methodology primarily adopted by companies that have reached a critical mass and is yet to gain traction in non-tech businesses.
 
@@ -2841,7 +2841,7 @@ Now that you understand the array of challenges in DevOps, it's insightful to ex
 
 You've probably already heard numerous terms suffixed with "Ops": in industrial proposals, job offers, or online services. All these terms describe specialties in computer system operations using various techniques and methodologies. Let's define a few:
 
-- **DevOps** (Development and Operations): A methodology aiming to bridge the gap between developers and the engineers handling production to expedite software deployment and enhance its resilience.
+- **DevOps** (Development and Operations): A methodology aimed at bringing developers and engineers managing production together to accelerate software release and resilience.
 - **DevSecOps** (Development, Security, and Operations): A subset of DevOps focusing on integrating security principles from the onset of a new software or infrastructure design. The goal is to organize the company in such a way that the Security of IT Systems teams are involved in all project discussions with your development teams (see [Security: a new paradigm with the DevOps approach](#security-a-new-paradigm-with-the-devops-approach)).
 - **ITOps** (IT Operations): A set of practices centered on the maintenance and management of IT systems. This is subtly distinct from DevOps, which concentrates more on improving the software development and deployment process. Synonymous with system administrator (sysadmin).
 - **FinOps** (Financial Operations): A collection of practices to better understand and manage the financial costs of a cloud infrastructure. This includes monitoring and optimizing expenses, as well as managing billing and payments, possibly using dashboards or automated algorithms.

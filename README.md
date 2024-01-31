@@ -35,19 +35,20 @@
 
 This repository hosts a comprehensive guide to implementing DevOps in large organizations, addressing the challenges from fostering cultural shifts to navigating technical and HR transformations.
 
-_Scaling Institutions with DevOps_ was written from [my](https://berwick.fr) SRE/DevOps experience to benefit enthusiasts, mainly from the public sector, to overcome these technical and transformational challenges.
+_Scaling Institutions with DevOps_ was written from [my SRE/DevOps experience](https://berwick.fr/en) to benefit enthusiasts, mainly from the public sector, to overcome these technical and transformational challenges.
 
 As a DevOps advocate, I had to make this book GitOps-compliant, this is why it is hosted here. I hope it will be **community-driven** to fill it with good resources and make improvements as practices evolve. Please contribute through _Pull Requests_ and _Discussions_.
 
 Here are the different ways to access this writing :
 
-| Type             | French                                                                                                                      | English                                                   |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| Web version      | [Lire maintenant](https://book-devops.berwick.fr/fra/index.html)                                                            | [Read now](https://book-devops.berwick.fr/eng/index.html) |
-| Markdown version | [Lire maintenant](./fra/README.md)                                                                                          | [Read now](./fra/README.md)                               |
-| Ebook version    | [Amazon](https://www.amazon.fr/dp/B0CKHV5QB7) / [Google Books](https://play.google.com/store/books/details?id=3u_bEAAAQBAJ) | [Amazon](https://www.amazon.com/dp/B0CT8RY844)            |
-| Paperback book   | [Amazon](https://www.amazon.fr/dp/B0CKJ6SLV3)                                                                               | [Amazon](https://www.amazon.com/dp/B0CT6ZF5GZ)            |
-| Hardcover book   | [Amazon](https://www.amazon.fr/dp/B0CKJ651K9)                                                                               | N/A                                                       |
+| Type             | French                                                                                                                      | English                                                                                                                                                                       |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Web version      | [Lire maintenant](https://book-devops.berwick.fr/fra/index.html)                                                            | [Read now](https://book-devops.berwick.fr/eng/index.html)                                                                                                                     |
+| Markdown version | [Lire maintenant](./fra/README.md)                                                                                          | [Read now](./eng/README.md)                                                                                                                                                   |
+| Ebook version    | [Amazon](https://www.amazon.fr/dp/B0CKHV5QB7) / [Google Books](https://play.google.com/store/books/details?id=3u_bEAAAQBAJ) | [Amazon](https://www.amazon.com/dp/B0CT8RY844) / [Google Books](https://play.google.com/store/books/details/Flavien_BERWICK_Scaling_Institutions_with_DevOps?id=bxvwEAAAQBAJ) |
+| Paperback book   | [Amazon](https://www.amazon.fr/dp/B0CKJ6SLV3)                                                                               | [Amazon](https://www.amazon.com/dp/B0CT6ZF5GZ)                                                                                                                                |
+| Hardcover book   | [Amazon](https://www.amazon.fr/dp/B0CKJ651K9)                                                                               | N/A                                                                                                                                                                           |
+| Audiobook        | N/A                                                                                                                         | [_Soon_](./eng/AUDIOBOOK.md)                                                                                                                                                  |
 
 > The original book was written in French. The English version was reworked to include america-related examples and use cases.
 
