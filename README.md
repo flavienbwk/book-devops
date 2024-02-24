@@ -116,6 +116,9 @@ This book has numerous lives. Let's make sure it reflects DevOps' state of the a
 This repository has [automatic](.github/workflows/render.yml) PDF and HTML generation from Markdown files thanks to Pandoc.
 
 ```bash
+mkdir -p "$HOME/.local/share/fonts"
+cp ./fra/templates/fonts/* "$HOME/.local/share/fonts"
+cp ./eng/templates/fonts/* "$HOME/.local/share/fonts"
 cd ./fra && make pdf && cd -
 ```
 
@@ -129,5 +132,3 @@ cd ./fra && make pdf && cd -
 - [Todo Tree](https://github.com/Gruntfuggly/todo-tree)
 - [TODO Highlight](https://github.com/wayou/vscode-todo-highlight)
 - [Markdown Footnote](https://github.com/houkanshan/vscode-markdown-footnote)
-
-<p id="footnote-1">[1] To be translated (not planned at the moment)</p>
