@@ -7,6 +7,9 @@
     <a href="https://github.com/flavienbwk/book-devops/actions/workflows/markdownchecks.yml">
         <img src="https://github.com/flavienbwk/book-devops/actions/workflows/markdownchecks.yml/badge.svg?branch=main" alt="Markdownlint" />
     </a>
+    <a href="./eng/Scaling-Institutions-with-DevOps_NotebookLM_Deep-Dive.wav">
+        <img src="https://img.shields.io/badge/Listen%20podcast-18%20min-6FA1D6" alt="Podcast" />
+    </a>
 </p>
 
 <h4 align="center">:us:</h4>
@@ -41,14 +44,15 @@ As a DevOps advocate, I had to make this book GitOps-compliant, this is why it i
 
 Here are the different ways to access this writing :
 
-| Type             | French                                                                                                                      | English                                                                                                                                                                       |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Web version      | [Lire maintenant](https://book-devops.berwick.fr/fra/index.html)                                                            | [Read now](https://book-devops.berwick.fr/eng/index.html)                                                                                                                     |
-| Markdown version | [Lire maintenant](./fra/README.md)                                                                                          | [Read now](./eng/README.md)                                                                                                                                                   |
-| Ebook version    | [Amazon](https://www.amazon.fr/dp/B0CKHV5QB7) / [Google Books](https://play.google.com/store/books/details?id=3u_bEAAAQBAJ) | [Amazon](https://www.amazon.com/dp/B0CT8RY844) / [Google Books](https://play.google.com/store/books/details/Flavien_BERWICK_Scaling_Institutions_with_DevOps?id=bxvwEAAAQBAJ) |
-| Paperback book   | [Amazon](https://www.amazon.fr/dp/B0CKJ6SLV3)                                                                               | [Amazon](https://www.amazon.com/dp/B0CT6ZF5GZ)                                                                                                                                |
-| Hardcover book   | [Amazon](https://www.amazon.fr/dp/B0CKJ651K9)                                                                               | N/A                                                                                                                                                                           |
-| Audiobook        | N/A                                                                                                                         | [_Soon_](./eng/AUDIOBOOK.md)                                                                                                                                                  |
+| Type                 | French                                                                                                                      | English                                                                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Web version          | [Lire maintenant](https://book-devops.berwick.fr/fra/index.html)                                                            | [Read now](https://book-devops.berwick.fr/eng/index.html)                                                                                                                     |
+| Markdown version     | [Lire maintenant](./fra/README.md)                                                                                          | [Read now](./eng/README.md)                                                                                                                                                   |
+| Ebook version        | [Amazon](https://www.amazon.fr/dp/B0CKHV5QB7) / [Google Books](https://play.google.com/store/books/details?id=3u_bEAAAQBAJ) | [Amazon](https://www.amazon.com/dp/B0CT8RY844) / [Google Books](https://play.google.com/store/books/details/Flavien_BERWICK_Scaling_Institutions_with_DevOps?id=bxvwEAAAQBAJ) |
+| Paperback book       | [Amazon](https://www.amazon.fr/dp/B0CKJ6SLV3)                                                                               | [Amazon](https://www.amazon.com/dp/B0CT6ZF5GZ)                                                                                                                                |
+| Hardcover book       | [Amazon](https://www.amazon.fr/dp/B0CKJ651K9)                                                                               | N/A                                                                                                                                                                           |
+| Audiobook            | N/A                                                                                                                         | [_Soon_](./eng/AUDIOBOOK.md)                                                                                                                                                  |
+| Summarized audiobook | N/A                                                                                                                         | [Listen now](./eng/Scaling-Institutions-with-DevOps_NotebookLM_Deep-Dive.wav) (18 min)                                                                                            |
 
 > The original book was written in French. The English version was reworked to include america-related examples and use cases.
 
